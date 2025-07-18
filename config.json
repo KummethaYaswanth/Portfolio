@@ -1,0 +1,24 @@
+{
+  "name": "Akasha Ramanna",
+  "bio": "Data scientist with a passion for building interactive tools that make machine learning accessible.",
+  "email": "akasha@example.com",
+  "github": "https://github.com/akasharamanna",
+  "linkedin": "https://linkedin.com/in/akasharamanna",
+  "projects": [
+    {
+      "title": "Stock Price Dashboard",
+      "description": "Visualizes real-time and historical stock prices with interactive charts and trend analysis.",
+      "url": "https://stock.abcd.com"
+    },
+    {
+      "title": "Text Sentiment Analyzer",
+      "description": "Uses NLP to analyze the sentiment of your text with detailed word frequency analysis.",
+      "url": "https://sentiment.abcd.com"
+    },
+    {
+      "title": "Weather Predictor",
+      "description": "Predicts future weather patterns based on historical data with 14-day forecasts.",
+      "url": "https://weather.abcd.com"
+    }
+  ]
+} 

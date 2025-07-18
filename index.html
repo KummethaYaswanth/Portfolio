@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <div class="placeholder-avatar" id="avatar"></div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="name" id="name">Loading...</h1>
+                    <p class="bio" id="bio">Loading...</p>
+                </div>
+            </div>
+            
+            <div class="social-links" id="social-links">
+                <!-- Social links will be populated by JavaScript -->
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <main class="main-content">
+            <section class="projects-section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Built with ❤️ for showcasing data science projects
+                </p>
+                <div class="footer-links">
+                    <a href="mailto:" id="footer-email">Contact</a>
+                    <span class="separator">|</span>
+                    <a href="#" id="footer-github" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <span class="separator">|</span>
+                    <a href="#" id="footer-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Loading portfolio...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
