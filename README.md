@@ -1,13 +1,23 @@
-# 🚀 Data Science Portfolio
+# 🚀 Yaswanth Kummetha - Data Science Portfolio
 
-A modern, responsive portfolio website showcasing data science projects with integrated Streamlit applications.
+A modern, responsive portfolio website showcasing my data science projects and expertise. Built with a dark theme inspired by Twitch, featuring dynamic content loading and smooth animations.
+
+## 👨‍💻 About Me
+
+**Yaswanth Kummetha**  
+Associate Lead Data Scientist | Google Certified TensorFlow Developer | IIT Kanpur Graduate
+
+- 📧 **Email**: yaswanth.kummetha@outlook.com
+- 💼 **LinkedIn**: [yaswanth-kummetha-b08b5918b](https://www.linkedin.com/in/yaswanth-kummetha-b08b5918b/)
+- 🔗 **GitHub**: [KummethaYaswanth](https://github.com/KummethaYaswanth)
+- 🌐 **Portfolio**: [yaswanthk.com](https://yaswanthk.com)
 
 ## 🌟 Features
 
 - **Responsive Design**: Mobile-friendly with a dark theme inspired by Twitch
 - **Dynamic Content**: Portfolio data loaded from `config.json`
-- **Interactive Streamlit Apps**: Three sample applications demonstrating different data science concepts
-- **Modern UI**: Clean animations and hover effects
+- **Modern UI**: Clean animations and hover effects with Twitch purple accents
+- **Project Showcase**: Interactive project cards with technology badges and highlights
 - **GitHub Pages Ready**: Easy deployment with custom domain support
 
 ## 📁 Project Structure
@@ -17,15 +27,9 @@ A modern, responsive portfolio website showcasing data science projects with int
 ├── styles.css              # CSS styling with dark theme
 ├── script.js               # JavaScript for dynamic content loading
 ├── config.json             # Portfolio configuration and project data
-├── CNAME                   # Custom domain configuration for GitHub Pages
-├── streamlit_apps/         # Streamlit applications
-│   ├── requirements.txt    # Python dependencies
-│   ├── stock_dashboard/    # Stock price visualization app
-│   │   └── app.py
-│   ├── text_analyzer/      # Text sentiment analysis app
-│   │   └── app.py
-│   └── weather_predictor/  # Weather forecasting app
-│       └── app.py
+├── CNAME                   # Custom domain configuration (yaswanthk.com)
+├── images/                 # Project screenshots and assets
+├── .gitignore              # Git ignore file
 └── README.md               # This file
 ```
 
@@ -35,189 +39,109 @@ A modern, responsive portfolio website showcasing data science projects with int
 - **Primary Accent**: `#9146FF` (Twitch Purple)
 - **Text**: `#f2f2f2` (Light Gray/White)
 - **Font**: Inter (Google Fonts)
+- **Cards**: Subtle gradients and hover animations
 
-## 🛠️ Setup Instructions
+## 🚀 Featured Projects
 
-### 1. Portfolio Website (GitHub Pages)
+### 🤖 All Things ML
+Comprehensive machine learning platform featuring interactive tools for ML, Deep Learning, and NLP tasks.
 
-1. **Fork/Clone this repository**
-2. **Edit `config.json`** with your personal information:
-   ```json
-   {
-     "name": "Your Name",
-     "bio": "Your bio description",
-     "email": "your.email@example.com",
-     "github": "https://github.com/yourusername",
-     "linkedin": "https://linkedin.com/in/yourprofile",
-     "projects": [...]
-   }
-   ```
-3. **Update CNAME** with your domain name
-4. **Enable GitHub Pages** in repository settings
-5. **Configure DNS** (see Domain Setup section below)
+**Technologies**: Python, Streamlit, Scikit-learn, TensorFlow, NLP
 
-### 2. Streamlit Apps Setup
+**Key Features**:
+- Interactive ML algorithm demonstrations
+- Visual data exploration tools
+- Real-time model training and evaluation
+- Educational platform for ML concepts
 
-1. **Create virtual environment**:
-   ```bash
-   python -m venv st_portfolio
-   ```
+**Live Demo**: [allthingsml.streamlit.app](https://allthingsml.streamlit.app/)
 
-2. **Activate virtual environment**:
-   ```bash
-   # Windows
-   st_portfolio\Scripts\activate
-   
-   # macOS/Linux
-   source st_portfolio/bin/activate
-   ```
+## 💼 Professional Experience
 
-3. **Install dependencies**:
-   ```bash
-   pip install -r streamlit_apps/requirements.txt
-   ```
+- **Associate Lead Data Scientist** @ Trane Technologies (Dec 2023 - Present)
+- **Associate Manager, Analytics** @ Navi Technologies (Dec 2021 - Nov 2023)
+- **Data Scientist** @ YOptima Media Solutions (Nov 2019 - Dec 2021)
 
-4. **Run individual apps**:
-   ```bash
-   # Stock Dashboard
-   streamlit run streamlit_apps/stock_dashboard/app.py --server.port 8501
-   
-   # Text Analyzer
-   streamlit run streamlit_apps/text_analyzer/app.py --server.port 8502
-   
-   # Weather Predictor
-   streamlit run streamlit_apps/weather_predictor/app.py --server.port 8503
-   ```
+## 🎓 Education
 
-## 🌐 Domain Setup with Porkbun
+**Bachelor of Technology in Electrical Engineering**  
+Indian Institute of Technology, Kanpur (2019)
 
-### Step 1: Configure DNS Records
+## 🏆 Achievements
 
-In your Porkbun DNS management:
+- **IIT-JEE Advanced**: All India Rank 461
+- **IIT-JEE Mains**: All India Rank 1044
+- **Google Certified TensorFlow Developer**
 
-1. **Main Domain (abcd.com)**:
-   - Type: `CNAME`
-   - Host: `@` or leave blank
-   - Answer: `yourusername.github.io`
+## 🛠️ Technical Skills
 
-2. **Streamlit Subdomains**:
-   - Type: `CNAME`
-   - Host: `stock`
-   - Answer: `your-streamlit-hosting-service.com`
-   
-   - Type: `CNAME`
-   - Host: `sentiment`
-   - Answer: `your-streamlit-hosting-service.com`
-   
-   - Type: `CNAME`
-   - Host: `weather`
-   - Answer: `your-streamlit-hosting-service.com`
+- **Languages**: Python, Java, SQL, Spark
+- **Developer Tools**: Google Cloud Platform, AWS, Databricks, Git
+- **Libraries**: Scikit-learn, Matplotlib, Streamlit, TensorFlow
 
-### Step 2: Deploy Streamlit Apps
+## 📝 Customization
 
-You can deploy your Streamlit apps using several services:
-
-#### Option 1: Streamlit Cloud (Recommended)
-1. Push your apps to separate GitHub repositories
-2. Connect to [Streamlit Cloud](https://streamlit.io/cloud)
-3. Deploy each app and get the URLs
-4. Update DNS records to point subdomains to Streamlit Cloud
-
-#### Option 2: Heroku
-1. Create separate Heroku apps for each Streamlit app
-2. Deploy using Git
-3. Configure custom domains in Heroku
-4. Update DNS records
-
-#### Option 3: Railway/Render
-1. Connect GitHub repositories
-2. Deploy each app
-3. Configure custom domains
-4. Update DNS records
-
-### Step 3: Update config.json
-
-Update the project URLs in `config.json` to use your actual deployed URLs:
-
+### Adding New Projects
+1. Update `config.json` with new project details:
 ```json
 {
-  "projects": [
-    {
-      "title": "Stock Price Dashboard",
-      "description": "...",
-      "url": "https://stock.abcd.com"
-    },
-    {
-      "title": "Text Sentiment Analyzer", 
-      "description": "...",
-      "url": "https://sentiment.abcd.com"
-    },
-    {
-      "title": "Weather Predictor",
-      "description": "...", 
-      "url": "https://weather.abcd.com"
-    }
+  "title": "Project Name",
+  "description": "Project description...",
+  "url": "https://project-url.com",
+  "technologies": ["Python", "TensorFlow", "etc"],
+  "highlights": [
+    "Key feature 1",
+    "Key feature 2"
   ]
 }
 ```
 
-## 📱 Sample Streamlit Apps
-
-### 1. Stock Price Dashboard
-- Interactive stock price visualization
-- Mock data with realistic trends
-- Multiple stock symbols
-- Charts and metrics
-
-### 2. Text Sentiment Analyzer
-- Word-based sentiment analysis
-- Word frequency visualization
-- Text statistics
-- Sample text examples
-
-### 3. Weather Predictor
-- Mock weather forecasting
-- Multiple cities
-- Historical and predicted data
-- Interactive charts
-
-## 🔧 Customization
-
-### Adding New Projects
-1. Update `config.json` with new project details
-2. The website will automatically display the new project
+2. Add project images to the `images/` folder
+3. The website will automatically display the new project
 
 ### Modifying Design
 - Edit `styles.css` for visual changes
 - Modify `script.js` for functionality updates
 - Update `index.html` for structural changes
 
-### Creating New Streamlit Apps
-1. Create new folder in `streamlit_apps/`
-2. Add `app.py` with your Streamlit code
-3. Update `requirements.txt` if needed
-4. Deploy and update `config.json`
+## 🌐 Deployment
 
-## 🚀 Deployment Checklist
+This portfolio is hosted on **GitHub Pages** with a custom domain:
 
-- [ ] Repository created and configured
-- [ ] `config.json` updated with personal information
-- [ ] GitHub Pages enabled
-- [ ] Custom domain configured in repository settings
-- [ ] DNS records added in Porkbun
-- [ ] Streamlit apps deployed to hosting service
-- [ ] Subdomain DNS records pointing to Streamlit hosting
-- [ ] All URLs in `config.json` updated
-- [ ] Website tested and functional
+- **Live Site**: [yaswanthk.com](https://yaswanthk.com)
+- **GitHub Repository**: [Portfolio](https://github.com/KummethaYaswanth/Portfolio)
 
-## 📝 License
+### Deployment Steps
+1. Repository configured with GitHub Pages
+2. Custom domain `yaswanthk.com` configured
+3. DNS records properly set up with Porkbun
+4. SSL certificate automatically managed by GitHub Pages
+
+## 📱 Mobile Responsive
+
+The portfolio is fully responsive and optimized for:
+- **Desktop**: Full-width with hover animations
+- **Tablet**: Adapted grid layout
+- **Mobile**: Single-column layout with touch-friendly interactions
+
+## 🚀 Performance
+
+- **Fast Loading**: Optimized assets and minimal dependencies
+- **SEO Friendly**: Proper meta tags and semantic HTML
+- **Accessibility**: Screen reader friendly with proper ARIA labels
+
+## 📄 License
 
 MIT License - Feel free to use this template for your own portfolio!
 
-## 🤝 Contributing
+## 🤝 Contact
 
-Suggestions and improvements are welcome! Please feel free to submit issues or pull requests.
+Feel free to reach out for collaboration or opportunities:
+
+- 📧 **Email**: yaswanth.kummetha@outlook.com
+- 💼 **LinkedIn**: [Connect with me](https://www.linkedin.com/in/yaswanth-kummetha-b08b5918b/)
+- 🔗 **GitHub**: [Follow my work](https://github.com/KummethaYaswanth)
 
 ---
 
-**Note**: This is a template portfolio with sample Streamlit applications. Replace the sample apps with your actual data science projects to showcase your real work. 
+**Built with ❤️ by Yaswanth Kummetha | Data Science Portfolio 2025**

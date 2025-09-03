@@ -14,18 +14,20 @@ const icons = {
     email: '✉️',
     github: '🔗',
     linkedin: '💼',
-    dashboard: '📈',
-    analyzer: '💬',
-    predictor: '🌤️',
+    ml: '🤖',
+    ai: '🧠',
+    data: '📊',
+    analytics: '📈',
     default: '🚀'
 };
 
 // Get icon for project based on title keywords
 function getProjectIcon(title) {
     const titleLower = title.toLowerCase();
-    if (titleLower.includes('stock') || titleLower.includes('dashboard')) return icons.dashboard;
-    if (titleLower.includes('text') || titleLower.includes('sentiment')) return icons.analyzer;
-    if (titleLower.includes('weather') || titleLower.includes('predictor')) return icons.predictor;
+    if (titleLower.includes('ml') || titleLower.includes('machine learning')) return icons.ml;
+    if (titleLower.includes('ai') || titleLower.includes('artificial intelligence')) return icons.ai;
+    if (titleLower.includes('data') || titleLower.includes('analytics')) return icons.data;
+    if (titleLower.includes('analysis') || titleLower.includes('dashboard')) return icons.analytics;
     return icons.default;
 }
 
@@ -61,15 +63,40 @@ function createProjectCard(project) {
     
     const icon = getProjectIcon(project.title);
     
+    // Create technologies badges if available
+    let technologiesHtml = '';
+    if (project.technologies && project.technologies.length > 0) {
+        technologiesHtml = `
+            <div class="project-technologies">
+                ${project.technologies.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+            </div>
+        `;
+    }
+    
+    // Create highlights if available
+    let highlightsHtml = '';
+    if (project.highlights && project.highlights.length > 0) {
+        highlightsHtml = `
+            <div class="project-highlights">
+                <h4>Key Features:</h4>
+                <ul>
+                    ${project.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+    }
+    
     card.innerHTML = `
         <h3 class="project-title">
             <span>${icon}</span>
             ${project.title}
         </h3>
         <p class="project-description">${project.description}</p>
+        ${technologiesHtml}
+        ${highlightsHtml}
         <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">
             <span>🚀</span>
-            <span>View Project</span>
+            <span>Explore Project</span>
         </a>
     `;
     

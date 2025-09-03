@@ -1,24 +1,21 @@
 {
-  "name": "Akasha Ramanna",
-  "bio": "Data scientist with a passion for building interactive tools that make machine learning accessible.",
-  "email": "akasha@example.com",
-  "github": "https://github.com/akasharamanna",
-  "linkedin": "https://linkedin.com/in/akasharamanna",
+  "name": "Yaswanth Kummetha",
+  "bio": "Associate Lead Data Scientist with 6+ years of experience in Data Science, Data Engineering and Analytics. Google certified TensorFlow Developer with expertise in ML, DL, NLP and building interactive applications. Graduate from IIT Kanpur.",
+  "email": "yaswanth.kummetha@outlook.com",
+  "github": "https://github.com/KummethaYaswanth",
+  "linkedin": "https://www.linkedin.com/in/yaswanth-kummetha-b08b5918b/",
   "projects": [
     {
-      "title": "Stock Price Dashboard",
-      "description": "Visualizes real-time and historical stock prices with interactive charts and trend analysis.",
-      "url": "https://stock.abcd.com"
-    },
-    {
-      "title": "Text Sentiment Analyzer",
-      "description": "Uses NLP to analyze the sentiment of your text with detailed word frequency analysis.",
-      "url": "https://sentiment.abcd.com"
-    },
-    {
-      "title": "Weather Predictor",
-      "description": "Predicts future weather patterns based on historical data with 14-day forecasts.",
-      "url": "https://weather.abcd.com"
+      "title": "All Things ML",
+      "description": "Comprehensive machine learning platform featuring interactive tools for ML, Deep Learning, and NLP tasks. Includes classification, regression, clustering algorithms with visual demonstrations and hands-on learning experiences.",
+      "url": "https://allthingsml.streamlit.app/",
+      "technologies": ["Python", "Streamlit", "Scikit-learn", "TensorFlow", "NLP"],
+      "highlights": [
+        "Interactive ML algorithm demonstrations",
+        "Visual data exploration tools", 
+        "Real-time model training and evaluation",
+        "Educational platform for ML concepts"
+      ]
     }
   ]
 } 

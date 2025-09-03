@@ -161,7 +161,7 @@ body {
 /* Projects grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -214,6 +214,68 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.6;
     font-size: 0.95rem;
+}
+
+/* Technology badges */
+.project-technologies {
+    margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    background: rgba(145, 70, 255, 0.2);
+    color: #9146FF;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0.25rem 0.5rem 0.25rem 0;
+    border: 1px solid rgba(145, 70, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: rgba(145, 70, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Project highlights */
+.project-highlights {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border-left: 3px solid #9146FF;
+}
+
+.project-highlights h4 {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-highlights ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-highlights li {
+    color: #b3b3b3;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.project-highlights li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #9146FF;
+    font-weight: bold;
 }
 
 .project-link {
@@ -384,5 +446,19 @@ body {
     
     .section-title {
         font-size: 1.7rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
     }
 } 
