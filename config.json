@@ -15,7 +15,16 @@
         "Visual data exploration tools", 
         "Real-time model training and evaluation",
         "Educational platform for ML concepts"
-      ]
+      ],
+      "images": {
+        "hero": "images/all-things-ml/hero-image.png",
+        "demo": "images/all-things-ml/demo.gif",
+        "gallery": [
+          "images/all-things-ml/classification-demo.png",
+          "images/all-things-ml/regression-demo.png",
+          "images/all-things-ml/clustering-demo.png"
+        ]
+      }
     }
   ]
 } 

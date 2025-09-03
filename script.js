@@ -56,8 +56,70 @@ function createSocialLink(type, url, text) {
     return link;
 }
 
+// Check if image exists
+async function imageExists(src) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = src;
+    });
+}
+
+// Create image gallery
+async function createImageGallery(images) {
+    if (!images) return '';
+    
+    let galleryHtml = '';
+    
+    // Hero image
+    if (images.hero && await imageExists(images.hero)) {
+        galleryHtml += `
+            <div class="project-hero-image">
+                <img src="${images.hero}" alt="Project hero image" loading="lazy">
+            </div>
+        `;
+    }
+    
+    // Demo image/gif
+    if (images.demo && await imageExists(images.demo)) {
+        galleryHtml += `
+            <div class="project-demo">
+                <img src="${images.demo}" alt="Project demo" loading="lazy">
+            </div>
+        `;
+    }
+    
+    // Gallery images
+    if (images.gallery && images.gallery.length > 0) {
+        const galleryImages = [];
+        for (const imgPath of images.gallery) {
+            if (await imageExists(imgPath)) {
+                galleryImages.push(imgPath);
+            }
+        }
+        
+        if (galleryImages.length > 0) {
+            galleryHtml += `
+                <div class="project-gallery">
+                    <h5>Screenshots:</h5>
+                    <div class="gallery-grid">
+                        ${galleryImages.map(imgPath => `
+                            <div class="gallery-item">
+                                <img src="${imgPath}" alt="Project screenshot" loading="lazy" onclick="openModal('${imgPath}')">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+    }
+    
+    return galleryHtml;
+}
+
 // Create project card element
-function createProjectCard(project) {
+async function createProjectCard(project) {
     const card = document.createElement('div');
     card.className = 'project-card';
     
@@ -86,6 +148,9 @@ function createProjectCard(project) {
         `;
     }
     
+    // Create image gallery
+    const imageGalleryHtml = await createImageGallery(project.images);
+    
     card.innerHTML = `
         <h3 class="project-title">
             <span>${icon}</span>
@@ -93,6 +158,7 @@ function createProjectCard(project) {
         </h3>
         <p class="project-description">${project.description}</p>
         ${technologiesHtml}
+        ${imageGalleryHtml}
         ${highlightsHtml}
         <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">
             <span>🚀</span>
@@ -101,6 +167,28 @@ function createProjectCard(project) {
     `;
     
     return card;
+}
+
+// Open image modal
+function openModal(imageSrc) {
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img src="${imageSrc}" alt="Full size image">
+        </div>
+    `;
+    document.body.appendChild(modal);
+    modal.style.display = 'flex';
+}
+
+// Close image modal
+function closeModal() {
+    const modal = document.querySelector('.image-modal');
+    if (modal) {
+        modal.remove();
+    }
 }
 
 // Add loading animation
@@ -150,10 +238,11 @@ async function loadPortfolioData() {
         // Clear and populate projects
         projectsGridElement.innerHTML = '';
         
-        data.projects.forEach(project => {
-            const projectCard = createProjectCard(project);
+        // Create project cards asynchronously
+        for (const project of data.projects) {
+            const projectCard = await createProjectCard(project);
             projectsGridElement.appendChild(projectCard);
-        });
+        }
         
         // Update footer links
         footerEmail.href = `mailto:${data.email}`;
@@ -214,14 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPortfolioData();
 });
 
-// Add keyboard navigation support
+// Close modal on escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        // Close any open modals or overlays
-        const overlay = document.querySelector('.loading-overlay');
-        if (overlay && !overlay.classList.contains('hidden')) {
-            overlay.classList.add('hidden');
-        }
+        closeModal();
     }
 });
 

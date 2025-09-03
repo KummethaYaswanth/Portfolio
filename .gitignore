@@ -134,4 +134,8 @@ Thumbs.db
 
 # Temporary files
 *.tmp
-*.temp 
+*.temp
+
+# Personal files (DO NOT COMMIT)
+my resume latex.txt
+All things ML/ 
