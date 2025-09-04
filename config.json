@@ -25,6 +25,28 @@
           "images/all-things-ml/clustering-demo.png"
         ]
       }
+    },
+    {
+      "title": "Swara - Speech Processing App",
+      "description": "Multilingual speech-to-text and text-to-speech web application built with Flask. Supports real-time voice transcription and natural speech synthesis in multiple languages including English, Telugu, Arabic, and Spanish.",
+      "url": "https://swara-r9ya.onrender.com/",
+      "technologies": ["Python", "Flask", "Speech Recognition", "Text-to-Speech", "HTML/CSS", "JavaScript"],
+      "highlights": [
+        "Real-time speech-to-text conversion",
+        "Multilingual support (English, Telugu, Arabic, Spanish)",
+        "Text-to-speech with customizable speed",
+        "Audio file upload and processing",
+        "Clean, responsive web interface"
+      ],
+      "images": {
+        "hero": "images/swara/hero-image.png",
+        "demo": "images/swara/demo.gif",
+        "gallery": [
+          "images/swara/speech-to-text-demo.png",
+          "images/swara/text-to-speech-demo.png",
+          "images/swara/multilingual-demo.png"
+        ]
+      }
     }
   ]
 } 
