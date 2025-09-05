@@ -110,7 +110,6 @@ async function createImageGallery(images) {
                         ${allImages.map((img, index) => `
                             <div class="carousel-slide ${index === 0 ? 'active' : ''}" data-type="${img.type}">
                                 <img src="${img.src}" alt="${img.alt}" loading="lazy" onclick="openCarouselModal('${carouselId}', ${index})">
-                                <div class="image-type-badge">${img.type}</div>
                             </div>
                         `).join('')}
                     </div>
@@ -272,7 +271,6 @@ function openCarouselModal(carouselId, imageIndex) {
                 <button class="modal-nav prev" onclick="modalPrevImage()" ${images.length <= 1 ? 'disabled' : ''}>‹</button>
                 <div class="modal-image-container">
                     <img src="${images[imageIndex].src}" alt="${images[imageIndex].alt}" id="modal-image">
-                    <div class="modal-image-type">${images[imageIndex].type}</div>
                 </div>
                 <button class="modal-nav next" onclick="modalNextImage()" ${images.length <= 1 ? 'disabled' : ''}>›</button>
             </div>
@@ -313,12 +311,10 @@ function modalNextImage() {
 function updateModalImage(modal, images, newIndex) {
     const img = modal.querySelector('#modal-image');
     const counter = modal.querySelector('.modal-counter');
-    const typeLabel = modal.querySelector('.modal-image-type');
     
     img.src = images[newIndex].src;
     img.alt = images[newIndex].alt;
     counter.textContent = `${newIndex + 1} / ${images.length}`;
-    typeLabel.textContent = images[newIndex].type;
     
     modal.dataset.currentIndex = newIndex;
 }
