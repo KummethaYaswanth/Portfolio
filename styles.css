@@ -799,6 +799,7 @@ body {
 @media (max-width: 768px) {
     .page-layout {
         grid-template-columns: 1fr;
+        gap: 0;
     }
     
     .sidebar {
@@ -807,12 +808,15 @@ body {
         height: auto;
         border-right: none;
         border-bottom: 1px solid #2a2a2e;
+        padding: 1.5rem;
     }
     
     .main-content {
         margin-left: 0;
         max-width: 100%;
+        width: 100%;
         padding: 1rem;
+        box-sizing: border-box;
     }
     
     .header {
@@ -840,13 +844,35 @@ body {
         font-size: 1.1rem;
     }
     
+    .projects-section {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
     .projects-grid {
         gap: 2rem;
+        width: 100%;
+    }
+    
+    .project-card {
+        width: 100%;
+        margin: 0;
     }
     
     .project-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        width: 100%;
+    }
+    
+    .project-info {
+        width: 100%;
+    }
+    
+    .project-gallery-section {
+        width: 100%;
+        min-height: 200px;
     }
     
     .project-gallery-section {
