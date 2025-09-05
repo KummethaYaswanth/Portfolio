@@ -12,6 +12,7 @@ const footerLinkedin = document.getElementById('footer-linkedin');
 // Icons for social links and projects
 const icons = {
     email: '✉️',
+    phone: '📱',
     github: '🔗',
     linkedin: '💼',
     ml: '🤖',
@@ -66,56 +67,67 @@ async function imageExists(src) {
     });
 }
 
-// Create image gallery
+// Create adaptive image carousel
 async function createImageGallery(images) {
     if (!images) return '';
     
-    let galleryHtml = '';
+    const allImages = [];
     
-    // Hero image
+    // Collect all available images
     if (images.hero && await imageExists(images.hero)) {
-        galleryHtml += `
-            <div class="project-hero-image">
-                <img src="${images.hero}" alt="Project hero image" loading="lazy">
-            </div>
-        `;
+        allImages.push({ src: images.hero, type: 'hero', alt: 'Project hero image' });
     }
     
-    // Demo image/gif
     if (images.demo && await imageExists(images.demo)) {
-        galleryHtml += `
-            <div class="project-demo">
-                <img src="${images.demo}" alt="Project demo" loading="lazy">
-            </div>
-        `;
+        allImages.push({ src: images.demo, type: 'demo', alt: 'Project demo' });
     }
     
-    // Gallery images
     if (images.gallery && images.gallery.length > 0) {
-        const galleryImages = [];
         for (const imgPath of images.gallery) {
             if (await imageExists(imgPath)) {
-                galleryImages.push(imgPath);
+                allImages.push({ src: imgPath, type: 'gallery', alt: 'Project screenshot' });
             }
         }
+    }
+    
+    // If we have images, create an adaptive carousel
+    if (allImages.length > 0) {
+        const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
         
-        if (galleryImages.length > 0) {
-            galleryHtml += `
-                <div class="project-gallery">
-                    <h5>Screenshots:</h5>
-                    <div class="gallery-grid">
-                        ${galleryImages.map(imgPath => `
-                            <div class="gallery-item">
-                                <img src="${imgPath}" alt="Project screenshot" loading="lazy" onclick="openModal('${imgPath}')">
+        return `
+            <div class="project-image-carousel" id="${carouselId}">
+                <div class="carousel-header">
+                    <h5>Project Gallery (${allImages.length} images)</h5>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" onclick="prevImage('${carouselId}')" ${allImages.length <= 1 ? 'disabled' : ''}>‹</button>
+                        <span class="carousel-counter">
+                            <span class="current-image">1</span> / ${allImages.length}
+                        </span>
+                        <button class="carousel-btn next" onclick="nextImage('${carouselId}')" ${allImages.length <= 1 ? 'disabled' : ''}>›</button>
+                    </div>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-track" style="transform: translateX(0%)">
+                        ${allImages.map((img, index) => `
+                            <div class="carousel-slide ${index === 0 ? 'active' : ''}" data-type="${img.type}">
+                                <img src="${img.src}" alt="${img.alt}" loading="lazy" onclick="openCarouselModal('${carouselId}', ${index})">
+                                <div class="image-type-badge">${img.type}</div>
                             </div>
                         `).join('')}
                     </div>
                 </div>
-            `;
-        }
+                <div class="carousel-thumbnails ${allImages.length <= 4 ? 'center-thumbnails' : ''}">
+                    ${allImages.map((img, index) => `
+                        <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="goToImage('${carouselId}', ${index})">
+                            <img src="${img.src}" alt="${img.alt}">
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
     }
     
-    return galleryHtml;
+    return '';
 }
 
 // Create project card element
@@ -169,18 +181,141 @@ async function createProjectCard(project) {
     return card;
 }
 
-// Open image modal
-function openModal(imageSrc) {
+// Carousel navigation functions
+function prevImage(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const thumbnails = carousel.querySelectorAll('.thumbnail');
+    const currentImage = carousel.querySelector('.current-image');
+    
+    const activeSlide = carousel.querySelector('.carousel-slide.active');
+    const activeIndex = Array.from(slides).indexOf(activeSlide);
+    const prevIndex = activeIndex === 0 ? slides.length - 1 : activeIndex - 1;
+    
+    updateCarousel(carousel, prevIndex, slides, thumbnails, track, currentImage);
+}
+
+function nextImage(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const thumbnails = carousel.querySelectorAll('.thumbnail');
+    const currentImage = carousel.querySelector('.current-image');
+    
+    const activeSlide = carousel.querySelector('.carousel-slide.active');
+    const activeIndex = Array.from(slides).indexOf(activeSlide);
+    const nextIndex = activeIndex === slides.length - 1 ? 0 : activeIndex + 1;
+    
+    updateCarousel(carousel, nextIndex, slides, thumbnails, track, currentImage);
+}
+
+function goToImage(carouselId, index) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const thumbnails = carousel.querySelectorAll('.thumbnail');
+    const currentImage = carousel.querySelector('.current-image');
+    
+    updateCarousel(carousel, index, slides, thumbnails, track, currentImage);
+}
+
+function updateCarousel(carousel, index, slides, thumbnails, track, currentImage) {
+    // Update active slide
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+    
+    // Update active thumbnail
+    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    thumbnails[index].classList.add('active');
+    
+    // Update track position
+    const translateX = -index * 100;
+    track.style.transform = `translateX(${translateX}%)`;
+    
+    // Update counter
+    currentImage.textContent = index + 1;
+}
+
+// Open carousel modal
+function openCarouselModal(carouselId, imageIndex) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const images = Array.from(slides).map(slide => ({
+        src: slide.querySelector('img').src,
+        alt: slide.querySelector('img').alt,
+        type: slide.dataset.type
+    }));
+    
     const modal = document.createElement('div');
     modal.className = 'image-modal';
     modal.innerHTML = `
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <img src="${imageSrc}" alt="Full size image">
+            <div class="modal-header">
+                <span class="modal-counter">${imageIndex + 1} / ${images.length}</span>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-carousel">
+                <button class="modal-nav prev" onclick="modalPrevImage()" ${images.length <= 1 ? 'disabled' : ''}>‹</button>
+                <div class="modal-image-container">
+                    <img src="${images[imageIndex].src}" alt="${images[imageIndex].alt}" id="modal-image">
+                    <div class="modal-image-type">${images[imageIndex].type}</div>
+                </div>
+                <button class="modal-nav next" onclick="modalNextImage()" ${images.length <= 1 ? 'disabled' : ''}>›</button>
+            </div>
         </div>
     `;
+    
+    // Store images data for modal navigation
+    modal.dataset.images = JSON.stringify(images);
+    modal.dataset.currentIndex = imageIndex;
+    
     document.body.appendChild(modal);
     modal.style.display = 'flex';
+}
+
+// Modal navigation
+function modalPrevImage() {
+    const modal = document.querySelector('.image-modal');
+    if (!modal) return;
+    
+    const images = JSON.parse(modal.dataset.images);
+    const currentIndex = parseInt(modal.dataset.currentIndex);
+    const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    
+    updateModalImage(modal, images, newIndex);
+}
+
+function modalNextImage() {
+    const modal = document.querySelector('.image-modal');
+    if (!modal) return;
+    
+    const images = JSON.parse(modal.dataset.images);
+    const currentIndex = parseInt(modal.dataset.currentIndex);
+    const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    
+    updateModalImage(modal, images, newIndex);
+}
+
+function updateModalImage(modal, images, newIndex) {
+    const img = modal.querySelector('#modal-image');
+    const counter = modal.querySelector('.modal-counter');
+    const typeLabel = modal.querySelector('.modal-image-type');
+    
+    img.src = images[newIndex].src;
+    img.alt = images[newIndex].alt;
+    counter.textContent = `${newIndex + 1} / ${images.length}`;
+    typeLabel.textContent = images[newIndex].type;
+    
+    modal.dataset.currentIndex = newIndex;
 }
 
 // Close image modal
@@ -227,9 +362,17 @@ async function loadPortfolioData() {
         const emailLink = createSocialLink('email', `mailto:${data.email}`, 'Email');
         socialLinksElement.appendChild(emailLink);
         
-        // GitHub link
-        const githubLink = createSocialLink('github', data.github, 'GitHub');
-        socialLinksElement.appendChild(githubLink);
+        // Phone link (if available)
+        if (data.phone) {
+            const phoneLink = createSocialLink('phone', `tel:${data.phone}`, 'Phone');
+            socialLinksElement.appendChild(phoneLink);
+        }
+        
+        // GitHub link (if available)
+        if (data.github) {
+            const githubLink = createSocialLink('github', data.github, 'GitHub');
+            socialLinksElement.appendChild(githubLink);
+        }
         
         // LinkedIn link
         const linkedinLink = createSocialLink('linkedin', data.linkedin, 'LinkedIn');
@@ -246,7 +389,9 @@ async function loadPortfolioData() {
         
         // Update footer links
         footerEmail.href = `mailto:${data.email}`;
-        footerGithub.href = data.github;
+        if (data.github && footerGithub) {
+            footerGithub.href = data.github;
+        }
         footerLinkedin.href = data.linkedin;
         
         // Add loading animation to cards
@@ -303,10 +448,38 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPortfolioData();
 });
 
-// Close modal on escape key
+// Enhanced keyboard navigation for modal and carousel
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeModal();
+    const modal = document.querySelector('.image-modal');
+    
+    if (modal) {
+        // Modal is open - handle modal navigation
+        if (e.key === 'Escape') {
+            closeModal();
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            modalPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            modalNextImage();
+        }
+    } else {
+        // Modal is closed - handle carousel navigation if focused
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            const activeElement = document.activeElement;
+            const carousel = activeElement.closest('.project-image-carousel');
+            
+            if (carousel) {
+                e.preventDefault();
+                const carouselId = carousel.id;
+                
+                if (e.key === 'ArrowLeft') {
+                    prevImage(carouselId);
+                } else {
+                    nextImage(carouselId);
+                }
+            }
+        }
     }
 });
 
