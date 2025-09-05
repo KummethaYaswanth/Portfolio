@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #0e0e10;
+            color: #f2f2f2;
+        }
+        
+        .test-section {
+            border: 1px solid #9146FF;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .avatar-test {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #9146FF;
+            object-fit: cover;
+        }
+        
+        .mobile-test {
+            width: 100%;
+            background: #2a2a2e;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+        
+        .status {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .success { color: #00ff00; }
+        .error { color: #ff0000; }
+        .warning { color: #ffaa00; }
+        
+        @media (max-width: 768px) {
+            .mobile-indicator {
+                background: #00ff00;
+                color: #000;
+                padding: 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+        
+        .mobile-indicator {
+            background: #ff0000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Debug Test</h1>
+    
+    <div class="test-section">
+        <h2>1. Avatar Image Test</h2>
+        <div id="avatar-status" class="status warning">Testing...</div>
+        
+        <h3>Direct Image Load:</h3>
+        <img src="images/profile/portrait.jpg" alt="Portrait" class="avatar-test" 
+             onload="document.getElementById('direct-status').textContent = '✅ Direct load works!'; document.getElementById('direct-status').className = 'status success';"
+             onerror="document.getElementById('direct-status').textContent = '❌ Direct load failed!'; document.getElementById('direct-status').className = 'status error';">
+        <div id="direct-status" class="status warning">Loading...</div>
+        
+        <h3>JavaScript Load Test:</h3>
+        <img id="js-avatar" class="avatar-test" style="display: none;">
+        <div id="js-status" class="status warning">Loading...</div>
+        
+        <h3>Config Path Test:</h3>
+        <div id="config-status" class="status warning">Loading config...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Mobile Layout Test</h2>
+        <div class="mobile-indicator">Mobile CSS Test: This should be GREEN on mobile, RED on desktop</div>
+        
+        <div class="mobile-test">
+            <h3>Full Width Test</h3>
+            <p>This box should fill the entire width on mobile devices.</p>
+            <p><strong>Screen Width:</strong> <span id="screen-width"></span>px</p>
+            <p><strong>Box Width:</strong> <span id="box-width"></span>px</p>
+            <p><strong>Viewport Width:</strong> <span id="viewport-width"></span>px</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. GitHub Pages Cache Test</h2>
+        <div id="cache-test" class="status warning">Testing...</div>
+        <p>Timestamp: <span id="timestamp"></span></p>
+    </div>
+
+    <script>
+        // Test 1: Avatar loading
+        function testAvatar() {
+            // JavaScript load test
+            const jsImg = document.getElementById('js-avatar');
+            const jsStatus = document.getElementById('js-status');
+            
+            const testImg = new Image();
+            testImg.onload = () => {
+                jsImg.src = 'images/profile/portrait.jpg';
+                jsImg.style.display = 'block';
+                jsStatus.textContent = '✅ JavaScript load works!';
+                jsStatus.className = 'status success';
+                updateAvatarStatus();
+            };
+            testImg.onerror = () => {
+                jsStatus.textContent = '❌ JavaScript load failed!';
+                jsStatus.className = 'status error';
+                updateAvatarStatus();
+            };
+            testImg.src = 'images/profile/portrait.jpg';
+        }
+        
+        // Test config loading
+        async function testConfig() {
+            const configStatus = document.getElementById('config-status');
+            try {
+                const response = await fetch('config.json');
+                const data = await response.json();
+                configStatus.innerHTML = `Config avatar: <strong>${data.avatar}</strong>`;
+                
+                // Test the config path
+                const configImg = new Image();
+                configImg.onload = () => {
+                    configStatus.innerHTML += ' ✅ Config path works!';
+                    configStatus.className = 'status success';
+                    updateAvatarStatus();
+                };
+                configImg.onerror = () => {
+                    configStatus.innerHTML += ' ❌ Config path fails!';
+                    configStatus.className = 'status error';
+                    updateAvatarStatus();
+                };
+                configImg.src = data.avatar;
+            } catch (error) {
+                configStatus.textContent = '❌ Config load failed: ' + error;
+                configStatus.className = 'status error';
+            }
+        }
+        
+        function updateAvatarStatus() {
+            const directStatus = document.getElementById('direct-status');
+            const jsStatus = document.getElementById('js-status');
+            const configStatus = document.getElementById('config-status');
+            const avatarStatus = document.getElementById('avatar-status');
+            
+            if (directStatus.className.includes('success') || 
+                jsStatus.className.includes('success') || 
+                configStatus.className.includes('success')) {
+                avatarStatus.textContent = '✅ Avatar loading should work!';
+                avatarStatus.className = 'status success';
+            } else if (directStatus.className.includes('error') && 
+                      jsStatus.className.includes('error') && 
+                      configStatus.className.includes('error')) {
+                avatarStatus.textContent = '❌ Avatar loading completely broken!';
+                avatarStatus.className = 'status error';
+            }
+        }
+        
+        // Test 2: Mobile layout
+        function testLayout() {
+            const screenWidth = window.screen.width;
+            const boxWidth = document.querySelector('.mobile-test').offsetWidth;
+            const viewportWidth = window.innerWidth;
+            
+            document.getElementById('screen-width').textContent = screenWidth;
+            document.getElementById('box-width').textContent = boxWidth;
+            document.getElementById('viewport-width').textContent = viewportWidth;
+        }
+        
+        // Test 3: Cache
+        function testCache() {
+            const timestamp = new Date().toISOString();
+            document.getElementById('timestamp').textContent = timestamp;
+            document.getElementById('cache-test').textContent = '✅ Page loaded fresh at ' + timestamp;
+            document.getElementById('cache-test').className = 'status success';
+        }
+        
+        // Run all tests
+        window.onload = () => {
+            testAvatar();
+            testConfig();
+            testLayout();
+            testCache();
+        };
+        
+        // Update layout info on resize
+        window.onresize = testLayout;
+    </script>
+</body>
+</html> 
