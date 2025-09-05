@@ -17,12 +17,12 @@
         "Educational platform for ML concepts"
       ],
       "images": {
-        "hero": "images/all-things-ml/example.png",
-        "demo": "images/all-things-ml/example - Copy.png",
+        "hero": "images/all-things-ml/Screenshot 2025-09-05 170935.png",
+        "demo": "images/all-things-ml/Screenshot 2025-09-05 171048.png",
         "gallery": [
-          "images/all-things-ml/example - Copy (2).png",
-          "images/all-things-ml/example - Copy (3).png",
-          "images/all-things-ml/example - Copy (4).png"
+          "images/all-things-ml/Screenshot 2025-09-05 171111.png",
+          "images/all-things-ml/Screenshot 2025-09-05 171255.png",
+          "images/all-things-ml/Screenshot 2025-09-05 171524.png"
         ]
       }
     },
@@ -42,16 +42,12 @@
         "Comprehensive coverage: ML algorithms, Deep Learning, Gen AI, Computer Vision, NLP"
       ],
       "images": {
-        "hero": "images/gnanavriksha/example.png",
-        "demo": "images/gnanavriksha/example - Copy.png",
+        "hero": "images/gnanavriksha/Screenshot 2025-09-05 171632.png",
+        "demo": "images/gnanavriksha/Screenshot 2025-09-05 171743.png",
         "gallery": [
-          "images/gnanavriksha/example - Copy (2).png",
-          "images/gnanavriksha/example - Copy (3).png",
-          "images/gnanavriksha/example - Copy (4).png",
-          "images/gnanavriksha/example - Copy (5).png",
-          "images/gnanavriksha/example - Copy (6).png",
-          "images/gnanavriksha/example - Copy (7).png",
-          "images/gnanavriksha/example - Copy (8).png"
+          "images/gnanavriksha/Screenshot 2025-09-05 171903.png",
+          "images/gnanavriksha/Screenshot 2025-09-05 171925.png",
+          "images/gnanavriksha/Screenshot 2025-09-05 172039.png"
         ]
       }
     },
@@ -68,10 +64,11 @@
         "Clean, responsive web interface"
       ],
       "images": {
-        "hero": "images/swara/example.png",
-        "demo": "images/swara/example - Copy.png",
+        "hero": "images/swara/Screenshot 2025-09-05 172123.png",
+        "demo": "images/swara/Screenshot 2025-09-05 172217.png",
         "gallery": [
-          "images/swara/example - Copy (2).png"
+          "images/swara/Screenshot 2025-09-05 172250.png",
+          "images/swara/Screenshot 2025-09-05 172338.png"
         ]
       }
     }
