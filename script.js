@@ -383,25 +383,36 @@ async function loadPortfolioData() {
         nameElement.textContent = data.name;
         bioElement.textContent = data.bio;
         
-        // Load avatar image with fallback
+        // Load avatar image with fallback - simplified approach
         if (data.avatar) {
             console.log('🖼️ Loading avatar image:', data.avatar);
-            // Check if image exists and load it
-            const img = new Image();
-            img.onload = () => {
-                console.log('✅ Avatar image loaded successfully:', data.avatar);
-                avatarElement.src = data.avatar;
-                avatarElement.style.display = 'block';
-                avatarFallbackElement.style.display = 'none';
-            };
-            img.onerror = (error) => {
+            
+            // Try direct assignment first (simpler, often works better with GitHub Pages)
+            avatarElement.src = data.avatar;
+            avatarElement.style.display = 'block';
+            avatarFallbackElement.style.display = 'none';
+            
+            // Set up error handling
+            avatarElement.onerror = (error) => {
                 console.log('❌ Avatar image failed to load:', data.avatar, error);
-                // Fallback to initials
-                avatarElement.style.display = 'none';
-                avatarFallbackElement.style.display = 'flex';
-                avatarFallbackElement.textContent = createAvatar(data.name);
+                // Try with cache-busting parameter
+                const cacheBustSrc = data.avatar + '?v=' + Date.now();
+                console.log('🔄 Trying with cache-bust:', cacheBustSrc);
+                
+                avatarElement.onerror = () => {
+                    console.log('❌ Cache-bust also failed, using initials');
+                    // Fallback to initials
+                    avatarElement.style.display = 'none';
+                    avatarFallbackElement.style.display = 'flex';
+                    avatarFallbackElement.textContent = createAvatar(data.name);
+                };
+                
+                avatarElement.src = cacheBustSrc;
             };
-            img.src = data.avatar;
+            
+            avatarElement.onload = () => {
+                console.log('✅ Avatar image loaded successfully:', data.avatar);
+            };
         } else {
             console.log('⚠️ No avatar specified in config, using initials');
             // No avatar specified, use initials
