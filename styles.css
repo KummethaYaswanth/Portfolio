@@ -16,7 +16,7 @@ body {
 /* Sidebar Layout */
 .page-layout {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 400px 1fr;
     min-height: 100vh;
 }
 
@@ -25,7 +25,7 @@ body {
     padding: 2rem;
     border-right: 1px solid #2a2a2e;
     position: fixed;
-    width: 300px;
+    width: 400px;
     height: 100vh;
     overflow-y: auto;
     top: 0;
@@ -33,9 +33,9 @@ body {
 }
 
 .main-content {
-    margin-left: 300px;
-    padding: 2rem;
-    max-width: calc(100vw - 340px);
+    margin-left: 400px;
+    padding: 2rem 3rem;
+    max-width: calc(100vw - 440px);
 }
 
 /* Sidebar Styles */
@@ -129,9 +129,9 @@ body {
 
 .contact-item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -155,7 +155,7 @@ body {
 
 .contact-value {
     color: #ffffff;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     font-family: 'Courier New', monospace;
     background: rgba(145, 70, 255, 0.1);
@@ -165,6 +165,9 @@ body {
     user-select: all;
     cursor: text;
     transition: all 0.3s ease;
+    word-break: break-all;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .contact-value:hover {
@@ -256,7 +259,7 @@ body {
 
 .project-content {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 450px;
     gap: 2rem;
     align-items: start;
 }
@@ -268,7 +271,7 @@ body {
 }
 
 .project-gallery-section {
-    min-height: 300px;
+    min-height: 350px;
 }
 
 .project-card::before {
