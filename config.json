@@ -12,7 +12,7 @@
       "technologies": ["Python", "Streamlit", "Scikit-learn", "TensorFlow", "NLP"],
       "highlights": [
         "Interactive ML algorithm demonstrations",
-        "Visual data exploration tools", 
+        "Visual data exploration tools",
         "Real-time model training and evaluation",
         "Educational platform for ML concepts"
       ],
@@ -45,6 +45,32 @@
           "images/swara/speech-to-text-demo.png",
           "images/swara/text-to-speech-demo.png",
           "images/swara/multilingual-demo.png"
+        ]
+      }
+    },
+    {
+      "title": "GnanaVriksha - Data Science Quiz Platform",
+      "description": "Comprehensive interactive quiz platform with 1000+ questions across Machine Learning, Deep Learning, Generative AI, Computer Vision, and NLP. Features agent-generated topics and questions with progressive difficulty, detailed explanations, and performance analytics. Built with Streamlit and modern UI design.",
+      "url": "https://ds-quiz.streamlit.app/",
+      "technologies": ["Python", "Streamlit", "Data Analytics", "Interactive UI", "Agent Systems", "Educational Technology"],
+      "highlights": [
+        "1000+ questions across 5 major DS domains with 38 specialized subtopics",
+        "Agent-based topic and question generation system",
+        "Progressive learning path with difficulty-ordered subtopics (STR values)",
+        "Real-time performance analytics with trend visualization",
+        "Detailed explanations for both correct and incorrect answers",
+        "Randomized questions and shuffled options for unique experiences",
+        "Modern purple-themed UI with responsive design",
+        "Comprehensive coverage: ML algorithms, Deep Learning, Gen AI, Computer Vision, NLP"
+      ],
+      "images": {
+        "hero": "images/gnanavriksha/hero-image.png",
+        "demo": "images/gnanavriksha/demo.gif",
+        "gallery": [
+          "images/gnanavriksha/quiz-interface.png",
+          "images/gnanavriksha/performance-analytics.png",
+          "images/gnanavriksha/topic-selection.png",
+          "images/gnanavriksha/results-dashboard.png"
         ]
       }
     }
