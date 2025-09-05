@@ -60,34 +60,61 @@ function createSocialLink(type, url, text) {
 async function imageExists(src) {
     return new Promise((resolve) => {
         const img = new Image();
-        img.onload = () => resolve(true);
-        img.onerror = () => resolve(false);
+        img.onload = () => {
+            console.log(`✅ Image loaded successfully: ${src}`);
+            resolve(true);
+        };
+        img.onerror = (error) => {
+            console.log(`❌ Image failed to load: ${src}`, error);
+            resolve(false);
+        };
         img.src = src;
+        console.log(`🔍 Testing image: ${src}`);
     });
 }
 
 // Create adaptive image carousel
 async function createImageGallery(images) {
-    if (!images) return '';
-    
-    const allImages = [];
-    
-    // Collect all available images
-    if (images.hero && await imageExists(images.hero)) {
-        allImages.push({ src: images.hero, type: 'hero', alt: 'Project hero image' });
+    if (!images) {
+        console.log('No images object provided');
+        return '';
     }
     
-    if (images.demo && await imageExists(images.demo)) {
-        allImages.push({ src: images.demo, type: 'demo', alt: 'Project demo' });
+    const allImages = [];
+    console.log('Processing images:', images);
+    
+    // Collect all available images
+    if (images.hero) {
+        console.log('Checking hero image:', images.hero);
+        const heroExists = await imageExists(images.hero);
+        console.log('Hero exists:', heroExists);
+        if (heroExists) {
+            allImages.push({ src: images.hero, type: 'hero', alt: 'Project hero image' });
+        }
+    }
+    
+    if (images.demo) {
+        console.log('Checking demo image:', images.demo);
+        const demoExists = await imageExists(images.demo);
+        console.log('Demo exists:', demoExists);
+        if (demoExists) {
+            allImages.push({ src: images.demo, type: 'demo', alt: 'Project demo' });
+        }
     }
     
     if (images.gallery && images.gallery.length > 0) {
+        console.log('Checking gallery images:', images.gallery);
         for (const imgPath of images.gallery) {
-            if (await imageExists(imgPath)) {
+            console.log('Checking gallery image:', imgPath);
+            const galleryExists = await imageExists(imgPath);
+            console.log('Gallery exists:', galleryExists);
+            if (galleryExists) {
                 allImages.push({ src: imgPath, type: 'gallery', alt: 'Project screenshot' });
             }
         }
     }
+    
+    console.log('Final allImages array:', allImages);
     
     // If we have images, create an adaptive carousel
     if (allImages.length > 0) {
