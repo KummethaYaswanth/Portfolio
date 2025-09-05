@@ -27,30 +27,10 @@
       }
     },
     {
-      "title": "Swara - Speech Processing App",
-      "description": "Multilingual speech-to-text and text-to-speech web application built with Flask. Supports real-time voice transcription and natural speech synthesis in multiple languages including English, Telugu, Arabic, and Spanish.",
-      "url": "https://swara-r9ya.onrender.com/",
-      "technologies": ["Python", "Flask", "Speech Recognition", "Text-to-Speech", "HTML/CSS", "JavaScript"],
-      "highlights": [
-        "Real-time speech-to-text conversion",
-        "Multilingual support (English, Telugu, Arabic, Spanish)",
-        "Text-to-speech with customizable speed",
-        "Audio file upload and processing",
-        "Clean, responsive web interface"
-      ],
-      "images": {
-        "hero": "images/swara/example.png",
-        "demo": "images/swara/example - Copy.png",
-        "gallery": [
-          "images/swara/example - Copy (2).png"
-        ]
-      }
-    },
-    {
       "title": "GnanaVriksha - Data Science Quiz Platform",
       "description": "Comprehensive interactive quiz platform with 1000+ questions across Machine Learning, Deep Learning, Generative AI, Computer Vision, and NLP. Features agent-generated topics and questions with progressive difficulty, detailed explanations, and performance analytics. Built with Streamlit and modern UI design.",
       "url": "https://ds-quiz.streamlit.app/",
-      "technologies": ["Python", "Streamlit", "Data Analytics", "Interactive UI", "Agent Systems", "Educational Technology"],
+      "technologies": ["Python", "Streamlit", "Data Analytics", "Interactive UI", "Agent Systems", "Educational Technology", "GenAI"],
       "highlights": [
         "1000+ questions across 5 major DS domains with 38 specialized subtopics",
         "Agent-based topic and question generation system",
@@ -72,6 +52,26 @@
           "images/gnanavriksha/example - Copy (6).png",
           "images/gnanavriksha/example - Copy (7).png",
           "images/gnanavriksha/example - Copy (8).png"
+        ]
+      }
+    },
+    {
+      "title": "Swara - Speech Processing App",
+      "description": "Multilingual speech-to-text and text-to-speech web application built with Flask. Supports real-time voice transcription and natural speech synthesis in multiple languages including English, Telugu, Arabic, and Spanish.",
+      "url": "https://swara-r9ya.onrender.com/",
+      "technologies": ["Python", "Flask", "Speech Recognition", "Text-to-Speech", "HTML/CSS", "JavaScript"],
+      "highlights": [
+        "Real-time speech-to-text conversion",
+        "Multilingual support (English, Telugu, Arabic, Spanish)",
+        "Text-to-speech with customizable speed",
+        "Audio file upload and processing",
+        "Clean, responsive web interface"
+      ],
+      "images": {
+        "hero": "images/swara/example.png",
+        "demo": "images/swara/example - Copy.png",
+        "gallery": [
+          "images/swara/example - Copy (2).png"
         ]
       }
     }
