@@ -385,14 +385,17 @@ async function loadPortfolioData() {
         
         // Load avatar image with fallback
         if (data.avatar) {
+            console.log('🖼️ Loading avatar image:', data.avatar);
             // Check if image exists and load it
             const img = new Image();
             img.onload = () => {
+                console.log('✅ Avatar image loaded successfully:', data.avatar);
                 avatarElement.src = data.avatar;
                 avatarElement.style.display = 'block';
                 avatarFallbackElement.style.display = 'none';
             };
-            img.onerror = () => {
+            img.onerror = (error) => {
+                console.log('❌ Avatar image failed to load:', data.avatar, error);
                 // Fallback to initials
                 avatarElement.style.display = 'none';
                 avatarFallbackElement.style.display = 'flex';
@@ -400,6 +403,7 @@ async function loadPortfolioData() {
             };
             img.src = data.avatar;
         } else {
+            console.log('⚠️ No avatar specified in config, using initials');
             // No avatar specified, use initials
             avatarElement.style.display = 'none';
             avatarFallbackElement.style.display = 'flex';
