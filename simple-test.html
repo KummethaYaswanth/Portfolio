@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Test</title>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif;
+            background: #0e0e10;
+            color: white;
+        }
+        
+        .container {
+            padding: 20px;
+        }
+        
+        .avatar-test img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid red;
+        }
+        
+        .mobile-box {
+            background: blue;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-box {
+                background: green !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Test Page</h1>
+        
+        <h2>Avatar Test:</h2>
+        <div class="avatar-test">
+            <img src="images/profile/portrait.jpg" alt="Portrait">
+        </div>
+        
+        <h2>Mobile Test:</h2>
+        <div class="mobile-box">
+            This box should be BLUE on desktop, GREEN on mobile
+        </div>
+        
+        <p>Current URL: <span id="url"></span></p>
+        <p>Screen Width: <span id="width"></span>px</p>
+    </div>
+    
+    <script>
+        document.getElementById('url').textContent = window.location.href;
+        document.getElementById('width').textContent = window.innerWidth;
+    </script>
+</body>
+</html> 

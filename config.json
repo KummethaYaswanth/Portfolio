@@ -7,6 +7,29 @@
   "linkedin": "https://www.linkedin.com/in/yaswanth-kummetha-b08b5918b/",
   "projects": [
     {
+      "title": "ComicGen - AI Comic Generation System",
+      "description": "Automated 6-panel comic generation system using ComfyUI workflows and Flux-Kontext AI model. Maintains character consistency across all panels by using a reference T-pose image as the foundation. Creates narrative sequences from template JSON files with custom prompts, perfect for storytelling and character development.",
+      "url": "https://github.com/KummethaYaswanth/comicgeneration",
+      "technologies": ["Python", "ComfyUI", "Flux-Kontext", "Stable Diffusion", "GenAI", "Computer Vision", "Workflow Automation"],
+      "highlights": [
+        "Character consistency maintained across all 6 panels using T-pose reference",
+        "Flux-Kontext AI model for advanced image generation",
+        "Template-based workflow system with JSON configuration",
+        "Automated workflow generation from story prompts",
+        "Perfect for narrative sequences and character development",
+        "Supports complex storytelling scenarios (e.g., Hogwarts sorting)",
+        "ComfyUI integration for professional AI art generation"
+      ],
+      "images": {
+        "hero": "images/ComicGen/1.png",
+        "demo": "images/ComicGen/2.png",
+        "gallery": [
+          "images/ComicGen/4.png",
+          "images/ComicGen/5.png"
+        ]
+      }
+    },
+    {
       "title": "All Things ML",
       "description": "Comprehensive machine learning platform featuring interactive tools for ML, Deep Learning, and NLP tasks. Includes classification, regression, clustering algorithms with visual demonstrations and hands-on learning experiences.",
       "url": "https://allthingsml.streamlit.app/",
