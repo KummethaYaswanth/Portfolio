@@ -39,12 +39,10 @@
         "Clean, responsive web interface"
       ],
       "images": {
-        "hero": "images/swara/hero-image.png",
-        "demo": "images/swara/demo.gif",
+        "hero": "images/swara/example.png",
+        "demo": "images/swara/example - Copy.png",
         "gallery": [
-          "images/swara/speech-to-text-demo.png",
-          "images/swara/text-to-speech-demo.png",
-          "images/swara/multilingual-demo.png"
+          "images/swara/example - Copy (2).png"
         ]
       }
     },

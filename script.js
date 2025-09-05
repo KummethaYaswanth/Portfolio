@@ -163,18 +163,24 @@ async function createProjectCard(project) {
     const imageGalleryHtml = await createImageGallery(project.images);
     
     card.innerHTML = `
-        <h3 class="project-title">
-            <span>${icon}</span>
-            ${project.title}
-        </h3>
-        <p class="project-description">${project.description}</p>
-        ${technologiesHtml}
-        ${imageGalleryHtml}
-        ${highlightsHtml}
-        <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">
-            <span>🚀</span>
-            <span>Explore Project</span>
-        </a>
+        <div class="project-content">
+            <div class="project-info">
+                <h3 class="project-title">
+                    <span>${icon}</span>
+                    ${project.title}
+                </h3>
+                <p class="project-description">${project.description}</p>
+                ${technologiesHtml}
+                ${highlightsHtml}
+                <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <span>🚀</span>
+                    <span>Explore Project</span>
+                </a>
+            </div>
+            <div class="project-gallery-section">
+                ${imageGalleryHtml}
+            </div>
+        </div>
     `;
     
     return card;
@@ -402,11 +408,7 @@ async function loadPortfolioData() {
         if (contactEmail) contactEmail.textContent = data.email;
         if (contactPhone && data.phone) contactPhone.textContent = data.phone;
         if (contactLinkedinText) {
-            // Extract LinkedIn username from URL
-            const linkedinMatch = data.linkedin.match(/linkedin\.com\/in\/([^\/]+)/);
-            if (linkedinMatch) {
-                contactLinkedinText.textContent = linkedinMatch[1];
-            }
+            contactLinkedinText.textContent = data.linkedin;
         }
         
         // Add loading animation to cards
