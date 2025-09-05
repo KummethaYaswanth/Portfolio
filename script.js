@@ -4,6 +4,7 @@ const bioElement = document.getElementById('bio');
 const socialLinksElement = document.getElementById('social-links');
 const projectsGridElement = document.getElementById('projects-grid');
 const avatarElement = document.getElementById('avatar');
+const avatarFallbackElement = document.getElementById('avatar-fallback');
 const loadingOverlay = document.getElementById('loading-overlay');
 const footerEmail = document.getElementById('footer-email');
 const footerLinkedin = document.getElementById('footer-linkedin');
@@ -381,7 +382,29 @@ async function loadPortfolioData() {
         // Populate header information
         nameElement.textContent = data.name;
         bioElement.textContent = data.bio;
-        avatarElement.textContent = createAvatar(data.name);
+        
+        // Load avatar image with fallback
+        if (data.avatar) {
+            // Check if image exists and load it
+            const img = new Image();
+            img.onload = () => {
+                avatarElement.src = data.avatar;
+                avatarElement.style.display = 'block';
+                avatarFallbackElement.style.display = 'none';
+            };
+            img.onerror = () => {
+                // Fallback to initials
+                avatarElement.style.display = 'none';
+                avatarFallbackElement.style.display = 'flex';
+                avatarFallbackElement.textContent = createAvatar(data.name);
+            };
+            img.src = data.avatar;
+        } else {
+            // No avatar specified, use initials
+            avatarElement.style.display = 'none';
+            avatarFallbackElement.style.display = 'flex';
+            avatarFallbackElement.textContent = createAvatar(data.name);
+        }
         
         // Clear and populate social links
         socialLinksElement.innerHTML = '';
