@@ -6,7 +6,6 @@ const projectsGridElement = document.getElementById('projects-grid');
 const avatarElement = document.getElementById('avatar');
 const loadingOverlay = document.getElementById('loading-overlay');
 const footerEmail = document.getElementById('footer-email');
-const footerGithub = document.getElementById('footer-github');
 const footerLinkedin = document.getElementById('footer-linkedin');
 
 // Icons for social links and projects
@@ -389,10 +388,26 @@ async function loadPortfolioData() {
         
         // Update footer links
         footerEmail.href = `mailto:${data.email}`;
-        if (data.github && footerGithub) {
-            footerGithub.href = data.github;
+        const footerPhone = document.getElementById('footer-phone');
+        if (footerPhone && data.phone) {
+            footerPhone.href = `tel:${data.phone}`;
         }
         footerLinkedin.href = data.linkedin;
+        
+        // Update contact information text
+        const contactEmail = document.getElementById('contact-email');
+        const contactPhone = document.getElementById('contact-phone');
+        const contactLinkedinText = document.getElementById('contact-linkedin-text');
+        
+        if (contactEmail) contactEmail.textContent = data.email;
+        if (contactPhone && data.phone) contactPhone.textContent = data.phone;
+        if (contactLinkedinText) {
+            // Extract LinkedIn username from URL
+            const linkedinMatch = data.linkedin.match(/linkedin\.com\/in\/([^\/]+)/);
+            if (linkedinMatch) {
+                contactLinkedinText.textContent = linkedinMatch[1];
+            }
+        }
         
         // Add loading animation to cards
         setTimeout(addLoadingAnimation, 100);

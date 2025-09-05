@@ -17,12 +17,12 @@
         "Educational platform for ML concepts"
       ],
       "images": {
-        "hero": "images/all-things-ml/hero-image.png",
-        "demo": "images/all-things-ml/demo.gif",
+        "hero": "images/all-things-ml/example.png",
+        "demo": "images/all-things-ml/example - Copy.png",
         "gallery": [
-          "images/all-things-ml/classification-demo.png",
-          "images/all-things-ml/regression-demo.png",
-          "images/all-things-ml/clustering-demo.png"
+          "images/all-things-ml/example - Copy (2).png",
+          "images/all-things-ml/example - Copy (3).png",
+          "images/all-things-ml/example - Copy (4).png"
         ]
       }
     },
@@ -64,13 +64,16 @@
         "Comprehensive coverage: ML algorithms, Deep Learning, Gen AI, Computer Vision, NLP"
       ],
       "images": {
-        "hero": "images/gnanavriksha/hero-image.png",
-        "demo": "images/gnanavriksha/demo.gif",
+        "hero": "images/gnanavriksha/example.png",
+        "demo": "images/gnanavriksha/example - Copy.png",
         "gallery": [
-          "images/gnanavriksha/quiz-interface.png",
-          "images/gnanavriksha/performance-analytics.png",
-          "images/gnanavriksha/topic-selection.png",
-          "images/gnanavriksha/results-dashboard.png"
+          "images/gnanavriksha/example - Copy (2).png",
+          "images/gnanavriksha/example - Copy (3).png",
+          "images/gnanavriksha/example - Copy (4).png",
+          "images/gnanavriksha/example - Copy (5).png",
+          "images/gnanavriksha/example - Copy (6).png",
+          "images/gnanavriksha/example - Copy (7).png",
+          "images/gnanavriksha/example - Copy (8).png"
         ]
       }
     }
