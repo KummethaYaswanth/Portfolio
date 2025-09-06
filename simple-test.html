@@ -1,64 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Test</title>
+    <title>ComicGen Debug Test</title>
     <style>
-        body { 
-            margin: 0; 
-            font-family: Arial, sans-serif;
-            background: #0e0e10;
-            color: white;
-        }
-        
-        .container {
-            padding: 20px;
-        }
-        
-        .avatar-test img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid red;
-        }
-        
-        .mobile-box {
-            background: blue;
-            color: white;
-            padding: 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-box {
-                background: green !important;
-            }
-        }
+        body { font-family: Arial, sans-serif; padding: 20px; background: #0e0e10; color: #f2f2f2; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #333; }
+        .error { color: #ff6b6b; }
+        .success { color: #51cf66; }
+        img { max-width: 200px; margin: 5px; border: 1px solid #666; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Simple Test Page</h1>
-        
-        <h2>Avatar Test:</h2>
-        <div class="avatar-test">
-            <img src="images/profile/portrait.jpg" alt="Portrait">
-        </div>
-        
-        <h2>Mobile Test:</h2>
-        <div class="mobile-box">
-            This box should be BLUE on desktop, GREEN on mobile
-        </div>
-        
-        <p>Current URL: <span id="url"></span></p>
-        <p>Screen Width: <span id="width"></span>px</p>
+    <h1>ComicGen Debug Test</h1>
+    
+    <div class="test-section">
+        <h2>1. Config.json Test</h2>
+        <div id="config-test">Loading...</div>
     </div>
     
+    <div class="test-section">
+        <h2>2. ComicGen Images Test</h2>
+        <div id="image-test">Loading...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Image Loading Debug</h2>
+        <div id="image-debug"></div>
+    </div>
+
     <script>
-        document.getElementById('url').textContent = window.location.href;
-        document.getElementById('width').textContent = window.innerWidth;
+        // Test config.json loading
+        async function testConfig() {
+            try {
+                const response = await fetch('./config.json');
+                const data = await response.json();
+                
+                const comicgenProject = data.projects.find(p => p.title.includes('ComicGen'));
+                if (comicgenProject) {
+                    document.getElementById('config-test').innerHTML = `
+                        <div class="success">✅ Config.json loaded successfully</div>
+                        <div class="success">✅ ComicGen project found</div>
+                        <div>Title: ${comicgenProject.title}</div>
+                        <div>Images: ${JSON.stringify(comicgenProject.images, null, 2)}</div>
+                    `;
+                    return comicgenProject;
+                } else {
+                    document.getElementById('config-test').innerHTML = '<div class="error">❌ ComicGen project not found in config</div>';
+                    return null;
+                }
+            } catch (error) {
+                document.getElementById('config-test').innerHTML = `<div class="error">❌ Error loading config: ${error.message}</div>`;
+                return null;
+            }
+        }
+        
+        // Test image loading
+        function testImage(src) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve({ src, success: true, error: null });
+                img.onerror = (error) => resolve({ src, success: false, error: error.message });
+                img.src = src;
+            });
+        }
+        
+        // Run tests
+        async function runTests() {
+            const project = await testConfig();
+            
+            if (project && project.images) {
+                const imageTests = [];
+                
+                // Test hero image
+                if (project.images.hero) {
+                    imageTests.push(testImage(project.images.hero));
+                }
+                
+                // Test demo image
+                if (project.images.demo) {
+                    imageTests.push(testImage(project.images.demo));
+                }
+                
+                // Test gallery images
+                if (project.images.gallery) {
+                    project.images.gallery.forEach(img => {
+                        imageTests.push(testImage(img));
+                    });
+                }
+                
+                const results = await Promise.all(imageTests);
+                
+                let html = '';
+                results.forEach(result => {
+                    if (result.success) {
+                        html += `<div class="success">✅ ${result.src}</div>`;
+                        html += `<img src="${result.src}" alt="Test image">`;
+                    } else {
+                        html += `<div class="error">❌ ${result.src} - ${result.error || 'Failed to load'}</div>`;
+                    }
+                });
+                
+                document.getElementById('image-test').innerHTML = html;
+                
+                // Debug info
+                document.getElementById('image-debug').innerHTML = `
+                    <h4>Debug Info:</h4>
+                    <div>Total images expected: ${imageTests.length}</div>
+                    <div>Successful: ${results.filter(r => r.success).length}</div>
+                    <div>Failed: ${results.filter(r => !r.success).length}</div>
+                `;
+            }
+        }
+        
+        runTests();
     </script>
 </body>
 </html> 
