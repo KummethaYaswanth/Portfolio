@@ -422,7 +422,7 @@ async function loadPortfolioData() {
             console.log('🖼️ Loading avatar image:', data.avatar);
             
             // Try direct assignment first (simpler, often works better with GitHub Pages)
-            avatarElement.src = data.avatar;
+            avatarElement.src = data.avatar + '?v=' + Date.now();
             avatarElement.style.display = 'block';
             avatarFallbackElement.style.display = 'none';
             
