@@ -1,5 +1,5 @@
 {
-  "_cache_bust": "2024-01-15-v2",
+  "_cache_bust": "2024-01-15-v3-test",
   "name": "Yaswanth Kummetha",
   "bio": "Associate Lead Data Scientist with 6+ years of experience in Data Science, Data Engineering and Analytics. Google certified TensorFlow Developer with expertise in ML, DL, NLP and building interactive applications. Graduate from IIT Kanpur. When not building ML models, I enjoy the world of Pokémon, rewatching F.R.I.E.N.D.S, and exploring the wizarding world of Harry Potter.",
   "avatar": "images/profile/portrait.jpg",
@@ -94,6 +94,24 @@
         "gallery": [
           "images/ComicGen/4.png",
           "images/ComicGen/5.png"
+        ]
+      }
+    },
+    {
+      "title": "TEST PROJECT - DELETE ME",
+      "description": "This is a test project to check if GitHub Pages deployment is working. If you see this, the deployment is functioning properly.",
+      "url": "https://github.com/test/test",
+      "technologies": ["Test", "Debug", "Deployment"],
+      "highlights": [
+        "Test project for deployment verification",
+        "Should appear immediately after push",
+        "Delete this project once confirmed working"
+      ],
+      "images": {
+        "hero": "images/all-things-ml/example.png",
+        "demo": "images/all-things-ml/example.png",
+        "gallery": [
+          "images/all-things-ml/example.png"
         ]
       }
     }
