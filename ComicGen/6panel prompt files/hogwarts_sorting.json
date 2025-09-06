@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "title": "Hogwarts Sorting Ceremony",
+    "description": "A comic about a guy being called to the sorting ceremony at Hogwarts and being sorted into Gryffindor house",
+    "style": "serious comic book style, not anime or childish cartoon",
+    "character": "Guy from default_character.png (originally sitting watching TV)"
+  },
+  "tpose_prompt": "make him standing doing a t pose wearing casual modern clothes like jeans and t-shirt in front of a solid grey background, serious comic book art style, realistic proportions, not anime or cartoon style",
+  "panel_prompts": [
+    "he is standing nervously in the great hall of Hogwarts with hundreds of students sitting at long tables, tall gothic windows and floating candles above, serious comic book art style with dramatic lighting",
+    "he is walking up to the front of the great hall as Professor McGonagall calls his name, other students watching him, stone walls and banners of the four houses visible, serious comic book style with detailed architecture",
+    "he is sitting on a wooden stool in front of the entire school with the ancient sorting hat being placed on his head by Professor McGonagall, serious expression, comic book art style with warm lighting",
+    "close-up of him with the sorting hat on his head, eyes closed in concentration as the hat deliberates, magical sparkles around the hat, serious comic book style with dramatic shadows",
+    "he opens his eyes wide with surprise and joy as the sorting hat shouts 'GRYFFINDOR!' in a large speech bubble, the Gryffindor table erupting in cheers in the background, comic book style with dynamic energy",
+    "he is walking proudly toward the Gryffindor table where students are clapping and welcoming him, red and gold banners visible, big smile on his face, serious comic book art style with triumphant atmosphere"
+  ]
+} 
