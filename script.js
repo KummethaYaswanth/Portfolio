@@ -75,7 +75,7 @@ async function imageExists(src) {
 }
 
 // Create adaptive image carousel
-async function createImageGallery(images) {
+async function createImageGallery(images, project = null) {
     if (!images) {
         console.log('No images object provided');
         return '';
@@ -131,7 +131,7 @@ async function createImageGallery(images) {
         console.log('Final allImages array:', allImages);
         
         // If we have images, create an adaptive carousel
-        if (allImages.length > 0) {
+        if (allImages.length > 0 || (project && project.title && project.title.includes('ComicGen'))) {
             const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
             
             return `
@@ -171,6 +171,22 @@ async function createImageGallery(images) {
         return '<div class="error-message">Error loading images</div>';
     }
     
+    // If no images found but this is ComicGen, show a placeholder
+    if (project && project.title && project.title.includes('ComicGen')) {
+        return `
+            <div class="project-image-carousel">
+                <div class="carousel-header">
+                    <h5>Project Gallery</h5>
+                </div>
+                <div class="carousel-container">
+                    <div class="no-images-placeholder">
+                        <p>🎨 Project images will be available soon</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
     return '';
 }
 
@@ -205,7 +221,7 @@ async function createProjectCard(project) {
     }
     
     // Create image gallery
-    const imageGalleryHtml = await createImageGallery(project.images);
+    const imageGalleryHtml = await createImageGallery(project.images, project);
     
     card.innerHTML = `
         <div class="project-content">
