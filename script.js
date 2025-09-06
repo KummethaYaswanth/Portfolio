@@ -82,75 +82,93 @@ async function createImageGallery(images) {
     }
     
     const allImages = [];
-    console.log('Processing images:', images);
+    console.log('Processing images for project:', images);
     
-    // Collect all available images
-    if (images.hero) {
-        console.log('Checking hero image:', images.hero);
-        const heroExists = await imageExists(images.hero);
-        console.log('Hero exists:', heroExists);
-        if (heroExists) {
-            allImages.push({ src: images.hero, type: 'hero', alt: 'Project hero image' });
-        }
-    }
-    
-    if (images.demo) {
-        console.log('Checking demo image:', images.demo);
-        const demoExists = await imageExists(images.demo);
-        console.log('Demo exists:', demoExists);
-        if (demoExists) {
-            allImages.push({ src: images.demo, type: 'demo', alt: 'Project demo' });
-        }
-    }
-    
-    if (images.gallery && images.gallery.length > 0) {
-        console.log('Checking gallery images:', images.gallery);
-        for (const imgPath of images.gallery) {
-            console.log('Checking gallery image:', imgPath);
-            const galleryExists = await imageExists(imgPath);
-            console.log('Gallery exists:', galleryExists);
-            if (galleryExists) {
-                allImages.push({ src: imgPath, type: 'gallery', alt: 'Project screenshot' });
+    try {
+        // Collect all available images
+        if (images.hero) {
+            console.log('Checking hero image:', images.hero);
+            try {
+                const heroExists = await imageExists(images.hero);
+                console.log('Hero exists:', heroExists);
+                if (heroExists) {
+                    allImages.push({ src: images.hero, type: 'hero', alt: 'Project hero image' });
+                }
+            } catch (error) {
+                console.error('Error checking hero image:', error);
             }
         }
-    }
-    
-    console.log('Final allImages array:', allImages);
-    
-    // If we have images, create an adaptive carousel
-    if (allImages.length > 0) {
-        const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
         
-        return `
-            <div class="project-image-carousel" id="${carouselId}">
-                <div class="carousel-header">
-                    <h5>Project Gallery (${allImages.length} images)</h5>
-                    <div class="carousel-controls">
-                        <button class="carousel-btn prev" onclick="prevImage('${carouselId}')" ${allImages.length <= 1 ? 'disabled' : ''}>‹</button>
-                        <span class="carousel-counter">
-                            <span class="current-image">1</span> / ${allImages.length}
-                        </span>
-                        <button class="carousel-btn next" onclick="nextImage('${carouselId}')" ${allImages.length <= 1 ? 'disabled' : ''}>›</button>
+        if (images.demo) {
+            console.log('Checking demo image:', images.demo);
+            try {
+                const demoExists = await imageExists(images.demo);
+                console.log('Demo exists:', demoExists);
+                if (demoExists) {
+                    allImages.push({ src: images.demo, type: 'demo', alt: 'Project demo' });
+                }
+            } catch (error) {
+                console.error('Error checking demo image:', error);
+            }
+        }
+        
+        if (images.gallery && images.gallery.length > 0) {
+            console.log('Checking gallery images:', images.gallery);
+            for (const imgPath of images.gallery) {
+                console.log('Checking gallery image:', imgPath);
+                try {
+                    const galleryExists = await imageExists(imgPath);
+                    console.log('Gallery exists:', galleryExists);
+                    if (galleryExists) {
+                        allImages.push({ src: imgPath, type: 'gallery', alt: 'Project screenshot' });
+                    }
+                } catch (error) {
+                    console.error('Error checking gallery image:', error);
+                }
+            }
+        }
+        
+        console.log('Final allImages array:', allImages);
+        
+        // If we have images, create an adaptive carousel
+        if (allImages.length > 0) {
+            const carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
+            
+            return `
+                <div class="project-image-carousel" id="${carouselId}">
+                    <div class="carousel-header">
+                        <h5>Project Gallery (${allImages.length} images)</h5>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev" onclick="prevImage('${carouselId}')" ${allImages.length <= 1 ? 'disabled' : ''}>‹</button>
+                            <span class="carousel-counter">
+                                <span class="current-image">1</span> / ${allImages.length}
+                            </span>
+                            <button class="carousel-btn next" onclick="nextImage('${carouselId}')" ${allImages.length <= 1 ? 'disabled' : ''}>›</button>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-container">
-                    <div class="carousel-track" style="transform: translateX(0%)">
+                    <div class="carousel-container">
+                        <div class="carousel-track" style="transform: translateX(0%)">
+                            ${allImages.map((img, index) => `
+                                <div class="carousel-slide ${index === 0 ? 'active' : ''}" data-type="${img.type}">
+                                    <img src="${img.src}" alt="${img.alt}" loading="lazy" onclick="openCarouselModal('${carouselId}', ${index})">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="carousel-thumbnails ${allImages.length <= 4 ? 'center-thumbnails' : ''}">
                         ${allImages.map((img, index) => `
-                            <div class="carousel-slide ${index === 0 ? 'active' : ''}" data-type="${img.type}">
-                                <img src="${img.src}" alt="${img.alt}" loading="lazy" onclick="openCarouselModal('${carouselId}', ${index})">
+                            <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="goToImage('${carouselId}', ${index})">
+                                <img src="${img.src}" alt="${img.alt}">
                             </div>
                         `).join('')}
                     </div>
                 </div>
-                <div class="carousel-thumbnails ${allImages.length <= 4 ? 'center-thumbnails' : ''}">
-                    ${allImages.map((img, index) => `
-                        <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="goToImage('${carouselId}', ${index})">
-                            <img src="${img.src}" alt="${img.alt}">
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
+            `;
+        }
+        
+    } catch (error) {
+        console.error('Error in createImageGallery:', error);
+        return '<div class="error-message">Error loading images</div>';
     }
     
     return '';
