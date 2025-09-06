@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_DIF",
+  "subtopicName": "Diffusion Models",
+  "str": 0.250,
+  "description": "Diffusion models are a class of generative models that learn to generate data by modeling a gradual denoising process. They work by adding noise to data in a forward process and then learning to reverse this process to generate new samples.",
+  "questions": [
+    {
+      "id": "DIF_001",
+      "question": "What is the fundamental principle behind diffusion models?",
+      "options": [
+        "Learning to reverse a noise addition process",
+        "Encoding data into a latent space",
+        "Adversarial training between generator and discriminator",
+        "Autoregressive token prediction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Diffusion models work by learning to reverse a gradual noise addition process. They first add noise to data in a forward process, then learn to remove this noise step by step to generate new samples.",
+      "optionExplanations": [
+        "Correct. Diffusion models learn to reverse the process of gradually adding noise to data, enabling them to generate new samples by starting from noise and iteratively denoising.",
+        "Incorrect. While diffusion models may work in latent spaces (like Latent Diffusion Models), the core principle is the denoising process, not just encoding into latent space.",
+        "Incorrect. This describes GANs (Generative Adversarial Networks), not diffusion models. Diffusion models don't use adversarial training.",
+        "Incorrect. This describes autoregressive models like GPT. Diffusion models generate data through iterative denoising, not token-by-token prediction."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "fundamentals",
+        "basic-concepts",
+        "denoising"
+      ]
+    },
+    {
+      "id": "DIF_002",
+      "question": "In the forward process of diffusion models, what happens to the data?",
+      "options": [
+        "Data is compressed into a smaller representation",
+        "Gaussian noise is gradually added to the data",
+        "Data is transformed using learned parameters",
+        "Data is segmented into multiple parts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the forward process, Gaussian noise is gradually added to the original data over multiple timesteps until the data becomes pure noise following a standard Gaussian distribution.",
+      "optionExplanations": [
+        "Incorrect. The forward process doesn't compress data; it adds noise to it. Compression happens in autoencoders or VAEs.",
+        "Correct. The forward process systematically adds Gaussian noise to the data at each timestep, gradually destroying the original signal until only noise remains.",
+        "Incorrect. The forward process is typically a fixed, predefined noise addition schedule, not a learned transformation with parameters.",
+        "Incorrect. The forward process doesn't segment data; it adds noise uniformly across the entire data sample."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "forward-process",
+        "gaussian-noise",
+        "timesteps"
+      ]
+    },
+    {
+      "id": "DIF_003",
+      "question": "What is the role of the reverse process in diffusion models?",
+      "options": [
+        "To add noise to clean data",
+        "To learn the data distribution",
+        "To remove noise and generate data",
+        "To compress the input data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The reverse process learns to progressively remove noise from a noisy sample, effectively generating new data by starting from pure noise and iteratively denoising it.",
+      "optionExplanations": [
+        "Incorrect. Adding noise is the role of the forward process, not the reverse process.",
+        "Incorrect. While the reverse process implicitly learns aspects of the data distribution, its primary role is denoising, not distribution learning per se.",
+        "Correct. The reverse process is trained to remove noise step by step, transforming pure noise back into clean, realistic data samples.",
+        "Incorrect. The reverse process doesn't compress data; it generates data by denoising. Compression is not the goal of diffusion models."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "reverse-process",
+        "denoising",
+        "generation"
+      ]
+    },
+    {
+      "id": "DIF_004",
+      "question": "What does DDPM stand for?",
+      "options": [
+        "Deep Denoising Probabilistic Model",
+        "Denoising Diffusion Probabilistic Model",
+        "Dynamic Diffusion Processing Method",
+        "Distributed Denoising Prediction Model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DDPM stands for Denoising Diffusion Probabilistic Model, which is one of the foundational papers that established the modern framework for diffusion models.",
+      "optionExplanations": [
+        "Incorrect. While 'Deep' and 'Denoising' are relevant terms, DDPM specifically stands for 'Denoising Diffusion Probabilistic Model'.",
+        "Correct. DDPM stands for Denoising Diffusion Probabilistic Model, introduced by Ho et al. in 2020 as a key framework for diffusion models.",
+        "Incorrect. This is not the correct expansion of DDPM. The 'D' stands for 'Denoising', not 'Dynamic'.",
+        "Incorrect. DDPM doesn't stand for 'Distributed' - it's 'Denoising Diffusion Probabilistic Model'."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ddpm",
+        "terminology",
+        "acronyms"
+      ]
+    },
+    {
+      "id": "DIF_005",
+      "question": "In diffusion models, what is a timestep?",
+      "options": [
+        "The time taken to train the model",
+        "A discrete step in the noise addition/removal process",
+        "The frequency of model updates",
+        "The duration of each training epoch"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A timestep represents a discrete step in the diffusion process, where each step corresponds to a specific amount of noise being added (forward) or removed (reverse).",
+      "optionExplanations": [
+        "Incorrect. Timestep doesn't refer to training time or computational duration. It's a conceptual step in the diffusion process.",
+        "Correct. A timestep is a discrete step in the diffusion process, with each timestep corresponding to a specific noise level in both forward and reverse processes.",
+        "Incorrect. Timestep is not related to how frequently the model parameters are updated during training.",
+        "Incorrect. Timestep is not about training duration but about the sequential steps in the noise addition/removal process."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "timesteps",
+        "process-steps",
+        "noise-levels"
+      ]
+    },
+    {
+      "id": "DIF_006",
+      "question": "What is the noise schedule in diffusion models?",
+      "options": [
+        "The order in which training data is processed",
+        "A predefined sequence that determines noise levels at each timestep",
+        "The frequency of adding new noise during training",
+        "The schedule for updating model parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The noise schedule is a predefined sequence (often denoted as β_t or α_t) that determines how much noise is added at each timestep during the forward process.",
+      "optionExplanations": [
+        "Incorrect. The noise schedule is not about data processing order but about the amount of noise added at each diffusion timestep.",
+        "Correct. The noise schedule defines the variance or amount of noise added at each timestep, controlling the rate of noise addition in the forward process.",
+        "Incorrect. The noise schedule doesn't determine frequency of adding noise during training, but the amount of noise at each timestep.",
+        "Incorrect. The noise schedule is not related to parameter updates but to the predefined noise levels in the diffusion process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise-schedule",
+        "beta-schedule",
+        "forward-process"
+      ]
+    },
+    {
+      "id": "DIF_007",
+      "question": "What is the purpose of the U-Net architecture in diffusion models?",
+      "options": [
+        "To encode images into latent representations",
+        "To predict the noise that should be removed at each timestep",
+        "To generate random noise patterns",
+        "To classify different types of noise"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The U-Net architecture in diffusion models is trained to predict the noise that was added to the data, enabling the reverse process to remove this predicted noise.",
+      "optionExplanations": [
+        "Incorrect. While U-Net can be used for encoding, in diffusion models its primary purpose is noise prediction, not encoding into latent space.",
+        "Correct. The U-Net learns to predict the noise that was added at each timestep, allowing the reverse process to subtract this predicted noise and recover cleaner data.",
+        "Incorrect. U-Net doesn't generate random noise; it predicts the noise that should be removed from the current noisy sample.",
+        "Incorrect. U-Net doesn't classify noise types; it predicts the specific noise pattern that should be removed to denoise the input."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "u-net",
+        "architecture",
+        "noise-prediction"
+      ]
+    },
+    {
+      "id": "DIF_008",
+      "question": "What is the key innovation of Stable Diffusion compared to DDPM?",
+      "options": [
+        "Using a different noise schedule",
+        "Operating in a lower-dimensional latent space",
+        "Using transformer architecture instead of U-Net",
+        "Training on larger datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stable Diffusion's key innovation is performing the diffusion process in a lower-dimensional latent space encoded by a VAE, making it much more computationally efficient.",
+      "optionExplanations": [
+        "Incorrect. While Stable Diffusion may use different noise schedules, the key innovation is working in latent space, not the schedule itself.",
+        "Correct. Stable Diffusion operates in the latent space of a Variational Autoencoder (VAE), significantly reducing computational requirements compared to pixel-space diffusion.",
+        "Incorrect. Stable Diffusion still uses U-Net architecture for the diffusion process, though it may incorporate attention mechanisms.",
+        "Incorrect. While Stable Diffusion was trained on large datasets, the key innovation is the latent space approach, not dataset size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stable-diffusion",
+        "latent-space",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "DIF_009",
+      "question": "In the context of diffusion models, what does 'conditioning' refer to?",
+      "options": [
+        "The process of adding noise to data",
+        "Providing additional information to guide generation",
+        "The mathematical condition for convergence",
+        "The preprocessing of training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Conditioning in diffusion models refers to providing additional information (like text prompts, class labels, or other data) to guide the generation process towards specific outputs.",
+      "optionExplanations": [
+        "Incorrect. Adding noise is part of the forward process, not conditioning. Conditioning guides the generation direction.",
+        "Correct. Conditioning involves providing extra information (text, labels, images) to the model to control and guide the generation process toward desired outputs.",
+        "Incorrect. While mathematical conditions exist for convergence, 'conditioning' in this context refers to providing guidance for generation.",
+        "Incorrect. Conditioning is not about data preprocessing but about providing guidance information during the generation process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "conditioning",
+        "guidance",
+        "control"
+      ]
+    },
+    {
+      "id": "DIF_010",
+      "question": "What is the Markov property in the context of diffusion models?",
+      "options": [
+        "The model can only generate one sample at a time",
+        "Each step depends only on the immediate previous step",
+        "The process is reversible",
+        "The noise is normally distributed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Markov property means that each step in the diffusion process depends only on the current state, not on the entire history of previous steps.",
+      "optionExplanations": [
+        "Incorrect. The Markov property is not about single sample generation but about the dependency structure between steps.",
+        "Correct. The Markov property means that the next state depends only on the current state, not on the entire sequence of previous states.",
+        "Incorrect. While diffusion processes are reversible, this is not what the Markov property specifically refers to.",
+        "Incorrect. Normal distribution of noise is a separate assumption, not the definition of the Markov property."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "markov-property",
+        "mathematical-concepts",
+        "dependencies"
+      ]
+    },
+    {
+      "id": "DIF_011",
+      "question": "What is the purpose of the variational lower bound in diffusion model training?",
+      "options": [
+        "To ensure the model generates diverse samples",
+        "To provide a tractable objective function for optimization",
+        "To prevent mode collapse",
+        "To regularize the model weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The variational lower bound provides a tractable way to optimize the intractable likelihood of the data under the diffusion model by providing a lower bound that can be computed and optimized.",
+      "optionExplanations": [
+        "Incorrect. While the variational bound may indirectly affect diversity, its primary purpose is to make optimization tractable, not specifically ensure diversity.",
+        "Correct. The variational lower bound allows optimization of an otherwise intractable likelihood by providing a computable lower bound on the log-likelihood.",
+        "Incorrect. Mode collapse is primarily an issue with GANs. The variational bound's purpose is optimization tractability, not preventing mode collapse.",
+        "Incorrect. Weight regularization is typically handled by separate regularization terms, not the variational lower bound itself."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "variational-bound",
+        "optimization",
+        "likelihood"
+      ]
+    },
+    {
+      "id": "DIF_012",
+      "question": "In DDPM, what does the loss function primarily measure?",
+      "options": [
+        "The difference between generated and real images",
+        "The error in predicting the added noise",
+        "The reconstruction error of the autoencoder",
+        "The adversarial loss between generator and discriminator"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DDPM's loss function measures how well the model can predict the noise that was added to the data at each timestep, typically using MSE between predicted and actual noise.",
+      "optionExplanations": [
+        "Incorrect. DDPM doesn't directly compare generated and real images in its loss function. It focuses on noise prediction accuracy.",
+        "Correct. The DDPM loss measures the mean squared error between the noise that was actually added and the noise predicted by the neural network.",
+        "Incorrect. This describes VAE loss. DDPM doesn't use reconstruction error as its primary loss function.",
+        "Incorrect. This describes GAN loss. DDPM doesn't use adversarial training or discriminators."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ddpm",
+        "loss-function",
+        "noise-prediction"
+      ]
+    },
+    {
+      "id": "DIF_013",
+      "question": "What is the role of the VAE encoder in Stable Diffusion?",
+      "options": [
+        "To predict noise in the diffusion process",
+        "To encode images into a lower-dimensional latent space",
+        "To generate the final output images",
+        "To provide text conditioning information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The VAE encoder in Stable Diffusion encodes high-resolution images into a compact latent representation where the diffusion process operates more efficiently.",
+      "optionExplanations": [
+        "Incorrect. Noise prediction is handled by the U-Net, not the VAE encoder. The VAE encoder's role is dimensionality reduction.",
+        "Correct. The VAE encoder compresses high-resolution images into a lower-dimensional latent space, making the diffusion process more computationally efficient.",
+        "Incorrect. The VAE decoder generates final images from the latent space, not the encoder. The encoder does the opposite transformation.",
+        "Incorrect. Text conditioning is typically handled by separate text encoders (like CLIP), not the VAE encoder."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stable-diffusion",
+        "vae-encoder",
+        "latent-space"
+      ]
+    },
+    {
+      "id": "DIF_014",
+      "question": "What is classifier-free guidance in diffusion models?",
+      "options": [
+        "Training without using any class labels",
+        "A technique to improve sample quality by balancing conditional and unconditional predictions",
+        "Removing the classifier from the training process",
+        "Using unsupervised learning exclusively"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Classifier-free guidance improves sample quality and controllability by interpolating between conditional (guided) and unconditional (unguided) predictions during inference.",
+      "optionExplanations": [
+        "Incorrect. Classifier-free guidance doesn't mean avoiding class labels entirely, but rather not requiring a separate classifier during inference.",
+        "Correct. Classifier-free guidance uses a linear combination of conditional and unconditional model predictions to enhance both sample quality and adherence to conditioning.",
+        "Incorrect. It's not about removing classifiers from training, but about not needing separate classifiers during the generation process.",
+        "Incorrect. Classifier-free guidance can work with supervised conditioning; it's about the inference technique, not the learning paradigm."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "classifier-free-guidance",
+        "conditioning",
+        "inference"
+      ]
+    },
+    {
+      "id": "DIF_015",
+      "question": "What is the primary advantage of using attention mechanisms in diffusion model architectures?",
+      "options": [
+        "Faster training convergence",
+        "Better handling of long-range dependencies in data",
+        "Reduced memory consumption",
+        "Simpler model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention mechanisms help diffusion models capture long-range dependencies in data, improving the quality of generated samples by considering relationships between distant parts of the input.",
+      "optionExplanations": [
+        "Incorrect. Attention mechanisms often increase computational cost and may not necessarily lead to faster convergence.",
+        "Correct. Attention mechanisms enable the model to capture relationships between distant parts of the input, improving generation quality for complex data.",
+        "Incorrect. Attention mechanisms typically increase memory consumption due to the need to compute attention weights for all pairs of positions.",
+        "Incorrect. Attention mechanisms add complexity to the architecture rather than simplifying it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention",
+        "architecture",
+        "long-range-dependencies"
+      ]
+    },
+    {
+      "id": "DIF_016",
+      "question": "In diffusion models, what happens when the number of timesteps approaches infinity?",
+      "options": [
+        "The model becomes computationally intractable",
+        "The forward process approaches a continuous-time SDE",
+        "The reverse process becomes deterministic",
+        "The noise schedule becomes linear"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As the number of timesteps approaches infinity, the discrete diffusion process converges to a continuous-time stochastic differential equation (SDE), providing theoretical foundations for score-based models.",
+      "optionExplanations": [
+        "Incorrect. While more timesteps increase computation, the limit provides theoretical insights rather than intractability.",
+        "Correct. In the continuous limit, the discrete diffusion process becomes a stochastic differential equation, leading to score-based generative modeling frameworks.",
+        "Incorrect. The reverse process remains stochastic even in the continuous limit; it doesn't become deterministic.",
+        "Incorrect. The noise schedule form is independent of the number of timesteps; it can be linear, cosine, or other schedules."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "continuous-time",
+        "sde",
+        "mathematical-theory"
+      ]
+    },
+    {
+      "id": "DIF_017",
+      "question": "What is the purpose of skip connections in the U-Net architecture used in diffusion models?",
+      "options": [
+        "To reduce the number of parameters",
+        "To preserve fine-grained information during downsampling and upsampling",
+        "To prevent gradient vanishing",
+        "To increase training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Skip connections in U-Net help preserve fine-grained spatial information by directly connecting corresponding encoder and decoder layers, crucial for accurate noise prediction.",
+      "optionExplanations": [
+        "Incorrect. Skip connections actually add parameters and computational cost rather than reducing them.",
+        "Correct. Skip connections preserve detailed spatial information from the encoder to the decoder, essential for precise noise prediction and image quality.",
+        "Incorrect. While skip connections can help with gradient flow, in U-Net their primary purpose is information preservation, not gradient vanishing prevention.",
+        "Incorrect. Skip connections may actually slow down training due to additional computations, though they improve final performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "u-net",
+        "skip-connections",
+        "architecture"
+      ]
+    },
+    {
+      "id": "DIF_018",
+      "question": "What is the typical range of timesteps used in practical diffusion models?",
+      "options": [
+        "10-50 steps",
+        "100-1000 steps",
+        "5000-10000 steps",
+        "Over 50000 steps"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Most practical diffusion models use between 100-1000 timesteps, with DDPM originally using 1000 steps, balancing generation quality with computational efficiency.",
+      "optionExplanations": [
+        "Incorrect. 10-50 steps are too few for most diffusion models to work effectively, though some fast sampling methods aim for this range.",
+        "Correct. Typical diffusion models use 100-1000 timesteps, with DDPM using 1000 steps as a standard that balances quality and computational cost.",
+        "Incorrect. 5000-10000 steps would be computationally expensive and are not commonly used in practical implementations.",
+        "Incorrect. Over 50000 steps would be extremely computationally expensive and unnecessary for most applications."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "timesteps",
+        "practical-implementation",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "DIF_019",
+      "question": "What is the main challenge addressed by DDIM (Denoising Diffusion Implicit Models)?",
+      "options": [
+        "Improving sample quality",
+        "Reducing the number of sampling steps required",
+        "Training stability",
+        "Memory efficiency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DDIM's main contribution is enabling faster sampling by using a deterministic sampling process that requires significantly fewer steps than the original DDPM.",
+      "optionExplanations": [
+        "Incorrect. While DDIM can maintain good sample quality, its primary goal is not improving quality but reducing sampling time.",
+        "Correct. DDIM enables deterministic sampling that can produce high-quality results with much fewer steps (e.g., 50 steps instead of 1000).",
+        "Incorrect. DDIM doesn't primarily address training stability; it focuses on the sampling/inference process.",
+        "Incorrect. DDIM doesn't specifically target memory efficiency during training, but rather sampling efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ddim",
+        "fast-sampling",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "DIF_020",
+      "question": "In Stable Diffusion, what is the purpose of CLIP text encoder?",
+      "options": [
+        "To generate images from noise",
+        "To encode text prompts into embeddings for conditioning",
+        "To evaluate the quality of generated images",
+        "To compress images into latent space"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The CLIP text encoder converts text prompts into numerical embeddings that can be used to condition the diffusion process, enabling text-to-image generation.",
+      "optionExplanations": [
+        "Incorrect. Image generation from noise is handled by the U-Net and VAE decoder, not the CLIP text encoder.",
+        "Correct. CLIP text encoder transforms text prompts into embedding vectors that guide the diffusion process to generate images matching the text description.",
+        "Incorrect. CLIP can be used for evaluation, but in Stable Diffusion architecture, its primary role is text encoding for conditioning.",
+        "Incorrect. Image compression to latent space is done by the VAE encoder, not the CLIP text encoder."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stable-diffusion",
+        "clip",
+        "text-conditioning"
+      ]
+    },
+    {
+      "id": "DIF_021",
+      "question": "What is the key difference between score-based models and DDPM?",
+      "options": [
+        "Score-based models use different architectures",
+        "Score-based models predict the gradient of the data distribution",
+        "Score-based models require adversarial training",
+        "Score-based models work only with continuous data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Score-based models predict the score function (gradient of the log probability density) of the data distribution, while DDPM predicts the noise directly.",
+      "optionExplanations": [
+        "Incorrect. Score-based models and DDPM can use similar architectures (like U-Net); the difference is in what they predict.",
+        "Correct. Score-based models learn to predict the score function (∇_x log p(x)), which is the gradient of the log probability density with respect to the data.",
+        "Incorrect. Score-based models don't require adversarial training; they use score matching techniques, not adversarial losses.",
+        "Incorrect. Score-based models can work with discrete data, though they're often formulated in continuous settings."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "score-based",
+        "gradient",
+        "mathematical-theory"
+      ]
+    },
+    {
+      "id": "DIF_022",
+      "question": "What is the purpose of noise prediction parameterization in diffusion models?",
+      "options": [
+        "To generate random noise patterns",
+        "To make the training objective simpler and more stable",
+        "To reduce computational complexity",
+        "To improve image resolution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Noise prediction parameterization simplifies the training objective by having the model predict the noise that was added, making training more stable and effective.",
+      "optionExplanations": [
+        "Incorrect. The model doesn't generate random noise; it predicts the specific noise that was added to create the current noisy sample.",
+        "Correct. Noise prediction parameterization leads to a simpler MSE loss between predicted and actual noise, making training more stable than other parameterizations.",
+        "Incorrect. While noise prediction may have computational benefits, the primary purpose is training stability and simplicity.",
+        "Incorrect. Noise prediction parameterization doesn't directly improve resolution; it's about the training objective."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parameterization",
+        "training-stability",
+        "noise-prediction"
+      ]
+    },
+    {
+      "id": "DIF_023",
+      "question": "What is inpainting in the context of diffusion models?",
+      "options": [
+        "Adding artistic effects to images",
+        "Filling in missing or masked parts of an image",
+        "Converting images to different styles",
+        "Increasing image resolution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Inpainting refers to filling in missing, masked, or corrupted parts of an image while maintaining consistency with the surrounding regions.",
+      "optionExplanations": [
+        "Incorrect. Adding artistic effects would be more related to style transfer or artistic generation, not inpainting.",
+        "Correct. Inpainting involves filling in missing or masked regions of an image, often by conditioning the diffusion process on the known parts.",
+        "Incorrect. Style conversion is style transfer, not inpainting. Inpainting focuses on completing missing regions.",
+        "Incorrect. Increasing resolution is super-resolution, not inpainting. Inpainting deals with missing regions, not resolution."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "inpainting",
+        "image-editing",
+        "applications"
+      ]
+    },
+    {
+      "id": "DIF_024",
+      "question": "What is the role of the guidance scale in classifier-free guidance?",
+      "options": [
+        "It controls the amount of noise added",
+        "It balances between sample diversity and prompt adherence",
+        "It determines the number of sampling steps",
+        "It sets the learning rate during training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The guidance scale controls the trade-off between sample diversity (lower scale) and adherence to the conditioning prompt (higher scale) in classifier-free guidance.",
+      "optionExplanations": [
+        "Incorrect. The guidance scale doesn't control noise addition; it controls the balance between conditional and unconditional predictions.",
+        "Correct. Higher guidance scales make generated samples more closely follow the prompt but may reduce diversity, while lower scales increase diversity but may deviate from the prompt.",
+        "Incorrect. The guidance scale doesn't determine sampling steps; it's used at each step to modify the predicted noise.",
+        "Incorrect. Guidance scale is an inference parameter, not a training parameter like learning rate."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "classifier-free-guidance",
+        "guidance-scale",
+        "trade-offs"
+      ]
+    },
+    {
+      "id": "DIF_025",
+      "question": "What is the main advantage of latent diffusion models like Stable Diffusion over pixel-space diffusion?",
+      "options": [
+        "Better image quality",
+        "Significantly reduced computational requirements",
+        "Easier training process",
+        "Better text understanding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Latent diffusion models operate in a compressed latent space, dramatically reducing computational and memory requirements compared to operating directly on high-resolution pixel space.",
+      "optionExplanations": [
+        "Incorrect. While latent diffusion can achieve high quality, the main advantage is computational efficiency, not necessarily better quality.",
+        "Correct. Operating in latent space (e.g., 64x64) instead of pixel space (e.g., 512x512) reduces computational requirements by orders of magnitude.",
+        "Incorrect. Training latent diffusion models can be more complex due to the additional VAE component, not easier.",
+        "Incorrect. Text understanding comes from the text encoder (like CLIP), not from working in latent space."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "latent-diffusion",
+        "computational-efficiency",
+        "latent-space"
+      ]
+    },
+    {
+      "id": "DIF_026",
+      "question": "What is the purpose of timestep embedding in diffusion model architectures?",
+      "options": [
+        "To track training progress",
+        "To inform the model about the current noise level",
+        "To synchronize parallel processes",
+        "To measure inference time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Timestep embedding provides the neural network with information about which timestep (noise level) it's currently processing, allowing it to adapt its denoising strategy accordingly.",
+      "optionExplanations": [
+        "Incorrect. Timestep embedding is not for tracking training progress but for informing the model about the current diffusion timestep.",
+        "Correct. Timestep embedding tells the model what noise level it's dealing with, allowing it to apply appropriate denoising based on the current timestep.",
+        "Incorrect. Timestep embedding is not for synchronization but for providing temporal context to the neural network.",
+        "Incorrect. Timestep embedding refers to the diffusion process timestep, not wall-clock time measurement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "timestep-embedding",
+        "architecture",
+        "conditioning"
+      ]
+    },
+    {
+      "id": "DIF_027",
+      "question": "What is the relationship between diffusion models and VAEs (Variational Autoencoders)?",
+      "options": [
+        "They are completely different approaches",
+        "Both use variational inference principles",
+        "VAEs are always better than diffusion models",
+        "Diffusion models replaced VAEs entirely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Both diffusion models and VAEs use variational inference principles to optimize intractable likelihoods, though they apply these principles in different ways.",
+      "optionExplanations": [
+        "Incorrect. While different in implementation, both share variational inference foundations and can even be combined (as in Stable Diffusion).",
+        "Correct. Both use variational lower bounds to make intractable likelihood optimization tractable, though they structure the problem differently.",
+        "Incorrect. Neither approach is universally better; they have different strengths and can be used together effectively.",
+        "Incorrect. Diffusion models haven't replaced VAEs; they complement each other, as seen in latent diffusion models."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "variational-inference",
+        "vaes",
+        "mathematical-theory"
+      ]
+    },
+    {
+      "id": "DIF_028",
+      "question": "What is the purpose of exponential moving average (EMA) in diffusion model training?",
+      "options": [
+        "To speed up training convergence",
+        "To create smoother, more stable model parameters",
+        "To reduce memory usage",
+        "To implement momentum-based optimization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "EMA maintains a smoothed version of model parameters over training steps, leading to more stable and often better-performing models for inference.",
+      "optionExplanations": [
+        "Incorrect. EMA doesn't speed up convergence; it may actually slow it down slightly but improves stability.",
+        "Correct. EMA creates a smoothed version of model weights by averaging over recent training steps, reducing noise and improving stability.",
+        "Incorrect. EMA actually increases memory usage since it maintains additional copies of model parameters.",
+        "Incorrect. EMA is different from momentum-based optimizers like SGD with momentum; it operates on the model weights themselves."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ema",
+        "training-stability",
+        "parameter-smoothing"
+      ]
+    },
+    {
+      "id": "DIF_029",
+      "question": "What is the main limitation of early diffusion models compared to GANs?",
+      "options": [
+        "Lower image quality",
+        "Mode collapse issues",
+        "Much slower generation speed",
+        "Limited training data requirements"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Early diffusion models required hundreds or thousands of denoising steps for generation, making them much slower than GANs which generate in a single forward pass.",
+      "optionExplanations": [
+        "Incorrect. Early diffusion models could achieve high image quality, sometimes better than GANs, especially in terms of diversity.",
+        "Incorrect. Mode collapse is actually a problem with GANs, not diffusion models. Diffusion models typically have good mode coverage.",
+        "Correct. Early diffusion models required many sequential denoising steps (e.g., 1000 steps), making generation much slower than single-pass GANs.",
+        "Incorrect. Training data requirements are not the main limitation; both approaches can work with various dataset sizes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "limitations",
+        "generation-speed",
+        "gans-comparison"
+      ]
+    },
+    {
+      "id": "DIF_030",
+      "question": "What is progressive distillation in the context of diffusion models?",
+      "options": [
+        "A technique to improve training data quality",
+        "A method to reduce the number of sampling steps by training student models",
+        "A way to increase model size progressively",
+        "A regularization technique during training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Progressive distillation trains student models to mimic the behavior of teacher diffusion models but with fewer sampling steps, enabling faster generation.",
+      "optionExplanations": [
+        "Incorrect. Progressive distillation is about sampling efficiency, not improving training data quality.",
+        "Correct. Progressive distillation creates student models that can generate similar quality outputs with fewer denoising steps by learning from teacher models.",
+        "Incorrect. Progressive distillation is about reducing sampling steps, not progressively increasing model size.",
+        "Incorrect. While distillation can have regularizing effects, progressive distillation specifically targets sampling efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "progressive-distillation",
+        "fast-sampling",
+        "model-compression"
+      ]
+    },
+    {
+      "id": "DIF_031",
+      "question": "What is the typical architecture pattern used in diffusion model U-Nets?",
+      "options": [
+        "Encoder-decoder with skip connections",
+        "Fully connected layers only",
+        "Convolutional layers without pooling",
+        "Recurrent neural network structure"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Diffusion model U-Nets typically use an encoder-decoder architecture with skip connections to preserve spatial information across different resolution levels.",
+      "optionExplanations": [
+        "Correct. U-Net uses an encoder (downsampling) path, decoder (upsampling) path, and skip connections between corresponding encoder-decoder levels.",
+        "Incorrect. U-Net uses convolutional layers, not fully connected layers, to handle spatial image data effectively.",
+        "Incorrect. U-Net includes downsampling (like pooling) in the encoder and upsampling in the decoder to handle multiple scales.",
+        "Incorrect. U-Net is based on convolutional operations, not recurrent structures, for spatial processing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "u-net",
+        "architecture",
+        "encoder-decoder"
+      ]
+    },
+    {
+      "id": "DIF_032",
+      "question": "What is the purpose of cross-attention in text-conditioned diffusion models?",
+      "options": [
+        "To generate text captions",
+        "To allow image features to attend to text embeddings",
+        "To reduce computational complexity",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-attention allows image features at different spatial locations to attend to relevant parts of the text embedding, enabling fine-grained text-image alignment.",
+      "optionExplanations": [
+        "Incorrect. Cross-attention in diffusion models is for conditioning image generation on text, not generating text captions.",
+        "Correct. Cross-attention enables each spatial location in the image to attend to relevant parts of the text conditioning, allowing precise text-guided generation.",
+        "Incorrect. Cross-attention typically increases computational complexity rather than reducing it.",
+        "Incorrect. While cross-attention may have regularizing effects, its primary purpose is enabling text-image conditioning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-attention",
+        "text-conditioning",
+        "attention"
+      ]
+    },
+    {
+      "id": "DIF_033",
+      "question": "What is the significance of the reparameterization trick in diffusion models?",
+      "options": [
+        "It speeds up training",
+        "It allows gradients to flow through stochastic operations",
+        "It reduces model size",
+        "It improves image quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The reparameterization trick enables gradients to flow through stochastic sampling operations by expressing randomness through deterministic functions of input and independent noise.",
+      "optionExplanations": [
+        "Incorrect. The reparameterization trick doesn't directly speed up training; it enables gradient-based training of stochastic processes.",
+        "Correct. By expressing stochastic operations as deterministic functions of input plus noise, gradients can flow through the sampling process.",
+        "Incorrect. The reparameterization trick doesn't affect model size; it's about gradient flow through stochastic operations.",
+        "Incorrect. While enabling proper training may indirectly improve quality, the trick's purpose is gradient flow, not quality per se."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "reparameterization-trick",
+        "gradients",
+        "stochastic-processes"
+      ]
+    },
+    {
+      "id": "DIF_034",
+      "question": "What is the role of the VAE decoder in Stable Diffusion?",
+      "options": [
+        "To encode images into latent space",
+        "To convert latent representations back to pixel space",
+        "To generate text embeddings",
+        "To predict noise in latent space"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The VAE decoder converts the denoised latent representations produced by the diffusion process back into high-resolution pixel-space images.",
+      "optionExplanations": [
+        "Incorrect. The VAE encoder, not decoder, encodes images into latent space. The decoder does the reverse operation.",
+        "Correct. The VAE decoder transforms the denoised latent representations back into pixel-space images for final output.",
+        "Incorrect. Text embeddings are generated by text encoders like CLIP, not the VAE decoder.",
+        "Incorrect. Noise prediction in latent space is done by the U-Net, not the VAE decoder."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stable-diffusion",
+        "vae-decoder",
+        "latent-to-pixel"
+      ]
+    },
+    {
+      "id": "DIF_035",
+      "question": "What is ancestral sampling in diffusion models?",
+      "options": [
+        "Using historical data for training",
+        "Adding randomness during the reverse process",
+        "Sampling from parent distributions",
+        "Using genetic algorithms for optimization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ancestral sampling adds stochasticity during the reverse denoising process, following the original DDPM sampling procedure with random noise injection at each step.",
+      "optionExplanations": [
+        "Incorrect. Ancestral sampling is not about using historical training data but about the stochastic sampling process.",
+        "Correct. Ancestral sampling injects randomness at each reverse step, following the stochastic nature of the original DDPM sampling process.",
+        "Incorrect. 'Ancestral' here refers to the stochastic reverse process, not sampling from parent probability distributions.",
+        "Incorrect. Ancestral sampling has nothing to do with genetic algorithms; it's about stochastic denoising."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ancestral-sampling",
+        "stochastic",
+        "reverse-process"
+      ]
+    },
+    {
+      "id": "DIF_036",
+      "question": "What is the key insight behind score matching in score-based models?",
+      "options": [
+        "Matching the outputs of two neural networks",
+        "Learning the gradient of the data distribution without knowing the normalization constant",
+        "Comparing generated and real samples",
+        "Matching the loss values across different models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Score matching allows learning the gradient of the log probability density (the score function) without needing to compute the intractable normalization constant of the data distribution.",
+      "optionExplanations": [
+        "Incorrect. Score matching is not about matching neural network outputs but about learning probability gradients.",
+        "Correct. Score matching learns ∇log p(x) without requiring the normalization constant Z in p(x) = exp(f(x))/Z, making it tractable.",
+        "Incorrect. This describes discriminator-based approaches. Score matching focuses on learning probability gradients.",
+        "Incorrect. Score matching is not about matching loss values between models but about learning score functions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "score-matching",
+        "score-function",
+        "mathematical-theory"
+      ]
+    },
+    {
+      "id": "DIF_037",
+      "question": "What is the purpose of noise scheduling strategies like cosine scheduling?",
+      "options": [
+        "To make training faster",
+        "To provide better control over the noise addition rate",
+        "To reduce memory usage",
+        "To improve text conditioning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Advanced noise schedules like cosine scheduling provide better control over how noise is added across timesteps, often leading to improved generation quality and training stability.",
+      "optionExplanations": [
+        "Incorrect. Noise scheduling doesn't directly make training faster; it affects the quality and stability of the diffusion process.",
+        "Correct. Cosine and other advanced schedules provide more nuanced control over noise addition rates, often improving upon linear schedules.",
+        "Incorrect. Noise scheduling doesn't affect memory usage; it's about the temporal pattern of noise addition.",
+        "Incorrect. Noise scheduling is about the forward process, not text conditioning mechanisms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise-scheduling",
+        "cosine-schedule",
+        "training-dynamics"
+      ]
+    },
+    {
+      "id": "DIF_038",
+      "question": "What is the main difference between DDPM and DDIM sampling?",
+      "options": [
+        "DDIM uses a different neural network architecture",
+        "DDIM provides deterministic sampling while DDPM is stochastic",
+        "DDIM requires more timesteps than DDPM",
+        "DDIM works only with text conditioning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DDIM provides a deterministic sampling process that can generate consistent outputs and requires fewer steps, while DDPM uses stochastic ancestral sampling.",
+      "optionExplanations": [
+        "Incorrect. DDIM uses the same neural network trained with DDPM; the difference is in the sampling procedure.",
+        "Correct. DDIM offers deterministic sampling (same input always gives same output) and can use fewer steps, while DDPM is inherently stochastic.",
+        "Incorrect. DDIM actually enables using fewer timesteps than DDPM, not more.",
+        "Incorrect. DDIM is a general sampling method that works with or without conditioning, not specifically limited to text conditioning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ddim",
+        "deterministic-sampling",
+        "ddpm-comparison"
+      ]
+    },
+    {
+      "id": "DIF_039",
+      "question": "What is the purpose of self-attention layers in diffusion model architectures?",
+      "options": [
+        "To condition on external information",
+        "To capture spatial relationships within the feature maps",
+        "To reduce computational complexity",
+        "To generate multiple samples simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Self-attention layers allow different spatial locations within feature maps to interact and share information, improving the model's ability to capture spatial dependencies.",
+      "optionExplanations": [
+        "Incorrect. Self-attention operates within the feature maps, while conditioning on external information typically uses cross-attention.",
+        "Correct. Self-attention enables different spatial positions to attend to each other, capturing long-range spatial dependencies within the image.",
+        "Incorrect. Self-attention typically increases computational complexity due to the quadratic attention computation.",
+        "Incorrect. Self-attention doesn't enable multiple sample generation; it improves spatial relationship modeling within single samples."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "self-attention",
+        "spatial-relationships",
+        "architecture"
+      ]
+    },
+    {
+      "id": "DIF_040",
+      "question": "What is the main advantage of using learned variance in diffusion models?",
+      "options": [
+        "Faster training convergence",
+        "Better sample quality and reduced sampling steps",
+        "Lower memory requirements",
+        "Simpler model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning the variance (rather than using a fixed schedule) can improve sample quality and enable more efficient sampling with fewer steps.",
+      "optionExplanations": [
+        "Incorrect. Learning variance may not necessarily lead to faster training convergence and might add complexity.",
+        "Correct. Learned variance can adapt to the data and improve both sample quality and sampling efficiency compared to fixed variance schedules.",
+        "Incorrect. Learning variance typically adds parameters and computational overhead rather than reducing memory requirements.",
+        "Incorrect. Learning variance adds complexity to the model rather than simplifying the architecture."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "learned-variance",
+        "sample-quality",
+        "adaptive-scheduling"
+      ]
+    },
+    {
+      "id": "DIF_041",
+      "question": "What is the role of negative prompts in text-to-image diffusion models?",
+      "options": [
+        "To improve text encoding quality",
+        "To specify what should NOT appear in the generated image",
+        "To reduce generation time",
+        "To train the model on negative examples"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Negative prompts allow users to specify concepts or elements that should be avoided or suppressed in the generated image, providing better control over the output.",
+      "optionExplanations": [
+        "Incorrect. Negative prompts are not about improving text encoding but about controlling generation content.",
+        "Correct. Negative prompts guide the model away from generating specific concepts, allowing users to specify what they don't want in the image.",
+        "Incorrect. Negative prompts don't reduce generation time; they may even increase it slightly due to additional conditioning.",
+        "Incorrect. Negative prompts are used during inference for control, not during training with negative examples."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "negative-prompts",
+        "content-control",
+        "text-to-image"
+      ]
+    },
+    {
+      "id": "DIF_042",
+      "question": "What is the significance of the signal-to-noise ratio in diffusion models?",
+      "options": [
+        "It determines the image resolution",
+        "It controls the balance between data and noise at each timestep",
+        "It measures the model's training progress",
+        "It sets the learning rate for optimization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The signal-to-noise ratio at each timestep determines how much of the original data signal remains versus how much noise has been added, crucial for the diffusion process design.",
+      "optionExplanations": [
+        "Incorrect. Signal-to-noise ratio doesn't determine image resolution but the balance between clean signal and noise.",
+        "Correct. The signal-to-noise ratio characterizes how much original data signal remains at each timestep versus the amount of noise present.",
+        "Incorrect. While SNR can indicate training progress indirectly, it's primarily about the noise schedule design, not training measurement.",
+        "Incorrect. Signal-to-noise ratio is about the diffusion process design, not the optimization learning rate."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "signal-to-noise-ratio",
+        "noise-schedule",
+        "timestep-dynamics"
+      ]
+    },
+    {
+      "id": "DIF_043",
+      "question": "What is ControlNet in the context of diffusion models?",
+      "options": [
+        "A method to control training speed",
+        "A technique to add structural conditioning to diffusion models",
+        "A way to compress diffusion models",
+        "A regularization method during training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ControlNet is an architecture that adds structural conditioning (like edges, depth, pose) to pretrained diffusion models without modifying the original model weights.",
+      "optionExplanations": [
+        "Incorrect. ControlNet is not about controlling training speed but about adding conditional control to generation.",
+        "Correct. ControlNet enables conditioning diffusion models on structural information like edges, depth maps, or poses while preserving the original model.",
+        "Incorrect. ControlNet adds additional parameters and capabilities rather than compressing the model.",
+        "Incorrect. ControlNet is about adding control capabilities, not regularization during training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "controlnet",
+        "structural-conditioning",
+        "conditional-generation"
+      ]
+    },
+    {
+      "id": "DIF_044",
+      "question": "What is the purpose of frequency analysis in diffusion model research?",
+      "options": [
+        "To optimize the sampling frequency",
+        "To understand what frequency components the model learns at different timesteps",
+        "To set the training data refresh rate",
+        "To determine the optimal number of training epochs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Frequency analysis helps understand how diffusion models handle different frequency components of images, showing that coarse features are typically generated first, followed by fine details.",
+      "optionExplanations": [
+        "Incorrect. This is not about sampling frequency but about analyzing frequency components in the generated images.",
+        "Correct. Frequency analysis reveals that diffusion models typically generate low-frequency (coarse) features first and high-frequency (fine) details later.",
+        "Incorrect. Frequency analysis is about image frequency components, not training data management.",
+        "Incorrect. This analysis is about understanding generation dynamics, not determining training duration."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "frequency-analysis",
+        "generation-dynamics",
+        "coarse-to-fine"
+      ]
+    },
+    {
+      "id": "DIF_045",
+      "question": "What is the main challenge in training very high-resolution diffusion models?",
+      "options": [
+        "Lack of training data",
+        "Computational and memory constraints",
+        "Poor sample quality",
+        "Training instability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Training high-resolution diffusion models faces significant computational and memory challenges due to the quadratic scaling of attention mechanisms and the large feature map sizes.",
+      "optionExplanations": [
+        "Incorrect. High-resolution training data is available; the main issue is computational requirements, not data availability.",
+        "Correct. High-resolution images require enormous computational resources and memory, especially for attention operations that scale quadratically with resolution.",
+        "Incorrect. High-resolution diffusion models can achieve good quality; the challenge is the computational cost to get there.",
+        "Incorrect. While stability can be a concern, the primary challenge is the computational and memory requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high-resolution",
+        "computational-complexity",
+        "memory-constraints"
+      ]
+    },
+    {
+      "id": "DIF_046",
+      "question": "What is the purpose of progressive growing in diffusion model training?",
+      "options": [
+        "To gradually increase the dataset size",
+        "To train on progressively higher resolutions",
+        "To slowly increase the learning rate",
+        "To progressively add more timesteps"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Progressive growing involves training diffusion models on progressively higher resolutions, starting from low resolution and gradually increasing, to manage computational costs and improve stability.",
+      "optionExplanations": [
+        "Incorrect. Progressive growing is about resolution progression, not dataset size changes during training.",
+        "Correct. Progressive growing starts training at low resolution and gradually increases resolution, helping manage computational costs and training stability.",
+        "Incorrect. This is not about learning rate schedules but about resolution progression during training.",
+        "Incorrect. Progressive growing is about spatial resolution, not the number of diffusion timesteps."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "progressive-growing",
+        "resolution",
+        "training-strategy"
+      ]
+    },
+    {
+      "id": "DIF_047",
+      "question": "What is the main benefit of using pyramid noise schedules?",
+      "options": [
+        "Reduced training time",
+        "Better handling of multi-scale features",
+        "Lower memory usage",
+        "Improved text conditioning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pyramid noise schedules add noise at different scales/resolutions, allowing better modeling of multi-scale features from coarse structures to fine details.",
+      "optionExplanations": [
+        "Incorrect. Pyramid schedules may not reduce training time and might add complexity.",
+        "Correct. Pyramid noise schedules operate at multiple scales simultaneously, enabling better capture of both coarse and fine-grained features.",
+        "Incorrect. Multi-scale processing typically increases rather than decreases memory usage.",
+        "Incorrect. Pyramid schedules are about multi-scale noise, not specifically about text conditioning improvements."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pyramid-noise",
+        "multi-scale",
+        "noise-scheduling"
+      ]
+    },
+    {
+      "id": "DIF_048",
+      "question": "What is the purpose of CLIP guidance in diffusion models?",
+      "options": [
+        "To speed up the diffusion process",
+        "To guide generation towards text prompts using CLIP similarity",
+        "To reduce model size",
+        "To improve training stability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CLIP guidance uses the CLIP model to compute similarity between generated images and text prompts, steering the generation process towards better text-image alignment.",
+      "optionExplanations": [
+        "Incorrect. CLIP guidance typically slows down generation due to additional CLIP evaluations at each step.",
+        "Correct. CLIP guidance uses CLIP's text-image similarity to guide the diffusion process towards generating images that better match the text prompt.",
+        "Incorrect. CLIP guidance adds computational overhead rather than reducing model size.",
+        "Incorrect. CLIP guidance is used during inference for better control, not for training stability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "clip-guidance",
+        "text-image-alignment",
+        "guidance"
+      ]
+    },
+    {
+      "id": "DIF_049",
+      "question": "What is the role of batch normalization in diffusion model architectures?",
+      "options": [
+        "To prevent overfitting",
+        "To normalize activations and improve training stability",
+        "To reduce computational cost",
+        "To enable larger batch sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch normalization helps stabilize training by normalizing activations, though in diffusion models, group normalization or layer normalization are often preferred over batch normalization.",
+      "optionExplanations": [
+        "Incorrect. While normalization can have regularizing effects, its primary purpose in diffusion models is training stability, not overfitting prevention.",
+        "Correct. Normalization techniques help stabilize training by normalizing activations, though group norm is often preferred over batch norm in diffusion models.",
+        "Incorrect. Batch normalization doesn't reduce computational cost; it adds computational overhead for the normalization operations.",
+        "Incorrect. Batch normalization doesn't enable larger batch sizes; it processes whatever batch size is used."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "training-stability",
+        "architecture"
+      ]
+    },
+    {
+      "id": "DIF_050",
+      "question": "What is the main advantage of using group normalization over batch normalization in diffusion models?",
+      "options": [
+        "Better performance with small batch sizes",
+        "Faster computation",
+        "Lower memory usage",
+        "Better gradient flow"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Group normalization works independently of batch size, making it more stable and effective when training with small batch sizes, which is common in diffusion model training due to memory constraints.",
+      "optionExplanations": [
+        "Correct. Group normalization doesn't depend on batch statistics, making it more effective with small batch sizes common in high-resolution diffusion model training.",
+        "Incorrect. Group normalization isn't necessarily faster than batch normalization in terms of computation.",
+        "Incorrect. Group normalization doesn't provide significant memory savings compared to batch normalization.",
+        "Incorrect. Both normalization techniques can help with gradient flow, but this isn't the specific advantage of group norm over batch norm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "group-normalization",
+        "batch-independence",
+        "small-batches"
+      ]
+    },
+    {
+      "id": "DIF_051",
+      "question": "What is the purpose of using different loss weightings across timesteps in DDPM?",
+      "options": [
+        "To make training faster",
+        "To balance the contribution of different noise levels to learning",
+        "To prevent mode collapse",
+        "To improve sample diversity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different timesteps contribute unequally to learning, so reweighting the loss across timesteps helps balance the contribution of different noise levels and improve overall training effectiveness.",
+      "optionExplanations": [
+        "Incorrect. Loss reweighting is about training balance, not necessarily speed improvement.",
+        "Correct. Reweighting ensures that all timesteps contribute meaningfully to learning, preventing some timesteps from dominating the training signal.",
+        "Incorrect. Mode collapse is primarily a GAN issue, not typically addressed by timestep reweighting in diffusion models.",
+        "Incorrect. While reweighting may affect diversity, its primary purpose is balancing learning across different noise levels."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "loss-weighting",
+        "timestep-balancing",
+        "training-dynamics"
+      ]
+    },
+    {
+      "id": "DIF_052",
+      "question": "What is the significance of the evidence lower bound (ELBO) in diffusion models?",
+      "options": [
+        "It provides the training objective",
+        "It measures sample quality",
+        "It determines the number of timesteps",
+        "It sets the noise schedule"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The evidence lower bound provides a tractable training objective for diffusion models by lower-bounding the intractable data likelihood.",
+      "optionExplanations": [
+        "Correct. ELBO provides a tractable objective function that can be optimized to train the diffusion model, serving as a lower bound on the data likelihood.",
+        "Incorrect. ELBO is a training objective, not a sample quality metric. Quality is typically measured by other metrics like FID or IS.",
+        "Incorrect. The number of timesteps is a design choice, not determined by the ELBO.",
+        "Incorrect. The noise schedule is typically predefined or learned separately, not set by the ELBO."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "elbo",
+        "training-objective",
+        "variational-bound"
+      ]
+    },
+    {
+      "id": "DIF_053",
+      "question": "What is the purpose of using residual connections in diffusion model architectures?",
+      "options": [
+        "To reduce the number of parameters",
+        "To enable deeper networks and improve gradient flow",
+        "To speed up inference",
+        "To add stochasticity to the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Residual connections allow training deeper networks by providing direct paths for gradients, helping mitigate vanishing gradient problems and enabling better optimization.",
+      "optionExplanations": [
+        "Incorrect. Residual connections add computational paths rather than reducing parameters.",
+        "Correct. Residual connections enable training of deeper networks by providing gradient highways, preventing vanishing gradients and improving optimization.",
+        "Incorrect. Residual connections may slightly increase inference time due to additional computations.",
+        "Incorrect. Residual connections are deterministic architectural elements, not sources of stochasticity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual-connections",
+        "gradient-flow",
+        "deep-networks"
+      ]
+    },
+    {
+      "id": "DIF_054",
+      "question": "What is the main difference between conditional and unconditional diffusion models?",
+      "options": [
+        "Conditional models are faster to train",
+        "Conditional models can be guided by additional information during generation",
+        "Conditional models use different architectures",
+        "Conditional models require more timesteps"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Conditional diffusion models can be guided by additional information (like text, class labels, or other conditions) during generation, while unconditional models generate samples without such guidance.",
+      "optionExplanations": [
+        "Incorrect. Training speed depends on various factors, not just whether the model is conditional or unconditional.",
+        "Correct. Conditional models incorporate additional information (text, labels, etc.) to guide the generation process toward specific outputs.",
+        "Incorrect. Both can use similar architectures (like U-Net), though conditional models need mechanisms to incorporate the conditioning information.",
+        "Incorrect. The number of timesteps is independent of whether the model is conditional or unconditional."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "conditional",
+        "unconditional",
+        "guidance"
+      ]
+    },
+    {
+      "id": "DIF_055",
+      "question": "What is the purpose of using different sampling schedulers (like DDIM, DPM-Solver) in diffusion models?",
+      "options": [
+        "To change the model architecture",
+        "To optimize the sampling process for speed or quality",
+        "To modify the training procedure",
+        "To alter the noise schedule during training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different sampling schedulers optimize the inference process by enabling faster sampling, better quality, or different trade-offs between speed and quality without changing the trained model.",
+      "optionExplanations": [
+        "Incorrect. Sampling schedulers work with the same trained model architecture; they don't change the architecture itself.",
+        "Correct. Different samplers like DDIM, DPM-Solver, and others optimize the sampling trajectory for various trade-offs between speed and quality.",
+        "Incorrect. Sampling schedulers are used during inference, not training. They don't modify the training procedure.",
+        "Incorrect. Sampling schedulers work during inference; they don't alter the noise schedule used during training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sampling-schedulers",
+        "inference-optimization",
+        "speed-quality-tradeoff"
+      ]
+    },
+    {
+      "id": "DIF_056",
+      "question": "What is the role of the forward process variance schedule (βt) in DDPM?",
+      "options": [
+        "It controls the learning rate",
+        "It determines how much noise is added at each timestep",
+        "It sets the number of training epochs",
+        "It controls the model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The variance schedule βt determines how much Gaussian noise is added at each timestep during the forward process, controlling the rate of noise corruption.",
+      "optionExplanations": [
+        "Incorrect. βt is about noise addition in the forward process, not about the optimization learning rate.",
+        "Correct. βt defines the variance of Gaussian noise added at each timestep, controlling how quickly the data is corrupted in the forward process.",
+        "Incorrect. βt is a hyperparameter of the diffusion process, not related to training duration.",
+        "Incorrect. βt is about the noise schedule, not the neural network architecture design."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "variance-schedule",
+        "beta-t",
+        "forward-process"
+      ]
+    },
+    {
+      "id": "DIF_057",
+      "question": "What is the purpose of using mixed precision training in diffusion models?",
+      "options": [
+        "To improve sample quality",
+        "To reduce memory usage and speed up training",
+        "To enable larger batch sizes only",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mixed precision training uses both 16-bit and 32-bit floating point representations to reduce memory usage and accelerate training while maintaining numerical stability.",
+      "optionExplanations": [
+        "Incorrect. Mixed precision is primarily for computational efficiency, not directly for improving sample quality.",
+        "Correct. Mixed precision uses FP16 for most operations to save memory and speed up training, while using FP32 for operations requiring higher precision.",
+        "Incorrect. While reduced memory usage can enable larger batches, the primary benefits are memory efficiency and speed, not just batch size.",
+        "Incorrect. Mixed precision is about computational efficiency, not regularization or overfitting prevention."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mixed-precision",
+        "memory-efficiency",
+        "training-optimization"
+      ]
+    },
+    {
+      "id": "DIF_058",
+      "question": "What is the main challenge in generating coherent long sequences with diffusion models?",
+      "options": [
+        "Lack of appropriate architectures",
+        "Maintaining consistency across the entire sequence",
+        "Training time complexity",
+        "Memory limitations only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Generating long coherent sequences requires maintaining consistency and dependencies across the entire sequence, which becomes increasingly challenging as sequence length grows.",
+      "optionExplanations": [
+        "Incorrect. Architectures exist for sequence generation; the challenge is maintaining coherence, not architecture availability.",
+        "Correct. Long sequences require maintaining consistency and logical dependencies across many elements, which is challenging for diffusion models.",
+        "Incorrect. While training time is a concern, the main challenge is coherence and consistency in the generated sequences.",
+        "Incorrect. Memory is a practical constraint, but the fundamental challenge is maintaining sequence coherence and dependencies."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "long-sequences",
+        "coherence",
+        "sequence-generation"
+      ]
+    },
+    {
+      "id": "DIF_059",
+      "question": "What is the significance of the score function in score-based generative models?",
+      "options": [
+        "It measures model performance",
+        "It represents the gradient of the log probability density",
+        "It controls the learning rate",
+        "It determines the sampling speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The score function represents the gradient of the log probability density with respect to the data, providing the direction of steepest increase in probability density.",
+      "optionExplanations": [
+        "Incorrect. The score function is not a performance metric but a mathematical concept representing probability gradients.",
+        "Correct. The score function ∇_x log p(x) gives the gradient direction that increases the probability density most rapidly.",
+        "Incorrect. The score function is about probability gradients, not optimization learning rates.",
+        "Incorrect. While the score function affects generation, it's not primarily about sampling speed but about probability gradients."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "score-function",
+        "probability-gradient",
+        "score-based"
+      ]
+    },
+    {
+      "id": "DIF_060",
+      "question": "What is the purpose of using gradient clipping in diffusion model training?",
+      "options": [
+        "To prevent exploding gradients and stabilize training",
+        "To speed up convergence",
+        "To reduce memory usage",
+        "To improve sample quality directly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gradient clipping prevents gradients from becoming too large during training, which can destabilize the optimization process and lead to training failures.",
+      "optionExplanations": [
+        "Correct. Gradient clipping caps the magnitude of gradients to prevent exploding gradients, which can cause training instability or divergence.",
+        "Incorrect. Gradient clipping is primarily for stability, not necessarily for faster convergence.",
+        "Incorrect. Gradient clipping doesn't reduce memory usage; it's about controlling gradient magnitudes during backpropagation.",
+        "Incorrect. Gradient clipping indirectly affects quality by enabling stable training, but it's not a direct quality improvement technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "training-stability",
+        "exploding-gradients"
+      ]
+    },
+    {
+      "id": "DIF_061",
+      "question": "What is the role of the KL divergence term in the diffusion model loss function?",
+      "options": [
+        "To encourage diversity in generated samples",
+        "To measure the difference between approximate and true posterior distributions",
+        "To prevent mode collapse",
+        "To control the generation speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The KL divergence term measures the difference between the model's approximate posterior and the true posterior distributions, encouraging the model to match the true diffusion process.",
+      "optionExplanations": [
+        "Incorrect. While KL divergence may indirectly affect diversity, its primary role is measuring distributional differences, not encouraging diversity per se.",
+        "Correct. KL divergence quantifies how well the model's learned reverse process approximates the true posterior distribution of the forward process.",
+        "Incorrect. Mode collapse is primarily a GAN issue, and KL divergence in diffusion models serves a different purpose.",
+        "Incorrect. KL divergence is about distributional matching, not generation speed control."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "kl-divergence",
+        "posterior-distribution",
+        "loss-function"
+      ]
+    },
+    {
+      "id": "DIF_062",
+      "question": "What is the main advantage of using transformer architectures in diffusion models?",
+      "options": [
+        "Lower computational cost",
+        "Better handling of long-range dependencies and scalability",
+        "Faster training convergence",
+        "Reduced memory requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transformer architectures excel at capturing long-range dependencies through self-attention mechanisms and scale well with increased model size and data.",
+      "optionExplanations": [
+        "Incorrect. Transformers typically have higher computational costs due to attention mechanisms, especially at high resolutions.",
+        "Correct. Transformers excel at modeling long-range dependencies through self-attention and have shown excellent scaling properties.",
+        "Incorrect. Transformers don't necessarily converge faster; their advantage is in modeling capabilities and scalability.",
+        "Incorrect. Transformers often require more memory due to attention computations, especially for long sequences or high-resolution images."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transformers",
+        "long-range-dependencies",
+        "scalability"
+      ]
+    },
+    {
+      "id": "DIF_063",
+      "question": "What is the purpose of using different noise prediction parameterizations (ε-prediction vs. v-prediction)?",
+      "options": [
+        "To change the model architecture",
+        "To optimize training dynamics and sample quality",
+        "To reduce computational cost",
+        "To enable different conditioning types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different parameterizations like ε-prediction (predicting noise) and v-prediction (predicting velocity) can lead to different training dynamics and potentially better sample quality or training stability.",
+      "optionExplanations": [
+        "Incorrect. Parameterization is about what the model predicts, not the architecture itself.",
+        "Correct. Different parameterizations can lead to different training dynamics, convergence properties, and final sample quality.",
+        "Incorrect. The computational cost is similar regardless of parameterization; the difference is in training dynamics.",
+        "Incorrect. Parameterization is about the training target, not the conditioning mechanism."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "parameterization",
+        "epsilon-prediction",
+        "v-prediction"
+      ]
+    },
+    {
+      "id": "DIF_064",
+      "question": "What is the main benefit of using cascaded diffusion models?",
+      "options": [
+        "Faster single-image generation",
+        "Generating high-resolution images through multiple stages",
+        "Reduced training time",
+        "Better text conditioning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cascaded diffusion models generate high-resolution images by first creating low-resolution images and then using additional models to progressively increase resolution.",
+      "optionExplanations": [
+        "Incorrect. Cascaded models typically require multiple stages, making them slower, not faster, than single-stage generation.",
+        "Correct. Cascaded models break down high-resolution generation into multiple stages, typically starting low-resolution and progressively upsampling.",
+        "Incorrect. Cascaded models require training multiple models, potentially increasing total training time.",
+        "Incorrect. Cascading is about multi-stage resolution, not specifically about improving text conditioning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cascaded-diffusion",
+        "super-resolution",
+        "multi-stage"
+      ]
+    },
+    {
+      "id": "DIF_065",
+      "question": "What is the purpose of using different attention patterns (sparse attention, local attention) in diffusion models?",
+      "options": [
+        "To improve sample quality",
+        "To reduce computational complexity while maintaining performance",
+        "To enable larger model sizes",
+        "To speed up training convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alternative attention patterns aim to reduce the quadratic computational complexity of full attention while maintaining the ability to capture important dependencies.",
+      "optionExplanations": [
+        "Incorrect. While efficient attention may enable better models due to computational savings, the primary goal is efficiency, not quality per se.",
+        "Correct. Sparse and local attention patterns reduce the O(n²) complexity of full attention while trying to preserve the most important attention connections.",
+        "Incorrect. While computational savings could enable larger models, the primary purpose is efficiency, not size scaling.",
+        "Incorrect. The main goal is computational efficiency during both training and inference, not necessarily faster convergence."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "efficient-attention",
+        "sparse-attention",
+        "computational-complexity"
+      ]
+    },
+    {
+      "id": "DIF_066",
+      "question": "What is the significance of the reconstruction guidance technique?",
+      "options": [
+        "It improves training stability",
+        "It helps maintain consistency with input conditioning during generation",
+        "It reduces sampling time",
+        "It prevents overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reconstruction guidance helps ensure that generated samples remain consistent with input conditioning (like partial images in inpainting) throughout the sampling process.",
+      "optionExplanations": [
+        "Incorrect. Reconstruction guidance is used during inference, not training, so it doesn't directly affect training stability.",
+        "Correct. Reconstruction guidance maintains consistency between the generated sample and known conditioning information during the sampling process.",
+        "Incorrect. Reconstruction guidance typically adds computational overhead rather than reducing sampling time.",
+        "Incorrect. Reconstruction guidance is an inference technique, not a training regularization method."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reconstruction-guidance",
+        "consistency",
+        "conditioning"
+      ]
+    },
+    {
+      "id": "DIF_067",
+      "question": "What is the main challenge in training diffusion models on limited computational resources?",
+      "options": [
+        "Poor sample quality",
+        "Memory constraints and long training times",
+        "Model convergence issues",
+        "Limited architecture choices"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diffusion models require substantial memory for high-resolution training and long training times due to the need to train across many timesteps with large datasets.",
+      "optionExplanations": [
+        "Incorrect. Sample quality can still be good with limited resources, though perhaps not optimal. The main issue is computational feasibility.",
+        "Correct. Diffusion models require significant memory (especially for high-resolution images) and long training times across many timesteps.",
+        "Incorrect. Convergence is generally reliable for diffusion models; the main issue is computational resource requirements.",
+        "Incorrect. Architecture choices exist for different resource levels; the challenge is computational requirements, not limited options."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-constraints",
+        "memory-limitations",
+        "training-efficiency"
+      ]
+    },
+    {
+      "id": "DIF_068",
+      "question": "What is the purpose of using perceptual losses in diffusion model training?",
+      "options": [
+        "To speed up training convergence",
+        "To improve perceptual quality by incorporating high-level feature similarity",
+        "To reduce overfitting",
+        "To enable larger batch sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Perceptual losses use pretrained networks (like VGG) to compare high-level features, leading to better perceptual quality than pixel-level losses alone.",
+      "optionExplanations": [
+        "Incorrect. Perceptual losses may not necessarily speed up convergence and can add computational overhead.",
+        "Correct. Perceptual losses compare feature representations from pretrained networks, leading to results that better match human perceptual similarity.",
+        "Incorrect. While perceptual losses can have regularizing effects, their primary purpose is improving perceptual quality, not preventing overfitting.",
+        "Incorrect. Perceptual losses are about loss function design, not batch size enablement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "perceptual-loss",
+        "feature-similarity",
+        "quality-improvement"
+      ]
+    },
+    {
+      "id": "DIF_069",
+      "question": "What is the main difference between autoregressive models and diffusion models for generation?",
+      "options": [
+        "Autoregressive models are always better",
+        "Autoregressive models generate sequentially, diffusion models generate iteratively through denoising",
+        "Autoregressive models require more memory",
+        "Diffusion models are faster to train"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Autoregressive models generate data sequentially (one token/pixel at a time), while diffusion models generate through iterative denoising of the entire data simultaneously.",
+      "optionExplanations": [
+        "Incorrect. Neither approach is universally better; they have different strengths and weaknesses for different tasks.",
+        "Correct. Autoregressive models predict one element at a time in sequence, while diffusion models refine the entire output through iterative denoising.",
+        "Incorrect. Memory requirements depend on specific implementation details, not inherently on the generation paradigm.",
+        "Incorrect. Training speed depends on many factors; neither approach is universally faster to train."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "autoregressive",
+        "generation-paradigm",
+        "sequential-vs-iterative"
+      ]
+    },
+    {
+      "id": "DIF_070",
+      "question": "What is the purpose of using spectral normalization in diffusion model discriminators?",
+      "options": [
+        "To prevent mode collapse",
+        "To control the Lipschitz constant and stabilize training",
+        "To reduce computational cost",
+        "To improve sample diversity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Spectral normalization controls the Lipschitz constant of neural networks, providing training stability, though it's more commonly used in GANs than pure diffusion models.",
+      "optionExplanations": [
+        "Incorrect. While spectral normalization can help with stability, mode collapse is primarily a GAN issue, and pure diffusion models don't typically use discriminators.",
+        "Correct. Spectral normalization bounds the spectral norm of weight matrices, controlling the Lipschitz constant and providing training stability.",
+        "Incorrect. Spectral normalization adds computational overhead for computing spectral norms rather than reducing cost.",
+        "Incorrect. Spectral normalization is primarily for training stability, not directly for improving sample diversity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "spectral-normalization",
+        "lipschitz-constant",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "DIF_071",
+      "question": "What is the role of the diffusion coefficient in continuous-time diffusion models?",
+      "options": [
+        "It controls the generation speed",
+        "It determines the rate of noise addition in the forward SDE",
+        "It sets the learning rate for training",
+        "It controls the model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In continuous-time formulations, the diffusion coefficient controls how quickly noise is added in the forward stochastic differential equation (SDE).",
+      "optionExplanations": [
+        "Incorrect. The diffusion coefficient affects the forward process dynamics, not the inference generation speed.",
+        "Correct. The diffusion coefficient in the forward SDE dx = f(x,t)dt + g(t)dW controls the noise addition rate through the g(t) term.",
+        "Incorrect. The diffusion coefficient is about the SDE dynamics, not the optimization learning rate.",
+        "Incorrect. The diffusion coefficient is a mathematical parameter of the SDE, not an architectural design choice."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "continuous-time",
+        "diffusion-coefficient",
+        "sde"
+      ]
+    },
+    {
+      "id": "DIF_072",
+      "question": "What is the main advantage of using flow matching over traditional diffusion models?",
+      "options": [
+        "Better sample quality",
+        "Straighter generation paths and potentially faster sampling",
+        "Lower training cost",
+        "Better text conditioning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Flow matching learns straighter paths between noise and data, potentially enabling more efficient sampling compared to the curved paths of traditional diffusion models.",
+      "optionExplanations": [
+        "Incorrect. While flow matching can achieve good quality, the main advantage is efficiency, not necessarily better quality.",
+        "Correct. Flow matching learns more direct paths from noise to data, potentially requiring fewer steps for high-quality generation.",
+        "Incorrect. Training costs are similar, and the main advantage is in sampling efficiency, not training efficiency.",
+        "Incorrect. Flow matching is about the generation path, not specifically about text conditioning capabilities."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "flow-matching",
+        "straight-paths",
+        "sampling-efficiency"
+      ]
+    },
+    {
+      "id": "DIF_073",
+      "question": "What is the purpose of using multi-scale training in diffusion models?",
+      "options": [
+        "To reduce training time",
+        "To handle images of different resolutions and improve feature learning",
+        "To prevent overfitting",
+        "To enable larger batch sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-scale training exposes the model to different resolution levels, helping it learn features at various scales and handle diverse input sizes effectively.",
+      "optionExplanations": [
+        "Incorrect. Multi-scale training typically increases training complexity rather than reducing time.",
+        "Correct. Multi-scale training helps the model learn representations at different scales, improving its ability to handle various resolutions and feature scales.",
+        "Incorrect. While multi-scale training can have regularizing effects, its primary purpose is scale-aware feature learning, not overfitting prevention.",
+        "Incorrect. Multi-scale training is about resolution diversity, not batch size enablement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-scale",
+        "resolution-diversity",
+        "feature-learning"
+      ]
+    },
+    {
+      "id": "DIF_074",
+      "question": "What is the significance of the drift term in the reverse SDE of continuous diffusion models?",
+      "options": [
+        "It controls the noise level",
+        "It represents the deterministic component that guides the reverse process",
+        "It determines the sampling speed",
+        "It prevents numerical instabilities"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The drift term in the reverse SDE provides the deterministic guidance that steers the process from noise back to data, typically involving the score function.",
+      "optionExplanations": [
+        "Incorrect. Noise level is controlled by the diffusion coefficient, not the drift term.",
+        "Correct. The drift term provides the deterministic force that guides the reverse process, often incorporating the learned score function.",
+        "Incorrect. Sampling speed depends on the discretization scheme, not specifically the drift term.",
+        "Incorrect. While the drift term affects stability, its primary role is providing directional guidance in the reverse process."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "drift-term",
+        "reverse-sde",
+        "deterministic-guidance"
+      ]
+    },
+    {
+      "id": "DIF_075",
+      "question": "What is the main benefit of using consistency models in diffusion-based generation?",
+      "options": [
+        "Better image quality",
+        "Single-step generation while maintaining diffusion model quality",
+        "Easier training process",
+        "Better text understanding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Consistency models aim to achieve single-step generation (like GANs) while maintaining the quality and training stability advantages of diffusion models.",
+      "optionExplanations": [
+        "Incorrect. While consistency models can achieve good quality, the main benefit is single-step generation, not necessarily better quality.",
+        "Correct. Consistency models are designed to generate high-quality samples in a single step while preserving the benefits of diffusion model training.",
+        "Incorrect. Consistency model training can be complex, involving consistency distillation or consistency training procedures.",
+        "Incorrect. Text understanding depends on the conditioning mechanism, not specifically on the consistency model approach."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "consistency-models",
+        "single-step",
+        "generation-efficiency"
+      ]
+    },
+    {
+      "id": "DIF_076",
+      "question": "What is the role of temperature scaling in diffusion model sampling?",
+      "options": [
+        "To control the physical temperature of GPUs",
+        "To adjust the randomness and diversity of generated samples",
+        "To speed up the sampling process",
+        "To improve numerical stability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature scaling adjusts the amount of randomness in the sampling process, allowing control over the diversity-quality trade-off in generated samples.",
+      "optionExplanations": [
+        "Incorrect. Temperature scaling is a mathematical concept in sampling, not related to physical hardware temperature.",
+        "Correct. Temperature scaling controls the variance of the sampling distribution, affecting the diversity and randomness of generated samples.",
+        "Incorrect. Temperature scaling affects sample characteristics, not the speed of the sampling process.",
+        "Incorrect. While temperature can affect numerical behavior, its primary purpose is controlling sample diversity, not numerical stability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature-scaling",
+        "diversity-control",
+        "sampling-variance"
+      ]
+    },
+    {
+      "id": "DIF_077",
+      "question": "What is the main challenge in applying diffusion models to discrete data?",
+      "options": [
+        "Lack of appropriate architectures",
+        "Defining continuous noise processes for discrete spaces",
+        "Training instability",
+        "Poor sample quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diffusion models are naturally designed for continuous data, so applying them to discrete data (like text) requires careful design of noise processes that work in discrete spaces.",
+      "optionExplanations": [
+        "Incorrect. Architectures can be adapted for discrete data; the fundamental challenge is the noise process design.",
+        "Correct. Traditional diffusion uses continuous Gaussian noise, which doesn't directly apply to discrete data like tokens or categories.",
+        "Incorrect. Training stability is not the primary issue; the challenge is more fundamental about the noise process design.",
+        "Incorrect. Good quality can be achieved once the discrete noise process is properly designed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "discrete-data",
+        "noise-process",
+        "continuous-vs-discrete"
+      ]
+    },
+    {
+      "id": "DIF_078",
+      "question": "What is the purpose of using adaptive sampling methods in diffusion models?",
+      "options": [
+        "To reduce memory usage",
+        "To automatically adjust the sampling schedule based on local error estimates",
+        "To enable parallel generation",
+        "To improve text conditioning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adaptive sampling methods automatically adjust step sizes and schedules based on local error estimates, optimizing the trade-off between quality and computational cost.",
+      "optionExplanations": [
+        "Incorrect. Adaptive sampling focuses on step size optimization, not memory usage reduction.",
+        "Correct. Adaptive methods use error estimates to determine optimal step sizes, taking larger steps where possible and smaller steps where needed.",
+        "Incorrect. Adaptive sampling is about step size optimization, not parallelization strategies.",
+        "Incorrect. Adaptive sampling is about the sampling trajectory, not the conditioning mechanism."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adaptive-sampling",
+        "error-estimation",
+        "step-size-optimization"
+      ]
+    },
+    {
+      "id": "DIF_079",
+      "question": "What is the significance of the Ornstein-Uhlenbeck process in diffusion models?",
+      "options": [
+        "It provides a specific type of noise schedule",
+        "It offers a mean-reverting continuous-time process for the forward diffusion",
+        "It speeds up training convergence",
+        "It improves sample quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Ornstein-Uhlenbeck process is a mean-reverting stochastic process that can be used as the forward process in continuous-time diffusion models.",
+      "optionExplanations": [
+        "Incorrect. While related to noise, the OU process is a specific continuous-time stochastic process, not just a noise schedule.",
+        "Correct. The Ornstein-Uhlenbeck process provides a mean-reverting continuous-time forward process that naturally tends toward a stationary distribution.",
+        "Incorrect. The OU process is about the mathematical formulation, not specifically about training speed.",
+        "Incorrect. The OU process is a mathematical framework; sample quality depends on the overall model design and training."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ornstein-uhlenbeck",
+        "mean-reverting",
+        "continuous-time"
+      ]
+    },
+    {
+      "id": "DIF_080",
+      "question": "What is the main advantage of using neural ODEs in the context of diffusion models?",
+      "options": [
+        "Faster training",
+        "Continuous-time formulation allowing adaptive step sizes and memory-efficient backpropagation",
+        "Better image quality",
+        "Simpler architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Neural ODEs provide a continuous-time formulation that allows adaptive step sizes during both forward and backward passes, with memory-efficient adjoint method backpropagation.",
+      "optionExplanations": [
+        "Incorrect. Neural ODEs may not necessarily be faster to train and can sometimes be slower due to ODE solving overhead.",
+        "Correct. Neural ODEs enable continuous-time modeling with adaptive step sizes and memory-efficient backpropagation through the adjoint method.",
+        "Incorrect. Image quality depends on the overall model design, not specifically on using Neural ODEs.",
+        "Incorrect. Neural ODEs can add complexity due to the need for ODE solvers, not simplify the architecture."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "neural-odes",
+        "continuous-time",
+        "adjoint-method"
+      ]
+    },
+    {
+      "id": "DIF_081",
+      "question": "What is the purpose of using importance sampling in diffusion model training?",
+      "options": [
+        "To speed up data loading",
+        "To focus training on more important timesteps or samples",
+        "To reduce model size",
+        "To improve text encoding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Importance sampling allows focusing computational resources on timesteps or samples that contribute more to the training objective, improving training efficiency.",
+      "optionExplanations": [
+        "Incorrect. Importance sampling is about sample weighting during training, not data loading speed.",
+        "Correct. Importance sampling weights training samples based on their contribution to the loss, focusing effort on more informative examples.",
+        "Incorrect. Importance sampling is a training technique, not a model compression method.",
+        "Incorrect. Importance sampling is about training sample selection, not text encoding improvements."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "importance-sampling",
+        "training-efficiency",
+        "sample-weighting"
+      ]
+    },
+    {
+      "id": "DIF_082",
+      "question": "What is the main benefit of using diffusion models for inversion tasks?",
+      "options": [
+        "Faster computation",
+        "High-quality reconstruction while maintaining editability",
+        "Lower memory requirements",
+        "Better text understanding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diffusion models excel at inversion tasks because they can reconstruct images accurately while maintaining the ability to edit and manipulate the reconstructed representations.",
+      "optionExplanations": [
+        "Incorrect. Diffusion inversion typically requires multiple optimization steps, making it slower than single-forward-pass methods.",
+        "Correct. Diffusion inversion provides high-quality reconstruction while keeping the inverted representation in a space that supports further editing and manipulation.",
+        "Incorrect. Diffusion inversion often requires substantial memory for the optimization process.",
+        "Incorrect. Text understanding is about conditioning mechanisms, not specifically about inversion capabilities."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "inversion",
+        "reconstruction",
+        "editability"
+      ]
+    },
+    {
+      "id": "DIF_083",
+      "question": "What is the role of the Jacobian in score-based diffusion models?",
+      "options": [
+        "To control the learning rate",
+        "To compute the divergence of the score function for likelihood estimation",
+        "To determine the model architecture",
+        "To set the noise schedule"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Jacobian of the score function is needed to compute the divergence term when estimating likelihoods using the change of variables formula in continuous normalizing flows.",
+      "optionExplanations": [
+        "Incorrect. The Jacobian is used in likelihood computations, not for controlling the optimization learning rate.",
+        "Correct. The divergence of the score function (trace of the Jacobian) is required for exact likelihood computation in score-based models.",
+        "Incorrect. The Jacobian is a mathematical quantity used in computations, not an architectural design choice.",
+        "Incorrect. The Jacobian is computed from the learned score function, not used to set the noise schedule."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "jacobian",
+        "divergence",
+        "likelihood-estimation"
+      ]
+    },
+    {
+      "id": "DIF_084",
+      "question": "What is the main challenge in scaling diffusion models to very high resolutions?",
+      "options": [
+        "Poor sample quality",
+        "Quadratic scaling of attention mechanisms with resolution",
+        "Training data availability",
+        "Model architecture limitations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention mechanisms scale quadratically with the number of pixels, making very high-resolution diffusion models computationally prohibitive without architectural innovations.",
+      "optionExplanations": [
+        "Incorrect. High-resolution diffusion models can achieve excellent quality; the challenge is computational feasibility.",
+        "Correct. Self-attention scales as O(n²) where n is the number of pixels, making high-resolution training and inference extremely expensive.",
+        "Incorrect. High-resolution training data is available; the bottleneck is computational resources, not data.",
+        "Incorrect. Architectures exist for high-resolution generation; the challenge is making them computationally tractable."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high-resolution",
+        "attention-scaling",
+        "computational-complexity"
+      ]
+    },
+    {
+      "id": "DIF_085",
+      "question": "What is the purpose of using auxiliary losses in diffusion model training?",
+      "options": [
+        "To speed up convergence",
+        "To provide additional learning signals and improve specific aspects of generation",
+        "To reduce overfitting",
+        "To enable larger batch sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Auxiliary losses provide additional learning signals beyond the main diffusion loss, helping improve specific aspects like perceptual quality, structure preservation, or conditioning adherence.",
+      "optionExplanations": [
+        "Incorrect. While auxiliary losses may affect convergence, their primary purpose is providing additional learning signals, not speed.",
+        "Correct. Auxiliary losses add complementary objectives to improve specific aspects like perceptual quality, structural consistency, or conditioning alignment.",
+        "Incorrect. While auxiliary losses can have regularizing effects, their primary purpose is enhancing specific generation aspects, not overfitting prevention.",
+        "Incorrect. Auxiliary losses are about training objectives, not batch size enablement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "auxiliary-losses",
+        "multi-objective",
+        "learning-signals"
+      ]
+    },
+    {
+      "id": "DIF_086",
+      "question": "What is the significance of the reverse-time SDE in continuous diffusion models?",
+      "options": [
+        "It speeds up the forward process",
+        "It provides the mathematical foundation for the generative process",
+        "It reduces computational complexity",
+        "It improves training stability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The reverse-time SDE provides the theoretical foundation for generation by mathematically describing how to reverse the forward noise corruption process.",
+      "optionExplanations": [
+        "Incorrect. The reverse-time SDE is about the generative process, not speeding up the forward noise addition process.",
+        "Correct. The reverse-time SDE gives the mathematical framework for reversing the forward diffusion process to generate samples.",
+        "Incorrect. The reverse-time SDE is a theoretical framework, not specifically a computational complexity reduction technique.",
+        "Incorrect. While the SDE framework can provide theoretical insights for stability, its primary significance is providing the mathematical foundation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "reverse-sde",
+        "mathematical-foundation",
+        "generative-process"
+      ]
+    },
+    {
+      "id": "DIF_087",
+      "question": "What is the main advantage of using diffusion models for controllable generation?",
+      "options": [
+        "Faster generation speed",
+        "Fine-grained control through various conditioning mechanisms",
+        "Lower computational requirements",
+        "Simpler training process"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diffusion models excel at controllable generation because they can incorporate various types of conditioning (text, images, structural constraints) and allow fine-grained control over the generation process.",
+      "optionExplanations": [
+        "Incorrect. Diffusion models are typically slower than GANs, so speed is not their main advantage for controllable generation.",
+        "Correct. Diffusion models can incorporate diverse conditioning signals and provide fine-grained control over various aspects of generation.",
+        "Incorrect. Diffusion models typically require substantial computational resources, especially for high-quality generation.",
+        "Incorrect. Diffusion model training can be complex, especially when incorporating multiple conditioning mechanisms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "controllable-generation",
+        "conditioning-mechanisms",
+        "fine-grained-control"
+      ]
+    },
+    {
+      "id": "DIF_088",
+      "question": "What is the purpose of using mask-based conditioning in diffusion models?",
+      "options": [
+        "To hide sensitive information",
+        "To enable spatially-aware conditional generation and editing",
+        "To reduce computational cost",
+        "To improve training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mask-based conditioning allows diffusion models to generate or edit specific regions of images while preserving other areas, enabling precise spatial control.",
+      "optionExplanations": [
+        "Incorrect. Mask-based conditioning is about spatial control in generation, not privacy or information hiding.",
+        "Correct. Masks enable precise spatial control, allowing generation or editing of specific regions while preserving others (like in inpainting).",
+        "Incorrect. Mask-based conditioning typically adds computational complexity rather than reducing cost.",
+        "Incorrect. Mask-based conditioning is about spatial control during inference, not training speed improvement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mask-conditioning",
+        "spatial-control",
+        "inpainting"
+      ]
+    },
+    {
+      "id": "DIF_089",
+      "question": "What is the main benefit of using hierarchical diffusion models?",
+      "options": [
+        "Faster single-image generation",
+        "Better modeling of structure at multiple scales",
+        "Reduced memory usage",
+        "Simpler architecture design"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hierarchical diffusion models can capture structure at multiple scales by operating at different resolution levels, leading to better overall generation quality.",
+      "optionExplanations": [
+        "Incorrect. Hierarchical models typically require multiple stages, making single-image generation slower, not faster.",
+        "Correct. Hierarchical models can capture both global structure and fine details by operating at multiple scales simultaneously or sequentially.",
+        "Incorrect. Hierarchical models often require more memory due to multiple resolution levels and model components.",
+        "Incorrect. Hierarchical models add architectural complexity rather than simplifying the design."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hierarchical",
+        "multi-scale",
+        "structure-modeling"
+      ]
+    },
+    {
+      "id": "DIF_090",
+      "question": "What is the significance of the score matching objective in diffusion model training?",
+      "options": [
+        "It measures the final sample quality",
+        "It provides a way to train models to predict probability gradients without computing partition functions",
+        "It determines the optimal number of timesteps",
+        "It controls the generation speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Score matching enables training models to predict the gradient of the log probability density without needing to compute intractable normalization constants.",
+      "optionExplanations": [
+        "Incorrect. Score matching is a training objective, not a sample quality evaluation metric.",
+        "Correct. Score matching allows learning the score function ∇log p(x) without computing the partition function, making training tractable.",
+        "Incorrect. The number of timesteps is a design choice, not determined by the score matching objective.",
+        "Incorrect. Score matching is about the training objective, not inference speed control."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "score-matching",
+        "training-objective",
+        "partition-function"
+      ]
+    },
+    {
+      "id": "DIF_091",
+      "question": "What is the main challenge in achieving real-time diffusion model inference?",
+      "options": [
+        "Poor sample quality",
+        "The sequential nature requiring multiple denoising steps",
+        "Large model size",
+        "Complex architectures"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Real-time inference is challenging because diffusion models require multiple sequential denoising steps, unlike single-pass methods like GANs.",
+      "optionExplanations": [
+        "Incorrect. Sample quality can be maintained even with faster methods; the challenge is the computational time, not quality.",
+        "Correct. The need for hundreds or thousands of sequential denoising steps makes real-time inference challenging compared to single-pass generation.",
+        "Incorrect. While model size matters, the main bottleneck is the sequential nature requiring multiple forward passes.",
+        "Incorrect. Architecture complexity contributes but the fundamental challenge is the multi-step sequential process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "real-time",
+        "sequential-steps",
+        "inference-speed"
+      ]
+    },
+    {
+      "id": "DIF_092",
+      "question": "What is the purpose of using exponential moving average (EMA) for model parameters during diffusion model training?",
+      "options": [
+        "To speed up training",
+        "To create more stable and smoother parameter estimates for better inference",
+        "To reduce memory usage",
+        "To enable distributed training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "EMA maintains a smoothed version of model parameters over training time, reducing parameter noise and often leading to better and more stable inference results.",
+      "optionExplanations": [
+        "Incorrect. EMA doesn't speed up training; it may even add slight computational overhead.",
+        "Correct. EMA creates smoothed parameter estimates by averaging over recent training steps, leading to more stable and often better-performing models.",
+        "Incorrect. EMA increases memory usage by maintaining additional copies of model parameters.",
+        "Incorrect. EMA is about parameter smoothing, not distributed training enablement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ema",
+        "parameter-smoothing",
+        "inference-stability"
+      ]
+    },
+    {
+      "id": "DIF_093",
+      "question": "What is the main advantage of using diffusion transformers (DiTs) over U-Net architectures?",
+      "options": [
+        "Faster training convergence",
+        "Better scalability and handling of long-range dependencies",
+        "Lower memory requirements",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diffusion transformers can better capture long-range dependencies through attention mechanisms and show better scaling properties with increased model size and compute.",
+      "optionExplanations": [
+        "Incorrect. DiTs don't necessarily converge faster; their advantage is in modeling capabilities and scalability.",
+        "Correct. Transformers excel at capturing long-range dependencies and have shown superior scaling laws compared to convolutional architectures.",
+        "Incorrect. Transformers typically require more memory due to attention computations, especially at high resolutions.",
+        "Incorrect. Transformer implementations can be complex, especially when adapting them for diffusion processes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "diffusion-transformers",
+        "scalability",
+        "long-range-dependencies"
+      ]
+    },
+    {
+      "id": "DIF_094",
+      "question": "What is the significance of the noise prediction error in diffusion model evaluation?",
+      "options": [
+        "It measures the final image quality",
+        "It indicates how well the model can predict the noise that needs to be removed",
+        "It determines the optimal sampling steps",
+        "It controls the generation diversity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Noise prediction error measures how accurately the model can predict the noise that was added, which is fundamental to the model's ability to perform the reverse denoising process.",
+      "optionExplanations": [
+        "Incorrect. While noise prediction accuracy affects final quality, it's not a direct measure of final image quality.",
+        "Correct. Low noise prediction error indicates the model can accurately identify and remove noise, which is essential for high-quality generation.",
+        "Incorrect. Noise prediction error is a measure of model performance, not a tool for determining sampling steps.",
+        "Incorrect. Noise prediction error is about denoising accuracy, not diversity control."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise-prediction",
+        "evaluation",
+        "denoising-accuracy"
+      ]
+    },
+    {
+      "id": "DIF_095",
+      "question": "What is the main benefit of using diffusion models for data augmentation?",
+      "options": [
+        "Faster augmentation process",
+        "Generation of realistic and diverse augmented samples",
+        "Lower computational cost",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diffusion models can generate highly realistic and diverse augmented samples that maintain the statistical properties of the original data distribution.",
+      "optionExplanations": [
+        "Incorrect. Diffusion-based augmentation is typically slower than traditional augmentation techniques.",
+        "Correct. Diffusion models can generate high-quality, diverse augmented samples that closely match the original data distribution.",
+        "Incorrect. Diffusion-based augmentation requires significant computational resources compared to traditional methods.",
+        "Incorrect. Using diffusion models for augmentation is more complex than traditional geometric or color-based augmentations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-augmentation",
+        "realistic-generation",
+        "diversity"
+      ]
+    },
+    {
+      "id": "DIF_096",
+      "question": "What is the purpose of using different parameterizations (x0, xt-1, v) in diffusion models?",
+      "options": [
+        "To change the model architecture",
+        "To optimize training dynamics and numerical stability",
+        "To enable different conditioning types",
+        "To reduce computational cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different parameterizations can lead to different training dynamics, convergence properties, and numerical stability, allowing optimization of the training process.",
+      "optionExplanations": [
+        "Incorrect. Parameterization affects what the model predicts, not the architecture itself.",
+        "Correct. Different parameterizations (predicting x0, previous step, or velocity) can have different training dynamics and stability properties.",
+        "Incorrect. Parameterization is about the training target, not the conditioning mechanism.",
+        "Incorrect. The computational cost is similar across parameterizations; the difference is in training dynamics."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "parameterization",
+        "training-dynamics",
+        "numerical-stability"
+      ]
+    },
+    {
+      "id": "DIF_097",
+      "question": "What is the main challenge in training diffusion models on limited data?",
+      "options": [
+        "Model architecture limitations",
+        "Overfitting and poor generalization to new samples",
+        "Computational complexity",
+        "Training instability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With limited training data, diffusion models can overfit and memorize the training samples rather than learning the underlying data distribution, leading to poor generalization.",
+      "optionExplanations": [
+        "Incorrect. Architecture limitations are not specific to limited data scenarios; existing architectures can work with small datasets.",
+        "Correct. Limited data can lead to overfitting where the model memorizes training samples rather than learning generalizable patterns.",
+        "Incorrect. Computational complexity exists regardless of data size, though smaller datasets may train faster.",
+        "Incorrect. Training instability is not specifically caused by limited data; diffusion models are generally stable to train."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "limited-data",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "DIF_098",
+      "question": "What is the role of the denoising schedule in controlling generation quality?",
+      "options": [
+        "It determines the final image resolution",
+        "It controls the balance between generation speed and quality",
+        "It sets the model architecture",
+        "It determines the training time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The denoising schedule (which timesteps to use and how many) directly controls the trade-off between generation speed (fewer steps) and quality (more steps).",
+      "optionExplanations": [
+        "Incorrect. The denoising schedule affects the sampling process, not the final image resolution which is determined by the model architecture.",
+        "Correct. Using more denoising steps generally improves quality but takes longer, while fewer steps are faster but may reduce quality.",
+        "Incorrect. The denoising schedule is about the sampling process, not the model architecture design.",
+        "Incorrect. The denoising schedule is used during inference, not training, so it doesn't determine training time."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "denoising-schedule",
+        "speed-quality-tradeoff",
+        "sampling"
+      ]
+    },
+    {
+      "id": "DIF_099",
+      "question": "What is the significance of the FID (Fréchet Inception Distance) score in evaluating diffusion models?",
+      "options": [
+        "It measures training speed",
+        "It quantifies the similarity between generated and real image distributions",
+        "It determines the optimal number of timesteps",
+        "It measures memory usage efficiency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "FID measures the distance between feature distributions of generated and real images using a pretrained Inception network, providing a measure of generation quality and diversity.",
+      "optionExplanations": [
+        "Incorrect. FID is an evaluation metric for generated sample quality, not a measure of training speed.",
+        "Correct. FID compares the feature distributions of generated and real images, with lower FID indicating better quality and more realistic generation.",
+        "Incorrect. FID evaluates generation quality but doesn't determine hyperparameters like the number of timesteps.",
+        "Incorrect. FID measures generation quality, not computational efficiency or memory usage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fid-score",
+        "evaluation-metric",
+        "generation-quality"
+      ]
+    },
+    {
+      "id": "DIF_100",
+      "question": "What is the main contribution of Latent Diffusion Models to the field of generative AI?",
+      "options": [
+        "Introducing the concept of diffusion processes",
+        "Making high-resolution generation computationally feasible by operating in latent space",
+        "Enabling text-to-image generation for the first time",
+        "Solving the mode collapse problem"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Latent Diffusion Models made high-resolution image generation much more computationally feasible by performing diffusion in a compressed latent space rather than directly on pixels.",
+      "optionExplanations": [
+        "Incorrect. Diffusion processes were introduced earlier; LDMs contributed the latent space approach.",
+        "Correct. LDMs enabled high-resolution generation at much lower computational cost by operating in the compressed latent space of a VAE.",
+        "Incorrect. Text-to-image generation existed before LDMs, though LDMs made it more accessible and efficient.",
+        "Incorrect. Mode collapse is primarily a GAN problem, not something specifically addressed by LDMs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "latent-diffusion",
+        "computational-efficiency",
+        "high-resolution"
+      ]
+    }
+  ]
+}

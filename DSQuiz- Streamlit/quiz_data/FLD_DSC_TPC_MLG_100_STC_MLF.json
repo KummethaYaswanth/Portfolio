@@ -1,0 +1,2420 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_MLF",
+  "subtopicName": "ML Fundamentals",
+  "str": 0.100,
+  "description": "Core concepts and fundamental principles of machine learning including supervised vs unsupervised learning, bias-variance tradeoff, overfitting/underfitting, data splitting strategies, and preprocessing techniques",
+  "questions": [
+    {
+      "id": "MLF_001",
+      "question": "What is the primary difference between supervised and unsupervised learning?",
+      "options": [
+        "Supervised learning uses labeled data, while unsupervised learning finds patterns in unlabeled data",
+        "Supervised learning is faster than unsupervised learning",
+        "Supervised learning uses more data than unsupervised learning",
+        "Supervised learning is only for classification problems"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The fundamental distinction is that supervised learning requires labeled training data (input-output pairs) to learn a mapping function, while unsupervised learning discovers hidden patterns and structures in data without labels.",
+      "optionExplanations": [
+        "Correct. Supervised learning requires labeled examples to learn from, while unsupervised learning finds hidden patterns without labels.",
+        "Incorrect. Speed depends on algorithm complexity and data size, not the learning paradigm.",
+        "Incorrect. Data volume requirements depend on the specific problem and algorithm, not the learning type.",
+        "Incorrect. Supervised learning includes both classification and regression problems."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "supervised-learning",
+        "unsupervised-learning",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "MLF_002",
+      "question": "Which of the following is an example of supervised learning?",
+      "options": [
+        "Customer segmentation based on purchase behavior",
+        "Email spam detection",
+        "Clustering genes with similar expression patterns",
+        "Market basket analysis"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Email spam detection is supervised learning because it requires labeled examples of spam and non-spam emails to train a classifier that can predict whether new emails are spam.",
+      "optionExplanations": [
+        "Incorrect. Customer segmentation is unsupervised learning as it groups customers without predefined labels.",
+        "Correct. Email spam detection uses labeled examples (spam/not spam) to train a classifier.",
+        "Incorrect. Clustering genes is unsupervised learning as it groups similar genes without predefined categories.",
+        "Incorrect. Market basket analysis finds associations between items without predefined labels, making it unsupervised."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "supervised-learning",
+        "classification",
+        "examples"
+      ]
+    },
+    {
+      "id": "MLF_003",
+      "question": "What is overfitting in machine learning?",
+      "options": [
+        "When a model performs well on training data but poorly on new, unseen data",
+        "When a model has too few parameters",
+        "When training data is insufficient",
+        "When the model is too simple to capture patterns"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Overfitting occurs when a model learns the training data too well, including noise and specific details that don't generalize to new data, resulting in poor performance on unseen examples.",
+      "optionExplanations": [
+        "Correct. Overfitting means the model memorizes training data but fails to generalize to new data.",
+        "Incorrect. Too few parameters typically lead to underfitting, not overfitting.",
+        "Incorrect. Insufficient training data can contribute to overfitting but isn't the definition of overfitting itself.",
+        "Incorrect. A too-simple model leads to underfitting, which is the opposite of overfitting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "generalization",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "MLF_004",
+      "question": "What is underfitting in machine learning?",
+      "options": [
+        "When a model has high bias and fails to capture underlying patterns in data",
+        "When a model performs too well on training data",
+        "When there is too much training data",
+        "When the model is too complex"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in high bias and poor performance on both training and test data.",
+      "optionExplanations": [
+        "Correct. Underfitting happens when a model has high bias and cannot capture the data's underlying patterns.",
+        "Incorrect. Performing too well on training data typically indicates overfitting, not underfitting.",
+        "Incorrect. Having too much training data generally helps prevent both overfitting and underfitting.",
+        "Incorrect. A too-complex model typically leads to overfitting, not underfitting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "underfitting",
+        "bias",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "MLF_005",
+      "question": "What is the bias-variance tradeoff?",
+      "options": [
+        "The tradeoff between model accuracy and interpretability",
+        "The tradeoff between training time and prediction time",
+        "The tradeoff between systematic error (bias) and sensitivity to training data variations (variance)",
+        "The tradeoff between supervised and unsupervised learning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The bias-variance tradeoff describes the fundamental tension between bias (systematic error from oversimplified assumptions) and variance (sensitivity to small changes in training data). Optimal models balance both.",
+      "optionExplanations": [
+        "Incorrect. This describes the accuracy-interpretability tradeoff, which is different from bias-variance.",
+        "Incorrect. This refers to computational tradeoffs, not the bias-variance concept.",
+        "Correct. Bias-variance tradeoff balances systematic error against sensitivity to training data variations.",
+        "Incorrect. This describes different learning paradigms, not the bias-variance relationship."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias-variance",
+        "tradeoff",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "MLF_006",
+      "question": "Which statement about high bias models is correct?",
+      "options": [
+        "They tend to overfit the training data",
+        "They have high variance",
+        "They oversimplify the problem and may underfit",
+        "They perform well on training data but poorly on test data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High bias models make strong assumptions about the data and tend to be too simple, leading to underfitting where the model fails to capture the underlying patterns in both training and test data.",
+      "optionExplanations": [
+        "Incorrect. High bias models tend to underfit, not overfit the training data.",
+        "Incorrect. High bias models typically have low variance - they're consistently wrong in the same way.",
+        "Correct. High bias models make oversimplified assumptions and tend to underfit the data.",
+        "Incorrect. This describes overfitting (high variance), not high bias behavior."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "underfitting",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "MLF_007",
+      "question": "Which statement about high variance models is correct?",
+      "options": [
+        "They consistently make the same errors",
+        "They are too simple to capture data patterns",
+        "They are sensitive to small changes in training data and may overfit",
+        "They have high bias"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High variance models are overly complex and sensitive to small changes in training data. They tend to fit the training data very closely, including noise, leading to overfitting.",
+      "optionExplanations": [
+        "Incorrect. High variance models make different errors on different datasets - they're inconsistent.",
+        "Incorrect. High variance models are typically too complex, not too simple.",
+        "Correct. High variance models are sensitive to training data changes and prone to overfitting.",
+        "Incorrect. High variance models typically have low bias but high variance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "variance",
+        "overfitting",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "MLF_008",
+      "question": "What is the purpose of splitting data into training, validation, and test sets?",
+      "options": [
+        "To make the dataset smaller and easier to work with",
+        "To evaluate model performance objectively and tune hyperparameters without data leakage",
+        "To increase the accuracy of the model",
+        "To reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data splitting allows for unbiased model evaluation and hyperparameter tuning. Training set builds the model, validation set tunes hyperparameters, and test set provides final unbiased performance assessment.",
+      "optionExplanations": [
+        "Incorrect. Data splitting actually uses less data for training, which might reduce performance initially.",
+        "Correct. Proper data splitting enables objective evaluation and hyperparameter tuning without data leakage.",
+        "Incorrect. Using less training data might actually decrease accuracy, but splitting ensures reliable evaluation.",
+        "Incorrect. Data splitting doesn't directly reduce computational costs and may actually increase them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-splitting",
+        "validation",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "MLF_009",
+      "question": "What is data leakage in machine learning?",
+      "options": [
+        "When training data is accidentally deleted",
+        "When information from the future or target variable inadvertently influences model training",
+        "When the dataset is too small",
+        "When there are missing values in the data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data leakage occurs when information that wouldn't be available at prediction time (like future data or information derived from the target) is used during training, leading to overly optimistic performance estimates.",
+      "optionExplanations": [
+        "Incorrect. This is data loss, not data leakage.",
+        "Correct. Data leakage involves using information that wouldn't be available during actual prediction.",
+        "Incorrect. Small dataset size is a different issue unrelated to data leakage.",
+        "Incorrect. Missing values are a data quality issue, not data leakage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-leakage",
+        "evaluation",
+        "model-validation"
+      ]
+    },
+    {
+      "id": "MLF_010",
+      "question": "Which of the following is NOT a type of unsupervised learning?",
+      "options": [
+        "Clustering",
+        "Association rule mining",
+        "Classification",
+        "Dimensionality reduction"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Classification is supervised learning because it requires labeled examples to learn how to assign categories to new instances. The other options discover patterns without predefined labels.",
+      "optionExplanations": [
+        "Incorrect. Clustering groups similar data points without predefined labels, making it unsupervised.",
+        "Incorrect. Association rule mining finds relationships between items without predefined labels.",
+        "Correct. Classification requires labeled training data, making it supervised learning.",
+        "Incorrect. Dimensionality reduction finds lower-dimensional representations without labels."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "unsupervised-learning",
+        "classification",
+        "learning-types"
+      ]
+    },
+    {
+      "id": "MLF_011",
+      "question": "What is feature engineering?",
+      "options": [
+        "The process of selecting the best machine learning algorithm",
+        "The process of creating, transforming, and selecting features from raw data to improve model performance",
+        "The process of collecting more training data",
+        "The process of tuning hyperparameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature engineering involves creating new features, transforming existing ones, and selecting the most relevant features from raw data to make it more suitable for machine learning algorithms and improve model performance.",
+      "optionExplanations": [
+        "Incorrect. Algorithm selection is model selection, not feature engineering.",
+        "Correct. Feature engineering transforms raw data into features that better represent the problem for ML algorithms.",
+        "Incorrect. Data collection is data gathering, not feature engineering.",
+        "Incorrect. Hyperparameter tuning is model optimization, not feature engineering."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-engineering",
+        "preprocessing",
+        "data-transformation"
+      ]
+    },
+    {
+      "id": "MLF_012",
+      "question": "What is normalization in data preprocessing?",
+      "options": [
+        "Removing duplicate records from the dataset",
+        "Scaling numerical features to a common range, typically [0,1]",
+        "Converting categorical variables to numerical",
+        "Handling missing values in the data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Normalization (also called min-max scaling) transforms numerical features to a common scale, typically [0,1], by using the formula: (value - min) / (max - min). This prevents features with larger scales from dominating others.",
+      "optionExplanations": [
+        "Incorrect. Removing duplicates is data cleaning, not normalization.",
+        "Correct. Normalization scales features to a common range, typically between 0 and 1.",
+        "Incorrect. Converting categorical to numerical is encoding, not normalization.",
+        "Incorrect. Handling missing values is imputation, not normalization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "normalization",
+        "preprocessing",
+        "scaling"
+      ]
+    },
+    {
+      "id": "MLF_013",
+      "question": "What is standardization (z-score normalization) in data preprocessing?",
+      "options": [
+        "Converting all features to the same data type",
+        "Transforming features to have zero mean and unit variance",
+        "Removing outliers from the dataset",
+        "Converting numerical features to categorical"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standardization transforms features to have zero mean and unit variance using the formula: (value - mean) / standard_deviation. This centers the data around zero and scales it by the standard deviation.",
+      "optionExplanations": [
+        "Incorrect. Data type conversion is a different preprocessing step.",
+        "Correct. Standardization transforms features to have mean=0 and standard deviation=1.",
+        "Incorrect. Outlier removal is outlier detection and treatment, not standardization.",
+        "Incorrect. Converting numerical to categorical is discretization, not standardization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "standardization",
+        "preprocessing",
+        "scaling"
+      ]
+    },
+    {
+      "id": "MLF_014",
+      "question": "When should you use normalization vs standardization?",
+      "options": [
+        "Always use normalization because it's simpler",
+        "Use normalization when you know the bounds; use standardization when data follows normal distribution or has outliers",
+        "Always use standardization because it's more robust",
+        "Use them randomly - both achieve the same result"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Normalization is good when you know the theoretical bounds of data and want values in [0,1]. Standardization is better when data is normally distributed or has outliers, as it's less sensitive to extreme values.",
+      "optionExplanations": [
+        "Incorrect. The choice depends on data characteristics and algorithm requirements.",
+        "Correct. Normalization works well with known bounds; standardization handles normal distributions and outliers better.",
+        "Incorrect. Neither is universally better - it depends on the specific use case.",
+        "Incorrect. These methods have different properties and are suitable for different scenarios."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "standardization",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "MLF_015",
+      "question": "What is the curse of dimensionality?",
+      "options": [
+        "When there are too many target variables",
+        "When datasets become computationally expensive due to high number of features",
+        "When machine learning models become less effective as the number of features increases relative to the number of samples",
+        "When data preprocessing takes too long"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The curse of dimensionality refers to various phenomena that arise when analyzing data in high-dimensional spaces, particularly that ML algorithms become less effective as features increase without proportional increase in samples, leading to sparse data and poor generalization.",
+      "optionExplanations": [
+        "Incorrect. Multiple targets relate to multi-output problems, not curse of dimensionality.",
+        "Incorrect. While high dimensions increase computational cost, the curse refers to effectiveness degradation.",
+        "Correct. High dimensions relative to samples lead to sparse data and poor model performance.",
+        "Incorrect. Preprocessing time is a computational issue, not the curse of dimensionality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensions",
+        "feature-selection"
+      ]
+    },
+    {
+      "id": "MLF_016",
+      "question": "What is cross-validation?",
+      "options": [
+        "A technique to validate data quality",
+        "A method to assess model performance by training and testing on different subsets of data multiple times",
+        "A way to cross-check results between different algorithms",
+        "A technique to validate feature importance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation is a statistical method that divides data into multiple subsets, trains the model on some subsets and tests on others, repeating this process to get a more robust estimate of model performance.",
+      "optionExplanations": [
+        "Incorrect. Data quality validation is different from cross-validation for model assessment.",
+        "Correct. Cross-validation trains and tests on different data subsets to robustly estimate performance.",
+        "Incorrect. Comparing algorithms is model comparison, not cross-validation.",
+        "Incorrect. Feature importance assessment is feature analysis, not cross-validation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cross-validation",
+        "model-evaluation",
+        "validation"
+      ]
+    },
+    {
+      "id": "MLF_017",
+      "question": "What is k-fold cross-validation?",
+      "options": [
+        "A validation method where data is split into k equal parts, using k-1 for training and 1 for testing, repeated k times",
+        "A method that uses k different algorithms",
+        "A technique that requires exactly k features",
+        "A method that runs k iterations of training"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "K-fold cross-validation divides the dataset into k equal-sized folds. For each iteration, k-1 folds are used for training and 1 fold for testing. This process is repeated k times, with each fold serving as the test set exactly once.",
+      "optionExplanations": [
+        "Correct. K-fold splits data into k parts, using k-1 for training and 1 for testing in each iteration.",
+        "Incorrect. K-fold refers to data splits, not different algorithms.",
+        "Incorrect. The number of features is independent of the number of folds.",
+        "Incorrect. While it runs k iterations, the key is the data splitting strategy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "k-fold",
+        "cross-validation",
+        "model-evaluation"
+      ]
+    },
+    {
+      "id": "MLF_018",
+      "question": "What is the main advantage of cross-validation over a simple train-test split?",
+      "options": [
+        "It's faster to compute",
+        "It uses less memory",
+        "It provides a more robust and less biased estimate of model performance",
+        "It requires less data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cross-validation provides multiple performance estimates from different data subsets, reducing the impact of how the data was split and giving a more reliable estimate of how the model will perform on unseen data.",
+      "optionExplanations": [
+        "Incorrect. Cross-validation is computationally more expensive as it trains multiple models.",
+        "Incorrect. Cross-validation doesn't necessarily reduce memory usage.",
+        "Correct. Multiple train-test iterations provide more robust and reliable performance estimates.",
+        "Incorrect. Cross-validation uses the same amount of data but splits it differently."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cross-validation",
+        "model-evaluation",
+        "robustness"
+      ]
+    },
+    {
+      "id": "MLF_019",
+      "question": "What is regularization in machine learning?",
+      "options": [
+        "A technique to make data more regular by removing outliers",
+        "A method to add penalty terms to the loss function to prevent overfitting",
+        "A way to regularize the training schedule",
+        "A technique to make features more uniform"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization adds penalty terms to the loss function to constrain model complexity, preventing overfitting by discouraging overly complex models that fit training data too closely.",
+      "optionExplanations": [
+        "Incorrect. Outlier removal is a different preprocessing technique.",
+        "Correct. Regularization adds penalties to the loss function to control model complexity and prevent overfitting.",
+        "Incorrect. Training schedule regularization is not what regularization typically refers to in ML.",
+        "Incorrect. Making features uniform is feature scaling, not regularization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "MLF_020",
+      "question": "What is the difference between L1 and L2 regularization?",
+      "options": [
+        "L1 uses absolute values of parameters, L2 uses squared values; L1 can lead to sparse models",
+        "L1 is for classification, L2 is for regression",
+        "L1 is faster than L2",
+        "L1 uses more memory than L2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "L1 regularization adds the sum of absolute values of parameters as penalty, which can drive some parameters to exactly zero (creating sparse models). L2 adds the sum of squared parameters, which shrinks parameters but rarely makes them exactly zero.",
+      "optionExplanations": [
+        "Correct. L1 uses absolute values and creates sparsity; L2 uses squared values and shrinks parameters smoothly.",
+        "Incorrect. Both L1 and L2 can be used for both classification and regression problems.",
+        "Incorrect. Computational speed depends on implementation, not the type of regularization.",
+        "Incorrect. Memory usage is similar for both regularization types."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "L1-regularization",
+        "L2-regularization",
+        "sparsity"
+      ]
+    },
+    {
+      "id": "MLF_021",
+      "question": "What is a hyperparameter?",
+      "options": [
+        "A parameter learned during training",
+        "A parameter set before training that controls the learning process",
+        "A parameter that changes during prediction",
+        "A parameter that measures model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hyperparameters are configuration settings that control the learning process and must be set before training begins. They are not learned from data like model parameters, but are chosen by the practitioner.",
+      "optionExplanations": [
+        "Incorrect. Parameters learned during training are model parameters, not hyperparameters.",
+        "Correct. Hyperparameters are set before training and control how the model learns.",
+        "Incorrect. Parameters that change during prediction would be dynamic parameters, not hyperparameters.",
+        "Incorrect. Metrics that measure accuracy are evaluation metrics, not hyperparameters."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hyperparameters",
+        "model-configuration",
+        "tuning"
+      ]
+    },
+    {
+      "id": "MLF_022",
+      "question": "Which of the following is a hyperparameter?",
+      "options": [
+        "Weights in a neural network",
+        "Learning rate in gradient descent",
+        "Mean of a feature after normalization",
+        "Accuracy score on test set"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning rate is a hyperparameter because it's set before training and controls how big steps the algorithm takes when updating parameters. It's not learned from data but chosen by the practitioner.",
+      "optionExplanations": [
+        "Incorrect. Weights are model parameters learned during training, not hyperparameters.",
+        "Correct. Learning rate is a hyperparameter that controls the step size in gradient descent.",
+        "Incorrect. Feature means are statistics computed from data, not hyperparameters.",
+        "Incorrect. Accuracy is an evaluation metric, not a hyperparameter."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hyperparameters",
+        "learning-rate",
+        "examples"
+      ]
+    },
+    {
+      "id": "MLF_023",
+      "question": "What is hyperparameter tuning?",
+      "options": [
+        "The process of finding optimal hyperparameter values to improve model performance",
+        "The process of updating parameters during training",
+        "The process of scaling features",
+        "The process of selecting features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hyperparameter tuning is the process of searching for the optimal combination of hyperparameter values that results in the best model performance, typically using techniques like grid search or random search.",
+      "optionExplanations": [
+        "Correct. Hyperparameter tuning finds optimal hyperparameter values for best model performance.",
+        "Incorrect. Updating parameters during training is the learning process, not hyperparameter tuning.",
+        "Incorrect. Feature scaling is data preprocessing, not hyperparameter tuning.",
+        "Incorrect. Feature selection is choosing relevant features, not tuning hyperparameters."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hyperparameter-tuning",
+        "optimization",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "MLF_024",
+      "question": "What is grid search for hyperparameter tuning?",
+      "options": [
+        "A method that randomly samples hyperparameter combinations",
+        "A method that systematically tries all combinations of predefined hyperparameter values",
+        "A method that uses gradient descent to find optimal hyperparameters",
+        "A method that uses genetic algorithms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Grid search exhaustively tries all possible combinations of hyperparameter values from predefined ranges/sets, evaluating model performance for each combination to find the best one.",
+      "optionExplanations": [
+        "Incorrect. Random sampling is random search, not grid search.",
+        "Correct. Grid search systematically evaluates all predefined hyperparameter combinations.",
+        "Incorrect. Gradient descent is used for parameter optimization, not typically for hyperparameter tuning.",
+        "Incorrect. Genetic algorithms are a different optimization approach, not grid search."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "grid-search",
+        "hyperparameter-tuning",
+        "optimization"
+      ]
+    },
+    {
+      "id": "MLF_025",
+      "question": "What is the main disadvantage of grid search?",
+      "options": [
+        "It doesn't find good hyperparameters",
+        "It's computationally expensive, especially with many hyperparameters",
+        "It only works for certain algorithms",
+        "It requires labeled data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Grid search suffers from the curse of dimensionality - as the number of hyperparameters increases, the number of combinations grows exponentially, making it computationally prohibitive for high-dimensional hyperparameter spaces.",
+      "optionExplanations": [
+        "Incorrect. Grid search can find good hyperparameters if they're in the search space.",
+        "Correct. Grid search becomes exponentially expensive as the number of hyperparameters increases.",
+        "Incorrect. Grid search is a general technique that works with any algorithm.",
+        "Incorrect. Grid search is about hyperparameter optimization, not about data labeling requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "grid-search",
+        "computational-complexity",
+        "limitations"
+      ]
+    },
+    {
+      "id": "MLF_026",
+      "question": "What is random search for hyperparameter tuning?",
+      "options": [
+        "A method that randomly changes hyperparameters during training",
+        "A method that randomly samples hyperparameter combinations from specified distributions",
+        "A method that uses random algorithms",
+        "A method that randomly selects features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random search randomly samples hyperparameter combinations from specified distributions or ranges, rather than exhaustively trying all combinations like grid search. It's often more efficient than grid search.",
+      "optionExplanations": [
+        "Incorrect. Hyperparameters are fixed during training; this describes dynamic parameter adjustment.",
+        "Correct. Random search samples hyperparameter combinations randomly from specified distributions.",
+        "Incorrect. Random search refers to the hyperparameter selection strategy, not the algorithms used.",
+        "Incorrect. Feature selection is different from hyperparameter tuning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "random-search",
+        "hyperparameter-tuning",
+        "optimization"
+      ]
+    },
+    {
+      "id": "MLF_027",
+      "question": "What is early stopping in machine learning?",
+      "options": [
+        "Stopping training when the dataset is too small",
+        "A regularization technique that stops training when validation performance stops improving",
+        "Stopping training after a fixed number of epochs",
+        "Stopping training when computational resources are exhausted"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Early stopping is a regularization technique that monitors validation performance during training and stops when performance stops improving (or starts degrading), preventing overfitting by avoiding excessive training.",
+      "optionExplanations": [
+        "Incorrect. Dataset size issues are handled differently, not through early stopping.",
+        "Correct. Early stopping monitors validation performance and stops training to prevent overfitting.",
+        "Incorrect. Training for a fixed number of epochs is a different strategy.",
+        "Incorrect. Resource exhaustion is an external constraint, not the early stopping technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "early-stopping",
+        "regularization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "MLF_028",
+      "question": "What is a learning curve in machine learning?",
+      "options": [
+        "The time it takes to learn an algorithm",
+        "A plot showing model performance vs training set size or training iterations",
+        "The complexity of the learning algorithm",
+        "The rate at which hyperparameters are updated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning curves plot model performance (like accuracy or loss) against either training set size or training iterations/epochs, helping diagnose issues like overfitting, underfitting, or whether more data would help.",
+      "optionExplanations": [
+        "Incorrect. Learning time is a computational metric, not what learning curves show.",
+        "Correct. Learning curves plot performance vs training set size or iterations to diagnose model behavior.",
+        "Incorrect. Algorithm complexity is measured differently, not through learning curves.",
+        "Incorrect. Hyperparameter update rates are not what learning curves typically show."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-curves",
+        "model-diagnostics",
+        "visualization"
+      ]
+    },
+    {
+      "id": "MLF_029",
+      "question": "What does it mean when training and validation learning curves converge to a low performance?",
+      "options": [
+        "The model is overfitting",
+        "The model is underfitting",
+        "The model is perfectly fitted",
+        "There's a data leakage problem"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When both training and validation curves converge to low performance, it indicates underfitting - the model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and validation sets.",
+      "optionExplanations": [
+        "Incorrect. Overfitting would show good training performance but poor validation performance.",
+        "Correct. Convergence to low performance on both sets indicates the model is too simple (underfitting).",
+        "Incorrect. Perfect fit would show high performance, not low performance.",
+        "Incorrect. Data leakage would typically show unrealistically good performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-curves",
+        "underfitting",
+        "model-diagnostics"
+      ]
+    },
+    {
+      "id": "MLF_030",
+      "question": "What does it mean when there's a large gap between training and validation learning curves?",
+      "options": [
+        "The model is underfitting",
+        "The model is overfitting",
+        "The data is perfectly balanced",
+        "The model is optimal"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A large gap between training and validation curves (training performance much better than validation) indicates overfitting - the model learns the training data too well but fails to generalize to new data.",
+      "optionExplanations": [
+        "Incorrect. Underfitting would show both curves at similarly low performance levels.",
+        "Correct. A large gap indicates overfitting - good training performance but poor validation performance.",
+        "Incorrect. Data balance doesn't directly relate to learning curve gaps.",
+        "Incorrect. An optimal model would have both curves at high performance with minimal gap."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-curves",
+        "overfitting",
+        "model-diagnostics"
+      ]
+    },
+    {
+      "id": "MLF_031",
+      "question": "What is ensemble learning?",
+      "options": [
+        "Training multiple models and combining their predictions",
+        "Using multiple features in a single model",
+        "Training on multiple datasets",
+        "Using multiple loss functions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Ensemble learning combines predictions from multiple models to create a stronger predictor than any individual model. Common techniques include bagging, boosting, and stacking.",
+      "optionExplanations": [
+        "Correct. Ensemble learning trains multiple models and combines their predictions for better performance.",
+        "Incorrect. Using multiple features is standard model input, not ensemble learning.",
+        "Incorrect. Training on multiple datasets is data augmentation or multi-task learning.",
+        "Incorrect. Multiple loss functions relate to multi-objective optimization, not ensembles."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ensemble-learning",
+        "model-combination",
+        "prediction"
+      ]
+    },
+    {
+      "id": "MLF_032",
+      "question": "What is the main benefit of ensemble methods?",
+      "options": [
+        "They train faster than individual models",
+        "They use less memory than single models",
+        "They often achieve better performance by reducing both bias and variance",
+        "They are easier to interpret"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ensemble methods typically achieve better performance by combining diverse models that make different types of errors. This can reduce both bias (through model averaging) and variance (through error cancellation).",
+      "optionExplanations": [
+        "Incorrect. Ensembles typically take longer to train since they involve multiple models.",
+        "Incorrect. Ensembles usually require more memory to store multiple models.",
+        "Correct. Ensembles often perform better by reducing both bias and variance through model combination.",
+        "Incorrect. Ensembles are generally less interpretable than single models due to their complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-learning",
+        "bias-variance",
+        "performance"
+      ]
+    },
+    {
+      "id": "MLF_033",
+      "question": "What is bagging in ensemble learning?",
+      "options": [
+        "Training models sequentially where each learns from previous mistakes",
+        "Training multiple models in parallel on different bootstrap samples of the data",
+        "Combining different types of algorithms",
+        "Selecting the best features for each model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bagging (Bootstrap Aggregating) trains multiple models in parallel on different bootstrap samples (random samples with replacement) of the training data, then combines their predictions, typically by averaging or majority voting.",
+      "optionExplanations": [
+        "Incorrect. Sequential training where models learn from mistakes describes boosting, not bagging.",
+        "Correct. Bagging trains models in parallel on bootstrap samples and aggregates predictions.",
+        "Incorrect. Combining different algorithms is a general ensemble strategy, not specifically bagging.",
+        "Incorrect. Feature selection for models is a different technique, not bagging."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bagging",
+        "ensemble-learning",
+        "bootstrap"
+      ]
+    },
+    {
+      "id": "MLF_034",
+      "question": "What is boosting in ensemble learning?",
+      "options": [
+        "Training models in parallel on different data samples",
+        "Training models sequentially where each focuses on correcting previous models' mistakes",
+        "Increasing the learning rate progressively",
+        "Adding more features to improve performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Boosting trains models sequentially, where each new model focuses on the examples that previous models got wrong. This creates a strong learner by combining many weak learners that specialize in different parts of the problem.",
+      "optionExplanations": [
+        "Incorrect. Parallel training on different samples describes bagging, not boosting.",
+        "Correct. Boosting trains models sequentially, with each focusing on previous models' mistakes.",
+        "Incorrect. Increasing learning rate is a hyperparameter schedule, not boosting.",
+        "Incorrect. Adding features is feature engineering, not boosting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "boosting",
+        "ensemble-learning",
+        "sequential"
+      ]
+    },
+    {
+      "id": "MLF_035",
+      "question": "What is the difference between parametric and non-parametric models?",
+      "options": [
+        "Parametric models have parameters, non-parametric don't",
+        "Parametric models have fixed number of parameters, non-parametric models' complexity grows with data",
+        "Parametric models are always better than non-parametric",
+        "Parametric models use parameters, non-parametric use hyperparameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Parametric models have a fixed number of parameters determined before seeing the data (e.g., linear regression). Non-parametric models' complexity can grow with the amount of data (e.g., k-NN, decision trees).",
+      "optionExplanations": [
+        "Incorrect. Non-parametric models can have parameters; the difference is in how complexity scales with data.",
+        "Correct. Parametric models have fixed complexity; non-parametric models' complexity can grow with data size.",
+        "Incorrect. Neither type is universally better - it depends on the problem and data characteristics.",
+        "Incorrect. Both types use parameters and hyperparameters; the distinction is about complexity scaling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parametric",
+        "non-parametric",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "MLF_036",
+      "question": "What is the No Free Lunch theorem in machine learning?",
+      "options": [
+        "All algorithms require computational resources",
+        "No single algorithm performs best on all possible problems",
+        "Machine learning always requires labeled data",
+        "All models need hyperparameter tuning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The No Free Lunch theorem states that averaged over all possible problems, every algorithm performs equally well. This means no single algorithm is universally superior - the best choice depends on the specific problem and data characteristics.",
+      "optionExplanations": [
+        "Incorrect. While true, this isn't what the No Free Lunch theorem addresses.",
+        "Correct. The theorem states no algorithm is universally best across all possible problems.",
+        "Incorrect. This describes supervised learning requirements, not the No Free Lunch theorem.",
+        "Incorrect. While often true in practice, this isn't the No Free Lunch theorem."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "no-free-lunch",
+        "algorithm-selection",
+        "theory"
+      ]
+    },
+    {
+      "id": "MLF_037",
+      "question": "What is inductive bias in machine learning?",
+      "options": [
+        "The bias towards certain demographics in training data",
+        "The set of assumptions a learning algorithm makes to predict outputs for unseen inputs",
+        "The tendency to prefer simpler models",
+        "The bias introduced during data preprocessing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Inductive bias refers to the set of assumptions or constraints that a learning algorithm uses to predict outputs for inputs it hasn't seen during training. It's necessary for generalization but limits the hypothesis space.",
+      "optionExplanations": [
+        "Incorrect. This describes demographic or selection bias in data, not inductive bias.",
+        "Correct. Inductive bias is the set of assumptions algorithms make to generalize to unseen inputs.",
+        "Incorrect. While related, this describes simplicity bias specifically, not the general concept of inductive bias.",
+        "Incorrect. Preprocessing bias is a data quality issue, not inductive bias."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "inductive-bias",
+        "generalization",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "MLF_038",
+      "question": "What is the purpose of a validation set?",
+      "options": [
+        "To train the final model",
+        "To provide an unbiased evaluation of the final model",
+        "To tune hyperparameters and select models during development",
+        "To preprocess the data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The validation set is used during model development to tune hyperparameters, select between different models, and make decisions about model architecture. It helps prevent overfitting to the test set by providing an intermediate evaluation.",
+      "optionExplanations": [
+        "Incorrect. The training set is used to train the model, not the validation set.",
+        "Incorrect. The test set provides unbiased final evaluation, not the validation set.",
+        "Correct. Validation set is used for hyperparameter tuning and model selection during development.",
+        "Incorrect. Data preprocessing is done before splitting data into sets."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "validation-set",
+        "hyperparameter-tuning",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "MLF_039",
+      "question": "What is the purpose of a test set?",
+      "options": [
+        "To tune hyperparameters",
+        "To train the model",
+        "To provide an unbiased estimate of model performance on unseen data",
+        "To validate data quality"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The test set provides a final, unbiased evaluation of model performance on truly unseen data. It should only be used once at the end of model development to avoid overfitting to the test set.",
+      "optionExplanations": [
+        "Incorrect. Hyperparameter tuning should be done using the validation set, not test set.",
+        "Incorrect. The training set is used for model training, not the test set.",
+        "Correct. Test set provides final, unbiased performance evaluation on unseen data.",
+        "Incorrect. Data quality validation is a preprocessing step, not the purpose of test sets."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "test-set",
+        "evaluation",
+        "unbiased-estimate"
+      ]
+    },
+    {
+      "id": "MLF_040",
+      "question": "What is stratified sampling in the context of train-test splits?",
+      "options": [
+        "Randomly sampling data points",
+        "Ensuring each split maintains the same proportion of samples for each target class",
+        "Sampling based on feature importance",
+        "Sampling more recent data points"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stratified sampling ensures that each split (train/validation/test) maintains the same proportion of samples for each class as in the original dataset. This is especially important for imbalanced datasets.",
+      "optionExplanations": [
+        "Incorrect. Random sampling doesn't preserve class proportions across splits.",
+        "Correct. Stratified sampling maintains class proportions in each split.",
+        "Incorrect. Feature importance-based sampling is a different sampling strategy.",
+        "Incorrect. Temporal sampling considers time, not class proportions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-sampling",
+        "data-splitting",
+        "class-balance"
+      ]
+    },
+    {
+      "id": "MLF_041",
+      "question": "What is data augmentation?",
+      "options": [
+        "Adding more features to the dataset",
+        "Increasing dataset size by creating modified versions of existing data",
+        "Combining multiple datasets",
+        "Improving data quality by fixing errors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data augmentation artificially increases the size of training data by applying transformations to existing samples (like rotating images, adding noise, etc.) without changing their labels, helping reduce overfitting.",
+      "optionExplanations": [
+        "Incorrect. Adding features is feature engineering, not data augmentation.",
+        "Correct. Data augmentation creates modified versions of existing data to increase dataset size.",
+        "Incorrect. Combining datasets is data fusion or concatenation, not augmentation.",
+        "Incorrect. Fixing data errors is data cleaning, not augmentation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "data-augmentation",
+        "dataset-size",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "MLF_042",
+      "question": "What is the difference between online and batch learning?",
+      "options": [
+        "Online learning uses internet data, batch learning uses local data",
+        "Online learning updates the model incrementally with new data, batch learning retrains on entire datasets",
+        "Online learning is faster than batch learning",
+        "Online learning requires more memory than batch learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Online learning (or incremental learning) updates the model continuously as new data arrives, while batch learning retrains the entire model on the complete dataset. Online learning is useful when data arrives continuously or datasets are too large for memory.",
+      "optionExplanations": [
+        "Incorrect. The terms refer to learning strategies, not data sources.",
+        "Correct. Online learning updates incrementally; batch learning retrains on complete datasets.",
+        "Incorrect. Speed depends on implementation and data characteristics, not the learning paradigm.",
+        "Incorrect. Online learning typically uses less memory since it processes data incrementally."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "online-learning",
+        "batch-learning",
+        "incremental"
+      ]
+    },
+    {
+      "id": "MLF_043",
+      "question": "What is feature selection?",
+      "options": [
+        "The process of choosing relevant features and discarding irrelevant ones",
+        "The process of creating new features from existing ones",
+        "The process of scaling features to the same range",
+        "The process of handling missing values in features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature selection identifies and retains the most relevant features while removing irrelevant, redundant, or noisy features. This can improve model performance, reduce overfitting, and decrease computational costs.",
+      "optionExplanations": [
+        "Correct. Feature selection chooses the most relevant features and discards irrelevant ones.",
+        "Incorrect. Creating new features is feature engineering or feature construction.",
+        "Incorrect. Scaling features is feature scaling or normalization.",
+        "Incorrect. Handling missing values is imputation or missing data treatment."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-selection",
+        "dimensionality-reduction",
+        "relevance"
+      ]
+    },
+    {
+      "id": "MLF_044",
+      "question": "What are the main types of feature selection methods?",
+      "options": [
+        "Supervised and unsupervised methods",
+        "Filter, wrapper, and embedded methods",
+        "Parametric and non-parametric methods",
+        "Linear and non-linear methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature selection methods are categorized into: Filter methods (statistical measures independent of ML algorithm), Wrapper methods (use ML algorithm performance), and Embedded methods (feature selection integrated into model training).",
+      "optionExplanations": [
+        "Incorrect. While feature selection can be used in supervised/unsupervised contexts, this isn't the main categorization.",
+        "Correct. The main types are filter, wrapper, and embedded feature selection methods.",
+        "Incorrect. These categories apply to models, not feature selection methods specifically.",
+        "Incorrect. These describe model types, not feature selection method categories."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-selection",
+        "filter",
+        "wrapper",
+        "embedded"
+      ]
+    },
+    {
+      "id": "MLF_045",
+      "question": "What is dimensionality reduction?",
+      "options": [
+        "Reducing the number of samples in the dataset",
+        "Reducing the number of features while preserving important information",
+        "Reducing the complexity of the algorithm",
+        "Reducing the training time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dimensionality reduction transforms high-dimensional data into lower-dimensional space while preserving as much relevant information as possible. This helps with visualization, storage, and avoiding the curse of dimensionality.",
+      "optionExplanations": [
+        "Incorrect. Reducing samples is data sampling, not dimensionality reduction.",
+        "Correct. Dimensionality reduction reduces features while preserving important information.",
+        "Incorrect. Reducing algorithm complexity is algorithm optimization, not dimensionality reduction.",
+        "Incorrect. While dimensionality reduction may reduce training time, that's not its primary definition."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "dimensionality-reduction",
+        "feature-reduction",
+        "curse-of-dimensionality"
+      ]
+    },
+    {
+      "id": "MLF_046",
+      "question": "What is the difference between feature selection and dimensionality reduction?",
+      "options": [
+        "There is no difference - they are the same thing",
+        "Feature selection chooses original features; dimensionality reduction creates new features from combinations of original ones",
+        "Feature selection is supervised; dimensionality reduction is unsupervised",
+        "Feature selection is faster than dimensionality reduction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature selection chooses a subset of original features, while dimensionality reduction creates new features that are combinations or transformations of original features (e.g., PCA creates linear combinations of original features).",
+      "optionExplanations": [
+        "Incorrect. They are different approaches with distinct characteristics.",
+        "Correct. Feature selection keeps original features; dimensionality reduction creates new combined features.",
+        "Incorrect. Both can be supervised or unsupervised depending on the specific technique used.",
+        "Incorrect. Speed depends on the specific algorithms and data characteristics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-selection",
+        "dimensionality-reduction",
+        "feature-transformation"
+      ]
+    },
+    {
+      "id": "MLF_047",
+      "question": "What is missing data imputation?",
+      "options": [
+        "Removing all samples with missing values",
+        "The process of estimating and filling in missing values in a dataset",
+        "Ignoring missing values during model training",
+        "Converting missing values to zero"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Imputation estimates and fills in missing values using various strategies (mean, median, mode, prediction-based methods, etc.) rather than simply removing data or ignoring missing values.",
+      "optionExplanations": [
+        "Incorrect. Removing samples is listwise deletion, not imputation.",
+        "Correct. Imputation estimates and fills in missing values using various statistical methods.",
+        "Incorrect. Ignoring missing values is another strategy, not imputation.",
+        "Incorrect. Converting to zero is a simple filling strategy, but imputation involves more sophisticated estimation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "imputation",
+        "missing-data",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "MLF_048",
+      "question": "What are common strategies for handling missing data?",
+      "options": [
+        "Only deletion of rows with missing values",
+        "Deletion, imputation with statistical measures, and model-based imputation",
+        "Always replace with zeros",
+        "Only use complete cases"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Common strategies include: deletion (listwise/pairwise), simple imputation (mean/median/mode), and advanced imputation (regression, multiple imputation, etc.). The choice depends on data characteristics and missingness patterns.",
+      "optionExplanations": [
+        "Incorrect. Deletion is one strategy, but there are several others available.",
+        "Correct. Main strategies include deletion, statistical imputation, and model-based imputation methods.",
+        "Incorrect. Zero replacement is rarely appropriate and can introduce bias.",
+        "Incorrect. Using only complete cases wastes potentially valuable information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-data",
+        "imputation",
+        "deletion",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "MLF_049",
+      "question": "What is one-hot encoding?",
+      "options": [
+        "A method to handle numerical features",
+        "A technique to convert categorical variables into binary vectors",
+        "A way to scale features between 0 and 1",
+        "A method to handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "One-hot encoding converts categorical variables into binary vectors where each category becomes a separate binary feature. For n categories, it creates n binary columns where only one is 'hot' (1) for each sample.",
+      "optionExplanations": [
+        "Incorrect. One-hot encoding is specifically for categorical variables, not numerical features.",
+        "Correct. One-hot encoding creates binary vectors from categorical variables.",
+        "Incorrect. Scaling features to [0,1] is normalization, not one-hot encoding.",
+        "Incorrect. Handling missing values is imputation, not one-hot encoding."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "one-hot-encoding",
+        "categorical-variables",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "MLF_050",
+      "question": "What is label encoding?",
+      "options": [
+        "Converting numerical labels to categorical",
+        "Converting categorical variables to numerical integers",
+        "Encoding the target variable only",
+        "A type of one-hot encoding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Label encoding assigns integer values to categorical variables (e.g., 'red'=0, 'green'=1, 'blue'=2). It's simpler than one-hot encoding but implies ordinality that may not exist.",
+      "optionExplanations": [
+        "Incorrect. Label encoding converts categorical to numerical, not the reverse.",
+        "Correct. Label encoding assigns integer values to categorical variables.",
+        "Incorrect. Label encoding can be applied to any categorical variable, not just targets.",
+        "Incorrect. Label encoding is a different technique from one-hot encoding."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "label-encoding",
+        "categorical-variables",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "MLF_051",
+      "question": "When should you use one-hot encoding vs label encoding for categorical variables?",
+      "options": [
+        "Always use one-hot encoding",
+        "Use one-hot for nominal data; consider label encoding for ordinal data or when dealing with high cardinality",
+        "Always use label encoding because it's simpler",
+        "Use them randomly - both achieve the same result"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "One-hot encoding is preferred for nominal (unordered) categories as it doesn't impose false ordinal relationships. Label encoding can be used for ordinal data where order matters, or when one-hot creates too many dimensions (high cardinality).",
+      "optionExplanations": [
+        "Incorrect. One-hot encoding can create too many dimensions with high cardinality categorical variables.",
+        "Correct. Use one-hot for nominal data; label encoding may be appropriate for ordinal data or high cardinality scenarios.",
+        "Incorrect. Label encoding can introduce false ordinal relationships for nominal variables.",
+        "Incorrect. The choice has important implications for model performance and interpretation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "one-hot-encoding",
+        "label-encoding",
+        "nominal",
+        "ordinal"
+      ]
+    },
+    {
+      "id": "MLF_052",
+      "question": "What is the purpose of data preprocessing in machine learning?",
+      "options": [
+        "To make data smaller",
+        "To transform raw data into a format suitable for machine learning algorithms",
+        "To increase the amount of data",
+        "To make data more complex"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data preprocessing transforms raw, messy data into a clean, formatted dataset that machine learning algorithms can effectively process. This includes handling missing values, encoding categories, scaling features, etc.",
+      "optionExplanations": [
+        "Incorrect. While preprocessing might reduce data size through cleaning, that's not the primary purpose.",
+        "Correct. Preprocessing transforms raw data into a format suitable for ML algorithms.",
+        "Incorrect. While data augmentation can increase data, that's not the general purpose of preprocessing.",
+        "Incorrect. Preprocessing generally simplifies and cleans data, not makes it more complex."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "preprocessing",
+        "data-transformation",
+        "data-cleaning"
+      ]
+    },
+    {
+      "id": "MLF_053",
+      "question": "What is outlier detection?",
+      "options": [
+        "Finding the most important features",
+        "Identifying data points that significantly differ from other observations",
+        "Detecting missing values",
+        "Finding duplicate records"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Outlier detection identifies data points that are significantly different from the majority of observations. Outliers can be errors, rare events, or genuinely unusual observations that might affect model performance.",
+      "optionExplanations": [
+        "Incorrect. Finding important features is feature selection, not outlier detection.",
+        "Correct. Outlier detection identifies observations that significantly differ from others.",
+        "Incorrect. Detecting missing values is part of data quality assessment, not outlier detection.",
+        "Incorrect. Finding duplicates is duplicate detection, not outlier detection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "outlier-detection",
+        "anomaly-detection",
+        "data-quality"
+      ]
+    },
+    {
+      "id": "MLF_054",
+      "question": "How should outliers typically be handled in machine learning?",
+      "options": [
+        "Always remove all outliers",
+        "Always keep all outliers",
+        "Investigate outliers to determine if they are errors, rare valid cases, or genuinely anomalous before deciding",
+        "Replace all outliers with the mean value"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Outlier handling requires careful investigation. Some outliers are data errors (should be corrected/removed), others are rare but valid cases (should be kept), and some might be the target of analysis (anomaly detection). The approach depends on context.",
+      "optionExplanations": [
+        "Incorrect. Blindly removing outliers might eliminate important information or genuine rare cases.",
+        "Incorrect. Keeping all outliers including errors can negatively impact model performance.",
+        "Correct. Outliers should be investigated to understand their nature before deciding on treatment.",
+        "Incorrect. Replacing with mean is a form of imputation but may not be appropriate for all outlier types."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "outlier-handling",
+        "data-quality",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "MLF_055",
+      "question": "What is the difference between data cleaning and data preprocessing?",
+      "options": [
+        "They are exactly the same thing",
+        "Data cleaning fixes data quality issues; preprocessing transforms clean data for ML algorithms",
+        "Data cleaning is for small datasets; preprocessing is for big data",
+        "Data cleaning is manual; preprocessing is automatic"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data cleaning focuses on fixing quality issues (errors, duplicates, inconsistencies), while preprocessing transforms the cleaned data into formats suitable for ML (encoding, scaling, feature engineering). Cleaning comes first.",
+      "optionExplanations": [
+        "Incorrect. While related, they serve different purposes in the data pipeline.",
+        "Correct. Cleaning fixes quality issues; preprocessing transforms clean data for ML use.",
+        "Incorrect. Both can be applied to datasets of any size.",
+        "Incorrect. Both can involve manual and automatic processes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-cleaning",
+        "preprocessing",
+        "data-pipeline"
+      ]
+    },
+    {
+      "id": "MLF_056",
+      "question": "What is the purpose of shuffling data before training?",
+      "options": [
+        "To make the algorithm run faster",
+        "To remove any ordering bias and ensure random distribution of samples",
+        "To balance the classes",
+        "To reduce overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Shuffling removes any inherent ordering in the data that might bias the learning process. For example, if all positive examples come first, early training batches would be unrepresentative, potentially affecting learning.",
+      "optionExplanations": [
+        "Incorrect. Shuffling doesn't directly impact algorithm speed.",
+        "Correct. Shuffling removes ordering bias and ensures random sample distribution during training.",
+        "Incorrect. Class balancing is a separate technique from shuffling.",
+        "Incorrect. While shuffling might indirectly help with overfitting, that's not its primary purpose."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "data-shuffling",
+        "ordering-bias",
+        "training"
+      ]
+    },
+    {
+      "id": "MLF_057",
+      "question": "What is a training epoch in machine learning?",
+      "options": [
+        "One pass through the entire training dataset",
+        "One update of model parameters",
+        "One validation step",
+        "One test prediction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An epoch represents one complete pass through the entire training dataset. During one epoch, the model sees every training example once. Multiple epochs allow the model to learn patterns through repeated exposure.",
+      "optionExplanations": [
+        "Correct. An epoch is one complete pass through the entire training dataset.",
+        "Incorrect. Parameter updates can happen multiple times within one epoch (once per batch).",
+        "Incorrect. Validation steps are separate from training epochs.",
+        "Incorrect. Test predictions are part of evaluation, not training epochs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "epoch",
+        "training",
+        "dataset"
+      ]
+    },
+    {
+      "id": "MLF_058",
+      "question": "What is batch size in machine learning?",
+      "options": [
+        "The total number of training examples",
+        "The number of examples processed together in one forward/backward pass",
+        "The number of epochs to train",
+        "The number of features in the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch size determines how many training examples are processed together before updating model parameters. Larger batches provide more stable gradients but require more memory; smaller batches update more frequently.",
+      "optionExplanations": [
+        "Incorrect. Total training examples is the dataset size, not batch size.",
+        "Correct. Batch size is the number of examples processed together in one forward/backward pass.",
+        "Incorrect. Number of epochs is a separate hyperparameter from batch size.",
+        "Incorrect. Number of features is dimensionality, not batch size."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "batch-size",
+        "training",
+        "gradient-update"
+      ]
+    },
+    {
+      "id": "MLF_059",
+      "question": "What is the difference between batch gradient descent and mini-batch gradient descent?",
+      "options": [
+        "Batch uses the entire dataset for each update; mini-batch uses subsets",
+        "Batch is faster than mini-batch",
+        "Batch is only for classification; mini-batch is for regression",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Batch gradient descent uses the entire dataset to compute gradients for each parameter update, while mini-batch uses subsets (batches) of the data. Mini-batch balances computational efficiency with gradient stability.",
+      "optionExplanations": [
+        "Correct. Batch uses full dataset per update; mini-batch uses smaller subsets.",
+        "Incorrect. Mini-batch is typically faster due to more frequent updates and better computational efficiency.",
+        "Incorrect. Both can be used for classification and regression problems.",
+        "Incorrect. They differ significantly in how they process data for gradient computation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-descent",
+        "batch-gradient",
+        "mini-batch"
+      ]
+    },
+    {
+      "id": "MLF_060",
+      "question": "What is stochastic gradient descent (SGD)?",
+      "options": [
+        "Gradient descent using the entire dataset",
+        "Gradient descent using random subsets of data",
+        "Gradient descent updating parameters after each individual example",
+        "A type of regularization technique"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Stochastic Gradient Descent updates model parameters after each individual training example (batch size = 1). It's faster per iteration but has noisier gradient estimates compared to batch or mini-batch methods.",
+      "optionExplanations": [
+        "Incorrect. Using the entire dataset describes batch gradient descent.",
+        "Incorrect. Random subsets describe mini-batch gradient descent.",
+        "Correct. SGD updates parameters after each individual example.",
+        "Incorrect. SGD is an optimization algorithm, not a regularization technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SGD",
+        "stochastic",
+        "gradient-descent"
+      ]
+    },
+    {
+      "id": "MLF_061",
+      "question": "What is a loss function in machine learning?",
+      "options": [
+        "A function that measures data quality",
+        "A function that quantifies the difference between predicted and actual values",
+        "A function that selects features",
+        "A function that splits data into training and testing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A loss function (also called cost function or objective function) measures how well the model's predictions match the actual target values. The goal of training is to minimize this loss function.",
+      "optionExplanations": [
+        "Incorrect. Data quality measurement is done by different metrics and validation techniques.",
+        "Correct. Loss function quantifies the difference between predictions and actual values.",
+        "Incorrect. Feature selection uses different criteria and methods.",
+        "Incorrect. Data splitting is done using different techniques, not loss functions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "loss-function",
+        "cost-function",
+        "optimization"
+      ]
+    },
+    {
+      "id": "MLF_062",
+      "question": "What is gradient descent?",
+      "options": [
+        "A method to select features",
+        "An optimization algorithm that minimizes the loss function by iteratively updating parameters",
+        "A technique to handle missing data",
+        "A way to evaluate model performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient descent is an optimization algorithm that finds the minimum of a loss function by iteratively moving in the direction of steepest descent (negative gradient), updating model parameters to reduce prediction errors.",
+      "optionExplanations": [
+        "Incorrect. Feature selection uses different techniques and criteria.",
+        "Correct. Gradient descent minimizes loss by iteratively updating parameters in the direction of steepest descent.",
+        "Incorrect. Missing data is handled through imputation and other preprocessing techniques.",
+        "Incorrect. Model evaluation uses metrics like accuracy, precision, recall, etc."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-descent",
+        "optimization",
+        "parameter-update"
+      ]
+    },
+    {
+      "id": "MLF_063",
+      "question": "What is a local minimum in optimization?",
+      "options": [
+        "The global minimum of the loss function",
+        "A point where the function value is lower than surrounding points but may not be the absolute lowest",
+        "The starting point of optimization",
+        "A point where gradients are maximum"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A local minimum is a point where the loss function value is lower than all nearby points, but there might be other points elsewhere with even lower values (global minimum). Optimization algorithms can get stuck in local minima.",
+      "optionExplanations": [
+        "Incorrect. Global minimum is the absolute lowest point, which may be different from local minima.",
+        "Correct. Local minimum is lower than nearby points but may not be the absolute lowest.",
+        "Incorrect. Starting point is the initialization, not a local minimum.",
+        "Incorrect. Local minima occur where gradients are zero (or close to zero), not maximum."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "local-minimum",
+        "optimization",
+        "loss-landscape"
+      ]
+    },
+    {
+      "id": "MLF_064",
+      "question": "What is overfitting and how can it be detected?",
+      "options": [
+        "Good performance on both training and validation sets",
+        "Good training performance but poor validation/test performance; detected by monitoring performance gaps",
+        "Poor performance on training set",
+        "Identical performance on training and test sets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overfitting occurs when a model learns training data too well, including noise, resulting in poor generalization. It's detected by observing good training performance but significantly worse validation/test performance.",
+      "optionExplanations": [
+        "Incorrect. Good performance on both sets indicates appropriate fitting, not overfitting.",
+        "Correct. Overfitting shows as good training but poor validation performance; detected by monitoring this gap.",
+        "Incorrect. Poor training performance typically indicates underfitting, not overfitting.",
+        "Incorrect. Identical performance is unlikely and doesn't indicate overfitting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "overfitting",
+        "detection",
+        "performance-gap"
+      ]
+    },
+    {
+      "id": "MLF_065",
+      "question": "What are common techniques to prevent overfitting?",
+      "options": [
+        "Using more complex models",
+        "Regularization, early stopping, dropout, cross-validation, and data augmentation",
+        "Using smaller datasets",
+        "Increasing the learning rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overfitting prevention techniques include: regularization (L1/L2), early stopping, dropout, cross-validation for model selection, data augmentation, and using simpler models or ensemble methods.",
+      "optionExplanations": [
+        "Incorrect. More complex models are more prone to overfitting, not less.",
+        "Correct. These are established techniques to prevent overfitting by controlling model complexity.",
+        "Incorrect. Smaller datasets can actually make overfitting worse due to limited training examples.",
+        "Incorrect. Higher learning rates affect convergence but don't directly prevent overfitting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "overfitting-prevention",
+        "regularization",
+        "early-stopping"
+      ]
+    },
+    {
+      "id": "MLF_066",
+      "question": "What is underfitting and how can it be addressed?",
+      "options": [
+        "When a model is too complex; address by reducing model complexity",
+        "When a model is too simple to capture patterns; address by increasing model complexity or features",
+        "When there's too much training data; address by using less data",
+        "When the model trains too quickly; address by reducing learning rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Underfitting occurs when a model is too simple to capture underlying data patterns, resulting in poor performance on both training and test sets. It's addressed by increasing model complexity, adding features, or reducing regularization.",
+      "optionExplanations": [
+        "Incorrect. High complexity leads to overfitting, not underfitting.",
+        "Correct. Underfitting means the model is too simple; address by increasing complexity or adding features.",
+        "Incorrect. More training data generally helps model performance, doesn't cause underfitting.",
+        "Incorrect. Training speed doesn't define underfitting; it's about model capacity to learn patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "underfitting",
+        "model-complexity",
+        "bias"
+      ]
+    },
+    {
+      "id": "MLF_067",
+      "question": "What is model interpretability?",
+      "options": [
+        "How fast a model can make predictions",
+        "How well humans can understand and explain the model's decisions",
+        "How accurately a model performs",
+        "How much memory a model uses"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model interpretability refers to the degree to which humans can understand and explain how a model makes its decisions. This includes understanding which features are important and how they influence predictions.",
+      "optionExplanations": [
+        "Incorrect. Prediction speed is model efficiency, not interpretability.",
+        "Correct. Interpretability is about human understanding of model decisions and reasoning.",
+        "Incorrect. Accuracy is model performance, not interpretability.",
+        "Incorrect. Memory usage is resource consumption, not interpretability."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interpretability",
+        "explainability",
+        "model-understanding"
+      ]
+    },
+    {
+      "id": "MLF_068",
+      "question": "What is the trade-off between model complexity and interpretability?",
+      "options": [
+        "Complex models are always more interpretable",
+        "Simple models are always better performing",
+        "Generally, more complex models perform better but are less interpretable",
+        "There is no relationship between complexity and interpretability"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "There's typically a trade-off where more complex models (like deep neural networks) achieve better performance but are harder to interpret, while simpler models (like linear regression) are more interpretable but may have limited performance.",
+      "optionExplanations": [
+        "Incorrect. Complex models are generally less interpretable due to their intricate decision processes.",
+        "Incorrect. While simple models are interpretable, they may underperform on complex problems.",
+        "Correct. Complex models often perform better but sacrifice interpretability.",
+        "Incorrect. There's generally an inverse relationship between complexity and interpretability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "complexity-interpretability",
+        "trade-off",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "MLF_069",
+      "question": "What is model bias in machine learning?",
+      "options": [
+        "Preference for certain demographics in predictions",
+        "Systematic error due to overly simplistic assumptions in the learning algorithm",
+        "Random errors in predictions",
+        "Errors due to insufficient training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model bias refers to systematic errors introduced by overly simplistic assumptions in the learning algorithm. High bias typically leads to underfitting, where the model consistently misses relevant patterns.",
+      "optionExplanations": [
+        "Incorrect. This describes algorithmic bias or fairness issues, not statistical bias in the bias-variance sense.",
+        "Correct. Model bias is systematic error from simplistic assumptions in the algorithm.",
+        "Incorrect. Random errors relate to variance, not bias.",
+        "Incorrect. Insufficient data can contribute to overfitting/variance issues, not bias specifically."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "systematic-error",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "MLF_070",
+      "question": "What is model variance in machine learning?",
+      "options": [
+        "The range of possible predictions",
+        "Sensitivity of the model to small changes in training data",
+        "The difference between training and test accuracy",
+        "The spread of feature values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model variance refers to how much the model's predictions would change if it were trained on different samples of data. High variance models are sensitive to training data variations and prone to overfitting.",
+      "optionExplanations": [
+        "Incorrect. Range of predictions is output spread, not variance in the bias-variance sense.",
+        "Correct. Variance measures sensitivity to changes in training data.",
+        "Incorrect. Training-test gap indicates overfitting but isn't the definition of variance.",
+        "Incorrect. Feature spread is data characteristic, not model variance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "variance",
+        "sensitivity",
+        "training-data"
+      ]
+    },
+    {
+      "id": "MLF_071",
+      "question": "What is transfer learning in machine learning?",
+      "options": [
+        "Transferring data from one format to another",
+        "Using knowledge gained from one task to improve performance on a related task",
+        "Moving models from development to production",
+        "Converting between different programming languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transfer learning leverages knowledge gained from solving one task to improve performance on a related task. For example, using features learned on ImageNet to help with a specific image classification problem.",
+      "optionExplanations": [
+        "Incorrect. Data format conversion is data transformation, not transfer learning.",
+        "Correct. Transfer learning uses knowledge from one task to improve performance on related tasks.",
+        "Incorrect. Model deployment is operations/MLOps, not transfer learning.",
+        "Incorrect. Language conversion is programming/software engineering, not transfer learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transfer-learning",
+        "knowledge-transfer",
+        "pre-trained"
+      ]
+    },
+    {
+      "id": "MLF_072",
+      "question": "What is semi-supervised learning?",
+      "options": [
+        "Learning with only labeled data",
+        "Learning with only unlabeled data",
+        "Learning with a combination of labeled and unlabeled data",
+        "Learning with partially correct labels"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Semi-supervised learning uses both labeled and unlabeled data for training. It's useful when labeled data is expensive or scarce, but unlabeled data is abundant. The unlabeled data helps improve model generalization.",
+      "optionExplanations": [
+        "Incorrect. Only labeled data describes supervised learning.",
+        "Incorrect. Only unlabeled data describes unsupervised learning.",
+        "Correct. Semi-supervised learning combines labeled and unlabeled data for training.",
+        "Incorrect. Partially correct labels relate to noisy labels or weak supervision, not semi-supervised learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "semi-supervised",
+        "labeled-data",
+        "unlabeled-data"
+      ]
+    },
+    {
+      "id": "MLF_073",
+      "question": "What is active learning?",
+      "options": [
+        "Learning that requires constant user interaction",
+        "A learning paradigm where the algorithm can query for labels of specific unlabeled examples",
+        "Learning from actively changing data",
+        "Learning that updates models in real-time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Active learning is a special case of semi-supervised learning where the algorithm can actively choose which unlabeled examples to query for labels, typically selecting the most informative examples to maximize learning efficiency.",
+      "optionExplanations": [
+        "Incorrect. Constant user interaction isn't the definition of active learning.",
+        "Correct. Active learning strategically queries for labels of specific examples to maximize learning.",
+        "Incorrect. Changing data relates to concept drift or online learning.",
+        "Incorrect. Real-time updates describe online learning, not active learning specifically."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "active-learning",
+        "query-strategy",
+        "label-efficiency"
+      ]
+    },
+    {
+      "id": "MLF_074",
+      "question": "What is reinforcement learning?",
+      "options": [
+        "Learning by receiving rewards or penalties for actions in an environment",
+        "Learning by reinforcing correct answers",
+        "Learning with multiple repetitions of the same data",
+        "Learning with additional labeled examples"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Reinforcement learning involves an agent learning to make decisions by taking actions in an environment and receiving rewards or penalties. The goal is to maximize cumulative reward over time.",
+      "optionExplanations": [
+        "Correct. Reinforcement learning uses rewards/penalties from environmental interactions to learn optimal actions.",
+        "Incorrect. This describes a form of supervised learning with feedback, not reinforcement learning.",
+        "Incorrect. Multiple repetitions describe data augmentation or oversampling, not reinforcement learning.",
+        "Incorrect. Additional labeled examples describe supervised learning or data collection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "reinforcement-learning",
+        "rewards",
+        "actions",
+        "environment"
+      ]
+    },
+    {
+      "id": "MLF_075",
+      "question": "What is the difference between classification and regression?",
+      "options": [
+        "Classification is supervised, regression is unsupervised",
+        "Classification predicts discrete categories, regression predicts continuous values",
+        "Classification uses more data than regression",
+        "Classification is always more accurate than regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Classification predicts discrete categories or classes (e.g., spam/not spam, cat/dog/bird), while regression predicts continuous numerical values (e.g., house price, temperature, stock price).",
+      "optionExplanations": [
+        "Incorrect. Both classification and regression are supervised learning problems.",
+        "Correct. Classification outputs discrete categories; regression outputs continuous numerical values.",
+        "Incorrect. Data requirements depend on problem complexity, not the task type.",
+        "Incorrect. Accuracy depends on the specific problem, data, and model, not the task type."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "classification",
+        "regression",
+        "supervised-learning"
+      ]
+    },
+    {
+      "id": "MLF_076",
+      "question": "What is a confusion matrix?",
+      "options": [
+        "A matrix showing feature correlations",
+        "A table showing actual vs predicted classifications for evaluating model performance",
+        "A matrix of hyperparameters",
+        "A table of training examples"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A confusion matrix is a table that shows the actual vs predicted classifications, allowing detailed analysis of classification performance including which classes are confused with each other.",
+      "optionExplanations": [
+        "Incorrect. Feature correlations are shown in correlation matrices, not confusion matrices.",
+        "Correct. Confusion matrix displays actual vs predicted classifications for performance evaluation.",
+        "Incorrect. Hyperparameters are configuration settings, not displayed in confusion matrices.",
+        "Incorrect. Training examples are the dataset, not what confusion matrices show."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confusion-matrix",
+        "classification",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "MLF_077",
+      "question": "What is precision in classification?",
+      "options": [
+        "The proportion of actual positives correctly identified",
+        "The proportion of predicted positives that are actually positive",
+        "The overall accuracy of the model",
+        "The number of correct predictions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Precision is the proportion of predicted positive cases that are actually positive. It answers: 'Of all the cases I predicted as positive, how many were actually positive?' Formula: TP/(TP+FP).",
+      "optionExplanations": [
+        "Incorrect. This describes recall (sensitivity), not precision.",
+        "Correct. Precision is the proportion of predicted positives that are actually positive.",
+        "Incorrect. Overall accuracy considers all predictions, not just positive predictions.",
+        "Incorrect. Number of correct predictions is a count, not precision which is a proportion."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision",
+        "classification-metrics",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "MLF_078",
+      "question": "What is recall (sensitivity) in classification?",
+      "options": [
+        "The proportion of predicted positives that are actually positive",
+        "The proportion of actual positives correctly identified by the model",
+        "The proportion of actual negatives correctly identified",
+        "The overall accuracy of the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Recall (sensitivity) is the proportion of actual positive cases that were correctly identified by the model. It answers: 'Of all the actual positive cases, how many did I correctly identify?' Formula: TP/(TP+FN).",
+      "optionExplanations": [
+        "Incorrect. This describes precision, not recall.",
+        "Correct. Recall is the proportion of actual positives correctly identified by the model.",
+        "Incorrect. This describes specificity, not recall.",
+        "Incorrect. Overall accuracy considers all predictions, not just the positive cases."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "recall",
+        "sensitivity",
+        "classification-metrics"
+      ]
+    },
+    {
+      "id": "MLF_079",
+      "question": "What is the F1-score?",
+      "options": [
+        "The average of precision and recall",
+        "The harmonic mean of precision and recall",
+        "The product of precision and recall",
+        "The difference between precision and recall"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "F1-score is the harmonic mean of precision and recall: F1 = 2 * (precision * recall) / (precision + recall). It provides a single metric that balances both precision and recall, useful when you need both to be reasonably high.",
+      "optionExplanations": [
+        "Incorrect. Arithmetic average doesn't appropriately balance precision and recall.",
+        "Correct. F1-score is the harmonic mean of precision and recall.",
+        "Incorrect. Product would give a very different measure that doesn't balance the metrics appropriately.",
+        "Incorrect. Difference would show the gap between metrics, not a balanced combination."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "F1-score",
+        "precision",
+        "recall",
+        "harmonic-mean"
+      ]
+    },
+    {
+      "id": "MLF_080",
+      "question": "When should you use precision vs recall as the primary metric?",
+      "options": [
+        "Always use precision because it's more important",
+        "Use precision when false positives are costly; use recall when false negatives are costly",
+        "Use recall for classification and precision for regression",
+        "They should always be equal"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Choose precision when false positives are costly (e.g., spam detection - don't want to mark important emails as spam). Choose recall when false negatives are costly (e.g., disease screening - don't want to miss actual cases).",
+      "optionExplanations": [
+        "Incorrect. The importance of precision vs recall depends on the specific application and costs of different error types.",
+        "Correct. Precision focuses on minimizing false positives; recall focuses on minimizing false negatives.",
+        "Incorrect. Both metrics apply to classification problems; regression uses different metrics.",
+        "Incorrect. Precision and recall often involve trade-offs and are rarely equal in real applications."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "precision",
+        "recall",
+        "false-positives",
+        "false-negatives"
+      ]
+    },
+    {
+      "id": "MLF_081",
+      "question": "What is cross-entropy loss?",
+      "options": [
+        "A loss function commonly used for regression problems",
+        "A loss function that measures the difference between predicted and actual probability distributions",
+        "A regularization technique",
+        "A feature selection method"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-entropy loss measures the difference between the predicted probability distribution and the true distribution. It's commonly used for classification problems and penalizes predictions that are confident but wrong more heavily.",
+      "optionExplanations": [
+        "Incorrect. Cross-entropy is typically used for classification, not regression problems.",
+        "Correct. Cross-entropy measures the difference between predicted and actual probability distributions.",
+        "Incorrect. Cross-entropy is a loss function, not a regularization technique.",
+        "Incorrect. Cross-entropy is for loss calculation, not feature selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-entropy",
+        "loss-function",
+        "classification"
+      ]
+    },
+    {
+      "id": "MLF_082",
+      "question": "What is mean squared error (MSE)?",
+      "options": [
+        "A metric for classification problems",
+        "A loss function that calculates the average of squared differences between predicted and actual values",
+        "A regularization technique",
+        "A feature scaling method"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "MSE calculates the average of squared differences between predicted and actual values. It's commonly used for regression problems and penalizes larger errors more heavily due to the squaring operation.",
+      "optionExplanations": [
+        "Incorrect. MSE is typically used for regression problems, not classification.",
+        "Correct. MSE is the average of squared differences between predictions and actual values.",
+        "Incorrect. MSE is a loss function, not a regularization technique.",
+        "Incorrect. MSE is for loss calculation, not feature scaling."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "MSE",
+        "mean-squared-error",
+        "regression",
+        "loss-function"
+      ]
+    },
+    {
+      "id": "MLF_083",
+      "question": "What is the purpose of a baseline model?",
+      "options": [
+        "To replace more complex models",
+        "To provide a simple reference point for comparing more sophisticated models",
+        "To preprocess the data",
+        "To select features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A baseline model provides a simple, often naive reference point to evaluate whether more complex models are actually providing meaningful improvements. It helps establish a minimum performance threshold.",
+      "optionExplanations": [
+        "Incorrect. Baseline models are not meant to replace complex models but to serve as comparison benchmarks.",
+        "Correct. Baseline models provide simple reference points for evaluating the performance of more sophisticated models.",
+        "Incorrect. Data preprocessing is a separate step in the ML pipeline, not the purpose of baseline models.",
+        "Incorrect. Feature selection is a different process, not what baseline models are designed for."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "baseline-model",
+        "model-comparison",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "MLF_084",
+      "question": "What is model generalization?",
+      "options": [
+        "Making models work for all types of problems",
+        "The ability of a model to perform well on unseen data from the same distribution",
+        "Creating general-purpose algorithms",
+        "Combining multiple models together"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model generalization refers to how well a trained model performs on new, unseen data that follows the same distribution as the training data. Good generalization means the model has learned underlying patterns rather than memorizing training examples.",
+      "optionExplanations": [
+        "Incorrect. This describes creating universal models, which is different from generalization.",
+        "Correct. Generalization is the ability to perform well on unseen data from the same distribution.",
+        "Incorrect. General-purpose algorithms are about algorithm design, not model generalization.",
+        "Incorrect. Combining models describes ensemble methods, not generalization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "generalization",
+        "unseen-data",
+        "model-performance"
+      ]
+    },
+    {
+      "id": "MLF_085",
+      "question": "What is the difference between parametric and non-parametric algorithms?",
+      "options": [
+        "Parametric algorithms are faster than non-parametric",
+        "Parametric algorithms make assumptions about data distribution; non-parametric make fewer assumptions",
+        "Parametric algorithms use parameters; non-parametric don't use any parameters",
+        "Parametric algorithms are only for regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Parametric algorithms make strong assumptions about the underlying data distribution (e.g., linear regression assumes linear relationships), while non-parametric algorithms make fewer or weaker assumptions about the data distribution.",
+      "optionExplanations": [
+        "Incorrect. Speed depends on implementation and data characteristics, not the parametric nature.",
+        "Correct. Parametric algorithms assume specific data distributions; non-parametric make fewer assumptions.",
+        "Incorrect. Both types can have parameters; the difference is in distributional assumptions.",
+        "Incorrect. Both parametric and non-parametric algorithms can be used for classification and regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parametric",
+        "non-parametric",
+        "assumptions",
+        "distribution"
+      ]
+    },
+    {
+      "id": "MLF_086",
+      "question": "What is feature importance?",
+      "options": [
+        "The computational cost of each feature",
+        "A measure of how much each feature contributes to model predictions",
+        "The correlation between features",
+        "The range of values in each feature"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature importance quantifies how much each feature contributes to the model's predictions. Different algorithms calculate this differently (e.g., coefficient magnitude in linear models, information gain in trees).",
+      "optionExplanations": [
+        "Incorrect. Computational cost is about efficiency, not importance for predictions.",
+        "Correct. Feature importance measures how much each feature contributes to model predictions.",
+        "Incorrect. Correlation between features is feature correlation analysis, not importance.",
+        "Incorrect. Value range is a statistical property, not importance for predictions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-importance",
+        "model-interpretation",
+        "contribution"
+      ]
+    },
+    {
+      "id": "MLF_087",
+      "question": "What is concept drift?",
+      "options": [
+        "When features gradually change their meaning over time",
+        "When the relationship between input features and target variable changes over time",
+        "When new features are added to the model",
+        "When model parameters drift during training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Concept drift occurs when the statistical properties of the target variable change over time in unforeseen ways. This means the relationship between input features and the target changes, making the model less accurate over time.",
+      "optionExplanations": [
+        "Incorrect. While feature meaning can change, concept drift specifically refers to the input-target relationship.",
+        "Correct. Concept drift is when the relationship between features and target changes over time.",
+        "Incorrect. Adding new features is feature engineering, not concept drift.",
+        "Incorrect. Parameter drift during training is a training stability issue, not concept drift."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "concept-drift",
+        "temporal-changes",
+        "model-degradation"
+      ]
+    },
+    {
+      "id": "MLF_088",
+      "question": "What is data splitting and why is it important?",
+      "options": [
+        "Dividing data into training, validation, and test sets to enable unbiased model evaluation",
+        "Splitting data by features to reduce dimensionality",
+        "Dividing data equally among different algorithms",
+        "Separating numerical and categorical features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data splitting divides the dataset into separate portions for training, validation, and testing. This ensures unbiased evaluation by keeping some data completely separate from model development.",
+      "optionExplanations": [
+        "Correct. Data splitting creates separate sets for training, validation, and testing to enable unbiased evaluation.",
+        "Incorrect. Splitting by features is feature selection or dimensionality reduction, not data splitting.",
+        "Incorrect. Distributing data among algorithms is model comparison, not data splitting.",
+        "Incorrect. Separating feature types is data preprocessing, not the purpose of data splitting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "data-splitting",
+        "evaluation",
+        "bias-prevention"
+      ]
+    },
+    {
+      "id": "MLF_089",
+      "question": "What is the holdout method for model evaluation?",
+      "options": [
+        "Holding out features during training",
+        "Holding out a portion of data for final testing that's never used during model development",
+        "Holding out certain algorithms from comparison",
+        "Holding out outliers from the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The holdout method reserves a portion of data (typically 20-30%) exclusively for final model evaluation. This holdout set is never used during training or validation to provide an unbiased estimate of model performance.",
+      "optionExplanations": [
+        "Incorrect. Holding out features is feature selection, not the holdout evaluation method.",
+        "Correct. Holdout method reserves data exclusively for final testing, never used in development.",
+        "Incorrect. Algorithm comparison is model selection, not the holdout method.",
+        "Incorrect. Removing outliers is data cleaning, not the holdout evaluation method."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "holdout-method",
+        "model-evaluation",
+        "test-set"
+      ]
+    },
+    {
+      "id": "MLF_090",
+      "question": "What is the purpose of data normalization in machine learning?",
+      "options": [
+        "To make all features have the same scale and prevent features with larger scales from dominating",
+        "To remove outliers from the data",
+        "To convert categorical variables to numerical",
+        "To reduce the number of features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data normalization scales features to similar ranges, preventing features with larger numerical scales from dominating the learning process. This is especially important for distance-based algorithms.",
+      "optionExplanations": [
+        "Correct. Normalization ensures features have similar scales, preventing dominance by larger-scale features.",
+        "Incorrect. Outlier removal is outlier detection and treatment, not normalization.",
+        "Incorrect. Converting categorical to numerical is encoding, not normalization.",
+        "Incorrect. Reducing features is dimensionality reduction or feature selection, not normalization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "normalization",
+        "feature-scaling",
+        "algorithm-performance"
+      ]
+    },
+    {
+      "id": "MLF_091",
+      "question": "What is the curse of dimensionality and how does it affect machine learning?",
+      "options": [
+        "Too many algorithms to choose from",
+        "High-dimensional spaces become sparse, making it difficult to find patterns and requiring exponentially more data",
+        "Computational complexity increases linearly with dimensions",
+        "Features become highly correlated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The curse of dimensionality refers to various phenomena in high-dimensional spaces where data becomes sparse, distances become less meaningful, and exponentially more data is needed to maintain the same density of examples.",
+      "optionExplanations": [
+        "Incorrect. Algorithm choice is a separate challenge, not the curse of dimensionality.",
+        "Correct. High dimensions create sparse spaces requiring exponentially more data to find patterns effectively.",
+        "Incorrect. Computational complexity often increases exponentially or polynomially, not linearly.",
+        "Incorrect. While correlation can be an issue, it's not the primary aspect of the curse of dimensionality."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensions",
+        "data-sparsity"
+      ]
+    },
+    {
+      "id": "MLF_092",
+      "question": "What is model selection in machine learning?",
+      "options": [
+        "Selecting features for the model",
+        "The process of choosing the best algorithm and hyperparameters for a given problem",
+        "Selecting training examples",
+        "Choosing the target variable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model selection involves choosing the best algorithm, architecture, and hyperparameters for a specific problem. This typically involves comparing different models using validation techniques like cross-validation.",
+      "optionExplanations": [
+        "Incorrect. Selecting features is feature selection, not model selection.",
+        "Correct. Model selection chooses the best algorithm and hyperparameters for the problem.",
+        "Incorrect. Selecting training examples is data sampling, not model selection.",
+        "Incorrect. Choosing target variables is problem formulation, not model selection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "model-selection",
+        "algorithm-choice",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "MLF_093",
+      "question": "What is the difference between correlation and causation?",
+      "options": [
+        "Correlation implies causation",
+        "Correlation measures statistical relationship; causation implies one variable directly influences another",
+        "Causation is weaker than correlation",
+        "They are the same thing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correlation measures statistical association between variables, while causation implies that changes in one variable directly cause changes in another. Correlation does not imply causation - two variables can be correlated due to confounding factors.",
+      "optionExplanations": [
+        "Incorrect. This is a common fallacy - correlation does not imply causation.",
+        "Correct. Correlation shows statistical relationship; causation shows direct influence between variables.",
+        "Incorrect. Causation is actually stronger than correlation as it implies direct influence.",
+        "Incorrect. They are fundamentally different concepts with different implications."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "correlation",
+        "causation",
+        "statistical-relationship"
+      ]
+    },
+    {
+      "id": "MLF_094",
+      "question": "What is multicollinearity in machine learning?",
+      "options": [
+        "When target variables are highly correlated",
+        "When input features are highly correlated with each other",
+        "When multiple algorithms produce different results",
+        "When data has multiple classes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multicollinearity occurs when input features are highly correlated with each other, which can cause problems in some algorithms (like linear regression) by making coefficient estimates unstable and difficult to interpret.",
+      "optionExplanations": [
+        "Incorrect. Target variable correlation relates to multi-output problems, not multicollinearity.",
+        "Correct. Multicollinearity is when input features are highly correlated with each other.",
+        "Incorrect. Algorithm disagreement is model variance, not multicollinearity.",
+        "Incorrect. Multiple classes describe classification problems, not multicollinearity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multicollinearity",
+        "feature-correlation",
+        "model-stability"
+      ]
+    },
+    {
+      "id": "MLF_095",
+      "question": "What is the purpose of feature scaling?",
+      "options": [
+        "To reduce the number of features",
+        "To ensure features contribute equally to distance-based algorithms by normalizing their ranges",
+        "To create new features",
+        "To handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling ensures that all features contribute equally to algorithms that use distance measures (like k-NN, SVM, neural networks) by normalizing their ranges, preventing features with larger scales from dominating.",
+      "optionExplanations": [
+        "Incorrect. Reducing features is feature selection or dimensionality reduction.",
+        "Correct. Feature scaling normalizes ranges so features contribute equally to distance-based algorithms.",
+        "Incorrect. Creating new features is feature engineering or feature construction.",
+        "Incorrect. Handling missing values is imputation, not feature scaling."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-scaling",
+        "distance-algorithms",
+        "normalization"
+      ]
+    },
+    {
+      "id": "MLF_096",
+      "question": "What is bootstrapping in machine learning?",
+      "options": [
+        "Starting the training process",
+        "A resampling technique that creates multiple datasets by sampling with replacement",
+        "Loading initial model weights",
+        "Setting up the development environment"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bootstrapping is a statistical resampling technique that creates multiple datasets by randomly sampling with replacement from the original dataset. It's used in techniques like bagging and for estimating confidence intervals.",
+      "optionExplanations": [
+        "Incorrect. Starting training is initialization, not bootstrapping in the statistical sense.",
+        "Correct. Bootstrapping creates multiple datasets through sampling with replacement.",
+        "Incorrect. Loading weights is model initialization, not bootstrapping.",
+        "Incorrect. Environment setup is software configuration, not statistical bootstrapping."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bootstrapping",
+        "resampling",
+        "sampling-with-replacement"
+      ]
+    },
+    {
+      "id": "MLF_097",
+      "question": "What is the difference between batch processing and online processing in machine learning?",
+      "options": [
+        "Batch processing uses more memory than online processing",
+        "Batch processes entire datasets at once; online processes data one example at a time as it arrives",
+        "Batch processing is always faster than online processing",
+        "Online processing requires internet connection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch processing handles entire datasets at once (good for stable datasets), while online processing handles data one example at a time as it arrives (good for streaming data or when data is too large for memory).",
+      "optionExplanations": [
+        "Incorrect. While batch processing may use more memory, this isn't the defining difference.",
+        "Correct. Batch processes entire datasets; online processes individual examples as they arrive.",
+        "Incorrect. Speed depends on implementation and data characteristics, not processing type.",
+        "Incorrect. 'Online' refers to real-time processing, not internet connectivity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-processing",
+        "online-processing",
+        "data-streams"
+      ]
+    },
+    {
+      "id": "MLF_098",
+      "question": "What is model persistence in machine learning?",
+      "options": [
+        "How long a model takes to train",
+        "The ability to save and load trained models for later use",
+        "How well a model maintains performance over time",
+        "The memory usage of a model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model persistence refers to saving trained models to storage (like files or databases) so they can be loaded and used later without retraining. This is essential for deploying models in production systems.",
+      "optionExplanations": [
+        "Incorrect. Training duration is training time, not persistence.",
+        "Correct. Model persistence is the ability to save and load trained models for reuse.",
+        "Incorrect. Performance maintenance over time relates to model degradation or concept drift.",
+        "Incorrect. Memory usage is resource consumption, not persistence."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "model-persistence",
+        "serialization",
+        "deployment"
+      ]
+    },
+    {
+      "id": "MLF_099",
+      "question": "What is the importance of reproducibility in machine learning?",
+      "options": [
+        "It makes models train faster",
+        "It ensures experiments can be repeated with the same results, enabling verification and scientific rigor",
+        "It reduces computational costs",
+        "It improves model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reproducibility ensures that ML experiments can be repeated with the same results, which is crucial for scientific validity, debugging, collaboration, and building trust in ML systems. This requires controlling random seeds, versions, and experimental conditions.",
+      "optionExplanations": [
+        "Incorrect. Reproducibility doesn't directly affect training speed.",
+        "Correct. Reproducibility enables experiment repetition with same results, ensuring scientific rigor.",
+        "Incorrect. Reproducibility doesn't directly reduce computational costs.",
+        "Incorrect. Reproducibility ensures consistent results but doesn't inherently improve accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reproducibility",
+        "experimental-design",
+        "scientific-rigor"
+      ]
+    },
+    {
+      "id": "MLF_100",
+      "question": "What are the key steps in a typical machine learning workflow?",
+      "options": [
+        "Only training and testing",
+        "Problem definition, data collection, preprocessing, model selection, training, evaluation, and deployment",
+        "Just data collection and model training",
+        "Feature selection and hyperparameter tuning only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A complete ML workflow includes: problem definition, data collection and exploration, preprocessing, feature engineering, model selection, training, evaluation, hyperparameter tuning, validation, and deployment. Each step is crucial for successful ML projects.",
+      "optionExplanations": [
+        "Incorrect. A complete workflow involves many more steps than just training and testing.",
+        "Correct. The ML workflow includes problem definition, data work, modeling, evaluation, and deployment.",
+        "Incorrect. This omits critical steps like preprocessing, evaluation, and deployment.",
+        "Incorrect. While important, these are only subset of the complete workflow."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ml-workflow",
+        "process",
+        "methodology"
+      ]
+    }
+  ]
+}

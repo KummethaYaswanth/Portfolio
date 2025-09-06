@@ -1,0 +1,2416 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_LLM",
+  "subtopicName": "Large Language Models",
+  "str": 0.100,
+  "description": "Comprehensive assessment of Large Language Models including GPT, BERT, T5, training processes, fine-tuning, prompting strategies, tokenization, and attention mechanisms",
+  "questions": [
+    {
+      "id": "LLM_001",
+      "question": "What does GPT stand for in the context of Large Language Models?",
+      "options": [
+        "Generative Pre-trained Transformer",
+        "General Purpose Technology",
+        "Graphical Processing Tool",
+        "Global Parameter Training"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GPT stands for Generative Pre-trained Transformer, which refers to a family of autoregressive language models that generate text by predicting the next token in a sequence.",
+      "optionExplanations": [
+        "Correct. GPT stands for Generative Pre-trained Transformer, representing the architecture's ability to generate text using a transformer-based model that has been pre-trained on large datasets.",
+        "Incorrect. While GPT models can be considered general-purpose technology, this is not what the acronym stands for.",
+        "Incorrect. GPT has nothing to do with graphical processing, though GPUs are used to train these models.",
+        "Incorrect. While global parameters are involved in training, this is not the meaning of the GPT acronym."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "GPT",
+        "basics",
+        "terminology"
+      ]
+    },
+    {
+      "id": "LLM_002",
+      "question": "Which of the following best describes the primary difference between BERT and GPT?",
+      "options": [
+        "BERT is bidirectional while GPT is unidirectional",
+        "BERT uses CNN while GPT uses RNN",
+        "BERT is smaller than GPT",
+        "BERT is generative while GPT is discriminative"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BERT (Bidirectional Encoder Representations from Transformers) processes text bidirectionally, while GPT processes text unidirectionally from left to right.",
+      "optionExplanations": [
+        "Correct. BERT uses bidirectional attention to understand context from both directions, while GPT uses causal (left-to-right) attention for text generation.",
+        "Incorrect. Both BERT and GPT use the Transformer architecture, not CNN or RNN architectures.",
+        "Incorrect. Model size varies by version and is not the primary architectural difference between BERT and GPT.",
+        "Incorrect. This is backwards - GPT is generative (creates new text) while BERT is primarily used for understanding and classification tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "GPT",
+        "architecture",
+        "bidirectional"
+      ]
+    },
+    {
+      "id": "LLM_003",
+      "question": "What is the primary purpose of the attention mechanism in Transformers?",
+      "options": [
+        "To reduce computational complexity",
+        "To allow the model to focus on relevant parts of the input sequence",
+        "To increase the model size",
+        "To eliminate the need for positional encoding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The attention mechanism allows the model to dynamically focus on different parts of the input sequence when processing each token, enabling better understanding of context and relationships.",
+      "optionExplanations": [
+        "Incorrect. While attention can be more efficient than RNNs for long sequences, its primary purpose is not computational reduction.",
+        "Correct. Attention mechanisms compute weights that determine how much focus to place on different parts of the input when processing each position.",
+        "Incorrect. Attention doesn't inherently increase model size, though it does add parameters for computing attention weights.",
+        "Incorrect. Positional encoding is still necessary in Transformers to provide sequence order information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention",
+        "transformers",
+        "mechanism"
+      ]
+    },
+    {
+      "id": "LLM_004",
+      "question": "What is tokenization in the context of Large Language Models?",
+      "options": [
+        "Converting text into numerical representations that the model can process",
+        "Adding security tokens to protect the model",
+        "Creating backup copies of the model",
+        "Encrypting the model weights"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Tokenization is the process of breaking down text into smaller units (tokens) and converting them into numerical representations that neural networks can process.",
+      "optionExplanations": [
+        "Correct. Tokenization converts raw text into tokens (words, subwords, or characters) and maps them to numerical IDs that the model can understand.",
+        "Incorrect. This refers to security tokens in authentication systems, not NLP tokenization.",
+        "Incorrect. This describes data backup procedures, not the tokenization process in language models.",
+        "Incorrect. This refers to security/encryption measures, not the text preprocessing step of tokenization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "tokenization",
+        "preprocessing",
+        "basics"
+      ]
+    },
+    {
+      "id": "LLM_005",
+      "question": "Which of the following is a key advantage of the Transformer architecture over RNNs?",
+      "options": [
+        "Lower memory requirements",
+        "Parallelizable training",
+        "Simpler architecture",
+        "Better performance on short sequences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transformers can process all positions in a sequence simultaneously, making training highly parallelizable, unlike RNNs which must process sequences sequentially.",
+      "optionExplanations": [
+        "Incorrect. Transformers typically require more memory due to attention computations and the need to store attention matrices.",
+        "Correct. Transformers can process all sequence positions in parallel during training, significantly speeding up the training process compared to sequential RNN processing.",
+        "Incorrect. Transformers are generally more complex than RNNs, with multiple attention heads and feed-forward layers.",
+        "Incorrect. The advantage is more pronounced on longer sequences where Transformers can maintain long-range dependencies better."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transformers",
+        "RNN",
+        "parallelization",
+        "training"
+      ]
+    },
+    {
+      "id": "LLM_006",
+      "question": "What is fine-tuning in the context of Large Language Models?",
+      "options": [
+        "Adjusting hyperparameters before training",
+        "Training a pre-trained model on task-specific data",
+        "Reducing the model size for deployment",
+        "Optimizing the model's inference speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fine-tuning involves taking a pre-trained language model and continuing training on a smaller, task-specific dataset to adapt it for particular applications.",
+      "optionExplanations": [
+        "Incorrect. This describes hyperparameter tuning, which happens before training begins, not fine-tuning of a pre-trained model.",
+        "Correct. Fine-tuning adapts a pre-trained model to specific tasks by training on domain-specific or task-specific data with typically smaller learning rates.",
+        "Incorrect. This describes model compression or pruning techniques, not fine-tuning.",
+        "Incorrect. This refers to inference optimization techniques, not the fine-tuning training process."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "fine-tuning",
+        "transfer-learning",
+        "training"
+      ]
+    },
+    {
+      "id": "LLM_007",
+      "question": "What is the purpose of positional encoding in Transformer models?",
+      "options": [
+        "To encrypt the input data",
+        "To provide information about token positions in the sequence",
+        "To reduce model size",
+        "To improve training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Since Transformers process all tokens simultaneously without inherent sequence order, positional encoding adds information about each token's position in the sequence.",
+      "optionExplanations": [
+        "Incorrect. Positional encoding has nothing to do with data encryption or security measures.",
+        "Correct. Positional encoding injects information about the absolute or relative position of tokens in the sequence since attention mechanisms are permutation-invariant.",
+        "Incorrect. Positional encoding actually adds parameters and computations, though minimally compared to the overall model size.",
+        "Incorrect. While positional encoding enables parallel processing, its primary purpose is providing positional information, not speed optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "positional-encoding",
+        "transformers",
+        "sequence"
+      ]
+    },
+    {
+      "id": "LLM_008",
+      "question": "What does the 'T5' in the T5 model stand for?",
+      "options": [
+        "Transformer 5th generation",
+        "Text-To-Text Transfer Transformer",
+        "Top 5 Transformer",
+        "Tokenized Text Transformer Tool"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "T5 stands for Text-To-Text Transfer Transformer, emphasizing its approach of treating all NLP tasks as text-to-text problems.",
+      "optionExplanations": [
+        "Incorrect. T5 is not the fifth generation of Transformers, and the name doesn't refer to generations.",
+        "Correct. T5 stands for Text-To-Text Transfer Transformer, reflecting its unified approach where all tasks are framed as text generation problems.",
+        "Incorrect. 'Top 5' is not what T5 represents; it's not a ranking or selection of models.",
+        "Incorrect. While T5 does involve tokenization and text processing, this is not what the acronym stands for."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "T5",
+        "terminology",
+        "text-to-text"
+      ]
+    },
+    {
+      "id": "LLM_009",
+      "question": "Which training objective is typically used for GPT models?",
+      "options": [
+        "Masked Language Modeling (MLM)",
+        "Next Sentence Prediction (NSP)",
+        "Autoregressive Language Modeling",
+        "Contrastive Learning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "GPT models use autoregressive language modeling, where the model learns to predict the next token in a sequence given all previous tokens.",
+      "optionExplanations": [
+        "Incorrect. MLM is used by BERT, where random tokens are masked and the model predicts them using bidirectional context.",
+        "Incorrect. NSP is used in BERT to help the model understand relationships between sentences, not in GPT models.",
+        "Correct. GPT models use autoregressive (causal) language modeling, predicting the next token given previous tokens in left-to-right order.",
+        "Incorrect. While contrastive learning is used in some language models, it's not the primary training objective for GPT models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "GPT",
+        "training-objective",
+        "autoregressive"
+      ]
+    },
+    {
+      "id": "LLM_010",
+      "question": "What is prompt engineering?",
+      "options": [
+        "Building hardware for running language models",
+        "Designing effective input prompts to guide model behavior",
+        "Training models to understand prompts",
+        "Converting prompts into code"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt engineering is the practice of designing and optimizing input prompts to effectively communicate with language models and achieve desired outputs.",
+      "optionExplanations": [
+        "Incorrect. This refers to hardware engineering, not the practice of crafting text prompts for language models.",
+        "Correct. Prompt engineering involves carefully crafting input text to guide the model's responses and improve performance on specific tasks.",
+        "Incorrect. This describes training a model, whereas prompt engineering works with already-trained models by optimizing inputs.",
+        "Incorrect. Prompt engineering deals with natural language prompts, not code conversion."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "prompt-engineering",
+        "prompting",
+        "interaction"
+      ]
+    },
+    {
+      "id": "LLM_011",
+      "question": "What is the main difference between few-shot and zero-shot learning in language models?",
+      "options": [
+        "Few-shot uses examples in the prompt, zero-shot uses none",
+        "Few-shot is faster than zero-shot",
+        "Few-shot requires fine-tuning, zero-shot doesn't",
+        "Few-shot uses fewer parameters than zero-shot"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Few-shot learning provides a few examples of the desired task in the prompt, while zero-shot learning gives only instructions without examples.",
+      "optionExplanations": [
+        "Correct. Few-shot learning includes demonstration examples in the prompt to guide the model, while zero-shot relies only on task instructions without examples.",
+        "Incorrect. Speed differences depend on prompt length and complexity, not fundamentally on the shot type.",
+        "Incorrect. Both few-shot and zero-shot learning work with pre-trained models without additional fine-tuning.",
+        "Incorrect. Both approaches use the same model with the same parameters; only the prompt content differs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "few-shot",
+        "zero-shot",
+        "in-context-learning"
+      ]
+    },
+    {
+      "id": "LLM_012",
+      "question": "What is the purpose of the feed-forward network in each Transformer layer?",
+      "options": [
+        "To compute attention weights",
+        "To process information after attention computation",
+        "To encode positional information",
+        "To normalize layer outputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The feed-forward network processes the output from the attention mechanism, applying non-linear transformations to each position independently.",
+      "optionExplanations": [
+        "Incorrect. Attention weights are computed by the multi-head attention mechanism, not the feed-forward network.",
+        "Correct. The feed-forward network applies learned transformations to the attention output, providing additional processing capacity for each position.",
+        "Incorrect. Positional encoding is added to input embeddings, not computed by the feed-forward network.",
+        "Incorrect. Layer normalization is a separate component, though it's applied around the feed-forward network."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transformers",
+        "feed-forward",
+        "architecture"
+      ]
+    },
+    {
+      "id": "LLM_013",
+      "question": "What is the significance of the attention head dimension in multi-head attention?",
+      "options": [
+        "It determines the model's vocabulary size",
+        "It controls how much information each head can process",
+        "It sets the maximum sequence length",
+        "It defines the number of layers in the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The attention head dimension determines the representational capacity of each attention head, affecting how much and what type of information it can capture.",
+      "optionExplanations": [
+        "Incorrect. Vocabulary size is determined by the tokenizer and embedding layer, not attention head dimensions.",
+        "Correct. The head dimension (typically model_dim/num_heads) determines the feature space size for each attention head's queries, keys, and values.",
+        "Incorrect. Sequence length limits are typically set by positional encoding schemes and memory constraints, not head dimensions.",
+        "Incorrect. The number of layers is a separate architectural choice independent of attention head dimensions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-head-attention",
+        "dimensions",
+        "architecture"
+      ]
+    },
+    {
+      "id": "LLM_014",
+      "question": "What is catastrophic forgetting in the context of fine-tuning language models?",
+      "options": [
+        "The model forgets how to generate coherent text",
+        "The model loses previously learned knowledge when learning new tasks",
+        "The model becomes too large to fit in memory",
+        "The model's training becomes unstable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Catastrophic forgetting occurs when a model loses previously acquired knowledge while learning new tasks, particularly problematic in sequential task learning.",
+      "optionExplanations": [
+        "Incorrect. While performance might degrade, catastrophic forgetting specifically refers to losing previous knowledge, not general text generation ability.",
+        "Correct. Catastrophic forgetting is when neural networks overwrite previous knowledge while learning new tasks, losing performance on earlier learned tasks.",
+        "Incorrect. This describes a memory/hardware limitation, not the catastrophic forgetting phenomenon.",
+        "Incorrect. Training instability is a different issue related to optimization dynamics, not knowledge retention."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "catastrophic-forgetting",
+        "fine-tuning",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "LLM_015",
+      "question": "What is the primary purpose of layer normalization in Transformers?",
+      "options": [
+        "To reduce overfitting",
+        "To stabilize training and improve convergence",
+        "To increase model capacity",
+        "To reduce computational cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Layer normalization normalizes inputs across features, stabilizing training dynamics and helping the model converge more reliably.",
+      "optionExplanations": [
+        "Incorrect. While layer normalization can have some regularization effects, its primary purpose is not overfitting reduction.",
+        "Correct. Layer normalization normalizes activations, reducing internal covariate shift and making training more stable with faster convergence.",
+        "Incorrect. Layer normalization doesn't increase model capacity; it's a normalization technique that helps training dynamics.",
+        "Incorrect. Layer normalization adds computational overhead, though minimal; its purpose is training stability, not cost reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "layer-normalization",
+        "training",
+        "stability"
+      ]
+    },
+    {
+      "id": "LLM_016",
+      "question": "What is the difference between encoder-decoder and decoder-only Transformer architectures?",
+      "options": [
+        "Encoder-decoder is bidirectional, decoder-only is unidirectional",
+        "Encoder-decoder has two components, decoder-only has one",
+        "Encoder-decoder is larger than decoder-only",
+        "Encoder-decoder is faster than decoder-only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Encoder-decoder models have separate encoder and decoder components, while decoder-only models use only decoder layers for both understanding and generation.",
+      "optionExplanations": [
+        "Incorrect. While this is often true, the key difference is architectural - having separate encoder and decoder components versus using only decoder layers.",
+        "Correct. Encoder-decoder models have distinct encoder and decoder stacks, while decoder-only models use only decoder layers throughout.",
+        "Incorrect. Size depends on the specific model configuration, not the architectural choice between encoder-decoder and decoder-only.",
+        "Incorrect. Speed depends on implementation and specific use cases, not inherently on the architectural choice."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoder-decoder",
+        "decoder-only",
+        "architecture"
+      ]
+    },
+    {
+      "id": "LLM_017",
+      "question": "What is the purpose of dropout in Transformer models?",
+      "options": [
+        "To reduce model size",
+        "To prevent overfitting during training",
+        "To speed up inference",
+        "To improve attention computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dropout randomly sets some neurons to zero during training, acting as a regularization technique to prevent overfitting and improve generalization.",
+      "optionExplanations": [
+        "Incorrect. Dropout doesn't permanently reduce model size; it temporarily zeros out neurons during training only.",
+        "Correct. Dropout is a regularization technique that randomly zeros out neurons during training to prevent the model from overfitting to the training data.",
+        "Incorrect. Dropout is typically disabled during inference and doesn't directly improve inference speed.",
+        "Incorrect. Dropout is applied to various parts of the model for regularization, not specifically to improve attention mechanisms."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "dropout",
+        "regularization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "LLM_018",
+      "question": "What is the main advantage of using subword tokenization (like BPE) over word-level tokenization?",
+      "options": [
+        "Faster processing speed",
+        "Better handling of out-of-vocabulary words",
+        "Smaller vocabulary size",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Subword tokenization can break down unknown words into known subword units, eliminating out-of-vocabulary issues while maintaining semantic information.",
+      "optionExplanations": [
+        "Incorrect. Processing speed depends more on sequence length and model size than tokenization method.",
+        "Correct. Subword tokenization can decompose rare or unknown words into familiar subword pieces, effectively eliminating out-of-vocabulary problems.",
+        "Incorrect. Subword tokenization typically results in larger vocabularies than word-level tokenization, though more manageable than character-level.",
+        "Incorrect. Subword tokenization algorithms like BPE are actually more complex to implement than simple word-level tokenization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "subword-tokenization",
+        "BPE",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "LLM_019",
+      "question": "What is the purpose of the CLS token in BERT?",
+      "options": [
+        "To mark the end of a sentence",
+        "To provide a representation for the entire sequence",
+        "To separate different sentences",
+        "To indicate the start of classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The CLS (classification) token is added at the beginning of sequences and its final hidden state is used as the aggregate sequence representation for classification tasks.",
+      "optionExplanations": [
+        "Incorrect. The SEP token is used to mark sentence boundaries, not CLS.",
+        "Correct. The CLS token's final hidden state serves as the aggregate representation of the entire sequence for downstream tasks like classification.",
+        "Incorrect. The SEP token separates sentences, while CLS appears at the beginning of the input.",
+        "Incorrect. While CLS stands for classification, it doesn't indicate the start of classification but provides the sequence representation for classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "CLS-token",
+        "classification"
+      ]
+    },
+    {
+      "id": "LLM_020",
+      "question": "What is temperature in the context of text generation?",
+      "options": [
+        "The computational heat generated during inference",
+        "A parameter that controls randomness in text generation",
+        "The training duration for the model",
+        "The model's confidence in its predictions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature is a hyperparameter used during sampling that controls the randomness of text generation by scaling the logits before applying softmax.",
+      "optionExplanations": [
+        "Incorrect. Temperature in text generation refers to a sampling parameter, not physical heat or computational temperature.",
+        "Correct. Temperature scales the model's output logits, with higher values increasing randomness and lower values making outputs more deterministic.",
+        "Incorrect. Training duration is measured in epochs or steps, not referred to as temperature.",
+        "Incorrect. While temperature affects output diversity, it's not a direct measure of model confidence."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature",
+        "text-generation",
+        "sampling"
+      ]
+    },
+    {
+      "id": "LLM_021",
+      "question": "What is the main purpose of pre-training in Large Language Models?",
+      "options": [
+        "To learn task-specific skills",
+        "To learn general language understanding and generation capabilities",
+        "To reduce model size",
+        "To improve inference speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-training on large text corpora helps models learn general language patterns, grammar, facts, and reasoning capabilities that can be transferred to various downstream tasks.",
+      "optionExplanations": [
+        "Incorrect. Task-specific skills are typically learned during fine-tuning, not pre-training.",
+        "Correct. Pre-training on diverse text data helps models learn broad language understanding, world knowledge, and generation capabilities.",
+        "Incorrect. Pre-training doesn't reduce model size; it's the process of training the full model on large datasets.",
+        "Incorrect. Pre-training is about learning capabilities, not optimizing inference speed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pre-training",
+        "language-modeling",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "LLM_022",
+      "question": "What is the significance of the attention score in the attention mechanism?",
+      "options": [
+        "It represents the model's confidence",
+        "It determines how much focus to place on each input token",
+        "It controls the learning rate",
+        "It measures the model's accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention scores determine how much weight to give to each input token when computing the output for a particular position, enabling the model to focus on relevant information.",
+      "optionExplanations": [
+        "Incorrect. Attention scores represent relevance/importance for the current computation, not overall model confidence.",
+        "Correct. Attention scores are computed between queries and keys to determine how much each input token should contribute to the output at each position.",
+        "Incorrect. Learning rate is a training hyperparameter, not related to attention scores during forward computation.",
+        "Incorrect. Attention scores are internal computations for weighting inputs, not measures of model accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention",
+        "attention-scores",
+        "mechanism"
+      ]
+    },
+    {
+      "id": "LLM_023",
+      "question": "What is the purpose of the value vectors in the attention mechanism?",
+      "options": [
+        "To store the actual information content that gets aggregated",
+        "To compute similarity scores",
+        "To determine attention weights",
+        "To normalize the attention distribution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Value vectors contain the actual information content that gets weighted and aggregated based on the attention scores to produce the output.",
+      "optionExplanations": [
+        "Correct. Value vectors hold the content information that gets weighted by attention scores and summed to create the output representation.",
+        "Incorrect. Query and key vectors are used to compute similarity scores, not value vectors.",
+        "Incorrect. Attention weights are determined by the similarity between query and key vectors, not value vectors.",
+        "Incorrect. Normalization is typically done using softmax on the attention scores, not involving value vectors directly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention",
+        "value-vectors",
+        "mechanism"
+      ]
+    },
+    {
+      "id": "LLM_024",
+      "question": "What is masked self-attention in GPT models?",
+      "options": [
+        "Randomly masking input tokens",
+        "Preventing the model from seeing future tokens during training",
+        "Hiding certain layers during training",
+        "Masking attention weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Masked self-attention ensures that when predicting a token, the model can only attend to previous tokens in the sequence, not future ones, maintaining the autoregressive property.",
+      "optionExplanations": [
+        "Incorrect. This describes masked language modeling (as in BERT), not the causal masking in GPT models.",
+        "Correct. Masked self-attention uses causal masking to prevent attention to future positions, ensuring autoregressive generation properties.",
+        "Incorrect. Layer masking is not a standard technique in Transformer training.",
+        "Incorrect. The masking is applied to prevent attention to future positions, not to mask the attention weights themselves."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "masked-attention",
+        "GPT",
+        "autoregressive"
+      ]
+    },
+    {
+      "id": "LLM_025",
+      "question": "What is the main benefit of using multiple attention heads in Transformers?",
+      "options": [
+        "Increased model size",
+        "Ability to capture different types of relationships simultaneously",
+        "Faster training",
+        "Reduced memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multiple attention heads allow the model to attend to different aspects of the input simultaneously, such as syntactic and semantic relationships.",
+      "optionExplanations": [
+        "Incorrect. While multi-head attention does increase parameters, the main benefit is representational, not size.",
+        "Correct. Different attention heads can specialize in capturing different types of linguistic relationships and patterns in parallel.",
+        "Incorrect. Multiple heads add computational overhead, though they can be parallelized effectively.",
+        "Incorrect. Multiple attention heads typically increase memory usage due to additional parameter matrices."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-head-attention",
+        "relationships",
+        "representation"
+      ]
+    },
+    {
+      "id": "LLM_026",
+      "question": "What is the purpose of gradient clipping in training Large Language Models?",
+      "options": [
+        "To reduce model size",
+        "To prevent exploding gradients",
+        "To increase training speed",
+        "To improve model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient clipping limits the magnitude of gradients during backpropagation to prevent exploding gradients, which can cause training instability.",
+      "optionExplanations": [
+        "Incorrect. Gradient clipping affects training dynamics, not the final model size.",
+        "Correct. Gradient clipping caps gradient magnitudes to prevent exploding gradients that can destabilize training, especially in deep networks.",
+        "Incorrect. Gradient clipping adds computational overhead and doesn't inherently speed up training.",
+        "Incorrect. While gradient clipping can lead to more stable training and potentially better convergence, its direct purpose is gradient magnitude control."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "training",
+        "stability"
+      ]
+    },
+    {
+      "id": "LLM_027",
+      "question": "What is the difference between extractive and abstractive text summarization?",
+      "options": [
+        "Extractive is longer than abstractive",
+        "Extractive selects existing sentences, abstractive generates new text",
+        "Extractive is more accurate than abstractive",
+        "Extractive requires more training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Extractive summarization selects and combines existing sentences from the source text, while abstractive summarization generates new sentences that capture the key information.",
+      "optionExplanations": [
+        "Incorrect. Length depends on the specific task requirements, not the extractive vs. abstractive approach.",
+        "Correct. Extractive methods select and rearrange existing text, while abstractive methods generate new text that paraphrases and synthesizes information.",
+        "Incorrect. Accuracy depends on the specific model and evaluation criteria, not inherently on the approach type.",
+        "Incorrect. Training data requirements depend on the model architecture and task complexity, not the summarization approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "summarization",
+        "extractive",
+        "abstractive"
+      ]
+    },
+    {
+      "id": "LLM_028",
+      "question": "What is the purpose of warmup in learning rate scheduling for Transformer training?",
+      "options": [
+        "To gradually increase the learning rate at the beginning of training",
+        "To reduce the model size",
+        "To prevent overfitting",
+        "To increase batch size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Learning rate warmup gradually increases the learning rate from a small value to the target value during the initial training steps to stabilize early training dynamics.",
+      "optionExplanations": [
+        "Correct. Warmup gradually increases the learning rate from near-zero to the target value over initial training steps to avoid early training instability.",
+        "Incorrect. Learning rate scheduling doesn't affect model architecture or size.",
+        "Incorrect. While proper learning rate scheduling can help with generalization, warmup specifically addresses early training stability, not overfitting.",
+        "Incorrect. Warmup affects learning rate scheduling, not batch size configuration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "warmup",
+        "learning-rate",
+        "training"
+      ]
+    },
+    {
+      "id": "LLM_029",
+      "question": "What is the main challenge with very long sequences in standard Transformer models?",
+      "options": [
+        "Increased vocabulary requirements",
+        "Quadratic complexity of self-attention",
+        "Slower tokenization",
+        "Reduced accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standard self-attention has quadratic complexity in sequence length, making it computationally expensive and memory-intensive for very long sequences.",
+      "optionExplanations": [
+        "Incorrect. Vocabulary size is independent of sequence length and doesn't change with longer sequences.",
+        "Correct. Self-attention computes pairwise interactions between all positions, resulting in O(n²) complexity where n is sequence length.",
+        "Incorrect. Tokenization complexity is typically linear in input length, not the main bottleneck for long sequences.",
+        "Incorrect. While very long sequences can pose challenges, the primary issue is computational complexity, not inherent accuracy reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "long-sequences",
+        "complexity",
+        "attention"
+      ]
+    },
+    {
+      "id": "LLM_030",
+      "question": "What is the purpose of special tokens like [PAD], [UNK], and [SEP] in language models?",
+      "options": [
+        "To increase vocabulary size",
+        "To handle specific formatting and processing needs",
+        "To improve model accuracy",
+        "To reduce computational cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Special tokens serve specific functions: [PAD] for sequence padding, [UNK] for unknown words, [SEP] for separating segments, enabling proper model input formatting.",
+      "optionExplanations": [
+        "Incorrect. While special tokens are part of the vocabulary, their purpose is functional, not to increase vocabulary size.",
+        "Correct. Special tokens handle specific needs like sequence padding ([PAD]), unknown words ([UNK]), and segment separation ([SEP]).",
+        "Incorrect. Special tokens are utility tokens for proper input formatting, not directly for improving accuracy.",
+        "Incorrect. Special tokens enable proper processing but don't directly reduce computational costs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "special-tokens",
+        "tokenization",
+        "formatting"
+      ]
+    },
+    {
+      "id": "LLM_031",
+      "question": "What is the main idea behind transfer learning in NLP?",
+      "options": [
+        "Training multiple models simultaneously",
+        "Using knowledge from pre-trained models for new tasks",
+        "Transferring data between different datasets",
+        "Converting models between different frameworks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transfer learning leverages knowledge gained during pre-training on large datasets to improve performance on downstream tasks with limited data.",
+      "optionExplanations": [
+        "Incorrect. Transfer learning involves using a single pre-trained model for new tasks, not training multiple models simultaneously.",
+        "Correct. Transfer learning uses representations and knowledge learned during pre-training to improve performance on related downstream tasks.",
+        "Incorrect. Transfer learning is about knowledge transfer between models/tasks, not data movement between datasets.",
+        "Incorrect. This describes model conversion or deployment, not the transfer learning paradigm."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "transfer-learning",
+        "pre-training",
+        "knowledge-transfer"
+      ]
+    },
+    {
+      "id": "LLM_032",
+      "question": "What is the purpose of beam search in text generation?",
+      "options": [
+        "To generate multiple output candidates and select the best one",
+        "To speed up inference",
+        "To reduce memory usage",
+        "To improve training efficiency"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Beam search maintains multiple candidate sequences during generation and selects the sequence with the highest overall probability, improving output quality over greedy decoding.",
+      "optionExplanations": [
+        "Correct. Beam search explores multiple possible sequences simultaneously and selects the one with the highest probability, often producing better results than greedy search.",
+        "Incorrect. Beam search is actually slower than greedy decoding because it explores multiple candidates simultaneously.",
+        "Incorrect. Beam search uses more memory than greedy decoding as it maintains multiple candidate sequences.",
+        "Incorrect. Beam search is an inference technique, not related to training efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "beam-search",
+        "text-generation",
+        "decoding"
+      ]
+    },
+    {
+      "id": "LLM_033",
+      "question": "What is the main advantage of using ReLU activation over sigmoid in Transformers?",
+      "options": [
+        "Lower computational cost",
+        "Better handling of vanishing gradients",
+        "Smaller model size",
+        "Faster convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ReLU activation helps mitigate vanishing gradient problems because it has a constant gradient of 1 for positive inputs, unlike sigmoid which has very small gradients near saturation.",
+      "optionExplanations": [
+        "Incorrect. While ReLU is computationally simple, the main advantage in deep networks is gradient flow, not computational cost.",
+        "Correct. ReLU maintains gradient flow better than sigmoid, which suffers from vanishing gradients when inputs are far from zero.",
+        "Incorrect. Activation function choice doesn't directly affect model size in terms of parameters.",
+        "Incorrect. While better gradient flow can help convergence, the primary advantage is addressing vanishing gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ReLU",
+        "activation",
+        "gradients"
+      ]
+    },
+    {
+      "id": "LLM_034",
+      "question": "What is the purpose of the embedding layer in Transformer models?",
+      "options": [
+        "To convert tokens to dense vector representations",
+        "To compute attention weights",
+        "To generate output text",
+        "To normalize input sequences"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The embedding layer converts discrete token IDs into dense vector representations that the neural network can process effectively.",
+      "optionExplanations": [
+        "Correct. The embedding layer maps token IDs to dense vectors, providing learnable representations that capture semantic relationships.",
+        "Incorrect. Attention weights are computed by the attention mechanism using the embedded representations.",
+        "Incorrect. Output generation involves the final layers and decoding process, not the input embedding layer.",
+        "Incorrect. Input normalization is typically handled by layer normalization, not the embedding layer."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "embeddings",
+        "tokens",
+        "representations"
+      ]
+    },
+    {
+      "id": "LLM_035",
+      "question": "What is the difference between parameter-efficient fine-tuning and full fine-tuning?",
+      "options": [
+        "Parameter-efficient uses fewer GPUs",
+        "Parameter-efficient updates only a subset of parameters",
+        "Parameter-efficient is faster to train",
+        "Parameter-efficient requires less data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Parameter-efficient fine-tuning methods like LoRA or adapters update only a small subset of parameters while keeping most of the pre-trained model frozen.",
+      "optionExplanations": [
+        "Incorrect. GPU usage depends on model size and batch size, not necessarily on the fine-tuning method.",
+        "Correct. Parameter-efficient methods update only specific parameters (adapters, low-rank matrices, etc.) while keeping most pre-trained weights frozen.",
+        "Incorrect. While parameter-efficient methods can be faster due to fewer parameter updates, this is a consequence, not the defining characteristic.",
+        "Incorrect. Data requirements depend on the task and desired performance, not directly on the fine-tuning method."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parameter-efficient",
+        "fine-tuning",
+        "LoRA"
+      ]
+    },
+    {
+      "id": "LLM_036",
+      "question": "What is the main purpose of residual connections in Transformer models?",
+      "options": [
+        "To increase model capacity",
+        "To help gradient flow during backpropagation",
+        "To reduce computational cost",
+        "To improve attention computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Residual connections (skip connections) help gradients flow directly through the network during backpropagation, enabling training of very deep models.",
+      "optionExplanations": [
+        "Incorrect. While residual connections enable deeper models, their primary purpose is gradient flow, not capacity increase.",
+        "Correct. Residual connections provide direct gradient paths, preventing vanishing gradients and enabling training of deep networks.",
+        "Incorrect. Residual connections add computational overhead for the addition operation, though minimal.",
+        "Incorrect. Residual connections are applied around attention and feed-forward blocks, but don't directly improve attention computation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual-connections",
+        "gradients",
+        "deep-learning"
+      ]
+    },
+    {
+      "id": "LLM_037",
+      "question": "What is the purpose of nucleus sampling (top-p sampling) in text generation?",
+      "options": [
+        "To speed up generation",
+        "To control output diversity by considering only the most probable tokens",
+        "To reduce memory usage",
+        "To improve model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Nucleus sampling selects from the smallest set of tokens whose cumulative probability exceeds a threshold p, balancing quality and diversity in generation.",
+      "optionExplanations": [
+        "Incorrect. Nucleus sampling involves probability computation and sorting, which can add overhead compared to greedy sampling.",
+        "Correct. Nucleus sampling considers only tokens in the 'nucleus' (top cumulative probability p), providing better quality-diversity tradeoff than top-k sampling.",
+        "Incorrect. Nucleus sampling doesn't significantly change memory usage compared to other sampling methods.",
+        "Incorrect. Nucleus sampling is a decoding strategy that affects generation quality and diversity, not model accuracy per se."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "nucleus-sampling",
+        "top-p",
+        "text-generation"
+      ]
+    },
+    {
+      "id": "LLM_038",
+      "question": "What is the main difference between BERT-base and BERT-large?",
+      "options": [
+        "Different training datasets",
+        "Different model sizes and capacities",
+        "Different tokenization methods",
+        "Different training objectives"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BERT-base has 12 layers and 110M parameters, while BERT-large has 24 layers and 340M parameters, representing different model scales.",
+      "optionExplanations": [
+        "Incorrect. Both BERT-base and BERT-large are trained on the same datasets using the same methodology.",
+        "Correct. BERT-large has twice the layers (24 vs 12), more attention heads, and larger hidden dimensions than BERT-base.",
+        "Incorrect. Both models use the same WordPiece tokenization approach.",
+        "Incorrect. Both models use the same training objectives: masked language modeling and next sentence prediction."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "BERT",
+        "model-size",
+        "architecture"
+      ]
+    },
+    {
+      "id": "LLM_039",
+      "question": "What is instruction tuning in Large Language Models?",
+      "options": [
+        "Teaching models to follow specific formatting rules",
+        "Training models to follow human instructions across various tasks",
+        "Optimizing inference speed",
+        "Reducing model size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Instruction tuning trains language models to follow human instructions by fine-tuning on datasets containing instruction-response pairs across diverse tasks.",
+      "optionExplanations": [
+        "Incorrect. While formatting can be part of instructions, instruction tuning is broader, encompassing task understanding and execution.",
+        "Correct. Instruction tuning fine-tunes models on instruction-following datasets to improve their ability to understand and execute human instructions.",
+        "Incorrect. Instruction tuning is about capability improvement, not inference optimization.",
+        "Incorrect. Instruction tuning typically maintains or even increases model size, focusing on capability enhancement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "instruction-tuning",
+        "human-alignment",
+        "fine-tuning"
+      ]
+    },
+    {
+      "id": "LLM_040",
+      "question": "What is the purpose of the softmax function in the attention mechanism?",
+      "options": [
+        "To normalize attention scores into probabilities",
+        "To increase computational efficiency",
+        "To reduce overfitting",
+        "To improve gradient flow"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Softmax converts raw attention scores into a probability distribution, ensuring attention weights sum to 1 and enabling proper weighted averaging.",
+      "optionExplanations": [
+        "Correct. Softmax normalizes attention scores to create a valid probability distribution where weights sum to 1.",
+        "Incorrect. Softmax adds computational overhead rather than improving efficiency.",
+        "Incorrect. While softmax can have some regularization effects, its primary purpose in attention is normalization.",
+        "Incorrect. Softmax is used for normalization, not specifically for gradient flow improvement."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "softmax",
+        "attention",
+        "normalization"
+      ]
+    },
+    {
+      "id": "LLM_041",
+      "question": "What is the main challenge in training very large language models?",
+      "options": [
+        "Lack of training data",
+        "Computational resource requirements",
+        "Limited algorithms",
+        "Poor tokenization methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Training very large language models requires enormous computational resources, including powerful hardware, significant energy, and substantial time investments.",
+      "optionExplanations": [
+        "Incorrect. Large amounts of text data are generally available from web sources, books, and other text corpora.",
+        "Correct. Very large models require massive computational resources including high-end GPUs/TPUs, substantial memory, and significant training time.",
+        "Incorrect. The fundamental algorithms for training large language models are well-established.",
+        "Incorrect. Effective tokenization methods like BPE and SentencePiece are available and widely used."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "computational-resources",
+        "scaling",
+        "training"
+      ]
+    },
+    {
+      "id": "LLM_042",
+      "question": "What is the difference between autoregressive and non-autoregressive text generation?",
+      "options": [
+        "Autoregressive generates one token at a time, non-autoregressive generates all tokens simultaneously",
+        "Autoregressive is faster than non-autoregressive",
+        "Autoregressive requires more memory",
+        "Autoregressive produces better quality text"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Autoregressive models generate text sequentially one token at a time, while non-autoregressive models attempt to generate all tokens in parallel.",
+      "optionExplanations": [
+        "Correct. Autoregressive generation produces tokens sequentially, conditioning each token on previous ones, while non-autoregressive generates all positions simultaneously.",
+        "Incorrect. Non-autoregressive models are typically faster since they generate all tokens in parallel rather than sequentially.",
+        "Incorrect. Memory usage depends more on model size and sequence length than the generation approach.",
+        "Incorrect. Quality depends on the specific model and task; non-autoregressive models often trade some quality for speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "autoregressive",
+        "non-autoregressive",
+        "generation"
+      ]
+    },
+    {
+      "id": "LLM_043",
+      "question": "What is the purpose of early stopping in training language models?",
+      "options": [
+        "To reduce training time",
+        "To prevent overfitting by stopping when validation performance degrades",
+        "To save computational resources",
+        "To achieve better final accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Early stopping monitors validation performance and terminates training when performance starts degrading, preventing overfitting to the training data.",
+      "optionExplanations": [
+        "Incorrect. While early stopping can reduce training time, its primary purpose is preventing overfitting, not time reduction.",
+        "Correct. Early stopping prevents overfitting by terminating training when validation performance stops improving or starts degrading.",
+        "Incorrect. Resource saving is a side effect, but the main goal is preventing overfitting for better generalization.",
+        "Incorrect. Early stopping aims to find the optimal point before overfitting occurs, which may not be the highest training accuracy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "early-stopping",
+        "overfitting",
+        "validation"
+      ]
+    },
+    {
+      "id": "LLM_044",
+      "question": "What is the role of the query vector in the attention mechanism?",
+      "options": [
+        "It stores the information to be retrieved",
+        "It represents what information the current position is looking for",
+        "It normalizes the attention weights",
+        "It computes the final output"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The query vector represents what information a particular position is seeking, and is compared against key vectors to determine attention weights.",
+      "optionExplanations": [
+        "Incorrect. Value vectors store the information to be retrieved and aggregated.",
+        "Correct. Query vectors encode what type of information each position is looking for when attending to other positions.",
+        "Incorrect. Normalization is typically done using softmax on the dot product of queries and keys.",
+        "Incorrect. The final output is computed by aggregating value vectors weighted by attention scores."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "query-vector",
+        "attention",
+        "mechanism"
+      ]
+    },
+    {
+      "id": "LLM_045",
+      "question": "What is the main benefit of using learned positional embeddings over fixed positional encodings?",
+      "options": [
+        "Lower computational cost",
+        "Better adaptation to the specific task and data",
+        "Simpler implementation",
+        "Guaranteed better performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learned positional embeddings can adapt to the specific patterns and requirements of the training data, potentially capturing task-specific positional relationships.",
+      "optionExplanations": [
+        "Incorrect. Both learned and fixed positional encodings have similar computational costs during inference.",
+        "Correct. Learned positional embeddings can adapt to the specific data distribution and task requirements during training.",
+        "Incorrect. Fixed positional encodings are actually simpler to implement as they don't require learning.",
+        "Incorrect. Performance depends on the specific task and data; neither approach guarantees better results universally."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "positional-embeddings",
+        "learned",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "LLM_046",
+      "question": "What is the purpose of knowledge distillation in language models?",
+      "options": [
+        "To extract factual knowledge from models",
+        "To transfer knowledge from a larger teacher model to a smaller student model",
+        "To remove biased information",
+        "To improve training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Knowledge distillation trains a smaller student model to mimic the behavior of a larger teacher model, enabling deployment of more efficient models with similar performance.",
+      "optionExplanations": [
+        "Incorrect. Knowledge distillation is about model compression and knowledge transfer, not factual knowledge extraction.",
+        "Correct. Knowledge distillation transfers the learned representations and decision-making capabilities from large models to more efficient smaller models.",
+        "Incorrect. Bias removal is a separate concern related to fairness and ethics, not the primary goal of knowledge distillation.",
+        "Incorrect. Knowledge distillation focuses on creating efficient models for deployment, not necessarily faster training of the original large model."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "knowledge-distillation",
+        "model-compression",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "LLM_047",
+      "question": "What is the main advantage of the Transformer architecture over CNN-based models for NLP?",
+      "options": [
+        "Lower parameter count",
+        "Better capture of long-range dependencies",
+        "Faster training",
+        "Simpler architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transformers can directly model relationships between any two positions in a sequence through self-attention, while CNNs have limited receptive fields.",
+      "optionExplanations": [
+        "Incorrect. Transformers typically have more parameters than comparable CNN models due to attention mechanisms.",
+        "Correct. Self-attention allows direct connections between any two positions, enabling better modeling of long-range dependencies than CNNs with limited receptive fields.",
+        "Incorrect. Training speed depends on implementation and parallelization, but CNNs can also be parallelized effectively.",
+        "Incorrect. Transformers are generally more complex than CNNs, with attention mechanisms and multiple components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transformers",
+        "CNN",
+        "long-range-dependencies"
+      ]
+    },
+    {
+      "id": "LLM_048",
+      "question": "What is the purpose of the [MASK] token in BERT training?",
+      "options": [
+        "To separate different sentences",
+        "To replace tokens that the model needs to predict during pre-training",
+        "To mark the beginning of sequences",
+        "To handle unknown words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The [MASK] token replaces random input tokens during BERT's masked language modeling pre-training, creating a prediction task for the model to learn from.",
+      "optionExplanations": [
+        "Incorrect. The [SEP] token is used to separate sentences in BERT, not [MASK].",
+        "Correct. [MASK] tokens replace 15% of input tokens during pre-training, and BERT learns to predict the original tokens.",
+        "Incorrect. The [CLS] token marks the beginning of sequences in BERT.",
+        "Incorrect. The [UNK] token handles unknown or out-of-vocabulary words, not [MASK]."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "BERT",
+        "MASK-token",
+        "pre-training"
+      ]
+    },
+    {
+      "id": "LLM_049",
+      "question": "What is the main challenge with using very high learning rates in Transformer training?",
+      "options": [
+        "Slower convergence",
+        "Training instability and divergence",
+        "Reduced model capacity",
+        "Increased memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Very high learning rates can cause large parameter updates that lead to training instability, gradient explosion, and failure to converge.",
+      "optionExplanations": [
+        "Incorrect. High learning rates typically lead to faster initial progress, but the problem is instability, not slow convergence.",
+        "Correct. Excessively high learning rates cause large parameter updates that can destabilize training and prevent convergence.",
+        "Incorrect. Learning rate doesn't directly affect model architecture or capacity.",
+        "Incorrect. Learning rate is a training hyperparameter and doesn't directly impact memory usage."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "learning-rate",
+        "training-instability",
+        "convergence"
+      ]
+    },
+    {
+      "id": "LLM_050",
+      "question": "What is the purpose of context length in language models?",
+      "options": [
+        "To determine model accuracy",
+        "To specify the maximum number of tokens the model can process at once",
+        "To control the model's vocabulary size",
+        "To set the training batch size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Context length defines the maximum sequence length that a language model can process in a single forward pass, limiting the amount of context it can consider.",
+      "optionExplanations": [
+        "Incorrect. Context length is a model limitation, not a direct measure of accuracy.",
+        "Correct. Context length (or context window) determines how many tokens the model can process simultaneously, affecting its ability to consider long-range context.",
+        "Incorrect. Vocabulary size is determined by the tokenizer and is independent of context length.",
+        "Incorrect. Batch size is a separate training hyperparameter unrelated to the context length limit."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "context-length",
+        "sequence-length",
+        "limitations"
+      ]
+    },
+    {
+      "id": "LLM_051",
+      "question": "What is the main difference between supervised fine-tuning and reinforcement learning from human feedback (RLHF)?",
+      "options": [
+        "RLHF uses human preferences while supervised fine-tuning uses direct examples",
+        "RLHF is faster than supervised fine-tuning",
+        "RLHF requires less data",
+        "RLHF produces smaller models"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Supervised fine-tuning uses direct input-output examples, while RLHF uses human preference data to train a reward model and then optimizes the language model using reinforcement learning.",
+      "optionExplanations": [
+        "Correct. RLHF uses human preference comparisons to learn what outputs are preferred, while supervised fine-tuning uses direct examples of desired inputs and outputs.",
+        "Incorrect. RLHF is typically more complex and slower due to the additional reward modeling and RL optimization steps.",
+        "Incorrect. RLHF requires preference data and is often more data-intensive when considering the full pipeline.",
+        "Incorrect. Model size is independent of the training method; both approaches work with models of any size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RLHF",
+        "supervised-fine-tuning",
+        "human-feedback"
+      ]
+    },
+    {
+      "id": "LLM_052",
+      "question": "What is the purpose of scaling laws in large language models?",
+      "options": [
+        "To determine optimal batch sizes",
+        "To predict model performance based on size, data, and compute",
+        "To set learning rates",
+        "To choose tokenization methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Scaling laws describe mathematical relationships between model performance and factors like model size, training data amount, and computational resources.",
+      "optionExplanations": [
+        "Incorrect. Scaling laws focus on the relationship between model scale and performance, not batch size optimization.",
+        "Correct. Scaling laws provide empirical relationships that help predict how model performance changes with scale factors like parameters, data, and compute.",
+        "Incorrect. Learning rate selection involves different considerations than scaling laws.",
+        "Incorrect. Tokenization method choice is based on vocabulary and linguistic considerations, not scaling laws."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scaling-laws",
+        "model-performance",
+        "prediction"
+      ]
+    },
+    {
+      "id": "LLM_053",
+      "question": "What is the main benefit of using mixed precision training in large language models?",
+      "options": [
+        "Improved model accuracy",
+        "Reduced memory usage and faster training",
+        "Better gradient flow",
+        "Simplified model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mixed precision training uses both 16-bit and 32-bit floating point numbers, reducing memory usage and speeding up training while maintaining numerical stability.",
+      "optionExplanations": [
+        "Incorrect. Mixed precision primarily offers efficiency benefits rather than accuracy improvements.",
+        "Correct. Mixed precision reduces memory requirements and speeds up training by using 16-bit precision where possible while maintaining 32-bit precision for critical operations.",
+        "Incorrect. While mixed precision can affect gradients, its main benefit is computational efficiency.",
+        "Incorrect. Mixed precision is a training optimization technique that doesn't change model architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mixed-precision",
+        "training-efficiency",
+        "memory"
+      ]
+    },
+    {
+      "id": "LLM_054",
+      "question": "What is the role of the key vector in the attention mechanism?",
+      "options": [
+        "It stores the content to be retrieved",
+        "It represents the information available at each position for matching against queries",
+        "It computes the attention weights directly",
+        "It normalizes the output"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Key vectors represent the information available at each position and are compared with query vectors to determine how much attention each position should receive.",
+      "optionExplanations": [
+        "Incorrect. Value vectors store the actual content that gets retrieved and aggregated.",
+        "Correct. Key vectors encode the information available at each position and are matched against queries to compute attention scores.",
+        "Incorrect. Attention weights are computed by taking the dot product of queries and keys, followed by softmax normalization.",
+        "Incorrect. Output normalization is typically handled by layer normalization, not key vectors."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "key-vector",
+        "attention",
+        "mechanism"
+      ]
+    },
+    {
+      "id": "LLM_055",
+      "question": "What is the main purpose of data augmentation in language model training?",
+      "options": [
+        "To reduce training time",
+        "To increase the diversity and size of training data",
+        "To improve model interpretability",
+        "To reduce model size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data augmentation techniques create additional training examples through transformations like paraphrasing, back-translation, or perturbations to improve model robustness and generalization.",
+      "optionExplanations": [
+        "Incorrect. Data augmentation typically increases training time due to more data and processing requirements.",
+        "Correct. Data augmentation increases training data diversity and volume through techniques like back-translation, paraphrasing, and noise injection.",
+        "Incorrect. Data augmentation focuses on improving model performance and robustness, not interpretability.",
+        "Incorrect. Data augmentation affects training data, not model architecture or size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-augmentation",
+        "training-data",
+        "robustness"
+      ]
+    },
+    {
+      "id": "LLM_056",
+      "question": "What is the difference between greedy decoding and sampling in text generation?",
+      "options": [
+        "Greedy is faster than sampling",
+        "Greedy always selects the most probable token, sampling introduces randomness",
+        "Greedy produces longer text than sampling",
+        "Greedy requires more memory than sampling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Greedy decoding deterministically selects the highest probability token at each step, while sampling methods introduce randomness to generate more diverse outputs.",
+      "optionExplanations": [
+        "Incorrect. While greedy decoding is computationally simpler, the speed difference is usually negligible.",
+        "Correct. Greedy decoding always chooses the token with highest probability, while sampling methods select tokens probabilistically to increase output diversity.",
+        "Incorrect. Text length depends on stopping criteria and content, not the decoding method.",
+        "Incorrect. Both methods have similar memory requirements; the main difference is in token selection strategy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "greedy-decoding",
+        "sampling",
+        "text-generation"
+      ]
+    },
+    {
+      "id": "LLM_057",
+      "question": "What is the purpose of gradient accumulation in training large language models?",
+      "options": [
+        "To speed up training",
+        "To simulate larger batch sizes with limited memory",
+        "To improve model accuracy",
+        "To reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient accumulation allows training with effectively larger batch sizes by accumulating gradients over multiple forward passes before updating parameters, useful when memory limits batch size.",
+      "optionExplanations": [
+        "Incorrect. Gradient accumulation typically slows down training due to more forward passes per update.",
+        "Correct. Gradient accumulation enables effective larger batch sizes by summing gradients across multiple smaller batches before parameter updates.",
+        "Incorrect. While larger effective batch sizes can improve training stability, gradient accumulation itself is primarily a memory optimization technique.",
+        "Incorrect. Gradient accumulation actually increases computational cost by requiring more forward passes per update."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-accumulation",
+        "batch-size",
+        "memory"
+      ]
+    },
+    {
+      "id": "LLM_058",
+      "question": "What is the main advantage of using SentencePiece tokenization?",
+      "options": [
+        "Faster processing speed",
+        "Language-agnostic subword tokenization",
+        "Smaller vocabulary size",
+        "Better handling of English text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SentencePiece provides language-agnostic tokenization that works well across different languages without requiring language-specific preprocessing like whitespace tokenization.",
+      "optionExplanations": [
+        "Incorrect. Processing speed is not the primary advantage of SentencePiece over other tokenization methods.",
+        "Correct. SentencePiece treats input as raw character sequences, making it language-agnostic and effective for multilingual applications.",
+        "Incorrect. Vocabulary size depends on the configuration, not inherently smaller with SentencePiece.",
+        "Incorrect. While SentencePiece works well with English, its main advantage is language-agnostic capability, not English-specific improvements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SentencePiece",
+        "tokenization",
+        "multilingual"
+      ]
+    },
+    {
+      "id": "LLM_059",
+      "question": "What is the purpose of checkpoint saving during model training?",
+      "options": [
+        "To reduce memory usage",
+        "To enable recovery from interruptions and save intermediate model states",
+        "To improve training speed",
+        "To compress the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Checkpoints save model weights, optimizer states, and training metadata at regular intervals, allowing recovery from failures and evaluation of intermediate training stages.",
+      "optionExplanations": [
+        "Incorrect. Checkpoints actually use additional storage space to save model states.",
+        "Correct. Checkpoints enable recovery from training interruptions and provide access to model states at different training stages for evaluation and deployment.",
+        "Incorrect. Checkpoint saving adds overhead to training, though it's necessary for reliability.",
+        "Incorrect. Checkpoints save full model states; compression is a separate technique."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "checkpoints",
+        "training",
+        "recovery"
+      ]
+    },
+    {
+      "id": "LLM_060",
+      "question": "What is the main challenge with training language models on biased data?",
+      "options": [
+        "Slower training speed",
+        "The model learns and amplifies societal biases present in the data",
+        "Higher computational requirements",
+        "Reduced model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Language models trained on biased data tend to learn and reproduce those biases, potentially amplifying harmful stereotypes and unfair associations in their outputs.",
+      "optionExplanations": [
+        "Incorrect. Training speed is not directly affected by data bias; the concern is about learned representations.",
+        "Correct. Models learn patterns from training data, including biased associations, which can lead to unfair or harmful outputs.",
+        "Incorrect. Computational requirements depend on model size and data volume, not bias content.",
+        "Incorrect. Bias doesn't necessarily reduce accuracy on standard metrics, but it creates ethical and fairness concerns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "fairness",
+        "ethics"
+      ]
+    },
+    {
+      "id": "LLM_061",
+      "question": "What is the purpose of the linear projection layers in the attention mechanism?",
+      "options": [
+        "To reduce model size",
+        "To transform inputs into query, key, and value representations",
+        "To normalize attention weights",
+        "To add non-linearity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear projection layers transform the input embeddings into query, key, and value vectors that are used in the attention computation.",
+      "optionExplanations": [
+        "Incorrect. Linear projections maintain or change dimensionality but don't inherently reduce model size.",
+        "Correct. Linear projections (learned weight matrices) transform input representations into separate query, key, and value spaces for attention computation.",
+        "Incorrect. Attention weight normalization is handled by the softmax function, not linear projections.",
+        "Incorrect. Linear projections are linear transformations; non-linearity comes from activation functions in other parts of the model."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "linear-projection",
+        "attention",
+        "QKV"
+      ]
+    },
+    {
+      "id": "LLM_062",
+      "question": "What is the main benefit of using Adam optimizer over SGD for training Transformers?",
+      "options": [
+        "Lower memory requirements",
+        "Adaptive learning rates for each parameter",
+        "Faster convergence guaranteed",
+        "Better final performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adam maintains separate adaptive learning rates for each parameter based on first and second moment estimates, often providing better training dynamics than fixed learning rate SGD.",
+      "optionExplanations": [
+        "Incorrect. Adam requires more memory than SGD to store moment estimates for each parameter.",
+        "Correct. Adam adapts learning rates for each parameter individually using momentum and second moment estimates, often improving training dynamics.",
+        "Incorrect. While Adam often converges faster, there's no guarantee of faster convergence in all cases.",
+        "Incorrect. Final performance depends on many factors; Adam vs SGD performance varies by task and tuning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Adam-optimizer",
+        "adaptive-learning-rates",
+        "training"
+      ]
+    },
+    {
+      "id": "LLM_063",
+      "question": "What is the purpose of the output projection layer in Transformer models?",
+      "options": [
+        "To compute attention weights",
+        "To project hidden states to vocabulary logits for token prediction",
+        "To normalize model outputs",
+        "To add positional information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The output projection layer (often called the language modeling head) transforms the final hidden states into vocabulary-sized logits for token prediction.",
+      "optionExplanations": [
+        "Incorrect. Attention weights are computed within the attention mechanism, not by the output projection layer.",
+        "Correct. The output projection layer maps the final hidden representations to vocabulary-sized vectors for predicting next tokens or masked tokens.",
+        "Incorrect. Output normalization is typically handled by layer normalization or softmax, not the projection layer itself.",
+        "Incorrect. Positional information is added at the input embedding stage, not in the output projection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "output-projection",
+        "vocabulary",
+        "token-prediction"
+      ]
+    },
+    {
+      "id": "LLM_064",
+      "question": "What is the main difference between autoencoding and autoregressive language models?",
+      "options": [
+        "Autoencoding models are larger than autoregressive",
+        "Autoencoding models use bidirectional context, autoregressive use unidirectional",
+        "Autoencoding models are faster to train",
+        "Autoencoding models require more data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Autoencoding models like BERT use bidirectional context to reconstruct masked tokens, while autoregressive models like GPT predict tokens using only previous context.",
+      "optionExplanations": [
+        "Incorrect. Model size depends on specific configurations, not the training objective type.",
+        "Correct. Autoencoding models (like BERT) see full bidirectional context for masked token prediction, while autoregressive models (like GPT) only use left-to-right context.",
+        "Incorrect. Training speed depends on many factors including model size, data, and implementation, not fundamentally on the objective type.",
+        "Incorrect. Data requirements depend on the specific task and model, not inherently on the training paradigm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "autoencoding",
+        "autoregressive",
+        "bidirectional"
+      ]
+    },
+    {
+      "id": "LLM_065",
+      "question": "What is the purpose of using multiple GPUs or TPUs for training large language models?",
+      "options": [
+        "To increase model accuracy",
+        "To parallelize computation and reduce training time",
+        "To reduce memory requirements per device",
+        "To improve model interpretability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multiple accelerators enable parallelization of training computation, allowing faster processing of large batches and models that wouldn't fit on single devices.",
+      "optionExplanations": [
+        "Incorrect. Multiple devices primarily enable faster training and handling larger models, not inherently better accuracy.",
+        "Correct. Multiple GPUs/TPUs enable parallel processing through data parallelism, model parallelism, or pipeline parallelism, significantly reducing training time.",
+        "Incorrect. While distributed training can enable larger models by splitting them across devices, the primary benefit is computational parallelization.",
+        "Incorrect. Multiple devices don't directly improve interpretability; they're used for computational efficiency."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "distributed-training",
+        "parallelization",
+        "scalability"
+      ]
+    },
+    {
+      "id": "LLM_066",
+      "question": "What is the main purpose of using different attention patterns (sparse, local, global) in efficient Transformers?",
+      "options": [
+        "To improve model accuracy",
+        "To reduce computational complexity for long sequences",
+        "To increase model capacity",
+        "To simplify model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alternative attention patterns like sparse or local attention reduce the quadratic complexity of full self-attention, making it feasible to process longer sequences efficiently.",
+      "optionExplanations": [
+        "Incorrect. While different attention patterns can affect performance, their primary purpose is computational efficiency, not accuracy improvement.",
+        "Correct. Alternative attention patterns reduce the O(n²) complexity of full attention, enabling efficient processing of longer sequences.",
+        "Incorrect. Different attention patterns typically reduce computational requirements rather than increasing model capacity.",
+        "Incorrect. Alternative attention patterns often add complexity to the attention mechanism, though they reduce overall computational cost."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "efficient-attention",
+        "sparse-attention",
+        "complexity"
+      ]
+    },
+    {
+      "id": "LLM_067",
+      "question": "What is the role of the learning rate scheduler in training language models?",
+      "options": [
+        "To maintain constant learning throughout training",
+        "To adjust learning rate during training for better convergence",
+        "To increase model capacity",
+        "To handle different data types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning rate schedulers adjust the learning rate during training, typically starting high for fast progress and reducing over time for fine-grained optimization and stability.",
+      "optionExplanations": [
+        "Incorrect. Learning rate schedulers specifically change the learning rate over time, not maintain it constant.",
+        "Correct. Learning rate schedulers modify learning rates during training to improve convergence, often using warmup, decay, or cosine schedules.",
+        "Incorrect. Learning rate scheduling affects optimization dynamics, not model architecture or capacity.",
+        "Incorrect. Learning rate scheduling is an optimization technique unrelated to handling different data types."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "learning-rate-scheduler",
+        "training",
+        "optimization"
+      ]
+    },
+    {
+      "id": "LLM_068",
+      "question": "What is the main advantage of using rotary position embedding (RoPE) over fixed positional encoding?",
+      "options": [
+        "Lower computational cost",
+        "Better handling of variable sequence lengths and relative positions",
+        "Simpler implementation",
+        "Reduced memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RoPE encodes relative position information through rotation matrices, providing better extrapolation to longer sequences and more natural handling of relative distances.",
+      "optionExplanations": [
+        "Incorrect. RoPE adds computational overhead compared to simple additive positional encoding.",
+        "Correct. RoPE encodes relative positional information through rotation, enabling better extrapolation to unseen sequence lengths and more natural relative position modeling.",
+        "Incorrect. RoPE is more complex to implement than simple additive positional encodings.",
+        "Incorrect. RoPE doesn't significantly reduce memory usage compared to other positional encoding methods."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "RoPE",
+        "positional-encoding",
+        "relative-position"
+      ]
+    },
+    {
+      "id": "LLM_069",
+      "question": "What is the main challenge with evaluating Large Language Models?",
+      "options": [
+        "Limited computational resources for evaluation",
+        "Difficulty in creating comprehensive benchmarks for diverse capabilities",
+        "Lack of evaluation metrics",
+        "Models are too fast to evaluate properly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LLMs have diverse capabilities across many tasks and domains, making it challenging to create comprehensive evaluation benchmarks that capture all aspects of model performance and safety.",
+      "optionExplanations": [
+        "Incorrect. While evaluation can be computationally expensive, the main challenge is designing appropriate evaluation methods, not resource limitations.",
+        "Correct. LLMs' broad capabilities make comprehensive evaluation difficult, requiring diverse benchmarks for reasoning, knowledge, safety, and task-specific performance.",
+        "Incorrect. Many evaluation metrics exist; the challenge is ensuring they comprehensively assess model capabilities.",
+        "Incorrect. Model speed is not typically a barrier to evaluation; rather, thoroughness and comprehensiveness are the main challenges."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "benchmarks",
+        "assessment"
+      ]
+    },
+    {
+      "id": "LLM_070",
+      "question": "What is the purpose of using different tokenization granularities (character, subword, word)?",
+      "options": [
+        "To optimize for different languages and applications",
+        "To reduce computational cost",
+        "To improve model accuracy universally",
+        "To simplify model architecture"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Different tokenization granularities offer trade-offs: character-level handles any text but creates long sequences, word-level is intuitive but has vocabulary issues, and subword-level balances both concerns.",
+      "optionExplanations": [
+        "Correct. Different granularities suit different languages (e.g., character-level for logographic languages) and applications (e.g., subword for multilingual models).",
+        "Incorrect. The choice affects computational trade-offs differently - character-level increases sequence length while word-level increases vocabulary size.",
+        "Incorrect. No single granularity is universally best; the optimal choice depends on the specific language and task.",
+        "Incorrect. Tokenization granularity doesn't simplify model architecture; it affects input representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tokenization-granularity",
+        "trade-offs",
+        "language-specific"
+      ]
+    },
+    {
+      "id": "LLM_071",
+      "question": "What is the main benefit of using pre-layer normalization instead of post-layer normalization in Transformers?",
+      "options": [
+        "Lower computational cost",
+        "Better training stability and gradient flow",
+        "Smaller model size",
+        "Faster inference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-layer normalization (Pre-LN) applies normalization before each sub-layer, providing better gradient flow and training stability compared to post-layer normalization.",
+      "optionExplanations": [
+        "Incorrect. The computational cost is similar between pre-LN and post-LN arrangements.",
+        "Correct. Pre-layer normalization improves gradient flow and makes training more stable, especially for deeper models.",
+        "Incorrect. The normalization placement doesn't affect model size in terms of parameters.",
+        "Incorrect. Inference speed is not significantly different between pre-LN and post-LN arrangements."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pre-layer-norm",
+        "training-stability",
+        "gradient-flow"
+      ]
+    },
+    {
+      "id": "LLM_072",
+      "question": "What is the purpose of using different activation functions (ReLU, GELU, SwiGLU) in Transformers?",
+      "options": [
+        "To reduce model size",
+        "To provide different non-linear transformation properties",
+        "To speed up training",
+        "To handle different input types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different activation functions provide varying non-linear transformations: ReLU is simple and sparse, GELU is smooth and probabilistic, SwiGLU combines gating with smoothness.",
+      "optionExplanations": [
+        "Incorrect. Activation function choice doesn't directly affect model size, though some may have more parameters.",
+        "Correct. Different activations provide different non-linear properties - GELU offers smooth transitions, SwiGLU provides gating mechanisms, affecting model expressiveness.",
+        "Incorrect. While some activations may be computationally faster, the main purpose is providing appropriate non-linear transformations.",
+        "Incorrect. Activation functions provide non-linearity regardless of input type; choice is based on desired transformation properties."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "activation-functions",
+        "non-linearity",
+        "GELU",
+        "SwiGLU"
+      ]
+    },
+    {
+      "id": "LLM_073",
+      "question": "What is the main challenge with few-shot learning in language models?",
+      "options": [
+        "Limited computational resources",
+        "Inconsistent performance across different tasks and prompt formulations",
+        "Requirement for model retraining",
+        "Incompatibility with large models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Few-shot performance can be highly sensitive to prompt wording, example selection, and task formulation, leading to inconsistent results across different setups.",
+      "optionExplanations": [
+        "Incorrect. Few-shot learning doesn't require additional training, so computational resources are not the main limitation.",
+        "Correct. Few-shot learning performance varies significantly based on prompt design, example selection, and task formulation, making it inconsistent and difficult to optimize.",
+        "Incorrect. Few-shot learning specifically avoids model retraining by using examples in the prompt.",
+        "Incorrect. Few-shot learning actually works better with larger models that have more learned knowledge to draw upon."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "few-shot-learning",
+        "prompt-sensitivity",
+        "consistency"
+      ]
+    },
+    {
+      "id": "LLM_074",
+      "question": "What is the purpose of using attention visualization techniques in Transformer analysis?",
+      "options": [
+        "To improve model performance",
+        "To understand what patterns the model has learned to focus on",
+        "To reduce computational cost",
+        "To compress the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention visualization helps researchers and practitioners understand which parts of the input the model focuses on, providing insights into model behavior and decision-making processes.",
+      "optionExplanations": [
+        "Incorrect. Attention visualization is an analysis tool, not a performance improvement technique.",
+        "Correct. Attention visualization reveals which tokens or positions the model attends to, helping understand model reasoning and identify potential issues.",
+        "Incorrect. Visualization adds computational overhead for analysis and doesn't reduce training or inference costs.",
+        "Incorrect. Attention visualization is for interpretability, not model compression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-visualization",
+        "interpretability",
+        "analysis"
+      ]
+    },
+    {
+      "id": "LLM_075",
+      "question": "What is the main advantage of using weight tying in Transformer models?",
+      "options": [
+        "Faster training",
+        "Reduced parameter count by sharing input and output embeddings",
+        "Better attention computation",
+        "Improved gradient flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weight tying shares parameters between input token embeddings and output projection layer, reducing model size while often maintaining or improving performance.",
+      "optionExplanations": [
+        "Incorrect. Weight tying may slightly affect training speed but its primary benefit is parameter reduction.",
+        "Correct. Weight tying uses the same weight matrix for input embeddings and output projection, significantly reducing parameters in the vocabulary-related layers.",
+        "Incorrect. Weight tying affects embedding layers, not the attention mechanism directly.",
+        "Incorrect. While weight tying can have regularization effects, its main purpose is parameter sharing, not gradient flow improvement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-tying",
+        "parameter-sharing",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "LLM_076",
+      "question": "What is the difference between top-k and nucleus (top-p) sampling in text generation?",
+      "options": [
+        "Top-k is faster than nucleus sampling",
+        "Top-k selects from a fixed number of tokens, nucleus selects from a probability mass",
+        "Top-k produces longer text than nucleus sampling",
+        "Top-k requires more memory than nucleus sampling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Top-k sampling considers only the k most probable tokens, while nucleus sampling considers tokens that make up the top p cumulative probability mass.",
+      "optionExplanations": [
+        "Incorrect. Speed differences are minimal; both require sorting and probability computation.",
+        "Correct. Top-k fixes the number of candidate tokens, while nucleus (top-p) dynamically adjusts the number based on cumulative probability threshold.",
+        "Incorrect. Text length depends on stopping criteria and content, not the sampling method.",
+        "Incorrect. Both methods have similar memory requirements for probability computation and token selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "top-k-sampling",
+        "nucleus-sampling",
+        "text-generation"
+      ]
+    },
+    {
+      "id": "LLM_077",
+      "question": "What is the main purpose of using model parallelism in training large language models?",
+      "options": [
+        "To increase training speed",
+        "To enable training models that don't fit on a single device",
+        "To improve model accuracy",
+        "To reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model parallelism splits the model across multiple devices, enabling training of models too large to fit in the memory of a single GPU or TPU.",
+      "optionExplanations": [
+        "Incorrect. Model parallelism can actually slow down training due to communication overhead between devices.",
+        "Correct. Model parallelism distributes model layers or components across devices, enabling training of models larger than single-device memory capacity.",
+        "Incorrect. Model parallelism is primarily for handling scale, not improving accuracy.",
+        "Incorrect. Model parallelism typically requires more resources and coordination, potentially increasing costs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-parallelism",
+        "distributed-training",
+        "scalability"
+      ]
+    },
+    {
+      "id": "LLM_078",
+      "question": "What is the purpose of using different loss functions (cross-entropy, focal loss, label smoothing) in language model training?",
+      "options": [
+        "To reduce training time",
+        "To address different training challenges like class imbalance or overconfidence",
+        "To increase model size",
+        "To improve tokenization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different loss functions address specific training challenges: focal loss handles class imbalance, label smoothing reduces overconfidence, and cross-entropy provides standard maximum likelihood training.",
+      "optionExplanations": [
+        "Incorrect. Loss function choice affects training dynamics and quality, not primarily training speed.",
+        "Correct. Different loss functions tackle specific issues - focal loss for imbalanced data, label smoothing for calibration, addressing various training challenges.",
+        "Incorrect. Loss functions don't affect model architecture or parameter count.",
+        "Incorrect. Loss functions operate on model outputs, not on tokenization which happens at input preprocessing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "loss-functions",
+        "focal-loss",
+        "label-smoothing"
+      ]
+    },
+    {
+      "id": "LLM_079",
+      "question": "What is the main benefit of using efficient attention mechanisms like Linear Attention or Performer?",
+      "options": [
+        "Better accuracy on all tasks",
+        "Linear computational complexity instead of quadratic",
+        "Simpler implementation",
+        "Reduced memory for model weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Efficient attention mechanisms reduce the O(n²) complexity of standard attention to O(n), enabling processing of much longer sequences with the same computational resources.",
+      "optionExplanations": [
+        "Incorrect. Efficient attention methods trade some expressiveness for efficiency, potentially affecting accuracy on some tasks.",
+        "Correct. These methods approximate attention with linear complexity O(n) instead of quadratic O(n²), enabling much longer sequence processing.",
+        "Incorrect. Efficient attention methods are typically more complex to implement than standard attention.",
+        "Incorrect. These methods affect computational complexity during training/inference, not the storage of model parameters."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "efficient-attention",
+        "linear-attention",
+        "complexity"
+      ]
+    },
+    {
+      "id": "LLM_080",
+      "question": "What is the purpose of using curriculum learning in language model training?",
+      "options": [
+        "To reduce training time",
+        "To gradually increase task difficulty during training for better learning",
+        "To reduce model size",
+        "To improve tokenization quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Curriculum learning presents training examples in order of increasing difficulty, potentially leading to better convergence and final performance by building knowledge progressively.",
+      "optionExplanations": [
+        "Incorrect. Curriculum learning may actually increase training complexity and time due to difficulty scheduling.",
+        "Correct. Curriculum learning orders training data from easy to difficult examples, potentially improving learning efficiency and final model quality.",
+        "Incorrect. Curriculum learning affects training strategy, not model architecture or size.",
+        "Incorrect. Curriculum learning is a training strategy that doesn't directly affect tokenization methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curriculum-learning",
+        "training-strategy",
+        "difficulty"
+      ]
+    },
+    {
+      "id": "LLM_081",
+      "question": "What is the main challenge with using very large context windows in language models?",
+      "options": [
+        "Tokenization becomes impossible",
+        "Quadratic increase in computational and memory requirements",
+        "Models become less accurate",
+        "Training becomes unstable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Large context windows dramatically increase computational and memory requirements due to the quadratic scaling of attention mechanisms with sequence length.",
+      "optionExplanations": [
+        "Incorrect. Tokenization works regardless of context window size, though longer sequences require more processing.",
+        "Correct. Standard attention has O(n²) complexity, making very large context windows computationally expensive and memory-intensive.",
+        "Incorrect. Larger context windows generally provide more information, potentially improving accuracy rather than reducing it.",
+        "Incorrect. While large contexts can pose optimization challenges, the primary issue is computational resource requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-window",
+        "computational-complexity",
+        "memory"
+      ]
+    },
+    {
+      "id": "LLM_082",
+      "question": "What is the purpose of using different aggregation methods (mean, max, attention pooling) for sequence representation?",
+      "options": [
+        "To reduce computational cost",
+        "To create fixed-size representations from variable-length sequences",
+        "To improve tokenization",
+        "To increase model size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Aggregation methods combine variable-length sequence representations into fixed-size vectors for downstream tasks like classification or similarity comparison.",
+      "optionExplanations": [
+        "Incorrect. While some aggregation methods are computationally cheaper, the primary purpose is dimensionality standardization.",
+        "Correct. Aggregation methods convert variable-length sequences into fixed-size representations needed for many downstream tasks.",
+        "Incorrect. Aggregation happens after tokenization and affects sequence representation, not tokenization itself.",
+        "Incorrect. Aggregation typically reduces sequence representations to fixed sizes, not increasing model parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sequence-aggregation",
+        "pooling",
+        "representation"
+      ]
+    },
+    {
+      "id": "LLM_083",
+      "question": "What is the main advantage of using LoRA (Low-Rank Adaptation) for fine-tuning?",
+      "options": [
+        "Faster inference speed",
+        "Dramatically reduced number of trainable parameters",
+        "Better final model accuracy",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LoRA decomposes weight updates into low-rank matrices, reducing trainable parameters from millions to thousands while maintaining competitive performance.",
+      "optionExplanations": [
+        "Incorrect. LoRA doesn't significantly change inference speed; it primarily affects training efficiency.",
+        "Correct. LoRA uses low-rank decomposition to approximate full fine-tuning with orders of magnitude fewer trainable parameters.",
+        "Incorrect. While LoRA can achieve competitive performance, its main advantage is efficiency, not superior accuracy.",
+        "Incorrect. LoRA adds implementation complexity compared to standard fine-tuning, though it's still relatively straightforward."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "parameter-efficient",
+        "low-rank"
+      ]
+    },
+    {
+      "id": "LLM_084",
+      "question": "What is the purpose of using different normalization techniques (Layer Norm, RMS Norm, Group Norm) in Transformers?",
+      "options": [
+        "To reduce model size",
+        "To stabilize training with different computational and statistical properties",
+        "To improve tokenization",
+        "To increase training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different normalization techniques offer various computational and statistical properties: Layer Norm normalizes across features, RMS Norm simplifies computation, Group Norm works well with smaller batches.",
+      "optionExplanations": [
+        "Incorrect. Normalization techniques don't significantly affect model parameter count.",
+        "Correct. Different normalization methods provide various benefits - RMS Norm reduces computation, Group Norm handles small batches better, each stabilizing training differently.",
+        "Incorrect. Normalization operates on internal representations, not on tokenization which happens at input preprocessing.",
+        "Incorrect. While some normalization methods are computationally cheaper, the primary purpose is training stabilization, not speed optimization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "normalization",
+        "RMS-norm",
+        "group-norm"
+      ]
+    },
+    {
+      "id": "LLM_085",
+      "question": "What is the main challenge with deploying Large Language Models in production?",
+      "options": [
+        "Poor model accuracy",
+        "High computational requirements and latency constraints",
+        "Lack of training data",
+        "Incompatible software frameworks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Large models require substantial computational resources for inference, leading to high costs and latency challenges when serving users at scale.",
+      "optionExplanations": [
+        "Incorrect. Modern LLMs generally have good accuracy; the challenge is efficient deployment, not performance quality.",
+        "Correct. LLMs require significant compute for inference, leading to high serving costs and latency challenges in production environments.",
+        "Incorrect. Training data availability is not typically a deployment concern; it's a training-time consideration.",
+        "Incorrect. While framework compatibility can be a concern, the primary deployment challenge is computational requirements."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "deployment",
+        "production",
+        "latency"
+      ]
+    },
+    {
+      "id": "LLM_086",
+      "question": "What is the purpose of using different decoding strategies (greedy, beam search, sampling) for different applications?",
+      "options": [
+        "To reduce computational cost",
+        "To optimize for different quality-diversity trade-offs based on application needs",
+        "To improve training efficiency",
+        "To handle different input types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different applications require different trade-offs: factual QA benefits from deterministic greedy decoding, creative writing benefits from diverse sampling, and beam search balances quality and exploration.",
+      "optionExplanations": [
+        "Incorrect. While decoding strategies have different computational costs, the primary reason for choosing them is output quality characteristics.",
+        "Correct. Applications have different needs - factual tasks need deterministic outputs, creative tasks benefit from diversity, requiring different decoding strategies.",
+        "Incorrect. Decoding strategies are inference-time techniques, not training optimizations.",
+        "Incorrect. Decoding strategies work with the same model outputs regardless of input type; choice depends on desired output characteristics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decoding-strategies",
+        "quality-diversity",
+        "applications"
+      ]
+    },
+    {
+      "id": "LLM_087",
+      "question": "What is the main benefit of using mixture of experts (MoE) architectures in large language models?",
+      "options": [
+        "Simpler training process",
+        "Increased model capacity without proportional increase in computation",
+        "Better handling of short sequences",
+        "Reduced memory requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "MoE architectures use routing to activate only a subset of parameters for each input, allowing very large models where only a fraction of parameters are used per forward pass.",
+      "optionExplanations": [
+        "Incorrect. MoE training is more complex due to routing mechanisms and load balancing requirements.",
+        "Correct. MoE enables sparse activation of parameters, allowing much larger total capacity while keeping per-token computation manageable.",
+        "Incorrect. MoE benefits apply regardless of sequence length; the advantage is in parameter utilization efficiency.",
+        "Incorrect. While only some parameters are active per token, the total model still requires storage for all experts."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mixture-of-experts",
+        "sparse-activation",
+        "scaling"
+      ]
+    },
+    {
+      "id": "LLM_088",
+      "question": "What is the purpose of using different evaluation metrics (BLEU, ROUGE, BERTScore, human evaluation) for language models?",
+      "options": [
+        "To reduce evaluation time",
+        "To assess different aspects of language generation quality",
+        "To improve model training",
+        "To reduce computational requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different metrics capture different aspects: BLEU measures n-gram overlap, ROUGE focuses on recall, BERTScore uses semantic similarity, and human evaluation assesses subjective quality.",
+      "optionExplanations": [
+        "Incorrect. Using multiple metrics typically increases evaluation time and complexity.",
+        "Correct. Each metric captures different quality aspects - lexical overlap, semantic similarity, fluency, factuality - providing comprehensive assessment.",
+        "Incorrect. Evaluation metrics assess model performance but don't directly improve training (though they can guide training decisions).",
+        "Incorrect. Multiple evaluation metrics typically require more computation, not less."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-metrics",
+        "BLEU",
+        "ROUGE",
+        "BERTScore"
+      ]
+    },
+    {
+      "id": "LLM_089",
+      "question": "What is the main challenge with fine-tuning language models on domain-specific data?",
+      "options": [
+        "Models become too large",
+        "Risk of catastrophic forgetting of general capabilities",
+        "Training becomes impossible",
+        "Tokenization fails"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fine-tuning on narrow domain data can cause models to lose general language capabilities they learned during pre-training, requiring careful balancing of domain adaptation and capability retention.",
+      "optionExplanations": [
+        "Incorrect. Fine-tuning doesn't change model size; it adjusts existing parameters.",
+        "Correct. Domain-specific fine-tuning can cause models to forget general knowledge and capabilities, requiring techniques to preserve broad competencies.",
+        "Incorrect. Fine-tuning is generally straightforward; the challenge is maintaining general capabilities while adapting to the domain.",
+        "Incorrect. Tokenization works the same way regardless of domain; the issue is with knowledge retention during fine-tuning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-adaptation",
+        "catastrophic-forgetting",
+        "fine-tuning"
+      ]
+    },
+    {
+      "id": "LLM_090",
+      "question": "What is the purpose of using retrieval-augmented generation (RAG) in language models?",
+      "options": [
+        "To reduce model size",
+        "To provide access to external knowledge and up-to-date information",
+        "To speed up training",
+        "To improve tokenization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RAG combines language models with external knowledge retrieval, allowing access to current information and reducing hallucination by grounding generation in retrieved documents.",
+      "optionExplanations": [
+        "Incorrect. RAG adds a retrieval component, increasing system complexity rather than reducing model size.",
+        "Correct. RAG retrieves relevant documents to augment generation, providing access to current information beyond the model's training data.",
+        "Incorrect. RAG is an inference-time enhancement, not a training optimization.",
+        "Incorrect. RAG works with existing tokenization; it augments generation with retrieved content, not tokenization methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RAG",
+        "retrieval-augmented",
+        "external-knowledge"
+      ]
+    },
+    {
+      "id": "LLM_091",
+      "question": "What is the main advantage of using flash attention implementations?",
+      "options": [
+        "Better model accuracy",
+        "Reduced memory usage during attention computation",
+        "Simpler model architecture",
+        "Faster tokenization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Flash attention optimizes attention computation to reduce memory usage by computing attention in blocks and avoiding materialization of large attention matrices.",
+      "optionExplanations": [
+        "Incorrect. Flash attention is mathematically equivalent to standard attention, producing the same results with better efficiency.",
+        "Correct. Flash attention reduces memory usage by computing attention in tiled blocks, avoiding storage of full attention matrices.",
+        "Incorrect. Flash attention is an implementation optimization that doesn't change model architecture.",
+        "Incorrect. Flash attention optimizes attention computation, not tokenization which happens at preprocessing."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "flash-attention",
+        "memory-optimization",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "LLM_092",
+      "question": "What is the purpose of using different prompt formatting techniques (chain-of-thought, few-shot, zero-shot) for different tasks?",
+      "options": [
+        "To reduce computational cost",
+        "To optimize model performance for different reasoning and task requirements",
+        "To improve training efficiency",
+        "To handle different input lengths"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different prompt formats elicit different model behaviors: chain-of-thought improves reasoning, few-shot provides task examples, zero-shot tests pure instruction following.",
+      "optionExplanations": [
+        "Incorrect. Different prompt formats may have different computational costs, but the primary goal is performance optimization.",
+        "Correct. Different prompting strategies optimize for different capabilities - reasoning (CoT), task adaptation (few-shot), generalization (zero-shot).",
+        "Incorrect. Prompting techniques are inference-time strategies, not training optimizations.",
+        "Incorrect. While prompts affect input length, the choice is based on task requirements and desired model behavior, not length management."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prompt-formatting",
+        "chain-of-thought",
+        "task-optimization"
+      ]
+    },
+    {
+      "id": "LLM_093",
+      "question": "What is the main challenge with scaling language models to very large sizes?",
+      "options": [
+        "Tokenization becomes impossible",
+        "Diminishing returns and increasing computational costs",
+        "Models become less accurate",
+        "Training data becomes insufficient"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As models get very large, the performance improvements become smaller while computational costs continue to grow significantly, leading to diminishing returns on investment.",
+      "optionExplanations": [
+        "Incorrect. Tokenization works the same regardless of model size.",
+        "Correct. Very large models show diminishing performance gains while requiring exponentially more computational resources, creating efficiency challenges.",
+        "Incorrect. Larger models generally maintain or improve accuracy, though with diminishing returns.",
+        "Incorrect. Large amounts of text data are available; the challenge is computational efficiency, not data availability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scaling",
+        "diminishing-returns",
+        "computational-cost"
+      ]
+    },
+    {
+      "id": "LLM_094",
+      "question": "What is the purpose of using different attention head sizes and numbers in multi-head attention?",
+      "options": [
+        "To reduce computational cost",
+        "To capture different types of relationships at different representational scales",
+        "To improve tokenization",
+        "To increase training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different head configurations allow the model to capture various types of linguistic relationships - some heads might focus on syntax, others on semantics, at different representational granularities.",
+      "optionExplanations": [
+        "Incorrect. While head configuration affects computation, the primary purpose is representational diversity, not cost reduction.",
+        "Correct. Different head sizes and numbers enable capturing diverse relationship types and patterns at various scales of abstraction.",
+        "Incorrect. Attention head configuration doesn't affect tokenization, which happens at input preprocessing.",
+        "Incorrect. More heads typically increase computation; the benefit is representational capacity, not training speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-head-attention",
+        "head-configuration",
+        "representation"
+      ]
+    },
+    {
+      "id": "LLM_095",
+      "question": "What is the main benefit of using model ensembling for language model deployment?",
+      "options": [
+        "Reduced computational cost",
+        "Improved robustness and reduced variance in outputs",
+        "Faster inference speed",
+        "Simpler model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensembling combines predictions from multiple models, reducing variance and improving robustness by averaging out individual model biases and errors.",
+      "optionExplanations": [
+        "Incorrect. Ensembling increases computational cost by requiring multiple model inferences.",
+        "Correct. Ensembling reduces prediction variance and improves robustness by combining diverse model predictions.",
+        "Incorrect. Ensembling requires multiple model evaluations, making inference slower, not faster.",
+        "Incorrect. Ensembling uses multiple models, increasing system complexity rather than simplifying architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensembling",
+        "robustness",
+        "variance-reduction"
+      ]
+    },
+    {
+      "id": "LLM_096",
+      "question": "What is the purpose of using different optimizer variants (AdamW, Lion, Sophia) for training large language models?",
+      "options": [
+        "To reduce model size",
+        "To optimize training dynamics and convergence properties for different scenarios",
+        "To improve tokenization quality",
+        "To increase inference speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different optimizers offer various trade-offs: AdamW adds weight decay, Lion reduces memory usage, Sophia uses second-order information, each suited for different training scenarios.",
+      "optionExplanations": [
+        "Incorrect. Optimizers affect training dynamics, not final model architecture or size.",
+        "Correct. Different optimizers provide various convergence properties, memory requirements, and stability characteristics for different training scenarios.",
+        "Incorrect. Optimizers operate during training on model parameters, not on tokenization which happens at preprocessing.",
+        "Incorrect. Optimizers affect training, not inference speed, which depends on model architecture and implementation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "optimizers",
+        "AdamW",
+        "training-dynamics"
+      ]
+    },
+    {
+      "id": "LLM_097",
+      "question": "What is the main challenge with training language models on multilingual data?",
+      "options": [
+        "Tokenization becomes impossible",
+        "Balancing performance across languages with different data availability",
+        "Models become too large",
+        "Training becomes unstable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multilingual training faces the challenge of unequal data availability across languages, potentially leading to models that perform well on high-resource languages but poorly on low-resource ones.",
+      "optionExplanations": [
+        "Incorrect. Multilingual tokenization is handled by language-agnostic methods like SentencePiece.",
+        "Correct. Different languages have vastly different amounts of available training data, making it challenging to achieve balanced multilingual performance.",
+        "Incorrect. While multilingual models may be larger due to diverse vocabularies, this isn't the main training challenge.",
+        "Incorrect. Multilingual training doesn't inherently cause instability; the challenge is performance balance across languages."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multilingual",
+        "data-imbalance",
+        "language-resources"
+      ]
+    },
+    {
+      "id": "LLM_098",
+      "question": "What is the purpose of using different regularization techniques (dropout, weight decay, gradient noise) in language model training?",
+      "options": [
+        "To increase model capacity",
+        "To prevent overfitting and improve generalization",
+        "To speed up training",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization techniques add constraints or noise during training to prevent the model from overfitting to training data and encourage better generalization to unseen data.",
+      "optionExplanations": [
+        "Incorrect. Regularization typically constrains model learning, reducing effective capacity rather than increasing it.",
+        "Correct. Regularization techniques prevent overfitting by adding constraints, noise, or penalties that encourage simpler, more generalizable solutions.",
+        "Incorrect. Regularization often adds computational overhead and may slow convergence, prioritizing generalization over training speed.",
+        "Incorrect. Most regularization techniques don't significantly affect memory usage; their purpose is improving generalization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "LLM_099",
+      "question": "What is the main advantage of using sparse transformer architectures?",
+      "options": [
+        "Better accuracy on all tasks",
+        "Reduced computational complexity for long sequences",
+        "Simpler implementation",
+        "Improved training stability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sparse transformers use patterns like local or strided attention to reduce the quadratic complexity of full attention, enabling efficient processing of longer sequences.",
+      "optionExplanations": [
+        "Incorrect. Sparse transformers trade some modeling capacity for efficiency, potentially affecting accuracy on some tasks.",
+        "Correct. Sparse attention patterns reduce computational complexity from O(n²) to O(n√n) or O(n log n), enabling longer sequence processing.",
+        "Incorrect. Sparse transformers are more complex to implement due to specialized attention patterns.",
+        "Incorrect. Training stability depends on many factors; sparsity primarily affects computational efficiency, not stability."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "sparse-transformers",
+        "computational-complexity",
+        "long-sequences"
+      ]
+    },
+    {
+      "id": "LLM_100",
+      "question": "What is the primary goal of constitutional AI training methods?",
+      "options": [
+        "To reduce model size",
+        "To align model behavior with human values and reduce harmful outputs",
+        "To improve training speed",
+        "To enhance tokenization quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constitutional AI uses a set of principles or 'constitution' to guide model training, aiming to produce models that behave in accordance with human values and avoid generating harmful content.",
+      "optionExplanations": [
+        "Incorrect. Constitutional AI focuses on behavior alignment, not model compression or size reduction.",
+        "Correct. Constitutional AI trains models to follow constitutional principles, improving alignment with human values and reducing harmful or undesired behaviors.",
+        "Incorrect. Constitutional AI typically requires additional training steps and oversight, potentially increasing training time.",
+        "Incorrect. Constitutional AI addresses model behavior and outputs, not tokenization which is a preprocessing step."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constitutional-AI",
+        "alignment",
+        "safety"
+      ]
+    }
+  ]
+}

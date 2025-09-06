@@ -1,0 +1,2431 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_IMG",
+  "topicName": "Image Processing",
+  "subtopicId": "STC_FDT",
+  "subtopicName": "Feature Detection",
+  "str": 0.300,
+  "description": "Feature detection involves identifying distinctive points, edges, and corners in images that can be used for matching, tracking, and recognition tasks.",
+  "questions": [
+    {
+      "id": "FDT_001",
+      "question": "What is the primary purpose of feature detection in computer vision?",
+      "options": [
+        "To identify distinctive points in images for matching and recognition",
+        "To enhance image brightness and contrast",
+        "To reduce image noise and artifacts",
+        "To compress image file sizes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature detection aims to identify distinctive points, edges, or regions in images that can be reliably detected and matched across different images, making it fundamental for tasks like object recognition, image matching, and tracking.",
+      "optionExplanations": [
+        "This is correct. Feature detection identifies distinctive points that remain stable across different viewing conditions for matching and recognition tasks.",
+        "This describes image enhancement techniques, not feature detection which focuses on identifying distinctive points.",
+        "This describes noise reduction algorithms, while feature detection identifies salient image structures.",
+        "This describes image compression, which is unrelated to the identification of distinctive image features."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "basics",
+        "computer-vision",
+        "feature-detection"
+      ]
+    },
+    {
+      "id": "FDT_002",
+      "question": "Which of the following best describes a corner in the context of feature detection?",
+      "options": [
+        "A point where image intensity is constant in all directions",
+        "A point where image intensity changes significantly in multiple directions",
+        "A point where image intensity changes only in one direction",
+        "A point where image intensity is maximum"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A corner is characterized by significant intensity changes in multiple directions, making it a distinctive feature that can be reliably detected and tracked across different images.",
+      "optionExplanations": [
+        "This describes a flat region with no distinctive features, not a corner which has intensity variations.",
+        "This is correct. Corners have intensity changes in multiple directions, making them distinctive and detectable features.",
+        "This describes an edge where intensity changes in only one direction, not a corner which has multi-directional changes.",
+        "While corners may have high intensity values, the defining characteristic is multi-directional intensity change, not maximum intensity."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "corners",
+        "image-features",
+        "intensity"
+      ]
+    },
+    {
+      "id": "FDT_003",
+      "question": "What does SIFT stand for in feature detection?",
+      "options": [
+        "Scale-Invariant Feature Transform",
+        "Spatial Intensity Feature Tracking",
+        "Simple Image Feature Technology",
+        "Structural Information Feature Transform"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SIFT stands for Scale-Invariant Feature Transform, which is a computer vision algorithm to detect and describe local features in images that are invariant to scale changes.",
+      "optionExplanations": [
+        "This is correct. SIFT (Scale-Invariant Feature Transform) detects features that remain stable across different scales.",
+        "This is an incorrect expansion. SIFT specifically refers to scale-invariant features, not spatial intensity tracking.",
+        "This is an incorrect expansion. SIFT is a sophisticated algorithm, not a simple technology.",
+        "This is an incorrect expansion. SIFT focuses on scale invariance, not structural information transformation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "SIFT",
+        "acronyms",
+        "scale-invariance"
+      ]
+    },
+    {
+      "id": "FDT_004",
+      "question": "Which mathematical operator is commonly used for edge detection?",
+      "options": [
+        "Laplacian operator",
+        "Fourier transform",
+        "Wavelet transform",
+        "Gradient operator"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The gradient operator is most commonly used for edge detection as it measures the rate of intensity change, which is high at edges where pixel values change rapidly.",
+      "optionExplanations": [
+        "While the Laplacian can detect edges, it's more sensitive to noise and less commonly used than gradient-based methods.",
+        "Fourier transform is used for frequency analysis, not directly for edge detection in spatial domain.",
+        "Wavelet transform is used for multi-resolution analysis, not specifically for edge detection.",
+        "This is correct. The gradient operator measures intensity changes and is the foundation of most edge detection algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-detection",
+        "gradient",
+        "mathematical-operators"
+      ]
+    },
+    {
+      "id": "FDT_005",
+      "question": "What is the main advantage of SURF over SIFT?",
+      "options": [
+        "Better rotation invariance",
+        "Higher accuracy in feature matching",
+        "Faster computational speed",
+        "Better scale invariance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SURF (Speeded-Up Robust Features) was designed to be faster than SIFT while maintaining comparable performance, using integral images and box filters for speed optimization.",
+      "optionExplanations": [
+        "Both SIFT and SURF have good rotation invariance; this is not SURF's main advantage over SIFT.",
+        "SIFT generally has slightly better accuracy; SURF's advantage is speed, not higher accuracy.",
+        "This is correct. SURF was specifically designed to be faster than SIFT while maintaining similar robustness.",
+        "Both algorithms have good scale invariance; this is not SURF's distinguishing advantage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SURF",
+        "SIFT",
+        "computational-speed",
+        "comparison"
+      ]
+    },
+    {
+      "id": "FDT_006",
+      "question": "In the Harris corner detector, what does the response function R typically depend on?",
+      "options": [
+        "Only the determinant of the structure tensor",
+        "Only the trace of the structure tensor",
+        "Both determinant and trace of the structure tensor",
+        "The eigenvalues of the gradient matrix"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Harris corner response function R is typically calculated as R = det(M) - k(trace(M))², where M is the structure tensor, combining both determinant and trace.",
+      "optionExplanations": [
+        "The Harris response uses both determinant and trace, not just the determinant alone.",
+        "The Harris response uses both determinant and trace, not just the trace alone.",
+        "This is correct. The Harris response function combines both determinant and trace: R = det(M) - k(trace(M))².",
+        "While eigenvalues are related, the Harris function specifically uses determinant and trace, not eigenvalues directly."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Harris-corner",
+        "structure-tensor",
+        "response-function"
+      ]
+    },
+    {
+      "id": "FDT_007",
+      "question": "What does ORB stand for in feature detection?",
+      "options": [
+        "Oriented BRIEF",
+        "Optical Recognition Binary",
+        "Oriented FAST and Rotated BRIEF",
+        "Optimized Robust Binary"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ORB stands for Oriented FAST and Rotated BRIEF, combining the FAST keypoint detector with the BRIEF descriptor while adding orientation for rotation invariance.",
+      "optionExplanations": [
+        "This is incomplete. ORB includes both FAST keypoint detection and BRIEF descriptor, not just oriented BRIEF.",
+        "This is incorrect. ORB is not related to optical recognition binary systems.",
+        "This is correct. ORB combines Oriented FAST keypoint detection with Rotated BRIEF descriptors.",
+        "This is incorrect. ORB specifically refers to the combination of FAST and BRIEF algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ORB",
+        "FAST",
+        "BRIEF",
+        "acronyms"
+      ]
+    },
+    {
+      "id": "FDT_008",
+      "question": "Which of the following is NOT a characteristic of good features for tracking?",
+      "options": [
+        "High intensity gradient",
+        "Uniform intensity region",
+        "Distinctive appearance",
+        "Stable under illumination changes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Uniform intensity regions lack distinctive characteristics and gradient information, making them poor features for tracking as they cannot be reliably detected or matched.",
+      "optionExplanations": [
+        "High intensity gradients provide strong signals for feature detection and are good for tracking.",
+        "This is correct (as the NOT option). Uniform regions lack distinctive characteristics needed for reliable tracking.",
+        "Distinctive appearance is essential for features to be uniquely identifiable and trackable.",
+        "Stability under illumination changes ensures features remain detectable across different lighting conditions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-tracking",
+        "characteristics",
+        "gradient"
+      ]
+    },
+    {
+      "id": "FDT_009",
+      "question": "In SIFT, what is the purpose of Gaussian pyramid construction?",
+      "options": [
+        "To reduce computational complexity",
+        "To achieve scale invariance",
+        "To enhance image contrast",
+        "To remove image noise"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Gaussian pyramid in SIFT provides scale invariance by detecting features at multiple scales, allowing the same features to be found regardless of their size in the image.",
+      "optionExplanations": [
+        "While pyramids can reduce computation, the primary purpose in SIFT is scale invariance, not computational efficiency.",
+        "This is correct. The Gaussian pyramid enables detection of features at multiple scales for scale invariance.",
+        "The pyramid is not specifically designed for contrast enhancement, but for multi-scale analysis.",
+        "While Gaussian filtering reduces noise, the pyramid's main purpose in SIFT is scale invariance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "Gaussian-pyramid",
+        "scale-invariance"
+      ]
+    },
+    {
+      "id": "FDT_010",
+      "question": "What is a keypoint in the context of feature detection?",
+      "options": [
+        "Any pixel in the image",
+        "A pixel with maximum intensity",
+        "A distinctive point that can be reliably detected",
+        "The center pixel of the image"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A keypoint is a distinctive point in an image that can be reliably detected and has characteristics that make it suitable for matching across different images or under different conditions.",
+      "optionExplanations": [
+        "Not every pixel is a keypoint; only distinctive points with specific characteristics qualify as keypoints.",
+        "Maximum intensity alone doesn't make a point distinctive or reliable for detection across different conditions.",
+        "This is correct. Keypoints are distinctive, reliably detectable points with characteristics suitable for matching.",
+        "The center pixel has no special significance for feature detection unless it happens to be distinctive."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "keypoints",
+        "feature-detection",
+        "distinctive-points"
+      ]
+    },
+    {
+      "id": "FDT_011",
+      "question": "Which edge detection algorithm uses two thresholds?",
+      "options": [
+        "Sobel edge detector",
+        "Prewitt edge detector",
+        "Canny edge detector",
+        "Roberts cross-gradient"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Canny edge detector uses double thresholding with high and low thresholds to classify edge pixels as strong, weak, or non-edge pixels, followed by hysteresis to connect weak edges to strong ones.",
+      "optionExplanations": [
+        "Sobel uses gradient magnitude with a single threshold to determine edges, not double thresholding.",
+        "Prewitt uses gradient magnitude with a single threshold, similar to Sobel, not double thresholding.",
+        "This is correct. Canny uses high and low thresholds for edge classification and hysteresis linking.",
+        "Roberts cross-gradient uses a single threshold based on gradient magnitude, not double thresholding."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Canny",
+        "edge-detection",
+        "thresholding"
+      ]
+    },
+    {
+      "id": "FDT_012",
+      "question": "What is the main purpose of non-maximum suppression in edge detection?",
+      "options": [
+        "To increase edge thickness",
+        "To create thin, single-pixel wide edges",
+        "To enhance edge contrast",
+        "To remove weak edges"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Non-maximum suppression thins edges by preserving only the pixels with locally maximum gradient magnitude along the gradient direction, creating single-pixel wide edges.",
+      "optionExplanations": [
+        "Non-maximum suppression reduces edge thickness to single pixels, not increases it.",
+        "This is correct. Non-maximum suppression creates thin, single-pixel wide edges from thick gradient responses.",
+        "While it may improve edge quality, the primary purpose is edge thinning, not contrast enhancement.",
+        "Removing weak edges is typically done by thresholding, not non-maximum suppression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "non-maximum-suppression",
+        "edge-detection",
+        "thinning"
+      ]
+    },
+    {
+      "id": "FDT_013",
+      "question": "In SIFT, what is the purpose of orientation assignment?",
+      "options": [
+        "To achieve rotation invariance",
+        "To improve computational speed",
+        "To enhance feature distinctiveness",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Orientation assignment in SIFT provides rotation invariance by assigning a consistent orientation to each keypoint based on local image gradients, allowing features to be matched regardless of rotation.",
+      "optionExplanations": [
+        "This is correct. Orientation assignment provides rotation invariance by establishing a consistent reference direction for each keypoint.",
+        "Orientation assignment adds computational overhead rather than improving speed; its purpose is rotation invariance.",
+        "While it may help distinctiveness, the primary purpose is achieving rotation invariance through consistent orientation.",
+        "Orientation assignment requires storing additional orientation information, not reducing memory usage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "orientation",
+        "rotation-invariance"
+      ]
+    },
+    {
+      "id": "FDT_014",
+      "question": "What is the typical size of a BRIEF descriptor?",
+      "options": [
+        "32 bits",
+        "64 bits",
+        "128 bits",
+        "256 bits"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "BRIEF (Binary Robust Independent Elementary Features) typically uses 256-bit binary descriptors, though variants with 128 and 512 bits also exist.",
+      "optionExplanations": [
+        "32 bits is too short for BRIEF descriptors, which need more bits to provide sufficient distinctiveness.",
+        "64 bits is shorter than the typical BRIEF descriptor length used in practice.",
+        "128 bits is a variant of BRIEF, but the standard implementation typically uses 256 bits.",
+        "This is correct. BRIEF commonly uses 256-bit binary descriptors for good performance balance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BRIEF",
+        "descriptor-size",
+        "binary-features"
+      ]
+    },
+    {
+      "id": "FDT_015",
+      "question": "Which of the following best describes the difference between corners and edges?",
+      "options": [
+        "Corners are brighter than edges",
+        "Edges have intensity changes in one direction, corners in multiple directions",
+        "Corners are larger features than edges",
+        "Edges are more stable than corners"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The fundamental difference is that edges represent intensity changes primarily in one direction (perpendicular to the edge), while corners have intensity changes in multiple directions.",
+      "optionExplanations": [
+        "Brightness level is not the distinguishing characteristic between corners and edges; both can occur at any intensity level.",
+        "This is correct. Edges have directional intensity changes, while corners have multi-directional intensity changes.",
+        "Size is not the defining characteristic; both corners and edges can vary in scale and extent.",
+        "Stability depends on the specific feature and imaging conditions, not on whether it's a corner or edge."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "corners",
+        "edges",
+        "intensity-changes",
+        "directions"
+      ]
+    },
+    {
+      "id": "FDT_016",
+      "question": "What is the main advantage of binary descriptors like ORB over floating-point descriptors like SIFT?",
+      "options": [
+        "Higher accuracy in matching",
+        "Better rotation invariance",
+        "Faster computation and matching",
+        "Better scale invariance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Binary descriptors enable faster computation and matching using simple bit operations like XOR for Hamming distance, compared to Euclidean distance calculations for floating-point descriptors.",
+      "optionExplanations": [
+        "Floating-point descriptors like SIFT generally provide higher accuracy than binary descriptors, not the reverse.",
+        "Both binary and floating-point descriptors can achieve rotation invariance; this is not the main advantage of binary descriptors.",
+        "This is correct. Binary descriptors allow fast matching using bit operations and Hamming distance calculations.",
+        "Scale invariance is achieved through algorithm design, not descriptor type; both can be scale-invariant."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binary-descriptors",
+        "ORB",
+        "computational-speed",
+        "matching"
+      ]
+    },
+    {
+      "id": "FDT_017",
+      "question": "In the context of feature detection, what does 'repeatability' mean?",
+      "options": [
+        "The ability to detect the same features multiple times in one image",
+        "The ability to detect the same features across different images of the same scene",
+        "The ability to detect features quickly",
+        "The ability to detect many features in an image"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Repeatability refers to the ability of a feature detector to consistently detect the same physical features across different images of the same scene under varying conditions.",
+      "optionExplanations": [
+        "Repeatability is about consistency across different images, not multiple detections within a single image.",
+        "This is correct. Repeatability measures consistency of feature detection across different views or conditions of the same scene.",
+        "Speed of detection is about computational efficiency, not repeatability which measures consistency.",
+        "The number of detected features relates to density or coverage, not repeatability which measures consistency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "repeatability",
+        "feature-detection",
+        "consistency"
+      ]
+    },
+    {
+      "id": "FDT_018",
+      "question": "Which algorithm is known for extremely fast keypoint detection?",
+      "options": [
+        "SIFT",
+        "SURF",
+        "FAST",
+        "Harris corner detector"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "FAST (Features from Accelerated Segment Test) is specifically designed for extremely fast keypoint detection by using a simple intensity comparison test around a circular pattern.",
+      "optionExplanations": [
+        "SIFT is accurate but computationally expensive, not known for speed.",
+        "SURF is faster than SIFT but not the fastest keypoint detector available.",
+        "This is correct. FAST is designed specifically for very fast keypoint detection using simple intensity tests.",
+        "Harris corner detector is moderately fast but not as fast as FAST for keypoint detection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "FAST",
+        "speed",
+        "keypoint-detection"
+      ]
+    },
+    {
+      "id": "FDT_019",
+      "question": "What is the primary limitation of the Harris corner detector?",
+      "options": [
+        "It cannot detect corners accurately",
+        "It is not scale-invariant",
+        "It is too slow for real-time applications",
+        "It produces too many false positives"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Harris corner detector's primary limitation is lack of scale invariance - corners detected at one scale may not be detected at different scales of the same image.",
+      "optionExplanations": [
+        "Harris corner detector is quite accurate at detecting corners; this is not its primary limitation.",
+        "This is correct. Harris detector lacks scale invariance, making it sensitive to image scale changes.",
+        "Harris detector is reasonably fast; speed is not its primary limitation compared to scale invariance.",
+        "With proper thresholding, false positives can be controlled; the main issue is scale sensitivity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Harris-corner",
+        "scale-invariance",
+        "limitations"
+      ]
+    },
+    {
+      "id": "FDT_020",
+      "question": "In SIFT descriptor computation, how many orientation bins are typically used?",
+      "options": [
+        "4 bins",
+        "8 bins",
+        "16 bins",
+        "32 bins"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SIFT descriptors typically use 8 orientation bins for each histogram, creating a 4×4 grid of histograms with 8 bins each, resulting in a 128-dimensional descriptor.",
+      "optionExplanations": [
+        "4 bins would provide insufficient orientation resolution for robust feature description in SIFT.",
+        "This is correct. SIFT uses 8 orientation bins per histogram in its 4×4 grid structure.",
+        "16 bins would be more than typically used in SIFT and would increase descriptor dimensionality unnecessarily.",
+        "32 bins would create very high-dimensional descriptors and is not used in standard SIFT."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SIFT",
+        "descriptor",
+        "orientation-bins"
+      ]
+    },
+    {
+      "id": "FDT_021",
+      "question": "What is the main purpose of Gaussian blur in feature detection preprocessing?",
+      "options": [
+        "To enhance image contrast",
+        "To reduce noise and improve feature stability",
+        "To increase image sharpness",
+        "To compress the image"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gaussian blur reduces noise and creates smoother gradients, leading to more stable and repeatable feature detection by reducing sensitivity to small intensity variations.",
+      "optionExplanations": [
+        "Gaussian blur actually reduces contrast by smoothing intensity variations, not enhancing them.",
+        "This is correct. Gaussian blur reduces noise and creates more stable features by smoothing intensity variations.",
+        "Gaussian blur reduces sharpness by smoothing the image, opposite to increasing sharpness.",
+        "Gaussian blur is a filtering operation, not a compression technique for reducing file size."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "Gaussian-blur",
+        "preprocessing",
+        "noise-reduction"
+      ]
+    },
+    {
+      "id": "FDT_022",
+      "question": "Which distance metric is commonly used for matching SIFT descriptors?",
+      "options": [
+        "Hamming distance",
+        "Manhattan distance",
+        "Euclidean distance",
+        "Cosine distance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SIFT descriptors are real-valued vectors, and Euclidean distance is the standard metric for measuring similarity between such high-dimensional floating-point descriptors.",
+      "optionExplanations": [
+        "Hamming distance is used for binary descriptors, not floating-point SIFT descriptors.",
+        "Manhattan distance can be used but Euclidean distance is more common and effective for SIFT descriptors.",
+        "This is correct. Euclidean distance is the standard metric for matching SIFT's floating-point descriptors.",
+        "Cosine distance measures angular similarity and is less commonly used for SIFT descriptor matching."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "descriptor-matching",
+        "Euclidean-distance"
+      ]
+    },
+    {
+      "id": "FDT_023",
+      "question": "What does the 'FAST' in FAST corner detector stand for?",
+      "options": [
+        "Features from Accelerated Segment Test",
+        "Fast Adaptive Scale Transform",
+        "Feature Alignment and Spatial Tracking",
+        "Fast Automatic Scale Transform"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "FAST stands for Features from Accelerated Segment Test, referring to its method of rapidly testing pixel intensities in a circular pattern around candidate points.",
+      "optionExplanations": [
+        "This is correct. FAST stands for Features from Accelerated Segment Test, describing its rapid testing method.",
+        "This is incorrect. FAST is not related to adaptive scale transforms.",
+        "This is incorrect. FAST is not about feature alignment and spatial tracking.",
+        "This is incorrect. FAST is not about automatic scale transforms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "FAST",
+        "acronyms",
+        "corner-detection"
+      ]
+    },
+    {
+      "id": "FDT_024",
+      "question": "In edge detection, what does the magnitude of the gradient represent?",
+      "options": [
+        "The direction of the edge",
+        "The strength or sharpness of the edge",
+        "The length of the edge",
+        "The orientation of the edge"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The gradient magnitude represents the strength or sharpness of an edge - higher magnitude indicates a more pronounced intensity change, while the gradient direction indicates edge orientation.",
+      "optionExplanations": [
+        "Gradient direction, not magnitude, indicates the direction perpendicular to the edge.",
+        "This is correct. Gradient magnitude measures the strength or sharpness of intensity changes at edges.",
+        "Edge length is a geometric property unrelated to gradient magnitude, which measures intensity change strength.",
+        "Gradient direction (angle), not magnitude, indicates edge orientation in the image."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-magnitude",
+        "edge-detection",
+        "intensity-changes"
+      ]
+    },
+    {
+      "id": "FDT_025",
+      "question": "Which of the following is a key advantage of ORB over SIFT and SURF?",
+      "options": [
+        "Better scale invariance",
+        "Higher descriptor dimensionality",
+        "Free from patent restrictions",
+        "Better rotation invariance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ORB is free from patent restrictions unlike SIFT and SURF, making it freely usable in commercial applications without licensing concerns.",
+      "optionExplanations": [
+        "ORB has reasonable but not necessarily better scale invariance compared to SIFT and SURF.",
+        "ORB uses binary descriptors with lower dimensionality than SIFT, not higher dimensionality.",
+        "This is correct. ORB is patent-free, unlike SIFT and SURF which have patent restrictions.",
+        "All three algorithms (ORB, SIFT, SURF) have good rotation invariance; this is not ORB's distinguishing advantage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ORB",
+        "patents",
+        "commercial-use",
+        "licensing"
+      ]
+    },
+    {
+      "id": "FDT_026",
+      "question": "What is the typical approach for achieving scale invariance in feature detection?",
+      "options": [
+        "Using high-resolution images only",
+        "Detecting features at multiple scales",
+        "Using adaptive thresholding",
+        "Applying histogram equalization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Scale invariance is achieved by detecting features at multiple scales, typically using image pyramids or scale-space representations to find features regardless of their size in the image.",
+      "optionExplanations": [
+        "Using only high-resolution images doesn't provide scale invariance; features can appear at different scales even in high-resolution images.",
+        "This is correct. Multi-scale detection using pyramids or scale-space enables finding features at different scales.",
+        "Adaptive thresholding helps with illumination changes but doesn't address scale invariance.",
+        "Histogram equalization improves contrast but doesn't provide scale invariance for feature detection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scale-invariance",
+        "multi-scale",
+        "image-pyramids"
+      ]
+    },
+    {
+      "id": "FDT_027",
+      "question": "In the Harris corner detector, what does a high response value indicate?",
+      "options": [
+        "A flat region with no features",
+        "An edge region",
+        "A corner region",
+        "A noisy region"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In the Harris corner detector, high response values indicate corner regions where there are significant intensity changes in multiple directions, making them good features for detection.",
+      "optionExplanations": [
+        "Flat regions have low Harris response values because they lack significant intensity variations.",
+        "Edge regions have moderate Harris response values, but not the highest responses.",
+        "This is correct. High Harris response values indicate corner regions with multi-directional intensity changes.",
+        "Noisy regions may have varying responses, but high structured response specifically indicates corners."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Harris-corner",
+        "response-value",
+        "corner-detection"
+      ]
+    },
+    {
+      "id": "FDT_028",
+      "question": "What is the main disadvantage of binary descriptors compared to floating-point descriptors?",
+      "options": [
+        "Slower computation",
+        "Larger memory requirements",
+        "Lower discriminative power",
+        "Poor rotation invariance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Binary descriptors have lower discriminative power compared to floating-point descriptors because they quantize information to just 0s and 1s, losing fine-grained intensity information.",
+      "optionExplanations": [
+        "Binary descriptors are actually faster to compute and match than floating-point descriptors.",
+        "Binary descriptors require less memory than floating-point descriptors due to their compact representation.",
+        "This is correct. Binary descriptors have lower discriminative power due to quantization of intensity information.",
+        "Both binary and floating-point descriptors can achieve rotation invariance; this is not the main disadvantage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binary-descriptors",
+        "discriminative-power",
+        "quantization"
+      ]
+    },
+    {
+      "id": "FDT_029",
+      "question": "Which preprocessing step is essential before applying most corner detection algorithms?",
+      "options": [
+        "Color space conversion",
+        "Image resizing",
+        "Gradient computation",
+        "Histogram equalization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gradient computation is essential for most corner detection algorithms as they rely on analyzing intensity changes through gradients to identify corner features.",
+      "optionExplanations": [
+        "Color space conversion may be helpful but is not essential; many corner detectors work on grayscale images.",
+        "Image resizing is not essential and may be done for efficiency, but corners can be detected at original resolution.",
+        "This is correct. Gradient computation is fundamental to most corner detection algorithms that analyze intensity changes.",
+        "Histogram equalization can improve contrast but is not essential for corner detection algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "gradient-computation",
+        "corner-detection"
+      ]
+    },
+    {
+      "id": "FDT_030",
+      "question": "What is the primary purpose of keypoint localization in SIFT?",
+      "options": [
+        "To remove duplicate keypoints",
+        "To improve the precision of keypoint locations",
+        "To assign orientations to keypoints",
+        "To compute keypoint descriptors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Keypoint localization in SIFT refines the initial keypoint locations to sub-pixel accuracy using interpolation methods, improving the precision of feature locations.",
+      "optionExplanations": [
+        "Removing duplicates is part of keypoint filtering, not localization which focuses on position accuracy.",
+        "This is correct. Keypoint localization improves the precision of keypoint positions to sub-pixel accuracy.",
+        "Orientation assignment is a separate step that follows keypoint localization in the SIFT pipeline.",
+        "Descriptor computation is a separate step that comes after keypoint localization and orientation assignment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "keypoint-localization",
+        "sub-pixel-accuracy"
+      ]
+    },
+    {
+      "id": "FDT_031",
+      "question": "Which factor most significantly affects the repeatability of corner detection?",
+      "options": [
+        "Image compression artifacts",
+        "Illumination changes",
+        "Camera viewpoint changes",
+        "Image noise levels"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Camera viewpoint changes most significantly affect corner repeatability because they can cause apparent corners to disappear or new ones to appear due to perspective changes and occlusion.",
+      "optionExplanations": [
+        "Compression artifacts affect quality but are less significant than viewpoint changes for corner repeatability.",
+        "Illumination changes affect corner detection but robust algorithms can handle moderate illumination variations.",
+        "This is correct. Viewpoint changes significantly affect corner repeatability due to perspective effects and occlusion.",
+        "Noise affects detection quality but robust corner detectors can handle reasonable noise levels."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "repeatability",
+        "viewpoint-changes",
+        "corner-detection"
+      ]
+    },
+    {
+      "id": "FDT_032",
+      "question": "In SURF, what type of filters are used for fast computation?",
+      "options": [
+        "Gaussian filters",
+        "Box filters",
+        "Sobel filters",
+        "Laplacian filters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SURF uses box filters (rectangular filters) that can be computed very efficiently using integral images, providing speed advantages over Gaussian filters used in SIFT.",
+      "optionExplanations": [
+        "Gaussian filters are used in SIFT but SURF uses box filters for faster computation.",
+        "This is correct. SURF uses box filters with integral images for fast computation.",
+        "Sobel filters are used for edge detection but SURF specifically uses box filters for efficiency.",
+        "Laplacian filters can be used for feature detection but SURF specifically employs box filters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SURF",
+        "box-filters",
+        "integral-images",
+        "computational-efficiency"
+      ]
+    },
+    {
+      "id": "FDT_033",
+      "question": "What is the main purpose of thresholding in feature detection?",
+      "options": [
+        "To convert images to binary format",
+        "To filter out weak or unreliable features",
+        "To enhance image contrast",
+        "To reduce computational complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Thresholding in feature detection filters out weak or unreliable features by keeping only those with response values above a certain threshold, ensuring quality of detected features.",
+      "optionExplanations": [
+        "While thresholding can create binary images, in feature detection it's used to filter features, not convert image format.",
+        "This is correct. Thresholding filters weak features to maintain detection quality and reliability.",
+        "Thresholding in feature detection doesn't enhance contrast; it filters detected features based on strength.",
+        "While it may reduce features processed, the primary purpose is quality filtering, not computational reduction."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "thresholding",
+        "feature-filtering",
+        "feature-quality"
+      ]
+    },
+    {
+      "id": "FDT_034",
+      "question": "Which of the following best describes the BRIEF descriptor?",
+      "options": [
+        "A floating-point descriptor with 128 dimensions",
+        "A binary descriptor based on intensity comparisons",
+        "A color-based descriptor for object recognition",
+        "A shape-based descriptor for contour matching"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BRIEF (Binary Robust Independent Elementary Features) is a binary descriptor that uses simple intensity comparisons between pairs of pixels to create binary strings for feature description.",
+      "optionExplanations": [
+        "BRIEF is binary, not floating-point, and typically uses 256 bits, not 128 dimensions.",
+        "This is correct. BRIEF creates binary descriptors through intensity comparisons between pixel pairs.",
+        "BRIEF works on grayscale intensity information, not specifically color-based descriptions.",
+        "BRIEF is based on intensity comparisons, not shape or contour information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BRIEF",
+        "binary-descriptor",
+        "intensity-comparisons"
+      ]
+    },
+    {
+      "id": "FDT_035",
+      "question": "What is the typical range of the parameter 'k' in the Harris corner response function?",
+      "options": [
+        "0.01 to 0.1",
+        "0.04 to 0.06",
+        "0.1 to 0.5",
+        "0.5 to 1.0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The parameter 'k' in the Harris corner response function R = det(M) - k(trace(M))² typically ranges from 0.04 to 0.06, with 0.04 being a commonly used value.",
+      "optionExplanations": [
+        "This range is too broad; the optimal k values are more narrowly concentrated around 0.04-0.06.",
+        "This is correct. The parameter k typically ranges from 0.04 to 0.06 for optimal Harris corner detection.",
+        "Values in this range would be too large and would affect the sensitivity of corner detection negatively.",
+        "These values are too large for the Harris parameter k and would degrade corner detection performance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Harris-corner",
+        "parameter-k",
+        "response-function"
+      ]
+    },
+    {
+      "id": "FDT_036",
+      "question": "Which technique is used in ORB to achieve rotation invariance?",
+      "options": [
+        "Principal Component Analysis",
+        "Intensity centroid calculation",
+        "Fourier transform",
+        "Template matching"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ORB achieves rotation invariance by calculating the intensity centroid of the patch around each keypoint to determine a consistent orientation, then orienting the BRIEF descriptor accordingly.",
+      "optionExplanations": [
+        "PCA is not used in ORB for rotation invariance; it uses intensity centroid methods.",
+        "This is correct. ORB uses intensity centroid calculation to determine keypoint orientation for rotation invariance.",
+        "Fourier transform is not used in ORB for rotation invariance; it relies on geometric methods.",
+        "Template matching is not the method used in ORB for achieving rotation invariance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ORB",
+        "rotation-invariance",
+        "intensity-centroid"
+      ]
+    },
+    {
+      "id": "FDT_037",
+      "question": "What is the main advantage of using integral images in SURF?",
+      "options": [
+        "Better feature accuracy",
+        "Improved rotation invariance",
+        "Faster box filter computation",
+        "Enhanced scale invariance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Integral images allow SURF to compute box filter responses very quickly, as any rectangular region can be computed in constant time using just four lookups in the integral image.",
+      "optionExplanations": [
+        "Integral images provide computational speed, not necessarily better accuracy compared to other methods.",
+        "Rotation invariance in SURF comes from orientation assignment, not from integral images.",
+        "This is correct. Integral images enable very fast box filter computation in constant time.",
+        "Scale invariance comes from the scale-space pyramid, not specifically from integral images."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SURF",
+        "integral-images",
+        "box-filters",
+        "computational-speed"
+      ]
+    },
+    {
+      "id": "FDT_038",
+      "question": "In feature matching, what is the purpose of the ratio test?",
+      "options": [
+        "To speed up the matching process",
+        "To reduce false positive matches",
+        "To increase the number of matches",
+        "To improve descriptor quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The ratio test compares the distance to the best match with the distance to the second-best match, rejecting matches where this ratio is too high, thereby reducing false positives.",
+      "optionExplanations": [
+        "The ratio test adds computation to filter matches, not to speed up the process.",
+        "This is correct. The ratio test reduces false positive matches by comparing first and second-best match distances.",
+        "The ratio test actually reduces the number of matches by filtering out unreliable ones.",
+        "The ratio test operates on matching results, not on improving the descriptors themselves."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-matching",
+        "ratio-test",
+        "false-positives"
+      ]
+    },
+    {
+      "id": "FDT_039",
+      "question": "What does DoG stand for in the context of SIFT?",
+      "options": [
+        "Difference of Gradients",
+        "Difference of Gaussians",
+        "Derivative of Gradients",
+        "Distribution of Gaussians"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DoG stands for Difference of Gaussians, which is used in SIFT to approximate the Laplacian of Gaussian for efficient scale-space extrema detection.",
+      "optionExplanations": [
+        "DoG refers to Gaussians, not gradients, in the context of SIFT scale-space analysis.",
+        "This is correct. DoG (Difference of Gaussians) approximates Laplacian of Gaussian in SIFT.",
+        "DoG involves differences, not derivatives, of Gaussian-filtered images in SIFT.",
+        "DoG is about differences between Gaussians, not their distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "DoG",
+        "Difference-of-Gaussians",
+        "scale-space"
+      ]
+    },
+    {
+      "id": "FDT_040",
+      "question": "Which of the following is NOT a desirable property for feature descriptors?",
+      "options": [
+        "Invariance to illumination changes",
+        "Invariance to geometric transformations",
+        "High dimensionality for storage efficiency",
+        "Distinctiveness for reliable matching"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High dimensionality is generally undesirable as it increases storage requirements and computational cost. Good descriptors balance distinctiveness with compactness.",
+      "optionExplanations": [
+        "Illumination invariance is desirable to handle lighting changes between images.",
+        "Geometric invariance (rotation, scale) is desirable for robust feature matching across viewpoints.",
+        "This is correct (as the NOT option). High dimensionality increases storage and computation costs, so compactness is preferred.",
+        "Distinctiveness is essential for reliable matching and discrimination between different features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-descriptors",
+        "properties",
+        "dimensionality"
+      ]
+    },
+    {
+      "id": "FDT_041",
+      "question": "In the FAST corner detector, how many pixels are typically examined in the circular pattern?",
+      "options": [
+        "8 pixels",
+        "12 pixels",
+        "16 pixels",
+        "20 pixels"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "FAST typically examines 16 pixels arranged in a circle around the candidate corner point, checking if a sufficient number of consecutive pixels have intensities above or below the center pixel by a threshold.",
+      "optionExplanations": [
+        "8 pixels would provide insufficient information for reliable corner detection in FAST.",
+        "12 pixels is fewer than the standard FAST configuration.",
+        "This is correct. FAST examines 16 pixels in a circular pattern around the candidate point.",
+        "20 pixels would be more than the standard FAST configuration and would reduce speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "FAST",
+        "circular-pattern",
+        "pixel-examination"
+      ]
+    },
+    {
+      "id": "FDT_042",
+      "question": "What is the primary challenge in feature detection under varying illumination conditions?",
+      "options": [
+        "Increased computational complexity",
+        "Changes in feature appearance and detectability",
+        "Reduced image resolution",
+        "Increased memory requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Varying illumination changes the appearance of features, potentially making them undetectable or changing their characteristics, which is the primary challenge for robust feature detection.",
+      "optionExplanations": [
+        "Computational complexity doesn't necessarily increase with illumination changes; the challenge is feature stability.",
+        "This is correct. Illumination changes affect feature appearance and detectability, challenging consistent detection.",
+        "Illumination changes don't affect image resolution; they affect intensity values and feature appearance.",
+        "Memory requirements are not directly affected by illumination conditions; the issue is feature consistency."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "illumination-invariance",
+        "feature-detection",
+        "challenges"
+      ]
+    },
+    {
+      "id": "FDT_043",
+      "question": "Which mathematical concept is fundamental to understanding scale-space in SIFT?",
+      "options": [
+        "Fourier analysis",
+        "Gaussian convolution",
+        "Wavelet decomposition",
+        "Principal component analysis"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gaussian convolution is fundamental to scale-space theory in SIFT, as it provides the mathematical framework for creating scale-space representations through progressive smoothing.",
+      "optionExplanations": [
+        "Fourier analysis is used in frequency domain processing, not specifically for SIFT's scale-space construction.",
+        "This is correct. Gaussian convolution is the mathematical foundation of scale-space theory used in SIFT.",
+        "Wavelet decomposition is used in multi-resolution analysis but not in SIFT's Gaussian scale-space approach.",
+        "PCA is used for dimensionality reduction but not for the scale-space construction in SIFT."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SIFT",
+        "scale-space",
+        "Gaussian-convolution",
+        "mathematical-concepts"
+      ]
+    },
+    {
+      "id": "FDT_044",
+      "question": "What is the main purpose of hysteresis thresholding in Canny edge detection?",
+      "options": [
+        "To remove noise from the image",
+        "To connect weak edges to strong edges",
+        "To thin the detected edges",
+        "To enhance edge contrast"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hysteresis thresholding in Canny edge detection connects weak edge pixels to strong edge pixels, creating continuous edge contours while suppressing isolated weak pixels.",
+      "optionExplanations": [
+        "Noise removal is done by Gaussian smoothing in earlier stages, not by hysteresis thresholding.",
+        "This is correct. Hysteresis connects weak edges to strong edges to form continuous contours.",
+        "Edge thinning is done by non-maximum suppression, not hysteresis thresholding.",
+        "Contrast enhancement is not the purpose of hysteresis; it's about edge connectivity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Canny",
+        "hysteresis-thresholding",
+        "edge-connectivity"
+      ]
+    },
+    {
+      "id": "FDT_045",
+      "question": "Which property makes ORB suitable for real-time applications?",
+      "options": [
+        "High descriptor dimensionality",
+        "Complex mathematical operations",
+        "Fast computation and binary operations",
+        "Elaborate preprocessing requirements"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ORB's suitability for real-time applications comes from its fast FAST keypoint detector and binary BRIEF descriptors that enable quick computation and matching using simple bit operations.",
+      "optionExplanations": [
+        "High dimensionality would slow down processing; ORB uses compact binary descriptors for speed.",
+        "Complex operations would reduce speed; ORB uses simple, fast operations for real-time performance.",
+        "This is correct. ORB's fast computation and binary operations make it suitable for real-time applications.",
+        "Elaborate preprocessing would slow down the system; ORB minimizes preprocessing for speed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ORB",
+        "real-time",
+        "computational-speed",
+        "binary-operations"
+      ]
+    },
+    {
+      "id": "FDT_046",
+      "question": "In gradient-based edge detection, what does the gradient direction indicate?",
+      "options": [
+        "The direction of the edge line",
+        "The direction perpendicular to the edge",
+        "The strength of the edge",
+        "The length of the edge"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The gradient direction points in the direction of maximum intensity change, which is perpendicular to the edge line, not along it.",
+      "optionExplanations": [
+        "The gradient direction is perpendicular to the edge line, not along it.",
+        "This is correct. Gradient direction points perpendicular to the edge, in the direction of maximum intensity change.",
+        "Gradient magnitude, not direction, indicates the strength or sharpness of the edge.",
+        "Gradient direction doesn't indicate edge length, which is a geometric property of the edge contour."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-direction",
+        "edge-detection",
+        "intensity-changes"
+      ]
+    },
+    {
+      "id": "FDT_047",
+      "question": "What is the key innovation of SURF compared to traditional feature detection methods?",
+      "options": [
+        "Use of color information",
+        "Integral image-based computation",
+        "Deep learning integration",
+        "Multi-threading support"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SURF's key innovation is using integral images with box filters to dramatically speed up computation while maintaining robustness, making it much faster than SIFT.",
+      "optionExplanations": [
+        "SURF primarily works with intensity information, not specifically color-based innovations.",
+        "This is correct. SURF's integral image-based computation with box filters is its key innovation for speed.",
+        "SURF predates deep learning approaches to feature detection and doesn't use neural networks.",
+        "Multi-threading is an implementation detail, not SURF's core algorithmic innovation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SURF",
+        "integral-images",
+        "innovation",
+        "computational-speed"
+      ]
+    },
+    {
+      "id": "FDT_048",
+      "question": "Which factor is most important for determining the quality of feature matching?",
+      "options": [
+        "Number of detected features",
+        "Speed of feature detection",
+        "Distinctiveness of feature descriptors",
+        "Size of the feature descriptors"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The distinctiveness of feature descriptors is most important for matching quality, as it determines how well features can be distinguished from each other to avoid incorrect matches.",
+      "optionExplanations": [
+        "While more features can be helpful, quality depends more on how distinctive they are than their quantity.",
+        "Speed is important for efficiency but doesn't directly determine the quality of feature matching.",
+        "This is correct. Distinctiveness determines how well features can be distinguished for accurate matching.",
+        "Descriptor size affects storage and computation but doesn't necessarily determine matching quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-matching",
+        "distinctiveness",
+        "descriptor-quality"
+      ]
+    },
+    {
+      "id": "FDT_049",
+      "question": "What is the purpose of the structure tensor in corner detection?",
+      "options": [
+        "To store image pixel values",
+        "To encode local gradient information",
+        "To represent image colors",
+        "To store feature locations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The structure tensor encodes local gradient information by combining gradient components, providing a compact representation of local intensity changes used in corner detection algorithms.",
+      "optionExplanations": [
+        "The structure tensor doesn't store raw pixel values; it encodes gradient information derived from pixel differences.",
+        "This is correct. The structure tensor encodes local gradient information for analyzing intensity change patterns.",
+        "The structure tensor works with intensity gradients, not color information specifically.",
+        "Feature locations are typically stored separately; the structure tensor analyzes local image structure."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "structure-tensor",
+        "corner-detection",
+        "gradient-information"
+      ]
+    },
+    {
+      "id": "FDT_050",
+      "question": "Which preprocessing step can help improve the robustness of feature detection to illumination changes?",
+      "options": [
+        "Image rotation",
+        "Histogram equalization",
+        "Image cropping",
+        "Color space conversion"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Histogram equalization normalizes the intensity distribution, making feature detection more robust to global illumination changes by improving contrast and intensity distribution.",
+      "optionExplanations": [
+        "Image rotation changes geometric orientation but doesn't address illumination variations.",
+        "This is correct. Histogram equalization normalizes intensity distribution, improving robustness to illumination changes.",
+        "Image cropping changes the field of view but doesn't address illumination robustness.",
+        "Color space conversion may help in some cases but histogram equalization more directly addresses illumination normalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "histogram-equalization",
+        "illumination-robustness"
+      ]
+    },
+    {
+      "id": "FDT_051",
+      "question": "In SIFT, what determines the scale of a detected keypoint?",
+      "options": [
+        "The size of the image",
+        "The level in the scale-space pyramid where it was detected",
+        "The intensity value at the keypoint",
+        "The number of neighboring features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The scale of a SIFT keypoint is determined by the level in the Gaussian scale-space pyramid where the keypoint was detected as an extremum in the Difference of Gaussians.",
+      "optionExplanations": [
+        "Image size doesn't determine keypoint scale; SIFT detects features at multiple scales within any image size.",
+        "This is correct. The pyramid level where the keypoint is detected determines its characteristic scale.",
+        "Intensity value affects keypoint detection but doesn't determine the scale; scale comes from pyramid level.",
+        "The number of neighbors doesn't determine scale; scale is determined by the detection pyramid level."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "keypoint-scale",
+        "scale-space-pyramid"
+      ]
+    },
+    {
+      "id": "FDT_052",
+      "question": "What is the main advantage of using a circular pattern in FAST corner detection?",
+      "options": [
+        "It provides rotation invariance",
+        "It reduces computational complexity",
+        "It improves accuracy",
+        "It enables parallel processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The circular pattern in FAST allows for rapid intensity comparison tests that can quickly eliminate non-corner pixels with minimal computation, making the algorithm very fast.",
+      "optionExplanations": [
+        "FAST doesn't provide rotation invariance through its circular pattern; it's designed for speed, not rotation invariance.",
+        "This is correct. The circular pattern enables rapid elimination of non-corner pixels with minimal computation.",
+        "While effective, the main advantage is speed through rapid testing, not necessarily higher accuracy.",
+        "The circular pattern is designed for sequential rapid testing, not specifically for parallel processing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "FAST",
+        "circular-pattern",
+        "computational-efficiency"
+      ]
+    },
+    {
+      "id": "FDT_053",
+      "question": "Which distance metric is most appropriate for matching binary descriptors like ORB?",
+      "options": [
+        "Euclidean distance",
+        "Hamming distance",
+        "Manhattan distance",
+        "Cosine distance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hamming distance is most appropriate for binary descriptors as it counts the number of differing bits, which can be computed very efficiently using XOR operations.",
+      "optionExplanations": [
+        "Euclidean distance is designed for continuous values, not optimal for binary data.",
+        "This is correct. Hamming distance is ideal for binary descriptors, counting bit differences efficiently.",
+        "Manhattan distance can work with binary data but Hamming distance is more direct and efficient.",
+        "Cosine distance is typically used for high-dimensional continuous vectors, not binary descriptors."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "binary-descriptors",
+        "Hamming-distance",
+        "distance-metrics"
+      ]
+    },
+    {
+      "id": "FDT_054",
+      "question": "What is the typical behavior of gradient magnitude at edge locations?",
+      "options": [
+        "It reaches a minimum value",
+        "It remains constant",
+        "It reaches a maximum or peak value",
+        "It becomes zero"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "At edge locations, the gradient magnitude reaches maximum or peak values because edges represent the steepest intensity changes in the image.",
+      "optionExplanations": [
+        "Gradient magnitude is minimum in flat regions, not at edges where intensity changes are largest.",
+        "Constant gradient magnitude occurs in regions with uniform intensity change, not at distinct edges.",
+        "This is correct. Gradient magnitude peaks at edges where intensity changes are steepest.",
+        "Zero gradient occurs in flat regions with no intensity change, opposite to edge characteristics."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-magnitude",
+        "edges",
+        "intensity-changes"
+      ]
+    },
+    {
+      "id": "FDT_055",
+      "question": "Which component of SIFT provides invariance to image rotation?",
+      "options": [
+        "Gaussian pyramid construction",
+        "Difference of Gaussians computation",
+        "Orientation assignment to keypoints",
+        "Descriptor normalization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Orientation assignment provides rotation invariance by determining a consistent orientation for each keypoint based on local gradients, allowing descriptors to be computed relative to this orientation.",
+      "optionExplanations": [
+        "Gaussian pyramid provides scale invariance, not rotation invariance.",
+        "DoG computation helps with keypoint detection but doesn't provide rotation invariance.",
+        "This is correct. Orientation assignment provides rotation invariance by establishing consistent reference directions.",
+        "Descriptor normalization helps with illumination invariance but not specifically rotation invariance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "rotation-invariance",
+        "orientation-assignment"
+      ]
+    },
+    {
+      "id": "FDT_056",
+      "question": "What is the primary purpose of non-maximum suppression in corner detection?",
+      "options": [
+        "To remove noise from the image",
+        "To select the strongest corner response in a local neighborhood",
+        "To enhance corner visibility",
+        "To speed up computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Non-maximum suppression selects only the strongest corner responses in local neighborhoods, preventing multiple detections of the same corner and ensuring well-localized corner points.",
+      "optionExplanations": [
+        "Noise removal is typically handled by preprocessing steps like Gaussian smoothing, not non-maximum suppression.",
+        "This is correct. Non-maximum suppression selects the strongest response in each local neighborhood for precise corner localization.",
+        "Non-maximum suppression filters detections but doesn't enhance the visual appearance of corners.",
+        "While it may reduce the number of detected points, the primary purpose is accurate localization, not speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "non-maximum-suppression",
+        "corner-detection",
+        "localization"
+      ]
+    },
+    {
+      "id": "FDT_057",
+      "question": "Which characteristic makes a feature suitable for tracking across video frames?",
+      "options": [
+        "High intensity value",
+        "Large size",
+        "Temporal stability and distinctiveness",
+        "Symmetric shape"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Temporal stability ensures the feature remains detectable across frames, while distinctiveness enables accurate matching, making both essential for reliable feature tracking.",
+      "optionExplanations": [
+        "High intensity doesn't guarantee trackability; features need stability and distinctiveness regardless of intensity level.",
+        "Large size may help visibility but doesn't ensure the feature will remain stable and distinctive across frames.",
+        "This is correct. Temporal stability and distinctiveness are essential for reliable feature tracking across video frames.",
+        "Symmetric shape alone doesn't provide the stability and uniqueness needed for reliable tracking."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-tracking",
+        "temporal-stability",
+        "video-analysis"
+      ]
+    },
+    {
+      "id": "FDT_058",
+      "question": "In the context of SURF, what does the determinant of the Hessian matrix represent?",
+      "options": [
+        "Edge strength",
+        "Corner response",
+        "Blob-like structure response",
+        "Noise level"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In SURF, the determinant of the Hessian matrix is used to detect blob-like structures, which are regions that stand out from their surroundings and make good features for matching.",
+      "optionExplanations": [
+        "Edge strength is typically measured by gradient magnitude, not Hessian determinant.",
+        "Corner response uses different measures like the Harris response, not specifically Hessian determinant.",
+        "This is correct. SURF uses Hessian determinant to detect blob-like structures as stable features.",
+        "Noise level is not directly measured by Hessian determinant, which detects structural features."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SURF",
+        "Hessian-matrix",
+        "blob-detection"
+      ]
+    },
+    {
+      "id": "FDT_059",
+      "question": "What is the main limitation of using only edge information for feature matching?",
+      "options": [
+        "Edges are difficult to detect",
+        "Edge detection is computationally expensive",
+        "Edges lack sufficient distinctiveness for unique matching",
+        "Edges are sensitive to noise"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Edges often lack sufficient distinctiveness because many edges in an image may look similar, making it difficult to establish unique correspondences for reliable matching.",
+      "optionExplanations": [
+        "Edges are actually relatively easy to detect using gradient-based methods.",
+        "Edge detection is generally computationally efficient compared to complex feature descriptors.",
+        "This is correct. Edges often lack distinctiveness needed for unique feature matching.",
+        "While edges can be sensitive to noise, this is not the main limitation for feature matching."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-features",
+        "feature-matching",
+        "distinctiveness"
+      ]
+    },
+    {
+      "id": "FDT_060",
+      "question": "Which step in the SIFT algorithm helps eliminate low-contrast keypoints?",
+      "options": [
+        "Gaussian pyramid construction",
+        "Keypoint localization and filtering",
+        "Orientation assignment",
+        "Descriptor computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Keypoint localization and filtering includes contrast thresholding that eliminates low-contrast keypoints, ensuring only stable, high-quality features are retained.",
+      "optionExplanations": [
+        "Gaussian pyramid construction creates the scale-space but doesn't filter low-contrast points.",
+        "This is correct. Keypoint localization includes contrast filtering to eliminate low-contrast keypoints.",
+        "Orientation assignment determines keypoint orientation but doesn't filter based on contrast.",
+        "Descriptor computation creates feature vectors but doesn't eliminate low-contrast keypoints."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "keypoint-filtering",
+        "contrast-thresholding"
+      ]
+    },
+    {
+      "id": "FDT_061",
+      "question": "What is the advantage of using a multi-scale approach in feature detection?",
+      "options": [
+        "Reduces computational cost",
+        "Improves feature localization accuracy",
+        "Detects features at different sizes and scales",
+        "Eliminates the need for preprocessing"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multi-scale approaches detect features that appear at different sizes in the image, ensuring that features are found regardless of their scale, providing scale invariance.",
+      "optionExplanations": [
+        "Multi-scale approaches typically increase computational cost due to processing at multiple scales.",
+        "While localization may benefit, the primary advantage is detecting features at various scales.",
+        "This is correct. Multi-scale approaches detect features at different sizes, providing scale invariance.",
+        "Multi-scale processing often requires more preprocessing to create scale pyramids, not less."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multi-scale",
+        "scale-invariance",
+        "feature-detection"
+      ]
+    },
+    {
+      "id": "FDT_062",
+      "question": "In binary descriptor matching, what does a Hamming distance of 0 indicate?",
+      "options": [
+        "The descriptors are completely different",
+        "The descriptors are identical",
+        "One descriptor is invalid",
+        "The match is unreliable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Hamming distance of 0 means no bits differ between the two binary descriptors, indicating they are identical or represent the same feature.",
+      "optionExplanations": [
+        "Hamming distance of 0 indicates identical descriptors, not different ones.",
+        "This is correct. Hamming distance of 0 means the binary descriptors are identical.",
+        "A distance of 0 indicates perfect match, not invalid descriptors.",
+        "A distance of 0 indicates the most reliable match possible between binary descriptors."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "binary-descriptors",
+        "Hamming-distance",
+        "descriptor-matching"
+      ]
+    },
+    {
+      "id": "FDT_063",
+      "question": "Which property of corners makes them particularly useful for camera calibration?",
+      "options": [
+        "They are easy to detect automatically",
+        "They provide precise localization in 2D",
+        "They appear frequently in images",
+        "They are invariant to lighting changes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Corners provide precise localization in 2D because they represent intersections of edges, giving exact point correspondences needed for accurate camera calibration.",
+      "optionExplanations": [
+        "While automated detection helps, the key property for calibration is precise localization.",
+        "This is correct. Corners provide precise 2D localization essential for accurate camera calibration.",
+        "Frequency of appearance is helpful but not the key property; precision of localization is most important.",
+        "Lighting invariance is beneficial but precise localization is the primary advantage for calibration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "corners",
+        "camera-calibration",
+        "precise-localization"
+      ]
+    },
+    {
+      "id": "FDT_064",
+      "question": "What is the main reason for using adaptive thresholding in feature detection?",
+      "options": [
+        "To reduce computational complexity",
+        "To handle varying illumination across the image",
+        "To detect more features",
+        "To improve rotation invariance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adaptive thresholding adjusts threshold values based on local image characteristics, helping handle varying illumination conditions across different regions of the same image.",
+      "optionExplanations": [
+        "Adaptive thresholding typically increases computation due to local threshold calculation, not reduces it.",
+        "This is correct. Adaptive thresholding handles varying illumination by adjusting thresholds locally.",
+        "The goal is not necessarily more features but appropriate features under varying illumination conditions.",
+        "Adaptive thresholding addresses illumination, not rotation invariance which requires different techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adaptive-thresholding",
+        "illumination-variation",
+        "local-thresholding"
+      ]
+    },
+    {
+      "id": "FDT_065",
+      "question": "Which mathematical operation is central to computing the Harris corner response?",
+      "options": [
+        "Fourier transform",
+        "Eigenvalue decomposition",
+        "Matrix multiplication",
+        "Convolution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Eigenvalue decomposition of the structure tensor is central to Harris corner detection, as the eigenvalues determine whether a point is a corner, edge, or flat region.",
+      "optionExplanations": [
+        "Fourier transform is not central to Harris corner response computation.",
+        "This is correct. Eigenvalue decomposition of the structure tensor is central to Harris corner detection.",
+        "While matrix operations are involved, eigenvalue decomposition is the key mathematical operation.",
+        "Convolution is used in preprocessing but eigenvalue decomposition is central to the corner response."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Harris-corner",
+        "eigenvalue-decomposition",
+        "structure-tensor"
+      ]
+    },
+    {
+      "id": "FDT_066",
+      "question": "What is the purpose of Gaussian weighting in SIFT descriptor computation?",
+      "options": [
+        "To reduce noise in the descriptor",
+        "To emphasize gradients closer to the keypoint center",
+        "To normalize the descriptor values",
+        "To improve computational efficiency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gaussian weighting gives more importance to gradients near the keypoint center and less importance to those farther away, making the descriptor more robust to small positional errors.",
+      "optionExplanations": [
+        "While it may reduce noise effects, the primary purpose is to weight by distance from keypoint center.",
+        "This is correct. Gaussian weighting emphasizes gradients closer to the keypoint center for robustness.",
+        "Normalization is a separate step; Gaussian weighting is about spatial emphasis based on distance.",
+        "Gaussian weighting adds computation rather than improving efficiency; its purpose is robustness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "Gaussian-weighting",
+        "descriptor-computation"
+      ]
+    },
+    {
+      "id": "FDT_067",
+      "question": "Which factor most affects the performance of feature matching in the presence of perspective distortion?",
+      "options": [
+        "Image resolution",
+        "Feature density",
+        "Viewpoint invariance of the descriptor",
+        "Computational speed"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Viewpoint invariance determines how well descriptors can handle the changes in feature appearance caused by perspective distortion, directly affecting matching performance.",
+      "optionExplanations": [
+        "Higher resolution may help but doesn't address the fundamental challenge of perspective changes to feature appearance.",
+        "More features may provide more opportunities but doesn't solve the perspective distortion problem.",
+        "This is correct. Viewpoint invariance of descriptors is crucial for handling perspective distortion in matching.",
+        "Speed doesn't affect matching quality under perspective distortion; robustness to viewpoint changes does."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "perspective-distortion",
+        "viewpoint-invariance",
+        "feature-matching"
+      ]
+    },
+    {
+      "id": "FDT_068",
+      "question": "What is the typical size of the neighborhood examined around a keypoint in SIFT descriptor computation?",
+      "options": [
+        "8×8 pixels",
+        "16×16 pixels",
+        "32×32 pixels",
+        "64×64 pixels"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SIFT typically examines a 16×16 pixel neighborhood around each keypoint, which is divided into 4×4 subregions for descriptor computation.",
+      "optionExplanations": [
+        "8×8 is too small for robust SIFT descriptor computation which needs larger neighborhoods.",
+        "This is correct. SIFT typically uses 16×16 pixel neighborhoods divided into 4×4 subregions.",
+        "32×32 would be larger than typically used in SIFT and would increase computational cost.",
+        "64×64 would be much larger than necessary and would reduce efficiency without significant benefit."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "neighborhood-size",
+        "descriptor-computation"
+      ]
+    },
+    {
+      "id": "FDT_069",
+      "question": "Which edge detection method is most robust to noise?",
+      "options": [
+        "Roberts cross-gradient",
+        "Prewitt operator",
+        "Sobel operator",
+        "Canny edge detector"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The Canny edge detector is most robust to noise due to its Gaussian smoothing preprocessing, non-maximum suppression, and hysteresis thresholding steps.",
+      "optionExplanations": [
+        "Roberts operator is simple but quite sensitive to noise due to minimal smoothing.",
+        "Prewitt operator has some noise robustness but less than Canny which includes explicit noise reduction.",
+        "Sobel operator is more robust than Roberts and Prewitt but less robust than Canny's comprehensive approach.",
+        "This is correct. Canny edge detector is most robust to noise due to its multi-step noise handling approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-detection",
+        "noise-robustness",
+        "Canny"
+      ]
+    },
+    {
+      "id": "FDT_070",
+      "question": "What is the main advantage of using oriented BRIEF in ORB?",
+      "options": [
+        "Faster computation",
+        "Better scale invariance",
+        "Improved rotation invariance",
+        "Higher descriptor dimensionality"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Oriented BRIEF in ORB provides rotation invariance by orienting the BRIEF descriptor according to the keypoint's orientation, making it robust to image rotations.",
+      "optionExplanations": [
+        "Orientation adds computation overhead; the advantage is rotation invariance, not speed.",
+        "Scale invariance comes from multi-scale detection, not from oriented BRIEF specifically.",
+        "This is correct. Oriented BRIEF provides rotation invariance by aligning descriptors with keypoint orientation.",
+        "Orientation doesn't change descriptor dimensionality; it changes how the descriptor is computed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ORB",
+        "oriented-BRIEF",
+        "rotation-invariance"
+      ]
+    },
+    {
+      "id": "FDT_071",
+      "question": "In feature detection, what does 'localization accuracy' refer to?",
+      "options": [
+        "How many features are detected",
+        "How precisely the feature positions are determined",
+        "How fast features can be detected",
+        "How distinctive the features are"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Localization accuracy refers to how precisely the positions of detected features are determined, often measured as the deviation from true feature locations.",
+      "optionExplanations": [
+        "The number of detected features relates to detection density or recall, not localization accuracy.",
+        "This is correct. Localization accuracy measures how precisely feature positions are determined.",
+        "Detection speed is about computational efficiency, not the precision of feature position determination.",
+        "Distinctiveness relates to how well features can be distinguished, not position accuracy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "localization-accuracy",
+        "feature-detection",
+        "position-precision"
+      ]
+    },
+    {
+      "id": "FDT_072",
+      "question": "Which characteristic of the structure tensor eigenvalues indicates a corner?",
+      "options": [
+        "Both eigenvalues are small",
+        "One eigenvalue is large, one is small",
+        "Both eigenvalues are large",
+        "Eigenvalues are equal"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Both eigenvalues being large indicates significant intensity changes in multiple directions, which is the characteristic of corner regions.",
+      "optionExplanations": [
+        "Both small eigenvalues indicate flat regions with little intensity variation, not corners.",
+        "One large and one small eigenvalue indicates edge regions with directional intensity change.",
+        "This is correct. Both large eigenvalues indicate multi-directional intensity changes characteristic of corners.",
+        "Equal eigenvalues may indicate isotropic structures but both must be large to indicate corners."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "structure-tensor",
+        "eigenvalues",
+        "corner-detection"
+      ]
+    },
+    {
+      "id": "FDT_073",
+      "question": "What is the primary purpose of scale-space extrema detection in SIFT?",
+      "options": [
+        "To reduce computational complexity",
+        "To find potential keypoint locations",
+        "To compute feature descriptors",
+        "To assign orientations to features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Scale-space extrema detection identifies points that are local maxima or minima in the Difference of Gaussians across scales, which become candidate keypoint locations.",
+      "optionExplanations": [
+        "Extrema detection involves significant computation across scales; it's not for reducing complexity.",
+        "This is correct. Scale-space extrema detection finds potential keypoint locations as local extrema.",
+        "Descriptor computation is a later step; extrema detection finds keypoint locations first.",
+        "Orientation assignment comes after keypoint detection; extrema detection identifies locations first."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "scale-space-extrema",
+        "keypoint-detection"
+      ]
+    },
+    {
+      "id": "FDT_074",
+      "question": "Which preprocessing step is most important for improving the repeatability of corner detection?",
+      "options": [
+        "Image resizing",
+        "Histogram stretching",
+        "Gaussian smoothing",
+        "Contrast enhancement"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gaussian smoothing reduces noise and creates more stable gradient estimates, significantly improving the repeatability of corner detection across different images.",
+      "optionExplanations": [
+        "Image resizing changes scale but doesn't necessarily improve repeatability of corner detection.",
+        "Histogram stretching affects contrast but Gaussian smoothing more directly improves detection stability.",
+        "This is correct. Gaussian smoothing reduces noise and improves stability, enhancing corner detection repeatability.",
+        "Contrast enhancement may help visibility but smoothing more directly addresses repeatability through noise reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "Gaussian-smoothing",
+        "repeatability",
+        "corner-detection"
+      ]
+    },
+    {
+      "id": "FDT_075",
+      "question": "What is the main limitation of template matching compared to feature-based matching?",
+      "options": [
+        "Lower computational efficiency",
+        "Inability to handle geometric transformations",
+        "Poor performance in good lighting",
+        "Requirement for color images"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Template matching typically fails when objects undergo geometric transformations like rotation, scaling, or perspective changes, while feature-based methods can handle these through invariant descriptors.",
+      "optionExplanations": [
+        "Template matching can be computationally efficient for simple cases; the main issue is transformation sensitivity.",
+        "This is correct. Template matching cannot handle geometric transformations well, unlike feature-based methods.",
+        "Template matching can work well in good lighting; the problem is with geometric changes, not lighting.",
+        "Template matching works with grayscale images; it doesn't require color information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "template-matching",
+        "geometric-transformations",
+        "feature-based-matching"
+      ]
+    },
+    {
+      "id": "FDT_076",
+      "question": "In ORB, what is the typical number of bytes used to represent each descriptor?",
+      "options": [
+        "16 bytes",
+        "32 bytes",
+        "64 bytes",
+        "128 bytes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ORB typically uses 256-bit binary descriptors, which equals 32 bytes (256 bits ÷ 8 bits per byte = 32 bytes).",
+      "optionExplanations": [
+        "16 bytes would be 128 bits, which is shorter than the typical ORB descriptor length.",
+        "This is correct. ORB uses 256-bit descriptors, which equals 32 bytes.",
+        "64 bytes would be 512 bits, which is longer than the standard ORB descriptor.",
+        "128 bytes would be 1024 bits, which is much longer than ORB descriptors."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ORB",
+        "descriptor-size",
+        "binary-representation"
+      ]
+    },
+    {
+      "id": "FDT_077",
+      "question": "Which of the following best describes the trade-off between feature detection speed and accuracy?",
+      "options": [
+        "Faster methods are always more accurate",
+        "Accuracy and speed are independent",
+        "Generally, faster methods sacrifice some accuracy",
+        "Speed has no impact on detection quality"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "There's typically a trade-off where faster feature detection methods achieve speed by using simpler computations or approximations, often sacrificing some accuracy compared to more complex methods.",
+      "optionExplanations": [
+        "This is incorrect; faster methods often use shortcuts that may reduce accuracy.",
+        "Speed and accuracy are often related due to computational constraints and algorithmic choices.",
+        "This is correct. Faster methods typically sacrifice some accuracy for computational efficiency.",
+        "Speed often impacts quality because faster methods may use approximations or simpler computations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "speed-accuracy-tradeoff",
+        "computational-efficiency",
+        "feature-detection"
+      ]
+    },
+    {
+      "id": "FDT_078",
+      "question": "What is the purpose of keypoint filtering in feature detection algorithms?",
+      "options": [
+        "To increase the number of detected features",
+        "To remove unstable or low-quality keypoints",
+        "To speed up descriptor computation",
+        "To improve rotation invariance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Keypoint filtering removes unstable, low-contrast, or edge-like keypoints that would not provide reliable features for matching, ensuring only high-quality keypoints are retained.",
+      "optionExplanations": [
+        "Filtering reduces the number of keypoints by removing low-quality ones, not increasing them.",
+        "This is correct. Keypoint filtering removes unstable or low-quality keypoints to improve reliability.",
+        "While fewer keypoints may speed up later stages, the primary purpose is quality improvement.",
+        "Rotation invariance is achieved through orientation assignment, not keypoint filtering."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "keypoint-filtering",
+        "feature-quality",
+        "stability"
+      ]
+    },
+    {
+      "id": "FDT_079",
+      "question": "Which mathematical concept is used to approximate the Laplacian of Gaussian in SIFT?",
+      "options": [
+        "Difference of Gaussians",
+        "Sum of Gaussians",
+        "Product of Gaussians",
+        "Ratio of Gaussians"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Difference of Gaussians (DoG) is used in SIFT to approximate the Laplacian of Gaussian, providing an efficient way to detect scale-space extrema.",
+      "optionExplanations": [
+        "This is correct. Difference of Gaussians (DoG) approximates the Laplacian of Gaussian in SIFT.",
+        "Sum of Gaussians does not approximate the Laplacian of Gaussian; DoG (difference) is used.",
+        "Product of Gaussians is not used for this approximation in SIFT; DoG is the correct approach.",
+        "Ratio of Gaussians is not the mathematical operation used; SIFT uses the difference."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SIFT",
+        "DoG",
+        "Laplacian-of-Gaussian",
+        "approximation"
+      ]
+    },
+    {
+      "id": "FDT_080",
+      "question": "What is the main advantage of multi-scale feature detection over single-scale detection?",
+      "options": [
+        "Reduced computational cost",
+        "Better handling of objects at different sizes",
+        "Improved color discrimination",
+        "Enhanced noise reduction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-scale detection can find features representing objects at different sizes in the image, providing scale invariance that single-scale methods cannot achieve.",
+      "optionExplanations": [
+        "Multi-scale detection typically increases computational cost due to processing at multiple scales.",
+        "This is correct. Multi-scale detection handles objects at different sizes, providing scale invariance.",
+        "Multi-scale detection is about size invariance, not color discrimination which is a separate concern.",
+        "While multiple scales may help with noise, the main advantage is handling different object sizes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multi-scale",
+        "scale-invariance",
+        "object-sizes"
+      ]
+    },
+    {
+      "id": "FDT_081",
+      "question": "In Harris corner detection, what happens when both eigenvalues of the structure tensor are small?",
+      "options": [
+        "A corner is detected",
+        "An edge is detected",
+        "A flat region is indicated",
+        "Noise is present"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When both eigenvalues are small, it indicates minimal intensity variation in all directions, characteristic of flat or uniform regions.",
+      "optionExplanations": [
+        "Corners require both eigenvalues to be large, not small.",
+        "Edges have one large and one small eigenvalue, not both small.",
+        "This is correct. Both small eigenvalues indicate flat regions with minimal intensity variation.",
+        "While noise can affect eigenvalues, small eigenvalues specifically indicate flat regions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Harris-corner",
+        "eigenvalues",
+        "flat-regions"
+      ]
+    },
+    {
+      "id": "FDT_082",
+      "question": "Which property makes FAST particularly suitable for real-time applications?",
+      "options": [
+        "High accuracy in feature localization",
+        "Excellent rotation invariance",
+        "Very fast keypoint detection speed",
+        "Robust feature descriptors"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "FAST is specifically designed for very fast keypoint detection using simple intensity comparison tests, making it ideal for real-time applications where speed is critical.",
+      "optionExplanations": [
+        "While FAST is reasonably accurate, its main advantage for real-time use is speed, not accuracy.",
+        "FAST doesn't provide rotation invariance by itself; its advantage is speed.",
+        "This is correct. FAST's very fast detection speed makes it suitable for real-time applications.",
+        "FAST is a keypoint detector, not a descriptor; its advantage is detection speed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "FAST",
+        "real-time",
+        "detection-speed"
+      ]
+    },
+    {
+      "id": "FDT_083",
+      "question": "What is the typical approach for achieving illumination invariance in feature descriptors?",
+      "options": [
+        "Using color information instead of intensity",
+        "Normalizing descriptor vectors",
+        "Increasing descriptor dimensionality",
+        "Using binary instead of continuous values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Normalizing descriptor vectors removes the influence of overall intensity scaling, making descriptors more robust to illumination changes.",
+      "optionExplanations": [
+        "Color can also be affected by illumination; normalization is more direct for illumination invariance.",
+        "This is correct. Descriptor normalization provides illumination invariance by removing intensity scaling effects.",
+        "Higher dimensionality doesn't necessarily provide illumination invariance; normalization does.",
+        "Binary values can help but normalization of any descriptor type is the key approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "illumination-invariance",
+        "descriptor-normalization",
+        "robustness"
+      ]
+    },
+    {
+      "id": "FDT_084",
+      "question": "Which factor most significantly affects the distinctiveness of SIFT descriptors?",
+      "options": [
+        "The number of orientation bins",
+        "The size of the descriptor neighborhood",
+        "The Gaussian weighting function",
+        "All of the above contribute significantly"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All factors significantly affect SIFT descriptor distinctiveness: orientation bins provide directional information, neighborhood size determines spatial coverage, and Gaussian weighting emphasizes relevant regions.",
+      "optionExplanations": [
+        "Orientation bins are important but not the only factor affecting distinctiveness.",
+        "Neighborhood size matters but works together with other factors for optimal distinctiveness.",
+        "Gaussian weighting contributes to robustness but works with other factors for distinctiveness.",
+        "This is correct. All these factors work together to determine SIFT descriptor distinctiveness."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SIFT",
+        "descriptor-distinctiveness",
+        "multiple-factors"
+      ]
+    },
+    {
+      "id": "FDT_085",
+      "question": "What is the main purpose of edge suppression in corner detection algorithms?",
+      "options": [
+        "To improve computational efficiency",
+        "To prevent edges from being detected as corners",
+        "To enhance corner visibility",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Edge suppression prevents edge points from being falsely detected as corners, ensuring that only true corner features are identified.",
+      "optionExplanations": [
+        "While efficiency may improve, the main purpose is preventing false corner detections at edges.",
+        "This is correct. Edge suppression prevents edges from being falsely detected as corners.",
+        "Edge suppression filters detections rather than enhancing visibility of actual corners.",
+        "Memory usage is not the primary concern; preventing false detections is the main purpose."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-suppression",
+        "corner-detection",
+        "false-positives"
+      ]
+    },
+    {
+      "id": "FDT_086",
+      "question": "In SURF descriptor computation, what information is encoded about each subregion?",
+      "options": [
+        "Only gradient magnitude",
+        "Only gradient direction",
+        "Sum of gradients and sum of absolute gradients",
+        "Maximum gradient value"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SURF descriptors encode the sum of horizontal and vertical gradients and the sum of their absolute values for each subregion, providing both direction and magnitude information compactly.",
+      "optionExplanations": [
+        "SURF encodes both magnitude and direction information, not just magnitude.",
+        "SURF encodes both direction and magnitude, not just direction information.",
+        "This is correct. SURF encodes sum of gradients and sum of absolute gradients for each subregion.",
+        "SURF uses sums of gradients, not maximum values, to characterize each subregion."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SURF",
+        "descriptor-computation",
+        "gradient-encoding"
+      ]
+    },
+    {
+      "id": "FDT_087",
+      "question": "Which characteristic makes binary descriptors particularly advantageous for mobile applications?",
+      "options": [
+        "Higher matching accuracy",
+        "Better rotation invariance",
+        "Lower memory and bandwidth requirements",
+        "Superior scale invariance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Binary descriptors require significantly less memory and bandwidth compared to floating-point descriptors, making them ideal for mobile devices with limited resources.",
+      "optionExplanations": [
+        "Binary descriptors typically have lower accuracy than floating-point descriptors, not higher.",
+        "Both binary and floating-point descriptors can achieve rotation invariance; this isn't binary's main advantage.",
+        "This is correct. Binary descriptors have lower memory and bandwidth requirements, ideal for mobile applications.",
+        "Scale invariance depends on the detection algorithm, not whether descriptors are binary or floating-point."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binary-descriptors",
+        "mobile-applications",
+        "resource-efficiency"
+      ]
+    },
+    {
+      "id": "FDT_088",
+      "question": "What is the primary reason for using a circular sampling pattern in ORB's BRIEF descriptor?",
+      "options": [
+        "To improve computational efficiency",
+        "To achieve better rotation invariance",
+        "To increase descriptor length",
+        "To reduce noise sensitivity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The circular sampling pattern in ORB's oriented BRIEF allows for consistent descriptor computation regardless of the keypoint's orientation, improving rotation invariance.",
+      "optionExplanations": [
+        "Circular sampling may not be more efficient than other patterns; the benefit is rotation invariance.",
+        "This is correct. Circular sampling enables consistent descriptor computation across different orientations.",
+        "Sampling pattern doesn't change descriptor length; it affects how comparisons are made spatially.",
+        "While it may help with noise, the primary purpose is enabling rotation-invariant descriptor computation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ORB",
+        "BRIEF",
+        "circular-sampling",
+        "rotation-invariance"
+      ]
+    },
+    {
+      "id": "FDT_089",
+      "question": "Which preprocessing technique is most effective for improving feature detection in low-contrast images?",
+      "options": [
+        "Gaussian blurring",
+        "Histogram equalization",
+        "Edge enhancement",
+        "Noise reduction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Histogram equalization redistributes intensity values to improve contrast, making features more detectable in low-contrast images by enhancing the dynamic range.",
+      "optionExplanations": [
+        "Gaussian blurring reduces detail and contrast, which would worsen feature detection in low-contrast images.",
+        "This is correct. Histogram equalization improves contrast, making features more detectable in low-contrast images.",
+        "Edge enhancement can help but histogram equalization provides more comprehensive contrast improvement.",
+        "Noise reduction helps with noisy images but doesn't address the fundamental low-contrast problem."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "histogram-equalization",
+        "low-contrast",
+        "contrast-enhancement"
+      ]
+    },
+    {
+      "id": "FDT_090",
+      "question": "In feature tracking applications, what is the main cause of tracking failure?",
+      "options": [
+        "Computational limitations",
+        "Feature appearance changes due to viewing conditions",
+        "Insufficient feature density",
+        "Poor initial feature detection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature appearance changes due to illumination, viewpoint, scale, or occlusion are the main cause of tracking failure, as features become unrecognizable or unmatchable.",
+      "optionExplanations": [
+        "While computational limits can affect performance, appearance changes are the primary cause of tracking failure.",
+        "This is correct. Changes in feature appearance due to viewing conditions are the main cause of tracking failure.",
+        "Low feature density can make tracking harder but appearance changes are more fundamental to tracking failure.",
+        "Poor initial detection affects starting conditions but ongoing appearance changes cause most tracking failures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-tracking",
+        "tracking-failure",
+        "appearance-changes"
+      ]
+    },
+    {
+      "id": "FDT_091",
+      "question": "What is the significance of the parameter 'sigma' in Gaussian-based feature detection?",
+      "options": [
+        "It determines the number of features detected",
+        "It controls the scale or size of features being detected",
+        "It sets the detection threshold",
+        "It defines the image resolution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The sigma parameter in Gaussian functions controls the standard deviation, which determines the scale or size of features that will be emphasized or detected at that level.",
+      "optionExplanations": [
+        "Sigma affects which scale of features is detected, but doesn't directly determine the count.",
+        "This is correct. Sigma controls the scale of the Gaussian, determining the size of features being detected.",
+        "Detection threshold is typically a separate parameter; sigma controls the scale of analysis.",
+        "Sigma doesn't define image resolution; it defines the scale of the Gaussian filter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Gaussian",
+        "sigma-parameter",
+        "scale-control",
+        "feature-size"
+      ]
+    },
+    {
+      "id": "FDT_092",
+      "question": "Which feature detection algorithm is known for being patent-free and widely used in open-source applications?",
+      "options": [
+        "SIFT",
+        "SURF",
+        "ORB",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ORB (Oriented FAST and Rotated BRIEF) was specifically designed to be patent-free, making it widely adopted in open-source applications where SIFT and SURF cannot be used due to patent restrictions.",
+      "optionExplanations": [
+        "SIFT is patented and cannot be freely used in commercial applications without licensing.",
+        "SURF is also patented and has licensing restrictions for commercial use.",
+        "This is correct. ORB is patent-free and widely used in open-source applications.",
+        "Only ORB is patent-free; SIFT and SURF have patent restrictions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ORB",
+        "patent-free",
+        "open-source",
+        "licensing"
+      ]
+    },
+    {
+      "id": "FDT_093",
+      "question": "What is the main advantage of using integral images in box filter computation?",
+      "options": [
+        "Improved filter accuracy",
+        "Constant-time computation regardless of filter size",
+        "Better noise reduction",
+        "Enhanced edge preservation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Integral images allow box filters of any size to be computed in constant time using just four array lookups, regardless of the filter dimensions.",
+      "optionExplanations": [
+        "Integral images don't improve accuracy; they provide computational efficiency for the same box filter results.",
+        "This is correct. Integral images enable constant-time box filter computation regardless of filter size.",
+        "Box filters computed via integral images have the same noise characteristics as standard computation.",
+        "Edge preservation is a property of the box filter itself, not the integral image computation method."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "integral-images",
+        "box-filters",
+        "constant-time",
+        "computational-efficiency"
+      ]
+    },
+    {
+      "id": "FDT_094",
+      "question": "In corner detection, what does it mean for a detector to be 'affine invariant'?",
+      "options": [
+        "It detects the same corners under rotation only",
+        "It detects the same corners under scaling only",
+        "It detects the same corners under affine transformations",
+        "It detects corners faster under any transformation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Affine invariance means the detector can reliably detect the same corner features under affine transformations, which include rotation, scaling, translation, and shearing.",
+      "optionExplanations": [
+        "Affine invariance includes rotation but also scaling, translation, and shearing, not just rotation.",
+        "Affine invariance includes scaling but also other transformations like rotation and shearing.",
+        "This is correct. Affine invariance means detection under all affine transformations (rotation, scaling, translation, shearing).",
+        "Affine invariance is about detection reliability under transformations, not speed of detection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "affine-invariance",
+        "corner-detection",
+        "geometric-transformations"
+      ]
+    },
+    {
+      "id": "FDT_095",
+      "question": "What is the primary limitation of using gradient magnitude alone for feature detection?",
+      "options": [
+        "High computational cost",
+        "Sensitivity to noise",
+        "Lack of directional information",
+        "Poor localization accuracy"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gradient magnitude only provides the strength of intensity change but lacks directional information, making it insufficient for distinguishing between different types of features like edges and corners.",
+      "optionExplanations": [
+        "Gradient magnitude computation is relatively efficient; computational cost is not the main limitation.",
+        "While sensitive to noise, this can be addressed by preprocessing; the main issue is lack of direction.",
+        "This is correct. Gradient magnitude lacks directional information needed to distinguish feature types.",
+        "Gradient magnitude can provide good localization; the main limitation is missing directional information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-magnitude",
+        "directional-information",
+        "feature-detection-limitations"
+      ]
+    },
+    {
+      "id": "FDT_096",
+      "question": "Which technique is commonly used to improve the stability of features detected near image boundaries?",
+      "options": [
+        "Zero padding",
+        "Mirror padding",
+        "Circular padding",
+        "Excluding boundary regions"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Excluding boundary regions is commonly used because features near boundaries often lack sufficient context for reliable detection and may produce unstable results due to incomplete neighborhoods.",
+      "optionExplanations": [
+        "Zero padding can introduce artifacts at boundaries that may affect feature stability.",
+        "Mirror padding reduces artifacts but doesn't fully solve the context limitation problem at boundaries.",
+        "Circular padding is less common and doesn't address the fundamental issue of incomplete neighborhoods.",
+        "This is correct. Excluding boundary regions avoids stability issues from incomplete feature neighborhoods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "boundary-handling",
+        "feature-stability",
+        "image-borders"
+      ]
+    },
+    {
+      "id": "FDT_097",
+      "question": "What is the main purpose of orientation normalization in rotation-invariant feature descriptors?",
+      "options": [
+        "To speed up descriptor computation",
+        "To reduce descriptor dimensionality",
+        "To align features to a consistent reference direction",
+        "To improve feature localization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Orientation normalization aligns all features to a consistent reference direction based on their dominant orientation, enabling descriptors to be compared regardless of the object's rotation in the image.",
+      "optionExplanations": [
+        "Orientation normalization adds computation for orientation estimation; it's not for speed improvement.",
+        "Normalization doesn't change descriptor dimensionality; it changes how the descriptor is computed.",
+        "This is correct. Orientation normalization aligns features to consistent directions for rotation invariance.",
+        "Orientation normalization affects descriptor computation, not the precision of feature localization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "orientation-normalization",
+        "rotation-invariance",
+        "reference-direction"
+      ]
+    },
+    {
+      "id": "FDT_098",
+      "question": "Which evaluation metric is most important for assessing the quality of feature detection algorithms?",
+      "options": [
+        "Computational speed only",
+        "Number of detected features only",
+        "Repeatability across different viewing conditions",
+        "Memory usage only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Repeatability across different viewing conditions is the most important metric as it measures how consistently the algorithm detects the same features under various imaging conditions, which is crucial for practical applications.",
+      "optionExplanations": [
+        "Speed is important for efficiency but doesn't assess detection quality; repeatability is more fundamental.",
+        "More features isn't necessarily better; quality and consistency of detection (repeatability) is more important.",
+        "This is correct. Repeatability across viewing conditions is the most important quality metric for feature detection.",
+        "Memory usage affects practicality but doesn't measure the fundamental quality of feature detection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-metrics",
+        "repeatability",
+        "feature-detection-quality"
+      ]
+    },
+    {
+      "id": "FDT_099",
+      "question": "What is the typical range of values for the Harris corner response at actual corner locations?",
+      "options": [
+        "Always negative values",
+        "Always zero",
+        "Large positive values",
+        "Small positive values close to zero"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "At actual corner locations, the Harris corner response typically has large positive values because corners have high determinant and trace values in the structure tensor, resulting in high response values.",
+      "optionExplanations": [
+        "Negative values typically indicate edge regions or flat areas, not corners in the Harris response.",
+        "Zero values indicate flat regions with no significant intensity changes, not corners.",
+        "This is correct. Corners produce large positive Harris response values due to multi-directional intensity changes.",
+        "Small positive values near zero indicate weak features or flat regions, not strong corners."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Harris-corner",
+        "corner-response",
+        "response-values"
+      ]
+    },
+    {
+      "id": "FDT_100",
+      "question": "Which approach is most effective for detecting features across a wide range of scales in a single image?",
+      "options": [
+        "Using the highest resolution only",
+        "Using the lowest resolution only",
+        "Building and analyzing a scale-space pyramid",
+        "Using adaptive thresholding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Building and analyzing a scale-space pyramid (like in SIFT) is most effective for detecting features across multiple scales, as it systematically examines the image at different levels of detail.",
+      "optionExplanations": [
+        "Using only the highest resolution misses larger-scale features that appear at coarser scales.",
+        "Using only the lowest resolution misses fine-scale features that require higher resolution to detect.",
+        "This is correct. Scale-space pyramids systematically detect features across multiple scales effectively.",
+        "Adaptive thresholding addresses illumination variation but doesn't provide multi-scale feature detection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scale-space-pyramid",
+        "multi-scale-detection",
+        "SIFT",
+        "feature-scales"
+      ]
+    }
+  ]
+}

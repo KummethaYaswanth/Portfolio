@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_IMG",
+  "topicName": "Image Processing",
+  "subtopicId": "STC_IFT",
+  "subtopicName": "Image Filtering",
+  "str": 0.200,
+  "description": "Image filtering techniques including convolution, Gaussian blur, edge detection, Sobel and Laplacian operators, and noise reduction methods for digital image processing applications.",
+  "questions": [
+    {
+      "id": "IFT_001",
+      "question": "What is the primary purpose of image filtering in digital image processing?",
+      "options": [
+        "To enhance or suppress certain features in an image",
+        "To compress image file size",
+        "To convert color images to grayscale",
+        "To change image resolution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image filtering is fundamentally used to enhance desired features (like edges) or suppress unwanted features (like noise) in digital images through mathematical operations.",
+      "optionExplanations": [
+        "Correct. Image filtering applies mathematical operations to enhance desired features like edges or suppress unwanted features like noise.",
+        "Incorrect. Image compression is a separate process that reduces file size by removing redundant information, not filtering.",
+        "Incorrect. Converting color to grayscale is a color space transformation, not filtering.",
+        "Incorrect. Changing resolution involves resampling or interpolation, which is different from filtering operations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "fundamentals",
+        "image-processing",
+        "filtering-basics"
+      ]
+    },
+    {
+      "id": "IFT_002",
+      "question": "In convolution operation, what happens when a filter kernel is applied to an image?",
+      "options": [
+        "The kernel is multiplied element-wise with overlapping image regions and summed",
+        "The kernel replaces the original pixel values directly",
+        "The kernel is added to each pixel value",
+        "The kernel rotates the image by a specified angle"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Convolution involves sliding the kernel over the image, performing element-wise multiplication with overlapping regions, and summing the results to produce the output pixel value.",
+      "optionExplanations": [
+        "Correct. Convolution performs element-wise multiplication between the kernel and overlapping image regions, then sums the products.",
+        "Incorrect. Direct replacement would not involve mathematical convolution operations and wouldn't preserve image characteristics.",
+        "Incorrect. Simple addition doesn't capture the neighborhood relationships that convolution is designed to exploit.",
+        "Incorrect. Image rotation is a geometric transformation, not a convolution operation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "convolution",
+        "kernel-operations",
+        "mathematical-foundations"
+      ]
+    },
+    {
+      "id": "IFT_003",
+      "question": "What is the size of the output image when a 5x5 kernel is applied to a 100x100 image without padding?",
+      "options": [
+        "96x96",
+        "100x100",
+        "104x104",
+        "95x95"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Without padding, the output size is (input_size - kernel_size + 1). For a 100x100 image with 5x5 kernel: 100 - 5 + 1 = 96x96.",
+      "optionExplanations": [
+        "Correct. Output size = input_size - kernel_size + 1 = 100 - 5 + 1 = 96 for both dimensions.",
+        "Incorrect. This would require padding to maintain original dimensions, but the question specifies no padding.",
+        "Incorrect. This would result from adding padding, which increases the input size before convolution.",
+        "Incorrect. This calculation (100 - 5 = 95) doesn't account for the +1 term in the convolution size formula."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "convolution",
+        "output-size",
+        "mathematical-calculations"
+      ]
+    },
+    {
+      "id": "IFT_004",
+      "question": "Which type of padding adds zeros around the image border?",
+      "options": [
+        "Zero padding",
+        "Reflect padding",
+        "Replicate padding",
+        "Circular padding"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Zero padding specifically adds zeros around the image borders to maintain output size or handle boundary conditions during convolution.",
+      "optionExplanations": [
+        "Correct. Zero padding adds zeros around the image border to handle boundary conditions in convolution operations.",
+        "Incorrect. Reflect padding mirrors the image pixels at the boundaries rather than adding zeros.",
+        "Incorrect. Replicate padding extends the border pixels outward, not adding zeros.",
+        "Incorrect. Circular padding wraps the image around as if it's periodic, not adding zeros."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "padding",
+        "boundary-conditions",
+        "convolution"
+      ]
+    },
+    {
+      "id": "IFT_005",
+      "question": "What is the main characteristic of a Gaussian filter?",
+      "options": [
+        "It has a bell-shaped distribution with smooth transitions",
+        "It has equal weights for all kernel elements",
+        "It has negative and positive weights alternating",
+        "It has weights only at the corners"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Gaussian filter follows the Gaussian (normal) distribution, creating a bell-shaped curve with the highest weight at the center and smoothly decreasing weights toward the edges.",
+      "optionExplanations": [
+        "Correct. Gaussian filters follow the normal distribution, creating a bell-shaped kernel with smooth weight transitions from center to edges.",
+        "Incorrect. Equal weights characterize a box filter or mean filter, not a Gaussian filter.",
+        "Incorrect. Alternating positive and negative weights are typical of edge detection filters like Laplacian, not Gaussian filters.",
+        "Incorrect. Corner-weighted kernels are used for specific geometric operations, not Gaussian smoothing."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gaussian-filter",
+        "smoothing",
+        "kernel-characteristics"
+      ]
+    },
+    {
+      "id": "IFT_006",
+      "question": "What happens to image noise when a Gaussian blur filter is applied?",
+      "options": [
+        "Noise is reduced through averaging with neighboring pixels",
+        "Noise is enhanced and becomes more visible",
+        "Noise is converted to edge information",
+        "Noise remains unchanged"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian blur reduces noise by averaging pixel values with their neighbors according to Gaussian weights, which smooths out random variations (noise).",
+      "optionExplanations": [
+        "Correct. Gaussian blur reduces noise by weighted averaging of neighboring pixels, smoothing out random variations.",
+        "Incorrect. Gaussian blur is specifically designed to reduce noise, not enhance it.",
+        "Incorrect. Noise reduction doesn't convert noise to edges; it suppresses high-frequency variations.",
+        "Incorrect. Gaussian filtering significantly affects noise by smoothing it out through the averaging process."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gaussian-blur",
+        "noise-reduction",
+        "smoothing"
+      ]
+    },
+    {
+      "id": "IFT_007",
+      "question": "What parameter controls the amount of blurring in a Gaussian filter?",
+      "options": [
+        "Standard deviation (sigma)",
+        "Kernel size only",
+        "Number of iterations",
+        "Pixel intensity threshold"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The standard deviation (sigma) parameter controls the spread of the Gaussian distribution, directly affecting the amount of blurring - larger sigma values produce more blur.",
+      "optionExplanations": [
+        "Correct. The standard deviation (sigma) controls the Gaussian distribution spread, determining the blur intensity.",
+        "Incorrect. While kernel size affects the filter, sigma is the primary parameter controlling blur amount within that kernel.",
+        "Incorrect. Gaussian filtering is typically applied once; iterations are not the primary blur control parameter.",
+        "Incorrect. Intensity thresholds are used in different types of filtering operations, not for controlling Gaussian blur amount."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gaussian-filter",
+        "sigma-parameter",
+        "blur-control"
+      ]
+    },
+    {
+      "id": "IFT_008",
+      "question": "What is the relationship between Gaussian filter kernel size and sigma value?",
+      "options": [
+        "Kernel size should be approximately 6*sigma + 1 for odd dimensions",
+        "Kernel size should always equal sigma",
+        "Kernel size should be sigma/2",
+        "There is no relationship between kernel size and sigma"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The kernel size should be large enough to capture the Gaussian distribution effectively. A common rule is kernel_size ≈ 6*sigma + 1 to ensure the kernel captures ~99.7% of the Gaussian distribution.",
+      "optionExplanations": [
+        "Correct. Kernel size ≈ 6*sigma + 1 ensures the kernel captures approximately 99.7% of the Gaussian distribution (3-sigma rule).",
+        "Incorrect. This would create very small kernels that don't adequately represent the Gaussian distribution.",
+        "Incorrect. This relationship would create kernels too small to properly implement the Gaussian function.",
+        "Incorrect. There is a mathematical relationship ensuring the kernel adequately represents the Gaussian distribution."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gaussian-filter",
+        "kernel-sizing",
+        "mathematical-relationships"
+      ]
+    },
+    {
+      "id": "IFT_009",
+      "question": "What is the primary purpose of edge detection in image processing?",
+      "options": [
+        "To identify boundaries between different regions or objects",
+        "To increase image brightness",
+        "To remove color from images",
+        "To compress image data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Edge detection aims to identify pixels where there are significant changes in intensity, which typically correspond to boundaries between different objects or regions in an image.",
+      "optionExplanations": [
+        "Correct. Edge detection identifies significant intensity changes that typically correspond to object boundaries or region transitions.",
+        "Incorrect. Brightness adjustment is a tone mapping operation, not edge detection.",
+        "Incorrect. Color removal is a color space conversion, not edge detection.",
+        "Incorrect. Data compression involves reducing file size, which is unrelated to edge detection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "edge-detection",
+        "fundamentals",
+        "image-analysis"
+      ]
+    },
+    {
+      "id": "IFT_010",
+      "question": "What mathematical concept is fundamental to most edge detection algorithms?",
+      "options": [
+        "Gradient computation",
+        "Fourier transformation",
+        "Matrix inversion",
+        "Statistical correlation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Edge detection algorithms primarily rely on computing gradients (derivatives) to find areas of rapid intensity change, which indicate edges.",
+      "optionExplanations": [
+        "Correct. Gradient computation detects rapid changes in pixel intensity, which is fundamental to identifying edges.",
+        "Incorrect. While Fourier transforms are used in some advanced edge detection methods, gradients are more fundamental.",
+        "Incorrect. Matrix inversion is not a core concept in edge detection algorithms.",
+        "Incorrect. Statistical correlation is used in template matching, not as a fundamental edge detection concept."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-detection",
+        "gradients",
+        "mathematical-foundations"
+      ]
+    },
+    {
+      "id": "IFT_011",
+      "question": "What does the Sobel operator detect?",
+      "options": [
+        "Edges in horizontal and vertical directions",
+        "Only horizontal edges",
+        "Only vertical edges",
+        "Diagonal edges exclusively"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Sobel operator uses two kernels to detect edges in both horizontal (Gx) and vertical (Gy) directions, then combines them to find edge magnitude and direction.",
+      "optionExplanations": [
+        "Correct. Sobel uses separate kernels for horizontal (Gx) and vertical (Gy) gradient detection, combining them for complete edge information.",
+        "Incorrect. Sobel detects both horizontal and vertical edges, not just horizontal ones.",
+        "Incorrect. Sobel detects both horizontal and vertical edges, not just vertical ones.",
+        "Incorrect. While Sobel can detect diagonal edges through combination of horizontal and vertical components, it's not limited to diagonal edges."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sobel-operator",
+        "edge-detection",
+        "gradient-computation"
+      ]
+    },
+    {
+      "id": "IFT_012",
+      "question": "What are the standard Sobel kernels for detecting horizontal edges (Gx)?",
+      "options": [
+        "[[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]",
+        "[[1, 2, 1], [0, 0, 0], [-1, -2, -1]]",
+        "[[-1, -2, -1], [0, 0, 0], [1, 2, 1]]",
+        "[[0, 1, 0], [1, -4, 1], [0, 1, 0]]"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The horizontal Sobel kernel (Gx) has the pattern [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], which detects vertical edges by computing horizontal gradients.",
+      "optionExplanations": [
+        "Correct. This is the standard Gx Sobel kernel that detects vertical edges by computing horizontal gradients.",
+        "Incorrect. This is the vertical Sobel kernel (Gy) that detects horizontal edges by computing vertical gradients.",
+        "Incorrect. This is also a vertical gradient kernel but with different orientation than the standard Gy.",
+        "Incorrect. This is a Laplacian kernel used for second-derivative edge detection, not a Sobel kernel."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sobel-operator",
+        "kernel-values",
+        "horizontal-gradients"
+      ]
+    },
+    {
+      "id": "IFT_013",
+      "question": "How is the final edge magnitude calculated in Sobel edge detection?",
+      "options": [
+        "sqrt(Gx² + Gy²)",
+        "Gx + Gy",
+        "Gx - Gy",
+        "Gx * Gy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Sobel edge magnitude is calculated as the Euclidean norm of the gradient vector: sqrt(Gx² + Gy²), where Gx and Gy are the horizontal and vertical gradient components.",
+      "optionExplanations": [
+        "Correct. The edge magnitude is the Euclidean norm: sqrt(Gx² + Gy²), representing the gradient vector magnitude.",
+        "Incorrect. Simple addition doesn't properly combine perpendicular gradient components.",
+        "Incorrect. Subtraction doesn't represent the magnitude of the gradient vector.",
+        "Incorrect. Multiplication doesn't represent the proper combination of gradient components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sobel-operator",
+        "edge-magnitude",
+        "mathematical-calculations"
+      ]
+    },
+    {
+      "id": "IFT_014",
+      "question": "What is the main advantage of the Sobel operator over simple gradient operators?",
+      "options": [
+        "It includes smoothing to reduce noise sensitivity",
+        "It requires less computational power",
+        "It works only on binary images",
+        "It detects only horizontal edges"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Sobel operator combines gradient computation with smoothing (through weighted averaging), making it less sensitive to noise compared to simple gradient operators.",
+      "optionExplanations": [
+        "Correct. Sobel includes implicit smoothing through its weighted kernel design, reducing noise sensitivity compared to simple gradients.",
+        "Incorrect. Sobel actually requires more computation than simple gradients due to its 3x3 kernel and smoothing components.",
+        "Incorrect. Sobel works on grayscale images with continuous intensity values, not just binary images.",
+        "Incorrect. Sobel detects edges in both horizontal and vertical directions, not just horizontal edges."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sobel-operator",
+        "noise-reduction",
+        "advantages"
+      ]
+    },
+    {
+      "id": "IFT_015",
+      "question": "What type of mathematical operator is the Laplacian?",
+      "options": [
+        "Second-order derivative operator",
+        "First-order derivative operator",
+        "Integration operator",
+        "Multiplication operator"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Laplacian is a second-order derivative operator that computes the sum of all unmixed second partial derivatives, useful for detecting regions of rapid intensity change.",
+      "optionExplanations": [
+        "Correct. The Laplacian is a second-order derivative operator: ∇²f = ∂²f/∂x² + ∂²f/∂y².",
+        "Incorrect. First-order derivatives are gradients; the Laplacian is specifically a second-order operator.",
+        "Incorrect. The Laplacian is a differential operator, not an integration operator.",
+        "Incorrect. The Laplacian involves differentiation operations, not multiplication."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "laplacian-operator",
+        "mathematical-foundations",
+        "derivatives"
+      ]
+    },
+    {
+      "id": "IFT_016",
+      "question": "What is a common 3x3 Laplacian kernel?",
+      "options": [
+        "[[0, -1, 0], [-1, 4, -1], [0, -1, 0]]",
+        "[[1, 1, 1], [1, -8, 1], [1, 1, 1]]",
+        "[[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]",
+        "[[1, 2, 1], [0, 0, 0], [-1, -2, -1]]"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The 4-connected Laplacian kernel [[0, -1, 0], [-1, 4, -1], [0, -1, 0]] approximates the second derivative by considering only orthogonal neighbors.",
+      "optionExplanations": [
+        "Correct. This is the standard 4-connected Laplacian kernel that approximates the second derivative using orthogonal neighbors.",
+        "Incorrect. This is the 8-connected Laplacian kernel that considers all neighboring pixels, not the most common 3x3 version.",
+        "Incorrect. This is the horizontal Sobel kernel (Gx), a first-order derivative operator.",
+        "Incorrect. This is the vertical Sobel kernel (Gy), also a first-order derivative operator."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "laplacian-operator",
+        "kernel-values",
+        "second-derivatives"
+      ]
+    },
+    {
+      "id": "IFT_017",
+      "question": "What is the main disadvantage of the Laplacian operator for edge detection?",
+      "options": [
+        "High sensitivity to noise",
+        "Poor edge localization",
+        "Only works on color images",
+        "Requires very large kernels"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Laplacian operator is highly sensitive to noise because it amplifies high-frequency components, including noise, due to its second-derivative nature.",
+      "optionExplanations": [
+        "Correct. Laplacian's second-derivative nature amplifies high-frequency components, making it very sensitive to noise.",
+        "Incorrect. Laplacian actually provides good edge localization due to its zero-crossing properties.",
+        "Incorrect. Laplacian works on any image type, typically applied to grayscale images.",
+        "Incorrect. Laplacian kernels are typically small (3x3 or 5x5), not large."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "laplacian-operator",
+        "disadvantages",
+        "noise-sensitivity"
+      ]
+    },
+    {
+      "id": "IFT_018",
+      "question": "What is the Laplacian of Gaussian (LoG) operator?",
+      "options": [
+        "Gaussian smoothing followed by Laplacian edge detection",
+        "Laplacian followed by Gaussian blur",
+        "Multiplication of Gaussian and Laplacian kernels",
+        "Average of Gaussian and Laplacian responses"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "LoG applies Gaussian smoothing first to reduce noise, then applies the Laplacian operator for edge detection, combining noise reduction with edge detection.",
+      "optionExplanations": [
+        "Correct. LoG first applies Gaussian smoothing to reduce noise, then applies Laplacian for edge detection.",
+        "Incorrect. This order would blur the edges after detection, reducing the effectiveness of edge detection.",
+        "Incorrect. LoG is a sequential operation, not a multiplication of kernels.",
+        "Incorrect. LoG is a sequential process, not an averaging of responses."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "laplacian-gaussian",
+        "noise-reduction",
+        "combined-operators"
+      ]
+    },
+    {
+      "id": "IFT_019",
+      "question": "In edge detection, what does 'zero-crossing' refer to?",
+      "options": [
+        "Points where the second derivative changes sign",
+        "Points where pixel intensity is zero",
+        "Points where the first derivative is maximum",
+        "Points where no edges are detected"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Zero-crossings occur where the second derivative (like Laplacian output) changes from positive to negative or vice versa, indicating edge locations.",
+      "optionExplanations": [
+        "Correct. Zero-crossings indicate where the second derivative changes sign, corresponding to edge locations.",
+        "Incorrect. Zero-crossings refer to derivative sign changes, not pixel intensity values.",
+        "Incorrect. Maximum first derivative indicates edge strength, not zero-crossings.",
+        "Incorrect. Zero-crossings actually indicate where edges are detected, not where they're absent."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "zero-crossing",
+        "second-derivatives",
+        "edge-localization"
+      ]
+    },
+    {
+      "id": "IFT_020",
+      "question": "What is the main source of noise in digital images?",
+      "options": [
+        "Sensor limitations and electronic interference",
+        "Compression algorithms",
+        "Color space conversions",
+        "Image resizing operations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Noise in digital images primarily comes from sensor limitations (thermal noise, shot noise) and electronic interference during image capture and digitization.",
+      "optionExplanations": [
+        "Correct. Sensor limitations and electronic interference during capture are the primary sources of image noise.",
+        "Incorrect. While compression can introduce artifacts, it's not the main source of noise in original images.",
+        "Incorrect. Color space conversions may introduce some quantization errors but aren't primary noise sources.",
+        "Incorrect. Resizing can introduce interpolation errors but isn't a main noise source in original images."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "noise-sources",
+        "image-acquisition",
+        "sensor-noise"
+      ]
+    },
+    {
+      "id": "IFT_021",
+      "question": "What type of noise appears as random variations in pixel intensity?",
+      "options": [
+        "Gaussian noise",
+        "Salt-and-pepper noise",
+        "Periodic noise",
+        "Quantization noise"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian noise appears as random variations in pixel intensity following a normal distribution, commonly caused by thermal noise in sensors.",
+      "optionExplanations": [
+        "Correct. Gaussian noise manifests as random intensity variations following a normal distribution pattern.",
+        "Incorrect. Salt-and-pepper noise appears as isolated black and white pixels, not random intensity variations.",
+        "Incorrect. Periodic noise appears as regular patterns or frequencies, not random variations.",
+        "Incorrect. Quantization noise occurs during analog-to-digital conversion, causing specific intensity level limitations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gaussian-noise",
+        "noise-types",
+        "random-variations"
+      ]
+    },
+    {
+      "id": "IFT_022",
+      "question": "Which filter is most effective for reducing Gaussian noise?",
+      "options": [
+        "Gaussian filter",
+        "Median filter",
+        "Laplacian filter",
+        "High-pass filter"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian filters are most effective for reducing Gaussian noise because they smooth images through weighted averaging, which reduces random variations while preserving overall image structure.",
+      "optionExplanations": [
+        "Correct. Gaussian filters effectively reduce Gaussian noise through weighted averaging while preserving image structure.",
+        "Incorrect. While median filters reduce noise, they're better for salt-and-pepper noise than Gaussian noise.",
+        "Incorrect. Laplacian filters enhance edges and amplify noise rather than reducing it.",
+        "Incorrect. High-pass filters enhance high-frequency components including noise, rather than reducing noise."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gaussian-filter",
+        "noise-reduction",
+        "gaussian-noise"
+      ]
+    },
+    {
+      "id": "IFT_023",
+      "question": "What characterizes salt-and-pepper noise?",
+      "options": [
+        "Isolated pixels with maximum or minimum intensity values",
+        "Gradual intensity variations across the image",
+        "Regular periodic patterns",
+        "Blurred regions with reduced contrast"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Salt-and-pepper noise consists of isolated pixels that are either maximum intensity (salt - white) or minimum intensity (pepper - black), scattered randomly throughout the image.",
+      "optionExplanations": [
+        "Correct. Salt-and-pepper noise appears as isolated pixels with extreme values (maximum=salt, minimum=pepper).",
+        "Incorrect. Gradual variations characterize Gaussian noise, not salt-and-pepper noise.",
+        "Incorrect. Regular patterns indicate periodic noise, not salt-and-pepper noise.",
+        "Incorrect. Blurred regions indicate motion blur or defocus, not salt-and-pepper noise."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "salt-pepper-noise",
+        "noise-characteristics",
+        "impulse-noise"
+      ]
+    },
+    {
+      "id": "IFT_024",
+      "question": "Which filter is most effective for removing salt-and-pepper noise?",
+      "options": [
+        "Median filter",
+        "Gaussian filter",
+        "Mean filter",
+        "Sobel filter"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Median filters are most effective for salt-and-pepper noise because they replace each pixel with the median value of its neighborhood, effectively removing isolated extreme values.",
+      "optionExplanations": [
+        "Correct. Median filters replace pixels with neighborhood median values, effectively removing isolated extreme values (salt-and-pepper noise).",
+        "Incorrect. Gaussian filters use weighted averaging, which can be influenced by extreme values and blur edges.",
+        "Incorrect. Mean filters average all neighborhood values, so extreme values can still affect the result.",
+        "Incorrect. Sobel filters are for edge detection, not noise reduction."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "median-filter",
+        "salt-pepper-noise",
+        "noise-reduction"
+      ]
+    },
+    {
+      "id": "IFT_025",
+      "question": "How does a median filter work?",
+      "options": [
+        "Replaces each pixel with the median value of its neighborhood",
+        "Replaces each pixel with the mean value of its neighborhood",
+        "Multiplies each pixel by a weighted kernel",
+        "Finds the maximum value in each neighborhood"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A median filter sorts the pixel values in a neighborhood and replaces the center pixel with the median (middle) value, which is effective for removing impulse noise.",
+      "optionExplanations": [
+        "Correct. Median filter sorts neighborhood pixel values and uses the median (middle value) as the output.",
+        "Incorrect. Using the mean value describes an averaging filter, not a median filter.",
+        "Incorrect. Weighted kernel multiplication describes convolution operations, not median filtering.",
+        "Incorrect. Finding maximum values describes a maximum filter, not a median filter."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "median-filter",
+        "non-linear-filtering",
+        "noise-reduction"
+      ]
+    },
+    {
+      "id": "IFT_026",
+      "question": "What is a key advantage of median filtering over linear filters for noise reduction?",
+      "options": [
+        "Better edge preservation",
+        "Faster computational speed",
+        "Works only on color images",
+        "Requires less memory"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Median filters preserve edges better than linear filters because they don't average across edge boundaries, maintaining sharp transitions while removing noise.",
+      "optionExplanations": [
+        "Correct. Median filters preserve edges better because they don't average values across edge boundaries like linear filters do.",
+        "Incorrect. Median filtering typically requires more computation than linear filters due to sorting operations.",
+        "Incorrect. Median filters work on any image type, not exclusively color images.",
+        "Incorrect. Memory requirements are similar to other local neighborhood operations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "median-filter",
+        "edge-preservation",
+        "advantages"
+      ]
+    },
+    {
+      "id": "IFT_027",
+      "question": "What happens to an image when a high-pass filter is applied?",
+      "options": [
+        "High-frequency details are enhanced while low-frequency components are reduced",
+        "Low-frequency details are enhanced while high-frequency components are reduced",
+        "All frequencies are equally enhanced",
+        "The image is converted to grayscale"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "High-pass filters enhance high-frequency components (edges, fine details) while reducing or removing low-frequency components (smooth regions, gradual changes).",
+      "optionExplanations": [
+        "Correct. High-pass filters enhance high-frequency details (edges, textures) while suppressing low-frequency components (smooth areas).",
+        "Incorrect. This describes a low-pass filter behavior, which is opposite to high-pass filtering.",
+        "Incorrect. High-pass filters specifically discriminate between frequencies, not enhance all equally.",
+        "Incorrect. Color conversion is unrelated to frequency-based filtering operations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "high-pass-filter",
+        "frequency-domain",
+        "detail-enhancement"
+      ]
+    },
+    {
+      "id": "IFT_028",
+      "question": "What is the effect of applying a low-pass filter to an image?",
+      "options": [
+        "Smoothing and noise reduction",
+        "Edge enhancement",
+        "Contrast increase",
+        "Color saturation increase"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Low-pass filters allow low-frequency components to pass while attenuating high-frequency components, resulting in smoothing and noise reduction.",
+      "optionExplanations": [
+        "Correct. Low-pass filters smooth images and reduce noise by preserving low frequencies while attenuating high frequencies.",
+        "Incorrect. Edge enhancement requires high-pass filtering to emphasize high-frequency components.",
+        "Incorrect. Contrast increase involves tone mapping operations, not frequency-based filtering.",
+        "Incorrect. Color saturation changes involve color space manipulations, not frequency filtering."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "low-pass-filter",
+        "smoothing",
+        "noise-reduction"
+      ]
+    },
+    {
+      "id": "IFT_029",
+      "question": "Which of the following is an example of a low-pass filter?",
+      "options": [
+        "Gaussian filter",
+        "Laplacian filter",
+        "Sobel filter",
+        "Unsharp mask"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian filters are classic examples of low-pass filters as they smooth images by reducing high-frequency components while preserving low-frequency information.",
+      "optionExplanations": [
+        "Correct. Gaussian filters are low-pass filters that smooth images by attenuating high-frequency components.",
+        "Incorrect. Laplacian filters are high-pass filters that enhance edges and high-frequency details.",
+        "Incorrect. Sobel filters are high-pass filters designed for edge detection.",
+        "Incorrect. Unsharp mask is a sharpening technique that enhances high-frequency components."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gaussian-filter",
+        "low-pass-filter",
+        "examples"
+      ]
+    },
+    {
+      "id": "IFT_030",
+      "question": "What is unsharp masking used for in image processing?",
+      "options": [
+        "Image sharpening and detail enhancement",
+        "Noise reduction",
+        "Color correction",
+        "Image compression"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unsharp masking is a sharpening technique that enhances image details by adding a portion of the high-frequency components back to the original image.",
+      "optionExplanations": [
+        "Correct. Unsharp masking enhances image sharpness by adding high-frequency details extracted through filtering operations.",
+        "Incorrect. Unsharp masking enhances details rather than reducing noise; it may actually amplify noise.",
+        "Incorrect. Color correction involves adjusting color balance, not sharpening operations.",
+        "Incorrect. Image compression reduces file size, which is unrelated to unsharp masking."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "unsharp-masking",
+        "sharpening",
+        "detail-enhancement"
+      ]
+    },
+    {
+      "id": "IFT_031",
+      "question": "In the frequency domain, what does the center of the Fourier transform represent?",
+      "options": [
+        "DC component (average intensity)",
+        "Highest frequency component",
+        "Edge information",
+        "Noise components"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The center of the Fourier transform represents the DC component, which corresponds to the average intensity or brightness of the entire image.",
+      "optionExplanations": [
+        "Correct. The center (zero frequency) represents the DC component, which is the average intensity of the image.",
+        "Incorrect. Highest frequencies are located at the edges of the frequency domain, not the center.",
+        "Incorrect. Edge information is distributed throughout various frequencies, not concentrated at the center.",
+        "Incorrect. Noise is typically distributed across multiple frequencies, not specifically at the center."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fourier-transform",
+        "frequency-domain",
+        "dc-component"
+      ]
+    },
+    {
+      "id": "IFT_032",
+      "question": "What is the kernel size effect on computational complexity in convolution?",
+      "options": [
+        "Larger kernels require more computations per pixel",
+        "Kernel size has no effect on computation time",
+        "Smaller kernels require more computations",
+        "All kernel sizes have the same computational cost"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Computational complexity increases with kernel size because each output pixel requires more multiplication and addition operations for larger kernels.",
+      "optionExplanations": [
+        "Correct. Larger kernels require more multiplications and additions per output pixel, increasing computational complexity.",
+        "Incorrect. Kernel size directly affects the number of operations required per pixel.",
+        "Incorrect. Smaller kernels require fewer operations per pixel than larger kernels.",
+        "Incorrect. Different kernel sizes have different computational requirements."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "computational-complexity",
+        "kernel-size",
+        "performance"
+      ]
+    },
+    {
+      "id": "IFT_033",
+      "question": "What is separable filtering and why is it useful?",
+      "options": [
+        "Breaking a 2D filter into two 1D filters to reduce computational cost",
+        "Applying different filters to color channels separately",
+        "Filtering different image regions independently",
+        "Using multiple filters in sequence"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Separable filtering decomposes a 2D filter into two 1D filters (horizontal and vertical), reducing computational complexity from O(N²) to O(2N) operations per pixel.",
+      "optionExplanations": [
+        "Correct. Separable filtering decomposes 2D kernels into 1D operations, significantly reducing computational cost.",
+        "Incorrect. This describes channel-wise processing, not separable filtering.",
+        "Incorrect. This describes spatial domain partitioning, not separable filtering.",
+        "Incorrect. This describes filter cascading, not separable filtering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "separable-filtering",
+        "computational-efficiency",
+        "optimization"
+      ]
+    },
+    {
+      "id": "IFT_034",
+      "question": "Which filters are naturally separable?",
+      "options": [
+        "Gaussian filters",
+        "Laplacian filters",
+        "Median filters",
+        "Morphological filters"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian filters are naturally separable because the 2D Gaussian function can be expressed as the product of two 1D Gaussian functions in perpendicular directions.",
+      "optionExplanations": [
+        "Correct. Gaussian filters are separable: G(x,y) = G(x) × G(y), allowing efficient 1D implementations.",
+        "Incorrect. Laplacian filters are not generally separable as they involve mixed partial derivatives.",
+        "Incorrect. Median filters are non-linear and cannot be decomposed into separable components.",
+        "Incorrect. Morphological filters typically involve non-linear operations that are not separable."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "separable-filtering",
+        "gaussian-filter",
+        "mathematical-properties"
+      ]
+    },
+    {
+      "id": "IFT_035",
+      "question": "What is the main trade-off when choosing between small and large kernel sizes?",
+      "options": [
+        "Processing detail vs. computational cost",
+        "Color accuracy vs. grayscale conversion",
+        "Memory usage vs. disk space",
+        "Input size vs. output size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The main trade-off is between processing detail (larger kernels capture more spatial information) and computational cost (larger kernels require more operations).",
+      "optionExplanations": [
+        "Correct. Larger kernels capture more spatial detail but require more computations, creating a detail vs. efficiency trade-off.",
+        "Incorrect. Kernel size doesn't affect color accuracy or grayscale conversion directly.",
+        "Incorrect. While larger kernels use more memory temporarily, this isn't the main trade-off consideration.",
+        "Incorrect. Output size depends on padding strategy, not the primary kernel size trade-off."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel-size",
+        "trade-offs",
+        "design-considerations"
+      ]
+    },
+    {
+      "id": "IFT_036",
+      "question": "What is anisotropic filtering?",
+      "options": [
+        "Filtering that treats different directions differently",
+        "Filtering that works only on grayscale images",
+        "Filtering that preserves image size exactly",
+        "Filtering that removes all noise types equally"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Anisotropic filtering applies different levels of filtering in different directions, often used to preserve edges while smoothing along edge directions.",
+      "optionExplanations": [
+        "Correct. Anisotropic filtering applies different filtering strengths or methods based on local image structure or direction.",
+        "Incorrect. Anisotropic filtering can work on any image type, not just grayscale.",
+        "Incorrect. Size preservation is related to padding strategies, not anisotropic properties.",
+        "Incorrect. Anisotropic filtering adapts to local image characteristics, not treating all noise equally."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "anisotropic-filtering",
+        "directional-filtering",
+        "advanced-techniques"
+      ]
+    },
+    {
+      "id": "IFT_037",
+      "question": "What is the purpose of non-maximum suppression in edge detection?",
+      "options": [
+        "To thin edges to single-pixel width",
+        "To remove weak edges entirely",
+        "To enhance edge contrast",
+        "To convert edges to binary values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Non-maximum suppression thins edges by keeping only the pixels with maximum gradient magnitude in the gradient direction, creating single-pixel-wide edges.",
+      "optionExplanations": [
+        "Correct. Non-maximum suppression creates single-pixel-wide edges by keeping only local maxima in the gradient direction.",
+        "Incorrect. Removing weak edges is done by thresholding, not non-maximum suppression.",
+        "Incorrect. Edge contrast enhancement is achieved through other techniques like histogram equalization.",
+        "Incorrect. Binary conversion is done through thresholding operations, not non-maximum suppression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "non-maximum-suppression",
+        "edge-thinning",
+        "advanced-edge-detection"
+      ]
+    },
+    {
+      "id": "IFT_038",
+      "question": "What are the typical stages in the Canny edge detection algorithm?",
+      "options": [
+        "Gaussian smoothing, gradient computation, non-maximum suppression, double thresholding",
+        "Median filtering, Sobel operator, binary thresholding",
+        "Laplacian filtering, zero-crossing detection",
+        "Histogram equalization, edge enhancement, noise reduction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Canny algorithm follows these stages: Gaussian smoothing (noise reduction), gradient computation, non-maximum suppression (edge thinning), and double thresholding (edge linking).",
+      "optionExplanations": [
+        "Correct. Canny edge detection involves: Gaussian smoothing, gradient computation, non-maximum suppression, and double thresholding.",
+        "Incorrect. This describes a simpler edge detection approach, not the complete Canny algorithm.",
+        "Incorrect. This describes Laplacian-based edge detection, not Canny.",
+        "Incorrect. These are general image enhancement techniques, not Canny edge detection stages."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "canny-edge-detection",
+        "algorithm-stages",
+        "advanced-techniques"
+      ]
+    },
+    {
+      "id": "IFT_039",
+      "question": "What is hysteresis thresholding in Canny edge detection?",
+      "options": [
+        "Using two thresholds to connect strong and weak edges",
+        "Applying a single threshold to all edge pixels",
+        "Gradually increasing threshold values",
+        "Removing all pixels below a threshold"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hysteresis thresholding uses two thresholds: pixels above the high threshold are strong edges, pixels between thresholds are weak edges kept only if connected to strong edges.",
+      "optionExplanations": [
+        "Correct. Hysteresis uses high and low thresholds to classify strong edges and connect weak edges that are adjacent to strong ones.",
+        "Incorrect. Single thresholding doesn't provide the edge connectivity benefits of hysteresis.",
+        "Incorrect. Threshold values are fixed, not gradually changed during processing.",
+        "Incorrect. Simple thresholding removes pixels below threshold, but hysteresis is more sophisticated."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hysteresis-thresholding",
+        "canny-edge-detection",
+        "double-thresholding"
+      ]
+    },
+    {
+      "id": "IFT_040",
+      "question": "What is the difference between linear and non-linear filters?",
+      "options": [
+        "Linear filters follow superposition principle, non-linear filters do not",
+        "Linear filters work on straight lines, non-linear on curves",
+        "Linear filters are faster, non-linear are slower",
+        "Linear filters work on color images, non-linear on grayscale"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Linear filters satisfy the superposition principle (response to sum equals sum of responses), while non-linear filters do not satisfy this mathematical property.",
+      "optionExplanations": [
+        "Correct. Linear filters satisfy superposition: f(a+b) = f(a) + f(b), while non-linear filters violate this principle.",
+        "Incorrect. The terms don't refer to geometric lines or curves, but to mathematical linearity properties.",
+        "Incorrect. Speed depends on implementation and complexity, not inherent linearity properties.",
+        "Incorrect. Both filter types can work on any image type; linearity is a mathematical property."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "linear-filters",
+        "non-linear-filters",
+        "mathematical-properties"
+      ]
+    },
+    {
+      "id": "IFT_041",
+      "question": "Which of the following is a non-linear filter?",
+      "options": [
+        "Median filter",
+        "Gaussian filter",
+        "Mean filter",
+        "Sobel filter"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Median filter is non-linear because the median operation doesn't satisfy the superposition principle - median(a+b) ≠ median(a) + median(b).",
+      "optionExplanations": [
+        "Correct. Median filter is non-linear because median operations don't satisfy the superposition principle.",
+        "Incorrect. Gaussian filter uses weighted averaging (convolution), which is a linear operation.",
+        "Incorrect. Mean filter uses averaging, which is a linear operation satisfying superposition.",
+        "Incorrect. Sobel filter uses convolution operations, which are linear."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "non-linear-filters",
+        "median-filter",
+        "filter-classification"
+      ]
+    },
+    {
+      "id": "IFT_042",
+      "question": "What is the purpose of zero-padding in convolution?",
+      "options": [
+        "To maintain output size equal to input size",
+        "To increase computational speed",
+        "To enhance edge detection accuracy",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Zero-padding adds zeros around the image border so that after convolution, the output size equals the input size, preventing size reduction.",
+      "optionExplanations": [
+        "Correct. Zero-padding maintains output dimensions equal to input dimensions by adding border zeros.",
+        "Incorrect. Padding typically increases computation due to additional border pixels to process.",
+        "Incorrect. While padding affects boundary handling, its primary purpose is size maintenance.",
+        "Incorrect. Padding actually increases memory usage due to the added border pixels."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "zero-padding",
+        "convolution",
+        "size-preservation"
+      ]
+    },
+    {
+      "id": "IFT_043",
+      "question": "What happens at image boundaries during convolution without padding?",
+      "options": [
+        "The output image becomes smaller than the input",
+        "Boundary pixels are duplicated",
+        "The convolution operation fails",
+        "Edge information is enhanced"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Without padding, the kernel cannot be centered on boundary pixels, so the output image dimensions are reduced by (kernel_size - 1) in each direction.",
+      "optionExplanations": [
+        "Correct. Without padding, output size = input_size - kernel_size + 1, making the output smaller.",
+        "Incorrect. Pixel duplication is a padding strategy, not what happens without padding.",
+        "Incorrect. Convolution can still operate; it just produces a smaller output.",
+        "Incorrect. Boundary effects typically reduce edge information accuracy, not enhance it."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "boundary-effects",
+        "convolution",
+        "output-size"
+      ]
+    },
+    {
+      "id": "IFT_044",
+      "question": "What is the main advantage of using integral images for filtering?",
+      "options": [
+        "Constant-time computation regardless of kernel size",
+        "Better noise reduction capabilities",
+        "Higher edge detection accuracy",
+        "Reduced memory requirements"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Integral images allow computing the sum of any rectangular region in constant time O(1), making box filters extremely efficient regardless of kernel size.",
+      "optionExplanations": [
+        "Correct. Integral images enable O(1) rectangular sum computation, making box filters independent of kernel size.",
+        "Incorrect. Noise reduction quality depends on filter design, not the integral image computation method.",
+        "Incorrect. Integral images are primarily used for box filters, not typically for edge detection.",
+        "Incorrect. Integral images actually require additional memory to store the cumulative sum array."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "integral-images",
+        "computational-efficiency",
+        "box-filters"
+      ]
+    },
+    {
+      "id": "IFT_045",
+      "question": "What is the relationship between convolution and correlation?",
+      "options": [
+        "Convolution is correlation with a flipped kernel",
+        "They are identical operations",
+        "Correlation is always faster than convolution",
+        "Convolution works on color images, correlation on grayscale"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Convolution is correlation with the kernel flipped both horizontally and vertically. For symmetric kernels, the operations are identical.",
+      "optionExplanations": [
+        "Correct. Convolution equals correlation with the kernel rotated 180 degrees (flipped horizontally and vertically).",
+        "Incorrect. They differ by the kernel orientation, though the difference disappears for symmetric kernels.",
+        "Incorrect. Speed depends on implementation details, not the mathematical operation type.",
+        "Incorrect. Both operations can work on any image type; the difference is purely mathematical."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "convolution",
+        "correlation",
+        "mathematical-relationships"
+      ]
+    },
+    {
+      "id": "IFT_046",
+      "question": "What is the effect of applying multiple Gaussian filters in sequence?",
+      "options": [
+        "Equivalent to a single Gaussian with combined variance",
+        "Completely removes all image details",
+        "Enhances edges progressively",
+        "Converts the image to binary"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multiple Gaussian filters combine to form a single Gaussian filter with variance equal to the sum of individual variances (σ_total² = σ₁² + σ₂² + ...).",
+      "optionExplanations": [
+        "Correct. Sequential Gaussian filters combine with variances adding: σ_combined² = σ₁² + σ₂² + σ₃²...",
+        "Incorrect. While details are progressively smoothed, they're not completely removed unless extreme parameters are used.",
+        "Incorrect. Gaussian filters smooth images rather than enhance edges.",
+        "Incorrect. Gaussian filtering produces continuous values, not binary outputs."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gaussian-filter",
+        "filter-combination",
+        "mathematical-properties"
+      ]
+    },
+    {
+      "id": "IFT_047",
+      "question": "What is the difference between erosion and dilation in morphological filtering?",
+      "options": [
+        "Erosion shrinks objects, dilation expands objects",
+        "Erosion enhances edges, dilation blurs edges",
+        "Erosion works on binary images, dilation on grayscale",
+        "Erosion is linear, dilation is non-linear"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Erosion shrinks or thins objects by taking the minimum value in the structuring element neighborhood, while dilation expands objects by taking the maximum value.",
+      "optionExplanations": [
+        "Correct. Erosion shrinks objects (minimum operation), while dilation expands objects (maximum operation).",
+        "Incorrect. Both are morphological operations affecting object structure, not specifically edge enhancement or blurring.",
+        "Incorrect. Both operations can work on binary or grayscale images.",
+        "Incorrect. Both operations are non-linear as they involve min/max operations, not weighted averaging."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "morphological-filtering",
+        "erosion",
+        "dilation"
+      ]
+    },
+    {
+      "id": "IFT_048",
+      "question": "What is opening in morphological operations?",
+      "options": [
+        "Erosion followed by dilation",
+        "Dilation followed by erosion",
+        "Multiple erosion operations",
+        "Maximum filter application"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Opening is erosion followed by dilation, which removes small objects and separates connected objects while preserving the size of remaining objects.",
+      "optionExplanations": [
+        "Correct. Opening = erosion followed by dilation, which removes small noise while preserving object sizes.",
+        "Incorrect. This describes closing operation, not opening.",
+        "Incorrect. Multiple erosions would just continue shrinking objects without restoration.",
+        "Incorrect. Maximum filtering is part of dilation, but opening is a specific sequence of operations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "morphological-filtering",
+        "opening",
+        "erosion-dilation"
+      ]
+    },
+    {
+      "id": "IFT_049",
+      "question": "What is closing in morphological operations?",
+      "options": [
+        "Dilation followed by erosion",
+        "Erosion followed by dilation",
+        "Multiple dilation operations",
+        "Minimum filter application"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Closing is dilation followed by erosion, which fills small holes and connects nearby objects while preserving the overall size of objects.",
+      "optionExplanations": [
+        "Correct. Closing = dilation followed by erosion, which fills holes and connects objects while preserving sizes.",
+        "Incorrect. This describes opening operation, not closing.",
+        "Incorrect. Multiple dilations would continuously expand objects without size restoration.",
+        "Incorrect. Minimum filtering is part of erosion, but closing is a specific sequence of operations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "morphological-filtering",
+        "closing",
+        "dilation-erosion"
+      ]
+    },
+    {
+      "id": "IFT_050",
+      "question": "What is the purpose of a structuring element in morphological operations?",
+      "options": [
+        "Defines the neighborhood shape and size for the operation",
+        "Stores the original image data",
+        "Controls the output image format",
+        "Determines the color space conversion"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The structuring element defines the shape and size of the neighborhood considered during morphological operations, similar to how kernels work in convolution.",
+      "optionExplanations": [
+        "Correct. The structuring element defines the neighborhood shape and size for morphological operations like erosion and dilation.",
+        "Incorrect. Structuring elements don't store image data; they define operation parameters.",
+        "Incorrect. Output format is determined by the application, not the structuring element.",
+        "Incorrect. Color space conversions are separate from morphological operations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "morphological-filtering",
+        "structuring-element",
+        "neighborhood-operations"
+      ]
+    },
+    {
+      "id": "IFT_051",
+      "question": "What is the difference between same and valid convolution modes?",
+      "options": [
+        "Same maintains input size with padding, valid reduces size without padding",
+        "Same works on square images, valid on rectangular images",
+        "Same uses symmetric kernels, valid uses asymmetric kernels",
+        "Same preserves colors, valid converts to grayscale"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Same' mode uses padding to maintain input dimensions, while 'valid' mode performs convolution only where the kernel fully overlaps the image, resulting in smaller output.",
+      "optionExplanations": [
+        "Correct. 'Same' mode maintains input size through padding, while 'valid' mode reduces output size by avoiding padding.",
+        "Incorrect. Both modes work on any image shape; the difference is in padding strategy.",
+        "Incorrect. Kernel symmetry is independent of the convolution mode used.",
+        "Incorrect. Color preservation is unrelated to convolution mode; both preserve the original color format."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "convolution-modes",
+        "padding",
+        "output-sizing"
+      ]
+    },
+    {
+      "id": "IFT_052",
+      "question": "What is the computational complexity of 2D convolution with an M×N image and K×K kernel?",
+      "options": [
+        "O(M × N × K²)",
+        "O(M × N × K)",
+        "O(M × N)",
+        "O(K²)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Each output pixel requires K² multiplications and additions, and there are approximately M×N output pixels, giving O(M × N × K²) complexity.",
+      "optionExplanations": [
+        "Correct. Each of the M×N output pixels requires K² operations, giving O(M × N × K²) complexity.",
+        "Incorrect. This underestimates the operations per pixel; each pixel requires K² operations, not K.",
+        "Incorrect. This ignores the kernel size dependency; larger kernels require more operations per pixel.",
+        "Incorrect. This only accounts for one pixel operation, not the entire image."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "computational-complexity",
+        "convolution",
+        "algorithm-analysis"
+      ]
+    },
+    {
+      "id": "IFT_053",
+      "question": "What is the main benefit of using FFT for convolution?",
+      "options": [
+        "Reduces complexity from O(N²K²) to O(N²logN) for large kernels",
+        "Improves filtering accuracy",
+        "Reduces memory requirements",
+        "Works only on binary images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "FFT-based convolution reduces computational complexity from O(N²K²) to O(N²logN), providing significant speedup for large kernels.",
+      "optionExplanations": [
+        "Correct. FFT convolution achieves O(N²logN) complexity compared to O(N²K²) for direct convolution, beneficial for large kernels.",
+        "Incorrect. FFT provides the same mathematical result as direct convolution, not improved accuracy.",
+        "Incorrect. FFT typically requires additional memory for frequency domain representations.",
+        "Incorrect. FFT convolution works on any image type, not just binary images."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "fft-convolution",
+        "computational-efficiency",
+        "frequency-domain"
+      ]
+    },
+    {
+      "id": "IFT_054",
+      "question": "What is bilateral filtering designed to achieve?",
+      "options": [
+        "Edge-preserving smoothing",
+        "Maximum noise amplification",
+        "Color space conversion",
+        "Image size reduction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bilateral filtering combines spatial and intensity similarities to smooth images while preserving edges, reducing noise without blurring important features.",
+      "optionExplanations": [
+        "Correct. Bilateral filtering smooths images while preserving edges by considering both spatial proximity and intensity similarity.",
+        "Incorrect. Bilateral filtering is designed to reduce noise, not amplify it.",
+        "Incorrect. Color space conversion is a separate operation from bilateral filtering.",
+        "Incorrect. Image resizing is unrelated to bilateral filtering operations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bilateral-filtering",
+        "edge-preservation",
+        "advanced-smoothing"
+      ]
+    },
+    {
+      "id": "IFT_055",
+      "question": "What two factors does bilateral filtering consider?",
+      "options": [
+        "Spatial distance and intensity difference",
+        "Kernel size and rotation angle",
+        "Color channel and brightness",
+        "Frequency domain and time domain"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bilateral filtering weights pixels based on both their spatial distance from the center pixel and the difference in intensity values, preserving edges while smoothing.",
+      "optionExplanations": [
+        "Correct. Bilateral filtering considers spatial proximity and intensity similarity to achieve edge-preserving smoothing.",
+        "Incorrect. These are general filter parameters, not the specific bilateral filtering criteria.",
+        "Incorrect. While color can be involved, the fundamental criteria are spatial distance and intensity difference.",
+        "Incorrect. Bilateral filtering operates in the spatial domain, not involving frequency domain considerations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bilateral-filtering",
+        "spatial-distance",
+        "intensity-difference"
+      ]
+    },
+    {
+      "id": "IFT_056",
+      "question": "What is the main disadvantage of bilateral filtering?",
+      "options": [
+        "Higher computational cost compared to linear filters",
+        "Poor edge preservation",
+        "Works only on grayscale images",
+        "Amplifies noise significantly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bilateral filtering requires computing weights based on both spatial and intensity differences for each pixel pair, making it more computationally expensive than linear filters.",
+      "optionExplanations": [
+        "Correct. Bilateral filtering is computationally expensive due to adaptive weight computation for each pixel neighborhood.",
+        "Incorrect. Edge preservation is actually the main advantage of bilateral filtering.",
+        "Incorrect. Bilateral filtering can work on color images by processing each channel or considering color differences.",
+        "Incorrect. Bilateral filtering is designed to reduce noise while preserving edges."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bilateral-filtering",
+        "computational-cost",
+        "disadvantages"
+      ]
+    },
+    {
+      "id": "IFT_057",
+      "question": "What is anisotropic diffusion filtering?",
+      "options": [
+        "Iterative smoothing that adapts to local image structure",
+        "Single-pass uniform smoothing",
+        "Edge enhancement through sharpening",
+        "Color correction algorithm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Anisotropic diffusion performs iterative smoothing that adapts the diffusion rate based on local gradients, preserving edges while smoothing homogeneous regions.",
+      "optionExplanations": [
+        "Correct. Anisotropic diffusion iteratively smooths images with diffusion rates adapted to local gradient information.",
+        "Incorrect. Anisotropic diffusion is iterative and adaptive, not uniform single-pass smoothing.",
+        "Incorrect. The goal is edge-preserving smoothing, not edge enhancement.",
+        "Incorrect. Color correction involves different operations than anisotropic diffusion."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "anisotropic-diffusion",
+        "iterative-filtering",
+        "edge-preservation"
+      ]
+    },
+    {
+      "id": "IFT_058",
+      "question": "What parameter controls the diffusion rate in anisotropic diffusion?",
+      "options": [
+        "Gradient threshold function",
+        "Kernel size",
+        "Number of color channels",
+        "Image resolution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The diffusion rate is controlled by a function of the local gradient magnitude, typically reducing diffusion at high gradients (edges) while allowing smoothing in homogeneous regions.",
+      "optionExplanations": [
+        "Correct. A gradient-dependent function controls diffusion rate, reducing diffusion at edges while allowing smoothing in uniform areas.",
+        "Incorrect. Anisotropic diffusion typically uses local neighborhoods, not fixed kernel sizes.",
+        "Incorrect. Color channels affect processing but don't control the diffusion rate parameter.",
+        "Incorrect. Image resolution affects processing scale but not the fundamental diffusion control mechanism."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "anisotropic-diffusion",
+        "gradient-threshold",
+        "diffusion-control"
+      ]
+    },
+    {
+      "id": "IFT_059",
+      "question": "What is the purpose of the Prewitt operator?",
+      "options": [
+        "Edge detection similar to Sobel but with different kernel weights",
+        "Noise reduction in color images",
+        "Image histogram equalization",
+        "Morphological operations on binary images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Prewitt operator performs edge detection using 3×3 kernels similar to Sobel, but with simpler weight distributions that don't emphasize the center row/column as much.",
+      "optionExplanations": [
+        "Correct. Prewitt is an edge detection operator similar to Sobel but with uniform weights in the gradient direction.",
+        "Incorrect. Prewitt is designed for edge detection, not noise reduction.",
+        "Incorrect. Histogram equalization is a contrast enhancement technique, not related to Prewitt.",
+        "Incorrect. Prewitt operates on grayscale values for edge detection, not morphological operations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prewitt-operator",
+        "edge-detection",
+        "gradient-operators"
+      ]
+    },
+    {
+      "id": "IFT_060",
+      "question": "How do Prewitt kernels differ from Sobel kernels?",
+      "options": [
+        "Prewitt uses uniform weights, Sobel emphasizes center row/column",
+        "Prewitt detects only horizontal edges, Sobel only vertical",
+        "Prewitt works on color images, Sobel on grayscale",
+        "Prewitt uses 5×5 kernels, Sobel uses 3×3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prewitt kernels use uniform weights (±1) in the gradient direction, while Sobel kernels give more weight (±2) to the center row/column for better noise reduction.",
+      "optionExplanations": [
+        "Correct. Prewitt uses uniform ±1 weights while Sobel emphasizes center positions with ±2 weights for better noise suppression.",
+        "Incorrect. Both operators detect edges in both horizontal and vertical directions using separate kernels.",
+        "Incorrect. Both operators typically work on grayscale images, though they can be applied to individual color channels.",
+        "Incorrect. Both operators commonly use 3×3 kernels, though variants with different sizes exist."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prewitt-operator",
+        "sobel-operator",
+        "kernel-comparison"
+      ]
+    },
+    {
+      "id": "IFT_061",
+      "question": "What is the Roberts cross-gradient operator?",
+      "options": [
+        "A 2×2 diagonal gradient operator for edge detection",
+        "A 3×3 smoothing filter",
+        "A morphological closing operation",
+        "A color space conversion algorithm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Roberts operator uses 2×2 kernels to compute gradients along diagonal directions, providing simple and fast edge detection with good localization.",
+      "optionExplanations": [
+        "Correct. Roberts uses 2×2 kernels to compute diagonal gradients: [[1,0],[0,-1]] and [[0,1],[-1,0]].",
+        "Incorrect. Roberts is for edge detection, not smoothing, and uses 2×2 kernels.",
+        "Incorrect. Roberts is a gradient operator, not a morphological operation.",
+        "Incorrect. Roberts performs edge detection, not color space conversion."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "roberts-operator",
+        "edge-detection",
+        "diagonal-gradients"
+      ]
+    },
+    {
+      "id": "IFT_062",
+      "question": "What are the advantages of the Roberts operator?",
+      "options": [
+        "Simple computation and good edge localization",
+        "Superior noise reduction capabilities",
+        "Works exclusively on color images",
+        "Provides the strongest edge responses"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Roberts operator offers computational simplicity due to its 2×2 size and provides good edge localization, though it's more sensitive to noise than larger operators.",
+      "optionExplanations": [
+        "Correct. Roberts is computationally simple (2×2 kernels) and provides good edge localization due to its small size.",
+        "Incorrect. Roberts is more sensitive to noise than larger operators like Sobel due to lack of smoothing.",
+        "Incorrect. Roberts works on grayscale images and can be applied to individual color channels.",
+        "Incorrect. Larger operators like Sobel typically provide stronger, more robust edge responses."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "roberts-operator",
+        "advantages",
+        "edge-localization"
+      ]
+    },
+    {
+      "id": "IFT_063",
+      "question": "What is the difference between isotropic and anisotropic noise?",
+      "options": [
+        "Isotropic noise has equal variance in all directions, anisotropic varies by direction",
+        "Isotropic affects only edges, anisotropic affects smooth regions",
+        "Isotropic is color noise, anisotropic is grayscale noise",
+        "Isotropic is temporal noise, anisotropic is spatial noise"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Isotropic noise has statistical properties that are the same in all directions, while anisotropic noise has directional dependencies in its statistical characteristics.",
+      "optionExplanations": [
+        "Correct. Isotropic noise has uniform statistical properties in all directions, while anisotropic noise varies directionally.",
+        "Incorrect. Both noise types can affect any image region; the difference is in directional characteristics.",
+        "Incorrect. Both noise types can occur in color or grayscale images; the distinction is about directional properties.",
+        "Incorrect. Both can be spatial; the distinction is about directional uniformity, not temporal vs. spatial."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "noise-types",
+        "isotropic-noise",
+        "anisotropic-noise"
+      ]
+    },
+    {
+      "id": "IFT_064",
+      "question": "What is shot noise in digital imaging?",
+      "options": [
+        "Noise due to random photon arrival at the sensor",
+        "Noise from camera shake during exposure",
+        "Noise from compression artifacts",
+        "Noise from color interpolation errors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Shot noise arises from the quantum nature of light - photons arrive randomly at the sensor, creating statistical variations that follow a Poisson distribution.",
+      "optionExplanations": [
+        "Correct. Shot noise results from the random nature of photon arrival, following Poisson statistics with variance equal to the mean.",
+        "Incorrect. Camera shake causes motion blur, not shot noise.",
+        "Incorrect. Compression artifacts are systematic distortions, not random shot noise.",
+        "Incorrect. Color interpolation errors occur during demosaicing, not shot noise generation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "shot-noise",
+        "photon-noise",
+        "sensor-noise"
+      ]
+    },
+    {
+      "id": "IFT_065",
+      "question": "What characterizes thermal noise in image sensors?",
+      "options": [
+        "Temperature-dependent random variations following Gaussian distribution",
+        "Regular patterns that repeat across the image",
+        "Noise that only affects the brightest pixels",
+        "Noise that increases with shorter exposure times"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Thermal noise results from random thermal motion of electrons in the sensor, increasing with temperature and following a Gaussian distribution pattern.",
+      "optionExplanations": [
+        "Correct. Thermal noise increases with temperature and follows Gaussian distribution due to random electron motion.",
+        "Incorrect. Thermal noise is random, not systematic with regular patterns.",
+        "Incorrect. Thermal noise affects all pixels regardless of their brightness level.",
+        "Incorrect. Thermal noise typically increases with longer exposure times, giving more time for thermal electron accumulation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "thermal-noise",
+        "sensor-noise",
+        "temperature-dependence"
+      ]
+    },
+    {
+      "id": "IFT_066",
+      "question": "What is quantization noise?",
+      "options": [
+        "Error introduced when converting continuous analog signals to discrete digital values",
+        "Noise from mechanical vibrations in the camera",
+        "Noise from electromagnetic interference",
+        "Noise from lens distortions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Quantization noise occurs during analog-to-digital conversion when continuous intensity values are rounded to discrete digital levels, introducing small errors.",
+      "optionExplanations": [
+        "Correct. Quantization noise results from rounding continuous analog values to discrete digital levels during ADC conversion.",
+        "Incorrect. Mechanical vibrations cause motion blur or shake artifacts, not quantization noise.",
+        "Incorrect. Electromagnetic interference can cause various artifacts but isn't quantization noise.",
+        "Incorrect. Lens distortions are geometric aberrations, not quantization noise."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization-noise",
+        "analog-digital-conversion",
+        "digitization-errors"
+      ]
+    },
+    {
+      "id": "IFT_067",
+      "question": "What is the relationship between bit depth and quantization noise?",
+      "options": [
+        "Higher bit depth reduces quantization noise",
+        "Higher bit depth increases quantization noise",
+        "Bit depth has no effect on quantization noise",
+        "Quantization noise only occurs at 8-bit depth"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Higher bit depth provides more discrete levels to represent continuous values, reducing the maximum quantization error and overall quantization noise.",
+      "optionExplanations": [
+        "Correct. Higher bit depth provides more quantization levels, reducing the maximum error between continuous and discrete values.",
+        "Incorrect. More bits mean finer quantization steps, which reduces quantization noise.",
+        "Incorrect. Bit depth directly affects the quantization step size and thus the noise level.",
+        "Incorrect. Quantization noise occurs at any bit depth where continuous values are discretized."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization-noise",
+        "bit-depth",
+        "digitization-quality"
+      ]
+    },
+    {
+      "id": "IFT_068",
+      "question": "What is adaptive filtering?",
+      "options": [
+        "Filtering that changes parameters based on local image characteristics",
+        "Filtering that works only on specific image formats",
+        "Filtering that requires manual parameter adjustment",
+        "Filtering that operates in the frequency domain only"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Adaptive filtering analyzes local image properties (like edges, texture, noise level) and adjusts filter parameters accordingly to optimize performance for different image regions.",
+      "optionExplanations": [
+        "Correct. Adaptive filtering adjusts parameters based on local image characteristics to optimize performance for different regions.",
+        "Incorrect. Adaptive filtering can work with any image format; the adaptation is based on content, not format.",
+        "Incorrect. Adaptive filtering automatically adjusts parameters, reducing the need for manual adjustment.",
+        "Incorrect. Adaptive filtering can operate in spatial or frequency domains; adaptation refers to parameter adjustment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adaptive-filtering",
+        "parameter-adaptation",
+        "local-optimization"
+      ]
+    },
+    {
+      "id": "IFT_069",
+      "question": "What is the Wiener filter designed to optimize?",
+      "options": [
+        "Minimize mean square error between original and filtered signals",
+        "Maximize edge enhancement",
+        "Minimize computational complexity",
+        "Maximize color saturation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Wiener filter is optimal in the mean square error sense, minimizing the expected squared difference between the original signal and the filter output.",
+      "optionExplanations": [
+        "Correct. Wiener filter minimizes the mean square error (MSE) between the desired signal and the filter output.",
+        "Incorrect. Edge enhancement is not the primary goal of Wiener filtering; it focuses on optimal signal restoration.",
+        "Incorrect. While efficient implementations exist, MSE minimization is the primary design criterion, not computational complexity.",
+        "Incorrect. Color saturation is unrelated to Wiener filter optimization criteria."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "wiener-filter",
+        "optimization",
+        "mean-square-error"
+      ]
+    },
+    {
+      "id": "IFT_070",
+      "question": "What information does the Wiener filter require about the signal and noise?",
+      "options": [
+        "Power spectral densities of signal and noise",
+        "Only the signal amplitude",
+        "Only the noise variance",
+        "The physical sensor characteristics"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Wiener filter requires knowledge of both the signal and noise power spectral densities to compute the optimal frequency-domain filter coefficients.",
+      "optionExplanations": [
+        "Correct. Wiener filter needs power spectral densities of both signal and noise to compute optimal filter coefficients.",
+        "Incorrect. Signal amplitude alone is insufficient; spectral characteristics of both signal and noise are needed.",
+        "Incorrect. Noise variance is part of the required information, but signal characteristics are also essential.",
+        "Incorrect. While sensor characteristics may affect noise properties, the filter requires spectral density information."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "wiener-filter",
+        "power-spectral-density",
+        "signal-noise-analysis"
+      ]
+    },
+    {
+      "id": "IFT_071",
+      "question": "What is the main limitation of the Wiener filter?",
+      "options": [
+        "Requires prior knowledge of signal and noise statistics",
+        "Works only on binary images",
+        "Cannot handle color images",
+        "Limited to small kernel sizes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The main limitation is that Wiener filtering requires a priori knowledge of signal and noise power spectral densities, which are often unknown in practice.",
+      "optionExplanations": [
+        "Correct. Wiener filter's main limitation is requiring prior knowledge of signal and noise statistical properties.",
+        "Incorrect. Wiener filters can work on any image type with continuous values.",
+        "Incorrect. Wiener filters can be applied to color images by processing each channel or using vector approaches.",
+        "Incorrect. Kernel size limitations are not inherent to Wiener filtering principles."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "wiener-filter",
+        "limitations",
+        "prior-knowledge"
+      ]
+    },
+    {
+      "id": "IFT_072",
+      "question": "What is the purpose of sharpening filters?",
+      "options": [
+        "Enhance edges and fine details in images",
+        "Remove all types of noise",
+        "Convert images to different color spaces",
+        "Reduce image file size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sharpening filters enhance edges and fine details by emphasizing high-frequency components, making images appear more crisp and defined.",
+      "optionExplanations": [
+        "Correct. Sharpening filters enhance high-frequency components like edges and fine details to improve image clarity.",
+        "Incorrect. Sharpening typically amplifies noise rather than removing it.",
+        "Incorrect. Color space conversion is a separate operation from image sharpening.",
+        "Incorrect. File size reduction involves compression techniques, not sharpening operations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sharpening",
+        "edge-enhancement",
+        "high-frequency"
+      ]
+    },
+    {
+      "id": "IFT_073",
+      "question": "How does unsharp masking create a sharpened image?",
+      "options": [
+        "Adds a scaled version of the high-frequency components to the original",
+        "Removes low-frequency components entirely",
+        "Multiplies the original image by a sharpening kernel",
+        "Applies multiple median filters in sequence"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unsharp masking creates a mask of high-frequency components (original - blurred), then adds a scaled version of this mask back to the original image.",
+      "optionExplanations": [
+        "Correct. Unsharp masking adds scaled high-frequency components (original - blurred) back to the original image.",
+        "Incorrect. Complete removal of low frequencies would destroy the image; unsharp masking preserves them.",
+        "Incorrect. Direct kernel multiplication is convolution; unsharp masking uses a subtraction and addition process.",
+        "Incorrect. Median filters are for noise reduction, not the unsharp masking sharpening process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "unsharp-masking",
+        "high-frequency-enhancement",
+        "sharpening-process"
+      ]
+    },
+    {
+      "id": "IFT_074",
+      "question": "What are the key parameters in unsharp masking?",
+      "options": [
+        "Amount, radius, and threshold",
+        "Kernel size and rotation angle",
+        "Mean and standard deviation",
+        "Frequency and phase"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unsharp masking uses three key parameters: amount (strength of sharpening), radius (size of details to enhance), and threshold (minimum contrast for sharpening).",
+      "optionExplanations": [
+        "Correct. Amount controls sharpening strength, radius controls detail size, and threshold sets minimum contrast for effect application.",
+        "Incorrect. These are general filter parameters, not specific to unsharp masking.",
+        "Incorrect. These are statistical parameters, not unsharp masking control parameters.",
+        "Incorrect. These are frequency domain parameters, not spatial domain unsharp masking parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "unsharp-masking",
+        "parameters",
+        "amount-radius-threshold"
+      ]
+    },
+    {
+      "id": "IFT_075",
+      "question": "What is the risk of over-sharpening an image?",
+      "options": [
+        "Introduction of artifacts and noise amplification",
+        "Complete loss of color information",
+        "Image becomes completely black",
+        "File corruption occurs"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Over-sharpening can introduce halos around edges, amplify noise, and create unnatural-looking artifacts that degrade image quality.",
+      "optionExplanations": [
+        "Correct. Over-sharpening creates artifacts like halos, ringing, and amplifies existing noise in the image.",
+        "Incorrect. Sharpening affects intensity, not color information directly.",
+        "Incorrect. Over-sharpening may create extreme values but doesn't make images completely black.",
+        "Incorrect. Over-sharpening affects visual quality but doesn't corrupt the file format."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "over-sharpening",
+        "artifacts",
+        "noise-amplification"
+      ]
+    },
+    {
+      "id": "IFT_076",
+      "question": "What is a high-boost filter?",
+      "options": [
+        "A weighted combination of original image and high-pass filtered version",
+        "A filter that removes all low frequencies",
+        "A filter that works only on the brightest pixels",
+        "A filter that increases image resolution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "High-boost filtering combines the original image with its high-pass filtered version: Result = A × Original + High-pass, where A > 1 for enhancement.",
+      "optionExplanations": [
+        "Correct. High-boost filter combines original image with high-pass version: A × original + high-pass (where A ≥ 1).",
+        "Incorrect. Complete low-frequency removal would destroy the image; high-boost preserves low frequencies.",
+        "Incorrect. High-boost filtering affects all pixels based on their local contrast, not brightness level.",
+        "Incorrect. Resolution increase involves interpolation techniques, not high-boost filtering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high-boost-filter",
+        "weighted-combination",
+        "enhancement"
+      ]
+    },
+    {
+      "id": "IFT_077",
+      "question": "What is the difference between high-boost and unsharp masking?",
+      "options": [
+        "High-boost uses high-pass filter, unsharp masking uses difference of images",
+        "High-boost works on color images, unsharp masking on grayscale",
+        "High-boost is faster, unsharp masking is more accurate",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "High-boost filtering directly adds a high-pass filtered version, while unsharp masking subtracts a low-pass version (creating the same mathematical result but different conceptual approaches).",
+      "optionExplanations": [
+        "Correct. High-boost adds high-pass results, while unsharp masking adds the difference (original - low-pass), though mathematically equivalent.",
+        "Incorrect. Both techniques can work on any image type.",
+        "Incorrect. Computational efficiency depends on implementation, not the fundamental technique difference.",
+        "Incorrect. While mathematically equivalent, they represent different conceptual approaches to sharpening."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "high-boost-filter",
+        "unsharp-masking",
+        "mathematical-equivalence"
+      ]
+    },
+    {
+      "id": "IFT_078",
+      "question": "What is gradient-based edge detection?",
+      "options": [
+        "Edge detection using first-order derivatives of image intensity",
+        "Edge detection using only color information",
+        "Edge detection using template matching",
+        "Edge detection using frequency domain analysis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gradient-based methods compute first-order derivatives (gradients) of image intensity, where large gradient magnitudes indicate edges.",
+      "optionExplanations": [
+        "Correct. Gradient-based edge detection uses first-order derivatives to find rapid intensity changes indicating edges.",
+        "Incorrect. While color can be used, gradient-based methods fundamentally rely on intensity derivatives.",
+        "Incorrect. Template matching uses correlation with predefined patterns, not gradient computation.",
+        "Incorrect. Frequency domain analysis uses different mathematical foundations than spatial gradients."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-based",
+        "edge-detection",
+        "first-derivatives"
+      ]
+    },
+    {
+      "id": "IFT_079",
+      "question": "What is the gradient magnitude formula for a 2D image?",
+      "options": [
+        "√(Gx² + Gy²)",
+        "Gx + Gy",
+        "Gx × Gy",
+        "|Gx| + |Gy|"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The gradient magnitude is the Euclidean norm of the gradient vector: √(Gx² + Gy²), where Gx and Gy are partial derivatives in x and y directions.",
+      "optionExplanations": [
+        "Correct. Gradient magnitude is the Euclidean norm: √(Gx² + Gy²), representing the vector magnitude.",
+        "Incorrect. Simple addition doesn't properly combine perpendicular gradient components.",
+        "Incorrect. Multiplication doesn't represent the magnitude of the gradient vector.",
+        "Incorrect. This is the Manhattan norm, not the standard Euclidean gradient magnitude."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-magnitude",
+        "euclidean-norm",
+        "mathematical-formula"
+      ]
+    },
+    {
+      "id": "IFT_080",
+      "question": "What is the gradient direction formula?",
+      "options": [
+        "arctan(Gy/Gx)",
+        "arctan(Gx/Gy)",
+        "Gy - Gx",
+        "√(Gx + Gy)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The gradient direction (angle) is computed as arctan(Gy/Gx), representing the angle of the gradient vector from the horizontal axis.",
+      "optionExplanations": [
+        "Correct. Gradient direction is arctan(Gy/Gx), giving the angle of the gradient vector from the x-axis.",
+        "Incorrect. This would give the complementary angle, not the standard gradient direction.",
+        "Incorrect. Subtraction doesn't give angular information about the gradient direction.",
+        "Incorrect. This formula doesn't compute angular direction and includes incorrect operations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-direction",
+        "arctan",
+        "vector-angle"
+      ]
+    },
+    {
+      "id": "IFT_081",
+      "question": "What is compass edge detection?",
+      "options": [
+        "Using multiple directional kernels to detect edges in various orientations",
+        "Detecting edges using magnetic field information",
+        "Edge detection that works only on circular images",
+        "Edge detection using GPS coordinates"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Compass edge detection uses multiple directional kernels (typically 8 directions) to detect edges in various orientations, taking the maximum response as the edge strength.",
+      "optionExplanations": [
+        "Correct. Compass operators use multiple directional kernels to detect edges in various orientations (typically 8 compass directions).",
+        "Incorrect. The term 'compass' refers to directional orientation, not magnetic fields.",
+        "Incorrect. Compass edge detection works on standard rectangular images with directional analysis.",
+        "Incorrect. GPS coordinates are unrelated to image-based compass edge detection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "compass-edge-detection",
+        "directional-kernels",
+        "multiple-orientations"
+      ]
+    },
+    {
+      "id": "IFT_082",
+      "question": "What is the Kirsch operator?",
+      "options": [
+        "A compass edge detector using 8 directional 3×3 kernels",
+        "A noise reduction filter",
+        "A color space conversion algorithm",
+        "A morphological operation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Kirsch operator is a compass edge detector that uses 8 different 3×3 kernels oriented in 45-degree increments to detect edges in all directions.",
+      "optionExplanations": [
+        "Correct. Kirsch operator uses 8 directional 3×3 kernels spaced 45 degrees apart for comprehensive edge detection.",
+        "Incorrect. Kirsch is designed for edge detection, not noise reduction.",
+        "Incorrect. Kirsch operates on intensity values for edge detection, not color space conversion.",
+        "Incorrect. Kirsch is a gradient-based edge detector, not a morphological operation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kirsch-operator",
+        "compass-detection",
+        "directional-kernels"
+      ]
+    },
+    {
+      "id": "IFT_083",
+      "question": "What is Robinson edge detection?",
+      "options": [
+        "Another compass operator similar to Kirsch with different kernel weights",
+        "Edge detection using only vertical gradients",
+        "Edge detection for binary images only",
+        "Edge detection using Fourier transforms"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Robinson is another compass edge detector that uses 8 directional kernels like Kirsch, but with different weight distributions in the kernel elements.",
+      "optionExplanations": [
+        "Correct. Robinson is a compass edge detector using 8 directional kernels with different weights than Kirsch.",
+        "Incorrect. Robinson uses multiple directions like other compass operators, not just vertical gradients.",
+        "Incorrect. Robinson works on grayscale images with continuous values, not just binary images.",
+        "Incorrect. Robinson operates in the spatial domain with kernels, not using Fourier transforms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "robinson-operator",
+        "compass-detection",
+        "kernel-variations"
+      ]
+    },
+    {
+      "id": "IFT_084",
+      "question": "What is the main advantage of compass operators over simple gradient operators?",
+      "options": [
+        "Better detection of edges in all orientations",
+        "Faster computational speed",
+        "Lower memory requirements",
+        "Better noise reduction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Compass operators use multiple directional kernels to detect edges regardless of their orientation, providing more comprehensive edge detection than simple horizontal/vertical gradient operators.",
+      "optionExplanations": [
+        "Correct. Compass operators detect edges in multiple orientations (typically 8 directions) for comprehensive edge detection.",
+        "Incorrect. Multiple kernel applications typically require more computation than simple gradient operators.",
+        "Incorrect. Storing multiple kernels typically requires more memory than simple gradient operators.",
+        "Incorrect. Compass operators focus on directional edge detection rather than noise reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "compass-operators",
+        "multi-directional",
+        "advantages"
+      ]
+    },
+    {
+      "id": "IFT_085",
+      "question": "What is line detection in image processing?",
+      "options": [
+        "Detecting continuous linear features in images",
+        "Converting images to line drawings",
+        "Measuring the length of objects",
+        "Detecting only horizontal lines"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Line detection identifies continuous linear features in images, such as roads, wires, or architectural elements, often using specialized kernels or template matching.",
+      "optionExplanations": [
+        "Correct. Line detection identifies continuous linear features like roads, wires, or architectural elements in images.",
+        "Incorrect. Converting to line drawings is artistic rendering, not line feature detection.",
+        "Incorrect. Length measurement is a separate geometric analysis task, not line detection.",
+        "Incorrect. Line detection can identify lines in any orientation, not just horizontal ones."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "line-detection",
+        "linear-features",
+        "feature-extraction"
+      ]
+    },
+    {
+      "id": "IFT_086",
+      "question": "What type of kernels are used for line detection?",
+      "options": [
+        "Elongated kernels matching the expected line orientation",
+        "Circular kernels only",
+        "Random noise kernels",
+        "Color-specific kernels"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Line detection uses elongated kernels oriented in the direction of expected lines, with positive weights along the line and negative weights on the sides.",
+      "optionExplanations": [
+        "Correct. Line detection kernels are elongated in the line direction with positive weights along the line and negative on sides.",
+        "Incorrect. Circular kernels don't capture the directional nature of linear features.",
+        "Incorrect. Random kernels wouldn't systematically detect linear patterns.",
+        "Incorrect. Line detection is based on spatial patterns, not color-specific features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "line-detection",
+        "elongated-kernels",
+        "directional-filters"
+      ]
+    },
+    {
+      "id": "IFT_087",
+      "question": "What is the Hough transform used for?",
+      "options": [
+        "Detecting parametric shapes like lines and circles",
+        "Color space conversion",
+        "Noise reduction",
+        "Image compression"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Hough transform detects parametric shapes (lines, circles, ellipses) by transforming points in image space to parameter space and finding peaks in the accumulator array.",
+      "optionExplanations": [
+        "Correct. Hough transform detects parametric shapes by mapping image points to parameter space and finding accumulator peaks.",
+        "Incorrect. Color space conversion involves different mathematical transformations than Hough.",
+        "Incorrect. Hough transform is for shape detection, not noise reduction.",
+        "Incorrect. Image compression uses different techniques than Hough transform for shape detection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hough-transform",
+        "parametric-shapes",
+        "line-detection"
+      ]
+    },
+    {
+      "id": "IFT_088",
+      "question": "What is the parameter space in Hough line detection?",
+      "options": [
+        "Rho-theta space representing line distance and angle",
+        "X-Y coordinate space",
+        "RGB color space",
+        "Frequency domain space"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hough line detection uses rho-theta parameter space, where rho is the perpendicular distance from origin to the line, and theta is the angle of the perpendicular.",
+      "optionExplanations": [
+        "Correct. Hough line detection uses (ρ, θ) space where ρ is distance from origin and θ is the perpendicular angle.",
+        "Incorrect. X-Y space is the image space, not the parameter space used in Hough transform.",
+        "Incorrect. RGB is for color representation, not relevant to Hough line detection parameters.",
+        "Incorrect. Frequency domain is used in Fourier analysis, not Hough transform parameter space."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hough-transform",
+        "rho-theta-space",
+        "parameter-space"
+      ]
+    },
+    {
+      "id": "IFT_089",
+      "question": "What is template matching in image filtering?",
+      "options": [
+        "Finding locations where a template pattern matches the image",
+        "Converting image formats",
+        "Adjusting image brightness",
+        "Removing specific colors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Template matching searches for locations in an image that match a predefined template pattern, typically using correlation or normalized cross-correlation.",
+      "optionExplanations": [
+        "Correct. Template matching locates regions in images that match a predefined template pattern using correlation methods.",
+        "Incorrect. Format conversion involves changing file formats, not pattern matching.",
+        "Incorrect. Brightness adjustment is tone mapping, not template matching.",
+        "Incorrect. Color removal is color processing, not template-based pattern matching."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "template-matching",
+        "pattern-recognition",
+        "correlation"
+      ]
+    },
+    {
+      "id": "IFT_090",
+      "question": "What is normalized cross-correlation used for?",
+      "options": [
+        "Template matching that is robust to illumination changes",
+        "Edge detection in noisy images",
+        "Color correction",
+        "Image resizing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Normalized cross-correlation (NCC) provides template matching that is less sensitive to illumination changes by normalizing the correlation values to the range [-1, 1].",
+      "optionExplanations": [
+        "Correct. NCC normalizes correlation values, making template matching more robust to illumination variations.",
+        "Incorrect. While correlation can be used in edge detection, NCC is primarily for robust template matching.",
+        "Incorrect. Color correction involves different techniques than normalized cross-correlation.",
+        "Incorrect. Image resizing uses interpolation methods, not normalized cross-correlation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalized-cross-correlation",
+        "illumination-robustness",
+        "template-matching"
+      ]
+    },
+    {
+      "id": "IFT_091",
+      "question": "What is the range of normalized cross-correlation values?",
+      "options": [
+        "-1 to +1",
+        "0 to 1",
+        "0 to 255",
+        "-255 to +255"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Normalized cross-correlation values range from -1 (perfect negative correlation) through 0 (no correlation) to +1 (perfect positive correlation).",
+      "optionExplanations": [
+        "Correct. NCC values range from -1 (perfect negative match) to +1 (perfect positive match), with 0 indicating no correlation.",
+        "Incorrect. This range (0 to 1) applies to some normalized measures but not standard cross-correlation.",
+        "Incorrect. This range applies to 8-bit pixel values, not correlation coefficients.",
+        "Incorrect. This range is too large and doesn't reflect the normalized nature of the correlation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalized-cross-correlation",
+        "correlation-range",
+        "values"
+      ]
+    },
+    {
+      "id": "IFT_092",
+      "question": "What is the main limitation of template matching?",
+      "options": [
+        "Sensitivity to scale and rotation changes",
+        "Works only on binary images",
+        "Requires color images",
+        "Cannot handle rectangular templates"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Template matching is sensitive to scale and rotation changes - the template must match the target object's size and orientation exactly for successful detection.",
+      "optionExplanations": [
+        "Correct. Template matching requires exact scale and orientation match, failing when objects are rotated or scaled differently.",
+        "Incorrect. Template matching works on grayscale and color images, not just binary images.",
+        "Incorrect. Template matching can work on grayscale images and doesn't require color information.",
+        "Incorrect. Templates can be any shape, including rectangular, circular, or irregular patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "template-matching",
+        "limitations",
+        "scale-rotation-sensitivity"
+      ]
+    },
+    {
+      "id": "IFT_093",
+      "question": "What is multi-scale template matching?",
+      "options": [
+        "Template matching performed at multiple image scales",
+        "Using multiple templates simultaneously",
+        "Template matching with color information",
+        "Template matching in the frequency domain"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multi-scale template matching performs template matching at multiple scales (image resolutions) to detect objects of different sizes in the image.",
+      "optionExplanations": [
+        "Correct. Multi-scale matching tests the template at various image scales to detect objects of different sizes.",
+        "Incorrect. While multiple templates can be used, multi-scale specifically refers to scale variations.",
+        "Incorrect. Color information usage is separate from the multi-scale concept.",
+        "Incorrect. Frequency domain matching is a different approach than multi-scale spatial matching."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-scale",
+        "template-matching",
+        "scale-invariance"
+      ]
+    },
+    {
+      "id": "IFT_094",
+      "question": "What is non-linear filtering?",
+      "options": [
+        "Filtering operations that don't follow the superposition principle",
+        "Filtering that works only on curved lines",
+        "Filtering that changes image geometry",
+        "Filtering that removes linear features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Non-linear filtering includes operations where the output is not a linear combination of inputs, such as median filtering, morphological operations, and min/max filters.",
+      "optionExplanations": [
+        "Correct. Non-linear filters don't satisfy superposition: f(a+b) ≠ f(a) + f(b), including median, min/max, and morphological filters.",
+        "Incorrect. The term relates to mathematical linearity properties, not geometric curve processing.",
+        "Incorrect. Geometric transformations are separate from filtering linearity properties.",
+        "Incorrect. Non-linear filtering affects various image features, not specifically targeting linear features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "non-linear-filtering",
+        "superposition-principle",
+        "mathematical-properties"
+      ]
+    },
+    {
+      "id": "IFT_095",
+      "question": "What is rank-order filtering?",
+      "options": [
+        "Filtering based on ordering pixel values in the neighborhood",
+        "Filtering pixels in order of their coordinates",
+        "Filtering based on pixel color ranking",
+        "Filtering in order of processing time"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rank-order filtering sorts neighborhood pixel values and selects a value based on its rank (position) in the sorted list, including median, min, max filters.",
+      "optionExplanations": [
+        "Correct. Rank-order filters sort neighborhood values and select based on rank (median=middle, min=first, max=last).",
+        "Incorrect. Coordinate order relates to processing sequence, not the rank-order filtering principle.",
+        "Incorrect. Color ranking could be involved, but rank-order typically refers to intensity value ordering.",
+        "Incorrect. Processing time order is implementation-related, not the mathematical basis of rank-order filtering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "rank-order-filtering",
+        "value-sorting",
+        "neighborhood-ranking"
+      ]
+    },
+    {
+      "id": "IFT_096",
+      "question": "What are some examples of rank-order filters?",
+      "options": [
+        "Median, minimum, maximum, and percentile filters",
+        "Gaussian, Sobel, and Laplacian filters",
+        "RGB, HSV, and LAB filters",
+        "JPEG, PNG, and TIFF filters"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rank-order filters include median (50th percentile), minimum (0th percentile), maximum (100th percentile), and other percentile-based filters.",
+      "optionExplanations": [
+        "Correct. Median, min, max, and percentile filters are all rank-order filters based on sorting neighborhood values.",
+        "Incorrect. These are linear convolution-based filters, not rank-order filters.",
+        "Incorrect. These are color spaces, not filtering operations.",
+        "Incorrect. These are image file formats, not filtering algorithms."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "rank-order-filters",
+        "median-min-max",
+        "percentile-filters"
+      ]
+    },
+    {
+      "id": "IFT_097",
+      "question": "What is the alpha-trimmed mean filter?",
+      "options": [
+        "Average of neighborhood values after removing the highest and lowest values",
+        "Median of the neighborhood values",
+        "Maximum value in the neighborhood",
+        "Weighted average based on distance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Alpha-trimmed mean removes a fraction (alpha) of the highest and lowest values from the neighborhood, then computes the mean of the remaining values.",
+      "optionExplanations": [
+        "Correct. Alpha-trimmed mean removes extreme values (α fraction from each end) then averages the remaining values.",
+        "Incorrect. This describes a median filter, not alpha-trimmed mean.",
+        "Incorrect. This describes a maximum filter, not alpha-trimmed mean.",
+        "Incorrect. Weighted averaging by distance describes spatial filters like Gaussian, not alpha-trimmed mean."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "alpha-trimmed-mean",
+        "robust-averaging",
+        "outlier-removal"
+      ]
+    },
+    {
+      "id": "IFT_098",
+      "question": "What advantage does alpha-trimmed mean have over regular mean filtering?",
+      "options": [
+        "More robust to outliers and impulsive noise",
+        "Faster computational speed",
+        "Better edge enhancement",
+        "Lower memory requirements"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Alpha-trimmed mean is more robust to outliers because it removes extreme values before averaging, reducing the influence of noise spikes on the result.",
+      "optionExplanations": [
+        "Correct. By removing extreme values, alpha-trimmed mean is less affected by outliers and impulsive noise than regular mean filtering.",
+        "Incorrect. Alpha-trimmed mean requires sorting and trimming operations, typically making it slower than simple mean filtering.",
+        "Incorrect. Alpha-trimmed mean is for noise reduction and robustness, not edge enhancement.",
+        "Incorrect. The sorting and trimming process may actually require more memory than simple mean filtering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "alpha-trimmed-mean",
+        "outlier-robustness",
+        "impulsive-noise"
+      ]
+    },
+    {
+      "id": "IFT_099",
+      "question": "What is adaptive median filtering?",
+      "options": [
+        "Median filtering that adjusts window size based on local image characteristics",
+        "Median filtering applied only to edge pixels",
+        "Median filtering with color-dependent parameters",
+        "Median filtering in the frequency domain"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Adaptive median filtering adjusts the filter window size dynamically based on local noise characteristics and image structure to optimize noise reduction while preserving details.",
+      "optionExplanations": [
+        "Correct. Adaptive median filtering changes window size based on local characteristics to optimize noise removal and detail preservation.",
+        "Incorrect. Adaptive median can be applied to any pixel, with adaptation based on local properties rather than edge detection.",
+        "Incorrect. While color information could be considered, adaptation typically focuses on noise characteristics and structure.",
+        "Incorrect. Median filtering is inherently a spatial domain operation, not frequency domain."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adaptive-median",
+        "window-size-adaptation",
+        "local-characteristics"
+      ]
+    },
+    {
+      "id": "IFT_100",
+      "question": "What criteria does adaptive median filtering use to adjust the window size?",
+      "options": [
+        "Local noise level and preservation of image details",
+        "Only the computational speed requirements",
+        "Only the available memory capacity",
+        "Random selection for variety"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Adaptive median filtering analyzes local noise characteristics and image structure to determine optimal window size - larger windows for noisier regions, smaller windows to preserve fine details.",
+      "optionExplanations": [
+        "Correct. Adaptive median considers local noise levels and detail preservation needs to determine optimal window size for each region.",
+        "Incorrect. While speed is a practical consideration, the adaptation criteria are based on image characteristics, not computational constraints.",
+        "Incorrect. Memory capacity is a system limitation, not the basis for adaptive window size selection.",
+        "Incorrect. Random selection would not provide the intelligent adaptation that makes the filter effective."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adaptive-median",
+        "noise-analysis",
+        "detail-preservation"
+      ]
+    }
+  ]
+}

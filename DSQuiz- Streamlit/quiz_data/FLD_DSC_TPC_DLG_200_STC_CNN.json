@@ -1,0 +1,2418 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_DLG",
+  "topicName": "Deep Learning",
+  "subtopicId": "STC_CNN",
+  "subtopicName": "Convolutional Neural Networks",
+  "str": 0.200,
+  "description": "Comprehensive questions covering convolutional neural networks, including convolution operations, pooling layers, filters, feature maps, and popular architectures like LeNet, AlexNet, and VGG.",
+  "questions": [
+    {
+      "id": "CNN_001",
+      "question": "What is the primary purpose of a convolutional layer in a CNN?",
+      "options": [
+        "To detect local features and patterns in the input data",
+        "To reduce the dimensionality of the input",
+        "To classify the final output",
+        "To normalize the input values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The convolutional layer applies filters to detect local features and patterns such as edges, corners, and textures in the input data through convolution operations.",
+      "optionExplanations": [
+        "Correct. Convolutional layers use filters to detect local features and patterns by sliding kernels across the input to identify edges, textures, and other spatial features.",
+        "Incorrect. While convolution can affect dimensions, the primary purpose is feature detection. Dimensionality reduction is typically handled by pooling layers.",
+        "Incorrect. Classification is handled by fully connected layers at the end of the network, not by convolutional layers.",
+        "Incorrect. Normalization is typically done by batch normalization layers or other normalization techniques, not by convolutional layers."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "convolution",
+        "feature-detection",
+        "basics"
+      ]
+    },
+    {
+      "id": "CNN_002",
+      "question": "In a convolution operation, if the input size is 32×32 and the filter size is 5×5 with stride 1 and no padding, what is the output size?",
+      "options": [
+        "28×28",
+        "32×32",
+        "27×27",
+        "30×30"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Output size = (Input size - Filter size + 2×Padding) / Stride + 1 = (32 - 5 + 0) / 1 + 1 = 28×28",
+      "optionExplanations": [
+        "Correct. Using the formula: (32 - 5 + 0) / 1 + 1 = 28. The output dimensions are 28×28.",
+        "Incorrect. This would be the case if padding were used to maintain the same size, but no padding is specified.",
+        "Incorrect. This calculation doesn't follow the correct convolution output size formula.",
+        "Incorrect. This doesn't account for the proper filter size reduction in the convolution operation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "convolution",
+        "output-size",
+        "calculation"
+      ]
+    },
+    {
+      "id": "CNN_003",
+      "question": "What is the main advantage of using pooling layers in CNNs?",
+      "options": [
+        "To increase the number of parameters",
+        "To reduce spatial dimensions and computational complexity",
+        "To add non-linearity to the network",
+        "To normalize the feature maps"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pooling layers downsample feature maps, reducing spatial dimensions which decreases computational complexity and helps achieve translation invariance.",
+      "optionExplanations": [
+        "Incorrect. Pooling layers actually reduce parameters by downsampling, they don't increase the parameter count.",
+        "Correct. Pooling reduces spatial dimensions through downsampling, which decreases computational load and memory requirements while providing translation invariance.",
+        "Incorrect. Non-linearity is added through activation functions like ReLU, not through pooling operations.",
+        "Incorrect. Normalization is handled by techniques like batch normalization, not by pooling layers."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pooling",
+        "dimensionality-reduction",
+        "basics"
+      ]
+    },
+    {
+      "id": "CNN_004",
+      "question": "Which pooling operation takes the maximum value from a region?",
+      "options": [
+        "Average pooling",
+        "Max pooling",
+        "Global pooling",
+        "Adaptive pooling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Max pooling selects the maximum value from each pooling window, helping preserve the most prominent features.",
+      "optionExplanations": [
+        "Incorrect. Average pooling computes the mean of values in the pooling window, not the maximum.",
+        "Correct. Max pooling specifically selects the maximum value from each pooling region, preserving the strongest activations.",
+        "Incorrect. Global pooling refers to pooling over the entire feature map, but doesn't specify whether it uses max or average.",
+        "Incorrect. Adaptive pooling adjusts the pooling operation based on desired output size, but doesn't specify the aggregation method."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pooling",
+        "max-pooling",
+        "operations"
+      ]
+    },
+    {
+      "id": "CNN_005",
+      "question": "What does a filter (kernel) represent in a convolutional layer?",
+      "options": [
+        "A learned feature detector",
+        "A normalization parameter",
+        "A pooling operation",
+        "An activation function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Filters are learned parameters that act as feature detectors, each specialized to detect specific patterns like edges, textures, or shapes.",
+      "optionExplanations": [
+        "Correct. Filters are learned weights that detect specific features or patterns in the input data through convolution operations.",
+        "Incorrect. Normalization is handled by separate parameters in normalization layers, not by convolutional filters.",
+        "Incorrect. Pooling operations are separate layers with their own mechanisms, not represented by filters.",
+        "Incorrect. Activation functions are separate components that apply non-linearity, not represented by convolutional filters."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "filters",
+        "feature-detection",
+        "kernels"
+      ]
+    },
+    {
+      "id": "CNN_006",
+      "question": "In LeNet-5, how many convolutional layers are there?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LeNet-5 has two convolutional layers: C1 and C3, alternating with subsampling (pooling) layers S2 and S4.",
+      "optionExplanations": [
+        "Incorrect. LeNet-5 has more than one convolutional layer in its architecture.",
+        "Correct. LeNet-5 contains exactly two convolutional layers (C1 and C3) in its classical architecture.",
+        "Incorrect. This exceeds the number of convolutional layers in the original LeNet-5 architecture.",
+        "Incorrect. LeNet-5 doesn't have four convolutional layers in its standard configuration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LeNet",
+        "architecture",
+        "history"
+      ]
+    },
+    {
+      "id": "CNN_007",
+      "question": "What innovation did AlexNet introduce that significantly improved CNN performance?",
+      "options": [
+        "Batch normalization",
+        "ReLU activation function and dropout",
+        "Residual connections",
+        "Attention mechanisms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AlexNet popularized the use of ReLU activation instead of tanh/sigmoid and introduced dropout for regularization, leading to breakthrough performance.",
+      "optionExplanations": [
+        "Incorrect. Batch normalization was introduced later in subsequent architectures, not in AlexNet.",
+        "Correct. AlexNet's key innovations were using ReLU activations (faster training than sigmoid/tanh) and dropout for regularization.",
+        "Incorrect. Residual connections were introduced much later in ResNet, not in AlexNet.",
+        "Incorrect. Attention mechanisms were developed later for different types of neural networks, not introduced in AlexNet."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AlexNet",
+        "ReLU",
+        "dropout",
+        "innovations"
+      ]
+    },
+    {
+      "id": "CNN_008",
+      "question": "What is the main characteristic of VGG networks?",
+      "options": [
+        "Use of very large filters (11×11)",
+        "Use of small filters (3×3) in deep networks",
+        "Skip connections between layers",
+        "Inception modules"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "VGG networks are characterized by using small 3×3 filters consistently throughout very deep networks (16-19 layers).",
+      "optionExplanations": [
+        "Incorrect. Large 11×11 filters were used in AlexNet, not VGG. VGG uses consistently small filters.",
+        "Correct. VGG's key innovation was using small 3×3 filters throughout the entire network while making it very deep.",
+        "Incorrect. Skip connections are the hallmark of ResNet architectures, not VGG networks.",
+        "Incorrect. Inception modules are specific to GoogLeNet/Inception architectures, not VGG."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "VGG",
+        "architecture",
+        "small-filters"
+      ]
+    },
+    {
+      "id": "CNN_009",
+      "question": "What is padding used for in convolutional layers?",
+      "options": [
+        "To increase the number of parameters",
+        "To preserve spatial dimensions of the input",
+        "To add noise to the input",
+        "To normalize the input values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Padding adds zeros around the input borders to maintain spatial dimensions after convolution and ensure border pixels are processed adequately.",
+      "optionExplanations": [
+        "Incorrect. Padding doesn't change the number of learnable parameters in the filters.",
+        "Correct. Padding helps preserve input dimensions and ensures that border information is not lost during convolution.",
+        "Incorrect. Padding adds zeros systematically, not random noise, and serves a structural purpose.",
+        "Incorrect. Normalization is a separate process handled by normalization layers, not by padding."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "padding",
+        "spatial-dimensions",
+        "convolution"
+      ]
+    },
+    {
+      "id": "CNN_010",
+      "question": "What is stride in the context of convolution operations?",
+      "options": [
+        "The size of the filter",
+        "The number of filters used",
+        "The step size by which the filter moves across the input",
+        "The depth of the network"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Stride determines how many pixels the filter moves at each step during convolution, affecting the output size.",
+      "optionExplanations": [
+        "Incorrect. Filter size refers to the dimensions of the kernel (e.g., 3×3), not the stride.",
+        "Incorrect. The number of filters determines the depth of the output feature maps, not related to stride.",
+        "Correct. Stride is the step size that determines how the filter moves across the input during convolution.",
+        "Incorrect. Network depth refers to the number of layers, which is unrelated to stride in convolution operations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "stride",
+        "convolution",
+        "basics"
+      ]
+    },
+    {
+      "id": "CNN_011",
+      "question": "What happens when you use a stride of 2 in a convolutional layer?",
+      "options": [
+        "The output size doubles",
+        "The output size is halved",
+        "The number of parameters doubles",
+        "The computation time doubles"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A stride of 2 means the filter moves 2 pixels at a time, effectively downsampling and reducing the output size by approximately half.",
+      "optionExplanations": [
+        "Incorrect. Larger stride reduces output size, it doesn't increase it.",
+        "Correct. Stride of 2 causes the filter to skip pixels, reducing the output dimensions by approximately half.",
+        "Incorrect. Stride doesn't affect the number of parameters in the filters themselves.",
+        "Incorrect. Larger stride typically reduces computation time due to fewer operations on smaller output."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stride",
+        "downsampling",
+        "output-size"
+      ]
+    },
+    {
+      "id": "CNN_012",
+      "question": "In a CNN, what is a feature map?",
+      "options": [
+        "The original input image",
+        "The output of applying a filter to the input",
+        "The weights of the network",
+        "The loss function values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A feature map is the output produced when a filter is convolved with the input, representing detected features at different spatial locations.",
+      "optionExplanations": [
+        "Incorrect. The original input image is just the raw input data, not a feature map generated by the network.",
+        "Correct. A feature map is the result of convolving a filter with the input, showing where certain features are detected.",
+        "Incorrect. Network weights are the learned parameters, not the output feature maps.",
+        "Incorrect. Loss function values measure training error, not spatial feature representations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-maps",
+        "convolution",
+        "output"
+      ]
+    },
+    {
+      "id": "CNN_013",
+      "question": "Why are multiple filters used in a single convolutional layer?",
+      "options": [
+        "To increase computational complexity",
+        "To detect different types of features",
+        "To reduce overfitting",
+        "To normalize the outputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multiple filters allow the layer to detect various features simultaneously, with each filter specializing in different patterns or features.",
+      "optionExplanations": [
+        "Incorrect. While multiple filters do increase computation, this is not the primary purpose.",
+        "Correct. Each filter learns to detect different features (edges, textures, shapes), providing rich feature representation.",
+        "Incorrect. Overfitting reduction is typically handled by regularization techniques like dropout, not by using multiple filters.",
+        "Incorrect. Output normalization is handled by normalization layers, not by using multiple filters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multiple-filters",
+        "feature-detection",
+        "diversity"
+      ]
+    },
+    {
+      "id": "CNN_014",
+      "question": "What is the receptive field in a CNN?",
+      "options": [
+        "The size of the input image",
+        "The region of input that influences a particular output neuron",
+        "The size of the filter",
+        "The number of layers in the network"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The receptive field is the region of the input that affects a specific neuron's output, growing larger as you go deeper in the network.",
+      "optionExplanations": [
+        "Incorrect. Input image size is fixed and different from the receptive field concept.",
+        "Correct. The receptive field defines which input pixels influence a particular output neuron's activation.",
+        "Incorrect. Filter size is just one component; receptive field encompasses the cumulative effect across layers.",
+        "Incorrect. Network depth affects receptive field size but is not the receptive field itself."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "receptive-field",
+        "influence",
+        "spatial-extent"
+      ]
+    },
+    {
+      "id": "CNN_015",
+      "question": "Which activation function was commonly used before ReLU in early CNNs?",
+      "options": [
+        "Sigmoid",
+        "Tanh",
+        "Both sigmoid and tanh",
+        "Leaky ReLU"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Both sigmoid and tanh were commonly used before ReLU, but they suffered from vanishing gradient problems in deep networks.",
+      "optionExplanations": [
+        "Partially correct but incomplete. Sigmoid was used, but tanh was also common in early CNNs.",
+        "Partially correct but incomplete. Tanh was used, but sigmoid was also common in early CNNs.",
+        "Correct. Both sigmoid and tanh activation functions were widely used in early CNN architectures before ReLU became popular.",
+        "Incorrect. Leaky ReLU came after ReLU as an improvement, not before it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "activation-functions",
+        "history",
+        "sigmoid",
+        "tanh"
+      ]
+    },
+    {
+      "id": "CNN_016",
+      "question": "What problem does ReLU solve compared to sigmoid and tanh?",
+      "options": [
+        "Computational complexity",
+        "Vanishing gradient problem",
+        "Overfitting",
+        "Memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ReLU helps mitigate the vanishing gradient problem because its gradient is either 0 or 1, allowing better gradient flow in deep networks.",
+      "optionExplanations": [
+        "Incorrect. While ReLU is computationally simpler, the main advantage is addressing gradient flow issues.",
+        "Correct. ReLU's non-saturating nature helps gradients flow better through deep networks, solving the vanishing gradient problem.",
+        "Incorrect. Overfitting is typically addressed by regularization techniques, not activation function choice.",
+        "Incorrect. Memory usage is not significantly affected by the choice between these activation functions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ReLU",
+        "vanishing-gradients",
+        "activation-functions"
+      ]
+    },
+    {
+      "id": "CNN_017",
+      "question": "In which year was LeNet-5 introduced?",
+      "options": [
+        "1989",
+        "1998",
+        "2006",
+        "2012"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LeNet-5 was introduced by Yann LeCun et al. in 1998 for handwritten digit recognition.",
+      "optionExplanations": [
+        "Incorrect. This is too early; LeNet-5 was developed later in the 1990s.",
+        "Correct. LeNet-5 was published in 1998 and became a foundational CNN architecture.",
+        "Incorrect. This is the year of the ImageNet dataset creation, not LeNet-5.",
+        "Incorrect. This is when AlexNet was introduced, much later than LeNet-5."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LeNet",
+        "history",
+        "timeline"
+      ]
+    },
+    {
+      "id": "CNN_018",
+      "question": "What dataset did AlexNet win on to demonstrate CNN effectiveness?",
+      "options": [
+        "MNIST",
+        "CIFAR-10",
+        "ImageNet ILSVRC-2012",
+        "Pascal VOC"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "AlexNet won the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) in 2012, achieving breakthrough performance.",
+      "optionExplanations": [
+        "Incorrect. MNIST was used for earlier networks like LeNet-5, not AlexNet's breakthrough achievement.",
+        "Incorrect. CIFAR-10 is a smaller dataset; AlexNet's fame came from the much larger ImageNet challenge.",
+        "Correct. AlexNet's victory in ImageNet ILSVRC-2012 marked the beginning of the deep learning revolution in computer vision.",
+        "Incorrect. Pascal VOC is used for object detection tasks, not the classification challenge that made AlexNet famous."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AlexNet",
+        "ImageNet",
+        "competition"
+      ]
+    },
+    {
+      "id": "CNN_019",
+      "question": "How many layers does VGG-16 have?",
+      "options": [
+        "13 convolutional + 3 fully connected = 16",
+        "16 convolutional layers",
+        "19 layers total",
+        "16 layers including pooling"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "VGG-16 has 13 convolutional layers and 3 fully connected layers, totaling 16 layers with learnable parameters.",
+      "optionExplanations": [
+        "Correct. VGG-16 consists of 13 convolutional layers plus 3 fully connected layers, totaling 16 trainable layers.",
+        "Incorrect. VGG-16 doesn't have 16 convolutional layers; it has 13 convolutional plus 3 fully connected.",
+        "Incorrect. 19 layers refers to VGG-19, not VGG-16.",
+        "Incorrect. Pooling layers don't have learnable parameters and aren't counted in the layer naming convention."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "VGG-16",
+        "architecture",
+        "layer-count"
+      ]
+    },
+    {
+      "id": "CNN_020",
+      "question": "What is the main difference between 'valid' and 'same' padding?",
+      "options": [
+        "'Valid' uses zeros, 'same' uses ones",
+        "'Valid' means no padding, 'same' preserves input size",
+        "'Valid' is for training, 'same' is for testing",
+        "'Valid' uses more memory than 'same'"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "'Valid' padding means no padding is applied, while 'same' padding adds enough padding to keep the output size equal to the input size.",
+      "optionExplanations": [
+        "Incorrect. Both padding types use zeros when padding is applied; the difference is in the amount of padding.",
+        "Correct. 'Valid' uses no padding (output shrinks), while 'same' adds padding to maintain input dimensions.",
+        "Incorrect. Both padding types can be used during training and testing; the choice depends on desired output size.",
+        "Incorrect. Memory usage depends on the resulting tensor sizes, not the padding type itself."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "padding",
+        "valid",
+        "same",
+        "dimensions"
+      ]
+    },
+    {
+      "id": "CNN_021",
+      "question": "What is the purpose of global average pooling?",
+      "options": [
+        "To replace fully connected layers",
+        "To increase model parameters",
+        "To add non-linearity",
+        "To normalize feature maps"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Global average pooling averages each feature map to a single value, effectively replacing fully connected layers and reducing parameters.",
+      "optionExplanations": [
+        "Correct. Global average pooling reduces each feature map to a single value, eliminating the need for fully connected layers.",
+        "Incorrect. Global average pooling actually reduces parameters by eliminating fully connected layers.",
+        "Incorrect. Non-linearity is added by activation functions, not by pooling operations.",
+        "Incorrect. While it does create a form of averaging, its primary purpose is architectural, not normalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "global-average-pooling",
+        "fully-connected",
+        "parameters"
+      ]
+    },
+    {
+      "id": "CNN_022",
+      "question": "In a CNN, what causes the vanishing gradient problem?",
+      "options": [
+        "Too few parameters",
+        "Gradient becomes very small in deep networks",
+        "Learning rate is too high",
+        "Batch size is too large"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As gradients backpropagate through many layers, they can become exponentially smaller, making it difficult for early layers to learn.",
+      "optionExplanations": [
+        "Incorrect. Parameter count doesn't directly cause vanishing gradients; it's about gradient magnitude through layers.",
+        "Correct. Gradients can become exponentially small when backpropagating through many layers, especially with saturating activations.",
+        "Incorrect. High learning rate typically causes exploding gradients or instability, not vanishing gradients.",
+        "Incorrect. Batch size affects training dynamics but doesn't directly cause vanishing gradients."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "vanishing-gradients",
+        "deep-networks",
+        "backpropagation"
+      ]
+    },
+    {
+      "id": "CNN_023",
+      "question": "What is the kernel size in a typical convolutional operation?",
+      "options": [
+        "The size of the input image",
+        "The size of the filter/weight matrix",
+        "The size of the output feature map",
+        "The number of channels"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Kernel size refers to the spatial dimensions of the filter (e.g., 3×3, 5×5) that slides over the input during convolution.",
+      "optionExplanations": [
+        "Incorrect. Input image size is much larger and different from the small kernel that slides over it.",
+        "Correct. Kernel size refers to the spatial dimensions of the filter matrix used in convolution (e.g., 3×3).",
+        "Incorrect. Output feature map size depends on kernel size, stride, and padding, but isn't the kernel size itself.",
+        "Incorrect. Number of channels affects kernel depth, but kernel size specifically refers to spatial dimensions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "kernel-size",
+        "filter",
+        "spatial-dimensions"
+      ]
+    },
+    {
+      "id": "CNN_024",
+      "question": "What is translation invariance in CNNs?",
+      "options": [
+        "The ability to process images of different sizes",
+        "The ability to recognize features regardless of their position",
+        "The ability to translate between languages",
+        "The ability to rotate images"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Translation invariance means the network can recognize the same feature whether it appears in different locations within the input.",
+      "optionExplanations": [
+        "Incorrect. Processing different image sizes relates to scale invariance, not translation invariance.",
+        "Correct. Translation invariance allows the network to detect the same features regardless of where they appear in the image.",
+        "Incorrect. This refers to language translation, which is unrelated to spatial translation in images.",
+        "Incorrect. Image rotation relates to rotation invariance, which is different from translation invariance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "translation-invariance",
+        "feature-detection",
+        "position"
+      ]
+    },
+    {
+      "id": "CNN_025",
+      "question": "Which operation in CNNs helps achieve translation invariance?",
+      "options": [
+        "Convolution",
+        "Pooling",
+        "Batch normalization",
+        "Dropout"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pooling operations, especially max pooling, provide some translation invariance by selecting the strongest response in a region.",
+      "optionExplanations": [
+        "Incorrect. While convolution detects features at different positions, pooling is more directly responsible for translation invariance.",
+        "Correct. Pooling provides translation invariance by aggregating responses over spatial regions, making the output less sensitive to exact positions.",
+        "Incorrect. Batch normalization helps with training stability and internal covariate shift, not translation invariance.",
+        "Incorrect. Dropout is a regularization technique to prevent overfitting, not related to translation invariance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pooling",
+        "translation-invariance",
+        "spatial-invariance"
+      ]
+    },
+    {
+      "id": "CNN_026",
+      "question": "What is the depth of a feature map determined by?",
+      "options": [
+        "The size of the input image",
+        "The number of filters in the convolutional layer",
+        "The stride value",
+        "The padding type"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The depth (number of channels) of the output feature map equals the number of filters used in the convolutional layer.",
+      "optionExplanations": [
+        "Incorrect. Input image size affects spatial dimensions, not the depth of output feature maps.",
+        "Correct. Each filter produces one channel in the output, so the number of filters determines feature map depth.",
+        "Incorrect. Stride affects spatial dimensions of the output, not the depth/number of channels.",
+        "Incorrect. Padding affects spatial dimensions but doesn't change the number of output channels."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-map-depth",
+        "filters",
+        "channels"
+      ]
+    },
+    {
+      "id": "CNN_027",
+      "question": "In AlexNet, what technique was used to prevent overfitting?",
+      "options": [
+        "Batch normalization",
+        "Dropout",
+        "Skip connections",
+        "Data augmentation only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AlexNet used dropout in the fully connected layers to prevent overfitting by randomly setting some neurons to zero during training.",
+      "optionExplanations": [
+        "Incorrect. Batch normalization was introduced later, not used in the original AlexNet.",
+        "Correct. AlexNet employed dropout as a regularization technique to reduce overfitting in fully connected layers.",
+        "Incorrect. Skip connections were introduced in ResNet, not AlexNet.",
+        "Incorrect. While data augmentation was used, dropout was the primary overfitting prevention technique in the architecture itself."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AlexNet",
+        "dropout",
+        "overfitting",
+        "regularization"
+      ]
+    },
+    {
+      "id": "CNN_028",
+      "question": "What is the main advantage of using 1×1 convolutions?",
+      "options": [
+        "They increase spatial resolution",
+        "They reduce computational complexity while changing channel dimensions",
+        "They eliminate the need for pooling",
+        "They prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "1×1 convolutions can change the number of channels (dimensionality reduction/expansion) with minimal computational cost since they don't change spatial dimensions.",
+      "optionExplanations": [
+        "Incorrect. 1×1 convolutions don't change spatial dimensions, so they don't increase resolution.",
+        "Correct. 1×1 convolutions efficiently change channel dimensions without affecting spatial size, reducing parameters and computation.",
+        "Incorrect. 1×1 convolutions don't eliminate the need for pooling, which serves different purposes (spatial downsampling).",
+        "Incorrect. While they can reduce parameters, their primary advantage is efficient channel dimension manipulation, not overfitting prevention."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "1x1-convolution",
+        "dimensionality",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "CNN_029",
+      "question": "What is feature map visualization used for?",
+      "options": [
+        "To increase model accuracy",
+        "To understand what features the network has learned",
+        "To reduce training time",
+        "To compress the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature map visualization helps researchers and practitioners understand what patterns and features different layers and filters have learned to detect.",
+      "optionExplanations": [
+        "Incorrect. Visualization is for understanding and interpretation, not for improving accuracy.",
+        "Correct. Feature map visualization reveals what features and patterns different layers and filters detect, providing interpretability.",
+        "Incorrect. Visualization is an analysis tool and doesn't affect training speed.",
+        "Incorrect. Visualization is for understanding the model, not for model compression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "visualization",
+        "interpretability",
+        "feature-analysis"
+      ]
+    },
+    {
+      "id": "CNN_030",
+      "question": "In CNN terminology, what does 'depth' refer to?",
+      "options": [
+        "The number of layers in the network",
+        "The number of channels in a feature map",
+        "The size of the receptive field",
+        "The complexity of the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the context of feature maps and tensors, 'depth' refers to the number of channels (the third dimension after height and width).",
+      "optionExplanations": [
+        "Incorrect. While 'depth' can refer to network depth (number of layers), in CNN feature map context it refers to channels.",
+        "Correct. In CNN feature maps, depth specifically refers to the number of channels (third dimension of the tensor).",
+        "Incorrect. Receptive field refers to the spatial extent of input that affects an output, not depth.",
+        "Incorrect. Model complexity is a general concept, not specifically what 'depth' means in CNN context."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "depth",
+        "channels",
+        "feature-maps"
+      ]
+    },
+    {
+      "id": "CNN_031",
+      "question": "What happens to feature maps as you go deeper in a CNN?",
+      "options": [
+        "They become larger in spatial dimensions",
+        "They become smaller in spatial dimensions but richer in features",
+        "They remain the same size",
+        "They only change in depth"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deeper layers typically have smaller spatial dimensions due to pooling/strided convolutions, but contain more complex, abstract features.",
+      "optionExplanations": [
+        "Incorrect. Spatial dimensions typically decrease through the network due to pooling and strided convolutions.",
+        "Correct. Feature maps generally become smaller spatially but represent more complex, abstract features as depth increases.",
+        "Incorrect. Feature maps typically change size through pooling operations and strided convolutions.",
+        "Incorrect. Both spatial dimensions and feature complexity change as you go deeper in the network."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-hierarchy",
+        "spatial-dimensions",
+        "abstraction"
+      ]
+    },
+    {
+      "id": "CNN_032",
+      "question": "Which layer type is typically used for classification in CNNs?",
+      "options": [
+        "Convolutional layer",
+        "Pooling layer",
+        "Fully connected layer",
+        "Normalization layer"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fully connected layers at the end of CNNs combine all features to make final classification decisions.",
+      "optionExplanations": [
+        "Incorrect. Convolutional layers extract features but don't perform final classification.",
+        "Incorrect. Pooling layers downsample feature maps but don't make classification decisions.",
+        "Correct. Fully connected layers aggregate all extracted features to produce classification probabilities.",
+        "Incorrect. Normalization layers improve training but don't perform classification."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "fully-connected",
+        "classification",
+        "final-layer"
+      ]
+    },
+    {
+      "id": "CNN_033",
+      "question": "What is the typical activation function used in modern CNNs?",
+      "options": [
+        "Sigmoid",
+        "Tanh",
+        "ReLU",
+        "Linear"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ReLU (Rectified Linear Unit) is the most commonly used activation function in modern CNNs due to its simplicity and effectiveness.",
+      "optionExplanations": [
+        "Incorrect. Sigmoid was used in early networks but suffers from vanishing gradient problems.",
+        "Incorrect. Tanh was also used early on but has similar issues to sigmoid in deep networks.",
+        "Correct. ReLU is the standard activation function in modern CNNs due to its simplicity and ability to mitigate vanishing gradients.",
+        "Incorrect. Linear activations don't provide the non-linearity needed for complex function approximation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ReLU",
+        "activation-functions",
+        "modern-CNNs"
+      ]
+    },
+    {
+      "id": "CNN_034",
+      "question": "What is the mathematical operation performed in convolution?",
+      "options": [
+        "Element-wise multiplication",
+        "Matrix multiplication",
+        "Cross-correlation (sliding dot product)",
+        "Addition"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Convolution in CNNs is actually cross-correlation: sliding the filter over the input and computing dot products at each position.",
+      "optionExplanations": [
+        "Incorrect. Element-wise multiplication alone doesn't capture the sliding and summing aspect of convolution.",
+        "Incorrect. While matrix operations are involved, convolution is specifically a cross-correlation operation.",
+        "Correct. CNN 'convolution' is technically cross-correlation: sliding dot products between filter and input regions.",
+        "Incorrect. Addition is part of the process, but the complete operation is cross-correlation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "convolution",
+        "cross-correlation",
+        "mathematical-operation"
+      ]
+    },
+    {
+      "id": "CNN_035",
+      "question": "What problem can occur with very deep networks without proper techniques?",
+      "options": [
+        "Overfitting only",
+        "Vanishing gradients",
+        "Too many parameters",
+        "Slow inference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Very deep networks suffer from vanishing gradients, where gradients become too small to effectively train early layers.",
+      "optionExplanations": [
+        "Incorrect. While overfitting can occur, the primary architectural problem with depth is vanishing gradients.",
+        "Correct. Deep networks suffer from vanishing gradients, making it difficult to train layers far from the output.",
+        "Incorrect. While more parameters can be an issue, the fundamental problem is gradient flow, not parameter count.",
+        "Incorrect. Inference speed is affected by depth, but the training problem is vanishing gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deep-networks",
+        "vanishing-gradients",
+        "training-problems"
+      ]
+    },
+    {
+      "id": "CNN_036",
+      "question": "In LeNet-5, what was the original application domain?",
+      "options": [
+        "General image classification",
+        "Handwritten digit recognition",
+        "Object detection",
+        "Face recognition"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LeNet-5 was specifically designed for handwritten digit recognition, particularly for reading postal codes and bank checks.",
+      "optionExplanations": [
+        "Incorrect. LeNet-5 was designed for a specific application, not general image classification.",
+        "Correct. LeNet-5 was created specifically for recognizing handwritten digits in practical applications like postal services.",
+        "Incorrect. Object detection came later; LeNet-5 was for digit classification.",
+        "Incorrect. Face recognition was not the original application domain of LeNet-5."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LeNet",
+        "handwritten-digits",
+        "application"
+      ]
+    },
+    {
+      "id": "CNN_037",
+      "question": "What innovation helped AlexNet train on multiple GPUs?",
+      "options": [
+        "Data parallelism",
+        "Model parallelism with GPU communication",
+        "Distributed training",
+        "Cloud computing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AlexNet used model parallelism, splitting the network across two GPUs with specific communication patterns between them.",
+      "optionExplanations": [
+        "Incorrect. Data parallelism wasn't the specific innovation; AlexNet used model parallelism.",
+        "Correct. AlexNet pioneered splitting the model across GPUs with carefully designed inter-GPU communication.",
+        "Incorrect. Modern distributed training came later; AlexNet used a simpler two-GPU approach.",
+        "Incorrect. Cloud computing wasn't the innovation; it was about multi-GPU architecture on single machines."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "AlexNet",
+        "multi-GPU",
+        "model-parallelism"
+      ]
+    },
+    {
+      "id": "CNN_038",
+      "question": "What is the typical range of filter sizes used in VGG networks?",
+      "options": [
+        "1×1 to 11×11",
+        "Only 3×3",
+        "3×3 and 1×1",
+        "5×5 and 7×7"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "VGG networks consistently use 3×3 filters throughout the architecture, demonstrating that small filters can be very effective.",
+      "optionExplanations": [
+        "Incorrect. VGG specifically used small, uniform filter sizes, not a wide range.",
+        "Correct. VGG's key insight was that consistent use of small 3×3 filters could be very effective.",
+        "Incorrect. While 1×1 filters are useful, VGG primarily used 3×3 filters consistently.",
+        "Incorrect. VGG didn't use larger filters like 5×5 or 7×7; it focused on 3×3."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "VGG",
+        "filter-size",
+        "3x3-filters"
+      ]
+    },
+    {
+      "id": "CNN_039",
+      "question": "What is the advantage of using smaller filters like 3×3 instead of larger ones?",
+      "options": [
+        "Faster inference only",
+        "More non-linearity and fewer parameters for the same receptive field",
+        "Better accuracy guaranteed",
+        "Easier to implement"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Smaller filters allow more non-linear activations and use fewer parameters while achieving the same effective receptive field when stacked.",
+      "optionExplanations": [
+        "Incorrect. While smaller filters can be faster, the main advantage is in expressiveness and parameter efficiency.",
+        "Correct. Multiple small filters provide more non-linearity and use fewer parameters than single large filters with equivalent receptive fields.",
+        "Incorrect. Filter size alone doesn't guarantee better accuracy; it depends on the specific task and architecture.",
+        "Incorrect. Implementation complexity is similar; the advantages are mathematical and computational."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "small-filters",
+        "non-linearity",
+        "parameter-efficiency"
+      ]
+    },
+    {
+      "id": "CNN_040",
+      "question": "In a CNN, what determines the number of parameters in a convolutional layer?",
+      "options": [
+        "Input size only",
+        "Filter size, number of filters, and input channels",
+        "Output size only",
+        "Stride and padding values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Parameters = (filter_height × filter_width × input_channels + 1) × number_of_filters, where +1 accounts for bias.",
+      "optionExplanations": [
+        "Incorrect. Input size affects computations but not the number of learnable parameters.",
+        "Correct. Parameters depend on filter dimensions, number of filters, input channels, and bias terms.",
+        "Incorrect. Output size is determined by parameters and hyperparameters, but doesn't determine parameter count.",
+        "Incorrect. Stride and padding affect output size but don't change the number of learnable parameters."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "parameters",
+        "calculation",
+        "convolutional-layer"
+      ]
+    },
+    {
+      "id": "CNN_041",
+      "question": "What is the purpose of bias terms in convolutional layers?",
+      "options": [
+        "To add non-linearity",
+        "To shift the activation function",
+        "To reduce overfitting",
+        "To normalize outputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bias terms allow the activation function to be shifted, providing more flexibility in learning by not forcing the function through the origin.",
+      "optionExplanations": [
+        "Incorrect. Non-linearity is provided by activation functions, not bias terms.",
+        "Correct. Bias terms shift the linear transformation, allowing the model to learn functions that don't pass through the origin.",
+        "Incorrect. Bias terms don't directly prevent overfitting; they provide modeling flexibility.",
+        "Incorrect. Output normalization is handled by normalization layers, not bias terms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "activation-shift",
+        "flexibility"
+      ]
+    },
+    {
+      "id": "CNN_042",
+      "question": "What is weight sharing in CNNs?",
+      "options": [
+        "Using the same weights across different layers",
+        "Using the same filter weights across different spatial positions",
+        "Sharing weights between training and testing",
+        "Copying weights from other models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weight sharing means the same filter weights are used across all spatial positions, drastically reducing parameters and enabling translation equivariance.",
+      "optionExplanations": [
+        "Incorrect. Weight sharing refers to spatial reuse within a layer, not across different layers.",
+        "Correct. The same filter weights are applied at all spatial locations, which is fundamental to convolution.",
+        "Incorrect. Weights are the same during training and testing by design, but this isn't what weight sharing means.",
+        "Incorrect. Weight sharing is an architectural property, not about copying from external models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-sharing",
+        "convolution",
+        "parameter-reduction"
+      ]
+    },
+    {
+      "id": "CNN_043",
+      "question": "What is translation equivariance in CNNs?",
+      "options": [
+        "The output translates when the input translates",
+        "The model can translate languages",
+        "Features remain identical regardless of position",
+        "The model works on different image sizes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Translation equivariance means that if the input is translated, the output is translated by the same amount, preserving spatial relationships.",
+      "optionExplanations": [
+        "Correct. Translation equivariance means the output shifts correspondingly when the input is spatially shifted.",
+        "Incorrect. This refers to language translation, not spatial translation in images.",
+        "Incorrect. This describes translation invariance, not equivariance. Equivariance preserves the spatial relationship.",
+        "Incorrect. This relates to scale invariance or adaptability to different input sizes, not translation equivariance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "translation-equivariance",
+        "spatial-relationships",
+        "convolution-properties"
+      ]
+    },
+    {
+      "id": "CNN_044",
+      "question": "What is the difference between feature maps and filters?",
+      "options": [
+        "No difference, they are the same thing",
+        "Filters are learned parameters, feature maps are their outputs",
+        "Feature maps are inputs, filters are outputs",
+        "Filters are larger than feature maps"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Filters are the learned weight matrices that slide over inputs, while feature maps are the outputs produced by applying these filters.",
+      "optionExplanations": [
+        "Incorrect. Filters and feature maps are fundamentally different concepts in CNNs.",
+        "Correct. Filters are the learnable parameters (weights), while feature maps are the results of convolving filters with inputs.",
+        "Incorrect. This reverses the relationship; feature maps are outputs of applying filters to inputs.",
+        "Incorrect. Size comparison isn't the key difference; it's about learned parameters versus outputs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "filters",
+        "feature-maps",
+        "parameters-vs-outputs"
+      ]
+    },
+    {
+      "id": "CNN_045",
+      "question": "In CNN architecture, what comes after convolutional layers typically?",
+      "options": [
+        "More convolutional layers only",
+        "Activation function and possibly pooling",
+        "Immediate output layer",
+        "Normalization only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Convolutional layers are typically followed by activation functions (like ReLU) and often by pooling layers before the next convolutional layer.",
+      "optionExplanations": [
+        "Incorrect. While more conv layers can follow, activation functions and pooling typically come immediately after.",
+        "Correct. The typical pattern is: convolution → activation → (optional pooling) → next layer.",
+        "Incorrect. Output layers come at the very end after feature extraction is complete.",
+        "Incorrect. While normalization can be used, activation functions are more fundamental and common."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "architecture",
+        "layer-order",
+        "activation-functions"
+      ]
+    },
+    {
+      "id": "CNN_046",
+      "question": "What is the main computational bottleneck in CNNs?",
+      "options": [
+        "Pooling operations",
+        "Activation functions",
+        "Convolutional operations",
+        "Batch normalization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Convolutional operations involve the most computations due to the sliding window operations and multiple filter applications.",
+      "optionExplanations": [
+        "Incorrect. Pooling operations are relatively simple aggregations and computationally efficient.",
+        "Incorrect. Activation functions are typically element-wise operations that are computationally cheap.",
+        "Correct. Convolutions require many multiply-accumulate operations as filters slide over feature maps.",
+        "Incorrect. Batch normalization involves simple statistics and scaling, not computationally intensive."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-complexity",
+        "convolution",
+        "bottlenecks"
+      ]
+    },
+    {
+      "id": "CNN_047",
+      "question": "What is dilated (atrous) convolution?",
+      "options": [
+        "Convolution with larger filters",
+        "Convolution with gaps between filter elements",
+        "Convolution with more filters",
+        "Convolution with different stride"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dilated convolution introduces gaps (holes) between filter elements, increasing receptive field without increasing parameters.",
+      "optionExplanations": [
+        "Incorrect. Dilated convolution doesn't change filter size, but introduces spacing between elements.",
+        "Correct. Dilated convolution adds gaps between filter elements, expanding receptive field with same parameter count.",
+        "Incorrect. The number of filters is independent of whether convolution is dilated.",
+        "Incorrect. Dilation is different from stride; it's about spacing within the filter, not how it moves."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dilated-convolution",
+        "atrous",
+        "receptive-field"
+      ]
+    },
+    {
+      "id": "CNN_048",
+      "question": "What is the advantage of batch normalization in CNNs?",
+      "options": [
+        "Reduces the number of parameters",
+        "Stabilizes training and allows higher learning rates",
+        "Eliminates the need for activation functions",
+        "Reduces computational complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch normalization normalizes layer inputs, reducing internal covariate shift and allowing for more stable training with higher learning rates.",
+      "optionExplanations": [
+        "Incorrect. Batch normalization adds parameters (scale and shift), it doesn't reduce them.",
+        "Correct. Batch normalization stabilizes the distribution of layer inputs, enabling faster and more stable training.",
+        "Incorrect. Batch normalization works alongside activation functions, it doesn't replace them.",
+        "Incorrect. Batch normalization adds computational overhead, though it often speeds up convergence."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-normalization",
+        "training-stability",
+        "learning-rates"
+      ]
+    },
+    {
+      "id": "CNN_049",
+      "question": "What is the typical initialization strategy for CNN weights?",
+      "options": [
+        "All zeros",
+        "All ones",
+        "Random values from a normal distribution (Xavier/He initialization)",
+        "Copy from pre-trained models always"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Weights are typically initialized with small random values using strategies like Xavier or He initialization to ensure proper gradient flow.",
+      "optionExplanations": [
+        "Incorrect. Zero initialization would cause all neurons to behave identically and prevent learning.",
+        "Incorrect. Uniform initialization (like all ones) would cause similar problems as zero initialization.",
+        "Correct. Random initialization with proper variance scaling (Xavier/He) ensures good gradient flow and symmetry breaking.",
+        "Incorrect. While transfer learning is common, proper random initialization is the fundamental strategy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-initialization",
+        "Xavier",
+        "He-initialization"
+      ]
+    },
+    {
+      "id": "CNN_050",
+      "question": "What is transfer learning in the context of CNNs?",
+      "options": [
+        "Transferring data between datasets",
+        "Using pre-trained models as starting points for new tasks",
+        "Moving models between different hardware",
+        "Converting models to different formats"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transfer learning involves using models pre-trained on large datasets as starting points, then fine-tuning them for specific tasks.",
+      "optionExplanations": [
+        "Incorrect. Transfer learning is about model knowledge transfer, not data movement.",
+        "Correct. Transfer learning leverages pre-trained models, typically fine-tuning them for new but related tasks.",
+        "Incorrect. This describes model deployment, not transfer learning.",
+        "Incorrect. Model format conversion is a technical implementation detail, not transfer learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transfer-learning",
+        "pre-trained-models",
+        "fine-tuning"
+      ]
+    },
+    {
+      "id": "CNN_051",
+      "question": "What is data augmentation in CNN training?",
+      "options": [
+        "Adding more layers to the network",
+        "Artificially increasing dataset size through transformations",
+        "Adding more parameters",
+        "Using larger batch sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data augmentation creates modified versions of training images through rotations, flips, crops, etc., to increase dataset diversity and reduce overfitting.",
+      "optionExplanations": [
+        "Incorrect. Adding layers relates to model architecture, not data augmentation.",
+        "Correct. Data augmentation applies transformations to create variations of existing data, improving generalization.",
+        "Incorrect. Adding parameters relates to model complexity, not data augmentation.",
+        "Incorrect. Batch size is a training hyperparameter, not related to data augmentation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "data-augmentation",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "CNN_052",
+      "question": "Which pooling operation is most commonly used in modern CNNs?",
+      "options": [
+        "Average pooling",
+        "Max pooling",
+        "Min pooling",
+        "Sum pooling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Max pooling is most commonly used because it preserves the strongest activations and provides some translation invariance.",
+      "optionExplanations": [
+        "Incorrect. Average pooling is used but less commonly than max pooling in most modern architectures.",
+        "Correct. Max pooling is the most widely used pooling operation due to its effectiveness in preserving important features.",
+        "Incorrect. Min pooling is rarely used as it focuses on weak activations rather than strong ones.",
+        "Incorrect. Sum pooling is uncommon and can lead to unstable training due to unbounded outputs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "max-pooling",
+        "pooling-operations",
+        "common-practice"
+      ]
+    },
+    {
+      "id": "CNN_053",
+      "question": "What is the purpose of using multiple convolutional layers before pooling?",
+      "options": [
+        "To reduce computational cost",
+        "To learn more complex features before downsampling",
+        "To increase the number of parameters",
+        "To normalize the features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multiple conv layers allow the network to learn increasingly complex features before pooling reduces spatial resolution.",
+      "optionExplanations": [
+        "Incorrect. Multiple layers actually increase computational cost, not reduce it.",
+        "Correct. Stacking conv layers lets the network learn complex features before pooling reduces spatial information.",
+        "Incorrect. While more layers do add parameters, this isn't the primary purpose.",
+        "Incorrect. Feature normalization is handled by normalization layers, not by using multiple conv layers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multiple-conv-layers",
+        "feature-complexity",
+        "spatial-resolution"
+      ]
+    },
+    {
+      "id": "CNN_054",
+      "question": "What is the spatial extent of a 3×3 filter?",
+      "options": [
+        "3 pixels horizontally, 3 pixels vertically",
+        "9 pixels total",
+        "Depends on the input size",
+        "Both A and B are correct"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A 3×3 filter has spatial dimensions of 3 pixels horizontally and 3 pixels vertically, covering a total of 9 pixels in the input.",
+      "optionExplanations": [
+        "Partially correct. This describes the dimensions but doesn't mention the total coverage.",
+        "Partially correct. This describes the total pixels covered but doesn't specify the spatial arrangement.",
+        "Incorrect. The filter size is fixed regardless of input size; only the number of operations changes.",
+        "Correct. Both descriptions are accurate: 3×3 spatial dimensions covering 9 total pixels."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "filter-size",
+        "spatial-extent",
+        "3x3-filter"
+      ]
+    },
+    {
+      "id": "CNN_055",
+      "question": "What is the relationship between receptive field and network depth?",
+      "options": [
+        "No relationship",
+        "Receptive field decreases with depth",
+        "Receptive field increases with depth",
+        "Receptive field remains constant"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "As network depth increases, the receptive field grows because each layer sees information from a larger area of the original input.",
+      "optionExplanations": [
+        "Incorrect. There is a direct relationship between network depth and receptive field size.",
+        "Incorrect. Receptive field grows, not shrinks, with network depth.",
+        "Correct. Deeper layers have larger receptive fields as they aggregate information from wider areas of the input.",
+        "Incorrect. Receptive field changes systematically with depth, it's not constant."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "receptive-field",
+        "network-depth",
+        "feature-aggregation"
+      ]
+    },
+    {
+      "id": "CNN_056",
+      "question": "What is the main difference between LeNet and AlexNet?",
+      "options": [
+        "LeNet uses ReLU, AlexNet uses sigmoid",
+        "AlexNet is deeper and uses ReLU instead of sigmoid/tanh",
+        "LeNet is more complex",
+        "No significant differences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AlexNet was significantly deeper than LeNet and introduced ReLU activations instead of the sigmoid/tanh used in LeNet.",
+      "optionExplanations": [
+        "Incorrect. This reverses the relationship; LeNet used sigmoid/tanh, AlexNet introduced ReLU.",
+        "Correct. AlexNet was much deeper and pioneered the use of ReLU activations in CNNs.",
+        "Incorrect. AlexNet was significantly more complex and larger than LeNet.",
+        "Incorrect. There are major architectural and design differences between these networks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LeNet",
+        "AlexNet",
+        "comparison",
+        "evolution"
+      ]
+    },
+    {
+      "id": "CNN_057",
+      "question": "What is backpropagation in the context of CNN training?",
+      "options": [
+        "Forward pass through the network",
+        "Algorithm for computing gradients by propagating errors backward",
+        "Data preprocessing step",
+        "Pooling operation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Backpropagation computes gradients by propagating error signals backward through the network, enabling weight updates via gradient descent.",
+      "optionExplanations": [
+        "Incorrect. Forward pass is the opposite direction; backpropagation goes backward from output to input.",
+        "Correct. Backpropagation calculates how to adjust weights by propagating error gradients backward through layers.",
+        "Incorrect. Data preprocessing happens before training, while backpropagation is part of the training algorithm.",
+        "Incorrect. Pooling is a forward operation for downsampling, not related to backward error propagation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "backpropagation",
+        "gradient-computation",
+        "training"
+      ]
+    },
+    {
+      "id": "CNN_058",
+      "question": "What is gradient descent in CNN optimization?",
+      "options": [
+        "A method to increase the loss function",
+        "An algorithm to minimize loss by updating weights in the direction of negative gradients",
+        "A technique to add more layers",
+        "A way to visualize features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient descent minimizes the loss function by iteratively updating weights in the direction opposite to the gradient.",
+      "optionExplanations": [
+        "Incorrect. Gradient descent aims to minimize, not increase, the loss function.",
+        "Correct. Gradient descent updates parameters in the negative gradient direction to minimize loss.",
+        "Incorrect. Adding layers is an architectural decision, not an optimization algorithm.",
+        "Incorrect. Feature visualization is for interpretation, not optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-descent",
+        "optimization",
+        "weight-updates"
+      ]
+    },
+    {
+      "id": "CNN_059",
+      "question": "What is overfitting in CNN training?",
+      "options": [
+        "When the model performs well on both training and test data",
+        "When the model memorizes training data but fails to generalize",
+        "When training takes too long",
+        "When the model is too simple"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overfitting occurs when a model learns the training data too specifically, including noise, resulting in poor generalization to new data.",
+      "optionExplanations": [
+        "Incorrect. Good performance on both training and test data indicates proper generalization, not overfitting.",
+        "Correct. Overfitting means the model memorizes training data details but fails to generalize to unseen data.",
+        "Incorrect. Training time is not directly related to overfitting; it's about generalization performance.",
+        "Incorrect. Overfitting typically occurs with complex models, not simple ones."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "generalization",
+        "training-problems"
+      ]
+    },
+    {
+      "id": "CNN_060",
+      "question": "What is underfitting in machine learning?",
+      "options": [
+        "When the model is too complex",
+        "When the model is too simple to capture underlying patterns",
+        "When training data is insufficient",
+        "When the model overfits"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test sets.",
+      "optionExplanations": [
+        "Incorrect. Overly complex models typically cause overfitting, not underfitting.",
+        "Correct. Underfitting happens when the model lacks the capacity to learn the underlying data patterns.",
+        "Incorrect. While insufficient data can be a problem, underfitting specifically refers to model capacity issues.",
+        "Incorrect. Underfitting and overfitting are opposite problems."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "underfitting",
+        "model-capacity",
+        "learning-problems"
+      ]
+    },
+    {
+      "id": "CNN_061",
+      "question": "What is the learning rate in CNN training?",
+      "options": [
+        "How fast the network processes data",
+        "The step size for weight updates during optimization",
+        "The number of epochs needed",
+        "The batch size used"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning rate determines how large steps the optimizer takes when updating weights based on computed gradients.",
+      "optionExplanations": [
+        "Incorrect. Data processing speed is related to computational efficiency, not learning rate.",
+        "Correct. Learning rate controls the magnitude of weight updates during gradient descent optimization.",
+        "Incorrect. Number of epochs is a separate hyperparameter about training duration.",
+        "Incorrect. Batch size determines how many samples are processed together, not the learning rate."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "learning-rate",
+        "optimization",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "CNN_062",
+      "question": "What happens if the learning rate is too high?",
+      "options": [
+        "Training becomes very slow",
+        "The model may overshoot optimal weights and fail to converge",
+        "The model underfits",
+        "Memory usage increases"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High learning rates cause large weight updates that can overshoot the optimal values, leading to unstable training and divergence.",
+      "optionExplanations": [
+        "Incorrect. High learning rates typically make training unstable, not slow.",
+        "Correct. Excessive learning rates cause overshooting in the optimization landscape, preventing convergence.",
+        "Incorrect. High learning rates cause instability, not underfitting specifically.",
+        "Incorrect. Learning rate doesn't directly affect memory usage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "convergence",
+        "optimization-problems"
+      ]
+    },
+    {
+      "id": "CNN_063",
+      "question": "What happens if the learning rate is too low?",
+      "options": [
+        "Training becomes very slow or gets stuck in local minima",
+        "The model overfits",
+        "Training becomes unstable",
+        "Accuracy decreases immediately"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Low learning rates result in very small weight updates, making training slow and potentially getting trapped in local minima.",
+      "optionExplanations": [
+        "Correct. Low learning rates cause slow convergence and can trap the optimizer in local minima.",
+        "Incorrect. Learning rate affects convergence speed, not directly overfitting (though slow training might lead to overfitting).",
+        "Incorrect. Low learning rates typically make training stable but slow, not unstable.",
+        "Incorrect. Low learning rates don't immediately decrease accuracy; they make improvement slow."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "slow-convergence",
+        "local-minima"
+      ]
+    },
+    {
+      "id": "CNN_064",
+      "question": "What is batch size in CNN training?",
+      "options": [
+        "The size of the input images",
+        "The number of samples processed before updating weights",
+        "The number of epochs",
+        "The size of the network"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch size determines how many training samples are processed together before computing gradients and updating weights.",
+      "optionExplanations": [
+        "Incorrect. Input image size is independent of batch size.",
+        "Correct. Batch size is the number of samples used to compute gradients before each weight update.",
+        "Incorrect. Epochs refer to complete passes through the dataset, not batch size.",
+        "Incorrect. Network size refers to architecture complexity, not batch size."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "batch-size",
+        "training",
+        "gradient-computation"
+      ]
+    },
+    {
+      "id": "CNN_065",
+      "question": "What is an epoch in neural network training?",
+      "options": [
+        "A single forward pass",
+        "One complete pass through the entire training dataset",
+        "A single batch of data",
+        "The final training stage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An epoch represents one complete iteration through the entire training dataset, after which the model has seen all training examples once.",
+      "optionExplanations": [
+        "Incorrect. A single forward pass processes one batch, not an entire epoch.",
+        "Correct. An epoch is completed when the model has processed every sample in the training set once.",
+        "Incorrect. A batch is a subset of data, while an epoch encompasses all batches in the dataset.",
+        "Incorrect. An epoch is a unit of training measurement, not a specific training stage."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "epoch",
+        "training",
+        "dataset"
+      ]
+    },
+    {
+      "id": "CNN_066",
+      "question": "What is the purpose of validation data in CNN training?",
+      "options": [
+        "To train the model",
+        "To monitor generalization and prevent overfitting",
+        "To test final performance",
+        "To augment training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Validation data is used during training to monitor how well the model generalizes and to make decisions about when to stop training.",
+      "optionExplanations": [
+        "Incorrect. Training data is used to train the model; validation data is for monitoring.",
+        "Correct. Validation data helps detect overfitting and guide training decisions without being used for gradient updates.",
+        "Incorrect. Test data is used for final performance evaluation, not validation data.",
+        "Incorrect. Data augmentation uses transformations of training data, not validation data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "validation-data",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "CNN_067",
+      "question": "What is early stopping in CNN training?",
+      "options": [
+        "Stopping training after a fixed number of epochs",
+        "Stopping training when validation performance stops improving",
+        "Stopping training when loss reaches zero",
+        "Stopping training due to computational limits"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Early stopping terminates training when validation performance plateaus or degrades, preventing overfitting and saving computational resources.",
+      "optionExplanations": [
+        "Incorrect. Early stopping is adaptive based on performance, not fixed epoch counts.",
+        "Correct. Early stopping monitors validation metrics and stops when improvement stagnates, preventing overfitting.",
+        "Incorrect. Loss rarely reaches exactly zero, and this wouldn't be a practical stopping criterion.",
+        "Incorrect. Computational limits might force stopping, but early stopping is a deliberate regularization technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "early-stopping",
+        "overfitting",
+        "regularization"
+      ]
+    },
+    {
+      "id": "CNN_068",
+      "question": "What is the vanishing gradient problem specifically?",
+      "options": [
+        "Gradients become too large",
+        "Gradients become exponentially small in deep networks",
+        "Gradients become NaN values",
+        "Gradients oscillate wildly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The vanishing gradient problem occurs when gradients become exponentially smaller as they backpropagate through deep networks, making early layers learn very slowly.",
+      "optionExplanations": [
+        "Incorrect. Large gradients describe the exploding gradient problem, not vanishing gradients.",
+        "Correct. Gradients diminish exponentially through layers, especially with saturating activation functions.",
+        "Incorrect. NaN gradients indicate numerical instability, not the vanishing gradient problem specifically.",
+        "Incorrect. Oscillating gradients suggest optimization instability, not vanishing gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vanishing-gradients",
+        "deep-networks",
+        "training-problems"
+      ]
+    },
+    {
+      "id": "CNN_069",
+      "question": "What causes the vanishing gradient problem in deep networks?",
+      "options": [
+        "Too much data",
+        "Saturating activation functions and repeated multiplication of small gradients",
+        "Insufficient computational power",
+        "Poor data quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Saturating activations like sigmoid/tanh have small derivatives, and multiplying many small values through layers causes gradients to vanish exponentially.",
+      "optionExplanations": [
+        "Incorrect. Data quantity doesn't cause vanishing gradients; it's an architectural/mathematical issue.",
+        "Correct. Saturating activations have small derivatives, and their repeated multiplication through layers causes vanishing gradients.",
+        "Incorrect. Computational power affects training speed, not the vanishing gradient problem.",
+        "Incorrect. Data quality affects model performance, not gradient magnitude issues."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "vanishing-gradients",
+        "saturating-activations",
+        "backpropagation"
+      ]
+    },
+    {
+      "id": "CNN_070",
+      "question": "How does ReLU help solve the vanishing gradient problem?",
+      "options": [
+        "ReLU has infinite derivatives",
+        "ReLU has non-saturating positive gradients (gradient = 1 for positive inputs)",
+        "ReLU eliminates backpropagation",
+        "ReLU reduces the number of parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ReLU's gradient is 1 for positive inputs and 0 for negative inputs, avoiding the small gradients that cause vanishing problems in saturating functions.",
+      "optionExplanations": [
+        "Incorrect. ReLU has simple derivatives (0 or 1), not infinite derivatives.",
+        "Correct. ReLU's non-saturating nature (gradient = 1 for positive inputs) prevents gradient diminishing.",
+        "Incorrect. ReLU doesn't eliminate backpropagation; it makes gradient flow more effective.",
+        "Incorrect. ReLU doesn't reduce parameters; it's an activation function that affects gradient flow."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ReLU",
+        "vanishing-gradients",
+        "non-saturating"
+      ]
+    },
+    {
+      "id": "CNN_071",
+      "question": "What is regularization in CNNs?",
+      "options": [
+        "Making the network regular in shape",
+        "Techniques to prevent overfitting by constraining model complexity",
+        "Normalizing input data",
+        "Regular training schedules"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization encompasses techniques like dropout, weight decay, and data augmentation that prevent overfitting by constraining model complexity.",
+      "optionExplanations": [
+        "Incorrect. 'Regular shape' doesn't relate to the machine learning concept of regularization.",
+        "Correct. Regularization techniques add constraints or penalties to prevent the model from overfitting to training data.",
+        "Incorrect. Data normalization is preprocessing, not regularization (though normalization layers can have regularizing effects).",
+        "Incorrect. Training schedules are about optimization, not regularization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "CNN_072",
+      "question": "How does dropout work as a regularization technique?",
+      "options": [
+        "It removes layers from the network",
+        "It randomly sets some neurons to zero during training",
+        "It reduces the learning rate",
+        "It decreases batch size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dropout randomly sets a fraction of neurons to zero during training, forcing the network to not rely on specific neurons and improving generalization.",
+      "optionExplanations": [
+        "Incorrect. Dropout affects individual neurons within layers, not entire layers.",
+        "Correct. Dropout randomly zeroes out neurons during training, preventing over-reliance on specific neurons.",
+        "Incorrect. Learning rate reduction is a separate technique, not how dropout works.",
+        "Incorrect. Batch size is independent of dropout; dropout works within each batch."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dropout",
+        "regularization",
+        "neurons"
+      ]
+    },
+    {
+      "id": "CNN_073",
+      "question": "What is weight decay in neural network regularization?",
+      "options": [
+        "Weights automatically becoming smaller over time",
+        "Adding a penalty term proportional to weight magnitudes to the loss",
+        "Removing weights from the network",
+        "Initializing weights to decay exponentially"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weight decay adds L2 regularization to the loss function, penalizing large weights and encouraging simpler models that generalize better.",
+      "optionExplanations": [
+        "Incorrect. Weight decay is an explicit regularization technique, not automatic weight reduction.",
+        "Correct. Weight decay adds a penalty term (usually L2 norm) to discourage large weights.",
+        "Incorrect. Weight decay constrains weights but doesn't remove them from the network.",
+        "Incorrect. Weight decay affects the training process, not weight initialization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-decay",
+        "L2-regularization",
+        "penalty-term"
+      ]
+    },
+    {
+      "id": "CNN_074",
+      "question": "What is the difference between L1 and L2 regularization?",
+      "options": [
+        "L1 uses absolute values, L2 uses squared values of weights",
+        "L1 is for CNNs, L2 is for RNNs",
+        "L1 prevents overfitting, L2 doesn't",
+        "No significant difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "L1 regularization uses the sum of absolute weight values, while L2 uses the sum of squared weight values, leading to different sparsity properties.",
+      "optionExplanations": [
+        "Correct. L1 penalty is sum of |weights|, L2 penalty is sum of weights², leading to different behaviors.",
+        "Incorrect. Both L1 and L2 can be used with any neural network architecture.",
+        "Incorrect. Both L1 and L2 are regularization techniques that help prevent overfitting.",
+        "Incorrect. L1 and L2 have significantly different effects, especially regarding sparsity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "L1-regularization",
+        "L2-regularization",
+        "sparsity"
+      ]
+    },
+    {
+      "id": "CNN_075",
+      "question": "What is the effect of L1 regularization on weights?",
+      "options": [
+        "Makes weights larger",
+        "Encourages sparse weights (many weights become exactly zero)",
+        "Makes all weights equal",
+        "Has no effect on weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "L1 regularization tends to drive many weights to exactly zero, creating sparse models by eliminating less important connections.",
+      "optionExplanations": [
+        "Incorrect. L1 regularization penalizes large weights, encouraging smaller weights.",
+        "Correct. L1's absolute value penalty tends to drive many weights to exactly zero, creating sparsity.",
+        "Incorrect. L1 doesn't make weights equal; it creates sparsity with many zero weights.",
+        "Incorrect. L1 regularization has a significant sparsifying effect on weights."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "L1-regularization",
+        "sparsity",
+        "weight-elimination"
+      ]
+    },
+    {
+      "id": "CNN_076",
+      "question": "What is momentum in gradient descent optimization?",
+      "options": [
+        "The speed of training",
+        "A technique that accumulates gradients from previous steps to accelerate convergence",
+        "The size of weight updates",
+        "The direction of gradients"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Momentum helps gradient descent by accumulating a velocity vector in directions of consistent gradients, accelerating convergence and reducing oscillations.",
+      "optionExplanations": [
+        "Incorrect. Training speed is affected by momentum, but momentum is a specific algorithmic technique.",
+        "Correct. Momentum accumulates gradients from previous steps, helping accelerate convergence and smooth out oscillations.",
+        "Incorrect. Learning rate determines update size; momentum affects the direction and acceleration of updates.",
+        "Incorrect. Gradients provide direction; momentum uses this information across multiple steps."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "momentum",
+        "gradient-descent",
+        "optimization"
+      ]
+    },
+    {
+      "id": "CNN_077",
+      "question": "What is Adam optimizer in CNN training?",
+      "options": [
+        "A type of activation function",
+        "An adaptive optimization algorithm combining momentum and RMSprop",
+        "A regularization technique",
+        "A type of pooling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adam combines the benefits of momentum (accelerated gradients) and RMSprop (adaptive learning rates) for efficient optimization.",
+      "optionExplanations": [
+        "Incorrect. Adam is an optimization algorithm, not an activation function.",
+        "Correct. Adam combines momentum's gradient accumulation with RMSprop's adaptive learning rates.",
+        "Incorrect. While Adam can have regularizing effects, it's primarily an optimization algorithm.",
+        "Incorrect. Adam is an optimizer, not a pooling operation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Adam",
+        "optimizer",
+        "adaptive-learning"
+      ]
+    },
+    {
+      "id": "CNN_078",
+      "question": "What is the main advantage of using pre-trained models?",
+      "options": [
+        "They are always more accurate",
+        "They provide good feature representations and faster training",
+        "They require less memory",
+        "They work on any dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-trained models have already learned useful feature representations from large datasets, providing a good starting point and reducing training time.",
+      "optionExplanations": [
+        "Incorrect. Pre-trained models aren't always more accurate; it depends on the similarity between pre-training and target tasks.",
+        "Correct. Pre-trained models offer learned features and faster convergence through transfer learning.",
+        "Incorrect. Pre-trained models don't necessarily require less memory; they often have the same architecture.",
+        "Incorrect. Pre-trained models work best when the target task is related to the pre-training task."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-trained-models",
+        "transfer-learning",
+        "feature-representations"
+      ]
+    },
+    {
+      "id": "CNN_079",
+      "question": "What is fine-tuning in transfer learning?",
+      "options": [
+        "Adjusting hyperparameters",
+        "Training a pre-trained model on new data with lower learning rates",
+        "Changing the network architecture",
+        "Data preprocessing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fine-tuning involves continuing training of a pre-trained model on new data, typically with lower learning rates to preserve learned features.",
+      "optionExplanations": [
+        "Incorrect. While hyperparameter adjustment is part of fine-tuning, it's not the core concept.",
+        "Correct. Fine-tuning trains pre-trained models on new data, usually with reduced learning rates.",
+        "Incorrect. Architecture changes might be part of adaptation, but fine-tuning specifically refers to continued training.",
+        "Incorrect. Data preprocessing is separate from the fine-tuning training process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fine-tuning",
+        "transfer-learning",
+        "pre-trained-models"
+      ]
+    },
+    {
+      "id": "CNN_080",
+      "question": "What is feature extraction in transfer learning?",
+      "options": [
+        "Training the entire network from scratch",
+        "Using pre-trained layers as fixed feature extractors and only training final layers",
+        "Removing layers from the network",
+        "Changing all the weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature extraction freezes pre-trained layers and only trains new classifier layers, treating the pre-trained network as a fixed feature extractor.",
+      "optionExplanations": [
+        "Incorrect. Training from scratch is the opposite of using pre-trained features.",
+        "Correct. Feature extraction keeps pre-trained weights frozen and only trains new classification layers.",
+        "Incorrect. Layer removal might be part of adaptation, but feature extraction specifically refers to freezing weights.",
+        "Incorrect. Feature extraction preserves pre-trained weights rather than changing them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-extraction",
+        "transfer-learning",
+        "frozen-layers"
+      ]
+    },
+    {
+      "id": "CNN_081",
+      "question": "What is the typical structure of a CNN for image classification?",
+      "options": [
+        "Only convolutional layers",
+        "Convolutional layers → pooling layers → fully connected layers",
+        "Only fully connected layers",
+        "Random arrangement of different layers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CNNs typically follow a hierarchical structure: convolutional layers for feature extraction, pooling for downsampling, and fully connected layers for classification.",
+      "optionExplanations": [
+        "Incorrect. CNNs need fully connected layers for final classification decisions.",
+        "Correct. The typical CNN structure progresses from feature extraction (conv+pooling) to classification (fully connected).",
+        "Incorrect. Fully connected layers alone cannot effectively process spatial image data.",
+        "Incorrect. CNN architecture follows specific design principles, not random arrangements."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "CNN-structure",
+        "architecture",
+        "hierarchical"
+      ]
+    },
+    {
+      "id": "CNN_082",
+      "question": "Why are CNNs particularly suitable for image processing?",
+      "options": [
+        "They have fewer parameters than other networks",
+        "They preserve spatial relationships and exhibit translation invariance",
+        "They process images faster",
+        "They require less memory"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CNNs are designed to preserve spatial relationships in images and provide translation invariance through weight sharing and pooling operations.",
+      "optionExplanations": [
+        "Incorrect. CNNs can have many parameters; their advantage is in spatial processing, not parameter count.",
+        "Correct. CNNs maintain spatial structure and provide translation invariance, making them ideal for images.",
+        "Incorrect. Processing speed depends on implementation; the key advantage is in handling spatial data.",
+        "Incorrect. Memory usage depends on architecture; the advantage is in spatial relationship modeling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "spatial-relationships",
+        "translation-invariance",
+        "image-processing"
+      ]
+    },
+    {
+      "id": "CNN_083",
+      "question": "What is the purpose of the softmax function in CNN output layers?",
+      "options": [
+        "To introduce non-linearity",
+        "To convert logits into probability distributions for classification",
+        "To reduce overfitting",
+        "To normalize inputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Softmax converts raw output scores (logits) into probabilities that sum to 1, making them interpretable as class probabilities for multi-class classification.",
+      "optionExplanations": [
+        "Incorrect. Non-linearity is introduced by activation functions like ReLU, not specifically by softmax.",
+        "Correct. Softmax normalizes outputs to create probability distributions over classes.",
+        "Incorrect. Softmax doesn't prevent overfitting; it's for output interpretation.",
+        "Incorrect. Input normalization is handled by preprocessing or normalization layers, not softmax."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "softmax",
+        "probability-distribution",
+        "classification"
+      ]
+    },
+    {
+      "id": "CNN_084",
+      "question": "What is cross-entropy loss commonly used for?",
+      "options": [
+        "Regression problems",
+        "Classification problems",
+        "Clustering",
+        "Dimensionality reduction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-entropy loss measures the difference between predicted and true probability distributions, making it ideal for classification tasks.",
+      "optionExplanations": [
+        "Incorrect. Mean squared error is typically used for regression, not cross-entropy.",
+        "Correct. Cross-entropy loss is the standard loss function for classification problems.",
+        "Incorrect. Clustering uses different objective functions, not supervised loss functions like cross-entropy.",
+        "Incorrect. Dimensionality reduction uses different techniques and loss functions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cross-entropy",
+        "classification",
+        "loss-functions"
+      ]
+    },
+    {
+      "id": "CNN_085",
+      "question": "What is the purpose of data normalization in CNN preprocessing?",
+      "options": [
+        "To reduce the dataset size",
+        "To scale pixel values to a standard range (e.g., 0-1 or -1 to 1)",
+        "To augment the data",
+        "To compress images"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data normalization scales pixel values to a consistent range, improving training stability and convergence speed.",
+      "optionExplanations": [
+        "Incorrect. Normalization doesn't reduce dataset size; it scales existing values.",
+        "Correct. Normalization scales pixel values to standard ranges, improving training dynamics and convergence.",
+        "Incorrect. Data augmentation creates variations; normalization scales values.",
+        "Incorrect. Image compression reduces file size; normalization scales pixel values for training."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "normalization",
+        "preprocessing",
+        "pixel-scaling"
+      ]
+    },
+    {
+      "id": "CNN_086",
+      "question": "What is the vanishing gradient problem's main impact on training?",
+      "options": [
+        "Training becomes faster",
+        "Early layers learn very slowly or not at all",
+        "Memory usage increases",
+        "Accuracy improves dramatically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Vanishing gradients cause early layers to receive extremely small gradient updates, making them learn very slowly or remain unchanged.",
+      "optionExplanations": [
+        "Incorrect. Vanishing gradients slow down learning, especially in early layers.",
+        "Correct. Small gradients in early layers prevent effective learning, leaving them mostly unchanged.",
+        "Incorrect. Memory usage isn't directly affected by gradient magnitude.",
+        "Incorrect. Vanishing gradients typically hurt performance by preventing proper learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vanishing-gradients",
+        "early-layers",
+        "training-impact"
+      ]
+    },
+    {
+      "id": "CNN_087",
+      "question": "What is the exploding gradient problem?",
+      "options": [
+        "Gradients become very small",
+        "Gradients become very large, causing unstable training",
+        "Gradients disappear completely",
+        "Gradients become negative"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Exploding gradients occur when gradients become extremely large during backpropagation, causing unstable weight updates and training divergence.",
+      "optionExplanations": [
+        "Incorrect. Very small gradients describe the vanishing gradient problem, not exploding gradients.",
+        "Correct. Exploding gradients become extremely large, causing unstable training and potential divergence.",
+        "Incorrect. Completely disappearing gradients are an extreme case of vanishing gradients.",
+        "Incorrect. Gradient sign (positive/negative) isn't the issue; it's about magnitude."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploding-gradients",
+        "training-instability",
+        "large-gradients"
+      ]
+    },
+    {
+      "id": "CNN_088",
+      "question": "How can exploding gradients be addressed?",
+      "options": [
+        "Using larger learning rates",
+        "Gradient clipping and proper weight initialization",
+        "Adding more layers",
+        "Removing activation functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient clipping limits gradient magnitude, and proper initialization prevents gradients from growing too large during backpropagation.",
+      "optionExplanations": [
+        "Incorrect. Larger learning rates would worsen exploding gradients by making large updates even larger.",
+        "Correct. Gradient clipping caps gradient magnitude, and proper initialization prevents explosive growth.",
+        "Incorrect. More layers could worsen the exploding gradient problem.",
+        "Incorrect. Removing activation functions would eliminate non-linearity, not solve exploding gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "weight-initialization",
+        "exploding-gradients"
+      ]
+    },
+    {
+      "id": "CNN_089",
+      "question": "What is gradient clipping?",
+      "options": [
+        "Removing gradients entirely",
+        "Limiting gradient magnitude to a maximum threshold",
+        "Making gradients positive only",
+        "Averaging gradients across batches"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient clipping caps the magnitude of gradients to a maximum value, preventing extremely large updates that could destabilize training.",
+      "optionExplanations": [
+        "Incorrect. Gradient clipping limits but doesn't remove gradients.",
+        "Correct. Gradient clipping sets a maximum threshold for gradient magnitude to prevent explosive updates.",
+        "Incorrect. Gradient clipping affects magnitude, not the sign of gradients.",
+        "Incorrect. Batch averaging is a separate concept; clipping limits individual gradient magnitudes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "magnitude-limiting",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "CNN_090",
+      "question": "What is the purpose of using different learning rates for different layers?",
+      "options": [
+        "To make training faster",
+        "To allow fine-tuning of pre-trained features while learning new features",
+        "To reduce memory usage",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different learning rates allow pre-trained layers to change slowly (preserving learned features) while new layers learn quickly.",
+      "optionExplanations": [
+        "Incorrect. While it can affect training speed, the main purpose is controlled feature adaptation.",
+        "Correct. Lower learning rates for pre-trained layers preserve features while higher rates help new layers adapt quickly.",
+        "Incorrect. Learning rates don't directly affect memory usage.",
+        "Incorrect. While it can help with generalization, the primary purpose is feature preservation in transfer learning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "learning-rate-scheduling",
+        "transfer-learning",
+        "layer-specific-rates"
+      ]
+    },
+    {
+      "id": "CNN_091",
+      "question": "What is the difference between global max pooling and global average pooling?",
+      "options": [
+        "Max pooling uses larger windows",
+        "Max pooling takes the maximum value across the entire feature map, average pooling takes the mean",
+        "Average pooling is faster",
+        "No significant difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Global max pooling selects the maximum activation from each entire feature map, while global average pooling computes the mean of each feature map.",
+      "optionExplanations": [
+        "Incorrect. Both global pooling operations use the entire feature map, not different window sizes.",
+        "Correct. Global max pooling finds the maximum value, global average pooling computes the mean across each feature map.",
+        "Incorrect. Computational complexity is similar for both global pooling operations.",
+        "Incorrect. They produce different outputs and have different properties for feature aggregation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "global-max-pooling",
+        "global-average-pooling",
+        "feature-aggregation"
+      ]
+    },
+    {
+      "id": "CNN_092",
+      "question": "What is the main advantage of global average pooling over fully connected layers?",
+      "options": [
+        "Better accuracy guaranteed",
+        "Significantly fewer parameters and reduced overfitting",
+        "Faster training always",
+        "Better gradient flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Global average pooling eliminates the massive parameter count of fully connected layers, reducing overfitting risk and model size.",
+      "optionExplanations": [
+        "Incorrect. Global average pooling doesn't guarantee better accuracy; it depends on the specific task and data.",
+        "Correct. Global average pooling drastically reduces parameters compared to fully connected layers, reducing overfitting.",
+        "Incorrect. Training speed depends on various factors; parameter reduction can help but isn't always faster.",
+        "Incorrect. Gradient flow improvement isn't the primary advantage; parameter reduction is."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "global-average-pooling",
+        "parameter-reduction",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "CNN_093",
+      "question": "What is the purpose of skip connections in advanced CNN architectures?",
+      "options": [
+        "To reduce computational complexity",
+        "To allow gradients to flow directly to earlier layers, mitigating vanishing gradients",
+        "To increase the number of parameters",
+        "To add more non-linearity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Skip connections provide direct paths for gradients to flow backward, helping solve the vanishing gradient problem in very deep networks.",
+      "optionExplanations": [
+        "Incorrect. Skip connections add computational overhead, though they enable deeper networks.",
+        "Correct. Skip connections create direct gradient paths, solving vanishing gradient problems in deep networks.",
+        "Incorrect. While skip connections may add some parameters, this isn't their primary purpose.",
+        "Incorrect. Skip connections help with gradient flow, not primarily with adding non-linearity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "skip-connections",
+        "vanishing-gradients",
+        "deep-networks"
+      ]
+    },
+    {
+      "id": "CNN_094",
+      "question": "Which architecture introduced skip connections?",
+      "options": [
+        "LeNet",
+        "AlexNet",
+        "VGG",
+        "ResNet"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "ResNet (Residual Network) introduced skip connections, enabling the training of much deeper networks by solving the vanishing gradient problem.",
+      "optionExplanations": [
+        "Incorrect. LeNet was an early CNN architecture without skip connections.",
+        "Incorrect. AlexNet introduced ReLU and dropout but not skip connections.",
+        "Incorrect. VGG focused on small filters and depth but didn't use skip connections.",
+        "Correct. ResNet introduced residual connections (skip connections) as its key innovation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ResNet",
+        "skip-connections",
+        "architecture-history"
+      ]
+    },
+    {
+      "id": "CNN_095",
+      "question": "What is a residual block in ResNet?",
+      "options": [
+        "A block that computes F(x) + x, where F(x) is learned transformation",
+        "A block that only uses pooling",
+        "A block without activation functions",
+        "A block that reduces dimensions only"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A residual block learns a residual function F(x) and adds it to the input x, creating the output F(x) + x, enabling easier optimization.",
+      "optionExplanations": [
+        "Correct. Residual blocks implement the function F(x) + x, where F(x) is the learned residual mapping.",
+        "Incorrect. Residual blocks contain convolutional layers and possibly pooling, not only pooling.",
+        "Incorrect. Residual blocks use activation functions, typically ReLU.",
+        "Incorrect. Residual blocks can maintain, reduce, or increase dimensions depending on design."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "residual-block",
+        "ResNet",
+        "residual-function"
+      ]
+    },
+    {
+      "id": "CNN_096",
+      "question": "What is the key insight behind ResNet's residual learning?",
+      "options": [
+        "Deeper networks are always better",
+        "It's easier to learn residual mappings than complete mappings",
+        "Skip connections add more parameters",
+        "Pooling should be avoided"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ResNet's insight is that learning residual mappings F(x) is easier than learning complete mappings H(x), especially when the optimal function is close to identity.",
+      "optionExplanations": [
+        "Incorrect. ResNet showed that deeper networks can be better, but only with proper design (skip connections).",
+        "Correct. Learning small changes (residuals) from identity mappings is easier than learning complete transformations.",
+        "Incorrect. The insight isn't about parameter count but about ease of optimization.",
+        "Incorrect. ResNet still uses pooling; the insight is about residual learning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "residual-learning",
+        "identity-mapping",
+        "optimization"
+      ]
+    },
+    {
+      "id": "CNN_097",
+      "question": "What is the typical depth range of ResNet architectures?",
+      "options": [
+        "5-10 layers",
+        "10-20 layers",
+        "50-152 layers or even deeper",
+        "Only 34 layers"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ResNet architectures commonly range from ResNet-50 to ResNet-152, with some variants going even deeper, enabled by skip connections.",
+      "optionExplanations": [
+        "Incorrect. This is too shallow for ResNet architectures; even ResNet-18 has more layers.",
+        "Incorrect. This range is more typical for earlier architectures like VGG.",
+        "Correct. Common ResNet variants include ResNet-50, ResNet-101, and ResNet-152, with even deeper versions possible.",
+        "Incorrect. ResNet-34 exists, but ResNet commonly goes much deeper."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ResNet",
+        "network-depth",
+        "architecture-variants"
+      ]
+    },
+    {
+      "id": "CNN_098",
+      "question": "What problem does batch normalization solve in CNN training?",
+      "options": [
+        "Vanishing gradients only",
+        "Internal covariate shift and training instability",
+        "Overfitting only",
+        "Computational complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch normalization addresses internal covariate shift by normalizing layer inputs, leading to more stable and faster training.",
+      "optionExplanations": [
+        "Incorrect. While batch normalization can help with gradients, it primarily addresses internal covariate shift.",
+        "Correct. Batch normalization reduces internal covariate shift, stabilizing training and enabling higher learning rates.",
+        "Incorrect. While it can have regularizing effects, the primary problem it solves is training stability.",
+        "Incorrect. Batch normalization adds computation; its benefit is in training stability, not complexity reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-normalization",
+        "internal-covariate-shift",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "CNN_099",
+      "question": "Where is batch normalization typically applied in a CNN layer?",
+      "options": [
+        "Before the convolutional operation",
+        "After convolution but before activation function",
+        "After the activation function",
+        "Only at the input layer"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch normalization is typically applied after convolution but before the activation function, though there's some debate about optimal placement.",
+      "optionExplanations": [
+        "Incorrect. Batch normalization is applied to the outputs of operations, not inputs to convolution.",
+        "Correct. The standard placement is after convolution but before activation, normalizing the linear transformation.",
+        "Incorrect. While some studies suggest post-activation placement, the common practice is pre-activation.",
+        "Incorrect. Batch normalization is used throughout the network, not just at the input."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-normalization",
+        "layer-placement",
+        "activation-functions"
+      ]
+    },
+    {
+      "id": "CNN_100",
+      "question": "What is the significance of the ImageNet dataset in CNN development?",
+      "options": [
+        "It was the first computer vision dataset",
+        "It provided a large-scale benchmark that drove CNN innovations and breakthroughs",
+        "It only contains simple images",
+        "It's used only for testing, not training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ImageNet's large scale (millions of images, thousands of classes) provided the challenging benchmark that drove major CNN innovations like AlexNet, VGG, and ResNet.",
+      "optionExplanations": [
+        "Incorrect. ImageNet wasn't the first computer vision dataset, but it was one of the largest and most influential.",
+        "Correct. ImageNet's scale and annual competition (ILSVRC) drove major breakthroughs in CNN architecture and training.",
+        "Incorrect. ImageNet contains complex, diverse natural images across thousands of categories.",
+        "Incorrect. ImageNet is used for both training (with its large labeled dataset) and testing in competitions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ImageNet",
+        "benchmark",
+        "CNN-development",
+        "competition"
+      ]
+    }
+  ]
+}

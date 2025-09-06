@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_FTU",
+  "subtopicName": "Fine-tuning Techniques",
+  "str": 0.350,
+  "description": "Comprehensive collection of questions covering modern fine-tuning techniques including LoRA, QLoRA, parameter-efficient tuning, instruction tuning, and various PEFT methods for large language models.",
+  "questions": [
+    {
+      "id": "FTU_001",
+      "question": "What does LoRA stand for in the context of fine-tuning large language models?",
+      "options": [
+        "Low-Rank Adaptation",
+        "Linear Optimization Reinforcement Algorithm",
+        "Large Output Recursive Architecture",
+        "Latent Operation Resource Allocation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "LoRA stands for Low-Rank Adaptation, a parameter-efficient fine-tuning method that decomposes weight updates into low-rank matrices, significantly reducing the number of trainable parameters while maintaining model performance.",
+      "optionExplanations": [
+        "Correct. LoRA (Low-Rank Adaptation) is a PEFT technique that uses low-rank matrix decomposition to efficiently fine-tune large models.",
+        "Incorrect. This is not what LoRA stands for. Linear Optimization Reinforcement Algorithm is not a recognized fine-tuning technique.",
+        "Incorrect. Large Output Recursive Architecture is not the meaning of LoRA in fine-tuning contexts.",
+        "Incorrect. Latent Operation Resource Allocation is not what LoRA represents in machine learning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "LoRA",
+        "parameter-efficient",
+        "acronym"
+      ]
+    },
+    {
+      "id": "FTU_002",
+      "question": "What is the primary advantage of QLoRA over standard LoRA?",
+      "options": [
+        "Faster inference speed",
+        "Better model accuracy",
+        "Reduced memory usage through quantization",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "QLoRA (Quantized LoRA) extends LoRA by incorporating 4-bit quantization of the base model weights, which significantly reduces memory usage while maintaining performance comparable to full fine-tuning.",
+      "optionExplanations": [
+        "Incorrect. While QLoRA may have some inference benefits, its primary advantage is not faster speed but memory efficiency.",
+        "Incorrect. QLoRA doesn't necessarily provide better accuracy than LoRA; they typically achieve similar performance levels.",
+        "Correct. QLoRA's main advantage is dramatically reduced memory usage through 4-bit quantization of the base model weights.",
+        "Incorrect. QLoRA is actually more complex than standard LoRA due to the additional quantization components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "QLoRA",
+        "quantization",
+        "memory-efficiency"
+      ]
+    },
+    {
+      "id": "FTU_003",
+      "question": "In LoRA, what does the rank 'r' parameter control?",
+      "options": [
+        "The learning rate",
+        "The dimensionality of the low-rank decomposition",
+        "The number of training epochs",
+        "The batch size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The rank 'r' in LoRA determines the dimensionality of the low-rank matrices A and B used to approximate the weight updates. Lower ranks mean fewer parameters but potentially less expressiveness.",
+      "optionExplanations": [
+        "Incorrect. The rank parameter doesn't control learning rate, which is a separate hyperparameter for optimization.",
+        "Correct. The rank 'r' determines the inner dimension of the low-rank matrices, controlling the trade-off between parameter efficiency and model expressiveness.",
+        "Incorrect. The number of training epochs is controlled by the training configuration, not the LoRA rank parameter.",
+        "Incorrect. Batch size is a training hyperparameter independent of the LoRA rank parameter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "rank",
+        "hyperparameter"
+      ]
+    },
+    {
+      "id": "FTU_004",
+      "question": "What is Parameter-Efficient Fine-Tuning (PEFT)?",
+      "options": [
+        "A method that updates all model parameters",
+        "A technique that fine-tunes only a small subset of parameters",
+        "A way to increase model size during training",
+        "A method for pre-training from scratch"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PEFT refers to techniques that achieve effective fine-tuning by updating only a small fraction of the model's parameters, making the process more computationally efficient and memory-friendly.",
+      "optionExplanations": [
+        "Incorrect. This describes full fine-tuning, not parameter-efficient fine-tuning. PEFT specifically aims to avoid updating all parameters.",
+        "Correct. PEFT techniques like LoRA, adapters, and prompt tuning fine-tune only a small subset of parameters while keeping the base model frozen.",
+        "Incorrect. PEFT doesn't increase model size; it typically adds minimal parameters or modifies existing ones efficiently.",
+        "Incorrect. PEFT is used for fine-tuning pre-trained models, not for training models from scratch."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PEFT",
+        "parameter-efficient",
+        "definition"
+      ]
+    },
+    {
+      "id": "FTU_005",
+      "question": "Which layer types are typically targeted by LoRA in transformer models?",
+      "options": [
+        "Only embedding layers",
+        "Attention projection layers (Q, K, V, O)",
+        "Only the final classification layer",
+        "Batch normalization layers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LoRA typically targets the attention projection layers (Query, Key, Value, and Output projections) in transformer models, as these contain the majority of parameters and are most impactful for adaptation.",
+      "optionExplanations": [
+        "Incorrect. While embedding layers can be adapted, LoRA typically focuses on attention layers which have more parameters and impact.",
+        "Correct. LoRA commonly targets the attention projection matrices (Wq, Wk, Wv, Wo) as they are large and crucial for model behavior.",
+        "Incorrect. Targeting only the final layer would be insufficient for most fine-tuning tasks and wouldn't leverage LoRA's full potential.",
+        "Incorrect. Transformer models typically use layer normalization, not batch normalization, and these are not the primary targets for LoRA."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "attention",
+        "transformer"
+      ]
+    },
+    {
+      "id": "FTU_006",
+      "question": "What is instruction tuning in the context of language models?",
+      "options": [
+        "Tuning the model's inference speed",
+        "Fine-tuning on instruction-following datasets",
+        "Adjusting the model architecture",
+        "Optimizing hardware instructions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Instruction tuning involves fine-tuning language models on datasets containing instruction-response pairs to improve their ability to follow human instructions and perform various tasks.",
+      "optionExplanations": [
+        "Incorrect. Instruction tuning is about improving task performance, not inference speed optimization.",
+        "Correct. Instruction tuning fine-tunes models on datasets where inputs are instructions and outputs are appropriate responses, improving instruction-following capabilities.",
+        "Incorrect. Instruction tuning doesn't change the model architecture; it adapts the model's weights through training.",
+        "Incorrect. This refers to hardware optimization, not the machine learning technique of instruction tuning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "instruction-tuning",
+        "fine-tuning",
+        "language-models"
+      ]
+    },
+    {
+      "id": "FTU_007",
+      "question": "In QLoRA, what is the typical quantization level used for base model weights?",
+      "options": [
+        "2-bit",
+        "4-bit",
+        "8-bit",
+        "16-bit"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "QLoRA typically uses 4-bit quantization for the base model weights, which provides a good balance between memory reduction and model performance preservation.",
+      "optionExplanations": [
+        "Incorrect. 2-bit quantization would be too aggressive and likely cause significant performance degradation.",
+        "Correct. QLoRA uses 4-bit NormalFloat (NF4) quantization for base model weights, achieving substantial memory savings with minimal performance loss.",
+        "Incorrect. 8-bit quantization is used in other techniques but QLoRA specifically uses 4-bit for greater memory efficiency.",
+        "Incorrect. 16-bit would not provide the dramatic memory savings that QLoRA aims to achieve."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "QLoRA",
+        "quantization",
+        "4-bit"
+      ]
+    },
+    {
+      "id": "FTU_008",
+      "question": "What is the main computational advantage of PEFT methods over full fine-tuning?",
+      "options": [
+        "Faster convergence",
+        "Better final accuracy",
+        "Reduced memory and computational requirements",
+        "Simpler data preprocessing"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "PEFT methods significantly reduce memory and computational requirements by updating only a small fraction of model parameters, making fine-tuning accessible even with limited resources.",
+      "optionExplanations": [
+        "Incorrect. PEFT methods don't necessarily converge faster; the main advantage is efficiency, not speed of convergence.",
+        "Incorrect. PEFT methods aim to match full fine-tuning performance while being more efficient, not necessarily achieving better accuracy.",
+        "Correct. PEFT methods dramatically reduce memory usage and computational requirements by training only a small subset of parameters.",
+        "Incorrect. Data preprocessing requirements are generally the same regardless of the fine-tuning method used."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PEFT",
+        "computational-efficiency",
+        "memory"
+      ]
+    },
+    {
+      "id": "FTU_009",
+      "question": "Which of the following is NOT a common PEFT method?",
+      "options": [
+        "LoRA (Low-Rank Adaptation)",
+        "Adapters",
+        "Prompt Tuning",
+        "Full Parameter Gradient Descent"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Full Parameter Gradient Descent involves updating all model parameters, which is the opposite of parameter-efficient fine-tuning. PEFT methods specifically aim to avoid updating all parameters.",
+      "optionExplanations": [
+        "Incorrect. LoRA is a well-known PEFT method that uses low-rank matrix decomposition for efficient adaptation.",
+        "Incorrect. Adapters are a classic PEFT method that inserts small neural network modules between existing layers.",
+        "Incorrect. Prompt tuning is a PEFT method that optimizes soft prompts while keeping the model parameters frozen.",
+        "Correct. Full Parameter Gradient Descent updates all model parameters, which contradicts the core principle of parameter efficiency in PEFT."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PEFT",
+        "methods",
+        "full-fine-tuning"
+      ]
+    },
+    {
+      "id": "FTU_010",
+      "question": "In LoRA, what happens to the original pre-trained weights during fine-tuning?",
+      "options": [
+        "They are completely replaced",
+        "They remain frozen and unchanged",
+        "They are quantized to lower precision",
+        "They are gradually updated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In LoRA, the original pre-trained weights remain frozen throughout the fine-tuning process. Only the low-rank adaptation matrices are trained, and their outputs are added to the frozen weights' outputs.",
+      "optionExplanations": [
+        "Incorrect. LoRA preserves the original weights and adds adaptation through separate low-rank matrices.",
+        "Correct. The core principle of LoRA is keeping the pre-trained weights frozen while learning adaptations through trainable low-rank matrices.",
+        "Incorrect. While quantization can be combined with LoRA (as in QLoRA), standard LoRA doesn't involve quantizing the original weights.",
+        "Incorrect. The original weights remain completely unchanged in LoRA; only the adaptation matrices are updated."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "frozen-weights",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "FTU_011",
+      "question": "What is the typical rank value range used in LoRA for most applications?",
+      "options": [
+        "1-4",
+        "8-64",
+        "128-256",
+        "512-1024"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LoRA typically uses rank values between 8-64 for most applications. This range provides a good balance between parameter efficiency and model expressiveness.",
+      "optionExplanations": [
+        "Incorrect. Ranks of 1-4 are typically too low for most practical applications and may not provide sufficient adaptation capacity.",
+        "Correct. Ranks between 8-64 are commonly used in LoRA, with 16 and 32 being particularly popular choices for many tasks.",
+        "Incorrect. Ranks of 128-256 are generally higher than necessary and would reduce the parameter efficiency benefits of LoRA.",
+        "Incorrect. Such high ranks would approach full fine-tuning in terms of parameter count, defeating the purpose of LoRA."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "rank",
+        "hyperparameter-tuning"
+      ]
+    },
+    {
+      "id": "FTU_012",
+      "question": "What is adapter-based fine-tuning?",
+      "options": [
+        "Replacing all model layers with new ones",
+        "Adding small neural network modules between existing layers",
+        "Changing the model architecture completely",
+        "Using different optimizers for different layers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adapter-based fine-tuning involves inserting small neural network modules (adapters) between the layers of a pre-trained model while keeping the original parameters frozen.",
+      "optionExplanations": [
+        "Incorrect. Adapter-based fine-tuning preserves the original layers and adds small modules, rather than replacing layers entirely.",
+        "Correct. Adapters are small neural network modules inserted between existing layers, allowing for task-specific adaptation while keeping the base model frozen.",
+        "Incorrect. Adapter methods maintain the original architecture and add small components, rather than changing the architecture completely.",
+        "Incorrect. This describes an optimization strategy, not the structural approach of adapter-based fine-tuning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "adapters",
+        "PEFT",
+        "neural-networks"
+      ]
+    },
+    {
+      "id": "FTU_013",
+      "question": "What is the main difference between soft prompt tuning and hard prompt engineering?",
+      "options": [
+        "Soft prompts are longer than hard prompts",
+        "Soft prompts use learnable embeddings while hard prompts use discrete tokens",
+        "Soft prompts are faster to compute",
+        "Soft prompts work only with smaller models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Soft prompt tuning uses learnable continuous embeddings that are optimized during training, while hard prompt engineering uses discrete text tokens that are manually crafted.",
+      "optionExplanations": [
+        "Incorrect. The length difference is not the main distinguishing factor between soft and hard prompts.",
+        "Correct. Soft prompts are learnable continuous vectors in the embedding space, while hard prompts are discrete text tokens manually designed by humans.",
+        "Incorrect. Computational speed is not the primary difference between soft and hard prompts.",
+        "Incorrect. Soft prompt tuning can work with models of various sizes, not just smaller ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prompt-tuning",
+        "soft-prompts",
+        "embeddings"
+      ]
+    },
+    {
+      "id": "FTU_014",
+      "question": "In QLoRA, what data type is typically used for the LoRA adapters?",
+      "options": [
+        "4-bit integers",
+        "8-bit integers",
+        "16-bit floats",
+        "32-bit floats"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In QLoRA, while the base model weights are quantized to 4-bit, the LoRA adapter weights are typically kept in 16-bit float precision to maintain training stability and performance.",
+      "optionExplanations": [
+        "Incorrect. The adapters need higher precision than 4-bit for effective training and gradient flow.",
+        "Incorrect. 8-bit precision for adapters would still be too low for stable training in most cases.",
+        "Correct. QLoRA uses 16-bit floats (bfloat16) for the LoRA adapters to ensure stable training while the base weights are 4-bit quantized.",
+        "Incorrect. While 32-bit would work, 16-bit floats provide sufficient precision while being more memory-efficient."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "QLoRA",
+        "data-types",
+        "precision"
+      ]
+    },
+    {
+      "id": "FTU_015",
+      "question": "What is catastrophic forgetting in the context of fine-tuning?",
+      "options": [
+        "The model runs out of memory",
+        "The model loses its pre-trained knowledge when learning new tasks",
+        "The training process becomes unstable",
+        "The model architecture becomes corrupted"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Catastrophic forgetting occurs when a neural network forgets previously learned information while learning new tasks, often happening during aggressive fine-tuning of pre-trained models.",
+      "optionExplanations": [
+        "Incorrect. This describes a memory issue, not the learning phenomenon of catastrophic forgetting.",
+        "Correct. Catastrophic forgetting refers to the loss of previously acquired knowledge when the model is trained on new tasks, particularly common in neural networks.",
+        "Incorrect. Training instability is a different issue related to optimization dynamics, not knowledge retention.",
+        "Incorrect. This describes a technical corruption problem, not the learning behavior of catastrophic forgetting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "catastrophic-forgetting",
+        "fine-tuning",
+        "knowledge-retention"
+      ]
+    },
+    {
+      "id": "FTU_016",
+      "question": "How do PEFT methods like LoRA help mitigate catastrophic forgetting?",
+      "options": [
+        "By using larger learning rates",
+        "By keeping the original model weights frozen",
+        "By training for fewer epochs",
+        "By using more training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PEFT methods mitigate catastrophic forgetting by keeping the original pre-trained weights frozen and learning task-specific adaptations separately, preserving the model's original knowledge.",
+      "optionExplanations": [
+        "Incorrect. Larger learning rates would typically increase the risk of catastrophic forgetting, not reduce it.",
+        "Correct. By freezing the original weights, PEFT methods preserve the pre-trained knowledge while learning new task-specific information through adaptation modules.",
+        "Incorrect. Training duration alone doesn't address the fundamental issue of weight interference that causes catastrophic forgetting.",
+        "Incorrect. More training data doesn't necessarily prevent catastrophic forgetting; it's about how the weights are updated."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PEFT",
+        "catastrophic-forgetting",
+        "knowledge-preservation"
+      ]
+    },
+    {
+      "id": "FTU_017",
+      "question": "What is the scaling factor (alpha) in LoRA used for?",
+      "options": [
+        "Controlling the learning rate",
+        "Scaling the contribution of the adaptation",
+        "Setting the batch size",
+        "Determining the model size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The scaling factor alpha in LoRA controls how much the low-rank adaptation contributes to the final output. It's typically set to a value like the rank or 2*rank to balance adaptation strength.",
+      "optionExplanations": [
+        "Incorrect. The scaling factor is not related to the learning rate, which is a separate optimization hyperparameter.",
+        "Correct. Alpha scales the contribution of the LoRA adaptation (ΔW = alpha/r * B*A), controlling how much the adaptation affects the model's behavior.",
+        "Incorrect. Batch size is a training configuration parameter independent of the LoRA scaling factor.",
+        "Incorrect. The scaling factor doesn't determine model size; it controls the magnitude of the learned adaptations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "scaling-factor",
+        "alpha"
+      ]
+    },
+    {
+      "id": "FTU_018",
+      "question": "Which of the following best describes the mathematical formulation of LoRA?",
+      "options": [
+        "W = W₀ + A + B",
+        "W = W₀ + AB",
+        "W = W₀ * A * B",
+        "W = W₀ + B * A"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "LoRA updates weights as W = W₀ + B*A, where W₀ is the frozen pre-trained weight, and B*A represents the low-rank adaptation with B and A being trainable matrices.",
+      "optionExplanations": [
+        "Incorrect. This suggests simple addition of matrices A and B, not the matrix multiplication that creates the low-rank structure.",
+        "Incorrect. The order of multiplication matters in LoRA; it should be B*A, not A*B, based on the dimensional constraints.",
+        "Incorrect. This uses element-wise multiplication rather than the additive adaptation that LoRA employs.",
+        "Correct. LoRA adds the product B*A to the frozen weights W₀, where B and A are low-rank matrices with dimensions ensuring the product matches W₀."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "mathematics",
+        "matrix-operations"
+      ]
+    },
+    {
+      "id": "FTU_019",
+      "question": "What is prefix tuning in the context of language models?",
+      "options": [
+        "Adding trainable tokens at the beginning of input sequences",
+        "Modifying the model architecture",
+        "Pre-training on domain-specific data",
+        "Adjusting the tokenization process"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prefix tuning involves prepending trainable tokens (soft prompts) to the input sequence, allowing the model to adapt to new tasks while keeping the original parameters frozen.",
+      "optionExplanations": [
+        "Correct. Prefix tuning adds trainable continuous tokens at the beginning of sequences, which are optimized to guide the model's behavior for specific tasks.",
+        "Incorrect. Prefix tuning doesn't modify the underlying model architecture; it works with the existing transformer structure.",
+        "Incorrect. This describes domain adaptation training, not the prefix tuning technique which works with already pre-trained models.",
+        "Incorrect. Prefix tuning operates at the embedding level after tokenization, not during the tokenization process itself."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prefix-tuning",
+        "soft-prompts",
+        "language-models"
+      ]
+    },
+    {
+      "id": "FTU_020",
+      "question": "What is the main advantage of instruction tuning over traditional task-specific fine-tuning?",
+      "options": [
+        "Faster training speed",
+        "Lower computational requirements",
+        "Better generalization to new instructions and tasks",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Instruction tuning's main advantage is improved generalization to new instructions and tasks by training the model to follow diverse instructions rather than learning specific input-output mappings.",
+      "optionExplanations": [
+        "Incorrect. Instruction tuning doesn't necessarily provide faster training; the focus is on capability improvement, not speed.",
+        "Incorrect. Computational requirements depend on the implementation method, not specifically on instruction tuning approach.",
+        "Correct. Instruction tuning teaches models to follow instructions in general, leading to better zero-shot and few-shot performance on new tasks.",
+        "Incorrect. Instruction tuning can actually be more complex as it requires carefully curated instruction-following datasets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "instruction-tuning",
+        "generalization",
+        "zero-shot"
+      ]
+    },
+    {
+      "id": "FTU_021",
+      "question": "In QLoRA, what is NF4 quantization?",
+      "options": [
+        "A 4-bit integer quantization scheme",
+        "A normalized float 4-bit quantization method",
+        "A neural function approximation technique",
+        "A network fusion algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NF4 (NormalFloat 4-bit) is a quantization method used in QLoRA that optimally represents normally distributed weights using 4 bits, designed specifically for neural network weight distributions.",
+      "optionExplanations": [
+        "Incorrect. NF4 is not a standard integer quantization but a specialized float quantization for neural network weights.",
+        "Correct. NF4 (NormalFloat 4-bit) is a quantization scheme that optimally represents normally distributed values using 4 bits, specifically designed for neural network weights.",
+        "Incorrect. NF4 is a quantization technique, not a neural function approximation method.",
+        "Incorrect. NF4 refers to quantization, not network fusion or combination algorithms."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "QLoRA",
+        "NF4",
+        "quantization"
+      ]
+    },
+    {
+      "id": "FTU_022",
+      "question": "What is the typical memory reduction achieved by QLoRA compared to full fine-tuning?",
+      "options": [
+        "10-20%",
+        "30-50%",
+        "60-75%",
+        "80-95%"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "QLoRA can achieve dramatic memory reductions of 80-95% compared to full fine-tuning by using 4-bit quantized base weights and only training small LoRA adapters.",
+      "optionExplanations": [
+        "Incorrect. This level of reduction would not be sufficient to justify QLoRA's development; the actual savings are much more dramatic.",
+        "Incorrect. While significant, QLoRA achieves much greater memory reductions than 30-50%.",
+        "Incorrect. QLoRA's memory savings are even more substantial than 60-75%.",
+        "Correct. QLoRA can reduce memory usage by 80-95% through 4-bit quantization and parameter-efficient training, making large model fine-tuning accessible on consumer hardware."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "QLoRA",
+        "memory-reduction",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "FTU_023",
+      "question": "Which layer component in transformers typically has the most parameters?",
+      "options": [
+        "Layer normalization",
+        "Attention heads",
+        "Feed-forward networks",
+        "Positional embeddings"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Feed-forward networks (FFNs) in transformer layers typically contain the most parameters, often accounting for about 2/3 of the total parameters in each transformer block.",
+      "optionExplanations": [
+        "Incorrect. Layer normalization has very few parameters (just scale and bias vectors).",
+        "Incorrect. While attention has many parameters, the feed-forward networks typically have more due to their larger hidden dimensions.",
+        "Correct. Feed-forward networks usually have the most parameters in transformer blocks, with typical expansions of 4x the model dimension (e.g., 4096→16384→4096).",
+        "Incorrect. Positional embeddings are typically much smaller compared to the layer parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transformers",
+        "parameters",
+        "feed-forward"
+      ]
+    },
+    {
+      "id": "FTU_024",
+      "question": "What is the purpose of dropout in adapter layers?",
+      "options": [
+        "To reduce computational cost",
+        "To prevent overfitting",
+        "To increase model capacity",
+        "To improve convergence speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dropout in adapter layers serves the same purpose as in other neural network components: preventing overfitting by randomly setting some neurons to zero during training, improving generalization.",
+      "optionExplanations": [
+        "Incorrect. Dropout doesn't reduce computational cost; it's a regularization technique that may even add some computational overhead.",
+        "Correct. Dropout is a regularization technique that prevents overfitting by randomly zeroing out neurons during training, helping adapters generalize better.",
+        "Incorrect. Dropout actually reduces effective model capacity during training by temporarily removing connections.",
+        "Incorrect. Dropout is primarily for regularization, not for improving convergence speed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "adapters",
+        "dropout",
+        "regularization"
+      ]
+    },
+    {
+      "id": "FTU_025",
+      "question": "In LoRA, what is the typical initialization strategy for matrices A and B?",
+      "options": [
+        "Both A and B are initialized to zero",
+        "A is initialized randomly, B is initialized to zero",
+        "Both A and B are initialized randomly",
+        "A is initialized to zero, B is initialized randomly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In LoRA, matrix A is typically initialized with random values (often Gaussian), while matrix B is initialized to zero, ensuring that the adaptation starts with no change to the original model behavior.",
+      "optionExplanations": [
+        "Incorrect. If both matrices were zero, the adaptation would never learn anything as gradients would be zero initially.",
+        "Correct. A is initialized randomly (often Gaussian) to enable gradient flow, while B starts at zero so the initial adaptation ΔW = B*A = 0, preserving original model behavior.",
+        "Incorrect. Random initialization of both matrices would immediately change the model behavior from the start, which is not desired in LoRA.",
+        "Incorrect. This would make the initial adaptation non-zero and randomly affect the model from the beginning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "initialization",
+        "training"
+      ]
+    },
+    {
+      "id": "FTU_026",
+      "question": "What is task arithmetic in the context of PEFT methods?",
+      "options": [
+        "Calculating the computational cost of tasks",
+        "Adding or subtracting learned task vectors",
+        "Multiplying task-specific learning rates",
+        "Dividing datasets into task-specific batches"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Task arithmetic refers to the ability to add, subtract, or combine learned task vectors (like LoRA weights) to achieve multi-task capabilities or remove unwanted behaviors from models.",
+      "optionExplanations": [
+        "Incorrect. Task arithmetic is about manipulating learned representations, not calculating computational costs.",
+        "Correct. Task arithmetic involves mathematical operations on learned task vectors, such as adding LoRA weights for multi-task learning or subtracting them to remove behaviors.",
+        "Incorrect. This describes learning rate scheduling, not the concept of task arithmetic with learned representations.",
+        "Incorrect. This describes data preprocessing, not the manipulation of learned task-specific parameters."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "task-arithmetic",
+        "PEFT",
+        "multi-task"
+      ]
+    },
+    {
+      "id": "FTU_027",
+      "question": "What is the main challenge when fine-tuning very large language models (100B+ parameters)?",
+      "options": [
+        "Slow inference speed",
+        "Memory requirements for storing gradients and optimizer states",
+        "Poor model accuracy",
+        "Complex data preprocessing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main challenge with fine-tuning very large models is the enormous memory requirements for storing gradients, optimizer states, and activations, which can exceed available GPU memory.",
+      "optionExplanations": [
+        "Incorrect. While inference speed is a consideration, the primary challenge during fine-tuning is memory, not inference speed.",
+        "Correct. Full fine-tuning requires storing gradients and optimizer states for all parameters, which can require 4-8x more memory than just loading the model.",
+        "Incorrect. Large models typically have good accuracy; the challenge is in the computational requirements to train them.",
+        "Incorrect. Data preprocessing complexity is generally independent of model size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "large-models",
+        "memory",
+        "optimization"
+      ]
+    },
+    {
+      "id": "FTU_028",
+      "question": "What is gradient checkpointing and how does it relate to fine-tuning?",
+      "options": [
+        "Saving model weights periodically during training",
+        "Trading computation for memory by recomputing activations",
+        "Validating gradient correctness",
+        "Updating only specific gradient components"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient checkpointing is a memory optimization technique that saves memory by not storing all intermediate activations, instead recomputing them during the backward pass when needed.",
+      "optionExplanations": [
+        "Incorrect. This describes model checkpointing, not gradient checkpointing which is about activation memory management.",
+        "Correct. Gradient checkpointing trades computation time for memory by recomputing forward pass activations during backpropagation instead of storing them all.",
+        "Incorrect. This would be gradient verification, not the memory optimization technique of gradient checkpointing.",
+        "Incorrect. This describes selective gradient updates, not the activation recomputation strategy of gradient checkpointing."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gradient-checkpointing",
+        "memory-optimization",
+        "training"
+      ]
+    },
+    {
+      "id": "FTU_029",
+      "question": "What is the relationship between model size and optimal LoRA rank?",
+      "options": [
+        "Larger models always need higher ranks",
+        "Larger models need lower ranks due to redundancy",
+        "The relationship varies by task and architecture",
+        "Model size doesn't affect optimal rank"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The optimal LoRA rank depends on multiple factors including model size, task complexity, dataset size, and architecture. There's no universal rule, and empirical testing is often needed.",
+      "optionExplanations": [
+        "Incorrect. While larger models might benefit from higher ranks in some cases, this isn't a universal rule.",
+        "Incorrect. The redundancy argument doesn't necessarily lead to lower optimal ranks for larger models.",
+        "Correct. The optimal rank is task-dependent and varies based on model architecture, dataset complexity, and the specific adaptation requirements.",
+        "Incorrect. Model size does influence the optimal rank choice, though the relationship is complex and task-dependent."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "model-size",
+        "hyperparameter-tuning"
+      ]
+    },
+    {
+      "id": "FTU_030",
+      "question": "What is the difference between single-task and multi-task fine-tuning?",
+      "options": [
+        "Number of training epochs",
+        "Size of the training dataset",
+        "Training on one task vs. multiple tasks simultaneously",
+        "Number of model parameters"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Single-task fine-tuning adapts a model for one specific task, while multi-task fine-tuning trains the model on multiple tasks simultaneously to improve generalization and transfer learning.",
+      "optionExplanations": [
+        "Incorrect. The number of epochs is a training configuration choice, not what distinguishes single-task from multi-task fine-tuning.",
+        "Incorrect. Dataset size can vary for both single-task and multi-task approaches.",
+        "Correct. The key difference is whether the fine-tuning process focuses on one specific task or trains on multiple tasks at the same time.",
+        "Incorrect. The number of parameters in the model is independent of whether it's being trained on single or multiple tasks."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "single-task",
+        "multi-task",
+        "fine-tuning"
+      ]
+    },
+    {
+      "id": "FTU_031",
+      "question": "What is the purpose of the alpha/rank scaling in LoRA?",
+      "options": [
+        "To normalize the learning rate",
+        "To control the magnitude of adaptations independent of rank",
+        "To reduce computational complexity",
+        "To prevent gradient explosion"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The alpha/rank scaling in LoRA allows control over the adaptation magnitude independently of the rank choice, providing more flexible hyperparameter tuning and better empirical performance.",
+      "optionExplanations": [
+        "Incorrect. Alpha scaling is not directly related to learning rate normalization, which is handled by the optimizer.",
+        "Correct. The alpha/rank scaling allows practitioners to control how much the adaptation affects the model behavior independently of the rank selection.",
+        "Incorrect. The scaling factor doesn't reduce computational complexity; it's about controlling adaptation strength.",
+        "Incorrect. Gradient explosion prevention is typically handled by gradient clipping, not by LoRA's alpha scaling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "scaling",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "FTU_032",
+      "question": "Which evaluation metric is most important when comparing PEFT methods?",
+      "options": [
+        "Training speed only",
+        "Memory usage only",
+        "Task performance vs. efficiency trade-off",
+        "Model size reduction only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The most important evaluation criterion for PEFT methods is the trade-off between task performance and efficiency (memory, computation, parameters), as the goal is to maintain performance while improving efficiency.",
+      "optionExplanations": [
+        "Incorrect. Training speed alone doesn't capture the full value proposition of PEFT methods.",
+        "Incorrect. Memory usage is important but must be considered alongside task performance.",
+        "Correct. PEFT methods aim to achieve comparable performance to full fine-tuning while being much more efficient, so the performance-efficiency trade-off is key.",
+        "Incorrect. Model size reduction alone doesn't account for whether the method actually works well for the intended tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "PEFT",
+        "trade-offs"
+      ]
+    },
+    {
+      "id": "FTU_033",
+      "question": "What is double quantization in QLoRA?",
+      "options": [
+        "Quantizing the model twice with different precisions",
+        "Quantizing both the constants and values in quantization",
+        "Using two different quantization algorithms",
+        "Quantizing gradients and weights separately"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Double quantization in QLoRA refers to also quantizing the quantization constants (like scaling factors and zero points) themselves, achieving additional memory savings beyond basic weight quantization.",
+      "optionExplanations": [
+        "Incorrect. Double quantization doesn't mean applying quantization twice, but rather quantizing the quantization parameters themselves.",
+        "Correct. Double quantization quantizes the quantization constants (scaling factors, zero-points) in addition to the weights, saving additional memory.",
+        "Incorrect. It uses the same quantization approach but applies it to both weights and quantization parameters.",
+        "Incorrect. Double quantization specifically refers to quantizing the quantization constants, not gradient quantization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "QLoRA",
+        "double-quantization",
+        "memory-optimization"
+      ]
+    },
+    {
+      "id": "FTU_034",
+      "question": "What is the main advantage of using LoRA over full fine-tuning for deployment?",
+      "options": [
+        "Better model accuracy",
+        "Faster inference speed",
+        "Easy switching between different task adaptations",
+        "Lower inference memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LoRA's main deployment advantage is the ability to easily switch between different task adaptations by swapping LoRA weights while keeping the same base model, enabling efficient multi-task serving.",
+      "optionExplanations": [
+        "Incorrect. LoRA typically matches but doesn't exceed full fine-tuning accuracy.",
+        "Incorrect. LoRA doesn't necessarily provide faster inference; the computational overhead is usually minimal either way.",
+        "Correct. LoRA allows easy switching between tasks by loading different adapter weights for the same base model, enabling efficient multi-task deployment.",
+        "Incorrect. During inference, LoRA typically has similar memory usage to full fine-tuning since the adaptations are applied to the weights."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "deployment",
+        "multi-task"
+      ]
+    },
+    {
+      "id": "FTU_035",
+      "question": "What is the key insight behind parameter-efficient fine-tuning methods?",
+      "options": [
+        "All model parameters are equally important",
+        "Most model capacity is redundant for specific tasks",
+        "Larger models always perform better",
+        "Fine-tuning requires complete retraining"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PEFT methods are based on the insight that most of a pre-trained model's capacity is redundant for specific downstream tasks, so effective adaptation can be achieved by training only a small subset of parameters.",
+      "optionExplanations": [
+        "Incorrect. PEFT methods assume that not all parameters are equally important for adaptation to specific tasks.",
+        "Correct. PEFT methods leverage the idea that pre-trained models have more capacity than needed for specific tasks, so small adaptations can achieve good performance.",
+        "Incorrect. While larger models often perform better, PEFT focuses on efficient adaptation rather than model scaling.",
+        "Incorrect. PEFT methods specifically avoid complete retraining by leveraging pre-trained weights."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PEFT",
+        "parameter-efficiency",
+        "redundancy"
+      ]
+    },
+    {
+      "id": "FTU_036",
+      "question": "What is the typical bottleneck dimension in adapter layers?",
+      "options": [
+        "Same as the original layer dimension",
+        "Twice the original layer dimension",
+        "Much smaller than the original layer dimension",
+        "Much larger than the original layer dimension"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Adapter layers typically use a bottleneck architecture with a much smaller hidden dimension than the original layer, creating a parameter-efficient adaptation module.",
+      "optionExplanations": [
+        "Incorrect. Using the same dimension would not provide parameter efficiency benefits.",
+        "Incorrect. Doubling the dimension would increase rather than decrease parameter count.",
+        "Correct. Adapters use bottleneck architectures with hidden dimensions much smaller than the original (e.g., 64 or 128 vs. 4096), creating parameter efficiency.",
+        "Incorrect. Larger dimensions would defeat the purpose of parameter-efficient adaptation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adapters",
+        "bottleneck",
+        "architecture"
+      ]
+    },
+    {
+      "id": "FTU_037",
+      "question": "What is soft prompt tuning's main limitation compared to other PEFT methods?",
+      "options": [
+        "Higher computational cost",
+        "Poor performance on small models",
+        "Requires task-specific architectures",
+        "Limited expressiveness for complex tasks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Soft prompt tuning typically performs poorly on smaller models and requires very large language models (10B+ parameters) to be effective, limiting its applicability compared to other PEFT methods.",
+      "optionExplanations": [
+        "Incorrect. Soft prompt tuning actually has lower computational cost since it trains very few parameters.",
+        "Correct. Soft prompt tuning works well only on very large models (10B+ parameters) and performs poorly on smaller models, unlike other PEFT methods.",
+        "Incorrect. Soft prompt tuning works with standard transformer architectures without requiring modifications.",
+        "Incorrect. While prompt tuning may have expressiveness limitations, the main practical limitation is its requirement for very large models."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "soft-prompt-tuning",
+        "limitations",
+        "model-size"
+      ]
+    },
+    {
+      "id": "FTU_038",
+      "question": "What is the purpose of paged optimizers in QLoRA?",
+      "options": [
+        "To speed up training",
+        "To handle memory spikes during training",
+        "To improve model accuracy",
+        "To reduce network communication"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Paged optimizers in QLoRA automatically move optimizer states between GPU memory and CPU memory to handle memory spikes during training, preventing out-of-memory errors.",
+      "optionExplanations": [
+        "Incorrect. Paged optimizers are primarily for memory management, not speed optimization.",
+        "Correct. Paged optimizers handle memory spikes by automatically transferring optimizer states between GPU and CPU memory as needed.",
+        "Incorrect. Paged optimizers don't directly improve accuracy; they're a memory management solution.",
+        "Incorrect. Paged optimizers deal with local memory management, not distributed training communication."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "QLoRA",
+        "paged-optimizers",
+        "memory-management"
+      ]
+    },
+    {
+      "id": "FTU_039",
+      "question": "What makes QLoRA particularly suitable for fine-tuning on consumer hardware?",
+      "options": [
+        "Faster training algorithms",
+        "Simplified model architectures",
+        "Dramatic memory reduction while maintaining performance",
+        "Reduced dataset requirements"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "QLoRA's combination of 4-bit quantization, parameter-efficient training, and memory optimizations reduces memory requirements by 80-95%, making large model fine-tuning possible on consumer GPUs.",
+      "optionExplanations": [
+        "Incorrect. QLoRA's advantage is memory efficiency, not necessarily faster training algorithms.",
+        "Incorrect. QLoRA works with existing model architectures, not simplified ones.",
+        "Correct. QLoRA's dramatic memory reduction (80-95%) while maintaining performance makes large model fine-tuning accessible on consumer hardware with limited VRAM.",
+        "Incorrect. Dataset requirements are generally the same regardless of the fine-tuning method used."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "QLoRA",
+        "consumer-hardware",
+        "accessibility"
+      ]
+    },
+    {
+      "id": "FTU_040",
+      "question": "What is the difference between supervised fine-tuning (SFT) and instruction tuning?",
+      "options": [
+        "SFT uses labeled data, instruction tuning doesn't",
+        "Instruction tuning is a specific type of SFT focused on following instructions",
+        "SFT is faster than instruction tuning",
+        "They are completely different approaches"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Instruction tuning is a specific type of supervised fine-tuning where the supervision signal comes from instruction-following datasets, teaching models to follow diverse instructions and perform various tasks.",
+      "optionExplanations": [
+        "Incorrect. Both SFT and instruction tuning use labeled data; instruction tuning uses instruction-response pairs as labels.",
+        "Correct. Instruction tuning is a specific form of supervised fine-tuning where the model is trained on instruction-following datasets to improve its ability to follow human instructions.",
+        "Incorrect. Training speed depends on implementation details, not whether it's SFT or instruction tuning.",
+        "Incorrect. Instruction tuning is actually a subset of supervised fine-tuning, not a completely different approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "supervised-fine-tuning",
+        "instruction-tuning",
+        "relationship"
+      ]
+    },
+    {
+      "id": "FTU_041",
+      "question": "What is the main challenge in applying LoRA to convolutional neural networks?",
+      "options": [
+        "CNNs don't have enough parameters",
+        "Convolutional layers have different structures than linear layers",
+        "LoRA doesn't work with image data",
+        "CNNs require different optimizers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Applying LoRA to CNNs is challenging because convolutional layers have different mathematical structures than the linear layers that LoRA was originally designed for, requiring adaptations to the low-rank decomposition approach.",
+      "optionExplanations": [
+        "Incorrect. Modern CNNs can have millions or billions of parameters, so parameter count isn't the issue.",
+        "Correct. LoRA was designed for linear transformations, while convolutional layers have spatial structures that require different approaches to low-rank adaptation.",
+        "Incorrect. LoRA can work with image data; the challenge is in adapting the technique to convolutional layer structures.",
+        "Incorrect. Optimizer choice is independent of whether LoRA is applied to CNNs or transformers."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "CNNs",
+        "convolutional-layers"
+      ]
+    },
+    {
+      "id": "FTU_042",
+      "question": "What is the typical size of LoRA adapter files compared to full model checkpoints?",
+      "options": [
+        "About the same size",
+        "2-3x smaller",
+        "10-50x smaller",
+        "100-1000x smaller"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "LoRA adapter files are typically 100-1000x smaller than full model checkpoints because they only contain the low-rank adaptation matrices, which represent a tiny fraction of the total model parameters.",
+      "optionExplanations": [
+        "Incorrect. LoRA adapters are much smaller than full model checkpoints.",
+        "Incorrect. The size reduction is much more dramatic than just 2-3x.",
+        "Incorrect. While significant, the reduction is even more substantial than 10-50x.",
+        "Correct. LoRA adapters typically contain only 0.1-1% of the parameters, making them 100-1000x smaller than full model files."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "file-size",
+        "storage"
+      ]
+    },
+    {
+      "id": "FTU_043",
+      "question": "What is the role of residual connections in adapter-based fine-tuning?",
+      "options": [
+        "To speed up training",
+        "To add the adapter output to the original layer output",
+        "To prevent gradient vanishing",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In adapter-based fine-tuning, residual connections add the adapter's output to the original layer's output, allowing the adapter to learn task-specific modifications while preserving the original functionality.",
+      "optionExplanations": [
+        "Incorrect. While residual connections can help training stability, their primary role in adapters is functional combination.",
+        "Correct. Residual connections in adapters combine the original layer output with the adapter output: output = original + adapter(original).",
+        "Incorrect. While residual connections can help with gradients, this is not their primary purpose in adapter architectures.",
+        "Incorrect. Residual connections don't reduce memory usage; they're about combining functionality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adapters",
+        "residual-connections",
+        "architecture"
+      ]
+    },
+    {
+      "id": "FTU_044",
+      "question": "What is the computational overhead of LoRA during training compared to full fine-tuning?",
+      "options": [
+        "Significantly higher overhead",
+        "Slightly higher overhead",
+        "About the same",
+        "Lower overhead"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "LoRA has lower computational overhead during training because it only computes gradients for the low-rank matrices (typically <1% of parameters) rather than all model parameters.",
+      "optionExplanations": [
+        "Incorrect. LoRA reduces computational requirements by training fewer parameters.",
+        "Incorrect. LoRA doesn't add overhead; it reduces computation by training fewer parameters.",
+        "Incorrect. LoRA requires less computation than full fine-tuning due to fewer trainable parameters.",
+        "Correct. LoRA has lower computational overhead because it only trains a small fraction of the parameters (the low-rank adapters)."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "computational-overhead",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "FTU_045",
+      "question": "What is the main difference between LoRA and traditional low-rank matrix factorization?",
+      "options": [
+        "LoRA uses different mathematical operations",
+        "LoRA is applied to weight updates rather than the weights themselves",
+        "LoRA requires more memory",
+        "LoRA works only with transformers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LoRA applies low-rank decomposition to the weight updates (ΔW = BA) rather than factorizing the original weights directly, allowing it to preserve pre-trained knowledge while learning adaptations.",
+      "optionExplanations": [
+        "Incorrect. LoRA uses standard matrix multiplication and decomposition operations.",
+        "Correct. LoRA decomposes the weight updates (changes) rather than the original weights, preserving the pre-trained weights while learning efficient adaptations.",
+        "Incorrect. LoRA actually reduces memory requirements compared to full fine-tuning.",
+        "Incorrect. While commonly used with transformers, LoRA can be applied to other architectures with linear layers."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "matrix-factorization",
+        "weight-updates"
+      ]
+    },
+    {
+      "id": "FTU_046",
+      "question": "What is chain-of-thought (CoT) prompting in instruction tuning?",
+      "options": [
+        "Linking multiple models together",
+        "Training models to show reasoning steps in their responses",
+        "Using prompts in sequence",
+        "Connecting different datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Chain-of-thought prompting in instruction tuning involves training models to show their reasoning process step-by-step, improving both transparency and performance on complex reasoning tasks.",
+      "optionExplanations": [
+        "Incorrect. Chain-of-thought refers to reasoning processes, not model architecture connections.",
+        "Correct. CoT prompting trains models to explicitly show reasoning steps ('Let's think step by step'), improving performance on complex tasks requiring multi-step reasoning.",
+        "Incorrect. While CoT involves sequences, it's specifically about reasoning steps, not prompt sequencing in general.",
+        "Incorrect. CoT is about reasoning processes, not data connection or combination."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chain-of-thought",
+        "instruction-tuning",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "FTU_047",
+      "question": "What is the purpose of the bias term in LoRA implementations?",
+      "options": [
+        "To improve numerical stability",
+        "To add task-specific bias adjustments",
+        "To prevent overfitting",
+        "To reduce computational cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The bias term in LoRA implementations allows for task-specific bias adjustments, providing additional adaptation capacity beyond just the weight matrix modifications.",
+      "optionExplanations": [
+        "Incorrect. While bias can help stability, its primary purpose in LoRA is adaptation flexibility.",
+        "Correct. LoRA can optionally include trainable bias terms to allow task-specific bias adjustments in addition to the low-rank weight adaptations.",
+        "Incorrect. Bias terms don't primarily serve as regularization; they provide additional adaptation parameters.",
+        "Incorrect. Adding bias terms doesn't reduce computational cost; they add a small amount of computation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "bias",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "FTU_048",
+      "question": "What is the typical convergence behavior of PEFT methods compared to full fine-tuning?",
+      "options": [
+        "Much slower convergence",
+        "Much faster convergence",
+        "Similar convergence speed",
+        "Highly variable depending on the task"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "PEFT methods typically converge at similar speeds to full fine-tuning, sometimes even faster due to the reduced parameter space and more focused optimization landscape.",
+      "optionExplanations": [
+        "Incorrect. PEFT methods don't typically converge slower; they often achieve comparable convergence speeds.",
+        "Incorrect. While PEFT can sometimes be faster, it's not consistently much faster than full fine-tuning.",
+        "Correct. PEFT methods generally achieve similar convergence speeds to full fine-tuning, sometimes with slight improvements due to the more constrained optimization space.",
+        "Incorrect. While there can be task variation, PEFT methods generally show consistent convergence behavior relative to full fine-tuning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PEFT",
+        "convergence",
+        "training-dynamics"
+      ]
+    },
+    {
+      "id": "FTU_049",
+      "question": "What is the main advantage of using multiple LoRA adapters on the same base model?",
+      "options": [
+        "Improved accuracy on single tasks",
+        "Faster training time",
+        "Multi-task capability with efficient switching",
+        "Reduced memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multiple LoRA adapters on the same base model enable efficient multi-task capability, allowing quick switching between different task-specific adaptations without reloading the entire model.",
+      "optionExplanations": [
+        "Incorrect. Multiple adapters are for multi-task scenarios, not necessarily improving single-task accuracy.",
+        "Incorrect. Training multiple adapters takes more time than training one, though each individual adapter trains efficiently.",
+        "Correct. Multiple LoRA adapters enable efficient multi-task serving by allowing quick switching between different task adaptations on the same base model.",
+        "Incorrect. Multiple adapters use more memory than a single adapter, though still much less than multiple full models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "multi-task",
+        "adapter-switching"
+      ]
+    },
+    {
+      "id": "FTU_050",
+      "question": "What is the role of the learning rate in PEFT methods?",
+      "options": [
+        "It should always be higher than full fine-tuning",
+        "It should always be lower than full fine-tuning",
+        "It requires careful tuning specific to the PEFT method",
+        "It's the same as full fine-tuning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Learning rates in PEFT methods require careful tuning specific to each method, as the optimization dynamics differ from full fine-tuning due to the constrained parameter space and different gradient flows.",
+      "optionExplanations": [
+        "Incorrect. There's no universal rule that PEFT methods require higher learning rates.",
+        "Incorrect. PEFT methods don't universally require lower learning rates than full fine-tuning.",
+        "Correct. Each PEFT method has different optimization characteristics requiring method-specific learning rate tuning for optimal performance.",
+        "Incorrect. PEFT methods typically require different learning rate considerations due to their unique optimization landscapes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "PEFT",
+        "hyperparameter-tuning"
+      ]
+    },
+    {
+      "id": "FTU_051",
+      "question": "What is the effect of increasing LoRA rank on model performance?",
+      "options": [
+        "Always improves performance",
+        "Always degrades performance",
+        "Improves performance up to a point, then may overfit",
+        "Has no effect on performance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increasing LoRA rank generally improves performance up to a certain point by providing more adaptation capacity, but very high ranks may lead to overfitting and diminishing returns.",
+      "optionExplanations": [
+        "Incorrect. Very high ranks can lead to overfitting and don't always improve performance.",
+        "Incorrect. Moderate increases in rank typically improve performance by providing more adaptation capacity.",
+        "Correct. There's typically an optimal rank range where performance improves with rank, but excessive ranks can cause overfitting and reduced generalization.",
+        "Incorrect. Rank significantly affects the adaptation capacity and thus model performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "rank",
+        "performance"
+      ]
+    },
+    {
+      "id": "FTU_052",
+      "question": "What is knowledge distillation in the context of fine-tuning?",
+      "options": [
+        "Reducing model size after training",
+        "Training a smaller model to mimic a larger fine-tuned model",
+        "Extracting specific knowledge from datasets",
+        "Removing unnecessary model parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Knowledge distillation in fine-tuning involves training a smaller student model to mimic the behavior of a larger teacher model that has been fine-tuned, transferring knowledge while maintaining efficiency.",
+      "optionExplanations": [
+        "Incorrect. This describes model compression, not knowledge distillation which involves training a separate model.",
+        "Correct. Knowledge distillation trains a smaller student model to reproduce the outputs and behavior of a larger fine-tuned teacher model.",
+        "Incorrect. This describes data analysis, not the model-to-model knowledge transfer process of distillation.",
+        "Incorrect. This describes pruning, not knowledge distillation which creates a separate smaller model."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "knowledge-distillation",
+        "model-compression",
+        "teacher-student"
+      ]
+    },
+    {
+      "id": "FTU_053",
+      "question": "What is the computational complexity of LoRA adaptation during inference?",
+      "options": [
+        "O(n³) due to matrix operations",
+        "O(n²) for the low-rank operations",
+        "O(n) linear complexity",
+        "Same as the original model"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "During inference, LoRA adaptations can be merged into the original weights (W' = W + BA), so the computational complexity remains the same as the original model with no additional overhead.",
+      "optionExplanations": [
+        "Incorrect. LoRA doesn't add cubic complexity during inference when adaptations are properly merged.",
+        "Incorrect. While the low-rank operations are O(n²), during inference they can be pre-computed and merged.",
+        "Incorrect. The complexity isn't reduced to linear; it maintains the original model's complexity.",
+        "Correct. LoRA adaptations can be merged into the original weights before inference, maintaining the same computational complexity as the base model."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LoRA",
+        "computational-complexity",
+        "inference"
+      ]
+    },
+    {
+      "id": "FTU_054",
+      "question": "What is the main challenge in instruction tuning data quality?",
+      "options": [
+        "Data size limitations",
+        "Ensuring diverse, high-quality instruction-response pairs",
+        "Computational requirements",
+        "Model architecture compatibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main challenge in instruction tuning is ensuring diverse, high-quality instruction-response pairs that cover various tasks and reasoning patterns while maintaining accuracy and helpfulness.",
+      "optionExplanations": [
+        "Incorrect. While data size matters, quality and diversity are more critical challenges in instruction tuning.",
+        "Correct. Instruction tuning requires carefully curated datasets with diverse, high-quality instruction-response pairs covering various tasks and reasoning patterns.",
+        "Incorrect. Computational requirements are manageable with PEFT methods; data quality is the primary challenge.",
+        "Incorrect. Most modern architectures are compatible with instruction tuning; the challenge is in the data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "instruction-tuning",
+        "data-quality",
+        "dataset-curation"
+      ]
+    },
+    {
+      "id": "FTU_055",
+      "question": "What is the difference between task-specific and task-agnostic PEFT methods?",
+      "options": [
+        "Task-specific methods work on one task, task-agnostic work on multiple",
+        "Task-specific methods require architecture changes",
+        "Task-agnostic methods are always more efficient",
+        "There is no meaningful difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Task-specific PEFT methods are designed for particular tasks and may not transfer well, while task-agnostic methods are designed to work across multiple tasks without task-specific modifications.",
+      "optionExplanations": [
+        "Correct. Task-specific PEFT methods are optimized for particular tasks, while task-agnostic methods are designed to work effectively across multiple different tasks.",
+        "Incorrect. Both types typically work with existing architectures; the difference is in their scope of applicability.",
+        "Incorrect. Efficiency depends on the specific implementation and use case, not whether the method is task-specific or agnostic.",
+        "Incorrect. There are meaningful differences in design philosophy, applicability, and transferability between these approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "task-specific",
+        "task-agnostic",
+        "PEFT"
+      ]
+    },
+    {
+      "id": "FTU_056",
+      "question": "What is the purpose of warmup steps in fine-tuning with PEFT methods?",
+      "options": [
+        "To gradually increase model size",
+        "To slowly increase learning rate from zero",
+        "To load model weights progressively",
+        "To validate data quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Warmup steps gradually increase the learning rate from zero to the target value, helping stabilize training dynamics in PEFT methods where the optimization landscape may be different from full fine-tuning.",
+      "optionExplanations": [
+        "Incorrect. Warmup doesn't change model size; it's about learning rate scheduling.",
+        "Correct. Warmup gradually increases learning rate from zero to help stabilize early training dynamics, which is important in PEFT methods with constrained parameter spaces.",
+        "Incorrect. Model weights are loaded before training begins; warmup is about learning rate dynamics.",
+        "Incorrect. Data validation happens before training; warmup is a training optimization technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "warmup",
+        "learning-rate",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "FTU_057",
+      "question": "What is the typical memory overhead of LoRA adapters during training?",
+      "options": [
+        "Same as full fine-tuning",
+        "50-80% of full fine-tuning",
+        "10-30% of full fine-tuning",
+        "1-5% of full fine-tuning"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "LoRA adapters typically add only 1-5% memory overhead during training because they train a very small number of parameters compared to the full model, dramatically reducing gradient and optimizer state memory requirements.",
+      "optionExplanations": [
+        "Incorrect. LoRA's main advantage is dramatically reduced memory usage compared to full fine-tuning.",
+        "Incorrect. LoRA provides much more substantial memory savings than just 20-50%.",
+        "Incorrect. LoRA's memory savings are even more dramatic than 70-90%.",
+        "Correct. LoRA typically requires only 1-5% additional memory for gradients and optimizer states of the small number of adapter parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "memory-overhead",
+        "training"
+      ]
+    },
+    {
+      "id": "FTU_058",
+      "question": "What is the main limitation of prefix tuning compared to LoRA?",
+      "options": [
+        "Higher computational cost",
+        "Poorer performance on most tasks",
+        "Requires larger models to be effective",
+        "More complex implementation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Prefix tuning's main limitation is that it requires very large models to be effective, performing poorly on smaller models, while LoRA can work effectively across a wider range of model sizes.",
+      "optionExplanations": [
+        "Incorrect. Prefix tuning actually has lower computational cost due to training very few parameters.",
+        "Incorrect. Performance varies by task, but the main limitation is model size requirements, not universal poor performance.",
+        "Correct. Prefix tuning typically requires very large models (10B+ parameters) to be effective, limiting its applicability compared to LoRA which works on various model sizes.",
+        "Incorrect. Prefix tuning is relatively simple to implement; the challenge is its effectiveness on smaller models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prefix-tuning",
+        "limitations",
+        "model-size"
+      ]
+    },
+    {
+      "id": "FTU_059",
+      "question": "What is the role of regularization in PEFT methods?",
+      "options": [
+        "To prevent the adapters from overfitting to training data",
+        "To speed up convergence",
+        "To reduce memory usage",
+        "To improve computational efficiency"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Regularization in PEFT methods helps prevent the small adapter modules from overfitting to the training data, which is particularly important given their limited capacity and the need for good generalization.",
+      "optionExplanations": [
+        "Correct. Regularization helps prevent adapter modules from overfitting to training data, ensuring they learn generalizable adaptations rather than memorizing training examples.",
+        "Incorrect. Regularization typically slows convergence slightly as it constrains the optimization; its purpose is generalization, not speed.",
+        "Incorrect. Regularization techniques don't directly reduce memory usage; they're about preventing overfitting.",
+        "Incorrect. Regularization may add slight computational overhead; its purpose is improving generalization, not efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "FTU_060",
+      "question": "What is the impact of data quality on instruction tuning effectiveness?",
+      "options": [
+        "Data quality has minimal impact",
+        "Only data quantity matters",
+        "High-quality data is crucial for good instruction following",
+        "Data quality only affects training speed"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data quality is crucial for instruction tuning effectiveness because models learn to follow instructions by imitating high-quality examples, and poor-quality instruction-response pairs can lead to undesirable behaviors.",
+      "optionExplanations": [
+        "Incorrect. Data quality is one of the most important factors in instruction tuning success.",
+        "Incorrect. While quantity helps, quality is often more important than quantity in instruction tuning.",
+        "Correct. High-quality instruction-response pairs are essential for teaching models to follow instructions accurately and safely.",
+        "Incorrect. Data quality primarily affects model behavior and capabilities, not just training speed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "data-quality",
+        "instruction-tuning",
+        "model-behavior"
+      ]
+    },
+    {
+      "id": "FTU_061",
+      "question": "What is the difference between LoRA and AdaLoRA?",
+      "options": [
+        "AdaLoRA uses adaptive rank during training",
+        "AdaLoRA works only with attention layers",
+        "AdaLoRA requires more memory",
+        "AdaLoRA is faster but less accurate"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "AdaLoRA (Adaptive LoRA) dynamically adjusts the rank of different adaptation modules during training based on their importance, potentially achieving better parameter efficiency than fixed-rank LoRA.",
+      "optionExplanations": [
+        "Correct. AdaLoRA adaptively adjusts the rank of different LoRA modules during training based on importance scores, optimizing parameter allocation.",
+        "Incorrect. AdaLoRA can be applied to the same layers as LoRA, not just attention layers.",
+        "Incorrect. AdaLoRA aims for better parameter efficiency and doesn't necessarily require more memory.",
+        "Incorrect. AdaLoRA typically aims for better accuracy through more efficient parameter allocation, not a speed-accuracy trade-off."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "AdaLoRA",
+        "adaptive-rank",
+        "parameter-efficiency"
+      ]
+    },
+    {
+      "id": "FTU_062",
+      "question": "What is the main advantage of QLoRA's NF4 quantization over standard 4-bit quantization?",
+      "options": [
+        "Faster computation",
+        "Better preservation of model quality",
+        "Lower memory usage",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NF4 quantization is specifically designed for neural network weights that follow a normal distribution, providing better quality preservation compared to standard uniform 4-bit quantization schemes.",
+      "optionExplanations": [
+        "Incorrect. The main advantage of NF4 is quality preservation, not computational speed.",
+        "Correct. NF4 is optimized for normally distributed neural network weights, providing better quality preservation than standard 4-bit quantization methods.",
+        "Incorrect. Both NF4 and standard 4-bit quantization use the same amount of memory (4 bits per weight).",
+        "Incorrect. NF4 is actually more complex than standard quantization as it's specifically designed for neural network weight distributions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "NF4",
+        "quantization",
+        "quality-preservation"
+      ]
+    },
+    {
+      "id": "FTU_063",
+      "question": "What is the typical approach for combining multiple PEFT adapters?",
+      "options": [
+        "Averaging their weights",
+        "Sequential application",
+        "Weighted summation based on task relevance",
+        "Random selection during inference"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multiple PEFT adapters are typically combined using weighted summation where weights reflect task relevance or importance, allowing models to leverage multiple task-specific adaptations simultaneously.",
+      "optionExplanations": [
+        "Incorrect. Simple averaging doesn't account for task relevance or importance differences between adapters.",
+        "Incorrect. Sequential application would be computationally expensive and doesn't leverage the additive nature of adaptations.",
+        "Correct. Weighted summation allows combining multiple adapters based on task relevance, enabling multi-task capabilities and smooth interpolation between tasks.",
+        "Incorrect. Random selection would not provide consistent or meaningful behavior."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adapter-combination",
+        "multi-task",
+        "weighted-summation"
+      ]
+    },
+    {
+      "id": "FTU_064",
+      "question": "What is the role of batch size in PEFT training?",
+      "options": [
+        "Larger batches always improve PEFT performance",
+        "Batch size should be smaller for PEFT than full fine-tuning",
+        "Batch size requires careful tuning based on the specific PEFT method",
+        "Batch size has no impact on PEFT training"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Batch size in PEFT training requires careful tuning based on the specific method, as different PEFT approaches may have different optimization dynamics and sensitivity to batch size effects.",
+      "optionExplanations": [
+        "Incorrect. Optimal batch size depends on the specific PEFT method, task, and computational constraints.",
+        "Incorrect. There's no universal rule that PEFT requires smaller batches than full fine-tuning.",
+        "Correct. Different PEFT methods have different optimization characteristics, requiring method-specific batch size tuning for optimal performance.",
+        "Incorrect. Batch size significantly affects training dynamics and convergence in PEFT methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-size",
+        "optimization",
+        "hyperparameter-tuning"
+      ]
+    },
+    {
+      "id": "FTU_065",
+      "question": "What is the main challenge in evaluating PEFT methods?",
+      "options": [
+        "Lack of standardized metrics",
+        "Balancing performance, efficiency, and generalization",
+        "Computational cost of evaluation",
+        "Limited evaluation datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main challenge in evaluating PEFT methods is balancing multiple objectives: task performance, computational efficiency, memory usage, and generalization across different tasks and domains.",
+      "optionExplanations": [
+        "Incorrect. Standard metrics exist for most tasks; the challenge is in multi-objective evaluation.",
+        "Correct. PEFT evaluation requires balancing task performance with efficiency gains and ensuring good generalization, making it a multi-objective optimization problem.",
+        "Incorrect. Evaluation computational cost is generally manageable; the challenge is in comprehensive multi-faceted assessment.",
+        "Incorrect. Many evaluation datasets are available; the challenge is in holistic evaluation across multiple criteria."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "multi-objective",
+        "performance-efficiency"
+      ]
+    },
+    {
+      "id": "FTU_066",
+      "question": "What is the effect of model architecture on LoRA effectiveness?",
+      "options": [
+        "LoRA works equally well on all architectures",
+        "LoRA is most effective on transformer architectures",
+        "LoRA effectiveness depends on the presence of linear layers",
+        "LoRA only works on convolutional networks"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LoRA effectiveness depends on the presence and importance of linear/dense layers in the architecture, as LoRA is designed to adapt linear transformations through low-rank decomposition.",
+      "optionExplanations": [
+        "Incorrect. LoRA effectiveness varies significantly based on architecture characteristics.",
+        "Incorrect. While transformers have many linear layers that benefit from LoRA, the key factor is the presence of important linear transformations.",
+        "Correct. LoRA is designed for linear layers and is most effective in architectures where linear transformations are important and numerous.",
+        "Incorrect. LoRA is actually less commonly used with CNNs and works best with architectures heavy in linear layers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "architecture",
+        "linear-layers",
+        "effectiveness"
+      ]
+    },
+    {
+      "id": "FTU_067",
+      "question": "What is the impact of pre-training quality on PEFT effectiveness?",
+      "options": [
+        "Pre-training quality has no impact on PEFT",
+        "Better pre-training leads to more effective PEFT",
+        "Poor pre-training requires larger PEFT adapters",
+        "PEFT can fix poor pre-training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Better pre-training quality generally leads to more effective PEFT because high-quality pre-trained representations provide a better foundation for task-specific adaptation with minimal parameter changes.",
+      "optionExplanations": [
+        "Incorrect. Pre-training quality significantly affects how well PEFT methods can adapt the model.",
+        "Correct. High-quality pre-trained models provide better foundational representations, making PEFT adaptations more effective with fewer parameters.",
+        "Incorrect. While poor pre-training might require different adaptation strategies, the relationship isn't simply about adapter size.",
+        "Incorrect. PEFT methods work best with good pre-training; they're not designed to fix fundamental pre-training deficiencies."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-training",
+        "foundation-models",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "FTU_068",
+      "question": "What is the difference between early stopping and convergence in PEFT training?",
+      "options": [
+        "Early stopping prevents overfitting, convergence indicates optimization completion",
+        "They are the same concept",
+        "Early stopping is faster than convergence",
+        "Convergence only applies to full fine-tuning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Early stopping is a regularization technique to prevent overfitting by stopping training before the model memorizes training data, while convergence refers to the optimization process reaching a stable point.",
+      "optionExplanations": [
+        "Correct. Early stopping is a regularization technique to prevent overfitting, while convergence refers to the optimization reaching a stable minimum in the loss landscape.",
+        "Incorrect. Early stopping and convergence are distinct concepts with different purposes in training.",
+        "Incorrect. Early stopping is about when to stop training, not about speed comparison with convergence.",
+        "Incorrect. Convergence applies to all optimization processes, including PEFT methods."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "early-stopping",
+        "convergence",
+        "regularization"
+      ]
+    },
+    {
+      "id": "FTU_069",
+      "question": "What is the role of validation data in PEFT training?",
+      "options": [
+        "Only for final model evaluation",
+        "For hyperparameter tuning and early stopping",
+        "Not needed in PEFT training",
+        "Only for measuring training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Validation data in PEFT training is crucial for hyperparameter tuning, early stopping decisions, and monitoring generalization performance during training.",
+      "optionExplanations": [
+        "Incorrect. Validation data is used throughout training, not just for final evaluation.",
+        "Correct. Validation data is essential for hyperparameter tuning, early stopping decisions, and monitoring model performance during PEFT training.",
+        "Incorrect. Validation data is as important in PEFT as in any other training method for ensuring good generalization.",
+        "Incorrect. Validation data is about performance monitoring, not speed measurement."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "validation",
+        "hyperparameter-tuning",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "FTU_070",
+      "question": "What is the computational cost of merging LoRA weights during inference?",
+      "options": [
+        "High cost, requires matrix multiplication",
+        "Moderate cost, depends on rank",
+        "Minimal cost, simple addition operation",
+        "Zero cost, done during training"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Merging LoRA weights during inference has minimal computational cost because it involves simple addition of the pre-computed ΔW = B*A to the original weights.",
+      "optionExplanations": [
+        "Incorrect. The matrix multiplication B*A can be pre-computed, so inference only requires addition.",
+        "Incorrect. Once B*A is pre-computed, the merging cost doesn't depend on rank during inference.",
+        "Correct. LoRA weight merging involves simple element-wise addition of the pre-computed adaptation matrix to the original weights.",
+        "Incorrect. The merging happens during inference preparation, not during training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LoRA",
+        "inference",
+        "computational-cost"
+      ]
+    },
+    {
+      "id": "FTU_071",
+      "question": "What is the main advantage of using LoRA in distributed training scenarios?",
+      "options": [
+        "Faster communication between nodes",
+        "Reduced synchronization overhead due to fewer parameters",
+        "Better fault tolerance",
+        "Simplified data parallelism"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LoRA's main advantage in distributed training is reduced synchronization overhead because only the small adapter parameters need to be synchronized across nodes, not the entire model.",
+      "optionExplanations": [
+        "Incorrect. LoRA doesn't inherently make communication faster, but it reduces the amount of data to communicate.",
+        "Correct. LoRA reduces synchronization overhead in distributed training because only the small adapter parameters need to be communicated between nodes.",
+        "Incorrect. Fault tolerance is not a primary benefit of LoRA in distributed settings.",
+        "Incorrect. Data parallelism complexity is similar; the advantage is in parameter synchronization efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "distributed-training",
+        "synchronization",
+        "communication"
+      ]
+    },
+    {
+      "id": "FTU_072",
+      "question": "What is the typical approach for handling different learning rates for different PEFT components?",
+      "options": [
+        "Use the same learning rate for all components",
+        "Use parameter groups with different learning rates",
+        "Randomly assign learning rates",
+        "Learning rates don't matter in PEFT"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different PEFT components (like LoRA matrices A and B, or different adapter layers) often benefit from different learning rates, which can be managed using parameter groups in optimizers.",
+      "optionExplanations": [
+        "Incorrect. Different components may benefit from different learning rates based on their roles and sensitivities.",
+        "Correct. Parameter groups allow setting different learning rates for different components (e.g., different rates for LoRA matrices A and B).",
+        "Incorrect. Learning rate assignment should be systematic based on component characteristics, not random.",
+        "Incorrect. Learning rates are crucial for PEFT training effectiveness, just as in any optimization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "learning-rates",
+        "parameter-groups",
+        "optimization"
+      ]
+    },
+    {
+      "id": "FTU_073",
+      "question": "What is the effect of sequence length on PEFT training efficiency?",
+      "options": [
+        "Longer sequences always improve PEFT effectiveness",
+        "Sequence length has no impact on PEFT",
+        "Longer sequences increase memory usage but may improve adaptation quality",
+        "PEFT only works with short sequences"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Longer sequences increase memory usage during PEFT training but may provide richer context for better adaptation quality, creating a trade-off between computational efficiency and adaptation effectiveness.",
+      "optionExplanations": [
+        "Incorrect. Longer sequences don't always improve effectiveness and come with computational costs.",
+        "Incorrect. Sequence length affects both memory usage and the quality of adaptation in PEFT training.",
+        "Correct. Longer sequences require more memory for activations and gradients but may enable better context understanding for adaptation.",
+        "Incorrect. PEFT methods can work with sequences of various lengths, though efficiency varies."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sequence-length",
+        "memory",
+        "context"
+      ]
+    },
+    {
+      "id": "FTU_074",
+      "question": "What is the role of attention patterns in LoRA effectiveness?",
+      "options": [
+        "Attention patterns don't affect LoRA",
+        "LoRA works best when applied to layers with diverse attention patterns",
+        "LoRA only works with self-attention",
+        "Uniform attention patterns are best for LoRA"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LoRA tends to be more effective when applied to attention layers with diverse, task-relevant attention patterns, as this indicates the layers are important for the adaptation task.",
+      "optionExplanations": [
+        "Incorrect. Attention patterns can indicate which layers are most important for adaptation.",
+        "Correct. Diverse attention patterns often indicate layers that are actively processing task-relevant information, making them good candidates for LoRA adaptation.",
+        "Incorrect. LoRA can work with various types of attention mechanisms, not just self-attention.",
+        "Incorrect. Uniform attention patterns might indicate less task-specific processing, potentially making LoRA less effective."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "attention-patterns",
+        "layer-selection",
+        "adaptation-effectiveness"
+      ]
+    },
+    {
+      "id": "FTU_075",
+      "question": "What is continual learning in the context of PEFT methods?",
+      "options": [
+        "Training that never stops",
+        "Learning new tasks without forgetting previous ones",
+        "Continuous model updates during inference",
+        "Real-time parameter adjustment"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Continual learning with PEFT involves learning new tasks sequentially without catastrophic forgetting of previously learned tasks, often by using separate adapters for different tasks.",
+      "optionExplanations": [
+        "Incorrect. Continual learning is about task sequences, not indefinite training duration.",
+        "Correct. Continual learning aims to learn new tasks while retaining performance on previously learned tasks, which PEFT methods facilitate through separate adapters.",
+        "Incorrect. This describes online learning, not continual learning across tasks.",
+        "Incorrect. This describes adaptive systems, not the continual learning paradigm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "continual-learning",
+        "catastrophic-forgetting",
+        "task-sequence"
+      ]
+    },
+    {
+      "id": "FTU_076",
+      "question": "What is the impact of model depth on LoRA placement strategies?",
+      "options": [
+        "LoRA should only be applied to shallow layers",
+        "LoRA should only be applied to deep layers",
+        "LoRA placement should consider layer function and task requirements",
+        "Model depth doesn't affect LoRA placement"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LoRA placement should consider the function of different layers (early layers for low-level features, deeper layers for high-level concepts) and match this to task requirements for optimal effectiveness.",
+      "optionExplanations": [
+        "Incorrect. Both shallow and deep layers can benefit from LoRA depending on the task.",
+        "Incorrect. Layer depth alone doesn't determine optimal LoRA placement.",
+        "Correct. LoRA placement should consider what each layer processes (low-level vs. high-level features) and align with task-specific adaptation needs.",
+        "Incorrect. Model depth and layer function significantly impact optimal LoRA placement strategies."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "layer-selection",
+        "model-depth",
+        "placement-strategy"
+      ]
+    },
+    {
+      "id": "FTU_077",
+      "question": "What is the relationship between LoRA rank and training data size?",
+      "options": [
+        "Larger datasets always require higher ranks",
+        "Smaller datasets always require lower ranks",
+        "The relationship depends on task complexity and data diversity",
+        "Data size doesn't affect optimal rank choice"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The relationship between LoRA rank and data size depends on task complexity and data diversity - complex tasks with diverse data may benefit from higher ranks, while simple tasks might work well with lower ranks regardless of data size.",
+      "optionExplanations": [
+        "Incorrect. Data size alone doesn't determine optimal rank; task complexity matters more.",
+        "Incorrect. Small datasets don't automatically require lower ranks if the task is complex.",
+        "Correct. The optimal rank depends on both task complexity and data diversity, not just data size alone.",
+        "Incorrect. Data characteristics do influence optimal rank choice, though the relationship is complex."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "data-size",
+        "task-complexity",
+        "rank-selection"
+      ]
+    },
+    {
+      "id": "FTU_078",
+      "question": "What is the purpose of gradient clipping in PEFT training?",
+      "options": [
+        "To reduce memory usage",
+        "To prevent gradient explosion and stabilize training",
+        "To speed up convergence",
+        "To improve model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient clipping in PEFT training prevents gradient explosion by limiting the magnitude of gradients, which helps stabilize the training process especially in the constrained parameter space of PEFT methods.",
+      "optionExplanations": [
+        "Incorrect. Gradient clipping is about training stability, not memory reduction.",
+        "Correct. Gradient clipping prevents gradient explosion by capping gradient magnitudes, which is important for stable PEFT training.",
+        "Incorrect. Gradient clipping is primarily for stability, not speed optimization.",
+        "Incorrect. Gradient clipping helps with training stability rather than directly improving accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "training-stability",
+        "optimization"
+      ]
+    },
+    {
+      "id": "FTU_079",
+      "question": "What is the main difference between supervised and unsupervised fine-tuning approaches?",
+      "options": [
+        "Supervised uses labels, unsupervised doesn't use any data",
+        "Supervised uses labeled data, unsupervised uses unlabeled data with self-supervision",
+        "Supervised is always better than unsupervised",
+        "They use different model architectures"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Supervised fine-tuning uses labeled data with explicit targets, while unsupervised fine-tuning uses unlabeled data with self-supervised objectives like masked language modeling or contrastive learning.",
+      "optionExplanations": [
+        "Incorrect. Unsupervised fine-tuning still uses data, just without explicit labels.",
+        "Correct. Supervised fine-tuning uses labeled data with explicit targets, while unsupervised uses unlabeled data with self-supervised learning objectives.",
+        "Incorrect. The effectiveness depends on the task, data availability, and implementation quality.",
+        "Incorrect. Both approaches typically use the same underlying architectures."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "supervised",
+        "unsupervised",
+        "self-supervision"
+      ]
+    },
+    {
+      "id": "FTU_080",
+      "question": "What is the impact of initialization schemes on LoRA training convergence?",
+      "options": [
+        "Initialization has no impact on LoRA",
+        "Only random initialization works for LoRA",
+        "Proper initialization significantly affects convergence speed and stability",
+        "LoRA always uses zero initialization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Proper initialization in LoRA (typically A random, B zero) significantly affects convergence speed and training stability by ensuring appropriate gradient flow while starting with no deviation from the base model.",
+      "optionExplanations": [
+        "Incorrect. Initialization strategy significantly impacts LoRA training dynamics.",
+        "Incorrect. LoRA uses a specific initialization strategy (A random, B zero), not purely random initialization.",
+        "Correct. Proper initialization ensures good gradient flow and training stability while preserving the base model's initial behavior.",
+        "Incorrect. LoRA uses mixed initialization: A is random, B is zero."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "initialization",
+        "convergence",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "FTU_081",
+      "question": "What is the role of temperature scaling in instruction tuning?",
+      "options": [
+        "To control model inference speed",
+        "To adjust output probability distributions for better calibration",
+        "To manage GPU temperature during training",
+        "To control learning rate scheduling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature scaling in instruction tuning adjusts the output probability distributions to improve calibration, making the model's confidence scores more accurately reflect its actual performance.",
+      "optionExplanations": [
+        "Incorrect. Temperature scaling affects output distributions, not inference speed.",
+        "Correct. Temperature scaling adjusts the sharpness of output distributions to improve probability calibration in instruction-following models.",
+        "Incorrect. This refers to hardware temperature, not the machine learning concept of temperature scaling.",
+        "Incorrect. Temperature scaling is about output calibration, not learning rate management."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature-scaling",
+        "calibration",
+        "probability-distributions"
+      ]
+    },
+    {
+      "id": "FTU_082",
+      "question": "What is the main challenge in scaling PEFT methods to very large models?",
+      "options": [
+        "Adapter size becomes too large",
+        "Training becomes unstable",
+        "Memory fragmentation and communication overhead",
+        "PEFT methods don't work on large models"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Scaling PEFT methods to very large models faces challenges in memory fragmentation and communication overhead in distributed settings, even though the adapters themselves remain small.",
+      "optionExplanations": [
+        "Incorrect. Adapter sizes remain relatively small even for very large models.",
+        "Incorrect. PEFT methods generally provide stable training for large models.",
+        "Correct. Very large models face memory fragmentation issues and communication overhead in distributed training, even with small adapters.",
+        "Incorrect. PEFT methods are particularly useful for large models where full fine-tuning is impractical."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "scalability",
+        "memory-fragmentation",
+        "distributed-training"
+      ]
+    },
+    {
+      "id": "FTU_083",
+      "question": "What is the purpose of layer normalization in adapter modules?",
+      "options": [
+        "To reduce computational cost",
+        "To stabilize training and improve gradient flow",
+        "To increase model capacity",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Layer normalization in adapter modules stabilizes training by normalizing activations and improving gradient flow, which is particularly important in the constrained optimization landscape of PEFT methods.",
+      "optionExplanations": [
+        "Incorrect. Layer normalization adds computational cost rather than reducing it.",
+        "Correct. Layer normalization stabilizes training by normalizing activations and improving gradient flow in adapter modules.",
+        "Incorrect. Layer normalization is about training stability, not increasing model capacity.",
+        "Incorrect. While layer normalization can have regularization effects, its primary purpose is training stabilization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "layer-normalization",
+        "training-stability",
+        "gradient-flow"
+      ]
+    },
+    {
+      "id": "FTU_084",
+      "question": "What is the impact of model sparsity on LoRA effectiveness?",
+      "options": [
+        "Sparsity always improves LoRA effectiveness",
+        "Sparsity has no impact on LoRA",
+        "Sparsity can affect LoRA effectiveness depending on which parameters are sparse",
+        "LoRA doesn't work with sparse models"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Model sparsity can affect LoRA effectiveness depending on which parameters are sparse - if important connection weights are pruned, LoRA may need to compensate, but if redundant weights are removed, LoRA may work more effectively.",
+      "optionExplanations": [
+        "Incorrect. The impact of sparsity on LoRA depends on which parameters are sparse and their importance.",
+        "Incorrect. Sparsity patterns can significantly affect how well LoRA can adapt sparse models.",
+        "Correct. The impact depends on whether sparse weights are important for the target task - sparse redundant weights may help LoRA focus better.",
+        "Incorrect. LoRA can work with sparse models, though effectiveness may vary based on sparsity patterns."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "sparsity",
+        "model-pruning",
+        "adaptation-effectiveness"
+      ]
+    },
+    {
+      "id": "FTU_085",
+      "question": "What is the role of curriculum learning in instruction tuning?",
+      "options": [
+        "Teaching models in a specific order from simple to complex instructions",
+        "Using educational datasets only",
+        "Training on academic subjects",
+        "Following a predefined training schedule"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Curriculum learning in instruction tuning involves ordering training examples from simple to complex instructions, helping models learn instruction-following capabilities progressively and more effectively.",
+      "optionExplanations": [
+        "Correct. Curriculum learning orders training from simple to complex instructions, helping models build instruction-following capabilities progressively.",
+        "Incorrect. Curriculum learning is about ordering complexity, not restricting to educational datasets.",
+        "Incorrect. The curriculum refers to instruction complexity, not academic subject matter.",
+        "Incorrect. While scheduling is involved, curriculum learning specifically refers to complexity-based ordering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curriculum-learning",
+        "instruction-complexity",
+        "progressive-training"
+      ]
+    },
+    {
+      "id": "FTU_086",
+      "question": "What is the difference between task-specific and domain-specific fine-tuning?",
+      "options": [
+        "They are the same concept",
+        "Task-specific focuses on particular tasks, domain-specific focuses on particular domains",
+        "Task-specific is always more effective",
+        "Domain-specific only works with PEFT methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Task-specific fine-tuning adapts models for particular tasks (e.g., sentiment analysis), while domain-specific fine-tuning adapts models for particular domains (e.g., medical, legal) across multiple tasks.",
+      "optionExplanations": [
+        "Incorrect. These are distinct concepts with different scopes and objectives.",
+        "Correct. Task-specific fine-tuning focuses on particular tasks while domain-specific fine-tuning focuses on particular domains or fields of knowledge.",
+        "Incorrect. Effectiveness depends on the use case and whether task or domain adaptation is more relevant.",
+        "Incorrect. Both approaches can use various fine-tuning methods, not just PEFT."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "task-specific",
+        "domain-specific",
+        "adaptation-scope"
+      ]
+    },
+    {
+      "id": "FTU_087",
+      "question": "What is the main advantage of using multiple LoRA ranks simultaneously?",
+      "options": [
+        "Faster training speed",
+        "Lower memory usage",
+        "Better capture of different types of adaptations",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using multiple LoRA ranks simultaneously allows better capture of different types of adaptations - lower ranks for broad patterns and higher ranks for specific detailed adaptations.",
+      "optionExplanations": [
+        "Incorrect. Multiple ranks typically increase rather than decrease training time.",
+        "Incorrect. Multiple ranks use more memory than a single rank approach.",
+        "Correct. Multiple ranks can capture different adaptation granularities - low ranks for general patterns and high ranks for specific detailed changes.",
+        "Incorrect. Multiple ranks add complexity rather than simplifying implementation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-rank",
+        "adaptation-granularity",
+        "hierarchical-adaptation"
+      ]
+    },
+    {
+      "id": "FTU_088",
+      "question": "What is the impact of tokenization on PEFT training effectiveness?",
+      "options": [
+        "Tokenization has no impact on PEFT",
+        "Finer tokenization always improves PEFT performance",
+        "Tokenization affects sequence length and context understanding",
+        "PEFT only works with word-level tokenization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Tokenization affects PEFT training effectiveness by influencing sequence length, context understanding, and how well the model can adapt to domain-specific vocabulary and concepts.",
+      "optionExplanations": [
+        "Incorrect. Tokenization significantly affects how models process and adapt to text data.",
+        "Incorrect. The optimal tokenization depends on the task and domain; finer isn't always better.",
+        "Correct. Tokenization affects sequence length, context understanding, and the model's ability to handle domain-specific terminology.",
+        "Incorrect. PEFT methods work with various tokenization approaches, including subword tokenization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tokenization",
+        "sequence-length",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "FTU_089",
+      "question": "What is the role of attention head selection in LoRA application?",
+      "options": [
+        "All attention heads should be adapted equally",
+        "Only the first attention head needs LoRA",
+        "Selecting important heads can improve efficiency and effectiveness",
+        "Attention head selection is not relevant for LoRA"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Selecting which attention heads to adapt with LoRA can improve both efficiency and effectiveness by focusing adaptation capacity on the heads most relevant to the target task.",
+      "optionExplanations": [
+        "Incorrect. Different attention heads may have different importance for the target task.",
+        "Incorrect. The first head isn't necessarily the most important for task adaptation.",
+        "Correct. Selective application to important attention heads can improve efficiency while maintaining or improving effectiveness.",
+        "Incorrect. Attention head selection is a valuable strategy for optimizing LoRA application."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "attention-heads",
+        "selective-adaptation",
+        "head-importance"
+      ]
+    },
+    {
+      "id": "FTU_090",
+      "question": "What is the main limitation of current PEFT evaluation benchmarks?",
+      "options": [
+        "Too few evaluation tasks",
+        "Lack of efficiency metrics alongside performance metrics",
+        "Only work with specific model architectures",
+        "Too computationally expensive to run"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Current PEFT evaluation benchmarks often focus primarily on task performance without adequately measuring efficiency metrics like memory usage, training time, and parameter count alongside performance.",
+      "optionExplanations": [
+        "Incorrect. Many evaluation tasks are available; the issue is more about comprehensive evaluation criteria.",
+        "Correct. Many benchmarks focus on task performance without comprehensive efficiency metrics, missing the key value proposition of PEFT methods.",
+        "Incorrect. Most benchmarks are designed to work across different architectures.",
+        "Incorrect. PEFT methods generally make evaluation more computationally accessible, not more expensive."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-benchmarks",
+        "efficiency-metrics",
+        "comprehensive-evaluation"
+      ]
+    },
+    {
+      "id": "FTU_091",
+      "question": "What is the impact of mixed precision training on PEFT methods?",
+      "options": [
+        "Mixed precision breaks PEFT methods",
+        "No impact on PEFT effectiveness",
+        "Can reduce memory usage while maintaining performance",
+        "Only works with specific PEFT methods"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Mixed precision training can reduce memory usage in PEFT methods while maintaining performance, though care must be taken with gradient scaling and numerical stability for the small adapter parameters.",
+      "optionExplanations": [
+        "Incorrect. Mixed precision can work with PEFT methods with proper implementation.",
+        "Incorrect. Mixed precision can provide memory benefits for PEFT training.",
+        "Correct. Mixed precision can reduce memory usage in PEFT training, though attention to gradient scaling is needed for small adapter parameters.",
+        "Incorrect. Mixed precision techniques can generally be applied across different PEFT methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mixed-precision",
+        "memory-optimization",
+        "numerical-stability"
+      ]
+    },
+    {
+      "id": "FTU_092",
+      "question": "What is the purpose of adapter fusion in multi-task scenarios?",
+      "options": [
+        "To combine multiple adapters into a single adapter",
+        "To train adapters simultaneously",
+        "To learn how to combine knowledge from multiple task-specific adapters",
+        "To reduce the number of adapters needed"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Adapter fusion learns how to combine knowledge from multiple task-specific adapters, allowing the model to leverage relevant knowledge from different tasks for better performance on new or related tasks.",
+      "optionExplanations": [
+        "Incorrect. Adapter fusion doesn't merge adapters into one, but learns to combine their contributions.",
+        "Incorrect. Adapter fusion is about combining pre-trained adapters, not simultaneous training.",
+        "Correct. Adapter fusion learns attention-based or other mechanisms to combine knowledge from multiple task-specific adapters.",
+        "Incorrect. Adapter fusion uses multiple adapters and learns to combine them, not reduce their number."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adapter-fusion",
+        "multi-task",
+        "knowledge-combination"
+      ]
+    },
+    {
+      "id": "FTU_093",
+      "question": "What is the relationship between model interpretability and PEFT methods?",
+      "options": [
+        "PEFT methods reduce model interpretability",
+        "PEFT methods have no impact on interpretability",
+        "PEFT methods can potentially improve interpretability by isolating task-specific changes",
+        "Only LoRA improves interpretability"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "PEFT methods can potentially improve model interpretability by isolating task-specific changes in small adapter modules, making it easier to understand what adaptations the model learned for specific tasks.",
+      "optionExplanations": [
+        "Incorrect. PEFT methods can actually help interpretability by isolating changes.",
+        "Incorrect. PEFT methods affect interpretability by changing how adaptations are represented.",
+        "Correct. PEFT methods isolate task-specific changes in small modules, potentially making it easier to understand and interpret adaptations.",
+        "Incorrect. Various PEFT methods, not just LoRA, can provide interpretability benefits through change isolation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interpretability",
+        "task-specific-changes",
+        "model-understanding"
+      ]
+    },
+    {
+      "id": "FTU_094",
+      "question": "What is the main challenge in applying PEFT to multilingual models?",
+      "options": [
+        "PEFT doesn't work with multilingual data",
+        "Balancing adaptation across different languages",
+        "Multilingual models are too large for PEFT",
+        "Tokenization incompatibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main challenge in applying PEFT to multilingual models is balancing adaptation across different languages to avoid catastrophic forgetting in some languages while adapting to others.",
+      "optionExplanations": [
+        "Incorrect. PEFT methods can work with multilingual data and models.",
+        "Correct. Balancing adaptation across languages is challenging - adapting to one language shouldn't degrade performance in others.",
+        "Incorrect. PEFT methods are particularly useful for large multilingual models due to their efficiency.",
+        "Incorrect. Tokenization works similarly for PEFT regardless of whether the model is multilingual."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multilingual",
+        "language-balance",
+        "catastrophic-forgetting"
+      ]
+    },
+    {
+      "id": "FTU_095",
+      "question": "What is the impact of data augmentation on PEFT training?",
+      "options": [
+        "Data augmentation is not compatible with PEFT",
+        "Data augmentation can improve generalization in PEFT training",
+        "Data augmentation only works with full fine-tuning",
+        "Data augmentation always hurts PEFT performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data augmentation can improve generalization in PEFT training by providing more diverse examples for the adapter modules to learn from, helping prevent overfitting to limited training data.",
+      "optionExplanations": [
+        "Incorrect. Data augmentation techniques can be used with PEFT methods.",
+        "Correct. Data augmentation can help PEFT methods generalize better by providing more diverse training examples for the adapter modules.",
+        "Incorrect. Data augmentation is a data-level technique that can be used with any training method.",
+        "Incorrect. Properly applied data augmentation typically helps rather than hurts PEFT performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-augmentation",
+        "generalization",
+        "overfitting-prevention"
+      ]
+    },
+    {
+      "id": "FTU_096",
+      "question": "What is the role of ensemble methods with PEFT adapters?",
+      "options": [
+        "Ensembles are not possible with PEFT",
+        "Combining predictions from multiple adapters for improved performance",
+        "Ensembles only increase computational cost without benefits",
+        "Only LoRA adapters can be ensembled"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble methods with PEFT adapters involve combining predictions from multiple adapters trained on the same task or related tasks to improve performance and reduce variance.",
+      "optionExplanations": [
+        "Incorrect. Ensemble methods can be applied with PEFT adapters.",
+        "Correct. Ensembling multiple PEFT adapters can improve performance by combining diverse learned adaptations and reducing prediction variance.",
+        "Incorrect. While ensembles increase computational cost, they often provide performance benefits that justify the cost.",
+        "Incorrect. Various types of PEFT adapters can be used in ensemble approaches, not just LoRA."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-methods",
+        "prediction-combination",
+        "variance-reduction"
+      ]
+    },
+    {
+      "id": "FTU_097",
+      "question": "What is the future direction of PEFT research?",
+      "options": [
+        "Abandoning PEFT for full fine-tuning",
+        "Developing more parameter-efficient methods and better adaptation strategies",
+        "Focusing only on LoRA improvements",
+        "Limiting PEFT to small models only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Future PEFT research directions include developing even more parameter-efficient methods, better adaptation strategies, automatic architecture search for adapters, and improved methods for multi-task and continual learning.",
+      "optionExplanations": [
+        "Incorrect. PEFT methods are becoming increasingly important as models grow larger.",
+        "Correct. Research focuses on more efficient methods, better adaptation strategies, automated design, and improved multi-task capabilities.",
+        "Incorrect. Research explores various PEFT methods beyond just LoRA improvements.",
+        "Incorrect. PEFT methods are particularly valuable for large models where full fine-tuning is impractical."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "future-research",
+        "parameter-efficiency",
+        "adaptation-strategies"
+      ]
+    },
+    {
+      "id": "FTU_098",
+      "question": "What is the importance of reproducibility in PEFT research?",
+      "options": [
+        "Reproducibility is not important for PEFT",
+        "Essential for comparing methods and validating results across different settings",
+        "Only important for academic research, not practical applications",
+        "PEFT results are always reproducible"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reproducibility is essential in PEFT research for fair method comparison, result validation, and ensuring that efficiency claims and performance improvements can be verified across different settings and implementations.",
+      "optionExplanations": [
+        "Incorrect. Reproducibility is crucial for scientific validity and practical adoption of PEFT methods.",
+        "Correct. Reproducibility enables fair comparison of PEFT methods and validation of claimed improvements in both performance and efficiency.",
+        "Incorrect. Reproducibility is important for both research and practical applications to ensure reliable results.",
+        "Incorrect. PEFT results can vary based on implementation details, making reproducibility practices important."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "reproducibility",
+        "method-comparison",
+        "result-validation"
+      ]
+    },
+    {
+      "id": "FTU_099",
+      "question": "What is the role of AutoML in PEFT hyperparameter optimization?",
+      "options": [
+        "AutoML cannot be applied to PEFT methods",
+        "AutoML can help optimize PEFT hyperparameters like rank, learning rate, and adapter placement",
+        "AutoML only works for full fine-tuning",
+        "AutoML makes PEFT methods obsolete"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AutoML can significantly help PEFT methods by automatically optimizing hyperparameters like LoRA rank, learning rates, adapter placement, and architecture choices, making PEFT more accessible and effective.",
+      "optionExplanations": [
+        "Incorrect. AutoML techniques can be applied to optimize PEFT hyperparameters.",
+        "Correct. AutoML can optimize PEFT-specific hyperparameters like rank, placement strategies, and learning rates, improving both efficiency and effectiveness.",
+        "Incorrect. AutoML can be applied to various training methods, including PEFT.",
+        "Incorrect. AutoML complements PEFT methods by making them easier to tune, not replacing them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AutoML",
+        "hyperparameter-optimization",
+        "automated-tuning"
+      ]
+    },
+    {
+      "id": "FTU_100",
+      "question": "What is the overall impact of PEFT methods on the democratization of AI?",
+      "options": [
+        "PEFT methods have no impact on AI accessibility",
+        "PEFT methods make large model fine-tuning accessible to more researchers and practitioners",
+        "PEFT methods only benefit large technology companies",
+        "PEFT methods make AI less accessible"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PEFT methods democratize AI by making large model fine-tuning accessible to researchers and practitioners with limited computational resources, enabling broader participation in AI development and application.",
+      "optionExplanations": [
+        "Incorrect. PEFT methods significantly impact AI accessibility by reducing resource requirements.",
+        "Correct. PEFT methods democratize AI by making large model adaptation accessible with limited computational resources, enabling broader participation.",
+        "Incorrect. PEFT methods particularly benefit those with limited resources, not just large companies.",
+        "Incorrect. PEFT methods improve accessibility by reducing computational barriers to large model fine-tuning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "democratization",
+        "accessibility",
+        "resource-efficiency"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2509 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_PEG",
+  "subtopicName": "Prompt Engineering",
+  "str": 0.150,
+  "description": "Comprehensive coverage of prompt engineering techniques including prompt design, few-shot learning, chain of thought reasoning, in-context learning, and parameter tuning for optimal AI model performance.",
+  "questions": [
+    {
+      "id": "PEG_001",
+      "question": "What is the primary purpose of prompt engineering in generative AI?",
+      "options": [
+        "To optimize the input instructions to get desired outputs from AI models",
+        "To modify the underlying neural network architecture",
+        "To increase the computational speed of AI models",
+        "To reduce the memory requirements of AI systems"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prompt engineering is the practice of designing and optimizing input prompts to elicit desired responses from AI models without modifying the model itself.",
+      "optionExplanations": [
+        "Correct. Prompt engineering focuses on crafting effective input instructions to guide AI models toward producing the desired outputs.",
+        "Incorrect. Prompt engineering doesn't involve modifying the neural network architecture; it works with existing pre-trained models.",
+        "Incorrect. While efficient prompts may reduce inference time, the primary purpose is output quality, not computational speed.",
+        "Incorrect. Prompt engineering doesn't directly address memory requirements; it focuses on input-output optimization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "prompt-design",
+        "fundamentals",
+        "ai-optimization"
+      ]
+    },
+    {
+      "id": "PEG_002",
+      "question": "Which of the following is a key principle of effective prompt design?",
+      "options": [
+        "Using the longest possible prompt",
+        "Being specific and clear about the desired output",
+        "Including as many technical terms as possible",
+        "Avoiding any examples or context"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Effective prompt design emphasizes clarity and specificity to help the AI model understand exactly what is expected.",
+      "optionExplanations": [
+        "Incorrect. Longer prompts aren't necessarily better; conciseness and clarity are more important than length.",
+        "Correct. Specificity and clarity help the AI model understand the task requirements and produce more accurate outputs.",
+        "Incorrect. Technical jargon can confuse the model; simple, clear language is typically more effective.",
+        "Incorrect. Examples and context often improve prompt effectiveness by providing the model with better understanding."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "prompt-design",
+        "best-practices",
+        "clarity"
+      ]
+    },
+    {
+      "id": "PEG_003",
+      "question": "What is few-shot learning in the context of prompt engineering?",
+      "options": [
+        "Training a model with very few parameters",
+        "Providing a few examples in the prompt to guide the model's response",
+        "Using the model for only a few inference calls",
+        "Fine-tuning a model with minimal data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Few-shot learning involves providing a small number of examples within the prompt to demonstrate the desired pattern or format for the model to follow.",
+      "optionExplanations": [
+        "Incorrect. This describes model architecture considerations, not the prompting technique of few-shot learning.",
+        "Correct. Few-shot learning provides examples in the prompt to demonstrate the desired input-output pattern for the model to replicate.",
+        "Incorrect. This refers to usage frequency, not the learning technique itself.",
+        "Incorrect. This describes a training approach, while few-shot learning in prompting doesn't require additional training."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "few-shot-learning",
+        "examples",
+        "in-context-learning"
+      ]
+    },
+    {
+      "id": "PEG_004",
+      "question": "What does the temperature parameter control in language model generation?",
+      "options": [
+        "The physical temperature of the GPU",
+        "The randomness or creativity of the model's outputs",
+        "The speed of text generation",
+        "The length of generated responses"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature controls the randomness in token selection during generation, with higher values producing more creative/random outputs and lower values producing more deterministic results.",
+      "optionExplanations": [
+        "Incorrect. Temperature in AI refers to a sampling parameter, not physical hardware temperature.",
+        "Correct. Temperature controls the randomness in the model's token selection process, affecting creativity and determinism.",
+        "Incorrect. Temperature affects output randomness, not generation speed.",
+        "Incorrect. Temperature doesn't directly control response length; it affects the probability distribution of token selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature",
+        "sampling",
+        "generation-parameters"
+      ]
+    },
+    {
+      "id": "PEG_005",
+      "question": "In chain-of-thought prompting, what is the primary benefit?",
+      "options": [
+        "Faster inference speed",
+        "Reduced computational costs",
+        "Improved reasoning through step-by-step problem solving",
+        "Shorter response lengths"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Chain-of-thought prompting encourages the model to break down complex problems into step-by-step reasoning, leading to more accurate and logical solutions.",
+      "optionExplanations": [
+        "Incorrect. Chain-of-thought typically increases inference time due to longer, more detailed responses.",
+        "Incorrect. This approach usually increases computational costs due to longer generation sequences.",
+        "Correct. Chain-of-thought prompting improves the model's ability to reason through complex problems by encouraging step-by-step thinking.",
+        "Incorrect. Chain-of-thought responses are typically longer as they include reasoning steps."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chain-of-thought",
+        "reasoning",
+        "problem-solving"
+      ]
+    },
+    {
+      "id": "PEG_006",
+      "question": "What is the difference between zero-shot and one-shot prompting?",
+      "options": [
+        "Zero-shot uses no examples, one-shot uses exactly one example",
+        "Zero-shot is faster, one-shot is more accurate",
+        "Zero-shot works with any model, one-shot requires fine-tuning",
+        "Zero-shot generates shorter responses, one-shot generates longer ones"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Zero-shot prompting provides no examples, relying on the model's pre-trained knowledge, while one-shot provides exactly one example to demonstrate the desired pattern.",
+      "optionExplanations": [
+        "Correct. Zero-shot prompting provides no examples, while one-shot prompting includes exactly one example to guide the model.",
+        "Incorrect. While zero-shot may be faster, the primary distinction is the number of examples provided, not speed vs. accuracy trade-offs.",
+        "Incorrect. Both approaches work with pre-trained models without requiring fine-tuning.",
+        "Incorrect. Response length depends on the task and prompt design, not specifically on whether it's zero-shot or one-shot."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "zero-shot",
+        "one-shot",
+        "examples",
+        "prompting-types"
+      ]
+    },
+    {
+      "id": "PEG_007",
+      "question": "What does top-k sampling control in text generation?",
+      "options": [
+        "The number of tokens to generate",
+        "The number of highest probability tokens to consider at each step",
+        "The number of training examples used",
+        "The number of model layers activated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Top-k sampling limits the selection to the k most probable tokens at each generation step, controlling the diversity of the output.",
+      "optionExplanations": [
+        "Incorrect. Top-k doesn't control the total number of tokens generated; it affects token selection at each step.",
+        "Correct. Top-k sampling restricts token selection to the k highest probability tokens at each generation step.",
+        "Incorrect. Top-k is a generation parameter, not a training parameter.",
+        "Incorrect. Top-k affects token selection probability, not neural network architecture activation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "top-k",
+        "sampling",
+        "token-selection",
+        "generation-parameters"
+      ]
+    },
+    {
+      "id": "PEG_008",
+      "question": "What is the main advantage of using role-based prompting?",
+      "options": [
+        "It reduces computational requirements",
+        "It helps the model adopt a specific perspective or expertise",
+        "It generates responses faster",
+        "It requires fewer tokens"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Role-based prompting instructs the model to adopt a specific persona or expertise, leading to more contextually appropriate and specialized responses.",
+      "optionExplanations": [
+        "Incorrect. Role-based prompting doesn't reduce computational requirements; it may actually increase them with additional context.",
+        "Correct. Role-based prompting helps the model adopt a specific perspective, expertise, or persona, improving response relevance and quality.",
+        "Incorrect. Role-based prompting doesn't inherently affect generation speed.",
+        "Incorrect. Role-based prompts often require additional tokens to establish the role context."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "role-based",
+        "persona",
+        "context",
+        "prompt-design"
+      ]
+    },
+    {
+      "id": "PEG_009",
+      "question": "In prompt engineering, what is 'priming'?",
+      "options": [
+        "Training the model from scratch",
+        "Setting up initial context or background information",
+        "Optimizing model parameters",
+        "Reducing model size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Priming involves providing initial context, background information, or setting the stage for the desired type of response before presenting the main task.",
+      "optionExplanations": [
+        "Incorrect. Priming is a prompting technique, not a training method.",
+        "Correct. Priming involves setting up context or background information to prepare the model for the specific task or response style desired.",
+        "Incorrect. Priming works with existing model parameters; it doesn't involve parameter optimization.",
+        "Incorrect. Priming is about prompt design, not model compression or size reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "priming",
+        "context",
+        "background",
+        "prompt-design"
+      ]
+    },
+    {
+      "id": "PEG_010",
+      "question": "What is top-p (nucleus) sampling?",
+      "options": [
+        "Selecting tokens from the top p% of the vocabulary",
+        "Choosing tokens whose cumulative probability adds up to p",
+        "Using p number of parallel processing units",
+        "Setting the probability threshold to p"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Top-p sampling selects from the smallest set of tokens whose cumulative probability exceeds the threshold p, providing dynamic vocabulary filtering.",
+      "optionExplanations": [
+        "Incorrect. Top-p doesn't use a fixed percentage of vocabulary; it uses cumulative probability.",
+        "Correct. Top-p sampling selects tokens from the smallest set whose cumulative probability exceeds the threshold p.",
+        "Incorrect. Top-p refers to probability sampling, not parallel processing architecture.",
+        "Incorrect. While p is a threshold, it's specifically about cumulative probability, not a simple probability threshold."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "top-p",
+        "nucleus-sampling",
+        "probability",
+        "generation-parameters"
+      ]
+    },
+    {
+      "id": "PEG_011",
+      "question": "Which approach is most effective for complex mathematical problem-solving?",
+      "options": [
+        "Direct answer prompting",
+        "Chain-of-thought prompting",
+        "Single-word prompting",
+        "Image-based prompting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Chain-of-thought prompting is particularly effective for complex mathematical problems as it encourages step-by-step reasoning and calculation.",
+      "optionExplanations": [
+        "Incorrect. Direct answer prompting may lead to errors in complex problems without showing the reasoning process.",
+        "Correct. Chain-of-thought prompting breaks down complex mathematical problems into manageable steps, improving accuracy and transparency.",
+        "Incorrect. Single-word prompting lacks the detail needed for complex mathematical reasoning.",
+        "Incorrect. While images can be helpful, the question focuses on prompting approaches for mathematical problem-solving."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chain-of-thought",
+        "mathematics",
+        "problem-solving",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "PEG_012",
+      "question": "What is the recommended approach when the AI model gives inconsistent responses?",
+      "options": [
+        "Increase the temperature setting",
+        "Make the prompt more specific and add constraints",
+        "Use shorter prompts",
+        "Increase the top-k value"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Inconsistent responses often result from ambiguous prompts; making prompts more specific and adding constraints helps ensure consistent outputs.",
+      "optionExplanations": [
+        "Incorrect. Increasing temperature would likely make responses more inconsistent by increasing randomness.",
+        "Correct. More specific prompts with clear constraints reduce ambiguity and lead to more consistent responses.",
+        "Incorrect. Shorter prompts may lack necessary detail and could increase inconsistency.",
+        "Incorrect. Increasing top-k might introduce more variability rather than consistency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "consistency",
+        "prompt-design",
+        "constraints",
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "PEG_013",
+      "question": "In few-shot learning, what is the typical range for the number of examples?",
+      "options": [
+        "100-1000 examples",
+        "2-10 examples",
+        "1000+ examples",
+        "Always exactly 5 examples"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Few-shot learning typically uses a small number of examples, usually between 2-10, to demonstrate the desired pattern without overwhelming the context window.",
+      "optionExplanations": [
+        "Incorrect. 100-1000 examples would be considered many-shot learning or even fine-tuning territory.",
+        "Correct. Few-shot learning typically uses 2-10 examples to demonstrate patterns while staying within context limits.",
+        "Incorrect. 1000+ examples would require fine-tuning rather than in-context learning.",
+        "Incorrect. The number of examples in few-shot learning is flexible, not fixed at exactly 5."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "few-shot-learning",
+        "examples",
+        "context-window",
+        "best-practices"
+      ]
+    },
+    {
+      "id": "PEG_014",
+      "question": "What is the purpose of using delimiters in prompts?",
+      "options": [
+        "To increase processing speed",
+        "To clearly separate different sections of the prompt",
+        "To reduce token count",
+        "To activate special model features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Delimiters help organize and separate different sections of a prompt, making it easier for the model to understand the structure and requirements.",
+      "optionExplanations": [
+        "Incorrect. Delimiters don't affect processing speed; they improve prompt organization.",
+        "Correct. Delimiters clearly separate different sections like instructions, examples, and input data, improving prompt clarity.",
+        "Incorrect. Delimiters may actually increase token count slightly but improve understanding.",
+        "Incorrect. Delimiters are structural elements, not special activation commands."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "delimiters",
+        "prompt-structure",
+        "organization",
+        "clarity"
+      ]
+    },
+    {
+      "id": "PEG_015",
+      "question": "When would you use a higher temperature setting?",
+      "options": [
+        "For factual question answering",
+        "For creative writing tasks",
+        "For mathematical calculations",
+        "For data extraction tasks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Higher temperature settings increase randomness and creativity, making them ideal for creative writing where originality and variation are desired.",
+      "optionExplanations": [
+        "Incorrect. Factual questions require accuracy and consistency, which favor lower temperature settings.",
+        "Correct. Creative writing benefits from higher temperature settings that increase variability and creative expression.",
+        "Incorrect. Mathematical calculations require precision and determinism, which need lower temperature settings.",
+        "Incorrect. Data extraction requires accuracy and consistency, which are better achieved with lower temperature."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature",
+        "creativity",
+        "generation-parameters",
+        "use-cases"
+      ]
+    },
+    {
+      "id": "PEG_016",
+      "question": "What is prompt injection?",
+      "options": [
+        "Adding more examples to improve performance",
+        "A security vulnerability where malicious instructions override intended behavior",
+        "Combining multiple prompts into one",
+        "Injecting code into the AI model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt injection is a security concern where malicious or unintended instructions in user input can override the system's intended prompts and behavior.",
+      "optionExplanations": [
+        "Incorrect. Adding examples is a legitimate prompting technique, not a security vulnerability.",
+        "Correct. Prompt injection is a security vulnerability where malicious input can override intended system prompts and cause undesired behavior.",
+        "Incorrect. Combining prompts is a legitimate technique, not a security issue.",
+        "Incorrect. Prompt injection involves manipulating prompts, not injecting code into the model itself."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "security",
+        "prompt-injection",
+        "vulnerabilities",
+        "safety"
+      ]
+    },
+    {
+      "id": "PEG_017",
+      "question": "What is the main benefit of using system messages in conversational AI?",
+      "options": [
+        "They make responses shorter",
+        "They set persistent context and behavior guidelines",
+        "They reduce computational costs",
+        "They eliminate the need for user prompts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "System messages establish persistent context, behavior guidelines, and role definitions that remain active throughout the conversation.",
+      "optionExplanations": [
+        "Incorrect. System messages don't inherently affect response length; they set behavioral context.",
+        "Correct. System messages provide persistent context and behavioral guidelines that influence all subsequent responses in the conversation.",
+        "Incorrect. System messages don't reduce computational costs; they may actually add to the context length.",
+        "Incorrect. System messages complement user prompts; they don't eliminate the need for them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "system-messages",
+        "context",
+        "conversation",
+        "behavior-guidelines"
+      ]
+    },
+    {
+      "id": "PEG_018",
+      "question": "In chain-of-thought prompting, what phrase is commonly used to encourage step-by-step reasoning?",
+      "options": [
+        "\"Generate quickly\"",
+        "\"Think step by step\"",
+        "\"Be creative\"",
+        "\"Answer directly\""
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The phrase 'Think step by step' is a common and effective way to encourage the model to break down complex problems into manageable reasoning steps.",
+      "optionExplanations": [
+        "Incorrect. 'Generate quickly' encourages speed rather than thorough reasoning.",
+        "Correct. 'Think step by step' is a widely used phrase that effectively triggers chain-of-thought reasoning in AI models.",
+        "Incorrect. 'Be creative' encourages imagination rather than systematic reasoning.",
+        "Incorrect. 'Answer directly' discourages the detailed reasoning that chain-of-thought prompting aims to elicit."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "chain-of-thought",
+        "reasoning",
+        "step-by-step",
+        "prompting-phrases"
+      ]
+    },
+    {
+      "id": "PEG_019",
+      "question": "What is the context window in relation to prompt engineering?",
+      "options": [
+        "The screen size for displaying prompts",
+        "The maximum number of tokens the model can process at once",
+        "The time limit for generating responses",
+        "The number of users that can access the model simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The context window is the maximum number of tokens (input + output) that a model can process in a single interaction, limiting prompt length and conversation history.",
+      "optionExplanations": [
+        "Incorrect. Context window refers to token limits, not display screen dimensions.",
+        "Correct. The context window is the maximum token limit for input and output combined in a single model interaction.",
+        "Incorrect. Context window refers to token capacity, not time constraints.",
+        "Incorrect. Context window is about token processing limits per interaction, not concurrent user capacity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-window",
+        "tokens",
+        "limitations",
+        "model-constraints"
+      ]
+    },
+    {
+      "id": "PEG_020",
+      "question": "Which technique is most effective for getting the model to follow a specific output format?",
+      "options": [
+        "Using very long prompts",
+        "Providing clear format examples and templates",
+        "Increasing the temperature",
+        "Using technical jargon"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Providing clear format examples and templates helps the model understand exactly what structure and format is expected in the output.",
+      "optionExplanations": [
+        "Incorrect. Length alone doesn't ensure format compliance; clarity and examples are more important.",
+        "Correct. Clear format examples and templates effectively demonstrate the desired output structure to the model.",
+        "Incorrect. Higher temperature increases randomness, which may make format compliance less reliable.",
+        "Incorrect. Technical jargon can confuse the model and doesn't specifically address format requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "formatting",
+        "templates",
+        "examples",
+        "output-structure"
+      ]
+    },
+    {
+      "id": "PEG_021",
+      "question": "What is the difference between top-k and top-p sampling?",
+      "options": [
+        "Top-k is faster, top-p is more accurate",
+        "Top-k uses a fixed number of tokens, top-p uses cumulative probability",
+        "Top-k is for text, top-p is for images",
+        "Top-k requires more memory, top-p requires less"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Top-k sampling selects from a fixed number of highest probability tokens, while top-p sampling selects from tokens whose cumulative probability reaches a threshold.",
+      "optionExplanations": [
+        "Incorrect. The difference is in selection method, not speed vs. accuracy trade-offs.",
+        "Correct. Top-k uses a fixed number of top probability tokens, while top-p uses cumulative probability thresholds for dynamic selection.",
+        "Incorrect. Both methods apply to text generation; they're not modality-specific.",
+        "Incorrect. The memory difference is negligible; the distinction is in the token selection algorithm."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "top-k",
+        "top-p",
+        "sampling",
+        "comparison",
+        "generation-parameters"
+      ]
+    },
+    {
+      "id": "PEG_022",
+      "question": "What is the purpose of prompt chaining?",
+      "options": [
+        "To reduce the number of API calls",
+        "To break complex tasks into smaller, manageable steps",
+        "To increase processing speed",
+        "To reduce token usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt chaining breaks complex tasks into smaller, sequential steps where the output of one prompt becomes the input for the next, improving overall task completion.",
+      "optionExplanations": [
+        "Incorrect. Prompt chaining typically increases API calls by using multiple sequential prompts.",
+        "Correct. Prompt chaining decomposes complex tasks into smaller, manageable steps that can be processed sequentially.",
+        "Incorrect. While individual steps may be faster, the overall process may take longer due to multiple calls.",
+        "Incorrect. Prompt chaining may actually increase total token usage across multiple prompts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prompt-chaining",
+        "task-decomposition",
+        "sequential-processing",
+        "workflow"
+      ]
+    },
+    {
+      "id": "PEG_023",
+      "question": "What is negative prompting?",
+      "options": [
+        "Using pessimistic language in prompts",
+        "Explicitly telling the model what NOT to do or include",
+        "Using prompts with negative sentiment",
+        "Reducing the prompt length"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Negative prompting involves explicitly instructing the model about what to avoid or exclude from its response, helping to prevent unwanted outputs.",
+      "optionExplanations": [
+        "Incorrect. Negative prompting isn't about using pessimistic language; it's about exclusion instructions.",
+        "Correct. Negative prompting explicitly tells the model what to avoid, exclude, or not do in its response.",
+        "Incorrect. Sentiment of the prompt content is different from negative prompting technique.",
+        "Incorrect. Negative prompting is about exclusion instructions, not prompt length reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "negative-prompting",
+        "exclusions",
+        "constraints",
+        "prompt-design"
+      ]
+    },
+    {
+      "id": "PEG_024",
+      "question": "When is zero-shot prompting most appropriate?",
+      "options": [
+        "For highly specialized tasks requiring domain expertise",
+        "For simple, well-understood tasks that the model has seen during training",
+        "For tasks requiring creative output",
+        "For complex multi-step problems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Zero-shot prompting works best for tasks that are simple and well-understood, where the model can rely on its pre-trained knowledge without needing examples.",
+      "optionExplanations": [
+        "Incorrect. Specialized tasks typically benefit from few-shot examples to demonstrate domain-specific patterns.",
+        "Correct. Zero-shot prompting is most effective for simple, well-understood tasks that align with the model's training data.",
+        "Incorrect. Creative tasks often benefit from examples to establish style and direction.",
+        "Incorrect. Complex multi-step problems usually require chain-of-thought or few-shot approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "zero-shot",
+        "task-complexity",
+        "pre-trained-knowledge",
+        "use-cases"
+      ]
+    },
+    {
+      "id": "PEG_025",
+      "question": "What is the main challenge with very long prompts?",
+      "options": [
+        "They cost more money",
+        "They may exceed the model's context window",
+        "They generate shorter responses",
+        "They require special hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Very long prompts can exceed the model's context window limit, causing truncation or processing errors, and may also reduce space for the model's response.",
+      "optionExplanations": [
+        "Incorrect. While longer prompts may cost more due to token usage, the main technical challenge is context window limits.",
+        "Correct. Very long prompts can exceed the model's context window, causing truncation and limiting space for responses.",
+        "Incorrect. Long prompts don't inherently cause shorter responses; context window limits do.",
+        "Incorrect. Long prompts don't require special hardware; they're processed by the same model infrastructure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prompt-length",
+        "context-window",
+        "limitations",
+        "truncation"
+      ]
+    },
+    {
+      "id": "PEG_026",
+      "question": "In instruction tuning, what is the relationship to prompt engineering?",
+      "options": [
+        "They are completely unrelated",
+        "Instruction tuning reduces the need for complex prompts",
+        "Instruction tuning makes prompt engineering impossible",
+        "They serve exactly the same purpose"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Instruction tuning trains models to better follow instructions, which can reduce the need for complex prompting techniques while making models more responsive to well-crafted prompts.",
+      "optionExplanations": [
+        "Incorrect. Instruction tuning and prompt engineering are complementary techniques in AI model optimization.",
+        "Correct. Instruction tuning makes models better at following instructions, reducing the need for complex prompting strategies.",
+        "Incorrect. Instruction tuning actually makes models more responsive to prompts, not less.",
+        "Incorrect. While related, instruction tuning is a training technique while prompt engineering is an input optimization technique."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "instruction-tuning",
+        "model-training",
+        "prompt-engineering",
+        "relationship"
+      ]
+    },
+    {
+      "id": "PEG_027",
+      "question": "What is the most effective way to handle ambiguous user requests?",
+      "options": [
+        "Guess what the user wants",
+        "Ask clarifying questions or request more specific information",
+        "Provide the shortest possible answer",
+        "Ignore the ambiguous parts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When faced with ambiguous requests, the best approach is to ask clarifying questions or request more specific information to ensure accurate and helpful responses.",
+      "optionExplanations": [
+        "Incorrect. Guessing can lead to incorrect or unhelpful responses that don't meet the user's actual needs.",
+        "Correct. Asking clarifying questions ensures that the response addresses the user's actual intent and requirements.",
+        "Incorrect. Short answers may not address the user's needs and don't resolve the ambiguity.",
+        "Incorrect. Ignoring ambiguous parts can result in incomplete or irrelevant responses."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ambiguity",
+        "clarification",
+        "user-interaction",
+        "communication"
+      ]
+    },
+    {
+      "id": "PEG_028",
+      "question": "What is retrieval-augmented generation (RAG) in relation to prompting?",
+      "options": [
+        "A method to reduce prompt length",
+        "A technique that combines retrieved information with prompts",
+        "A way to generate prompts automatically",
+        "A method to increase generation speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RAG combines information retrieval with generation, where relevant information is retrieved and included in prompts to provide current, factual context for the model.",
+      "optionExplanations": [
+        "Incorrect. RAG typically increases prompt length by adding retrieved context, not reducing it.",
+        "Correct. RAG retrieves relevant information and incorporates it into prompts to provide factual, up-to-date context for generation.",
+        "Incorrect. RAG uses retrieved information in prompts but doesn't automatically generate the prompts themselves.",
+        "Incorrect. RAG may actually slow generation due to additional retrieval steps and longer context."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "RAG",
+        "retrieval",
+        "context",
+        "information-integration"
+      ]
+    },
+    {
+      "id": "PEG_029",
+      "question": "What is the benefit of using structured prompts with clear sections?",
+      "options": [
+        "They use fewer tokens",
+        "They help the model understand different components of the task",
+        "They generate responses faster",
+        "They work only with specific models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Structured prompts with clear sections help the model distinguish between different components like instructions, context, examples, and input data, leading to better task understanding.",
+      "optionExplanations": [
+        "Incorrect. Structured prompts may use more tokens for organization but improve understanding.",
+        "Correct. Clear sections help the model parse and understand different components of the task, improving response quality.",
+        "Incorrect. Structure affects understanding quality, not generation speed.",
+        "Incorrect. Structured prompts are beneficial across different model types, not limited to specific models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "structured-prompts",
+        "organization",
+        "task-understanding",
+        "prompt-design"
+      ]
+    },
+    {
+      "id": "PEG_030",
+      "question": "What is prompt tuning?",
+      "options": [
+        "Manually adjusting prompts through trial and error",
+        "Training soft prompts as learnable parameters while keeping the model frozen",
+        "Increasing the length of prompts",
+        "Using multiple prompts simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt tuning involves training soft prompts as learnable parameters while keeping the underlying language model frozen, creating task-specific prompt embeddings.",
+      "optionExplanations": [
+        "Incorrect. This describes manual prompt engineering, not the automated prompt tuning technique.",
+        "Correct. Prompt tuning trains learnable prompt embeddings while keeping the language model parameters frozen.",
+        "Incorrect. Prompt tuning is about learning optimal prompts, not simply making them longer.",
+        "Incorrect. Using multiple prompts is a different technique; prompt tuning focuses on learning optimal prompt representations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "prompt-tuning",
+        "soft-prompts",
+        "parameter-learning",
+        "model-optimization"
+      ]
+    },
+    {
+      "id": "PEG_031",
+      "question": "When should you use lower temperature settings?",
+      "options": [
+        "For creative storytelling",
+        "For factual information retrieval and consistency",
+        "For brainstorming sessions",
+        "For generating diverse alternatives"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lower temperature settings reduce randomness and increase consistency, making them ideal for factual information retrieval where accuracy and reliability are paramount.",
+      "optionExplanations": [
+        "Incorrect. Creative storytelling benefits from higher temperature for originality and variation.",
+        "Correct. Lower temperature settings provide more consistent, deterministic outputs ideal for factual tasks requiring accuracy.",
+        "Incorrect. Brainstorming benefits from higher temperature to generate diverse, creative ideas.",
+        "Incorrect. Generating diverse alternatives requires higher temperature to increase variation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature",
+        "consistency",
+        "factual-information",
+        "determinism"
+      ]
+    },
+    {
+      "id": "PEG_032",
+      "question": "What is the primary purpose of using examples in few-shot prompting?",
+      "options": [
+        "To increase the prompt length",
+        "To demonstrate the desired input-output pattern",
+        "To confuse the model",
+        "To reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Examples in few-shot prompting demonstrate the desired input-output pattern, helping the model understand the task format and expected response style.",
+      "optionExplanations": [
+        "Incorrect. Increasing prompt length is a side effect, not the primary purpose of examples.",
+        "Correct. Examples demonstrate the desired pattern, format, and style for the model to follow in generating responses.",
+        "Incorrect. Examples are meant to clarify, not confuse the model's understanding.",
+        "Incorrect. Examples typically increase computational costs due to longer context, not reduce them."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "few-shot",
+        "examples",
+        "pattern-demonstration",
+        "task-understanding"
+      ]
+    },
+    {
+      "id": "PEG_033",
+      "question": "What is the most important consideration when designing prompts for safety-critical applications?",
+      "options": [
+        "Maximizing creativity",
+        "Minimizing response time",
+        "Ensuring robustness and preventing harmful outputs",
+        "Reducing token usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In safety-critical applications, the most important consideration is ensuring robustness and preventing harmful outputs that could have serious consequences.",
+      "optionExplanations": [
+        "Incorrect. Safety-critical applications prioritize safety and reliability over creativity.",
+        "Incorrect. While response time matters, safety and prevention of harmful outputs take precedence.",
+        "Correct. Safety-critical applications require robust prompts that prevent harmful outputs and ensure reliable, safe behavior.",
+        "Incorrect. Cost optimization is secondary to safety considerations in critical applications."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "safety",
+        "robustness",
+        "harmful-outputs",
+        "critical-applications"
+      ]
+    },
+    {
+      "id": "PEG_034",
+      "question": "What is in-context learning?",
+      "options": [
+        "Training a model with new data",
+        "The model's ability to learn from examples provided within the prompt",
+        "Learning that happens outside the model",
+        "A type of transfer learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In-context learning refers to the model's ability to learn and adapt to new tasks using only the examples and instructions provided within the input prompt, without parameter updates.",
+      "optionExplanations": [
+        "Incorrect. In-context learning doesn't involve training with new data; it uses prompt examples.",
+        "Correct. In-context learning is the model's ability to learn from examples within the prompt without updating its parameters.",
+        "Incorrect. In-context learning happens within the model using the provided prompt context.",
+        "Incorrect. While related to adaptation, in-context learning is specific to prompt-based learning without parameter updates."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "in-context-learning",
+        "prompt-examples",
+        "adaptation",
+        "no-training"
+      ]
+    },
+    {
+      "id": "PEG_035",
+      "question": "Which sampling strategy provides the most deterministic outputs?",
+      "options": [
+        "High temperature with top-k sampling",
+        "Low temperature with greedy decoding",
+        "High top-p value",
+        "Random sampling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Low temperature with greedy decoding (always selecting the highest probability token) provides the most deterministic and consistent outputs.",
+      "optionExplanations": [
+        "Incorrect. High temperature increases randomness, making outputs less deterministic.",
+        "Correct. Low temperature with greedy decoding minimizes randomness by always selecting the most probable token.",
+        "Incorrect. High top-p values allow more token diversity, reducing determinism.",
+        "Incorrect. Random sampling maximizes randomness and unpredictability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "determinism",
+        "greedy-decoding",
+        "temperature",
+        "consistency"
+      ]
+    },
+    {
+      "id": "PEG_036",
+      "question": "What is the main advantage of using XML or JSON formatting in prompts?",
+      "options": [
+        "It makes prompts shorter",
+        "It provides clear structure and makes parsing easier",
+        "It increases generation speed",
+        "It works only with newer models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "XML or JSON formatting provides clear, structured organization that makes it easier for both the model to understand and for systems to parse the output.",
+      "optionExplanations": [
+        "Incorrect. Structured formatting may actually make prompts longer but more organized.",
+        "Correct. XML/JSON formatting provides clear structure that improves understanding and enables easier automated parsing.",
+        "Incorrect. Formatting affects structure and clarity, not generation speed.",
+        "Incorrect. Structured formatting can be beneficial across different model generations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "formatting",
+        "structure",
+        "XML",
+        "JSON",
+        "parsing"
+      ]
+    },
+    {
+      "id": "PEG_037",
+      "question": "What is prompt ensembling?",
+      "options": [
+        "Using one very long prompt",
+        "Combining outputs from multiple different prompts for the same task",
+        "Writing prompts in multiple languages",
+        "Using prompts from different domains"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt ensembling involves using multiple different prompts for the same task and combining their outputs to improve robustness and accuracy.",
+      "optionExplanations": [
+        "Incorrect. Prompt ensembling uses multiple prompts, not one long prompt.",
+        "Correct. Prompt ensembling combines outputs from multiple different prompts to improve overall performance and robustness.",
+        "Incorrect. Multi-language prompts are a different technique; ensembling focuses on multiple prompt variations.",
+        "Incorrect. Cross-domain prompts are different; ensembling uses multiple prompts for the same task."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ensembling",
+        "multiple-prompts",
+        "robustness",
+        "output-combination"
+      ]
+    },
+    {
+      "id": "PEG_038",
+      "question": "How does increasing top-k value affect text generation?",
+      "options": [
+        "Makes output more deterministic",
+        "Increases output diversity and potential creativity",
+        "Reduces generation time",
+        "Improves factual accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increasing top-k value allows the model to consider more token options at each step, leading to increased diversity and potential creativity in the output.",
+      "optionExplanations": [
+        "Incorrect. Increasing top-k reduces determinism by allowing more token choices.",
+        "Correct. Higher top-k values include more token options in selection, increasing output diversity and creative potential.",
+        "Incorrect. Top-k affects token selection process, not generation speed.",
+        "Incorrect. Higher top-k may reduce accuracy by including less probable tokens in consideration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "top-k",
+        "diversity",
+        "creativity",
+        "token-selection"
+      ]
+    },
+    {
+      "id": "PEG_039",
+      "question": "What is the recommended approach for handling sensitive or controversial topics in prompts?",
+      "options": [
+        "Avoid them completely",
+        "Use careful framing and include appropriate disclaimers",
+        "Use the highest temperature setting",
+        "Make the prompts as short as possible"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sensitive topics should be handled with careful framing, appropriate context, and disclaimers to ensure responsible and balanced treatment.",
+      "optionExplanations": [
+        "Incorrect. Complete avoidance may not always be practical; careful handling is often more appropriate.",
+        "Correct. Careful framing and appropriate disclaimers help ensure responsible handling of sensitive topics.",
+        "Incorrect. High temperature may increase unpredictability, which is undesirable for sensitive topics.",
+        "Incorrect. Sensitive topics often require more context and careful explanation, not shorter prompts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sensitive-topics",
+        "responsibility",
+        "framing",
+        "disclaimers"
+      ]
+    },
+    {
+      "id": "PEG_040",
+      "question": "What is the difference between hard and soft prompts?",
+      "options": [
+        "Hard prompts are longer, soft prompts are shorter",
+        "Hard prompts use text, soft prompts use learned embeddings",
+        "Hard prompts are difficult, soft prompts are easy",
+        "Hard prompts are fixed, soft prompts are variable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard prompts are traditional text-based prompts, while soft prompts are learned embedding vectors that are optimized during training without human-readable text.",
+      "optionExplanations": [
+        "Incorrect. The distinction is about representation type, not length.",
+        "Correct. Hard prompts use human-readable text, while soft prompts use learned embedding vectors.",
+        "Incorrect. The terms refer to representation type, not difficulty level.",
+        "Incorrect. Both types can be fixed or variable; the distinction is in their representation format."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hard-prompts",
+        "soft-prompts",
+        "embeddings",
+        "representation"
+      ]
+    },
+    {
+      "id": "PEG_041",
+      "question": "When is it most appropriate to use chain-of-thought prompting?",
+      "options": [
+        "For simple factual questions",
+        "For complex reasoning and multi-step problems",
+        "For creative writing tasks",
+        "For single-word answers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Chain-of-thought prompting is most effective for complex reasoning tasks and multi-step problems where step-by-step thinking improves accuracy.",
+      "optionExplanations": [
+        "Incorrect. Simple factual questions don't require step-by-step reasoning and may be slower with chain-of-thought.",
+        "Correct. Chain-of-thought prompting excels at complex reasoning tasks that benefit from explicit step-by-step problem-solving.",
+        "Incorrect. Creative writing typically benefits from flow and inspiration rather than systematic step-by-step reasoning.",
+        "Incorrect. Single-word answers don't require the detailed reasoning process that chain-of-thought provides."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chain-of-thought",
+        "complex-reasoning",
+        "multi-step",
+        "problem-solving"
+      ]
+    },
+    {
+      "id": "PEG_042",
+      "question": "What is the purpose of using seed values in text generation?",
+      "options": [
+        "To make generation faster",
+        "To ensure reproducible outputs",
+        "To increase creativity",
+        "To reduce token usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Seed values control the random number generator, ensuring that the same prompt with the same seed produces identical outputs for reproducibility and testing.",
+      "optionExplanations": [
+        "Incorrect. Seed values affect reproducibility, not generation speed.",
+        "Correct. Seed values ensure that the same prompt generates identical outputs, enabling reproducible results for testing and debugging.",
+        "Incorrect. Seed values control randomness for consistency, not for increasing creativity.",
+        "Incorrect. Seed values don't affect token usage; they control output reproducibility."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "seed",
+        "reproducibility",
+        "consistency",
+        "testing"
+      ]
+    },
+    {
+      "id": "PEG_043",
+      "question": "What is meta-prompting?",
+      "options": [
+        "Using prompts to generate better prompts",
+        "Writing very long prompts",
+        "Using prompts about prompts",
+        "Combining multiple prompt types"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Meta-prompting involves using AI models to generate, improve, or optimize prompts themselves, creating a recursive improvement process.",
+      "optionExplanations": [
+        "Correct. Meta-prompting uses AI models to generate or improve prompts, creating better prompting strategies automatically.",
+        "Incorrect. Meta-prompting is about using AI to create prompts, not about prompt length.",
+        "Incorrect. While related, meta-prompting specifically involves using AI to generate prompts, not just discussing them.",
+        "Incorrect. Combining prompt types is different from using AI to generate prompts automatically."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "meta-prompting",
+        "prompt-generation",
+        "recursive-improvement",
+        "automation"
+      ]
+    },
+    {
+      "id": "PEG_044",
+      "question": "What is the main benefit of using persona-based prompting?",
+      "options": [
+        "It reduces computational costs",
+        "It helps the model adopt appropriate expertise and communication style",
+        "It makes responses shorter",
+        "It increases generation speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Persona-based prompting helps the model adopt specific expertise, knowledge, and communication styles appropriate for the intended audience and context.",
+      "optionExplanations": [
+        "Incorrect. Persona-based prompting may increase context length and computational requirements.",
+        "Correct. Persona-based prompting helps the model adopt appropriate expertise, tone, and communication style for the specific context.",
+        "Incorrect. Persona prompts often lead to more detailed, contextualized responses, not shorter ones.",
+        "Incorrect. Persona-based prompting affects response quality and style, not generation speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "persona",
+        "expertise",
+        "communication-style",
+        "context"
+      ]
+    },
+    {
+      "id": "PEG_045",
+      "question": "How should contradictory instructions within a prompt be handled?",
+      "options": [
+        "The model will automatically resolve them",
+        "Identify and eliminate contradictions before submitting the prompt",
+        "Use higher temperature to resolve conflicts",
+        "Include more examples to clarify"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Contradictory instructions should be identified and resolved before submitting the prompt to ensure clear, consistent guidance for the model.",
+      "optionExplanations": [
+        "Incorrect. Models may struggle with contradictions and produce inconsistent or suboptimal results.",
+        "Correct. Contradictions should be identified and resolved beforehand to provide clear, consistent instructions to the model.",
+        "Incorrect. Higher temperature affects randomness, not the model's ability to resolve logical contradictions.",
+        "Incorrect. Examples help with format but don't resolve contradictory instructions in the prompt."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "contradictions",
+        "consistency",
+        "prompt-clarity",
+        "instruction-design"
+      ]
+    },
+    {
+      "id": "PEG_046",
+      "question": "What is the advantage of using step-by-step instructions in prompts?",
+      "options": [
+        "They make prompts shorter",
+        "They help break down complex tasks into manageable parts",
+        "They increase generation speed",
+        "They work only with advanced models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Step-by-step instructions help break down complex tasks into manageable, sequential parts that the model can process more effectively.",
+      "optionExplanations": [
+        "Incorrect. Step-by-step instructions typically make prompts longer but more organized.",
+        "Correct. Step-by-step instructions decompose complex tasks into manageable sequential parts, improving task completion.",
+        "Incorrect. Detailed instructions may actually slow generation due to increased processing requirements.",
+        "Incorrect. Step-by-step instructions can benefit models across different capability levels."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "step-by-step",
+        "task-decomposition",
+        "instructions",
+        "complexity-management"
+      ]
+    },
+    {
+      "id": "PEG_047",
+      "question": "What is prompt drift?",
+      "options": [
+        "When prompts become longer over time",
+        "When model responses gradually deviate from desired behavior",
+        "When prompts are translated to different languages",
+        "When multiple prompts are used simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt drift occurs when model responses gradually deviate from the desired behavior over time, often in conversational contexts where context evolves.",
+      "optionExplanations": [
+        "Incorrect. Prompt drift refers to response deviation, not prompt length changes.",
+        "Correct. Prompt drift is the gradual deviation of model responses from desired behavior, often occurring in extended conversations.",
+        "Incorrect. Translation is a different concept; prompt drift relates to behavioral consistency over time.",
+        "Incorrect. Using multiple prompts is a different technique; drift refers to gradual deviation from intended behavior."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "prompt-drift",
+        "behavior-deviation",
+        "consistency",
+        "conversation"
+      ]
+    },
+    {
+      "id": "PEG_048",
+      "question": "Which approach is most effective for multilingual prompt engineering?",
+      "options": [
+        "Always use English regardless of target language",
+        "Use the target language for prompts when the model supports it",
+        "Mix multiple languages randomly",
+        "Use only simple vocabulary"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using the target language for prompts, when the model supports it, typically produces more natural and culturally appropriate responses in that language.",
+      "optionExplanations": [
+        "Incorrect. While English may work, using the target language often produces more natural results when supported.",
+        "Correct. Using the target language for prompts typically produces more natural, culturally appropriate responses when the model supports it.",
+        "Incorrect. Random language mixing can confuse the model and reduce response quality.",
+        "Incorrect. Vocabulary complexity isn't the primary consideration; language consistency and naturalness are more important."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multilingual",
+        "target-language",
+        "cultural-appropriateness",
+        "natural-responses"
+      ]
+    },
+    {
+      "id": "PEG_049",
+      "question": "What is the purpose of using constraints in prompts?",
+      "options": [
+        "To make prompts more complex",
+        "To limit and guide the model's output according to specific requirements",
+        "To increase token usage",
+        "To slow down generation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constraints in prompts help limit and guide the model's output to meet specific requirements such as length, format, content restrictions, or style guidelines.",
+      "optionExplanations": [
+        "Incorrect. Constraints add specificity but don't necessarily make prompts more complex.",
+        "Correct. Constraints guide and limit model output to meet specific requirements for length, format, content, or style.",
+        "Incorrect. Constraints aim to control output quality, not increase token usage.",
+        "Incorrect. Constraints affect output characteristics, not generation speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constraints",
+        "output-control",
+        "requirements",
+        "guidance"
+      ]
+    },
+    {
+      "id": "PEG_050",
+      "question": "What is the difference between instruction-following and completion-style prompts?",
+      "options": [
+        "Instruction prompts are longer",
+        "Instruction prompts give explicit commands, completion prompts continue a pattern",
+        "Instruction prompts work faster",
+        "Instruction prompts use fewer tokens"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Instruction-following prompts give explicit commands about what to do, while completion-style prompts provide partial text for the model to continue or complete.",
+      "optionExplanations": [
+        "Incorrect. Length isn't the defining characteristic; the approach to task specification is the key difference.",
+        "Correct. Instruction prompts provide explicit commands about what to do, while completion prompts provide partial text to continue.",
+        "Incorrect. Speed differences depend on complexity, not the prompting style.",
+        "Incorrect. Token usage depends on content and complexity, not the prompting approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "instruction-following",
+        "completion-style",
+        "prompting-approaches",
+        "task-specification"
+      ]
+    },
+    {
+      "id": "PEG_051",
+      "question": "When using few-shot learning, how should examples be selected?",
+      "options": [
+        "Use the longest possible examples",
+        "Choose diverse, representative examples that cover the task range",
+        "Use only positive examples",
+        "Select random examples from any domain"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Examples should be diverse and representative of the task range to help the model understand various scenarios and edge cases it might encounter.",
+      "optionExplanations": [
+        "Incorrect. Example length should be appropriate for the task, not maximized unnecessarily.",
+        "Correct. Diverse, representative examples help the model understand the full scope and variation within the task.",
+        "Incorrect. Including diverse examples, including edge cases, provides better coverage than only positive examples.",
+        "Incorrect. Examples should be relevant to the specific task and domain, not random."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "few-shot",
+        "example-selection",
+        "diversity",
+        "representativeness"
+      ]
+    },
+    {
+      "id": "PEG_052",
+      "question": "What is the main purpose of using output parsers with structured prompts?",
+      "options": [
+        "To make responses more creative",
+        "To automatically extract and structure information from model outputs",
+        "To increase generation speed",
+        "To reduce model complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Output parsers automatically extract and structure information from model outputs, making it easier to integrate AI responses into applications and workflows.",
+      "optionExplanations": [
+        "Incorrect. Output parsers focus on structure and extraction, not creativity enhancement.",
+        "Correct. Output parsers automatically extract and structure information from model outputs for easier integration and processing.",
+        "Incorrect. Parsing happens after generation and doesn't affect generation speed.",
+        "Incorrect. Output parsers work with model outputs, not model complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "output-parsers",
+        "structured-data",
+        "extraction",
+        "integration"
+      ]
+    },
+    {
+      "id": "PEG_053",
+      "question": "What is the recommended approach when a model frequently misunderstands prompts?",
+      "options": [
+        "Use more technical language",
+        "Simplify language and add clarifying examples",
+        "Increase the temperature setting",
+        "Make prompts much longer"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When models misunderstand prompts, simplifying language and adding clarifying examples helps improve comprehension and reduce ambiguity.",
+      "optionExplanations": [
+        "Incorrect. Technical language might increase confusion rather than improve understanding.",
+        "Correct. Simpler language and clarifying examples reduce ambiguity and improve model comprehension.",
+        "Incorrect. Temperature affects randomness, not understanding; it won't solve comprehension issues.",
+        "Incorrect. Longer prompts may add confusion; clarity and simplicity are more important than length."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "misunderstanding",
+        "clarity",
+        "simplification",
+        "examples"
+      ]
+    },
+    {
+      "id": "PEG_054",
+      "question": "How does top-p sampling differ from temperature in controlling output diversity?",
+      "options": [
+        "They work exactly the same way",
+        "Top-p uses dynamic vocabulary filtering, temperature scales probabilities",
+        "Top-p is faster, temperature is more accurate",
+        "Top-p works with images, temperature with text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Top-p uses dynamic vocabulary filtering based on cumulative probability, while temperature scales the entire probability distribution uniformly.",
+      "optionExplanations": [
+        "Incorrect. Top-p and temperature use different mechanisms to control diversity.",
+        "Correct. Top-p dynamically filters vocabulary based on cumulative probability, while temperature uniformly scales all probabilities.",
+        "Incorrect. The difference is in mechanism, not speed vs. accuracy trade-offs.",
+        "Incorrect. Both parameters apply to text generation; they're not modality-specific."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "top-p",
+        "temperature",
+        "diversity-control",
+        "probability-distribution"
+      ]
+    },
+    {
+      "id": "PEG_055",
+      "question": "What is prompt injection defense?",
+      "options": [
+        "Making prompts longer to prevent attacks",
+        "Techniques to prevent malicious prompt manipulation",
+        "Using multiple prompts simultaneously",
+        "Encrypting prompts before sending"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt injection defense involves techniques and strategies to prevent malicious users from manipulating prompts to override intended system behavior.",
+      "optionExplanations": [
+        "Incorrect. Length alone doesn't prevent injection attacks; specific defensive techniques are needed.",
+        "Correct. Prompt injection defense uses various techniques to prevent malicious manipulation of prompts and system behavior.",
+        "Incorrect. Multiple prompts don't inherently provide defense against injection attacks.",
+        "Incorrect. Encryption protects transmission but doesn't prevent injection once prompts are processed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "security",
+        "injection-defense",
+        "malicious-attacks",
+        "system-protection"
+      ]
+    },
+    {
+      "id": "PEG_056",
+      "question": "What is the benefit of using iterative prompt refinement?",
+      "options": [
+        "It reduces computational costs",
+        "It helps optimize prompts through testing and improvement cycles",
+        "It eliminates the need for examples",
+        "It works only with specific models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Iterative prompt refinement involves testing, analyzing, and improving prompts through multiple cycles to optimize performance and achieve better results.",
+      "optionExplanations": [
+        "Incorrect. Iterative refinement may increase costs during optimization but improves final performance.",
+        "Correct. Iterative refinement optimizes prompts through systematic testing and improvement cycles.",
+        "Incorrect. Refinement may actually help identify the need for better examples or clearer instructions.",
+        "Incorrect. Iterative refinement is a general optimization approach applicable to various models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "iterative-refinement",
+        "optimization",
+        "testing",
+        "improvement-cycles"
+      ]
+    },
+    {
+      "id": "PEG_057",
+      "question": "What is the purpose of using attention mechanisms in relation to prompting?",
+      "options": [
+        "To make models faster",
+        "To help models focus on relevant parts of the input",
+        "To reduce memory usage",
+        "To generate longer responses"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention mechanisms help models focus on relevant parts of the input prompt and context, improving the quality and relevance of generated responses.",
+      "optionExplanations": [
+        "Incorrect. Attention mechanisms affect focusing ability, not processing speed.",
+        "Correct. Attention mechanisms help models identify and focus on the most relevant parts of the input for generating appropriate responses.",
+        "Incorrect. Attention mechanisms typically require additional computation and memory, not less.",
+        "Incorrect. Attention affects relevance and quality, not response length."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "attention-mechanisms",
+        "relevance",
+        "input-focus",
+        "model-architecture"
+      ]
+    },
+    {
+      "id": "PEG_058",
+      "question": "What is the most effective way to handle tasks requiring factual accuracy?",
+      "options": [
+        "Use very high temperature for creativity",
+        "Use low temperature and request sources or verification",
+        "Use as few examples as possible",
+        "Focus only on speed of generation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For factual accuracy, use low temperature for consistency and explicitly request sources, verification, or acknowledgment of uncertainty when appropriate.",
+      "optionExplanations": [
+        "Incorrect. High temperature increases randomness, which can reduce factual accuracy.",
+        "Correct. Low temperature provides consistency, and requesting sources or verification helps ensure factual accuracy.",
+        "Incorrect. Relevant examples can help demonstrate the desired level of accuracy and verification.",
+        "Incorrect. Accuracy should take precedence over speed for factual tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "factual-accuracy",
+        "verification",
+        "low-temperature",
+        "sources"
+      ]
+    },
+    {
+      "id": "PEG_059",
+      "question": "What is constitutional AI in relation to prompt engineering?",
+      "options": [
+        "AI trained on legal documents",
+        "AI systems designed with built-in ethical principles and guidelines",
+        "AI that follows government regulations",
+        "AI used for constitutional law"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constitutional AI refers to AI systems trained with built-in ethical principles and guidelines, which affects how they respond to prompts and maintain consistent behavior.",
+      "optionExplanations": [
+        "Incorrect. Constitutional AI isn't about legal document training; it's about ethical principles.",
+        "Correct. Constitutional AI incorporates ethical principles and guidelines into the AI system's behavior and responses.",
+        "Incorrect. While it may align with regulations, constitutional AI focuses on ethical principles, not regulatory compliance.",
+        "Incorrect. Constitutional AI is about ethical frameworks, not legal domain specialization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "constitutional-AI",
+        "ethics",
+        "principles",
+        "guidelines"
+      ]
+    },
+    {
+      "id": "PEG_060",
+      "question": "When should you use explicit formatting instructions in prompts?",
+      "options": [
+        "Never, as they confuse the model",
+        "When specific output structure is required for downstream processing",
+        "Only for creative writing tasks",
+        "Only with older model versions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Explicit formatting instructions are essential when specific output structure is required for integration with other systems or automated processing.",
+      "optionExplanations": [
+        "Incorrect. Formatting instructions help models understand output requirements, not confuse them.",
+        "Correct. Explicit formatting instructions are crucial when specific output structure is needed for downstream processing or integration.",
+        "Incorrect. Formatting instructions are useful across many task types, not just creative writing.",
+        "Incorrect. Formatting instructions can benefit both older and newer model versions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "formatting-instructions",
+        "output-structure",
+        "downstream-processing",
+        "integration"
+      ]
+    },
+    {
+      "id": "PEG_061",
+      "question": "What is the main challenge with using very specific constraints in prompts?",
+      "options": [
+        "They make responses too creative",
+        "They may limit the model's ability to provide optimal solutions",
+        "They always increase computational costs",
+        "They work only with advanced models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Very specific constraints can limit the model's flexibility and ability to find optimal solutions or provide creative alternatives that might better serve the user's needs.",
+      "optionExplanations": [
+        "Incorrect. Specific constraints typically reduce creativity rather than increase it.",
+        "Correct. Overly specific constraints can limit the model's flexibility and prevent it from finding better solutions or alternatives.",
+        "Incorrect. Constraints don't necessarily increase computational costs significantly.",
+        "Incorrect. Constraints can be understood by models across different capability levels."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constraints",
+        "flexibility",
+        "optimization",
+        "solution-quality"
+      ]
+    },
+    {
+      "id": "PEG_062",
+      "question": "What is prompt programming?",
+      "options": [
+        "Writing code to generate prompts",
+        "Using prompts as a programming language to control AI behavior",
+        "Programming AI models from scratch",
+        "Converting prompts to code"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt programming treats prompts as a programming language, using structured instructions, logic, and control flow to precisely direct AI behavior.",
+      "optionExplanations": [
+        "Incorrect. This describes automated prompt generation, not prompt programming as a paradigm.",
+        "Correct. Prompt programming uses prompts as a programming language with structured instructions and logic to control AI behavior.",
+        "Incorrect. Prompt programming works with existing models, not programming new ones.",
+        "Incorrect. Prompt programming uses prompts to direct behavior, not convert them to traditional code."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "prompt-programming",
+        "structured-instructions",
+        "AI-control",
+        "programming-paradigm"
+      ]
+    },
+    {
+      "id": "PEG_063",
+      "question": "How does context length affect prompt design strategies?",
+      "options": [
+        "Longer context always leads to better prompts",
+        "Context length limits require balancing information density and completeness",
+        "Context length doesn't matter for prompt effectiveness",
+        "Shorter context always produces better results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Context length limitations require careful balancing between providing comprehensive information and staying within token limits, affecting how prompts are structured.",
+      "optionExplanations": [
+        "Incorrect. Longer context may help but can also lead to dilution of important information and increased costs.",
+        "Correct. Context length limits require balancing comprehensive information with token constraints in prompt design.",
+        "Incorrect. Context length significantly affects what information can be included and how prompts are structured.",
+        "Incorrect. Very short context may lack necessary information for complex tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-length",
+        "token-limits",
+        "information-density",
+        "balancing"
+      ]
+    },
+    {
+      "id": "PEG_064",
+      "question": "What is the purpose of using verification prompts?",
+      "options": [
+        "To make responses longer",
+        "To double-check and validate the accuracy of generated content",
+        "To increase processing speed",
+        "To reduce token usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Verification prompts are used to double-check, validate, or review the accuracy and quality of generated content, often as a second-pass quality control mechanism.",
+      "optionExplanations": [
+        "Incorrect. Verification prompts focus on accuracy checking, not response length.",
+        "Correct. Verification prompts validate and double-check the accuracy and quality of generated content.",
+        "Incorrect. Verification typically adds processing steps rather than increasing speed.",
+        "Incorrect. Verification usually requires additional tokens for the checking process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "verification",
+        "accuracy-checking",
+        "quality-control",
+        "validation"
+      ]
+    },
+    {
+      "id": "PEG_065",
+      "question": "What is the most effective approach for handling ambiguous user queries?",
+      "options": [
+        "Make assumptions and proceed",
+        "Request clarification and offer specific options",
+        "Provide the shortest possible response",
+        "Increase temperature for more creative interpretations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The most effective approach for ambiguous queries is to request clarification and offer specific options to help users provide more precise information.",
+      "optionExplanations": [
+        "Incorrect. Making assumptions can lead to responses that don't meet the user's actual needs.",
+        "Correct. Requesting clarification and offering specific options helps users provide more precise information for better responses.",
+        "Incorrect. Short responses may not address the ambiguity or help clarify the user's intent.",
+        "Incorrect. Higher temperature increases randomness but doesn't resolve underlying ambiguity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ambiguity",
+        "clarification",
+        "user-interaction",
+        "precision"
+      ]
+    },
+    {
+      "id": "PEG_066",
+      "question": "What is adaptive prompting?",
+      "options": [
+        "Using the same prompt for all situations",
+        "Dynamically adjusting prompts based on context or previous interactions",
+        "Making prompts longer over time",
+        "Using prompts in different languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adaptive prompting involves dynamically adjusting prompts based on context, user feedback, previous interactions, or performance metrics to improve effectiveness.",
+      "optionExplanations": [
+        "Incorrect. Adaptive prompting involves changing prompts, not using the same one consistently.",
+        "Correct. Adaptive prompting dynamically adjusts prompts based on context, feedback, or previous interactions for improved performance.",
+        "Incorrect. Adaptive prompting is about strategic adjustment, not simply increasing length.",
+        "Incorrect. Language variation is different from adaptive adjustment based on context or performance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adaptive-prompting",
+        "dynamic-adjustment",
+        "context-awareness",
+        "optimization"
+      ]
+    },
+    {
+      "id": "PEG_067",
+      "question": "What is the relationship between prompt engineering and fine-tuning?",
+      "options": [
+        "They are completely unrelated techniques",
+        "Prompt engineering can reduce the need for fine-tuning in some cases",
+        "Fine-tuning always eliminates the need for prompt engineering",
+        "They must always be used together"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt engineering can often achieve desired behaviors without model fine-tuning, potentially reducing the need for expensive training processes in many applications.",
+      "optionExplanations": [
+        "Incorrect. Prompt engineering and fine-tuning are complementary techniques for optimizing AI model performance.",
+        "Correct. Effective prompt engineering can often achieve desired behaviors without requiring expensive fine-tuning processes.",
+        "Incorrect. Fine-tuning doesn't eliminate the need for good prompts; they often work together for optimal results.",
+        "Incorrect. While they can be complementary, they don't always need to be used together."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prompt-engineering",
+        "fine-tuning",
+        "optimization",
+        "cost-efficiency"
+      ]
+    },
+    {
+      "id": "PEG_068",
+      "question": "What is multi-modal prompting?",
+      "options": [
+        "Using multiple languages in prompts",
+        "Combining text, images, or other modalities in prompts",
+        "Using multiple AI models simultaneously",
+        "Writing very long text prompts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-modal prompting involves combining different types of input modalities such as text, images, audio, or other data types in a single prompt.",
+      "optionExplanations": [
+        "Incorrect. Multi-language prompting is different from multi-modal, which involves different data types.",
+        "Correct. Multi-modal prompting combines different input modalities like text, images, or audio in a single prompt.",
+        "Incorrect. Multi-modal refers to input types, not using multiple AI models.",
+        "Incorrect. Multi-modal is about data types, not text length."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-modal",
+        "modalities",
+        "text-image",
+        "input-types"
+      ]
+    },
+    {
+      "id": "PEG_069",
+      "question": "What is the benefit of using confidence indicators in prompts?",
+      "options": [
+        "They make responses longer",
+        "They help the model express uncertainty when appropriate",
+        "They increase generation speed",
+        "They reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Confidence indicators help models express uncertainty, acknowledge limitations, and provide more honest responses when they're unsure about information.",
+      "optionExplanations": [
+        "Incorrect. Confidence indicators affect honesty and accuracy, not response length.",
+        "Correct. Confidence indicators help models appropriately express uncertainty and acknowledge their limitations.",
+        "Incorrect. Confidence indicators affect response quality, not generation speed.",
+        "Incorrect. Confidence indicators may require additional processing to assess uncertainty."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "confidence",
+        "uncertainty",
+        "honesty",
+        "limitations"
+      ]
+    },
+    {
+      "id": "PEG_070",
+      "question": "What is progressive prompting?",
+      "options": [
+        "Making prompts longer each time",
+        "Building complex tasks through a series of simpler, sequential prompts",
+        "Using more advanced vocabulary over time",
+        "Increasing temperature gradually"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Progressive prompting builds complex tasks by breaking them down into a series of simpler, sequential prompts that build upon each other's results.",
+      "optionExplanations": [
+        "Incorrect. Progressive prompting is about task complexity and sequencing, not prompt length.",
+        "Correct. Progressive prompting decomposes complex tasks into sequential, simpler prompts that build upon each other.",
+        "Incorrect. Progressive prompting focuses on task structure, not vocabulary complexity.",
+        "Incorrect. Progressive prompting is about task decomposition, not parameter adjustment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "progressive-prompting",
+        "task-decomposition",
+        "sequential-prompts",
+        "complexity-building"
+      ]
+    },
+    {
+      "id": "PEG_071",
+      "question": "How does model size typically affect prompt engineering strategies?",
+      "options": [
+        "Larger models always require longer prompts",
+        "Larger models often respond better to subtle prompts and context",
+        "Model size has no impact on prompting",
+        "Smaller models always perform better with prompts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Larger models typically have better understanding of context and nuance, often responding well to more subtle prompts and implicit instructions.",
+      "optionExplanations": [
+        "Incorrect. Larger models often understand shorter, more subtle prompts better than smaller models.",
+        "Correct. Larger models typically have better contextual understanding and can respond to more subtle prompting strategies.",
+        "Incorrect. Model size significantly affects how models interpret and respond to different prompting approaches.",
+        "Incorrect. While smaller models can work with prompts, larger models generally have more sophisticated understanding."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-size",
+        "context-understanding",
+        "prompting-strategies",
+        "model-capabilities"
+      ]
+    },
+    {
+      "id": "PEG_072",
+      "question": "What is the purpose of using ethical guidelines in prompt design?",
+      "options": [
+        "To make prompts longer and more complex",
+        "To ensure responsible AI use and prevent harmful outputs",
+        "To increase computational efficiency",
+        "To improve creative capabilities"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ethical guidelines in prompt design help ensure responsible AI use, prevent harmful outputs, and promote beneficial, safe interactions with AI systems.",
+      "optionExplanations": [
+        "Incorrect. Ethical guidelines focus on responsible use, not prompt length or complexity.",
+        "Correct. Ethical guidelines ensure responsible AI use and help prevent harmful, biased, or inappropriate outputs.",
+        "Incorrect. Ethical guidelines focus on safety and responsibility, not computational efficiency.",
+        "Incorrect. While ethical guidelines don't limit creativity, their primary purpose is safety and responsibility."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ethics",
+        "responsible-AI",
+        "safety",
+        "harmful-outputs"
+      ]
+    },
+    {
+      "id": "PEG_073",
+      "question": "What is context stuffing in prompt engineering?",
+      "options": [
+        "Adding irrelevant information to prompts",
+        "Including maximum relevant context within token limits",
+        "Using multiple contexts simultaneously",
+        "Compressing context to save space"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Context stuffing involves including as much relevant context and information as possible within the available token limits to provide comprehensive background for the model.",
+      "optionExplanations": [
+        "Incorrect. Context stuffing involves relevant information, not irrelevant additions.",
+        "Correct. Context stuffing maximizes relevant context and information within available token limits for comprehensive model understanding.",
+        "Incorrect. Context stuffing is about maximizing relevant content, not using multiple separate contexts.",
+        "Incorrect. Context stuffing is about including maximum content, not compression techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-stuffing",
+        "token-limits",
+        "relevant-information",
+        "comprehensive-context"
+      ]
+    },
+    {
+      "id": "PEG_074",
+      "question": "What is the most effective way to prompt for creative brainstorming?",
+      "options": [
+        "Use very low temperature and strict constraints",
+        "Use higher temperature and encourage diverse thinking",
+        "Provide only one example to follow",
+        "Focus on factual accuracy over creativity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Creative brainstorming benefits from higher temperature settings and prompts that encourage diverse, unconventional thinking and exploration of multiple possibilities.",
+      "optionExplanations": [
+        "Incorrect. Low temperature and strict constraints limit the diversity and creativity needed for brainstorming.",
+        "Correct. Higher temperature and encouraging diverse thinking promote the variability and creativity essential for effective brainstorming.",
+        "Incorrect. Multiple examples or no examples can better stimulate diverse creative thinking.",
+        "Incorrect. Brainstorming prioritizes creative exploration over strict factual accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "creativity",
+        "brainstorming",
+        "high-temperature",
+        "diverse-thinking"
+      ]
+    },
+    {
+      "id": "PEG_075",
+      "question": "What is prompt versioning?",
+      "options": [
+        "Using different language versions of the same prompt",
+        "Systematically tracking and managing different versions of prompts",
+        "Converting prompts to different formats",
+        "Using prompts with different models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt versioning involves systematically tracking, managing, and documenting different versions of prompts to enable optimization, rollback, and performance comparison.",
+      "optionExplanations": [
+        "Incorrect. Language versions are different from systematic prompt versioning for development and optimization.",
+        "Correct. Prompt versioning systematically tracks and manages different prompt versions for optimization and performance comparison.",
+        "Incorrect. Format conversion is different from version management for development purposes.",
+        "Incorrect. Using prompts with different models is separate from versioning for prompt development."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "versioning",
+        "prompt-management",
+        "optimization",
+        "tracking"
+      ]
+    },
+    {
+      "id": "PEG_076",
+      "question": "What is the role of domain expertise in prompt engineering?",
+      "options": [
+        "It's not necessary for effective prompts",
+        "It helps create more accurate and relevant prompts for specialized tasks",
+        "It only matters for technical domains",
+        "It makes prompts too complex for AI models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Domain expertise enables the creation of more accurate, relevant, and effective prompts for specialized tasks by understanding the nuances, terminology, and requirements of specific fields.",
+      "optionExplanations": [
+        "Incorrect. Domain expertise significantly improves prompt quality for specialized tasks by providing necessary context and understanding.",
+        "Correct. Domain expertise helps create more accurate and relevant prompts by understanding field-specific nuances, terminology, and requirements.",
+        "Incorrect. Domain expertise is valuable across all fields, not just technical domains.",
+        "Incorrect. Domain expertise helps simplify complex concepts appropriately, not make them overly complex."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-expertise",
+        "specialized-tasks",
+        "accuracy",
+        "relevance"
+      ]
+    },
+    {
+      "id": "PEG_077",
+      "question": "What is backprompting?",
+      "options": [
+        "Using prompts from previous conversations",
+        "Working backwards from desired output to create effective prompts",
+        "Adding background information to prompts",
+        "Using prompts to correct previous mistakes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Backprompting involves starting with the desired output and working backwards to design prompts that will effectively produce that specific result.",
+      "optionExplanations": [
+        "Incorrect. This describes conversation history usage, not the backprompting design methodology.",
+        "Correct. Backprompting starts with the desired output and works backwards to create prompts that will produce that result.",
+        "Incorrect. Adding background information is context provision, not the backprompting methodology.",
+        "Incorrect. Error correction is different from the backprompting design approach."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "backprompting",
+        "reverse-engineering",
+        "output-design",
+        "methodology"
+      ]
+    },
+    {
+      "id": "PEG_078",
+      "question": "How should prompts be designed for collaborative AI interactions?",
+      "options": [
+        "Make them as directive as possible",
+        "Design them to encourage dialogue and iterative refinement",
+        "Keep them extremely brief",
+        "Focus only on final outputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Collaborative AI interactions benefit from prompts designed to encourage dialogue, questions, iterative refinement, and back-and-forth communication.",
+      "optionExplanations": [
+        "Incorrect. Overly directive prompts limit the collaborative nature of the interaction.",
+        "Correct. Collaborative prompts should encourage dialogue, questions, and iterative refinement for effective human-AI collaboration.",
+        "Incorrect. Brief prompts may lack the context needed for meaningful collaboration.",
+        "Incorrect. Collaboration involves the process of working together, not just final outputs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "collaboration",
+        "dialogue",
+        "iterative-refinement",
+        "human-AI"
+      ]
+    },
+    {
+      "id": "PEG_079",
+      "question": "What is prompt entropy?",
+      "options": [
+        "The randomness or unpredictability in prompt responses",
+        "The length of prompts measured in characters",
+        "The computational cost of processing prompts",
+        "The number of possible interpretations of a prompt"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prompt entropy refers to the randomness or unpredictability in the model's responses to a given prompt, influenced by factors like temperature and sampling methods.",
+      "optionExplanations": [
+        "Correct. Prompt entropy measures the randomness or unpredictability in model responses, affected by generation parameters.",
+        "Incorrect. Prompt entropy is about response variability, not character count or length.",
+        "Incorrect. Computational cost is separate from the concept of entropy in generation.",
+        "Incorrect. While interpretation ambiguity can affect entropy, entropy specifically measures response randomness."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "entropy",
+        "randomness",
+        "unpredictability",
+        "response-variability"
+      ]
+    },
+    {
+      "id": "PEG_080",
+      "question": "What is the most effective approach for handling edge cases in prompts?",
+      "options": [
+        "Ignore them to keep prompts simple",
+        "Include specific examples and instructions for handling edge cases",
+        "Use higher temperature to increase creativity",
+        "Make prompts shorter to avoid confusion"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Edge cases should be explicitly addressed in prompts with specific examples and instructions to ensure the model handles unusual or boundary conditions appropriately.",
+      "optionExplanations": [
+        "Incorrect. Ignoring edge cases can lead to poor performance when unusual situations arise.",
+        "Correct. Explicitly addressing edge cases with examples and instructions ensures appropriate handling of unusual or boundary conditions.",
+        "Incorrect. Higher temperature affects randomness, not the model's ability to handle edge cases appropriately.",
+        "Incorrect. Shorter prompts may lack the detail needed to properly address edge cases."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-cases",
+        "boundary-conditions",
+        "examples",
+        "explicit-instructions"
+      ]
+    },
+    {
+      "id": "PEG_081",
+      "question": "What is prompt compression?",
+      "options": [
+        "Making prompts shorter by removing important information",
+        "Efficiently encoding maximum information in minimum tokens",
+        "Using abbreviations instead of full words",
+        "Compressing files containing prompts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt compression involves efficiently encoding the maximum amount of necessary information using the minimum number of tokens while maintaining effectiveness.",
+      "optionExplanations": [
+        "Incorrect. Compression should maintain important information while reducing tokens, not remove important content.",
+        "Correct. Prompt compression efficiently encodes maximum necessary information using minimum tokens while maintaining effectiveness.",
+        "Incorrect. Simple abbreviation is just one technique; compression involves more sophisticated optimization strategies.",
+        "Incorrect. This refers to file compression, not the optimization of prompt content and structure."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "compression",
+        "token-efficiency",
+        "information-density",
+        "optimization"
+      ]
+    },
+    {
+      "id": "PEG_082",
+      "question": "How does model alignment affect prompt engineering strategies?",
+      "options": [
+        "It has no impact on prompting approaches",
+        "Well-aligned models require less explicit safety constraints in prompts",
+        "Aligned models work worse with prompts",
+        "Alignment eliminates the need for prompt engineering"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Well-aligned models that have been trained to be helpful, harmless, and honest typically require fewer explicit safety constraints in prompts while being more responsive to user intent.",
+      "optionExplanations": [
+        "Incorrect. Model alignment significantly affects how models respond to different prompting strategies.",
+        "Correct. Well-aligned models typically require fewer explicit safety constraints while being more responsive to appropriate user requests.",
+        "Incorrect. Aligned models generally work better with prompts by being more responsive to user intent.",
+        "Incorrect. Alignment improves model behavior but doesn't eliminate the value of good prompt engineering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-alignment",
+        "safety-constraints",
+        "user-intent",
+        "model-behavior"
+      ]
+    },
+    {
+      "id": "PEG_083",
+      "question": "What is the benefit of using modular prompt design?",
+      "options": [
+        "It makes prompts longer and more detailed",
+        "It allows reusable components and easier maintenance",
+        "It requires more computational resources",
+        "It works only with specific AI models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Modular prompt design creates reusable components that can be combined in different ways, making prompt maintenance, testing, and optimization more efficient.",
+      "optionExplanations": [
+        "Incorrect. Modular design focuses on reusability and maintainability, not necessarily length.",
+        "Correct. Modular design allows reusable prompt components that can be combined efficiently and maintained more easily.",
+        "Incorrect. Modular design can actually optimize resource usage by enabling reuse of effective components.",
+        "Incorrect. Modular design principles can benefit prompting across different model types."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "modular-design",
+        "reusability",
+        "maintenance",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "PEG_084",
+      "question": "What is implicit prompting?",
+      "options": [
+        "Using very short prompts",
+        "Providing context and letting the model infer the task",
+        "Writing prompts in multiple languages",
+        "Using technical jargon in prompts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Implicit prompting provides context or examples without explicitly stating the task, allowing the model to infer what is expected based on patterns and context.",
+      "optionExplanations": [
+        "Incorrect. Implicit prompting is about task inference, not prompt length.",
+        "Correct. Implicit prompting provides context and examples, allowing the model to infer the expected task or behavior.",
+        "Incorrect. Multiple languages is a different technique; implicit prompting focuses on task inference.",
+        "Incorrect. Technical jargon is about vocabulary choice, not the implicit vs. explicit nature of task specification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "implicit-prompting",
+        "task-inference",
+        "context",
+        "pattern-recognition"
+      ]
+    },
+    {
+      "id": "PEG_085",
+      "question": "What is the primary consideration when designing prompts for real-time applications?",
+      "options": [
+        "Maximizing creative output",
+        "Balancing response quality with speed and efficiency",
+        "Using the longest possible prompts",
+        "Focusing only on accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Real-time applications require balancing response quality with speed and efficiency constraints, often necessitating optimized prompts that work well within time limits.",
+      "optionExplanations": [
+        "Incorrect. Real-time applications prioritize speed and efficiency over maximum creativity.",
+        "Correct. Real-time applications require balancing quality with speed constraints, necessitating efficient prompt design.",
+        "Incorrect. Longer prompts can slow processing, which conflicts with real-time requirements.",
+        "Incorrect. While accuracy is important, speed and efficiency are equally critical for real-time applications."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "real-time",
+        "speed-efficiency",
+        "quality-balance",
+        "time-constraints"
+      ]
+    },
+    {
+      "id": "PEG_086",
+      "question": "What is prompt debugging?",
+      "options": [
+        "Fixing errors in AI model code",
+        "Systematically identifying and fixing issues with prompt performance",
+        "Running prompts through spell checkers",
+        "Converting prompts to different formats"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt debugging involves systematically identifying, analyzing, and fixing issues with prompt performance, such as unexpected outputs, inconsistencies, or suboptimal results.",
+      "optionExplanations": [
+        "Incorrect. Prompt debugging focuses on prompt issues, not underlying model code errors.",
+        "Correct. Prompt debugging systematically identifies and resolves issues with prompt performance and output quality.",
+        "Incorrect. Spell checking is just one small aspect; debugging involves comprehensive performance analysis.",
+        "Incorrect. Format conversion is different from debugging performance and effectiveness issues."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "debugging",
+        "performance-analysis",
+        "issue-identification",
+        "optimization"
+      ]
+    },
+    {
+      "id": "PEG_087",
+      "question": "What is the role of cultural context in international prompt engineering?",
+      "options": [
+        "Cultural context is irrelevant to AI prompts",
+        "Cultural awareness helps create more appropriate and effective prompts for different regions",
+        "Cultural context only matters for translation tasks",
+        "Cultural considerations slow down AI processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cultural context is crucial for creating appropriate and effective prompts that resonate with different cultural backgrounds, values, and communication styles.",
+      "optionExplanations": [
+        "Incorrect. Cultural context significantly affects how prompts are interpreted and how appropriate responses are perceived.",
+        "Correct. Cultural awareness helps create prompts that are appropriate, respectful, and effective across different cultural contexts.",
+        "Incorrect. Cultural context affects many types of tasks beyond translation, including communication style and value alignment.",
+        "Incorrect. Cultural considerations improve appropriateness and effectiveness; they don't affect processing speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cultural-context",
+        "international",
+        "appropriateness",
+        "cross-cultural"
+      ]
+    },
+    {
+      "id": "PEG_088",
+      "question": "What is competitive prompting?",
+      "options": [
+        "Using prompts to compete against other AI systems",
+        "Having multiple prompt variants compete for the best results",
+        "Creating prompts for competitive gaming",
+        "Using aggressive language in prompts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Competitive prompting involves creating multiple prompt variants and testing them against each other to identify the most effective approach for a given task.",
+      "optionExplanations": [
+        "Incorrect. Competitive prompting is about optimizing prompt performance, not competing against other AI systems.",
+        "Correct. Competitive prompting tests multiple prompt variants against each other to identify the most effective approach.",
+        "Incorrect. This refers to gaming applications, not the optimization technique of competitive prompting.",
+        "Incorrect. Competitive prompting is about optimization methodology, not aggressive language use."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "competitive-prompting",
+        "prompt-variants",
+        "optimization",
+        "performance-testing"
+      ]
+    },
+    {
+      "id": "PEG_089",
+      "question": "What is the importance of prompt testing and validation?",
+      "options": [
+        "It's unnecessary if prompts are well-written",
+        "It ensures prompts work reliably across different scenarios and inputs",
+        "It only matters for complex prompts",
+        "It slows down the development process unnecessarily"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt testing and validation ensures that prompts work reliably across different scenarios, inputs, and edge cases, preventing failures in production use.",
+      "optionExplanations": [
+        "Incorrect. Even well-written prompts need testing to verify performance across different scenarios and edge cases.",
+        "Correct. Testing and validation ensure prompts work reliably across various scenarios, inputs, and edge cases.",
+        "Incorrect. Testing benefits both simple and complex prompts by verifying consistent performance.",
+        "Incorrect. Testing saves time by preventing failures and issues in production environments."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "testing",
+        "validation",
+        "reliability",
+        "scenarios"
+      ]
+    },
+    {
+      "id": "PEG_090",
+      "question": "What is prompt middleware?",
+      "options": [
+        "Software that sits between prompts and AI models to modify or enhance requests",
+        "The middle section of long prompts",
+        "Prompts written in middle-level programming languages",
+        "Average-length prompts between short and long ones"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prompt middleware is software that intercepts, modifies, or enhances prompt requests before they reach the AI model, enabling features like safety filtering, optimization, or formatting.",
+      "optionExplanations": [
+        "Correct. Prompt middleware sits between users and AI models to modify, enhance, or process prompt requests.",
+        "Incorrect. Prompt middleware refers to software architecture, not physical sections of prompts.",
+        "Incorrect. Prompt middleware is about software architecture, not programming language levels.",
+        "Incorrect. Prompt middleware refers to architectural components, not prompt length categories."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "middleware",
+        "software-architecture",
+        "request-processing",
+        "enhancement"
+      ]
+    },
+    {
+      "id": "PEG_091",
+      "question": "How does token cost optimization affect prompt design?",
+      "options": [
+        "It's not a relevant consideration",
+        "It encourages more efficient and concise prompt design",
+        "It requires using only short prompts",
+        "It eliminates the need for examples"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Token cost optimization encourages designing prompts that are efficient and concise while maintaining effectiveness, balancing informativeness with cost considerations.",
+      "optionExplanations": [
+        "Incorrect. Token costs are a significant consideration in production AI applications and affect prompt design decisions.",
+        "Correct. Cost optimization encourages efficient, concise prompt design that maintains effectiveness while minimizing unnecessary tokens.",
+        "Incorrect. Cost optimization seeks efficiency, not necessarily short prompts; sometimes longer prompts are more cost-effective overall.",
+        "Incorrect. Examples may still be valuable for effectiveness; optimization focuses on overall efficiency, not eliminating specific components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cost-optimization",
+        "efficiency",
+        "token-usage",
+        "resource-management"
+      ]
+    },
+    {
+      "id": "PEG_092",
+      "question": "What is prompt orchestration?",
+      "options": [
+        "Playing music while writing prompts",
+        "Coordinating multiple prompts in a workflow to accomplish complex tasks",
+        "Making prompts sound more musical",
+        "Using prompts in chronological order"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt orchestration involves coordinating multiple prompts in a structured workflow to accomplish complex tasks that require multiple steps or different types of processing.",
+      "optionExplanations": [
+        "Incorrect. Prompt orchestration is about workflow coordination, not musical elements.",
+        "Correct. Prompt orchestration coordinates multiple prompts in structured workflows to accomplish complex, multi-step tasks.",
+        "Incorrect. Musical elements are unrelated to prompt orchestration, which focuses on workflow management.",
+        "Incorrect. Orchestration involves strategic coordination, not simply chronological ordering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "orchestration",
+        "workflow",
+        "multi-step-tasks",
+        "coordination"
+      ]
+    },
+    {
+      "id": "PEG_093",
+      "question": "What is the significance of prompt latency in user experience?",
+      "options": [
+        "Latency doesn't affect user experience",
+        "Lower latency improves responsiveness and user satisfaction",
+        "Higher latency always produces better results",
+        "Latency only matters for technical users"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lower prompt latency improves system responsiveness and user satisfaction by providing faster feedback and reducing wait times in interactive applications.",
+      "optionExplanations": [
+        "Incorrect. Latency significantly affects user experience, especially in interactive applications.",
+        "Correct. Lower latency improves responsiveness and user satisfaction by reducing wait times and enabling more fluid interactions.",
+        "Incorrect. While longer processing might sometimes improve quality, users generally prefer responsive systems with reasonable quality.",
+        "Incorrect. All users benefit from responsive systems; latency affects usability across user types."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "latency",
+        "user-experience",
+        "responsiveness",
+        "interactivity"
+      ]
+    },
+    {
+      "id": "PEG_094",
+      "question": "What is prompt analytics?",
+      "options": [
+        "Writing analytical reports about prompts",
+        "Measuring and analyzing prompt performance metrics and outcomes",
+        "Using prompts to analyze data",
+        "Creating mathematical formulas for prompts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt analytics involves measuring, tracking, and analyzing various performance metrics and outcomes to understand prompt effectiveness and optimize performance.",
+      "optionExplanations": [
+        "Incorrect. Prompt analytics involves systematic measurement and analysis, not just writing reports.",
+        "Correct. Prompt analytics measures and analyzes performance metrics to understand effectiveness and guide optimization efforts.",
+        "Incorrect. This describes using prompts as tools for data analysis, not analyzing the prompts themselves.",
+        "Incorrect. Mathematical formulas might be used in analytics, but analytics encompasses broader measurement and analysis activities."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "analytics",
+        "performance-metrics",
+        "measurement",
+        "optimization"
+      ]
+    },
+    {
+      "id": "PEG_095",
+      "question": "How does prompt caching affect system performance?",
+      "options": [
+        "It slows down all responses",
+        "It can speed up responses for repeated or similar prompts",
+        "It only works with short prompts",
+        "It reduces the quality of responses"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt caching can significantly speed up responses by storing and reusing results from repeated or similar prompts, reducing computation time and improving efficiency.",
+      "optionExplanations": [
+        "Incorrect. Caching typically improves response times by avoiding redundant computation.",
+        "Correct. Caching speeds up responses by storing and reusing results from repeated or similar prompts, improving system efficiency.",
+        "Incorrect. Caching can benefit prompts of various lengths, not just short ones.",
+        "Incorrect. Caching preserves response quality while improving speed by reusing previous results."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "caching",
+        "performance",
+        "efficiency",
+        "response-time"
+      ]
+    },
+    {
+      "id": "PEG_096",
+      "question": "What is the role of prompt governance in enterprise AI?",
+      "options": [
+        "It's not necessary for business applications",
+        "It establishes standards, policies, and controls for prompt development and use",
+        "It only applies to government organizations",
+        "It focuses solely on technical specifications"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt governance establishes standards, policies, and controls for prompt development, deployment, and use in enterprise environments to ensure consistency, safety, and compliance.",
+      "optionExplanations": [
+        "Incorrect. Enterprise AI applications benefit significantly from governance to ensure consistency, safety, and compliance.",
+        "Correct. Prompt governance establishes standards, policies, and controls for consistent, safe, and compliant prompt development and use.",
+        "Incorrect. Governance applies to all types of organizations using AI, not just government entities.",
+        "Incorrect. Governance encompasses technical, ethical, legal, and business considerations, not just technical specifications."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "governance",
+        "enterprise",
+        "standards",
+        "compliance"
+      ]
+    },
+    {
+      "id": "PEG_097",
+      "question": "What is adaptive temperature in prompt engineering?",
+      "options": [
+        "Changing room temperature while writing prompts",
+        "Dynamically adjusting temperature based on task requirements or context",
+        "Using temperature sensors in AI hardware",
+        "Setting temperature once and never changing it"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adaptive temperature involves dynamically adjusting the temperature parameter based on specific task requirements, context, or performance feedback to optimize results.",
+      "optionExplanations": [
+        "Incorrect. Adaptive temperature refers to AI generation parameters, not environmental conditions.",
+        "Correct. Adaptive temperature dynamically adjusts the randomness parameter based on task requirements or context for optimal results.",
+        "Incorrect. This refers to hardware monitoring, not AI generation parameter adjustment.",
+        "Incorrect. Adaptive temperature specifically involves changing the parameter based on conditions, not keeping it static."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adaptive-temperature",
+        "dynamic-adjustment",
+        "task-optimization",
+        "parameter-tuning"
+      ]
+    },
+    {
+      "id": "PEG_098",
+      "question": "What is the future direction of prompt engineering?",
+      "options": [
+        "It will become completely automated and require no human input",
+        "It will likely evolve toward more sophisticated, context-aware, and automated optimization",
+        "It will be replaced entirely by fine-tuning",
+        "It will become simpler and require less expertise"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt engineering is likely to evolve toward more sophisticated techniques including automated optimization, better context awareness, and integration with other AI improvement methods.",
+      "optionExplanations": [
+        "Incorrect. While automation will increase, human expertise will remain valuable for complex tasks and creative applications.",
+        "Correct. Prompt engineering is evolving toward more sophisticated, automated, and context-aware optimization techniques.",
+        "Incorrect. Prompt engineering and fine-tuning are complementary; prompting will continue to have distinct advantages.",
+        "Incorrect. As AI capabilities grow, prompt engineering is becoming more sophisticated, not simpler."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "future-trends",
+        "automation",
+        "sophistication",
+        "evolution"
+      ]
+    },
+    {
+      "id": "PEG_099",
+      "question": "What is prompt injection detection?",
+      "options": [
+        "Finding prompts that have been uploaded to systems",
+        "Identifying and preventing malicious attempts to manipulate AI behavior through prompts",
+        "Detecting when prompts are too long",
+        "Finding errors in prompt syntax"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt injection detection involves identifying and preventing malicious attempts to manipulate AI behavior through carefully crafted prompts that try to override system instructions.",
+      "optionExplanations": [
+        "Incorrect. Prompt injection detection focuses on security threats, not simple prompt discovery.",
+        "Correct. Prompt injection detection identifies and prevents malicious attempts to manipulate AI behavior through crafted prompts.",
+        "Incorrect. Length detection is different from security-focused injection detection.",
+        "Incorrect. Syntax error detection is different from security-focused injection detection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "security",
+        "injection-detection",
+        "malicious-prompts",
+        "threat-prevention"
+      ]
+    },
+    {
+      "id": "PEG_100",
+      "question": "What is the most important principle for effective prompt engineering?",
+      "options": [
+        "Always use the maximum number of tokens available",
+        "Iteratively test, measure, and refine prompts based on actual performance",
+        "Copy prompts from other successful applications",
+        "Focus only on creative and complex prompting techniques"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The most important principle is iterative testing, measurement, and refinement based on actual performance, as this enables continuous improvement and optimization for specific use cases.",
+      "optionExplanations": [
+        "Incorrect. Token maximization doesn't guarantee effectiveness; efficiency and relevance are more important than length.",
+        "Correct. Iterative testing and refinement based on actual performance is fundamental to effective prompt engineering and continuous improvement.",
+        "Incorrect. Copying may not work for different contexts; custom optimization based on specific requirements is more effective.",
+        "Incorrect. Simple, clear prompts are often more effective than complex ones; the focus should be on what works for the specific use case."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "best-practices",
+        "iterative-improvement",
+        "performance-measurement",
+        "optimization"
+      ]
+    }
+  ]
+}

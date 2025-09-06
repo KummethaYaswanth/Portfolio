@@ -1,0 +1,2413 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_TSA",
+  "subtopicName": "Time Series Analysis",
+  "str": 0.800,
+  "description": "Time series analysis focuses on analyzing data points collected over time to identify patterns, trends, seasonality, and make predictions for future values.",
+  "questions": [
+    {
+      "id": "TSA_001",
+      "question": "What is a time series?",
+      "options": [
+        "A sequence of data points indexed in time order",
+        "A collection of random variables",
+        "A mathematical function with no time dependency",
+        "A static dataset with fixed values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A time series is a sequence of data points that are indexed, listed, or graphed in time order, showing how values change over time.",
+      "optionExplanations": [
+        "Correct: A time series consists of data points collected sequentially over time intervals",
+        "Incorrect: While time series can involve random variables, this definition is too general and doesn't capture the temporal aspect",
+        "Incorrect: Time series are specifically dependent on time, making this definition contradictory",
+        "Incorrect: Time series data changes over time, so it cannot be static or fixed"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "fundamentals",
+        "definition",
+        "basics"
+      ]
+    },
+    {
+      "id": "TSA_002",
+      "question": "Which component represents the long-term movement in a time series?",
+      "options": [
+        "Seasonality",
+        "Trend",
+        "Noise",
+        "Cyclical pattern"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Trend represents the long-term direction or movement in a time series, showing whether values are generally increasing, decreasing, or remaining stable over time.",
+      "optionExplanations": [
+        "Incorrect: Seasonality refers to regular patterns that repeat over fixed periods (like monthly or yearly)",
+        "Correct: Trend captures the long-term upward or downward movement in the data",
+        "Incorrect: Noise represents random fluctuations without any systematic pattern",
+        "Incorrect: Cyclical patterns are longer-term fluctuations that don't have fixed periods"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "trend",
+        "components",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "TSA_003",
+      "question": "What does stationarity mean in time series analysis?",
+      "options": [
+        "The data values remain constant over time",
+        "Statistical properties like mean and variance remain constant over time",
+        "The time series has no missing values",
+        "The data follows a normal distribution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stationarity means that the statistical properties of a time series (mean, variance, covariance) do not change over time, making the series predictable in its statistical behavior.",
+      "optionExplanations": [
+        "Incorrect: Stationarity doesn't require constant values, just constant statistical properties",
+        "Correct: A stationary series has constant mean, variance, and autocovariance structure over time",
+        "Incorrect: Missing values are a data quality issue, not related to stationarity",
+        "Incorrect: Normality of distribution is separate from the concept of stationarity"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stationarity",
+        "statistical-properties",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "TSA_004",
+      "question": "Which method is commonly used to make a non-stationary time series stationary?",
+      "options": [
+        "Interpolation",
+        "Differencing",
+        "Scaling",
+        "Sorting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Differencing involves computing the differences between consecutive observations to remove trends and achieve stationarity.",
+      "optionExplanations": [
+        "Incorrect: Interpolation fills missing values but doesn't address stationarity",
+        "Correct: Differencing removes trends by computing differences between consecutive values",
+        "Incorrect: Scaling changes the magnitude but doesn't affect stationarity",
+        "Incorrect: Sorting rearranges data and destroys the temporal order"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stationarity",
+        "differencing",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "TSA_005",
+      "question": "What does ARIMA stand for?",
+      "options": [
+        "Autoregressive Integrated Moving Average",
+        "Advanced Regression for Independent Moving Analysis",
+        "Automated Regression with Integrated Modeling Approach",
+        "Analytical Regression for Iterative Moving Averages"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ARIMA stands for Autoregressive Integrated Moving Average, combining autoregression (AR), integration (I), and moving average (MA) components.",
+      "optionExplanations": [
+        "Correct: ARIMA combines AR (autoregressive), I (integrated), and MA (moving average) components",
+        "Incorrect: This is not the correct expansion of ARIMA",
+        "Incorrect: This is not the correct expansion of ARIMA",
+        "Incorrect: This is not the correct expansion of ARIMA"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ARIMA",
+        "definition",
+        "modeling"
+      ]
+    },
+    {
+      "id": "TSA_006",
+      "question": "In ARIMA(p,d,q), what does 'd' represent?",
+      "options": [
+        "The number of autoregressive terms",
+        "The degree of differencing",
+        "The number of moving average terms",
+        "The seasonal period"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In ARIMA(p,d,q), 'd' represents the degree of differencing needed to make the time series stationary.",
+      "optionExplanations": [
+        "Incorrect: 'p' represents the number of autoregressive terms",
+        "Correct: 'd' is the number of times the series needs to be differenced to achieve stationarity",
+        "Incorrect: 'q' represents the number of moving average terms",
+        "Incorrect: Seasonal period is represented separately in SARIMA models"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ARIMA",
+        "parameters",
+        "differencing"
+      ]
+    },
+    {
+      "id": "TSA_007",
+      "question": "What is exponential smoothing used for?",
+      "options": [
+        "To remove outliers from time series",
+        "To forecast future values by giving more weight to recent observations",
+        "To convert time series to frequency domain",
+        "To test for stationarity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Exponential smoothing is a forecasting technique that gives exponentially decreasing weights to older observations, emphasizing recent data.",
+      "optionExplanations": [
+        "Incorrect: Exponential smoothing is not specifically designed for outlier removal",
+        "Correct: It forecasts by weighting recent observations more heavily than older ones",
+        "Incorrect: Frequency domain conversion is done using Fourier transforms",
+        "Incorrect: Stationarity testing uses statistical tests like ADF or KPSS"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exponential-smoothing",
+        "forecasting",
+        "weighting"
+      ]
+    },
+    {
+      "id": "TSA_008",
+      "question": "Which parameter controls the smoothing in simple exponential smoothing?",
+      "options": [
+        "Beta (β)",
+        "Alpha (α)",
+        "Gamma (γ)",
+        "Delta (δ)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alpha (α) is the smoothing parameter in simple exponential smoothing that controls the rate of decay for historical observations.",
+      "optionExplanations": [
+        "Incorrect: Beta is used for trend smoothing in Holt's method",
+        "Correct: Alpha controls the exponential decay rate for past observations",
+        "Incorrect: Gamma is used for seasonal smoothing in Holt-Winters method",
+        "Incorrect: Delta is not a standard parameter in exponential smoothing"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exponential-smoothing",
+        "parameters",
+        "alpha"
+      ]
+    },
+    {
+      "id": "TSA_009",
+      "question": "What is seasonality in time series?",
+      "options": [
+        "Random fluctuations in data",
+        "Long-term trends in data",
+        "Regular patterns that repeat over fixed periods",
+        "One-time events that affect the series"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Seasonality refers to predictable patterns that repeat at regular intervals, such as daily, weekly, monthly, or yearly cycles.",
+      "optionExplanations": [
+        "Incorrect: Random fluctuations represent noise, not seasonality",
+        "Incorrect: Long-term trends are separate from seasonal patterns",
+        "Correct: Seasonality consists of regular, predictable patterns that repeat over fixed time periods",
+        "Incorrect: One-time events are irregular occurrences, not seasonal patterns"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "seasonality",
+        "patterns",
+        "cyclical"
+      ]
+    },
+    {
+      "id": "TSA_010",
+      "question": "Which test is commonly used to check for stationarity?",
+      "options": [
+        "Chi-square test",
+        "T-test",
+        "Augmented Dickey-Fuller test",
+        "F-test"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Augmented Dickey-Fuller (ADF) test is a unit root test commonly used to determine if a time series is stationary.",
+      "optionExplanations": [
+        "Incorrect: Chi-square test is used for independence and goodness of fit",
+        "Incorrect: T-test compares means between groups",
+        "Correct: ADF test specifically tests for unit roots and stationarity in time series",
+        "Incorrect: F-test compares variances between groups"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stationarity",
+        "testing",
+        "ADF"
+      ]
+    },
+    {
+      "id": "TSA_011",
+      "question": "What is autocorrelation in time series?",
+      "options": [
+        "Correlation between different time series",
+        "Correlation of a series with itself at different time lags",
+        "Correlation between seasonal components",
+        "Correlation between trend and noise"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Autocorrelation measures the linear relationship between a time series and its lagged values, showing how current values relate to past values.",
+      "optionExplanations": [
+        "Incorrect: Correlation between different series is cross-correlation",
+        "Correct: Autocorrelation measures how a series correlates with its own past values",
+        "Incorrect: This would be correlation between components, not autocorrelation",
+        "Incorrect: This describes correlation between components, not autocorrelation"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "autocorrelation",
+        "lags",
+        "correlation"
+      ]
+    },
+    {
+      "id": "TSA_012",
+      "question": "What is the purpose of a sliding window in time series analysis?",
+      "options": [
+        "To visualize the entire dataset at once",
+        "To analyze local patterns by examining fixed-size subsets of data",
+        "To remove seasonal patterns",
+        "To convert the series to stationary"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A sliding window moves across the time series to analyze local patterns and trends within fixed-size subsets of consecutive data points.",
+      "optionExplanations": [
+        "Incorrect: Sliding windows focus on local subsets, not the entire dataset",
+        "Correct: Sliding windows examine fixed-size consecutive data segments to identify local patterns",
+        "Incorrect: Seasonal pattern removal requires specific deseasonalization techniques",
+        "Incorrect: Stationarity is achieved through differencing, not windowing"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sliding-window",
+        "local-analysis",
+        "patterns"
+      ]
+    },
+    {
+      "id": "TSA_013",
+      "question": "What is white noise in time series?",
+      "options": [
+        "A series with constant values",
+        "A series of uncorrelated random variables with constant mean and variance",
+        "A series with strong seasonal patterns",
+        "A series with linear trend"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "White noise is a series of uncorrelated random variables, each with zero mean and constant variance, representing pure randomness.",
+      "optionExplanations": [
+        "Incorrect: Constant values would show no variation, unlike white noise",
+        "Correct: White noise consists of independent, identically distributed random variables",
+        "Incorrect: Seasonal patterns are predictable, opposite to random white noise",
+        "Incorrect: Linear trends are systematic, while white noise is purely random"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "white-noise",
+        "randomness",
+        "uncorrelated"
+      ]
+    },
+    {
+      "id": "TSA_014",
+      "question": "Which of the following is NOT a component of time series decomposition?",
+      "options": [
+        "Trend",
+        "Seasonality",
+        "Irregularity",
+        "Correlation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Time series decomposition typically includes trend, seasonality, and irregular (noise) components. Correlation is a statistical measure, not a decomposition component.",
+      "optionExplanations": [
+        "Incorrect: Trend is a fundamental component showing long-term direction",
+        "Incorrect: Seasonality captures regular recurring patterns",
+        "Incorrect: Irregularity (or noise) represents random variations",
+        "Correct: Correlation is a statistical measure used in analysis, not a decomposition component"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "decomposition",
+        "components",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "TSA_015",
+      "question": "What is the difference between additive and multiplicative time series models?",
+      "options": [
+        "Additive models have trends, multiplicative models don't",
+        "In additive models, components are summed; in multiplicative models, they are multiplied",
+        "Additive models are linear, multiplicative models are exponential",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In additive models, components (trend + seasonality + noise) are added together, while in multiplicative models they are multiplied (trend × seasonality × noise).",
+      "optionExplanations": [
+        "Incorrect: Both models can have trends; the difference is in how components combine",
+        "Correct: Additive models sum components while multiplicative models multiply them",
+        "Incorrect: This oversimplifies the relationship; both can handle various functional forms",
+        "Incorrect: There are clear mathematical differences between these model types"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "additive",
+        "multiplicative",
+        "decomposition"
+      ]
+    },
+    {
+      "id": "TSA_016",
+      "question": "What does the Box-Cox transformation do?",
+      "options": [
+        "Removes seasonality from time series",
+        "Stabilizes variance and makes data more normally distributed",
+        "Converts time series to frequency domain",
+        "Tests for stationarity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Box-Cox transformation is a power transformation that stabilizes variance and can help make data more normally distributed.",
+      "optionExplanations": [
+        "Incorrect: Seasonality removal requires specific deseasonalization methods",
+        "Correct: Box-Cox transformation uses power functions to stabilize variance and normalize data",
+        "Incorrect: Frequency domain conversion uses Fourier or wavelet transforms",
+        "Incorrect: Stationarity testing uses statistical tests like ADF"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "box-cox",
+        "transformation",
+        "variance-stabilization"
+      ]
+    },
+    {
+      "id": "TSA_017",
+      "question": "What is the purpose of cross-validation in time series?",
+      "options": [
+        "To remove outliers from the data",
+        "To evaluate model performance using temporal splits",
+        "To identify seasonal patterns",
+        "To make the series stationary"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Time series cross-validation evaluates model performance using temporal splits that respect the chronological order of data.",
+      "optionExplanations": [
+        "Incorrect: Outlier removal uses statistical methods, not cross-validation",
+        "Correct: Cross-validation assesses model performance using time-aware data splitting",
+        "Incorrect: Seasonal pattern identification uses decomposition or spectral analysis",
+        "Incorrect: Stationarity is achieved through differencing or transformations"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "evaluation",
+        "temporal-splits"
+      ]
+    },
+    {
+      "id": "TSA_018",
+      "question": "What is a lag in time series analysis?",
+      "options": [
+        "A delay in data collection",
+        "The time difference between observations",
+        "A shifted version of the time series",
+        "An error in forecasting"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A lag refers to a time-shifted version of the time series, where lag-k means the series shifted back by k time periods.",
+      "optionExplanations": [
+        "Incorrect: This refers to data collection issues, not the statistical concept of lag",
+        "Incorrect: This describes time intervals, not the lag transformation",
+        "Correct: A lag-k series is the original series shifted backward by k time periods",
+        "Incorrect: Forecasting errors are prediction accuracy measures, not lags"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lag",
+        "shifting",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "TSA_019",
+      "question": "Which metric is commonly used to evaluate time series forecasting accuracy?",
+      "options": [
+        "R-squared",
+        "Mean Absolute Error (MAE)",
+        "Precision",
+        "F1-score"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mean Absolute Error (MAE) measures the average absolute differences between predicted and actual values, making it suitable for forecasting evaluation.",
+      "optionExplanations": [
+        "Incorrect: R-squared measures variance explained, less common for time series forecasting",
+        "Correct: MAE directly measures average prediction errors in absolute terms",
+        "Incorrect: Precision is used for classification problems, not forecasting",
+        "Incorrect: F1-score is used for classification problems, not forecasting"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "MAE",
+        "forecasting-accuracy"
+      ]
+    },
+    {
+      "id": "TSA_020",
+      "question": "What is the Holt-Winters method used for?",
+      "options": [
+        "Testing for stationarity",
+        "Exponential smoothing with trend and seasonality",
+        "Converting series to stationary",
+        "Identifying outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Holt-Winters method extends exponential smoothing to handle both trend and seasonal components in time series forecasting.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses statistical tests like ADF",
+        "Correct: Holt-Winters applies exponential smoothing to level, trend, and seasonal components",
+        "Incorrect: Stationarity conversion uses differencing or transformations",
+        "Incorrect: Outlier detection uses statistical methods or robust estimators"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "holt-winters",
+        "exponential-smoothing",
+        "seasonality"
+      ]
+    },
+    {
+      "id": "TSA_021",
+      "question": "What is partial autocorrelation?",
+      "options": [
+        "Correlation between non-consecutive lags",
+        "Autocorrelation after removing effects of intermediate lags",
+        "Correlation between seasonal components",
+        "Average autocorrelation across all lags"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Partial autocorrelation measures the correlation between observations separated by k periods after removing the effects of correlations at shorter lags.",
+      "optionExplanations": [
+        "Incorrect: This doesn't capture the 'partial' aspect of removing intermediate effects",
+        "Correct: PACF shows direct correlation between lag-k values after removing intermediate lag effects",
+        "Incorrect: This would be correlation between components, not partial autocorrelation",
+        "Incorrect: This describes mean autocorrelation, not partial autocorrelation"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "partial-autocorrelation",
+        "PACF",
+        "correlation"
+      ]
+    },
+    {
+      "id": "TSA_022",
+      "question": "What is the purpose of the Ljung-Box test?",
+      "options": [
+        "To test for stationarity",
+        "To test for independence of residuals",
+        "To identify seasonal patterns",
+        "To detect outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Ljung-Box test examines whether residuals from a time series model are independently distributed, testing for remaining autocorrelation.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Ljung-Box tests whether model residuals are white noise (independent)",
+        "Incorrect: Seasonal pattern identification uses decomposition methods",
+        "Incorrect: Outlier detection uses different statistical approaches"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ljung-box",
+        "residuals",
+        "independence"
+      ]
+    },
+    {
+      "id": "TSA_023",
+      "question": "What is cointegration in time series?",
+      "options": [
+        "When multiple series move together in the long run",
+        "When series have the same seasonal patterns",
+        "When series have identical trends",
+        "When series are perfectly correlated"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cointegration occurs when non-stationary time series have a stable long-run relationship, meaning their linear combination is stationary.",
+      "optionExplanations": [
+        "Correct: Cointegrated series share a long-term equilibrium relationship despite short-term deviations",
+        "Incorrect: Having same seasonal patterns doesn't imply cointegration",
+        "Incorrect: Identical trends alone don't establish cointegration",
+        "Incorrect: Perfect correlation is stronger than cointegration and doesn't require long-run equilibrium"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cointegration",
+        "long-run-relationship",
+        "equilibrium"
+      ]
+    },
+    {
+      "id": "TSA_024",
+      "question": "What is a unit root in time series?",
+      "options": [
+        "A value equal to 1 in the series",
+        "A root of the characteristic equation equal to 1, indicating non-stationarity",
+        "The starting point of the time series",
+        "A seasonal component with unit amplitude"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A unit root occurs when the characteristic equation of an autoregressive process has a root equal to 1, making the series non-stationary.",
+      "optionExplanations": [
+        "Incorrect: Unit root refers to mathematical properties, not data values",
+        "Correct: Unit root in the characteristic equation indicates the series is non-stationary",
+        "Incorrect: This describes the initial observation, not a unit root",
+        "Incorrect: This relates to seasonal amplitude, not unit root concepts"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "unit-root",
+        "non-stationarity",
+        "characteristic-equation"
+      ]
+    },
+    {
+      "id": "TSA_025",
+      "question": "What is the difference between AR and MA models?",
+      "options": [
+        "AR uses past values, MA uses past errors",
+        "AR is for stationary series, MA is for non-stationary",
+        "AR handles trends, MA handles seasonality",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Autoregressive (AR) models use past values of the series, while Moving Average (MA) models use past forecast errors or residuals.",
+      "optionExplanations": [
+        "Correct: AR models depend on previous observations, MA models depend on previous error terms",
+        "Incorrect: Both can be applied to stationary series; non-stationarity is handled by differencing",
+        "Incorrect: Both can handle various patterns; the difference is in their mathematical structure",
+        "Incorrect: These are fundamentally different modeling approaches"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AR",
+        "MA",
+        "autoregressive",
+        "moving-average"
+      ]
+    },
+    {
+      "id": "TSA_026",
+      "question": "What is seasonal differencing?",
+      "options": [
+        "Removing trend from seasonal data",
+        "Taking differences between observations separated by seasonal periods",
+        "Averaging values within each season",
+        "Identifying peak seasonal values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Seasonal differencing computes differences between observations that are one seasonal period apart to remove seasonal patterns.",
+      "optionExplanations": [
+        "Incorrect: This describes detrending, not seasonal differencing",
+        "Correct: Seasonal differencing uses Y(t) - Y(t-s) where s is the seasonal period",
+        "Incorrect: This describes seasonal aggregation, not differencing",
+        "Incorrect: This describes seasonal peak detection, not differencing"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "seasonal-differencing",
+        "seasonality",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "TSA_027",
+      "question": "What is the purpose of the ACF (Autocorrelation Function) plot?",
+      "options": [
+        "To identify the trend direction",
+        "To visualize correlation between a series and its lagged values",
+        "To detect outliers in the data",
+        "To show seasonal decomposition"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The ACF plot displays the autocorrelation coefficients at different lags, helping identify patterns and model parameters.",
+      "optionExplanations": [
+        "Incorrect: Trend direction is identified through time plots or decomposition",
+        "Correct: ACF plots show how strongly current values correlate with past values at various lags",
+        "Incorrect: Outlier detection uses different visualization and statistical methods",
+        "Incorrect: Seasonal decomposition uses specific decomposition plots, not ACF"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ACF",
+        "autocorrelation",
+        "visualization"
+      ]
+    },
+    {
+      "id": "TSA_028",
+      "question": "What is the Akaike Information Criterion (AIC) used for in time series modeling?",
+      "options": [
+        "To test for stationarity",
+        "To select the best model among alternatives",
+        "To forecast future values",
+        "To detect seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AIC balances model fit and complexity, helping select the best model by penalizing overfitting while rewarding good fit.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses specific statistical tests",
+        "Correct: AIC compares models by balancing goodness of fit with model complexity",
+        "Incorrect: AIC is for model selection, not generating forecasts",
+        "Incorrect: Seasonal pattern detection uses decomposition or spectral analysis"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AIC",
+        "model-selection",
+        "information-criterion"
+      ]
+    },
+    {
+      "id": "TSA_029",
+      "question": "What is heteroscedasticity in time series?",
+      "options": [
+        "When the series has missing values",
+        "When variance changes over time",
+        "When the mean changes over time",
+        "When the series has outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Heteroscedasticity occurs when the variance of the error terms or residuals changes over time, violating the constant variance assumption.",
+      "optionExplanations": [
+        "Incorrect: Missing values are a data quality issue, not heteroscedasticity",
+        "Correct: Heteroscedasticity means non-constant variance over time",
+        "Incorrect: Changing mean relates to non-stationarity in level, not heteroscedasticity",
+        "Incorrect: Outliers are extreme values, while heteroscedasticity is about variance patterns"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "heteroscedasticity",
+        "variance",
+        "residuals"
+      ]
+    },
+    {
+      "id": "TSA_030",
+      "question": "What is a Vector Autoregression (VAR) model?",
+      "options": [
+        "A univariate model with multiple lags",
+        "A multivariate model where each variable depends on its own and others' lags",
+        "A model for detecting outliers",
+        "A seasonal adjustment technique"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "VAR models capture relationships between multiple time series, where each variable is modeled as depending on its own lags and lags of other variables.",
+      "optionExplanations": [
+        "Incorrect: This describes a univariate AR model with multiple lags",
+        "Correct: VAR models multiple time series simultaneously, allowing for interdependencies",
+        "Incorrect: Outlier detection uses different statistical methods",
+        "Incorrect: Seasonal adjustment uses decomposition or filtering techniques"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "VAR",
+        "multivariate",
+        "interdependence"
+      ]
+    },
+    {
+      "id": "TSA_031",
+      "question": "What is the purpose of forecast intervals?",
+      "options": [
+        "To show the exact future values",
+        "To provide uncertainty bounds around point forecasts",
+        "To identify past trends",
+        "To test model assumptions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forecast intervals provide a range of plausible values around point forecasts, quantifying prediction uncertainty.",
+      "optionExplanations": [
+        "Incorrect: Forecasts cannot provide exact future values due to inherent uncertainty",
+        "Correct: Forecast intervals express uncertainty by providing confidence bounds around predictions",
+        "Incorrect: Past trend identification uses historical data analysis",
+        "Incorrect: Model assumption testing uses diagnostic procedures"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forecast-intervals",
+        "uncertainty",
+        "confidence-bounds"
+      ]
+    },
+    {
+      "id": "TSA_032",
+      "question": "What is the difference between one-step and multi-step forecasting?",
+      "options": [
+        "One-step uses one model, multi-step uses multiple models",
+        "One-step predicts one period ahead, multi-step predicts multiple periods ahead",
+        "One-step is more accurate, multi-step is less accurate",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "One-step forecasting predicts the next immediate time period, while multi-step forecasting predicts several periods into the future.",
+      "optionExplanations": [
+        "Incorrect: The difference is in forecast horizon, not number of models used",
+        "Correct: One-step forecasts the next period, multi-step forecasts h periods ahead",
+        "Incorrect: While one-step is generally more accurate, this doesn't define the difference",
+        "Incorrect: These represent different forecasting horizons with distinct challenges"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "one-step",
+        "multi-step",
+        "forecast-horizon"
+      ]
+    },
+    {
+      "id": "TSA_033",
+      "question": "What is a random walk?",
+      "options": [
+        "A series with random seasonal patterns",
+        "A series where each value equals the previous value plus random noise",
+        "A series with random outliers",
+        "A perfectly predictable series"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A random walk is a time series where each observation equals the previous observation plus a random error term.",
+      "optionExplanations": [
+        "Incorrect: Random seasonal patterns don't define a random walk",
+        "Correct: Random walk follows Y(t) = Y(t-1) + error(t), making it non-stationary",
+        "Incorrect: Random outliers are about data quality, not the random walk process",
+        "Incorrect: Random walks are unpredictable due to their random component"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "random-walk",
+        "non-stationary",
+        "unpredictable"
+      ]
+    },
+    {
+      "id": "TSA_034",
+      "question": "What is the purpose of residual analysis in time series modeling?",
+      "options": [
+        "To forecast future values",
+        "To check if model assumptions are satisfied",
+        "To identify the trend",
+        "To remove seasonality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Residual analysis examines model residuals to verify that assumptions like independence, normality, and constant variance are met.",
+      "optionExplanations": [
+        "Incorrect: Forecasting uses the fitted model, not residual analysis",
+        "Correct: Residual analysis validates model assumptions and identifies potential improvements",
+        "Incorrect: Trend identification uses decomposition or visual inspection",
+        "Incorrect: Seasonality removal uses deseasonalization techniques"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual-analysis",
+        "model-validation",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "TSA_035",
+      "question": "What is the Granger causality test used for?",
+      "options": [
+        "To test for stationarity",
+        "To determine if one time series can predict another",
+        "To identify seasonal patterns",
+        "To detect outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Granger causality test determines whether past values of one time series contain information that helps predict another time series.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Granger causality assesses whether one series helps predict another beyond self-prediction",
+        "Incorrect: Seasonal patterns are identified through decomposition",
+        "Incorrect: Outlier detection uses different statistical methods"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "granger-causality",
+        "predictability",
+        "causation"
+      ]
+    },
+    {
+      "id": "TSA_036",
+      "question": "What is spectral analysis in time series?",
+      "options": [
+        "Analysis of color spectra in data",
+        "Frequency domain analysis to identify periodic components",
+        "Analysis of data spread",
+        "Statistical hypothesis testing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Spectral analysis transforms time series to the frequency domain to identify and analyze periodic components and cyclical patterns.",
+      "optionExplanations": [
+        "Incorrect: This refers to physical color spectra, not time series analysis",
+        "Correct: Spectral analysis uses Fourier transforms to identify frequency components",
+        "Incorrect: Data spread analysis uses statistical measures like variance",
+        "Incorrect: Hypothesis testing uses statistical tests with p-values"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "spectral-analysis",
+        "frequency-domain",
+        "periodic-components"
+      ]
+    },
+    {
+      "id": "TSA_037",
+      "question": "What is the purpose of detrending?",
+      "options": [
+        "To add a trend to the data",
+        "To remove the long-term trend component",
+        "To identify seasonal patterns",
+        "To test for stationarity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Detrending removes the long-term trend component from a time series to focus on other patterns like seasonality or cyclical behavior.",
+      "optionExplanations": [
+        "Incorrect: Detrending removes trends, it doesn't add them",
+        "Correct: Detrending eliminates trend to isolate other components or achieve stationarity",
+        "Incorrect: Seasonal pattern identification may come after detrending, but isn't its purpose",
+        "Incorrect: Stationarity testing uses statistical tests, though detrending can help achieve stationarity"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "detrending",
+        "trend-removal",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "TSA_038",
+      "question": "What is an impulse response function?",
+      "options": [
+        "A function that creates impulses in data",
+        "The response of a system to a one-time shock over time",
+        "A function for removing outliers",
+        "A seasonal adjustment method"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An impulse response function shows how a time series responds over time to a one-unit shock or innovation at a specific point.",
+      "optionExplanations": [
+        "Incorrect: It measures responses to impulses, doesn't create them",
+        "Correct: IRF traces the dynamic effects of a one-time shock through the system",
+        "Incorrect: Outlier removal uses different statistical techniques",
+        "Incorrect: Seasonal adjustment uses decomposition or filtering methods"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "impulse-response",
+        "shock",
+        "dynamic-effects"
+      ]
+    },
+    {
+      "id": "TSA_039",
+      "question": "What is the lag operator in time series?",
+      "options": [
+        "A tool for identifying optimal lag length",
+        "A mathematical operator that shifts time series backward",
+        "A method for forecasting",
+        "A test for autocorrelation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The lag operator L is a mathematical operator where L^k Y(t) = Y(t-k), shifting the series backward by k periods.",
+      "optionExplanations": [
+        "Incorrect: Optimal lag selection uses information criteria or tests",
+        "Correct: Lag operator L mathematically represents backward shifts in time",
+        "Incorrect: Forecasting uses predictive models, not just lag operators",
+        "Incorrect: Autocorrelation testing uses statistical procedures"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "lag-operator",
+        "mathematical-operator",
+        "time-shift"
+      ]
+    },
+    {
+      "id": "TSA_040",
+      "question": "What is the purpose of log transformation in time series?",
+      "options": [
+        "To remove seasonality",
+        "To stabilize variance and handle exponential growth",
+        "To test for stationarity",
+        "To identify outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Log transformation stabilizes variance, especially when variance increases with the level, and can linearize exponential growth patterns.",
+      "optionExplanations": [
+        "Incorrect: Seasonality removal requires specific deseasonalization methods",
+        "Correct: Log transform stabilizes variance and converts exponential growth to linear trends",
+        "Incorrect: Stationarity testing uses statistical tests like ADF",
+        "Incorrect: Outlier identification uses different statistical approaches"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "log-transformation",
+        "variance-stabilization",
+        "exponential-growth"
+      ]
+    },
+    {
+      "id": "TSA_041",
+      "question": "What is a structural break in time series?",
+      "options": [
+        "Missing data in the series",
+        "A permanent change in the time series structure or parameters",
+        "Seasonal variation",
+        "Random fluctuation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A structural break represents a permanent change in the underlying relationship or parameters of a time series, often due to policy changes or external shocks.",
+      "optionExplanations": [
+        "Incorrect: Missing data is a data quality issue, not a structural break",
+        "Correct: Structural breaks represent fundamental changes in series behavior or relationships",
+        "Incorrect: Seasonal variation is regular and predictable, not a structural change",
+        "Incorrect: Random fluctuations are temporary, while structural breaks are permanent changes"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "structural-break",
+        "parameter-change",
+        "regime-change"
+      ]
+    },
+    {
+      "id": "TSA_042",
+      "question": "What is the purpose of the KPSS test?",
+      "options": [
+        "To test for structural breaks",
+        "To test the null hypothesis of stationarity",
+        "To identify seasonal patterns",
+        "To test for heteroscedasticity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The KPSS test examines the null hypothesis that a time series is stationary around a deterministic trend, complementing unit root tests.",
+      "optionExplanations": [
+        "Incorrect: Structural break testing uses different statistical procedures",
+        "Correct: KPSS tests stationarity as null hypothesis, opposite to ADF test",
+        "Incorrect: Seasonal pattern identification uses decomposition methods",
+        "Incorrect: Heteroscedasticity testing uses different statistical tests"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "KPSS",
+        "stationarity-testing",
+        "null-hypothesis"
+      ]
+    },
+    {
+      "id": "TSA_043",
+      "question": "What is the difference between strong and weak stationarity?",
+      "options": [
+        "Strong has no trend, weak has trend",
+        "Strong requires constant entire distribution, weak requires constant first two moments",
+        "Strong is for short series, weak for long series",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Strong stationarity requires the entire probability distribution to be time-invariant, while weak stationarity only requires constant mean, variance, and covariance structure.",
+      "optionExplanations": [
+        "Incorrect: Both types can have trends under certain conditions",
+        "Correct: Strong stationarity needs time-invariant distribution; weak needs constant mean, variance, covariance",
+        "Incorrect: The distinction is mathematical, not based on series length",
+        "Incorrect: These represent different levels of statistical requirements"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "strong-stationarity",
+        "weak-stationarity",
+        "distribution"
+      ]
+    },
+    {
+      "id": "TSA_044",
+      "question": "What is overfitting in time series modeling?",
+      "options": [
+        "Using too few parameters",
+        "Creating a model that performs well on training data but poorly on new data",
+        "Using linear models for nonlinear data",
+        "Having missing values in the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overfitting occurs when a model captures noise and specific patterns in training data so closely that it fails to generalize to new, unseen data.",
+      "optionExplanations": [
+        "Incorrect: Too few parameters typically lead to underfitting, not overfitting",
+        "Correct: Overfitting results in poor generalization despite good training performance",
+        "Incorrect: Model type mismatch is about specification, not necessarily overfitting",
+        "Incorrect: Missing values are a data quality issue, not overfitting"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "overfitting",
+        "generalization",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "TSA_045",
+      "question": "What is the purpose of feature engineering in time series?",
+      "options": [
+        "To remove outliers",
+        "To create relevant predictive features from temporal data",
+        "To test model assumptions",
+        "To visualize the data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature engineering in time series involves creating meaningful predictive variables from temporal data, such as lags, rolling statistics, or time-based features.",
+      "optionExplanations": [
+        "Incorrect: Outlier removal is data cleaning, not feature engineering",
+        "Correct: Feature engineering creates predictive variables like lags, trends, seasonal indicators",
+        "Incorrect: Model assumption testing is part of validation, not feature creation",
+        "Incorrect: Data visualization is for exploration, not feature engineering"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-engineering",
+        "predictive-features",
+        "temporal-variables"
+      ]
+    },
+    {
+      "id": "TSA_046",
+      "question": "What is a change point in time series?",
+      "options": [
+        "The starting point of the series",
+        "A point where statistical properties of the series change",
+        "The highest value in the series",
+        "A missing data point"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A change point is a time when the statistical properties of a time series (like mean, variance, or trend) undergo a significant change.",
+      "optionExplanations": [
+        "Incorrect: The starting point is just the first observation, not necessarily a change point",
+        "Correct: Change points mark transitions in statistical behavior or regime shifts",
+        "Incorrect: Maximum values are extreme observations, not necessarily change points",
+        "Incorrect: Missing data represents gaps, not change points"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "change-point",
+        "regime-shift",
+        "statistical-properties"
+      ]
+    },
+    {
+      "id": "TSA_047",
+      "question": "What is the purpose of smoothing in time series?",
+      "options": [
+        "To increase data variability",
+        "To reduce noise and reveal underlying patterns",
+        "To add seasonal components",
+        "To create outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Smoothing techniques reduce random noise and fluctuations to reveal underlying trends, patterns, and signal in time series data.",
+      "optionExplanations": [
+        "Incorrect: Smoothing reduces variability, it doesn't increase it",
+        "Correct: Smoothing filters out noise to highlight underlying trends and patterns",
+        "Incorrect: Smoothing typically reduces patterns, it doesn't add seasonal components",
+        "Incorrect: Smoothing removes extreme values, it doesn't create outliers"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "smoothing",
+        "noise-reduction",
+        "pattern-revelation"
+      ]
+    },
+    {
+      "id": "TSA_048",
+      "question": "What is the difference between in-sample and out-of-sample forecasting?",
+      "options": [
+        "In-sample uses more data than out-of-sample",
+        "In-sample evaluates on training data, out-of-sample on unseen data",
+        "In-sample is more accurate than out-of-sample",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In-sample forecasting evaluates model performance on the same data used for training, while out-of-sample forecasting tests on new, unseen data.",
+      "optionExplanations": [
+        "Incorrect: The difference is about data usage, not quantity",
+        "Correct: In-sample uses training data for evaluation; out-of-sample uses holdout/test data",
+        "Incorrect: While often true, this doesn't define the difference between them",
+        "Incorrect: These represent fundamentally different evaluation approaches"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "in-sample",
+        "out-of-sample",
+        "model-evaluation"
+      ]
+    },
+    {
+      "id": "TSA_049",
+      "question": "What is a regime-switching model?",
+      "options": [
+        "A model with constant parameters",
+        "A model where parameters change based on unobservable states",
+        "A model for seasonal data only",
+        "A linear regression model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regime-switching models allow parameters to change over time based on unobservable states or regimes, capturing structural changes in the series.",
+      "optionExplanations": [
+        "Incorrect: Constant parameters characterize standard models, not regime-switching ones",
+        "Correct: Regime-switching models have state-dependent parameters that change with hidden regimes",
+        "Incorrect: These models can handle various types of data, not just seasonal",
+        "Incorrect: Linear regression has fixed parameters, unlike regime-switching models"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "regime-switching",
+        "state-dependent",
+        "parameter-change"
+      ]
+    },
+    {
+      "id": "TSA_050",
+      "question": "What is the purpose of the Phillips-Perron test?",
+      "options": [
+        "To test for seasonality",
+        "To test for unit roots with robust standard errors",
+        "To identify optimal lag length",
+        "To test for heteroscedasticity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Phillips-Perron test is a unit root test that accounts for serial correlation and heteroscedasticity in the error terms using robust standard errors.",
+      "optionExplanations": [
+        "Incorrect: Seasonality testing uses different statistical approaches",
+        "Correct: PP test is a robust unit root test that handles serial correlation and heteroscedasticity",
+        "Incorrect: Lag length selection uses information criteria or sequential testing",
+        "Incorrect: Heteroscedasticity testing uses specific tests like White's or Breusch-Pagan"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "phillips-perron",
+        "unit-root",
+        "robust-standard-errors"
+      ]
+    },
+    {
+      "id": "TSA_051",
+      "question": "What is the purpose of rolling window analysis?",
+      "options": [
+        "To fix missing data",
+        "To analyze time-varying patterns using moving time windows",
+        "To remove seasonality",
+        "To test stationarity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rolling window analysis uses moving time windows of fixed size to capture time-varying relationships, trends, or statistical properties.",
+      "optionExplanations": [
+        "Incorrect: Missing data imputation uses interpolation or statistical methods",
+        "Correct: Rolling windows analyze how relationships or statistics change over time",
+        "Incorrect: Seasonality removal uses deseasonalization techniques",
+        "Incorrect: Stationarity testing uses specific statistical tests"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "rolling-window",
+        "time-varying",
+        "moving-analysis"
+      ]
+    },
+    {
+      "id": "TSA_052",
+      "question": "What is the curse of dimensionality in time series?",
+      "options": [
+        "Having too many time periods",
+        "Challenges arising from high-dimensional feature spaces",
+        "Having missing values in multiple series",
+        "Seasonal patterns in multiple dimensions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The curse of dimensionality refers to challenges that arise when dealing with high-dimensional data spaces, where distances become less meaningful and models become harder to fit.",
+      "optionExplanations": [
+        "Incorrect: Long time series don't necessarily suffer from dimensionality curse",
+        "Correct: High-dimensional spaces create sparsity and distance problems in modeling",
+        "Incorrect: Missing values are a data quality issue, not dimensionality curse",
+        "Incorrect: Multi-dimensional seasonality is about pattern complexity, not dimensionality curse"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensional",
+        "sparsity"
+      ]
+    },
+    {
+      "id": "TSA_053",
+      "question": "What is dynamic regression in time series?",
+      "options": [
+        "Regression with constant coefficients",
+        "Regression that includes lagged values of dependent and independent variables",
+        "Simple linear regression",
+        "Regression without time components"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dynamic regression models include lagged values of both the dependent variable and explanatory variables, capturing dynamic relationships over time.",
+      "optionExplanations": [
+        "Incorrect: Dynamic regression specifically involves time-varying or lagged relationships",
+        "Correct: Dynamic regression incorporates lags of both Y and X variables to model temporal dynamics",
+        "Incorrect: Simple linear regression doesn't include the dynamic temporal elements",
+        "Incorrect: Time components are essential to dynamic regression models"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dynamic-regression",
+        "lagged-variables",
+        "temporal-dynamics"
+      ]
+    },
+    {
+      "id": "TSA_054",
+      "question": "What is the purpose of the Engle-Granger test?",
+      "options": [
+        "To test for stationarity",
+        "To test for cointegration between two series",
+        "To identify seasonal patterns",
+        "To detect outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Engle-Granger test is a two-step procedure for testing cointegration between two time series by examining if their residuals are stationary.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests directly",
+        "Correct: Engle-Granger tests for cointegration by checking if regression residuals are stationary",
+        "Incorrect: Seasonal pattern identification uses decomposition methods",
+        "Incorrect: Outlier detection uses different statistical approaches"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "engle-granger",
+        "cointegration",
+        "two-step-procedure"
+      ]
+    },
+    {
+      "id": "TSA_055",
+      "question": "What is the difference between deterministic and stochastic trends?",
+      "options": [
+        "Deterministic trends are random, stochastic are predictable",
+        "Deterministic trends are predictable functions of time, stochastic contain random components",
+        "Both are the same",
+        "Deterministic trends are seasonal, stochastic are not"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deterministic trends are predictable functions of time (like linear or polynomial), while stochastic trends contain random components making them unpredictable.",
+      "optionExplanations": [
+        "Incorrect: This reverses the correct definitions of deterministic and stochastic",
+        "Correct: Deterministic trends are predictable time functions; stochastic trends have random walk components",
+        "Incorrect: These represent fundamentally different types of trending behavior",
+        "Incorrect: Both can be seasonal or non-seasonal; the difference is in predictability"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deterministic-trend",
+        "stochastic-trend",
+        "predictability"
+      ]
+    },
+    {
+      "id": "TSA_056",
+      "question": "What is the purpose of the Breusch-Godfrey test?",
+      "options": [
+        "To test for stationarity",
+        "To test for serial correlation in residuals",
+        "To test for cointegration",
+        "To identify seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Breusch-Godfrey test (also called LM test) detects serial correlation in regression residuals, helping validate model assumptions.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Breusch-Godfrey tests for autocorrelation in model residuals",
+        "Incorrect: Cointegration testing uses Engle-Granger or Johansen tests",
+        "Incorrect: Seasonal patterns are identified through decomposition"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "breusch-godfrey",
+        "serial-correlation",
+        "residual-testing"
+      ]
+    },
+    {
+      "id": "TSA_057",
+      "question": "What is the concept of 'signal versus noise' in time series?",
+      "options": [
+        "Separating meaningful patterns from random fluctuations",
+        "Identifying audio signals in data",
+        "Finding the loudest data points",
+        "Comparing different time series"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Signal versus noise refers to distinguishing between meaningful, systematic patterns (signal) and random, unpredictable fluctuations (noise) in time series data.",
+      "optionExplanations": [
+        "Correct: Signal represents systematic patterns while noise represents random fluctuations",
+        "Incorrect: This refers to audio processing, not time series analysis concepts",
+        "Incorrect: This relates to amplitude, not the statistical concept of signal vs noise",
+        "Incorrect: This describes comparison analysis, not signal-noise separation"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "signal-vs-noise",
+        "pattern-separation",
+        "random-fluctuations"
+      ]
+    },
+    {
+      "id": "TSA_058",
+      "question": "What is the purpose of backtesting in time series?",
+      "options": [
+        "To go backward in time",
+        "To evaluate model performance on historical out-of-sample data",
+        "To remove past data points",
+        "To identify the start of the series"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Backtesting evaluates how a forecasting model would have performed by testing it on historical data that wasn't used for model training.",
+      "optionExplanations": [
+        "Incorrect: Backtesting is an evaluation method, not time travel",
+        "Correct: Backtesting simulates real-world performance by testing on historical holdout data",
+        "Incorrect: Backtesting analyzes past data, it doesn't remove it",
+        "Incorrect: Identifying series start is data exploration, not backtesting"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "backtesting",
+        "historical-evaluation",
+        "out-of-sample"
+      ]
+    },
+    {
+      "id": "TSA_059",
+      "question": "What is a composite leading indicator?",
+      "options": [
+        "A single economic variable",
+        "A combination of multiple leading indicators to predict economic activity",
+        "A lagging economic indicator",
+        "A seasonal adjustment factor"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A composite leading indicator combines multiple economic variables that historically precede economic cycles to provide early signals of economic turning points.",
+      "optionExplanations": [
+        "Incorrect: Composite indicators combine multiple variables, not single ones",
+        "Correct: Composite leading indicators aggregate multiple predictive economic variables",
+        "Incorrect: Lagging indicators follow economic changes, while leading indicators precede them",
+        "Incorrect: Seasonal adjustment factors are used to remove seasonal patterns"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "composite-leading-indicator",
+        "economic-prediction",
+        "early-signals"
+      ]
+    },
+    {
+      "id": "TSA_060",
+      "question": "What is the difference between fixed and rolling window forecasting?",
+      "options": [
+        "Fixed uses all data, rolling uses recent data",
+        "Fixed uses constant training size, rolling updates training data continuously",
+        "Fixed is for seasonal data, rolling for non-seasonal",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fixed window uses a constant-sized training set throughout forecasting, while rolling window continuously updates by adding new data and potentially dropping old data.",
+      "optionExplanations": [
+        "Incorrect: Both can use varying amounts of data; the key difference is in updating strategy",
+        "Correct: Fixed window maintains constant training size; rolling window updates with new observations",
+        "Incorrect: Both approaches can handle seasonal or non-seasonal data",
+        "Incorrect: These represent different strategies for handling evolving data"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fixed-window",
+        "rolling-window",
+        "training-data-update"
+      ]
+    },
+    {
+      "id": "TSA_061",
+      "question": "What is the purpose of the Johansen test?",
+      "options": [
+        "To test for stationarity",
+        "To test for multiple cointegrating relationships",
+        "To identify seasonal patterns",
+        "To test for heteroscedasticity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Johansen test determines the number of cointegrating relationships among multiple time series using maximum likelihood estimation.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Johansen test identifies multiple cointegrating vectors in multivariate systems",
+        "Incorrect: Seasonal patterns are identified through decomposition methods",
+        "Incorrect: Heteroscedasticity testing uses different statistical procedures"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "johansen-test",
+        "multiple-cointegration",
+        "maximum-likelihood"
+      ]
+    },
+    {
+      "id": "TSA_062",
+      "question": "What is the concept of integrated order in time series?",
+      "options": [
+        "The order of integration needed to make a series stationary",
+        "The order in which data is collected",
+        "The ranking of data values",
+        "The seasonal period length"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The order of integration I(d) indicates how many times a series needs to be differenced to become stationary, where d is the integration order.",
+      "optionExplanations": [
+        "Correct: Integration order I(d) specifies the number of differences needed for stationarity",
+        "Incorrect: Data collection order refers to temporal sequence, not integration order",
+        "Incorrect: Value ranking is about data ordering, not integration order",
+        "Incorrect: Seasonal period length is about cyclical patterns, not integration order"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "integration-order",
+        "differencing",
+        "stationarity"
+      ]
+    },
+    {
+      "id": "TSA_063",
+      "question": "What is the purpose of the Zivot-Andrews test?",
+      "options": [
+        "To test for stationarity with unknown structural breaks",
+        "To test for seasonality",
+        "To identify optimal lag length",
+        "To test for heteroscedasticity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Zivot-Andrews test extends unit root testing to allow for a single structural break at an unknown point in time.",
+      "optionExplanations": [
+        "Correct: Zivot-Andrews tests unit roots while allowing for one endogenous structural break",
+        "Incorrect: Seasonality testing uses different statistical methods",
+        "Incorrect: Lag length selection uses information criteria",
+        "Incorrect: Heteroscedasticity testing uses specific variance tests"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "zivot-andrews",
+        "structural-breaks",
+        "unit-root-testing"
+      ]
+    },
+    {
+      "id": "TSA_064",
+      "question": "What is ensemble forecasting in time series?",
+      "options": [
+        "Using one complex model",
+        "Combining predictions from multiple models",
+        "Forecasting for musical ensembles",
+        "Using seasonal models only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble forecasting combines predictions from multiple different models to create more robust and accurate forecasts than individual models.",
+      "optionExplanations": [
+        "Incorrect: Ensemble methods use multiple models, not single complex ones",
+        "Correct: Ensemble forecasting aggregates predictions from different models for better performance",
+        "Incorrect: This refers to music, not time series forecasting methodology",
+        "Incorrect: Ensemble methods can include various model types, not just seasonal ones"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-forecasting",
+        "model-combination",
+        "robust-prediction"
+      ]
+    },
+    {
+      "id": "TSA_065",
+      "question": "What is the purpose of intervention analysis?",
+      "options": [
+        "To remove outliers",
+        "To model the impact of external events on time series",
+        "To test for stationarity",
+        "To identify seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Intervention analysis models how external events, policy changes, or shocks affect the time series behavior and quantifies their impact.",
+      "optionExplanations": [
+        "Incorrect: Outlier removal uses statistical cleaning methods",
+        "Correct: Intervention analysis quantifies how external events impact time series behavior",
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Incorrect: Seasonal patterns are identified through decomposition"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "intervention-analysis",
+        "external-events",
+        "impact-modeling"
+      ]
+    },
+    {
+      "id": "TSA_066",
+      "question": "What is the difference between linear and nonlinear time series models?",
+      "options": [
+        "Linear models have trends, nonlinear don't",
+        "Linear models have constant parameters, nonlinear have variable relationships",
+        "Linear models are for short series, nonlinear for long series",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear models assume constant parameters and additive relationships, while nonlinear models allow for variable parameters and complex, non-additive relationships.",
+      "optionExplanations": [
+        "Incorrect: Both model types can handle trends; the difference is in parameter constancy",
+        "Correct: Linear models have fixed relationships; nonlinear models can have state-dependent or variable relationships",
+        "Incorrect: Model choice depends on data characteristics, not series length",
+        "Incorrect: These represent fundamentally different modeling approaches"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "linear-models",
+        "nonlinear-models",
+        "parameter-constancy"
+      ]
+    },
+    {
+      "id": "TSA_067",
+      "question": "What is the purpose of the Brock-Dechert-Scheinkman (BDS) test?",
+      "options": [
+        "To test for stationarity",
+        "To test for nonlinear dependence and chaos",
+        "To test for cointegration",
+        "To identify seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The BDS test detects nonlinear dependence in residuals, helping identify whether linear models adequately capture the data or if nonlinear structure remains.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: BDS test identifies nonlinear dependence and deterministic chaos in data",
+        "Incorrect: Cointegration testing uses Engle-Granger or Johansen tests",
+        "Incorrect: Seasonal patterns are identified through decomposition methods"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "BDS-test",
+        "nonlinear-dependence",
+        "chaos-detection"
+      ]
+    },
+    {
+      "id": "TSA_068",
+      "question": "What is the concept of persistence in time series?",
+      "options": [
+        "The ability to continue collecting data",
+        "The tendency of shocks to have long-lasting effects",
+        "The length of the time series",
+        "The frequency of data collection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Persistence refers to how long the effects of shocks or innovations continue to influence the time series, with high persistence meaning long-lasting effects.",
+      "optionExplanations": [
+        "Incorrect: This refers to data collection capability, not statistical persistence",
+        "Correct: Persistence measures how long shocks continue to affect the series",
+        "Incorrect: Series length is about data quantity, not persistence",
+        "Incorrect: Collection frequency is about sampling rate, not persistence"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "persistence",
+        "shock-effects",
+        "long-lasting-impact"
+      ]
+    },
+    {
+      "id": "TSA_069",
+      "question": "What is the purpose of seasonal adjustment?",
+      "options": [
+        "To add seasonal patterns to data",
+        "To remove seasonal effects to reveal underlying trends",
+        "To identify the seasonal period",
+        "To test for seasonality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Seasonal adjustment removes regular seasonal patterns from time series to reveal underlying trends, cycles, and irregular movements.",
+      "optionExplanations": [
+        "Incorrect: Seasonal adjustment removes patterns, it doesn't add them",
+        "Correct: Seasonal adjustment eliminates seasonal effects to highlight other components",
+        "Incorrect: Seasonal period identification is a prerequisite, not the purpose of adjustment",
+        "Incorrect: Seasonality testing determines presence, not adjustment which removes it"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "seasonal-adjustment",
+        "trend-revelation",
+        "pattern-removal"
+      ]
+    },
+    {
+      "id": "TSA_070",
+      "question": "What is a threshold model in time series?",
+      "options": [
+        "A model with constant parameters",
+        "A model where behavior changes based on threshold values",
+        "A model for identifying minimum values",
+        "A linear regression model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Threshold models exhibit different behaviors depending on whether a threshold variable exceeds certain values, allowing for regime-dependent dynamics.",
+      "optionExplanations": [
+        "Incorrect: Constant parameters characterize linear models, not threshold models",
+        "Correct: Threshold models have regime-dependent behavior based on threshold variable values",
+        "Incorrect: Finding minimum values is optimization, not threshold modeling",
+        "Incorrect: Linear regression has fixed parameters unlike threshold models"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "threshold-models",
+        "regime-dependent",
+        "nonlinear-behavior"
+      ]
+    },
+    {
+      "id": "TSA_071",
+      "question": "What is the purpose of the variance ratio test?",
+      "options": [
+        "To test for stationarity",
+        "To test the random walk hypothesis",
+        "To test for cointegration",
+        "To identify seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The variance ratio test examines whether a time series follows a random walk by comparing variances at different time horizons.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Variance ratio test evaluates random walk behavior by comparing multi-period variances",
+        "Incorrect: Cointegration testing uses Engle-Granger or Johansen tests",
+        "Incorrect: Seasonal patterns are identified through decomposition"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "variance-ratio-test",
+        "random-walk",
+        "variance-comparison"
+      ]
+    },
+    {
+      "id": "TSA_072",
+      "question": "What is the concept of forecast combination?",
+      "options": [
+        "Using one forecast model",
+        "Averaging or weighting multiple forecasts to improve accuracy",
+        "Combining different time series",
+        "Creating complex mathematical models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forecast combination merges predictions from multiple forecasting methods using averaging, weighting, or other combination schemes to improve overall accuracy.",
+      "optionExplanations": [
+        "Incorrect: Forecast combination specifically uses multiple models, not single ones",
+        "Correct: Combination methods aggregate multiple forecasts to achieve better performance than individual models",
+        "Incorrect: This describes data combination, not forecast combination",
+        "Incorrect: Complex models are one approach, but combination focuses on aggregating multiple forecasts"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forecast-combination",
+        "accuracy-improvement",
+        "multiple-forecasts"
+      ]
+    },
+    {
+      "id": "TSA_073",
+      "question": "What is the purpose of the run test in time series?",
+      "options": [
+        "To measure running speed of algorithms",
+        "To test for randomness and independence",
+        "To test for stationarity",
+        "To identify seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The run test (or runs test) examines whether a sequence of observations appears random by analyzing the pattern of consecutive similar values.",
+      "optionExplanations": [
+        "Incorrect: This refers to computational performance, not statistical testing",
+        "Correct: Run test evaluates randomness by examining patterns of consecutive similar observations",
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Incorrect: Seasonal patterns are identified through decomposition methods"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "run-test",
+        "randomness-testing",
+        "independence"
+      ]
+    },
+    {
+      "id": "TSA_074",
+      "question": "What is the concept of long memory in time series?",
+      "options": [
+        "Having many data points",
+        "Slow decay of autocorrelations over long lags",
+        "Remembering past forecast errors",
+        "Long-term trends in data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Long memory (or long-range dependence) occurs when autocorrelations decay slowly, creating persistent dependence between observations separated by long time periods.",
+      "optionExplanations": [
+        "Incorrect: Data quantity doesn't define long memory in statistical sense",
+        "Correct: Long memory is characterized by slow, hyperbolic decay of autocorrelations",
+        "Incorrect: Error memory is about modeling, not the statistical concept of long memory",
+        "Incorrect: Long-term trends are deterministic, while long memory is about stochastic dependence"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "long-memory",
+        "slow-decay",
+        "persistent-dependence"
+      ]
+    },
+    {
+      "id": "TSA_075",
+      "question": "What is the purpose of the Perron test?",
+      "options": [
+        "To test for seasonality",
+        "To test for unit roots with structural breaks",
+        "To test for cointegration",
+        "To identify optimal forecasting models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Perron test extends unit root testing to account for structural breaks, distinguishing between unit roots and stationary processes with breaks.",
+      "optionExplanations": [
+        "Incorrect: Seasonality testing uses different statistical approaches",
+        "Correct: Perron test examines unit roots while allowing for known structural breaks",
+        "Incorrect: Cointegration testing uses Engle-Granger or Johansen tests",
+        "Incorrect: Model selection uses different criteria and procedures"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "perron-test",
+        "structural-breaks",
+        "unit-root"
+      ]
+    },
+    {
+      "id": "TSA_076",
+      "question": "What is the difference between conditional and unconditional forecasting?",
+      "options": [
+        "Conditional uses more data than unconditional",
+        "Conditional assumes future values of explanatory variables, unconditional doesn't",
+        "Conditional is more accurate than unconditional",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Conditional forecasting assumes known future values of explanatory variables, while unconditional forecasting doesn't rely on external variable assumptions.",
+      "optionExplanations": [
+        "Incorrect: The difference is about assumptions, not data quantity",
+        "Correct: Conditional forecasting requires assumptions about future explanatory variables",
+        "Incorrect: Accuracy depends on context; this doesn't define the difference",
+        "Incorrect: These represent different forecasting approaches with distinct assumptions"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "conditional-forecasting",
+        "unconditional-forecasting",
+        "explanatory-variables"
+      ]
+    },
+    {
+      "id": "TSA_077",
+      "question": "What is the concept of spurious regression?",
+      "options": [
+        "Using wrong regression variables",
+        "Finding significant relationships between unrelated non-stationary series",
+        "Having negative correlation coefficients",
+        "Using too many regression parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Spurious regression occurs when non-stationary time series show statistically significant relationships that are actually meaningless coincidences.",
+      "optionExplanations": [
+        "Incorrect: Variable selection errors are different from spurious regression",
+        "Correct: Spurious regression creates false significance between unrelated non-stationary series",
+        "Incorrect: Coefficient sign doesn't determine spuriousness",
+        "Incorrect: Parameter count is about overfitting, not spurious regression"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "spurious-regression",
+        "non-stationary",
+        "false-significance"
+      ]
+    },
+    {
+      "id": "TSA_078",
+      "question": "What is the purpose of the Quandt-Andrews test?",
+      "options": [
+        "To test for stationarity",
+        "To test for structural stability with unknown break points",
+        "To test for seasonality",
+        "To identify optimal model parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Quandt-Andrews test examines structural stability by testing for parameter constancy when the timing of potential breaks is unknown.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Quandt-Andrews tests for parameter stability with unknown breakpoint timing",
+        "Incorrect: Seasonality testing uses different statistical methods",
+        "Incorrect: Parameter optimization uses different procedures"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "quandt-andrews",
+        "structural-stability",
+        "unknown-breakpoints"
+      ]
+    },
+    {
+      "id": "TSA_079",
+      "question": "What is the concept of error correction in time series?",
+      "options": [
+        "Fixing data entry errors",
+        "Adjusting for deviations from long-run equilibrium",
+        "Correcting forecasting mistakes",
+        "Removing outliers from data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Error correction mechanisms adjust short-run dynamics to restore long-run equilibrium relationships, particularly in cointegrated systems.",
+      "optionExplanations": [
+        "Incorrect: Data cleaning is different from error correction modeling",
+        "Correct: Error correction models adjust short-run behavior toward long-run equilibrium",
+        "Incorrect: Forecast accuracy is about prediction quality, not error correction modeling",
+        "Incorrect: Outlier removal is data preprocessing, not error correction"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "error-correction",
+        "long-run-equilibrium",
+        "cointegration"
+      ]
+    },
+    {
+      "id": "TSA_080",
+      "question": "What is the purpose of the Hausman test in time series?",
+      "options": [
+        "To test for stationarity",
+        "To test for endogeneity and choose between estimation methods",
+        "To test for seasonality",
+        "To identify structural breaks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Hausman test compares estimators to detect endogeneity and help choose between fixed effects, random effects, or instrumental variable methods.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Hausman test identifies endogeneity issues and guides estimator choice",
+        "Incorrect: Seasonality testing uses different statistical approaches",
+        "Incorrect: Structural break testing uses specific break point tests"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hausman-test",
+        "endogeneity",
+        "estimator-choice"
+      ]
+    },
+    {
+      "id": "TSA_081",
+      "question": "What is the concept of volatility clustering in time series?",
+      "options": [
+        "Grouping data by variance levels",
+        "Tendency for high volatility periods to be followed by high volatility",
+        "Collecting volatile data points",
+        "Seasonal patterns in variance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Volatility clustering describes the tendency for periods of high volatility to be followed by high volatility, and low volatility by low volatility.",
+      "optionExplanations": [
+        "Incorrect: This describes data grouping, not the dynamic pattern of volatility clustering",
+        "Correct: Volatility clustering shows persistence in volatility levels over time",
+        "Incorrect: This refers to data collection, not the statistical phenomenon",
+        "Incorrect: Seasonal variance patterns are different from volatility clustering"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "volatility-clustering",
+        "volatility-persistence",
+        "ARCH-effects"
+      ]
+    },
+    {
+      "id": "TSA_082",
+      "question": "What is the purpose of the Chow test?",
+      "options": [
+        "To test for stationarity",
+        "To test for structural breaks at known points",
+        "To test for seasonality",
+        "To identify optimal lag length"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Chow test examines whether regression parameters are stable across time by testing for structural breaks at predetermined points.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Chow test evaluates parameter stability at specified potential breakpoints",
+        "Incorrect: Seasonality testing uses different statistical methods",
+        "Incorrect: Lag length selection uses information criteria"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chow-test",
+        "structural-breaks",
+        "parameter-stability"
+      ]
+    },
+    {
+      "id": "TSA_083",
+      "question": "What is the concept of fractional integration?",
+      "options": [
+        "Using fractions in data analysis",
+        "Differencing by non-integer orders to achieve stationarity",
+        "Integrating partial time series",
+        "Mathematical integration techniques"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fractional integration allows differencing by non-integer orders (like 0.5 or 1.5) to achieve stationarity, particularly useful for long memory processes.",
+      "optionExplanations": [
+        "Incorrect: This refers to arithmetic fractions, not fractional integration",
+        "Correct: Fractional integration uses non-integer differencing orders for stationarity",
+        "Incorrect: This describes partial data integration, not fractional integration",
+        "Incorrect: Mathematical integration is calculus, not time series fractional integration"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "fractional-integration",
+        "non-integer-differencing",
+        "long-memory"
+      ]
+    },
+    {
+      "id": "TSA_084",
+      "question": "What is the purpose of the Jarque-Bera test in time series?",
+      "options": [
+        "To test for stationarity",
+        "To test for normality of residuals",
+        "To test for cointegration",
+        "To identify seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Jarque-Bera test examines whether residuals follow a normal distribution by testing skewness and kurtosis jointly.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Jarque-Bera tests normality using skewness and kurtosis statistics",
+        "Incorrect: Cointegration testing uses Engle-Granger or Johansen tests",
+        "Incorrect: Seasonal patterns are identified through decomposition"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "jarque-bera",
+        "normality-testing",
+        "skewness-kurtosis"
+      ]
+    },
+    {
+      "id": "TSA_085",
+      "question": "What is the concept of common trends in multivariate time series?",
+      "options": [
+        "Trends that appear frequently",
+        "Shared stochastic trends driving multiple cointegrated series",
+        "Similar seasonal patterns across series",
+        "Identical time periods in datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Common trends are shared stochastic trends that drive the long-run behavior of cointegrated time series, reducing the dimensionality of trend space.",
+      "optionExplanations": [
+        "Incorrect: Frequency of occurrence doesn't define common trends in statistical sense",
+        "Correct: Common trends are shared stochastic drivers of cointegrated system behavior",
+        "Incorrect: Seasonal similarities are different from common stochastic trends",
+        "Incorrect: Time period alignment is about data structure, not common trends"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "common-trends",
+        "cointegration",
+        "stochastic-trends"
+      ]
+    },
+    {
+      "id": "TSA_086",
+      "question": "What is the purpose of wavelet analysis in time series?",
+      "options": [
+        "To analyze ocean waves",
+        "To analyze time-frequency characteristics and localized patterns",
+        "To test for stationarity",
+        "To remove seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Wavelet analysis decomposes time series into time-frequency components, revealing localized patterns and structures at different scales and times.",
+      "optionExplanations": [
+        "Incorrect: This refers to physical ocean waves, not wavelet mathematical analysis",
+        "Correct: Wavelet analysis provides time-frequency decomposition for localized pattern analysis",
+        "Incorrect: Stationarity testing uses statistical tests like ADF",
+        "Incorrect: Seasonal removal uses deseasonalization techniques"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "wavelet-analysis",
+        "time-frequency",
+        "localized-patterns"
+      ]
+    },
+    {
+      "id": "TSA_087",
+      "question": "What is the concept of cointegration rank?",
+      "options": [
+        "The ranking of cointegrated series",
+        "The number of independent cointegrating relationships",
+        "The quality score of cointegration",
+        "The time order of cointegrated variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cointegration rank indicates the number of linearly independent cointegrating relationships that exist among a set of time series variables.",
+      "optionExplanations": [
+        "Incorrect: This suggests ordering or ranking, not the mathematical concept of rank",
+        "Correct: Cointegration rank counts independent long-run equilibrium relationships",
+        "Incorrect: Quality scoring is different from the linear algebra concept of rank",
+        "Incorrect: Temporal ordering is different from cointegration rank"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cointegration-rank",
+        "independent-relationships",
+        "linear-independence"
+      ]
+    },
+    {
+      "id": "TSA_088",
+      "question": "What is the purpose of the Durbin-Watson test?",
+      "options": [
+        "To test for stationarity",
+        "To test for first-order serial correlation in residuals",
+        "To test for cointegration",
+        "To identify seasonal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Durbin-Watson test specifically detects first-order serial correlation (AR(1)) in regression residuals, helping validate model assumptions.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Durbin-Watson tests for AR(1) serial correlation in residuals",
+        "Incorrect: Cointegration testing uses Engle-Granger or Johansen tests",
+        "Incorrect: Seasonal patterns are identified through decomposition"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "durbin-watson",
+        "serial-correlation",
+        "AR1-residuals"
+      ]
+    },
+    {
+      "id": "TSA_089",
+      "question": "What is the concept of impulse response analysis?",
+      "options": [
+        "Analyzing electrical impulses",
+        "Tracing the effect of shocks through a dynamic system over time",
+        "Measuring response time of systems",
+        "Studying psychological responses"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Impulse response analysis traces how shocks or innovations propagate through a dynamic system, showing the time path of effects on variables.",
+      "optionExplanations": [
+        "Incorrect: This refers to electrical engineering, not time series analysis",
+        "Correct: Impulse response analysis tracks how shocks affect system variables over time",
+        "Incorrect: System response time is about speed, not dynamic effect propagation",
+        "Incorrect: Psychology is different from econometric impulse response analysis"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "impulse-response",
+        "shock-propagation",
+        "dynamic-effects"
+      ]
+    },
+    {
+      "id": "TSA_090",
+      "question": "What is the purpose of the Phillips-Ouliaris test?",
+      "options": [
+        "To test for stationarity",
+        "To test for cointegration in multivariate systems",
+        "To test for seasonality",
+        "To identify optimal model parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Phillips-Ouliaris test examines cointegration in multivariate systems by testing whether the residuals from cointegrating regressions are stationary.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests directly",
+        "Correct: Phillips-Ouliaris tests cointegration by examining stationarity of regression residuals",
+        "Incorrect: Seasonality testing uses different statistical methods",
+        "Incorrect: Parameter optimization uses different procedures"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "phillips-ouliaris",
+        "cointegration",
+        "multivariate-systems"
+      ]
+    },
+    {
+      "id": "TSA_091",
+      "question": "What is the concept of forecast encompassing?",
+      "options": [
+        "Including all variables in forecasting",
+        "One forecast contains all information in competing forecasts",
+        "Forecasting for entire populations",
+        "Using comprehensive forecasting models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forecast encompassing occurs when one forecast contains all the useful information available in competing forecasts, making the others redundant.",
+      "optionExplanations": [
+        "Incorrect: Variable inclusion is about model specification, not encompassing",
+        "Correct: Encompassing means one forecast captures all useful information from competitors",
+        "Incorrect: Population coverage is about scope, not forecast encompassing",
+        "Incorrect: Model comprehensiveness is different from forecast encompassing"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "forecast-encompassing",
+        "information-content",
+        "forecast-comparison"
+      ]
+    },
+    {
+      "id": "TSA_092",
+      "question": "What is the purpose of the Hansen test?",
+      "options": [
+        "To test for stationarity",
+        "To test for parameter stability with multiple unknown breaks",
+        "To test for seasonality",
+        "To identify cointegration"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Hansen test examines parameter stability when there may be multiple structural breaks at unknown times, extending single-break tests.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Hansen test handles multiple unknown structural breaks in parameter stability",
+        "Incorrect: Seasonality testing uses different statistical approaches",
+        "Incorrect: Cointegration testing uses Engle-Granger or Johansen tests"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hansen-test",
+        "multiple-breaks",
+        "parameter-stability"
+      ]
+    },
+    {
+      "id": "TSA_093",
+      "question": "What is the concept of forecast rationality?",
+      "options": [
+        "Using logical reasoning in forecasting",
+        "Forecasts that efficiently use available information and are unbiased",
+        "Making reasonable forecast assumptions",
+        "Using rational mathematical models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forecast rationality means forecasts efficiently incorporate all available information and are unbiased, with errors being unpredictable white noise.",
+      "optionExplanations": [
+        "Incorrect: Logical reasoning is important but doesn't define statistical forecast rationality",
+        "Correct: Rational forecasts are unbiased and efficiently use all available information",
+        "Incorrect: Reasonable assumptions are important but don't define forecast rationality",
+        "Incorrect: Mathematical rationality is different from forecast rationality in economics"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "forecast-rationality",
+        "unbiased-forecasts",
+        "efficient-information-use"
+      ]
+    },
+    {
+      "id": "TSA_094",
+      "question": "What is the purpose of the Vogelsang test?",
+      "options": [
+        "To test for stationarity",
+        "To test for structural breaks in trending data",
+        "To test for seasonality",
+        "To identify optimal forecasting horizons"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Vogelsang test examines structural breaks in the presence of trends, providing robust testing for parameter instability in trending time series.",
+      "optionExplanations": [
+        "Incorrect: Stationarity testing uses ADF or KPSS tests",
+        "Correct: Vogelsang test identifies structural breaks in trending time series data",
+        "Incorrect: Seasonality testing uses different statistical methods",
+        "Incorrect: Forecasting horizon selection uses different criteria"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "vogelsang-test",
+        "trending-data",
+        "structural-breaks"
+      ]
+    },
+    {
+      "id": "TSA_095",
+      "question": "What is the concept of co-movements in time series?",
+      "options": [
+        "Physical movements of time series data",
+        "Synchronized movements or relationships between multiple series",
+        "Moving averages of time series",
+        "Seasonal movements in data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Co-movements refer to synchronized patterns, correlations, or relationships between multiple time series that tend to move together over time.",
+      "optionExplanations": [
+        "Incorrect: This refers to physical movement, not statistical co-movement",
+        "Correct: Co-movements describe synchronized patterns and relationships between time series",
+        "Incorrect: Moving averages are smoothing techniques, not co-movements",
+        "Incorrect: Seasonal movements are within-series patterns, not between-series co-movements"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "co-movements",
+        "synchronized-patterns",
+        "cross-series-relationships"
+      ]
+    },
+    {
+      "id": "TSA_096",
+      "question": "What is the purpose of the Gregory-Hansen test?",
+      "options": [
+        "To test for stationarity with breaks",
+        "To test for cointegration with structural breaks",
+        "To test for seasonality changes",
+        "To identify optimal model complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Gregory-Hansen test examines cointegration relationships that may have structural breaks, allowing for changes in cointegrating vectors over time.",
+      "optionExplanations": [
+        "Incorrect: Stationarity with breaks uses different tests like Zivot-Andrews",
+        "Correct: Gregory-Hansen tests for cointegration while allowing for structural breaks in the relationship",
+        "Incorrect: Seasonality changes use different statistical approaches",
+        "Incorrect: Model complexity selection uses information criteria"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gregory-hansen",
+        "cointegration",
+        "structural-breaks"
+      ]
+    },
+    {
+      "id": "TSA_097",
+      "question": "What is the concept of forecast accuracy measures?",
+      "options": [
+        "Tools to measure forecasting speed",
+        "Metrics to evaluate how close forecasts are to actual values",
+        "Methods to improve forecast precision",
+        "Techniques for measuring forecast confidence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forecast accuracy measures like MAE, RMSE, and MAPE quantify how closely forecasted values match actual observed values.",
+      "optionExplanations": [
+        "Incorrect: Speed measurement is about computational performance, not forecast accuracy",
+        "Correct: Accuracy measures evaluate the closeness between predicted and actual values",
+        "Incorrect: Improvement methods are techniques, not measures of existing accuracy",
+        "Incorrect: Confidence measurement relates to uncertainty bounds, not accuracy assessment"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "forecast-accuracy",
+        "evaluation-metrics",
+        "prediction-quality"
+      ]
+    },
+    {
+      "id": "TSA_098",
+      "question": "What is the purpose of recursive forecasting?",
+      "options": [
+        "To use the same model repeatedly",
+        "To update model parameters as new data becomes available",
+        "To forecast using recursive algorithms",
+        "To create self-referencing forecasts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Recursive forecasting continuously updates model parameters by re-estimating as new observations become available, adapting to changing conditions.",
+      "optionExplanations": [
+        "Incorrect: Using the same model repeatedly doesn't define recursive forecasting",
+        "Correct: Recursive forecasting updates parameters with each new observation for adaptive modeling",
+        "Incorrect: Recursive algorithms are computational methods, not the forecasting concept",
+        "Incorrect: Self-referencing is about model structure, not the recursive updating process"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "recursive-forecasting",
+        "parameter-updating",
+        "adaptive-modeling"
+      ]
+    },
+    {
+      "id": "TSA_099",
+      "question": "What is the concept of forecast bias?",
+      "options": [
+        "Personal preferences in forecasting",
+        "Systematic tendency to over-predict or under-predict",
+        "Random errors in forecasting",
+        "Subjective opinions in predictions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forecast bias is the systematic tendency for forecasts to be consistently higher or lower than actual values, indicating non-zero mean errors.",
+      "optionExplanations": [
+        "Incorrect: Personal preferences are behavioral factors, not statistical forecast bias",
+        "Correct: Forecast bias represents systematic over-prediction or under-prediction patterns",
+        "Incorrect: Random errors are unsystematic, while bias is systematic deviation",
+        "Incorrect: Subjective opinions relate to judgment, not statistical bias measurement"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forecast-bias",
+        "systematic-error",
+        "prediction-deviation"
+      ]
+    },
+    {
+      "id": "TSA_100",
+      "question": "What is the purpose of scenario analysis in time series forecasting?",
+      "options": [
+        "To create dramatic storylines for data",
+        "To evaluate forecasts under different assumed conditions",
+        "To analyze historical scenarios only",
+        "To create single-point predictions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Scenario analysis evaluates how forecasts change under different assumed future conditions, helping assess robustness and plan for various possibilities.",
+      "optionExplanations": [
+        "Incorrect: Storylines are narrative elements, not statistical scenario analysis",
+        "Correct: Scenario analysis examines forecast sensitivity to different assumed future conditions",
+        "Incorrect: Historical analysis is retrospective, while scenarios focus on future possibilities",
+        "Incorrect: Single-point predictions are deterministic, opposite to scenario-based analysis"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scenario-analysis",
+        "conditional-forecasting",
+        "robustness-testing"
+      ]
+    }
+  ]
+}

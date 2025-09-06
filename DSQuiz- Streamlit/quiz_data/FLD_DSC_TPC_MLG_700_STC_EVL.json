@@ -1,0 +1,2503 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_EVL",
+  "subtopicName": "Model Evaluation",
+  "str": 0.700,
+  "description": "Comprehensive assessment of machine learning model performance using various evaluation metrics, cross-validation techniques, and statistical measures to ensure model reliability and generalization.",
+  "questions": [
+    {
+      "id": "EVL_001",
+      "question": "What is the primary purpose of cross-validation in machine learning?",
+      "options": [
+        "To estimate model performance on unseen data",
+        "To reduce training time",
+        "To increase model complexity",
+        "To eliminate the need for a test set"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-validation is used to estimate how well a model will perform on unseen data by training and testing on different subsets of the available data, providing a more robust performance estimate.",
+      "optionExplanations": [
+        "Correct. Cross-validation helps estimate model performance on unseen data by using multiple train-test splits.",
+        "Incorrect. Cross-validation actually increases training time as it requires multiple model training iterations.",
+        "Incorrect. Cross-validation is an evaluation technique and doesn't directly affect model complexity.",
+        "Incorrect. Cross-validation complements but doesn't eliminate the need for a final test set for unbiased evaluation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cross-validation",
+        "model-evaluation",
+        "performance-estimation"
+      ]
+    },
+    {
+      "id": "EVL_002",
+      "question": "In k-fold cross-validation, what happens when k equals the number of samples in the dataset?",
+      "options": [
+        "It becomes stratified cross-validation",
+        "It becomes leave-one-out cross-validation (LOOCV)",
+        "It becomes holdout validation",
+        "It becomes bootstrap validation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When k equals the number of samples, each fold contains exactly one sample for testing, which is the definition of leave-one-out cross-validation (LOOCV).",
+      "optionExplanations": [
+        "Incorrect. Stratified cross-validation maintains class distribution proportions, not related to k equaling sample size.",
+        "Correct. LOOCV occurs when k equals the total number of samples, leaving one sample out for testing in each fold.",
+        "Incorrect. Holdout validation uses a single train-test split, not multiple folds.",
+        "Incorrect. Bootstrap validation uses sampling with replacement, which is different from k-fold CV."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "LOOCV",
+        "k-fold"
+      ]
+    },
+    {
+      "id": "EVL_003",
+      "question": "What is accuracy in the context of classification metrics?",
+      "options": [
+        "The ratio of true positives to all positive predictions",
+        "The ratio of correct predictions to total predictions",
+        "The ratio of true positives to all actual positives",
+        "The harmonic mean of precision and recall"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Accuracy is calculated as (TP + TN) / (TP + TN + FP + FN), representing the proportion of correct predictions out of all predictions made.",
+      "optionExplanations": [
+        "Incorrect. This describes precision, not accuracy.",
+        "Correct. Accuracy measures the overall correctness of predictions across all classes.",
+        "Incorrect. This describes recall (sensitivity), not accuracy.",
+        "Incorrect. This describes the F1-score, not accuracy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "accuracy",
+        "classification-metrics",
+        "confusion-matrix"
+      ]
+    },
+    {
+      "id": "EVL_004",
+      "question": "When is precision more important than recall in model evaluation?",
+      "options": [
+        "When false negatives are more costly than false positives",
+        "When false positives are more costly than false negatives",
+        "When the dataset is perfectly balanced",
+        "When using regression models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Precision is more important when false positives are costly because precision measures how many of the positive predictions are actually correct, minimizing false positive errors.",
+      "optionExplanations": [
+        "Incorrect. When false negatives are more costly, recall becomes more important as it measures how many actual positives are correctly identified.",
+        "Correct. Precision focuses on minimizing false positives, making it crucial when false positive errors are expensive.",
+        "Incorrect. Dataset balance doesn't determine whether precision or recall is more important; cost considerations do.",
+        "Incorrect. Precision and recall are classification metrics, not applicable to regression models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision",
+        "recall",
+        "cost-sensitive",
+        "classification"
+      ]
+    },
+    {
+      "id": "EVL_005",
+      "question": "What does the F1-score represent?",
+      "options": [
+        "The arithmetic mean of precision and recall",
+        "The geometric mean of precision and recall",
+        "The harmonic mean of precision and recall",
+        "The weighted average of precision and recall"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The F1-score is the harmonic mean of precision and recall, calculated as 2 * (precision * recall) / (precision + recall), providing a balanced measure of both metrics.",
+      "optionExplanations": [
+        "Incorrect. The arithmetic mean would be (precision + recall) / 2, which is not the F1-score.",
+        "Incorrect. The geometric mean would be √(precision * recall), which is not the F1-score.",
+        "Correct. F1-score = 2 * (precision * recall) / (precision + recall), which is the harmonic mean.",
+        "Incorrect. While F1 balances precision and recall, it's specifically the harmonic mean, not a general weighted average."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "F1-score",
+        "precision",
+        "recall",
+        "harmonic-mean"
+      ]
+    },
+    {
+      "id": "EVL_006",
+      "question": "What does ROC stand for in ROC-AUC?",
+      "options": [
+        "Rate of Change",
+        "Receiver Operating Characteristic",
+        "Regression Optimization Curve",
+        "Random Output Classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ROC stands for Receiver Operating Characteristic, a curve that plots the true positive rate against the false positive rate at various threshold settings.",
+      "optionExplanations": [
+        "Incorrect. Rate of Change is not related to ROC curves in machine learning evaluation.",
+        "Correct. ROC stands for Receiver Operating Characteristic, originating from signal detection theory.",
+        "Incorrect. ROC curves are used for classification, not regression optimization.",
+        "Incorrect. This is not what ROC stands for in the context of model evaluation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ROC",
+        "AUC",
+        "classification",
+        "terminology"
+      ]
+    },
+    {
+      "id": "EVL_007",
+      "question": "What does an AUC value of 0.5 indicate?",
+      "options": [
+        "Perfect classification performance",
+        "Random classification performance",
+        "Worst possible classification performance",
+        "Optimal threshold selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An AUC of 0.5 indicates that the model performs no better than random guessing, as it represents a diagonal line in the ROC space.",
+      "optionExplanations": [
+        "Incorrect. Perfect classification would have an AUC of 1.0.",
+        "Correct. AUC = 0.5 means the model has no discriminative ability and performs like random classification.",
+        "Incorrect. The worst possible performance would have an AUC of 0.0 (though this can be inverted to achieve AUC = 1.0).",
+        "Incorrect. AUC = 0.5 indicates poor performance, not optimal threshold selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AUC",
+        "ROC",
+        "random-performance",
+        "classification"
+      ]
+    },
+    {
+      "id": "EVL_008",
+      "question": "In a confusion matrix for binary classification, what does the diagonal represent?",
+      "options": [
+        "False predictions",
+        "Correct predictions",
+        "Class imbalance",
+        "Prediction confidence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The diagonal elements of a confusion matrix represent correct predictions: true positives (bottom-right) and true negatives (top-left).",
+      "optionExplanations": [
+        "Incorrect. False predictions are represented by the off-diagonal elements.",
+        "Correct. The diagonal contains true positives and true negatives, representing correct classifications.",
+        "Incorrect. Class imbalance is reflected in the row sums (actual class frequencies), not specifically the diagonal.",
+        "Incorrect. Confusion matrices show counts or frequencies, not prediction confidence scores."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confusion-matrix",
+        "binary-classification",
+        "correct-predictions"
+      ]
+    },
+    {
+      "id": "EVL_009",
+      "question": "What is the main advantage of stratified sampling in cross-validation?",
+      "options": [
+        "It reduces computational time",
+        "It maintains class distribution proportions across folds",
+        "It eliminates the need for feature scaling",
+        "It automatically selects optimal features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stratified sampling ensures that each fold maintains the same proportion of samples from each class as the original dataset, leading to more reliable performance estimates.",
+      "optionExplanations": [
+        "Incorrect. Stratified sampling doesn't significantly impact computational time compared to regular k-fold CV.",
+        "Correct. Stratified sampling preserves the class distribution in each fold, ensuring representative train/test sets.",
+        "Incorrect. Stratified sampling is about class distribution, not feature scaling.",
+        "Incorrect. Stratified sampling doesn't perform feature selection; it only affects how samples are divided into folds."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-sampling",
+        "cross-validation",
+        "class-distribution"
+      ]
+    },
+    {
+      "id": "EVL_010",
+      "question": "Which metric is most appropriate for evaluating models on highly imbalanced datasets?",
+      "options": [
+        "Accuracy",
+        "F1-score",
+        "Mean squared error",
+        "R-squared"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "F1-score is more appropriate for imbalanced datasets because it considers both precision and recall, unlike accuracy which can be misleading when classes are imbalanced.",
+      "optionExplanations": [
+        "Incorrect. Accuracy can be misleading on imbalanced datasets as a model can achieve high accuracy by simply predicting the majority class.",
+        "Correct. F1-score balances precision and recall, providing a better evaluation metric for imbalanced datasets.",
+        "Incorrect. Mean squared error is a regression metric, not suitable for classification problems.",
+        "Incorrect. R-squared is used for regression model evaluation, not classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "imbalanced-datasets",
+        "F1-score",
+        "classification-metrics"
+      ]
+    },
+    {
+      "id": "EVL_011",
+      "question": "What is sensitivity in binary classification?",
+      "options": [
+        "True Positive Rate (Recall)",
+        "True Negative Rate (Specificity)",
+        "Positive Predictive Value (Precision)",
+        "Negative Predictive Value"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sensitivity is another term for True Positive Rate or Recall, calculated as TP/(TP+FN), measuring the proportion of actual positives correctly identified.",
+      "optionExplanations": [
+        "Correct. Sensitivity equals True Positive Rate (TPR) or Recall, measuring how well the model identifies positive cases.",
+        "Incorrect. True Negative Rate is specificity, not sensitivity.",
+        "Incorrect. Positive Predictive Value is precision, which is different from sensitivity.",
+        "Incorrect. Negative Predictive Value measures the proportion of negative predictions that are correct."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sensitivity",
+        "recall",
+        "TPR",
+        "binary-classification"
+      ]
+    },
+    {
+      "id": "EVL_012",
+      "question": "In 5-fold cross-validation, what percentage of data is used for training in each fold?",
+      "options": [
+        "60%",
+        "70%",
+        "80%",
+        "90%"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In 5-fold cross-validation, 4 folds (4/5 = 80%) are used for training and 1 fold (1/5 = 20%) is used for testing in each iteration.",
+      "optionExplanations": [
+        "Incorrect. 60% would correspond to 3-fold cross-validation (2 folds for training, 1 for testing).",
+        "Incorrect. 70% doesn't correspond to any standard k-fold cross-validation setup.",
+        "Correct. In 5-fold CV, 4 out of 5 folds (80%) are used for training in each iteration.",
+        "Incorrect. 90% would correspond to 10-fold cross-validation (9 folds for training, 1 for testing)."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "5-fold",
+        "cross-validation",
+        "train-test-split"
+      ]
+    },
+    {
+      "id": "EVL_013",
+      "question": "What is specificity in binary classification?",
+      "options": [
+        "TP / (TP + FP)",
+        "TP / (TP + FN)",
+        "TN / (TN + FP)",
+        "TN / (TN + FN)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Specificity (True Negative Rate) is calculated as TN/(TN+FP), measuring the proportion of actual negatives that are correctly identified.",
+      "optionExplanations": [
+        "Incorrect. This formula represents precision (Positive Predictive Value).",
+        "Incorrect. This formula represents sensitivity/recall (True Positive Rate).",
+        "Correct. Specificity = TN/(TN+FP), measuring the model's ability to correctly identify negative cases.",
+        "Incorrect. This formula represents the complement of False Negative Rate, not specificity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "specificity",
+        "TNR",
+        "binary-classification",
+        "confusion-matrix"
+      ]
+    },
+    {
+      "id": "EVL_014",
+      "question": "Which of the following best describes overfitting in model evaluation?",
+      "options": [
+        "High training accuracy, high validation accuracy",
+        "Low training accuracy, low validation accuracy",
+        "High training accuracy, low validation accuracy",
+        "Low training accuracy, high validation accuracy"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Overfitting occurs when a model performs very well on training data but poorly on validation/test data, indicating it has memorized rather than learned generalizable patterns.",
+      "optionExplanations": [
+        "Incorrect. High accuracy on both training and validation suggests good generalization, not overfitting.",
+        "Incorrect. Low accuracy on both suggests underfitting, where the model is too simple to capture patterns.",
+        "Correct. High training accuracy with low validation accuracy is the classic sign of overfitting.",
+        "Incorrect. This scenario is unusual and would suggest issues with the training process or data quality."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "training-accuracy",
+        "validation-accuracy"
+      ]
+    },
+    {
+      "id": "EVL_015",
+      "question": "What is the purpose of a holdout validation set?",
+      "options": [
+        "To train the final model",
+        "To tune hyperparameters",
+        "To provide an unbiased evaluation of the final model",
+        "To perform feature selection"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A holdout validation set (test set) is kept completely separate and used only once to provide an unbiased estimate of the final model's performance on unseen data.",
+      "optionExplanations": [
+        "Incorrect. The holdout set should never be used for training as this would bias the evaluation.",
+        "Incorrect. Hyperparameter tuning should be done using cross-validation on the training set or a separate validation set.",
+        "Correct. The holdout set provides an unbiased performance estimate since the model has never seen this data during development.",
+        "Incorrect. Feature selection should be performed on training data, not the holdout validation set."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "holdout-validation",
+        "test-set",
+        "unbiased-evaluation"
+      ]
+    },
+    {
+      "id": "EVL_016",
+      "question": "What does a macro-average F1-score calculate?",
+      "options": [
+        "F1-score weighted by class frequencies",
+        "F1-score for the majority class only",
+        "Average F1-score across all classes without weighting",
+        "F1-score for binary classification only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Macro-average F1-score calculates the F1-score for each class independently and then takes the unweighted average, treating all classes equally.",
+      "optionExplanations": [
+        "Incorrect. This describes weighted-average F1-score, not macro-average.",
+        "Incorrect. Macro-average considers all classes, not just the majority class.",
+        "Correct. Macro-average treats each class equally by computing the unweighted mean of per-class F1-scores.",
+        "Incorrect. Macro-average is specifically used for multi-class problems, though it can be applied to binary classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "macro-average",
+        "F1-score",
+        "multi-class",
+        "averaging-methods"
+      ]
+    },
+    {
+      "id": "EVL_017",
+      "question": "When should you use micro-average instead of macro-average for multi-class evaluation?",
+      "options": [
+        "When all classes are equally important",
+        "When you want to weight performance by class frequency",
+        "When dealing with binary classification",
+        "When computational efficiency is the priority"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Micro-average weights the contribution of each class by its frequency, making it appropriate when you want larger classes to have more influence on the overall metric.",
+      "optionExplanations": [
+        "Incorrect. When all classes are equally important, macro-average is more appropriate as it treats each class equally.",
+        "Correct. Micro-average aggregates predictions across all classes and then calculates metrics, effectively weighting by class frequency.",
+        "Incorrect. Both micro and macro averaging are primarily used for multi-class problems, not binary classification.",
+        "Incorrect. The choice between micro and macro averaging is based on the desired weighting scheme, not computational efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "micro-average",
+        "macro-average",
+        "multi-class",
+        "class-weighting"
+      ]
+    },
+    {
+      "id": "EVL_018",
+      "question": "What is the main limitation of using accuracy on imbalanced datasets?",
+      "options": [
+        "It's computationally expensive",
+        "It doesn't account for class distribution",
+        "It only works for binary classification",
+        "It requires feature normalization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Accuracy can be misleading on imbalanced datasets because a model can achieve high accuracy by simply predicting the majority class, without actually learning meaningful patterns for minority classes.",
+      "optionExplanations": [
+        "Incorrect. Accuracy is computationally simple and efficient to calculate.",
+        "Correct. Accuracy treats all predictions equally, ignoring that correct predictions on minority classes might be more valuable.",
+        "Incorrect. Accuracy can be used for both binary and multi-class classification problems.",
+        "Incorrect. Accuracy calculation doesn't require any feature preprocessing or normalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "accuracy",
+        "imbalanced-datasets",
+        "class-distribution",
+        "limitations"
+      ]
+    },
+    {
+      "id": "EVL_019",
+      "question": "What does the area under the precision-recall curve (PR-AUC) measure?",
+      "options": [
+        "Overall classification accuracy",
+        "Model performance across different decision thresholds",
+        "Feature importance in the model",
+        "Training time efficiency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PR-AUC measures how well a model maintains high precision while achieving high recall across different decision thresholds, providing a threshold-independent performance measure.",
+      "optionExplanations": [
+        "Incorrect. PR-AUC doesn't directly measure overall accuracy; it focuses on precision-recall trade-offs.",
+        "Correct. PR-AUC evaluates model performance across all possible decision thresholds, showing the precision-recall trade-off.",
+        "Incorrect. PR-AUC is a performance metric, not a feature importance measure.",
+        "Incorrect. PR-AUC measures predictive performance, not computational efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PR-AUC",
+        "precision-recall",
+        "threshold-independent",
+        "performance-measure"
+      ]
+    },
+    {
+      "id": "EVL_020",
+      "question": "In leave-one-out cross-validation (LOOCV), how many models are trained?",
+      "options": [
+        "1 model",
+        "k models (where k is specified)",
+        "n models (where n is the number of samples)",
+        "n-1 models (where n is the number of samples)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In LOOCV, one model is trained for each sample in the dataset, using all other samples for training and the single left-out sample for testing, requiring n models total.",
+      "optionExplanations": [
+        "Incorrect. LOOCV requires multiple models, one for each sample left out.",
+        "Incorrect. This describes standard k-fold cross-validation, not LOOCV.",
+        "Correct. LOOCV trains n models, where each model uses n-1 samples for training and 1 for testing.",
+        "Incorrect. While each model is trained on n-1 samples, n total models are created."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LOOCV",
+        "cross-validation",
+        "model-training",
+        "sample-size"
+      ]
+    },
+    {
+      "id": "EVL_021",
+      "question": "What is the Cohen's Kappa statistic used for?",
+      "options": [
+        "Measuring regression model fit",
+        "Accounting for chance agreement in classification",
+        "Calculating feature importance",
+        "Optimizing hyperparameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cohen's Kappa measures inter-rater agreement or classification performance while accounting for the possibility of agreement occurring by chance, providing a more robust measure than simple accuracy.",
+      "optionExplanations": [
+        "Incorrect. Cohen's Kappa is used for classification problems, not regression model evaluation.",
+        "Correct. Kappa adjusts accuracy by accounting for expected chance agreement, providing a more meaningful performance measure.",
+        "Incorrect. Cohen's Kappa is a performance metric, not a feature importance calculation method.",
+        "Incorrect. While Kappa can be used to evaluate models during hyperparameter tuning, it's not an optimization algorithm itself."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Cohen-Kappa",
+        "chance-agreement",
+        "classification-metrics",
+        "inter-rater"
+      ]
+    },
+    {
+      "id": "EVL_022",
+      "question": "What is bootstrap sampling in model evaluation?",
+      "options": [
+        "Sampling without replacement from the original dataset",
+        "Sampling with replacement to create multiple datasets",
+        "Using only the first 50% of data for training",
+        "Randomly shuffling the dataset order"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bootstrap sampling creates new datasets by sampling with replacement from the original dataset, allowing some samples to appear multiple times while others may not appear at all.",
+      "optionExplanations": [
+        "Incorrect. Bootstrap sampling specifically uses sampling with replacement, not without replacement.",
+        "Correct. Bootstrap creates multiple datasets of the same size by sampling with replacement from the original data.",
+        "Incorrect. Bootstrap sampling doesn't involve fixed percentage splits; it uses resampling techniques.",
+        "Incorrect. Random shuffling maintains all original samples once; bootstrap sampling allows repetition and omission."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bootstrap-sampling",
+        "sampling-with-replacement",
+        "resampling",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "EVL_023",
+      "question": "What is the key difference between Type I and Type II errors?",
+      "options": [
+        "Type I is false positive, Type II is false negative",
+        "Type I is false negative, Type II is false positive",
+        "Type I occurs in training, Type II occurs in testing",
+        "Type I is for classification, Type II is for regression"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Type I error (α) is a false positive (rejecting a true null hypothesis), while Type II error (β) is a false negative (accepting a false null hypothesis).",
+      "optionExplanations": [
+        "Correct. Type I error is false positive (saying something is there when it's not), Type II is false negative (missing something that is there).",
+        "Incorrect. This reverses the definitions of Type I and Type II errors.",
+        "Incorrect. Both error types can occur in any phase; they're not phase-specific.",
+        "Incorrect. Both error types apply to hypothesis testing and classification problems, not specific to different problem types."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Type-I-error",
+        "Type-II-error",
+        "false-positive",
+        "false-negative"
+      ]
+    },
+    {
+      "id": "EVL_024",
+      "question": "What does statistical significance testing help determine in model evaluation?",
+      "options": [
+        "The optimal hyperparameters",
+        "Whether performance differences are due to chance",
+        "The best feature selection method",
+        "The required training data size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Statistical significance testing helps determine whether observed performance differences between models are statistically meaningful or could be due to random chance.",
+      "optionExplanations": [
+        "Incorrect. Significance testing evaluates whether differences are meaningful, not which hyperparameters are optimal.",
+        "Correct. Significance tests assess whether performance differences are statistically significant or could occur by random chance.",
+        "Incorrect. Significance testing doesn't directly determine the best feature selection method.",
+        "Incorrect. While related to sample size, significance testing doesn't directly determine required training data size."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "statistical-significance",
+        "hypothesis-testing",
+        "performance-comparison",
+        "chance"
+      ]
+    },
+    {
+      "id": "EVL_025",
+      "question": "What is the purpose of calibration in machine learning models?",
+      "options": [
+        "To improve computational efficiency",
+        "To ensure predicted probabilities reflect true likelihood",
+        "To reduce model complexity",
+        "To perform feature selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model calibration ensures that predicted probabilities accurately reflect the true likelihood of events, so a prediction of 0.8 probability should be correct about 80% of the time.",
+      "optionExplanations": [
+        "Incorrect. Calibration is about probability accuracy, not computational efficiency.",
+        "Correct. Well-calibrated models produce probabilities that match the actual frequency of positive outcomes.",
+        "Incorrect. Calibration doesn't affect model complexity; it adjusts probability outputs.",
+        "Incorrect. Calibration is applied after training and doesn't involve feature selection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "calibration",
+        "probability-accuracy",
+        "likelihood",
+        "prediction-confidence"
+      ]
+    },
+    {
+      "id": "EVL_026",
+      "question": "When is the Matthews Correlation Coefficient (MCC) particularly useful?",
+      "options": [
+        "Only for regression problems",
+        "For balanced datasets only",
+        "For binary classification with any class distribution",
+        "Only when all four confusion matrix values are equal"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "MCC is particularly valuable for binary classification because it takes into account all four confusion matrix categories and is generally regarded as a balanced measure that can be used even if classes are of very different sizes.",
+      "optionExplanations": [
+        "Incorrect. MCC is designed for classification problems, not regression.",
+        "Incorrect. MCC is especially useful for imbalanced datasets where other metrics might be misleading.",
+        "Correct. MCC works well for binary classification regardless of class distribution, considering all confusion matrix elements.",
+        "Incorrect. MCC is useful across various confusion matrix configurations, not just when values are equal."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "MCC",
+        "Matthews-correlation",
+        "binary-classification",
+        "imbalanced-data"
+      ]
+    },
+    {
+      "id": "EVL_027",
+      "question": "What is the primary advantage of using nested cross-validation?",
+      "options": [
+        "Faster computation time",
+        "Unbiased hyperparameter selection and performance estimation",
+        "Better feature scaling",
+        "Automatic feature selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Nested cross-validation uses an outer loop for performance estimation and an inner loop for hyperparameter tuning, providing unbiased performance estimates that aren't inflated by hyperparameter optimization.",
+      "optionExplanations": [
+        "Incorrect. Nested CV actually increases computation time due to multiple layers of cross-validation.",
+        "Correct. Nested CV separates hyperparameter tuning from performance estimation, preventing optimistic bias in results.",
+        "Incorrect. Nested CV is about validation strategy, not feature preprocessing techniques.",
+        "Incorrect. While nested CV can incorporate feature selection, it's not primarily designed for automatic feature selection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "nested-cross-validation",
+        "hyperparameter-tuning",
+        "unbiased-estimation",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "EVL_028",
+      "question": "What does a learning curve plot show?",
+      "options": [
+        "Feature importance over time",
+        "Model performance vs. training set size",
+        "Hyperparameter sensitivity analysis",
+        "Prediction accuracy vs. threshold values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A learning curve plots model performance (training and validation scores) against increasing training set sizes, helping diagnose if a model would benefit from more data.",
+      "optionExplanations": [
+        "Incorrect. Learning curves don't show feature importance; they show performance vs. data size.",
+        "Correct. Learning curves plot training and validation performance against increasing training set sizes.",
+        "Incorrect. Hyperparameter sensitivity is shown in validation curves, not learning curves.",
+        "Incorrect. This describes a precision-recall curve or ROC curve, not a learning curve."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-curve",
+        "training-set-size",
+        "model-performance",
+        "diagnostic-tool"
+      ]
+    },
+    {
+      "id": "EVL_029",
+      "question": "What is the difference between validation curves and learning curves?",
+      "options": [
+        "Validation curves plot performance vs. hyperparameters, learning curves plot performance vs. data size",
+        "Validation curves are for classification, learning curves are for regression",
+        "Validation curves use cross-validation, learning curves don't",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Validation curves show how model performance changes with different hyperparameter values, while learning curves show how performance changes with training set size.",
+      "optionExplanations": [
+        "Correct. Validation curves vary hyperparameters to find optimal values, while learning curves vary training data size.",
+        "Incorrect. Both curves can be used for either classification or regression problems.",
+        "Incorrect. Both validation curves and learning curves typically use cross-validation for robust estimates.",
+        "Incorrect. These are distinct diagnostic tools with different purposes and x-axis variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "validation-curve",
+        "learning-curve",
+        "hyperparameters",
+        "data-size"
+      ]
+    },
+    {
+      "id": "EVL_030",
+      "question": "What is the purpose of the Brier score?",
+      "options": [
+        "To measure classification accuracy",
+        "To evaluate probability calibration quality",
+        "To calculate feature importance",
+        "To optimize decision thresholds"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Brier score measures the accuracy of probabilistic predictions by calculating the mean squared difference between predicted probabilities and actual binary outcomes.",
+      "optionExplanations": [
+        "Incorrect. While related to accuracy, Brier score specifically measures probabilistic prediction quality, not simple classification accuracy.",
+        "Correct. Brier score evaluates how well predicted probabilities match actual outcomes, measuring calibration quality.",
+        "Incorrect. Brier score is a performance metric, not a feature importance calculation method.",
+        "Incorrect. While Brier score can inform threshold selection, its primary purpose is evaluating probabilistic predictions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Brier-score",
+        "probability-calibration",
+        "probabilistic-predictions",
+        "evaluation-metric"
+      ]
+    },
+    {
+      "id": "EVL_031",
+      "question": "In stratified k-fold cross-validation, what is preserved across folds?",
+      "options": [
+        "The exact same samples in each fold",
+        "The total number of samples",
+        "The proportion of each class",
+        "The feature distributions"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Stratified k-fold cross-validation ensures that each fold maintains approximately the same proportion of samples from each class as the original dataset.",
+      "optionExplanations": [
+        "Incorrect. Different samples are used in each fold; stratification doesn't preserve specific samples.",
+        "Incorrect. While the total count is maintained across all folds, this isn't the key aspect of stratification.",
+        "Correct. Stratification specifically preserves the class distribution proportions in each fold.",
+        "Incorrect. Stratification focuses on class labels, not feature value distributions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-k-fold",
+        "class-proportion",
+        "cross-validation",
+        "distribution-preservation"
+      ]
+    },
+    {
+      "id": "EVL_032",
+      "question": "What is the main drawback of leave-one-out cross-validation (LOOCV)?",
+      "options": [
+        "It provides biased estimates",
+        "It's computationally expensive",
+        "It only works for small datasets",
+        "It requires balanced classes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LOOCV requires training n models (where n is the dataset size), making it computationally expensive, especially for large datasets or complex models.",
+      "optionExplanations": [
+        "Incorrect. LOOCV actually provides nearly unbiased estimates due to using almost all data for training in each fold.",
+        "Correct. LOOCV requires training as many models as there are samples, which is computationally intensive.",
+        "Incorrect. LOOCV can work with any dataset size, though it becomes impractical for large datasets due to computational cost.",
+        "Incorrect. LOOCV doesn't require balanced classes; it works with any class distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LOOCV",
+        "computational-cost",
+        "cross-validation",
+        "scalability"
+      ]
+    },
+    {
+      "id": "EVL_033",
+      "question": "What does the log-loss (cross-entropy loss) measure?",
+      "options": [
+        "The difference between predicted and actual class labels",
+        "The quality of predicted probabilities",
+        "The computational efficiency of the model",
+        "The feature correlation strength"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Log-loss measures how well predicted probabilities match the actual class labels, penalizing confident wrong predictions more heavily than uncertain wrong predictions.",
+      "optionExplanations": [
+        "Incorrect. While log-loss considers actual labels, it specifically evaluates probability quality, not just label differences.",
+        "Correct. Log-loss evaluates the quality of predicted probabilities, with lower values indicating better calibrated probabilities.",
+        "Incorrect. Log-loss is a performance metric, not a measure of computational efficiency.",
+        "Incorrect. Log-loss doesn't measure feature correlations; it evaluates prediction quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "log-loss",
+        "cross-entropy",
+        "probability-quality",
+        "classification-loss"
+      ]
+    },
+    {
+      "id": "EVL_034",
+      "question": "When would you choose precision over recall as the primary optimization metric?",
+      "options": [
+        "When missing positive cases is very costly",
+        "When false positive predictions are very costly",
+        "When the dataset is perfectly balanced",
+        "When using unsupervised learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Precision should be prioritized when false positives are costly because precision measures the accuracy of positive predictions, minimizing false positive errors.",
+      "optionExplanations": [
+        "Incorrect. When missing positive cases (false negatives) is costly, recall should be prioritized instead.",
+        "Correct. Precision focuses on minimizing false positives, making it the right choice when false positive predictions are expensive.",
+        "Incorrect. Dataset balance doesn't determine whether precision or recall is more important; cost considerations do.",
+        "Incorrect. Precision and recall are supervised learning metrics and don't apply to unsupervised learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision",
+        "recall",
+        "false-positives",
+        "cost-sensitive-learning"
+      ]
+    },
+    {
+      "id": "EVL_035",
+      "question": "What is the purpose of the confusion matrix normalization?",
+      "options": [
+        "To make all values equal to 1",
+        "To convert counts to proportions for better interpretation",
+        "To eliminate classification errors",
+        "To balance the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Normalizing a confusion matrix converts raw counts to proportions, making it easier to interpret performance across different classes, especially when classes have different frequencies.",
+      "optionExplanations": [
+        "Incorrect. Normalization doesn't make all values equal; it converts counts to proportions that sum to 1 along each row or column.",
+        "Correct. Normalization converts counts to proportions, facilitating interpretation and comparison across classes of different sizes.",
+        "Incorrect. Normalization is a visualization technique and doesn't eliminate actual classification errors.",
+        "Incorrect. Normalization is about matrix interpretation, not dataset balancing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "confusion-matrix",
+        "normalization",
+        "proportions",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "EVL_036",
+      "question": "What does a high bias, low variance model indicate?",
+      "options": [
+        "Overfitting",
+        "Underfitting",
+        "Perfect fit",
+        "Optimal performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High bias and low variance indicates underfitting, where the model is too simple to capture the underlying patterns in the data, leading to consistent but inaccurate predictions.",
+      "optionExplanations": [
+        "Incorrect. Overfitting typically shows low bias but high variance.",
+        "Correct. High bias with low variance indicates the model is too simple and consistently makes similar errors (underfitting).",
+        "Incorrect. Perfect fit would have both low bias and low variance.",
+        "Incorrect. High bias indicates systematic errors, which is not optimal performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias-variance",
+        "underfitting",
+        "model-complexity",
+        "systematic-error"
+      ]
+    },
+    {
+      "id": "EVL_037",
+      "question": "What is the primary benefit of using cross-validation over a simple train-test split?",
+      "options": [
+        "Faster computation",
+        "More robust performance estimates",
+        "Larger training sets",
+        "Automatic feature selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation provides more robust and reliable performance estimates by testing the model on multiple different subsets of the data, reducing the impact of particular train-test splits.",
+      "optionExplanations": [
+        "Incorrect. Cross-validation is typically slower than a single train-test split due to multiple training iterations.",
+        "Correct. Cross-validation provides more stable and reliable performance estimates by averaging across multiple train-test combinations.",
+        "Incorrect. The total amount of training data remains the same; it's just used more efficiently.",
+        "Incorrect. Cross-validation is an evaluation technique, not a feature selection method."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cross-validation",
+        "robust-estimates",
+        "train-test-split",
+        "performance-evaluation"
+      ]
+    },
+    {
+      "id": "EVL_038",
+      "question": "What happens to the ROC curve when you have a perfectly separable binary classification problem?",
+      "options": [
+        "It becomes a diagonal line",
+        "It passes through the point (0,1)",
+        "It becomes a horizontal line",
+        "It forms a circle"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For perfectly separable data, the ROC curve passes through the point (0,1), indicating 100% true positive rate and 0% false positive rate at the optimal threshold.",
+      "optionExplanations": [
+        "Incorrect. A diagonal line represents random classification performance (AUC = 0.5).",
+        "Correct. Perfect separation allows for 100% sensitivity (TPR = 1) with 0% false positive rate (FPR = 0), giving the point (0,1).",
+        "Incorrect. A horizontal line is not a valid ROC curve shape.",
+        "Incorrect. ROC curves don't form circular shapes; they're monotonically increasing curves."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ROC-curve",
+        "perfect-separation",
+        "binary-classification",
+        "optimal-performance"
+      ]
+    },
+    {
+      "id": "EVL_039",
+      "question": "What is the key assumption of stratified sampling?",
+      "options": [
+        "All samples are independent",
+        "Features are normally distributed",
+        "Class distribution should be preserved",
+        "Sample size must be large"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Stratified sampling assumes that preserving the original class distribution across train/validation/test sets will lead to more representative and reliable performance estimates.",
+      "optionExplanations": [
+        "Incorrect. Sample independence is a general statistical assumption, not specific to stratified sampling.",
+        "Incorrect. Stratified sampling doesn't assume normal distribution of features.",
+        "Correct. The key assumption is that maintaining class proportions across splits will provide more representative samples.",
+        "Incorrect. Stratified sampling can work with small or large samples; size isn't the key assumption."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-sampling",
+        "class-distribution",
+        "representative-sampling",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "EVL_040",
+      "question": "What does it mean when a model has high precision but low recall?",
+      "options": [
+        "It makes many false positive errors",
+        "It makes many false negative errors",
+        "It has perfect performance",
+        "It's randomly guessing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High precision but low recall means the model is conservative in making positive predictions (few false positives) but misses many actual positive cases (many false negatives).",
+      "optionExplanations": [
+        "Incorrect. High precision means few false positives, not many.",
+        "Correct. Low recall indicates many false negatives - the model misses many actual positive cases.",
+        "Incorrect. Perfect performance would have both high precision and high recall.",
+        "Incorrect. Random guessing would typically have moderate precision and recall values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision",
+        "recall",
+        "false-negative",
+        "conservative-prediction"
+      ]
+    },
+    {
+      "id": "EVL_041",
+      "question": "Which evaluation metric is least affected by class imbalance?",
+      "options": [
+        "Accuracy",
+        "F1-score",
+        "AUC-ROC",
+        "Precision"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "AUC-ROC is relatively robust to class imbalance because it evaluates performance across all possible thresholds and focuses on the ranking of predictions rather than absolute values.",
+      "optionExplanations": [
+        "Incorrect. Accuracy is heavily affected by class imbalance and can be misleading.",
+        "Incorrect. While F1-score is better than accuracy for imbalanced data, it's still affected by class distribution.",
+        "Correct. AUC-ROC measures the model's ability to distinguish between classes across all thresholds, making it less sensitive to class imbalance.",
+        "Incorrect. Precision can be significantly affected by class imbalance, especially when positive class is rare."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "AUC-ROC",
+        "class-imbalance",
+        "robust-metrics",
+        "threshold-independent"
+      ]
+    },
+    {
+      "id": "EVL_042",
+      "question": "What is the purpose of using multiple evaluation metrics instead of just one?",
+      "options": [
+        "To increase computational complexity",
+        "To get a comprehensive view of model performance",
+        "To confuse stakeholders",
+        "To delay decision making"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using multiple evaluation metrics provides different perspectives on model performance, helping identify various strengths and weaknesses that a single metric might miss.",
+      "optionExplanations": [
+        "Incorrect. The purpose isn't to increase complexity but to gain better insights.",
+        "Correct. Different metrics highlight different aspects of performance, providing a more complete evaluation picture.",
+        "Incorrect. Multiple metrics should clarify performance characteristics, not confuse stakeholders.",
+        "Incorrect. Comprehensive evaluation should facilitate better decision making, not delay it."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multiple-metrics",
+        "comprehensive-evaluation",
+        "model-performance",
+        "evaluation-strategy"
+      ]
+    },
+    {
+      "id": "EVL_043",
+      "question": "What is the relationship between sensitivity and specificity in ROC analysis?",
+      "options": [
+        "They are always equal",
+        "They represent trade-offs as threshold changes",
+        "They are completely independent",
+        "One is always higher than the other"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sensitivity (true positive rate) and specificity (true negative rate) typically have an inverse relationship - as you increase sensitivity by lowering the threshold, specificity often decreases.",
+      "optionExplanations": [
+        "Incorrect. Sensitivity and specificity are rarely equal except at specific threshold points.",
+        "Correct. ROC curves show how sensitivity and specificity change as decision thresholds vary, often in opposite directions.",
+        "Incorrect. They are related through the decision threshold and the ROC curve shows their relationship.",
+        "Incorrect. Neither sensitivity nor specificity is consistently higher; it depends on the threshold and data distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sensitivity",
+        "specificity",
+        "ROC-analysis",
+        "threshold-tradeoff"
+      ]
+    },
+    {
+      "id": "EVL_044",
+      "question": "What does a validation curve help identify?",
+      "options": [
+        "The optimal training set size",
+        "The best hyperparameter values",
+        "The most important features",
+        "The required number of cross-validation folds"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Validation curves plot training and validation performance against different hyperparameter values, helping identify the optimal hyperparameter setting that balances bias and variance.",
+      "optionExplanations": [
+        "Incorrect. Learning curves, not validation curves, help identify optimal training set size.",
+        "Correct. Validation curves show how performance changes with hyperparameter values, helping select optimal settings.",
+        "Incorrect. Feature importance analysis, not validation curves, identifies the most important features.",
+        "Incorrect. The number of CV folds is typically chosen based on computational constraints and dataset size, not validation curves."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "validation-curve",
+        "hyperparameter-optimization",
+        "bias-variance",
+        "model-tuning"
+      ]
+    },
+    {
+      "id": "EVL_045",
+      "question": "Why might you prefer PR-AUC over ROC-AUC for highly imbalanced datasets?",
+      "options": [
+        "PR-AUC is faster to compute",
+        "PR-AUC is more sensitive to performance on the minority class",
+        "PR-AUC works better with continuous features",
+        "PR-AUC requires less memory"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PR-AUC (Precision-Recall AUC) is more informative for imbalanced datasets because it focuses on the positive class performance and is more sensitive to improvements in minority class prediction.",
+      "optionExplanations": [
+        "Incorrect. Computational speed is not the primary reason to choose PR-AUC over ROC-AUC.",
+        "Correct. PR-AUC focuses on precision and recall, which are more informative for minority class performance in imbalanced datasets.",
+        "Incorrect. Both PR-AUC and ROC-AUC work with any type of features; the choice isn't based on feature types.",
+        "Incorrect. Memory requirements are not significantly different between PR-AUC and ROC-AUC."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PR-AUC",
+        "ROC-AUC",
+        "imbalanced-datasets",
+        "minority-class"
+      ]
+    },
+    {
+      "id": "EVL_046",
+      "question": "What is the main advantage of using repeated cross-validation?",
+      "options": [
+        "It reduces overfitting",
+        "It provides more stable performance estimates",
+        "It selects features automatically",
+        "It eliminates the need for a test set"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Repeated cross-validation performs multiple rounds of k-fold CV with different random splits, providing more stable and reliable performance estimates by reducing variance in the evaluation.",
+      "optionExplanations": [
+        "Incorrect. Repeated CV is an evaluation technique and doesn't directly reduce overfitting during training.",
+        "Correct. Multiple rounds of CV with different splits provide more robust performance estimates with lower variance.",
+        "Incorrect. Repeated CV is for model evaluation, not feature selection.",
+        "Incorrect. A held-out test set is still recommended for final unbiased evaluation, regardless of the CV strategy used."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "repeated-cross-validation",
+        "stable-estimates",
+        "variance-reduction",
+        "robust-evaluation"
+      ]
+    },
+    {
+      "id": "EVL_047",
+      "question": "What does the term 'data leakage' mean in model evaluation?",
+      "options": [
+        "Using too much training data",
+        "Information from the test set influencing model training",
+        "Missing values in the dataset",
+        "Incorrect feature scaling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data leakage occurs when information from the test/validation set inadvertently influences model training or selection, leading to overly optimistic performance estimates.",
+      "optionExplanations": [
+        "Incorrect. Using more training data is generally beneficial, not a form of data leakage.",
+        "Correct. Data leakage happens when test/future information inappropriately influences model development, leading to biased evaluation.",
+        "Incorrect. Missing values are a data quality issue, not data leakage.",
+        "Incorrect. Incorrect feature scaling is a preprocessing error, not data leakage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-leakage",
+        "test-set-contamination",
+        "biased-evaluation",
+        "model-validation"
+      ]
+    },
+    {
+      "id": "EVL_048",
+      "question": "What is the purpose of model ensembling in evaluation?",
+      "options": [
+        "To reduce training time",
+        "To combine predictions from multiple models for better performance",
+        "To eliminate the need for cross-validation",
+        "To automatically select features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model ensembling combines predictions from multiple models to achieve better performance than any single model, often reducing both bias and variance in predictions.",
+      "optionExplanations": [
+        "Incorrect. Ensembling typically increases computational cost as it requires training and maintaining multiple models.",
+        "Correct. Ensembles leverage the strengths of multiple models to achieve better overall performance through prediction combination.",
+        "Incorrect. Ensembles still require proper evaluation techniques like cross-validation to assess their performance.",
+        "Incorrect. While some ensemble methods can provide feature importance, their primary purpose is combining predictions, not feature selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-ensembling",
+        "prediction-combination",
+        "performance-improvement",
+        "bias-variance"
+      ]
+    },
+    {
+      "id": "EVL_049",
+      "question": "What is the difference between macro and weighted-average F1-score?",
+      "options": [
+        "Macro considers class frequency, weighted doesn't",
+        "Weighted considers class frequency, macro doesn't",
+        "They are exactly the same",
+        "Macro is for binary, weighted is for multi-class"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weighted-average F1-score weights each class's F1-score by the number of samples in that class, while macro-average treats all classes equally regardless of their frequency.",
+      "optionExplanations": [
+        "Incorrect. This reverses the definitions - macro doesn't consider class frequency, weighted does.",
+        "Correct. Weighted-average accounts for class imbalance by weighting each class's contribution by its frequency.",
+        "Incorrect. These are different averaging methods that can produce different results, especially with class imbalance.",
+        "Incorrect. Both can be used for multi-class problems; the difference is in how they weight class contributions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "macro-average",
+        "weighted-average",
+        "F1-score",
+        "class-frequency"
+      ]
+    },
+    {
+      "id": "EVL_050",
+      "question": "What does cross-validation help prevent in model evaluation?",
+      "options": [
+        "Underfitting",
+        "Overfitting to the validation set",
+        "Feature correlation",
+        "Class imbalance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation helps prevent overfitting to a specific validation set by using multiple different validation sets, providing more generalizable performance estimates.",
+      "optionExplanations": [
+        "Incorrect. Cross-validation is an evaluation technique and doesn't directly prevent underfitting during model training.",
+        "Correct. By using multiple validation sets, cross-validation prevents the model evaluation from being biased toward a specific validation set.",
+        "Incorrect. Cross-validation doesn't address feature correlation issues; that's handled through feature selection or regularization.",
+        "Incorrect. Cross-validation doesn't solve class imbalance; stratified sampling within CV can help maintain class proportions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "overfitting-prevention",
+        "validation-set-bias",
+        "generalization"
+      ]
+    },
+    {
+      "id": "EVL_051",
+      "question": "What is the key characteristic that makes a good evaluation metric?",
+      "options": [
+        "It should always be maximized",
+        "It should align with the business objective",
+        "It should be computationally expensive",
+        "It should only consider majority class performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A good evaluation metric should align with the business objective and real-world consequences of the model's predictions, ensuring that optimizing the metric leads to desired outcomes.",
+      "optionExplanations": [
+        "Incorrect. Some metrics are minimized (like error rates) while others are maximized (like accuracy). The direction isn't what makes a metric good.",
+        "Correct. The best evaluation metric reflects the actual business goals and costs associated with different types of errors.",
+        "Incorrect. Computational efficiency is generally preferred; expensive metrics can slow down model development.",
+        "Incorrect. Good metrics should consider performance across all relevant classes, not just the majority class."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-metrics",
+        "business-alignment",
+        "objective-function",
+        "metric-selection"
+      ]
+    },
+    {
+      "id": "EVL_052",
+      "question": "What is the purpose of confidence intervals in model evaluation?",
+      "options": [
+        "To increase model accuracy",
+        "To quantify uncertainty in performance estimates",
+        "To select optimal hyperparameters",
+        "To reduce computational cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Confidence intervals provide a range of plausible values for the true performance metric, quantifying the uncertainty in performance estimates due to sampling variability.",
+      "optionExplanations": [
+        "Incorrect. Confidence intervals describe uncertainty in evaluation, they don't improve model accuracy.",
+        "Correct. Confidence intervals quantify the statistical uncertainty around performance estimates, showing the range of likely true performance.",
+        "Incorrect. While confidence intervals can inform hyperparameter selection, their primary purpose is quantifying uncertainty.",
+        "Incorrect. Computing confidence intervals typically adds computational cost rather than reducing it."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "confidence-intervals",
+        "uncertainty-quantification",
+        "statistical-inference",
+        "performance-estimation"
+      ]
+    },
+    {
+      "id": "EVL_053",
+      "question": "When should you use time-series cross-validation instead of regular k-fold?",
+      "options": [
+        "When data has temporal dependencies",
+        "When dataset is very large",
+        "When features are categorical",
+        "When classes are imbalanced"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Time-series cross-validation should be used when data has temporal dependencies, ensuring that models are only trained on past data and tested on future data, respecting the time order.",
+      "optionExplanations": [
+        "Correct. Time-series CV respects temporal order, preventing data leakage from future information into training data.",
+        "Incorrect. Dataset size alone doesn't determine the need for time-series CV; temporal structure is the key factor.",
+        "Incorrect. Feature types don't determine the need for time-series CV; temporal dependencies do.",
+        "Incorrect. Class imbalance is addressed through stratified sampling, not time-series CV."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "time-series-CV",
+        "temporal-dependencies",
+        "data-leakage",
+        "temporal-validation"
+      ]
+    },
+    {
+      "id": "EVL_054",
+      "question": "What is the primary purpose of a baseline model in evaluation?",
+      "options": [
+        "To replace the main model",
+        "To provide a reference point for comparison",
+        "To reduce training time",
+        "To perform feature selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A baseline model provides a simple reference point to determine whether more complex models are actually providing meaningful improvements over naive approaches.",
+      "optionExplanations": [
+        "Incorrect. Baseline models are for comparison, not to replace the main model.",
+        "Correct. Baselines establish a minimum performance threshold that more sophisticated models should exceed to be considered valuable.",
+        "Incorrect. Baselines are typically simple and fast, but their purpose is comparison, not speed optimization.",
+        "Incorrect. Baseline models usually don't perform feature selection; they provide performance benchmarks."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "baseline-model",
+        "performance-comparison",
+        "reference-point",
+        "model-benchmarking"
+      ]
+    },
+    {
+      "id": "EVL_055",
+      "question": "What does the term 'early stopping' refer to in model evaluation?",
+      "options": [
+        "Stopping training when validation performance stops improving",
+        "Using fewer features in the model",
+        "Reducing the number of cross-validation folds",
+        "Ending the evaluation process prematurely"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Early stopping is a regularization technique that stops training when validation performance plateaus or starts to degrade, preventing overfitting to the training data.",
+      "optionExplanations": [
+        "Correct. Early stopping monitors validation performance during training and stops when improvement plateaus, preventing overfitting.",
+        "Incorrect. Feature reduction is a separate technique; early stopping is about training duration.",
+        "Incorrect. Early stopping doesn't affect cross-validation strategy; it's about when to stop training.",
+        "Incorrect. Early stopping is a deliberate strategy to optimize generalization, not premature termination."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "early-stopping",
+        "overfitting-prevention",
+        "validation-monitoring",
+        "regularization"
+      ]
+    },
+    {
+      "id": "EVL_056",
+      "question": "What is the advantage of using area under the curve (AUC) metrics?",
+      "options": [
+        "They require less computation",
+        "They are threshold-independent",
+        "They work only for balanced datasets",
+        "They eliminate the need for cross-validation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AUC metrics evaluate model performance across all possible decision thresholds, providing a threshold-independent measure of the model's discriminative ability.",
+      "optionExplanations": [
+        "Incorrect. AUC computation involves evaluating performance across multiple thresholds, which can be computationally intensive.",
+        "Correct. AUC measures provide a single performance score that summarizes behavior across all possible decision thresholds.",
+        "Incorrect. AUC metrics can be used with imbalanced datasets, though PR-AUC is often preferred over ROC-AUC for severe imbalance.",
+        "Incorrect. AUC metrics are performance measures and don't eliminate the need for proper validation techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AUC",
+        "threshold-independent",
+        "discriminative-ability",
+        "performance-summary"
+      ]
+    },
+    {
+      "id": "EVL_057",
+      "question": "What is the purpose of statistical tests in model comparison?",
+      "options": [
+        "To automatically select the best model",
+        "To determine if performance differences are significant",
+        "To reduce computational requirements",
+        "To eliminate overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Statistical tests help determine whether observed performance differences between models are statistically significant or could have occurred by random chance.",
+      "optionExplanations": [
+        "Incorrect. Statistical tests inform decision-making but don't automatically select models; human judgment is still required.",
+        "Correct. Statistical tests assess whether performance differences are significant enough to conclude one model is truly better than another.",
+        "Incorrect. Statistical testing typically adds computational overhead rather than reducing it.",
+        "Incorrect. Statistical tests evaluate models after training; they don't prevent overfitting during training."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "statistical-tests",
+        "model-comparison",
+        "significance-testing",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "id": "EVL_058",
+      "question": "What does it mean when training and validation curves converge in a learning curve?",
+      "options": [
+        "The model is overfitting",
+        "The model is underfitting",
+        "The model is well-generalized",
+        "More data won't help improve performance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When training and validation curves converge at a good performance level, it indicates the model is well-generalized and not suffering from overfitting or underfitting.",
+      "optionExplanations": [
+        "Incorrect. Overfitting shows a large gap between training and validation performance, not convergence.",
+        "Incorrect. While convergence could indicate underfitting if performance is poor, the question asks about convergence generally.",
+        "Correct. Convergence of training and validation curves at good performance indicates healthy generalization.",
+        "Incorrect. Even with converged curves, more data might still help if the converged performance level is suboptimal."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-curve",
+        "convergence",
+        "generalization",
+        "training-validation"
+      ]
+    },
+    {
+      "id": "EVL_059",
+      "question": "What is the main difference between holdout validation and cross-validation?",
+      "options": [
+        "Holdout uses more data for training",
+        "Cross-validation provides more robust estimates",
+        "Holdout is more computationally expensive",
+        "Cross-validation only works for classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation provides more robust performance estimates by using multiple train-test splits, while holdout validation relies on a single split that might not be representative.",
+      "optionExplanations": [
+        "Incorrect. In holdout validation, a fixed portion is held out; in CV, more data is typically used for training in each fold.",
+        "Correct. Cross-validation averages performance across multiple splits, providing more stable and reliable estimates than a single holdout split.",
+        "Incorrect. Holdout validation is typically faster as it requires training only one model, while CV trains multiple models.",
+        "Incorrect. Both holdout validation and cross-validation work for both classification and regression problems."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "holdout-validation",
+        "cross-validation",
+        "robust-estimates",
+        "validation-comparison"
+      ]
+    },
+    {
+      "id": "EVL_060",
+      "question": "What is the concept of 'no free lunch' in model evaluation?",
+      "options": [
+        "All models cost the same to train",
+        "No single model is best for all problems",
+        "Model evaluation is always expensive",
+        "Free models don't exist"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The 'no free lunch' theorem states that no single algorithm performs best across all possible problems, emphasizing the importance of proper evaluation for each specific use case.",
+      "optionExplanations": [
+        "Incorrect. The concept isn't about computational or monetary costs of training.",
+        "Correct. The no free lunch theorem indicates that model performance is problem-dependent, requiring careful evaluation for each scenario.",
+        "Incorrect. While thorough evaluation can be expensive, this isn't what the 'no free lunch' concept refers to.",
+        "Incorrect. This misinterprets the metaphorical meaning of 'no free lunch' in machine learning theory."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "no-free-lunch",
+        "algorithm-selection",
+        "problem-dependent",
+        "evaluation-importance"
+      ]
+    },
+    {
+      "id": "EVL_061",
+      "question": "What is the purpose of plotting residuals in model evaluation?",
+      "options": [
+        "To calculate accuracy metrics",
+        "To identify patterns in prediction errors",
+        "To select optimal features",
+        "To determine the best algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Residual plots help identify patterns in prediction errors, revealing issues like heteroscedasticity, non-linearity, or outliers that might not be apparent from summary statistics alone.",
+      "optionExplanations": [
+        "Incorrect. Residual plots are diagnostic tools for error analysis, not for calculating accuracy metrics.",
+        "Correct. Residual plots visualize prediction errors to identify systematic patterns, outliers, and model assumptions violations.",
+        "Incorrect. While residual analysis might inform feature engineering, it's primarily for error pattern identification.",
+        "Incorrect. Residual plots help evaluate a specific model's performance, not compare different algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual-plots",
+        "error-analysis",
+        "diagnostic-tools",
+        "model-assumptions"
+      ]
+    },
+    {
+      "id": "EVL_062",
+      "question": "What does balanced accuracy measure?",
+      "options": [
+        "Accuracy only on balanced datasets",
+        "Average of sensitivity and specificity",
+        "Weighted accuracy by class size",
+        "Accuracy after balancing the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Balanced accuracy is the average of sensitivity (true positive rate) and specificity (true negative rate), providing a metric that works well even with imbalanced classes.",
+      "optionExplanations": [
+        "Incorrect. Balanced accuracy can be used on any dataset, not just balanced ones.",
+        "Correct. Balanced accuracy = (Sensitivity + Specificity) / 2, treating both classes equally regardless of their frequency.",
+        "Incorrect. This describes weighted accuracy, not balanced accuracy.",
+        "Incorrect. Balanced accuracy is a metric calculation method, not accuracy measured after rebalancing data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "balanced-accuracy",
+        "sensitivity",
+        "specificity",
+        "imbalanced-data"
+      ]
+    },
+    {
+      "id": "EVL_063",
+      "question": "What is the main advantage of using percentage split validation?",
+      "options": [
+        "It provides more robust estimates than cross-validation",
+        "It's computationally efficient",
+        "It works better with small datasets",
+        "It eliminates overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Percentage split validation (holdout validation) is computationally efficient because it requires training only one model, unlike cross-validation which trains multiple models.",
+      "optionExplanations": [
+        "Incorrect. Cross-validation generally provides more robust estimates than a single percentage split.",
+        "Correct. Percentage split is faster because it involves only one train-test split and one model training cycle.",
+        "Incorrect. Cross-validation is typically better for small datasets as it uses data more efficiently.",
+        "Incorrect. No validation method eliminates overfitting; they help detect and measure it."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "percentage-split",
+        "holdout-validation",
+        "computational-efficiency",
+        "single-split"
+      ]
+    },
+    {
+      "id": "EVL_064",
+      "question": "What does the Youden's J statistic measure?",
+      "options": [
+        "Classification accuracy",
+        "Optimal threshold point on ROC curve",
+        "Feature importance",
+        "Model complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Youden's J statistic (J = Sensitivity + Specificity - 1) identifies the optimal threshold point on the ROC curve that maximizes the difference between true positive rate and false positive rate.",
+      "optionExplanations": [
+        "Incorrect. Youden's J is not a direct measure of classification accuracy.",
+        "Correct. Youden's J statistic identifies the ROC curve point that maximizes (Sensitivity + Specificity - 1), indicating optimal threshold selection.",
+        "Incorrect. Youden's J is about threshold selection, not feature importance.",
+        "Incorrect. Youden's J doesn't measure model complexity; it's about optimal operating points."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Youden-J",
+        "optimal-threshold",
+        "ROC-curve",
+        "threshold-selection"
+      ]
+    },
+    {
+      "id": "EVL_065",
+      "question": "What is the primary purpose of using a confusion matrix?",
+      "options": [
+        "To calculate model training time",
+        "To visualize classification performance across all classes",
+        "To select optimal features",
+        "To determine the best algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A confusion matrix provides a detailed breakdown of correct and incorrect classifications for each class, allowing comprehensive analysis of classification performance patterns.",
+      "optionExplanations": [
+        "Incorrect. Confusion matrices show prediction results, not training time information.",
+        "Correct. Confusion matrices display true vs. predicted classifications, showing exactly where the model succeeds and fails for each class.",
+        "Incorrect. While confusion matrix analysis might inform feature engineering, it's primarily for performance visualization.",
+        "Incorrect. Confusion matrices evaluate a specific model's performance, not compare different algorithms directly."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confusion-matrix",
+        "classification-performance",
+        "error-analysis",
+        "visualization"
+      ]
+    },
+    {
+      "id": "EVL_066",
+      "question": "When is it appropriate to use micro-averaging in multi-class evaluation?",
+      "options": [
+        "When all classes are equally important",
+        "When you want to emphasize performance on larger classes",
+        "When the dataset is perfectly balanced",
+        "When using binary classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Micro-averaging aggregates contributions from all classes and calculates metrics globally, effectively giving more weight to larger classes, making it appropriate when larger classes are more important.",
+      "optionExplanations": [
+        "Incorrect. When all classes are equally important, macro-averaging is more appropriate as it treats each class equally.",
+        "Correct. Micro-averaging weights contributions by class frequency, emphasizing performance on classes with more samples.",
+        "Incorrect. For balanced datasets, micro and macro averaging often produce similar results, so this isn't a determining factor.",
+        "Incorrect. Micro-averaging is specifically designed for multi-class problems, though it can be applied to binary classification."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "micro-averaging",
+        "multi-class",
+        "class-weighting",
+        "large-classes"
+      ]
+    },
+    {
+      "id": "EVL_067",
+      "question": "What does it indicate when a model has very high training accuracy but low test accuracy?",
+      "options": [
+        "The model is well-generalized",
+        "The model is overfitting",
+        "The model is underfitting",
+        "The data is corrupted"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High training accuracy combined with low test accuracy is the classic indicator of overfitting, where the model has memorized the training data rather than learning generalizable patterns.",
+      "optionExplanations": [
+        "Incorrect. Well-generalized models show similar performance on training and test sets.",
+        "Correct. This performance gap indicates the model has overfit to the training data and doesn't generalize to new data.",
+        "Incorrect. Underfitting would show poor performance on both training and test sets.",
+        "Incorrect. While data issues could cause problems, this pattern specifically indicates overfitting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "training-accuracy",
+        "test-accuracy",
+        "generalization"
+      ]
+    },
+    {
+      "id": "EVL_068",
+      "question": "What is the purpose of using stratified sampling in train-test splits?",
+      "options": [
+        "To ensure equal sample sizes in train and test sets",
+        "To maintain class distribution proportions",
+        "To randomly shuffle the data",
+        "To reduce computational time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stratified sampling ensures that the proportion of samples from each class is approximately the same in both training and test sets as in the original dataset.",
+      "optionExplanations": [
+        "Incorrect. Stratified sampling maintains class proportions, not necessarily equal sample sizes between train/test.",
+        "Correct. Stratified sampling preserves the original class distribution in both training and test sets.",
+        "Incorrect. Random shuffling is a separate data preprocessing step, not the purpose of stratified sampling.",
+        "Incorrect. Stratified sampling is about representative sampling, not computational efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-sampling",
+        "train-test-split",
+        "class-distribution",
+        "representative-sampling"
+      ]
+    },
+    {
+      "id": "EVL_069",
+      "question": "What is the main benefit of using group k-fold cross-validation?",
+      "options": [
+        "It's faster than regular k-fold",
+        "It prevents data leakage when samples are grouped",
+        "It works better with numerical features",
+        "It automatically balances classes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Group k-fold cross-validation ensures that samples from the same group (e.g., same patient, same time series) don't appear in both training and validation sets, preventing data leakage.",
+      "optionExplanations": [
+        "Incorrect. Group k-fold doesn't improve computational speed; it addresses data leakage concerns.",
+        "Correct. Group k-fold prevents leakage by keeping related samples together in the same fold, maintaining independence between train and test sets.",
+        "Incorrect. The benefit isn't related to feature types but to sample dependencies.",
+        "Incorrect. Group k-fold addresses sample dependencies, not class imbalance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "group-k-fold",
+        "data-leakage",
+        "sample-dependencies",
+        "independence"
+      ]
+    },
+    {
+      "id": "EVL_070",
+      "question": "What does the silhouette score measure in clustering evaluation?",
+      "options": [
+        "Classification accuracy",
+        "How well-separated clusters are",
+        "Regression model fit",
+        "Feature importance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The silhouette score measures how similar a sample is to its own cluster compared to other clusters, indicating cluster separation quality.",
+      "optionExplanations": [
+        "Incorrect. Silhouette score is for clustering evaluation, not classification accuracy.",
+        "Correct. Silhouette score measures cluster cohesion and separation, with values closer to 1 indicating better clustering.",
+        "Incorrect. Silhouette score is used for clustering, not regression evaluation.",
+        "Incorrect. Silhouette score evaluates clustering quality, not feature importance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "silhouette-score",
+        "clustering-evaluation",
+        "cluster-separation",
+        "unsupervised"
+      ]
+    },
+    {
+      "id": "EVL_071",
+      "question": "What is the key advantage of using nested cross-validation over regular cross-validation?",
+      "options": [
+        "It's computationally faster",
+        "It provides unbiased performance estimates when hyperparameter tuning is involved",
+        "It works better with small datasets",
+        "It automatically selects features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Nested CV uses an outer loop for performance estimation and inner loop for hyperparameter tuning, preventing the performance estimate from being biased by the hyperparameter optimization process.",
+      "optionExplanations": [
+        "Incorrect. Nested CV is computationally more expensive due to the double cross-validation loops.",
+        "Correct. Nested CV separates hyperparameter tuning from performance estimation, providing unbiased estimates of model performance.",
+        "Incorrect. The advantage isn't specifically related to dataset size but to preventing optimization bias.",
+        "Incorrect. While nested CV can incorporate feature selection, its main advantage is unbiased performance estimation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "nested-cross-validation",
+        "hyperparameter-tuning",
+        "unbiased-estimation",
+        "optimization-bias"
+      ]
+    },
+    {
+      "id": "EVL_072",
+      "question": "What does the term 'positive predictive value' refer to?",
+      "options": [
+        "Sensitivity",
+        "Specificity",
+        "Precision",
+        "Recall"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Positive predictive value (PPV) is another term for precision, measuring the proportion of positive predictions that are actually correct.",
+      "optionExplanations": [
+        "Incorrect. Sensitivity is the true positive rate, also known as recall.",
+        "Incorrect. Specificity is the true negative rate.",
+        "Correct. Positive predictive value equals precision: TP/(TP+FP), the accuracy of positive predictions.",
+        "Incorrect. Recall is the same as sensitivity, not positive predictive value."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "positive-predictive-value",
+        "precision",
+        "PPV",
+        "classification-metrics"
+      ]
+    },
+    {
+      "id": "EVL_073",
+      "question": "What is the purpose of using bootstrap confidence intervals in model evaluation?",
+      "options": [
+        "To improve model accuracy",
+        "To estimate uncertainty in performance metrics",
+        "To select optimal features",
+        "To reduce overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bootstrap confidence intervals provide a range estimate for performance metrics by resampling the test data, quantifying uncertainty in the performance measurement.",
+      "optionExplanations": [
+        "Incorrect. Bootstrap confidence intervals estimate uncertainty in evaluation, they don't improve accuracy.",
+        "Correct. Bootstrap resampling creates multiple samples to estimate the distribution and confidence intervals of performance metrics.",
+        "Incorrect. Bootstrap confidence intervals are for uncertainty estimation, not feature selection.",
+        "Incorrect. Bootstrap confidence intervals are an evaluation technique, not a method to reduce overfitting."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bootstrap-confidence-intervals",
+        "uncertainty-estimation",
+        "resampling",
+        "performance-metrics"
+      ]
+    },
+    {
+      "id": "EVL_074",
+      "question": "What does the negative predictive value (NPV) measure?",
+      "options": [
+        "The proportion of negative predictions that are correct",
+        "The proportion of actual negatives correctly identified",
+        "The proportion of positive predictions that are correct",
+        "The proportion of actual positives correctly identified"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Negative predictive value (NPV) measures the proportion of negative predictions that are actually correct, calculated as TN/(TN+FN).",
+      "optionExplanations": [
+        "Correct. NPV = TN/(TN+FN), measuring how many negative predictions are actually true negatives.",
+        "Incorrect. This describes specificity (true negative rate), not NPV.",
+        "Incorrect. This describes precision (positive predictive value), not NPV.",
+        "Incorrect. This describes recall (sensitivity), not NPV."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "negative-predictive-value",
+        "NPV",
+        "classification-metrics",
+        "prediction-accuracy"
+      ]
+    },
+    {
+      "id": "EVL_075",
+      "question": "What is the main limitation of using R-squared for model evaluation?",
+      "options": [
+        "It only works for classification problems",
+        "It can be artificially inflated by adding more features",
+        "It's computationally expensive",
+        "It requires balanced datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "R-squared can be artificially inflated by adding more features to the model, even if those features don't improve the model's predictive ability on new data.",
+      "optionExplanations": [
+        "Incorrect. R-squared is specifically used for regression problems, not classification.",
+        "Correct. R-squared tends to increase with more features, even irrelevant ones, which is why adjusted R-squared is often preferred.",
+        "Incorrect. R-squared is computationally simple to calculate.",
+        "Incorrect. R-squared doesn't require balanced datasets; it's used for continuous target variables in regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "R-squared",
+        "feature-inflation",
+        "regression-evaluation",
+        "limitations"
+      ]
+    },
+    {
+      "id": "EVL_076",
+      "question": "What is the difference between micro and macro averaging for precision in multi-class problems?",
+      "options": [
+        "Micro calculates precision globally, macro averages per-class precisions",
+        "Macro calculates precision globally, micro averages per-class precisions",
+        "They are exactly the same",
+        "Micro is for binary, macro is for multi-class"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Micro-averaging calculates precision globally by summing all true positives and false positives across classes, while macro-averaging calculates precision for each class separately and then averages them.",
+      "optionExplanations": [
+        "Correct. Micro-averaging: precision = (ΣTP)/(ΣTP + ΣFP). Macro-averaging: precision = average of per-class precisions.",
+        "Incorrect. This reverses the definitions of micro and macro averaging.",
+        "Incorrect. Micro and macro averaging can produce different results, especially with class imbalance.",
+        "Incorrect. Both can be applied to multi-class problems; the difference is in the calculation method."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "micro-averaging",
+        "macro-averaging",
+        "precision",
+        "multi-class"
+      ]
+    },
+    {
+      "id": "EVL_077",
+      "question": "What does a ROC-AUC score of 1.0 indicate?",
+      "options": [
+        "Random performance",
+        "Perfect classification",
+        "Worst possible performance",
+        "Balanced dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A ROC-AUC score of 1.0 indicates perfect classification performance, where the model can perfectly distinguish between positive and negative classes at some threshold.",
+      "optionExplanations": [
+        "Incorrect. Random performance corresponds to ROC-AUC = 0.5.",
+        "Correct. ROC-AUC = 1.0 means perfect separation between classes, with 100% true positive rate and 0% false positive rate.",
+        "Incorrect. The worst possible performance would be ROC-AUC = 0.0 (though this can be inverted).",
+        "Incorrect. ROC-AUC measures discriminative ability, not dataset balance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ROC-AUC",
+        "perfect-classification",
+        "performance-interpretation",
+        "score-interpretation"
+      ]
+    },
+    {
+      "id": "EVL_078",
+      "question": "What is the purpose of using multiple random seeds in model evaluation?",
+      "options": [
+        "To improve model accuracy",
+        "To assess result stability and reduce variance in estimates",
+        "To speed up computation",
+        "To automatically tune hyperparameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using multiple random seeds helps assess the stability of results and provides more robust performance estimates by reducing the variance that comes from random initialization.",
+      "optionExplanations": [
+        "Incorrect. Multiple seeds don't improve accuracy; they help assess the reliability of performance estimates.",
+        "Correct. Multiple seeds show how much performance varies due to randomness, providing more reliable and stable evaluation results.",
+        "Incorrect. Using multiple seeds increases computation time rather than speeding it up.",
+        "Incorrect. Multiple seeds are for evaluation robustness, not hyperparameter tuning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "random-seeds",
+        "result-stability",
+        "variance-reduction",
+        "robust-evaluation"
+      ]
+    },
+    {
+      "id": "EVL_079",
+      "question": "What does the adjusted R-squared metric address?",
+      "options": [
+        "Class imbalance in classification",
+        "The tendency of R-squared to increase with more features",
+        "Computational efficiency",
+        "Non-linear relationships"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adjusted R-squared penalizes the addition of features that don't improve the model's explanatory power, addressing the limitation that regular R-squared always increases with more features.",
+      "optionExplanations": [
+        "Incorrect. Adjusted R-squared is for regression problems, not classification with class imbalance.",
+        "Correct. Adjusted R-squared includes a penalty term for the number of features, preventing artificial inflation from irrelevant features.",
+        "Incorrect. Adjusted R-squared addresses statistical issues, not computational efficiency.",
+        "Incorrect. Adjusted R-squared doesn't specifically address non-linearity; it addresses feature quantity effects."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adjusted-R-squared",
+        "feature-penalty",
+        "regression-evaluation",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "EVL_080",
+      "question": "What is the main advantage of using the F-beta score over the F1-score?",
+      "options": [
+        "It's faster to compute",
+        "It allows weighting the importance of precision vs recall",
+        "It works better with imbalanced datasets",
+        "It provides confidence intervals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The F-beta score allows you to weight the relative importance of precision and recall through the beta parameter, while F1-score treats them equally.",
+      "optionExplanations": [
+        "Incorrect. F-beta and F1 have similar computational complexity.",
+        "Correct. F-beta score: (1+β²) × (precision×recall) / (β²×precision + recall), where β controls the precision-recall trade-off.",
+        "Incorrect. Both F-beta and F1 can be used with imbalanced datasets; the advantage is in weighting flexibility.",
+        "Incorrect. F-beta score doesn't inherently provide confidence intervals."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "F-beta-score",
+        "precision-recall-weighting",
+        "customizable-metrics",
+        "beta-parameter"
+      ]
+    },
+    {
+      "id": "EVL_081",
+      "question": "What does it mean when a learning curve shows high training score but plateauing validation score?",
+      "options": [
+        "The model needs more complex features",
+        "The model is likely overfitting and won't benefit much from more data",
+        "The model is underfitting",
+        "The validation set is too small"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When training performance is high but validation performance plateaus despite increasing data size, it suggests the model is overfitting and additional data alone won't help.",
+      "optionExplanations": [
+        "Incorrect. The issue isn't feature complexity but model overfitting to training patterns.",
+        "Correct. A persistent gap between high training and plateauing validation scores indicates overfitting that more data won't solve.",
+        "Incorrect. Underfitting would show poor performance on both training and validation sets.",
+        "Incorrect. The pattern suggests overfitting rather than validation set size issues."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "learning-curve",
+        "overfitting",
+        "training-validation-gap",
+        "data-utility"
+      ]
+    },
+    {
+      "id": "EVL_082",
+      "question": "What is the purpose of using permutation feature importance in model evaluation?",
+      "options": [
+        "To speed up model training",
+        "To measure how much model performance degrades when each feature is randomly shuffled",
+        "To select the optimal number of features",
+        "To balance the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Permutation feature importance measures the decrease in model performance when a feature's values are randomly shuffled, indicating how much the model relies on that feature.",
+      "optionExplanations": [
+        "Incorrect. Permutation importance is computed after training for evaluation, not to speed up training.",
+        "Correct. By shuffling feature values and measuring performance drop, permutation importance quantifies each feature's contribution to model performance.",
+        "Incorrect. While it can inform feature selection, its primary purpose is measuring individual feature importance.",
+        "Incorrect. Permutation importance doesn't address dataset balance; it measures feature contributions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "permutation-importance",
+        "feature-importance",
+        "model-interpretation",
+        "performance-degradation"
+      ]
+    },
+    {
+      "id": "EVL_083",
+      "question": "What is the key difference between Type I and Type II errors in the context of statistical hypothesis testing?",
+      "options": [
+        "Type I errors occur in training, Type II in testing",
+        "Type I is rejecting a true null hypothesis, Type II is accepting a false null hypothesis",
+        "Type I affects precision, Type II affects recall",
+        "Type I is for classification, Type II is for regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Type I error (α) occurs when rejecting a true null hypothesis (false positive), while Type II error (β) occurs when failing to reject a false null hypothesis (false negative).",
+      "optionExplanations": [
+        "Incorrect. Both error types relate to hypothesis testing, not training/testing phases.",
+        "Correct. Type I: rejecting H₀ when it's true (false positive). Type II: accepting H₀ when it's false (false negative).",
+        "Incorrect. While related to false positives/negatives, the errors are defined in terms of hypothesis testing, not classification metrics.",
+        "Incorrect. Both error types apply to hypothesis testing in general, not specific problem types."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Type-I-error",
+        "Type-II-error",
+        "hypothesis-testing",
+        "statistical-errors"
+      ]
+    },
+    {
+      "id": "EVL_084",
+      "question": "What does the concordance index (C-index) measure?",
+      "options": [
+        "Classification accuracy",
+        "The proportion of correctly ordered pairs in ranking problems",
+        "Feature correlation",
+        "Model training time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The concordance index measures the proportion of pairs where the model correctly orders the outcomes, commonly used in survival analysis and ranking problems.",
+      "optionExplanations": [
+        "Incorrect. C-index is used for ranking/survival problems, not simple classification accuracy.",
+        "Correct. C-index evaluates how well the model ranks pairs of observations according to their predicted outcomes.",
+        "Incorrect. C-index measures model performance, not feature relationships.",
+        "Incorrect. C-index is a performance metric, not a measure of computational efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "concordance-index",
+        "ranking-problems",
+        "survival-analysis",
+        "pairwise-comparison"
+      ]
+    },
+    {
+      "id": "EVL_085",
+      "question": "What is the main purpose of using out-of-bag (OOB) error in ensemble methods?",
+      "options": [
+        "To speed up training",
+        "To estimate model performance without a separate validation set",
+        "To select optimal features",
+        "To balance classes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Out-of-bag error uses the samples not selected during bootstrap sampling to evaluate each tree in the ensemble, providing a performance estimate without needing a separate validation set.",
+      "optionExplanations": [
+        "Incorrect. OOB error is computed during training but doesn't speed up the training process.",
+        "Correct. OOB error leverages the bootstrap sampling process to get 'free' validation data for performance estimation.",
+        "Incorrect. While OOB can inform feature selection, its primary purpose is performance estimation.",
+        "Incorrect. OOB error is about performance evaluation, not addressing class imbalance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "out-of-bag-error",
+        "ensemble-methods",
+        "bootstrap-sampling",
+        "validation-free"
+      ]
+    },
+    {
+      "id": "EVL_086",
+      "question": "What does cross-entropy loss penalize more heavily?",
+      "options": [
+        "Correct predictions with high confidence",
+        "Incorrect predictions with high confidence",
+        "Uncertain predictions",
+        "Balanced predictions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-entropy loss penalizes confident wrong predictions much more heavily than uncertain wrong predictions, encouraging the model to be calibrated in its confidence.",
+      "optionExplanations": [
+        "Incorrect. Cross-entropy gives low loss to correct confident predictions.",
+        "Correct. The logarithmic penalty in cross-entropy heavily penalizes confident wrong predictions (predictions far from the truth).",
+        "Incorrect. Uncertain predictions (around 0.5 probability) receive moderate penalties.",
+        "Incorrect. Cross-entropy doesn't specifically target balanced predictions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-entropy-loss",
+        "confident-predictions",
+        "penalty-function",
+        "calibration"
+      ]
+    },
+    {
+      "id": "EVL_087",
+      "question": "What is the primary goal of model calibration?",
+      "options": [
+        "To improve classification accuracy",
+        "To ensure predicted probabilities match observed frequencies",
+        "To reduce model complexity",
+        "To speed up inference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model calibration ensures that predicted probabilities are meaningful - if a model predicts 70% probability, it should be correct about 70% of the time for similar predictions.",
+      "optionExplanations": [
+        "Incorrect. Calibration improves probability reliability, not necessarily accuracy.",
+        "Correct. A well-calibrated model's predicted probabilities match the actual frequency of positive outcomes.",
+        "Incorrect. Calibration is about probability accuracy, not model complexity.",
+        "Incorrect. Calibration focuses on probability quality, not computational speed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-calibration",
+        "probability-reliability",
+        "predicted-frequencies",
+        "confidence-accuracy"
+      ]
+    },
+    {
+      "id": "EVL_088",
+      "question": "What does the Hosmer-Lemeshow test evaluate?",
+      "options": [
+        "Feature importance",
+        "Model calibration goodness of fit",
+        "Cross-validation effectiveness",
+        "Training convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Hosmer-Lemeshow test evaluates whether predicted probabilities match observed frequencies across different probability ranges, testing model calibration.",
+      "optionExplanations": [
+        "Incorrect. Hosmer-Lemeshow tests calibration, not feature importance.",
+        "Correct. The test divides predictions into groups and compares predicted vs. observed frequencies to assess calibration quality.",
+        "Incorrect. The test evaluates model calibration, not cross-validation methodology.",
+        "Incorrect. The test is about probability calibration, not training convergence."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Hosmer-Lemeshow-test",
+        "calibration-testing",
+        "goodness-of-fit",
+        "probability-groups"
+      ]
+    },
+    {
+      "id": "EVL_089",
+      "question": "What is the advantage of using area under the precision-recall curve (PR-AUC) for imbalanced datasets?",
+      "options": [
+        "It's computationally faster",
+        "It's more sensitive to performance on the minority class",
+        "It works better with continuous features",
+        "It eliminates the need for stratified sampling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PR-AUC focuses on precision and recall, which are more informative for the minority class in imbalanced datasets, unlike ROC-AUC which can be overly optimistic.",
+      "optionExplanations": [
+        "Incorrect. Computational speed is not the primary advantage of PR-AUC.",
+        "Correct. PR-AUC emphasizes performance on positive predictions, making it more sensitive to minority class performance in imbalanced settings.",
+        "Incorrect. The choice between PR-AUC and ROC-AUC isn't based on feature types.",
+        "Incorrect. PR-AUC is an evaluation metric and doesn't eliminate the need for proper sampling strategies."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PR-AUC",
+        "imbalanced-datasets",
+        "minority-class",
+        "precision-recall-focus"
+      ]
+    },
+    {
+      "id": "EVL_090",
+      "question": "What does a reliability diagram (calibration plot) show?",
+      "options": [
+        "Feature correlations",
+        "Training progress over time",
+        "Predicted probabilities vs actual frequencies",
+        "Model complexity vs performance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A reliability diagram plots predicted probabilities against observed frequencies for different probability bins, visualizing how well-calibrated the model's probability predictions are.",
+      "optionExplanations": [
+        "Incorrect. Reliability diagrams show calibration, not feature relationships.",
+        "Incorrect. These plots show calibration quality, not training dynamics.",
+        "Correct. Reliability diagrams plot predicted probability bins against actual positive frequencies to assess calibration.",
+        "Incorrect. These plots focus on probability calibration, not the complexity-performance trade-off."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "reliability-diagram",
+        "calibration-plot",
+        "predicted-probabilities",
+        "observed-frequencies"
+      ]
+    },
+    {
+      "id": "EVL_091",
+      "question": "What is the purpose of using DeLong's test in model evaluation?",
+      "options": [
+        "To compare two ROC curves statistically",
+        "To test for overfitting",
+        "To select optimal features",
+        "To validate cross-validation results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DeLong's test is a statistical method to compare the AUC values of two ROC curves and determine if the difference is statistically significant.",
+      "optionExplanations": [
+        "Correct. DeLong's test compares AUC values between two models to determine if performance differences are statistically significant.",
+        "Incorrect. DeLong's test compares models, it doesn't directly test for overfitting.",
+        "Incorrect. DeLong's test is for model comparison, not feature selection.",
+        "Incorrect. The test compares model performance, not validation methodology effectiveness."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "DeLong-test",
+        "ROC-comparison",
+        "AUC-comparison",
+        "statistical-testing"
+      ]
+    },
+    {
+      "id": "EVL_092",
+      "question": "What does the term 'concept drift' refer to in model evaluation?",
+      "options": [
+        "Changes in feature importance over time",
+        "Changes in the underlying data distribution that the model was trained on",
+        "Gradual model performance degradation",
+        "Changes in computational requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Concept drift refers to changes in the underlying statistical properties of the target variable or the relationships between features and target over time.",
+      "optionExplanations": [
+        "Incorrect. While feature importance might change due to concept drift, the drift itself refers to distributional changes.",
+        "Correct. Concept drift occurs when the statistical properties of the data generating process change over time.",
+        "Incorrect. Performance degradation might be a symptom of concept drift, but drift refers to the underlying data changes.",
+        "Incorrect. Concept drift is about data distribution changes, not computational aspects."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "concept-drift",
+        "data-distribution",
+        "temporal-changes",
+        "model-degradation"
+      ]
+    },
+    {
+      "id": "EVL_093",
+      "question": "What is the main purpose of using McNemar's test in classification evaluation?",
+      "options": [
+        "To test if two classifiers perform significantly differently",
+        "To evaluate feature importance",
+        "To test for class imbalance",
+        "To validate cross-validation setup"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "McNemar's test is used to determine whether two classification algorithms perform significantly differently on the same dataset by comparing their disagreements.",
+      "optionExplanations": [
+        "Correct. McNemar's test focuses on cases where the two classifiers disagree, testing if one consistently outperforms the other.",
+        "Incorrect. McNemar's test compares classifier performance, not feature importance.",
+        "Incorrect. The test compares classifiers, not dataset characteristics like class balance.",
+        "Incorrect. McNemar's test evaluates classifier differences, not validation methodology."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "McNemar-test",
+        "classifier-comparison",
+        "statistical-significance",
+        "paired-testing"
+      ]
+    },
+    {
+      "id": "EVL_094",
+      "question": "What does the Gini coefficient measure in the context of model evaluation?",
+      "options": [
+        "Feature distribution equality",
+        "Model discriminative power (related to AUC)",
+        "Class balance in the dataset",
+        "Computational efficiency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In model evaluation, the Gini coefficient measures discriminative power and is directly related to AUC: Gini = 2 × AUC - 1.",
+      "optionExplanations": [
+        "Incorrect. In model evaluation context, Gini measures discriminative ability, not feature distributions.",
+        "Correct. Gini coefficient measures how well the model separates classes, with Gini = 2 × AUC - 1.",
+        "Incorrect. Gini in model evaluation measures separation ability, not dataset balance.",
+        "Incorrect. Gini coefficient is a performance metric, not a measure of computational efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Gini-coefficient",
+        "discriminative-power",
+        "AUC-relationship",
+        "separation-measure"
+      ]
+    },
+    {
+      "id": "EVL_095",
+      "question": "What is the primary benefit of using cross-validation over bootstrapping for model evaluation?",
+      "options": [
+        "Cross-validation is always faster",
+        "Cross-validation uses each sample exactly once in each fold",
+        "Cross-validation provides better feature selection",
+        "Cross-validation works better with small datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation ensures each sample is used exactly once for testing in each complete CV cycle, while bootstrapping uses sampling with replacement which may leave some samples out entirely.",
+      "optionExplanations": [
+        "Incorrect. Speed depends on implementation; both methods have similar computational complexity.",
+        "Correct. Cross-validation guarantees each sample appears in exactly one test fold per CV round, providing systematic coverage.",
+        "Incorrect. Both are evaluation methods; feature selection is a separate concern.",
+        "Incorrect. Both methods can work with small datasets, though LOOCV (a CV variant) is often preferred for very small datasets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "bootstrapping",
+        "sample-coverage",
+        "systematic-testing"
+      ]
+    },
+    {
+      "id": "EVL_096",
+      "question": "What does the term 'pessimistic bias' mean in cross-validation?",
+      "options": [
+        "Cross-validation always underestimates true performance",
+        "The model performs worse on validation than training data",
+        "Cross-validation tends to slightly underestimate performance because it uses less training data",
+        "The validation set is biased toward negative outcomes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Pessimistic bias in cross-validation occurs because each fold uses less training data than would be available for the final model, potentially underestimating the performance of a model trained on the full dataset.",
+      "optionExplanations": [
+        "Incorrect. While CV might have pessimistic bias, it doesn't always underestimate performance.",
+        "Incorrect. This describes overfitting, not pessimistic bias specific to CV.",
+        "Correct. CV trains on k-1/k of the data, so performance might be slightly underestimated compared to using all training data.",
+        "Incorrect. Pessimistic bias refers to the training data size effect, not validation set composition."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pessimistic-bias",
+        "cross-validation",
+        "training-data-size",
+        "performance-underestimation"
+      ]
+    },
+    {
+      "id": "EVL_097",
+      "question": "What is the key advantage of using stratified k-fold over regular k-fold for imbalanced datasets?",
+      "options": [
+        "It's computationally more efficient",
+        "It ensures each fold has similar class distributions",
+        "It automatically balances the classes",
+        "It uses fewer folds"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stratified k-fold maintains the proportion of samples from each class in each fold, ensuring that each fold is representative of the overall dataset distribution.",
+      "optionExplanations": [
+        "Incorrect. Stratified k-fold has similar computational complexity to regular k-fold.",
+        "Correct. Stratification ensures each fold maintains approximately the same class proportions as the original dataset.",
+        "Incorrect. Stratification preserves existing proportions; it doesn't artificially balance classes.",
+        "Incorrect. Stratified k-fold uses the same number of folds as regular k-fold; the difference is in sample distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-k-fold",
+        "imbalanced-datasets",
+        "class-distribution",
+        "representative-folds"
+      ]
+    },
+    {
+      "id": "EVL_098",
+      "question": "What does it indicate when both training and validation learning curves plateau at a suboptimal level?",
+      "options": [
+        "The model is overfitting",
+        "The model is underfitting",
+        "The model has perfect performance",
+        "More cross-validation folds are needed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When both training and validation curves plateau at a suboptimal performance level, it indicates the model is too simple to capture the underlying patterns (underfitting).",
+      "optionExplanations": [
+        "Incorrect. Overfitting would show a gap between training and validation performance, not both plateauing.",
+        "Correct. Both curves plateauing at poor performance suggests the model lacks sufficient complexity to learn the data patterns.",
+        "Incorrect. Perfect performance would show high performance levels, not suboptimal plateauing.",
+        "Incorrect. The number of CV folds doesn't affect the fundamental learning capacity shown in learning curves."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-curves",
+        "underfitting",
+        "model-complexity",
+        "performance-plateau"
+      ]
+    },
+    {
+      "id": "EVL_099",
+      "question": "What is the main purpose of using ensemble model evaluation?",
+      "options": [
+        "To reduce computational costs",
+        "To combine multiple models for potentially better and more robust performance",
+        "To simplify model interpretation",
+        "To eliminate the need for cross-validation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble evaluation assesses how well multiple models work together to achieve better performance and robustness than individual models through techniques like voting, averaging, or stacking.",
+      "optionExplanations": [
+        "Incorrect. Ensembles typically increase computational costs due to multiple models.",
+        "Correct. Ensemble evaluation determines how effectively multiple models can be combined to improve overall performance and reduce variance.",
+        "Incorrect. Ensembles generally make interpretation more complex, not simpler.",
+        "Incorrect. Ensembles still require proper validation techniques to assess their combined performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-evaluation",
+        "model-combination",
+        "performance-improvement",
+        "robustness"
+      ]
+    },
+    {
+      "id": "EVL_100",
+      "question": "What is the primary consideration when choosing between different evaluation metrics for a specific machine learning problem?",
+      "options": [
+        "Computational efficiency of the metric",
+        "Alignment with business objectives and cost considerations",
+        "Popularity of the metric in academic literature",
+        "Ease of explanation to non-technical stakeholders"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The most important factor in choosing evaluation metrics is ensuring they align with business objectives and properly reflect the costs and benefits of different types of errors in the specific application context.",
+      "optionExplanations": [
+        "Incorrect. While efficiency matters, it shouldn't be the primary consideration for metric selection.",
+        "Correct. Evaluation metrics should reflect real-world consequences and business priorities to ensure optimization leads to desired outcomes.",
+        "Incorrect. Academic popularity doesn't guarantee appropriateness for a specific business problem.",
+        "Incorrect. While explainability is important, the metric must first be appropriate for the problem context."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "metric-selection",
+        "business-alignment",
+        "cost-considerations",
+        "problem-context"
+      ]
+    }
+  ]
+}

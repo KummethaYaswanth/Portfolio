@@ -1,0 +1,2414 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_LRG",
+  "subtopicName": "Linear Regression",
+  "str": 0.150,
+  "description": "Linear regression is a fundamental statistical method for modeling the relationship between a dependent variable and one or more independent variables using a linear equation. It includes simple and multiple regression, assumptions, evaluation metrics, and regularization techniques.",
+  "questions": [
+    {
+      "id": "LRG_001",
+      "question": "What is the primary goal of linear regression?",
+      "options": [
+        "To find the best linear relationship between dependent and independent variables",
+        "To classify data into different categories",
+        "To cluster similar data points together",
+        "To reduce the dimensionality of the dataset"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Linear regression aims to find the best linear relationship between the dependent variable (target) and independent variables (features) by fitting a line that minimizes the sum of squared residuals.",
+      "optionExplanations": [
+        "Correct. Linear regression models the linear relationship between variables to predict continuous outcomes.",
+        "This describes classification algorithms, not regression which predicts continuous values.",
+        "This describes clustering algorithms like K-means, not regression analysis.",
+        "This describes dimensionality reduction techniques like PCA, not regression modeling."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "basics",
+        "definition",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "LRG_002",
+      "question": "In the equation y = β₀ + β₁x + ε, what does β₀ represent?",
+      "options": [
+        "The slope of the regression line",
+        "The y-intercept of the regression line",
+        "The error term",
+        "The independent variable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "β₀ is the y-intercept, representing the expected value of y when x equals zero. It's where the regression line crosses the y-axis.",
+      "optionExplanations": [
+        "β₁ represents the slope, not β₀. The slope shows how much y changes for a unit change in x.",
+        "Correct. β₀ is the intercept term, the value of y when all independent variables equal zero.",
+        "ε (epsilon) represents the error term or residual, not β₀.",
+        "x represents the independent variable, while β₀ is a parameter of the model."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "equation",
+        "parameters",
+        "intercept"
+      ]
+    },
+    {
+      "id": "LRG_003",
+      "question": "Which assumption of linear regression states that the variance of residuals should be constant across all levels of the independent variable?",
+      "options": [
+        "Linearity",
+        "Independence",
+        "Homoscedasticity",
+        "Normality"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Homoscedasticity assumes that the variance of residuals is constant across all fitted values. Violation leads to heteroscedasticity, affecting the reliability of standard errors.",
+      "optionExplanations": [
+        "Linearity assumes a linear relationship between variables, not constant variance.",
+        "Independence assumes observations are independent of each other, not about variance constancy.",
+        "Correct. Homoscedasticity means constant variance of residuals across all levels of predictors.",
+        "Normality assumes residuals are normally distributed, not about variance being constant."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "assumptions",
+        "homoscedasticity",
+        "variance"
+      ]
+    },
+    {
+      "id": "LRG_004",
+      "question": "What does R-squared measure in linear regression?",
+      "options": [
+        "The correlation between variables",
+        "The proportion of variance in the dependent variable explained by the model",
+        "The average error of predictions",
+        "The significance level of the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "R-squared (coefficient of determination) measures the proportion of variance in the dependent variable that is explained by the independent variables in the model, ranging from 0 to 1.",
+      "optionExplanations": [
+        "Correlation coefficient measures linear association, while R-squared measures explained variance.",
+        "Correct. R-squared indicates how much of the dependent variable's variance is explained by the model.",
+        "Mean Squared Error (MSE) or RMSE measure average prediction error, not R-squared.",
+        "P-values measure statistical significance, not R-squared which measures goodness of fit."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "r-squared",
+        "evaluation",
+        "variance"
+      ]
+    },
+    {
+      "id": "LRG_005",
+      "question": "What is multicollinearity in linear regression?",
+      "options": [
+        "When the dependent variable has multiple values",
+        "When independent variables are highly correlated with each other",
+        "When there are multiple dependent variables",
+        "When the model has multiple regression lines"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multicollinearity occurs when two or more independent variables are highly correlated, making it difficult to determine their individual effects on the dependent variable.",
+      "optionExplanations": [
+        "The dependent variable having multiple values is normal; this doesn't describe multicollinearity.",
+        "Correct. Multicollinearity is high correlation among independent variables, causing estimation problems.",
+        "Multiple dependent variables would be multivariate regression, not multicollinearity.",
+        "A model has one regression equation, not multiple lines; this doesn't describe multicollinearity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multicollinearity",
+        "correlation",
+        "independent variables"
+      ]
+    },
+    {
+      "id": "LRG_006",
+      "question": "Which method is commonly used to estimate the parameters in linear regression?",
+      "options": [
+        "Maximum Likelihood Estimation",
+        "Ordinary Least Squares (OLS)",
+        "Gradient Boosting",
+        "K-Nearest Neighbors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ordinary Least Squares (OLS) is the most common method for estimating linear regression parameters by minimizing the sum of squared residuals.",
+      "optionExplanations": [
+        "While MLE can be used, OLS is the standard and most common method for linear regression.",
+        "Correct. OLS minimizes the sum of squared differences between observed and predicted values.",
+        "Gradient Boosting is an ensemble method, not a parameter estimation technique for linear regression.",
+        "K-NN is a non-parametric algorithm for classification/regression, not for parameter estimation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "OLS",
+        "estimation",
+        "parameters"
+      ]
+    },
+    {
+      "id": "LRG_007",
+      "question": "What is a residual in linear regression?",
+      "options": [
+        "The predicted value of the dependent variable",
+        "The difference between observed and predicted values",
+        "The slope of the regression line",
+        "The correlation coefficient"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A residual is the difference between the observed actual value and the predicted value from the regression model. Residuals are used to assess model fit and check assumptions.",
+      "optionExplanations": [
+        "The predicted value is ŷ, not the residual which is the difference from actual values.",
+        "Correct. Residual = observed value - predicted value, showing prediction error for each observation.",
+        "The slope is the regression coefficient (β₁), not the residual.",
+        "The correlation coefficient measures linear association, not the prediction error."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "residuals",
+        "prediction error",
+        "model fit"
+      ]
+    },
+    {
+      "id": "LRG_008",
+      "question": "Which regularization technique adds a penalty term proportional to the sum of squared coefficients?",
+      "options": [
+        "Lasso Regression",
+        "Ridge Regression",
+        "Elastic Net",
+        "Polynomial Regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ridge regression (L2 regularization) adds a penalty term proportional to the sum of squared coefficients (λΣβ²) to prevent overfitting and handle multicollinearity.",
+      "optionExplanations": [
+        "Lasso uses L1 regularization with absolute values of coefficients, not squared coefficients.",
+        "Correct. Ridge regression uses L2 penalty with sum of squared coefficients to shrink parameters.",
+        "Elastic Net combines both L1 and L2 penalties, not just squared coefficients.",
+        "Polynomial regression adds polynomial terms, not regularization penalties."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ridge regression",
+        "regularization",
+        "L2 penalty"
+      ]
+    },
+    {
+      "id": "LRG_009",
+      "question": "What happens to coefficients in Lasso regression when the regularization parameter (λ) is very high?",
+      "options": [
+        "Coefficients become very large",
+        "Coefficients approach zero or become exactly zero",
+        "Coefficients remain unchanged",
+        "Coefficients become negative"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High λ in Lasso regression forces coefficients to shrink toward zero, with many becoming exactly zero, effectively performing feature selection.",
+      "optionExplanations": [
+        "High λ shrinks coefficients toward zero, not makes them large.",
+        "Correct. High λ in Lasso drives coefficients to zero, performing automatic feature selection.",
+        "High λ significantly affects coefficients by shrinking them, they don't remain unchanged.",
+        "Coefficients shrink toward zero regardless of original sign, not necessarily becoming negative."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lasso regression",
+        "regularization",
+        "feature selection"
+      ]
+    },
+    {
+      "id": "LRG_010",
+      "question": "Which assumption is violated when residuals show a pattern when plotted against fitted values?",
+      "options": [
+        "Independence",
+        "Normality",
+        "Linearity and/or Homoscedasticity",
+        "No multicollinearity"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Patterns in residual plots against fitted values indicate violations of linearity (curved patterns) or homoscedasticity (funnel shapes), suggesting the model doesn't capture the true relationship.",
+      "optionExplanations": [
+        "Independence violations would show patterns in residuals vs. time or order, not fitted values.",
+        "Normality violations are checked with histograms or Q-Q plots of residuals, not residuals vs. fitted.",
+        "Correct. Patterns indicate non-linear relationships or non-constant variance violations.",
+        "Multicollinearity is detected through VIF or correlation matrices, not residual plots."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "assumptions",
+        "residual plots",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "LRG_011",
+      "question": "What is the difference between simple and multiple linear regression?",
+      "options": [
+        "Simple uses one dependent variable, multiple uses several",
+        "Simple uses one independent variable, multiple uses several",
+        "Simple uses linear relationships, multiple uses non-linear",
+        "Simple uses OLS, multiple uses MLE"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Simple linear regression uses one independent variable to predict the dependent variable, while multiple linear regression uses two or more independent variables.",
+      "optionExplanations": [
+        "Both types have one dependent variable; the difference is in the number of independent variables.",
+        "Correct. Simple regression has one predictor, multiple regression has two or more predictors.",
+        "Both assume linear relationships; the difference is not about linearity but number of predictors.",
+        "Both typically use OLS for parameter estimation; the method doesn't distinguish them."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "simple regression",
+        "multiple regression",
+        "independent variables"
+      ]
+    },
+    {
+      "id": "LRG_012",
+      "question": "What does the Variance Inflation Factor (VIF) measure?",
+      "options": [
+        "The variance of residuals",
+        "How much the variance of a coefficient increases due to multicollinearity",
+        "The inflation rate of model predictions",
+        "The variance explained by the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "VIF measures how much the variance of a regression coefficient increases due to collinearity with other predictors. VIF > 10 typically indicates problematic multicollinearity.",
+      "optionExplanations": [
+        "Residual variance is measured by MSE or other error metrics, not VIF.",
+        "Correct. VIF quantifies how multicollinearity inflates the variance of coefficient estimates.",
+        "VIF has nothing to do with economic inflation; it's about statistical variance inflation.",
+        "R-squared measures variance explained by the model, not VIF."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "VIF",
+        "multicollinearity",
+        "variance inflation"
+      ]
+    },
+    {
+      "id": "LRG_013",
+      "question": "In which scenario would you prefer Ridge regression over OLS?",
+      "options": [
+        "When you have very few features",
+        "When you want to remove features completely",
+        "When you have multicollinearity or many features",
+        "When you have a small dataset"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ridge regression is preferred when dealing with multicollinearity or many features because it shrinks coefficients without setting them to zero, stabilizing the model.",
+      "optionExplanations": [
+        "With few features and no multicollinearity, OLS typically performs well without regularization.",
+        "Lasso regression is better for complete feature removal, not Ridge which keeps all features.",
+        "Correct. Ridge handles multicollinearity well and prevents overfitting with many features.",
+        "Small datasets might benefit from regularization, but this alone doesn't necessitate Ridge over OLS."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ridge regression",
+        "multicollinearity",
+        "model selection"
+      ]
+    },
+    {
+      "id": "LRG_014",
+      "question": "What is the mathematical expression for the cost function in ordinary least squares?",
+      "options": [
+        "Σ|yi - ŷi|",
+        "Σ(yi - ŷi)²",
+        "Σ(yi - ŷi)² + λΣβ²",
+        "max|yi - ŷi|"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "OLS minimizes the sum of squared residuals: Σ(yi - ŷi)², where yi is observed and ŷi is predicted value. This is also called the Residual Sum of Squares (RSS).",
+      "optionExplanations": [
+        "This is the L1 norm used in Least Absolute Deviation, not OLS which uses squared errors.",
+        "Correct. OLS minimizes the sum of squared differences between observed and predicted values.",
+        "This includes regularization term (Ridge), but pure OLS doesn't have the λΣβ² penalty term.",
+        "This is the maximum absolute error (Chebyshev norm), not the OLS objective function."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OLS",
+        "cost function",
+        "sum of squares"
+      ]
+    },
+    {
+      "id": "LRG_015",
+      "question": "What does adjusted R-squared account for that R-squared does not?",
+      "options": [
+        "The number of observations in the dataset",
+        "The number of independent variables in the model",
+        "The correlation between variables",
+        "The variance of residuals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adjusted R-squared penalizes the addition of independent variables that don't significantly improve the model, preventing inflation of R-squared by simply adding more variables.",
+      "optionExplanations": [
+        "Both R-squared and adjusted R-squared consider the number of observations in their calculations.",
+        "Correct. Adjusted R-squared penalizes models with more variables, preventing overfitting.",
+        "Neither metric directly accounts for correlation between variables; they measure explained variance.",
+        "Both metrics relate to explained variance, not specifically the variance of residuals."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adjusted r-squared",
+        "model complexity",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "LRG_016",
+      "question": "Which diagnostic plot is most useful for detecting heteroscedasticity?",
+      "options": [
+        "Q-Q plot of residuals",
+        "Histogram of residuals",
+        "Residuals vs. fitted values plot",
+        "Leverage plot"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A residuals vs. fitted values plot shows if variance changes across different levels of fitted values. A funnel shape indicates heteroscedasticity.",
+      "optionExplanations": [
+        "Q-Q plots check normality of residuals, not heteroscedasticity.",
+        "Histograms show the distribution of residuals for normality, not variance consistency.",
+        "Correct. This plot reveals if residual variance changes with fitted values (heteroscedasticity).",
+        "Leverage plots identify influential observations, not heteroscedasticity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "heteroscedasticity",
+        "diagnostic plots",
+        "residuals"
+      ]
+    },
+    {
+      "id": "LRG_017",
+      "question": "What is the primary difference between Ridge and Lasso regression?",
+      "options": [
+        "Ridge uses L1 penalty, Lasso uses L2 penalty",
+        "Ridge uses L2 penalty, Lasso uses L1 penalty",
+        "Ridge is for classification, Lasso is for regression",
+        "Ridge handles categorical variables, Lasso handles numerical"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ridge regression uses L2 penalty (sum of squared coefficients) which shrinks coefficients, while Lasso uses L1 penalty (sum of absolute coefficients) which can zero out coefficients.",
+      "optionExplanations": [
+        "This is backwards; Ridge uses L2 (squared) penalty, Lasso uses L1 (absolute) penalty.",
+        "Correct. Ridge uses L2 regularization, Lasso uses L1 regularization with different effects.",
+        "Both are regression techniques; neither is specifically for classification.",
+        "Both handle the same types of variables; the difference is in the penalty function."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ridge regression",
+        "lasso regression",
+        "regularization"
+      ]
+    },
+    {
+      "id": "LRG_018",
+      "question": "When should you use feature scaling in linear regression?",
+      "options": [
+        "Always, regardless of the algorithm",
+        "Never, it's not necessary for linear regression",
+        "When using regularization techniques like Ridge or Lasso",
+        "Only when you have categorical variables"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Feature scaling is crucial when using regularization because penalties affect all coefficients equally. Without scaling, variables with larger scales would be penalized more heavily.",
+      "optionExplanations": [
+        "Plain OLS doesn't require scaling as it's scale-invariant, so 'always' is too strong.",
+        "This is incorrect; regularized regression definitely benefits from feature scaling.",
+        "Correct. Regularization penalties need scaled features to treat all variables fairly.",
+        "Categorical variables need encoding, not necessarily scaling; scaling is for regularization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature scaling",
+        "regularization",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "LRG_019",
+      "question": "What is the interpretation of a regression coefficient in multiple linear regression?",
+      "options": [
+        "The total effect of the variable on the outcome",
+        "The change in the dependent variable for a one-unit change in the independent variable, holding other variables constant",
+        "The correlation between the variable and the outcome",
+        "The percentage change in the dependent variable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In multiple regression, each coefficient represents the expected change in the dependent variable for a one-unit increase in that independent variable, while holding all other variables constant (ceteris paribus).",
+      "optionExplanations": [
+        "The coefficient shows the partial effect, not total effect, controlling for other variables.",
+        "Correct. Coefficients show partial effects, holding other variables constant.",
+        "Correlation doesn't control for other variables; regression coefficients do.",
+        "This would be true for log-transformed variables, but not for standard linear coefficients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "coefficients",
+        "interpretation",
+        "multiple regression"
+      ]
+    },
+    {
+      "id": "LRG_020",
+      "question": "What is the assumption of independence in linear regression?",
+      "options": [
+        "Independent variables should not be correlated",
+        "Observations should be independent of each other",
+        "The dependent variable should be independent of error terms",
+        "All variables should be independent of time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The independence assumption means that observations should be independent of each other - the value of one observation shouldn't influence another. This is crucial for valid statistical inference.",
+      "optionExplanations": [
+        "This describes the no multicollinearity assumption, not the independence assumption.",
+        "Correct. Observations must be independent; one observation shouldn't influence another.",
+        "This relates to exogeneity, not the independence assumption about observations.",
+        "Variables can change with time; independence refers to observations, not time invariance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "independence",
+        "assumptions",
+        "observations"
+      ]
+    },
+    {
+      "id": "LRG_021",
+      "question": "Which method can be used to detect influential observations in linear regression?",
+      "options": [
+        "Cook's Distance",
+        "R-squared",
+        "VIF",
+        "Durbin-Watson test"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cook's Distance measures how much the regression coefficients change when an observation is removed, helping identify influential points that disproportionately affect the model.",
+      "optionExplanations": [
+        "Correct. Cook's Distance identifies observations with high influence on regression coefficients.",
+        "R-squared measures model fit, not individual observation influence.",
+        "VIF detects multicollinearity among variables, not influential observations.",
+        "Durbin-Watson tests for autocorrelation in residuals, not influential observations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "influential observations",
+        "cook's distance",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "LRG_022",
+      "question": "What does it mean when the p-value of a regression coefficient is less than 0.05?",
+      "options": [
+        "The coefficient is practically significant",
+        "The coefficient is statistically significantly different from zero at 5% level",
+        "The coefficient explains 5% of the variance",
+        "There is a 5% chance the coefficient is correct"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A p-value < 0.05 means we reject the null hypothesis that the coefficient equals zero at the 5% significance level, suggesting the variable has a statistically significant effect.",
+      "optionExplanations": [
+        "P-values indicate statistical significance, not practical significance which depends on effect size.",
+        "Correct. P < 0.05 means the coefficient is statistically significantly different from zero.",
+        "P-values don't directly indicate variance explained; that's measured by R-squared.",
+        "P-values don't give the probability of correctness; they test against the null hypothesis."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "p-value",
+        "statistical significance",
+        "hypothesis testing"
+      ]
+    },
+    {
+      "id": "LRG_023",
+      "question": "What is the purpose of cross-validation in linear regression?",
+      "options": [
+        "To estimate parameters more accurately",
+        "To assess model performance on unseen data",
+        "To detect multicollinearity",
+        "To transform variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation splits data into training and validation sets multiple times to assess how well the model generalizes to unseen data, providing more robust performance estimates.",
+      "optionExplanations": [
+        "Cross-validation evaluates models, it doesn't estimate parameters which is done during training.",
+        "Correct. Cross-validation estimates model performance on unseen data to assess generalization.",
+        "VIF or correlation analysis detects multicollinearity, not cross-validation.",
+        "Data transformation is a preprocessing step, not the purpose of cross-validation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "model evaluation",
+        "generalization"
+      ]
+    },
+    {
+      "id": "LRG_024",
+      "question": "In the context of linear regression, what is meant by 'overfitting'?",
+      "options": [
+        "The model fits the training data too well but performs poorly on new data",
+        "The model doesn't fit the training data well enough",
+        "The model has too few parameters",
+        "The model takes too long to train"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Overfitting occurs when a model learns the training data too specifically, including noise, leading to poor generalization to new, unseen data.",
+      "optionExplanations": [
+        "Correct. Overfitting means excellent training performance but poor generalization to new data.",
+        "This describes underfitting, where the model is too simple to capture the underlying pattern.",
+        "Too few parameters typically leads to underfitting, not overfitting.",
+        "Training time is not related to overfitting, which is about model complexity and generalization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "generalization",
+        "model complexity"
+      ]
+    },
+    {
+      "id": "LRG_025",
+      "question": "Which of the following is NOT a way to address multicollinearity?",
+      "options": [
+        "Remove one of the correlated variables",
+        "Use Ridge regression",
+        "Apply Principal Component Analysis",
+        "Increase the sample size significantly"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "While increasing sample size can help with many statistical issues, it doesn't address the fundamental problem of multicollinearity, which is about relationships between variables.",
+      "optionExplanations": [
+        "Removing correlated variables is a direct way to address multicollinearity.",
+        "Ridge regression handles multicollinearity by shrinking coefficients proportionally.",
+        "PCA creates uncorrelated components, effectively addressing multicollinearity.",
+        "Correct. Increasing sample size doesn't solve the correlation between variables problem."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multicollinearity",
+        "solutions",
+        "sample size"
+      ]
+    },
+    {
+      "id": "LRG_026",
+      "question": "What is the relationship between R-squared and the correlation coefficient in simple linear regression?",
+      "options": [
+        "R-squared equals the correlation coefficient",
+        "R-squared equals the square of the correlation coefficient",
+        "R-squared equals twice the correlation coefficient",
+        "There is no relationship between them"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In simple linear regression, R-squared equals the square of the Pearson correlation coefficient (r²), representing the proportion of variance explained.",
+      "optionExplanations": [
+        "R-squared equals r², not r. The correlation coefficient can be negative, but R-squared is always positive.",
+        "Correct. In simple regression, R² = r², where r is the correlation coefficient.",
+        "R-squared is not twice the correlation; it's the square of the correlation coefficient.",
+        "There is a direct mathematical relationship: R-squared equals the squared correlation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "r-squared",
+        "correlation",
+        "simple regression"
+      ]
+    },
+    {
+      "id": "LRG_027",
+      "question": "What is the primary advantage of using Elastic Net regression?",
+      "options": [
+        "It's faster than other methods",
+        "It combines the benefits of both Ridge and Lasso regression",
+        "It doesn't require feature scaling",
+        "It can handle non-linear relationships"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Elastic Net combines L1 (Lasso) and L2 (Ridge) penalties, getting both feature selection from Lasso and the stability of Ridge when dealing with correlated features.",
+      "optionExplanations": [
+        "Elastic Net is not necessarily faster; it combines regularization techniques for better performance.",
+        "Correct. Elastic Net uses both L1 and L2 penalties, combining benefits of Ridge and Lasso.",
+        "Like other regularized methods, Elastic Net benefits from feature scaling for fair penalization.",
+        "Elastic Net is still linear; it doesn't handle non-linear relationships without feature engineering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "elastic net",
+        "regularization",
+        "combined penalties"
+      ]
+    },
+    {
+      "id": "LRG_028",
+      "question": "What does the Durbin-Watson test check for in linear regression?",
+      "options": [
+        "Multicollinearity",
+        "Heteroscedasticity",
+        "Autocorrelation in residuals",
+        "Normality of residuals"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Durbin-Watson test detects autocorrelation in residuals, particularly important for time series data where consecutive observations might be correlated.",
+      "optionExplanations": [
+        "VIF or correlation matrices test for multicollinearity, not the Durbin-Watson test.",
+        "Breusch-Pagan or White tests check for heteroscedasticity, not Durbin-Watson.",
+        "Correct. Durbin-Watson tests for first-order autocorrelation in regression residuals.",
+        "Shapiro-Wilk or Kolmogorov-Smirnov tests check normality, not Durbin-Watson."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "durbin-watson",
+        "autocorrelation",
+        "residuals"
+      ]
+    },
+    {
+      "id": "LRG_029",
+      "question": "In Ridge regression, what happens to the coefficients as the regularization parameter λ approaches infinity?",
+      "options": [
+        "Coefficients approach infinity",
+        "Coefficients approach zero",
+        "Coefficients remain unchanged",
+        "Coefficients become negative"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As λ increases toward infinity in Ridge regression, the penalty term dominates, forcing all coefficients to shrink toward zero (but never exactly zero).",
+      "optionExplanations": [
+        "High λ shrinks coefficients toward zero, not infinity.",
+        "Correct. Large λ in Ridge regression shrinks all coefficients toward zero.",
+        "High λ significantly affects coefficients by shrinking them toward zero.",
+        "Coefficients shrink toward zero regardless of their original sign."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ridge regression",
+        "regularization parameter",
+        "coefficient shrinkage"
+      ]
+    },
+    {
+      "id": "LRG_030",
+      "question": "Which assumption is tested using a Q-Q (quantile-quantile) plot?",
+      "options": [
+        "Linearity",
+        "Independence",
+        "Homoscedasticity",
+        "Normality of residuals"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Q-Q plots compare the distribution of residuals against a theoretical normal distribution. Points following a straight line indicate normality.",
+      "optionExplanations": [
+        "Linearity is checked with scatterplots of variables, not Q-Q plots.",
+        "Independence is assessed through study design and temporal plots, not Q-Q plots.",
+        "Homoscedasticity is checked with residuals vs. fitted plots, not Q-Q plots.",
+        "Correct. Q-Q plots test whether residuals follow a normal distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "qq plot",
+        "normality",
+        "residuals"
+      ]
+    },
+    {
+      "id": "LRG_031",
+      "question": "What is the purpose of regularization in linear regression?",
+      "options": [
+        "To speed up computation",
+        "To prevent overfitting and improve generalization",
+        "To increase model complexity",
+        "To handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization adds penalty terms to the loss function to prevent overfitting by constraining model complexity, leading to better generalization to new data.",
+      "optionExplanations": [
+        "Regularization may slow computation due to additional penalty terms, not speed it up.",
+        "Correct. Regularization prevents overfitting by penalizing complex models, improving generalization.",
+        "Regularization reduces effective model complexity by constraining parameters, not increasing it.",
+        "Imputation methods handle missing values, not regularization which addresses overfitting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "LRG_032",
+      "question": "What is heteroscedasticity and why is it problematic?",
+      "options": [
+        "Non-constant variance of residuals; it makes coefficient estimates unreliable",
+        "High correlation between variables; it causes multicollinearity",
+        "Non-normal distribution of residuals; it affects hypothesis tests",
+        "Missing values in the dataset; it reduces sample size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Heteroscedasticity means non-constant variance of residuals across fitted values, making standard errors unreliable and affecting the validity of confidence intervals and hypothesis tests.",
+      "optionExplanations": [
+        "Correct. Heteroscedasticity is non-constant residual variance, making standard errors unreliable.",
+        "This describes multicollinearity, not heteroscedasticity which is about variance patterns.",
+        "This describes non-normality, not heteroscedasticity which is about variance constancy.",
+        "This describes missing data problems, not heteroscedasticity which is about error variance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "heteroscedasticity",
+        "variance",
+        "standard errors"
+      ]
+    },
+    {
+      "id": "LRG_033",
+      "question": "In feature selection for linear regression, what is forward selection?",
+      "options": [
+        "Starting with all features and removing them one by one",
+        "Starting with no features and adding them one by one based on significance",
+        "Randomly selecting features to include",
+        "Using only the most correlated features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forward selection starts with no variables and iteratively adds variables that most improve the model (typically based on statistical significance or information criteria).",
+      "optionExplanations": [
+        "This describes backward elimination, not forward selection.",
+        "Correct. Forward selection starts empty and adds variables that improve the model most.",
+        "Random selection doesn't follow the systematic approach of forward selection.",
+        "Correlation-based selection is different; forward selection uses model improvement criteria."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forward selection",
+        "feature selection",
+        "stepwise"
+      ]
+    },
+    {
+      "id": "LRG_034",
+      "question": "What is the interpretation of a 95% confidence interval for a regression coefficient?",
+      "options": [
+        "95% of the data points fall within this interval",
+        "There's a 95% probability the true coefficient lies within this interval",
+        "If we repeated the sampling process many times, 95% of such intervals would contain the true coefficient",
+        "The coefficient will be within this interval 95% of the time"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A 95% confidence interval means that if we repeated the entire sampling and analysis process many times, 95% of the resulting confidence intervals would contain the true population parameter.",
+      "optionExplanations": [
+        "Confidence intervals are for parameters, not data points; this describes prediction intervals.",
+        "This is a common misconception; the true coefficient is fixed, not random.",
+        "Correct. Confidence intervals have this frequentist interpretation about repeated sampling.",
+        "The coefficient is a fixed unknown value; the interval either contains it or doesn't."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "confidence interval",
+        "interpretation",
+        "statistical inference"
+      ]
+    },
+    {
+      "id": "LRG_035",
+      "question": "What is the difference between prediction and confidence intervals?",
+      "options": [
+        "There is no difference, they are the same",
+        "Prediction intervals are for individual predictions, confidence intervals are for mean response",
+        "Confidence intervals are wider than prediction intervals",
+        "Prediction intervals are only used in classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prediction intervals estimate where individual future observations will fall, while confidence intervals estimate where the mean response will fall. Prediction intervals are wider because they include additional uncertainty.",
+      "optionExplanations": [
+        "These are different concepts: prediction intervals for individuals, confidence intervals for means.",
+        "Correct. Prediction intervals are for individual values, confidence intervals for mean values.",
+        "Actually, prediction intervals are wider than confidence intervals due to additional uncertainty.",
+        "Both are used in regression; prediction intervals aren't specific to classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prediction interval",
+        "confidence interval",
+        "uncertainty"
+      ]
+    },
+    {
+      "id": "LRG_036",
+      "question": "What is the leverage of an observation in linear regression?",
+      "options": [
+        "The residual value of the observation",
+        "How much the observation influences the fitted values",
+        "The distance from the regression line",
+        "The correlation with other observations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Leverage measures how much an observation's x-values deviate from the mean of x-values, indicating its potential influence on the regression line's position.",
+      "optionExplanations": [
+        "Residuals measure prediction error, not leverage which measures influence potential.",
+        "Correct. Leverage measures how much an observation could influence the fitted values.",
+        "Distance from the line is the residual; leverage is about x-value extremeness.",
+        "Leverage is about individual observation influence, not correlation with other observations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "leverage",
+        "influence",
+        "outliers"
+      ]
+    },
+    {
+      "id": "LRG_037",
+      "question": "Which statement about outliers in linear regression is correct?",
+      "options": [
+        "All outliers should always be removed from the dataset",
+        "Outliers only affect the intercept, not the slope",
+        "High leverage points are always outliers",
+        "Outliers can be influential but don't have to be removed without investigation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Outliers should be investigated to understand their cause. They might represent important information, data errors, or unusual but valid observations. Removal should be justified, not automatic.",
+      "optionExplanations": [
+        "Automatic removal is wrong; outliers might contain valuable information and should be investigated.",
+        "Outliers can affect both intercept and slope, especially if they have high leverage.",
+        "High leverage means potential influence, but the point might not be an outlier in y-direction.",
+        "Correct. Outliers need investigation; they might be errors or important edge cases."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "outliers",
+        "influential points",
+        "data cleaning"
+      ]
+    },
+    {
+      "id": "LRG_038",
+      "question": "What is the purpose of standardizing coefficients in multiple regression?",
+      "options": [
+        "To make all coefficients positive",
+        "To compare the relative importance of different variables",
+        "To improve the model's R-squared",
+        "To eliminate multicollinearity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standardized coefficients (beta coefficients) allow comparison of the relative importance of variables measured in different units by expressing effects in standard deviation units.",
+      "optionExplanations": [
+        "Standardization doesn't change the sign of coefficients, just their scale.",
+        "Correct. Standardized coefficients enable comparison of variable importance across different scales.",
+        "Standardization doesn't change R-squared, just the coefficient interpretations.",
+        "Standardization doesn't eliminate multicollinearity, which is about variable relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standardized coefficients",
+        "variable importance",
+        "comparison"
+      ]
+    },
+    {
+      "id": "LRG_039",
+      "question": "What is the assumption of linearity in linear regression?",
+      "options": [
+        "All variables must be continuous",
+        "The relationship between dependent and independent variables is linear",
+        "The regression line must pass through the origin",
+        "All coefficients must be positive"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The linearity assumption means the relationship between the dependent variable and independent variables can be adequately described by a linear combination of the predictors.",
+      "optionExplanations": [
+        "Variables can be continuous or categorical (properly encoded); linearity is about relationships.",
+        "Correct. Linearity assumes the relationship can be modeled as a linear combination of predictors.",
+        "The intercept allows the line to not pass through origin; this isn't required for linearity.",
+        "Coefficients can be positive, negative, or zero; their sign doesn't affect linearity."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "linearity",
+        "assumptions",
+        "relationships"
+      ]
+    },
+    {
+      "id": "LRG_040",
+      "question": "What is the difference between Type I and Type II errors in hypothesis testing for regression coefficients?",
+      "options": [
+        "Type I is rejecting a true null hypothesis, Type II is accepting a false null hypothesis",
+        "Type I is accepting a false null hypothesis, Type II is rejecting a true null hypothesis",
+        "Type I errors are more serious than Type II errors",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Type I error (false positive) occurs when we reject a true null hypothesis (claiming significance when there isn't any). Type II error (false negative) occurs when we fail to reject a false null hypothesis.",
+      "optionExplanations": [
+        "Correct. Type I is false positive (rejecting true null), Type II is false negative (accepting false null).",
+        "This reverses the definitions; Type I is rejecting true null, Type II is accepting false null.",
+        "Both errors are important; their relative seriousness depends on the context and consequences.",
+        "These are distinctly different types of errors with different consequences."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "type I error",
+        "type II error",
+        "hypothesis testing"
+      ]
+    },
+    {
+      "id": "LRG_041",
+      "question": "In the context of linear regression, what is meant by 'degrees of freedom'?",
+      "options": [
+        "The number of independent variables in the model",
+        "The number of observations minus the number of parameters estimated",
+        "The number of observations in the dataset",
+        "The number of assumptions that can be violated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Degrees of freedom for error in regression equals the number of observations minus the number of parameters estimated (including intercept), representing the information available for estimating error variance.",
+      "optionExplanations": [
+        "This is just the number of predictors, not degrees of freedom which accounts for sample size.",
+        "Correct. Degrees of freedom = n - p, where n is observations and p is parameters.",
+        "This is just sample size; degrees of freedom account for parameters estimated.",
+        "Degrees of freedom is a statistical concept about available information, not assumption violations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "degrees of freedom",
+        "parameters",
+        "statistical inference"
+      ]
+    },
+    {
+      "id": "LRG_042",
+      "question": "What is the purpose of the F-test in linear regression?",
+      "options": [
+        "To test individual coefficient significance",
+        "To test the overall significance of the regression model",
+        "To test for normality of residuals",
+        "To test for multicollinearity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The F-test in regression tests the null hypothesis that all regression coefficients (except intercept) are zero, assessing whether the model as a whole is statistically significant.",
+      "optionExplanations": [
+        "T-tests examine individual coefficient significance, not the F-test which tests overall model.",
+        "Correct. The F-test evaluates whether the entire regression model is statistically significant.",
+        "Shapiro-Wilk or other tests check normality, not the F-test which tests model significance.",
+        "VIF or other methods detect multicollinearity, not the F-test."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "f-test",
+        "model significance",
+        "hypothesis testing"
+      ]
+    },
+    {
+      "id": "LRG_043",
+      "question": "What happens when you include an irrelevant variable in a linear regression model?",
+      "options": [
+        "It always improves the model's performance",
+        "It increases R-squared but may not improve adjusted R-squared",
+        "It always decreases the model's performance",
+        "It has no effect on the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adding any variable will increase or maintain R-squared, but adjusted R-squared penalizes for additional variables, so it may decrease if the variable doesn't add sufficient explanatory power.",
+      "optionExplanations": [
+        "Irrelevant variables don't improve real performance and may cause overfitting.",
+        "Correct. R-squared can't decrease with more variables, but adjusted R-squared can.",
+        "Performance might stay same or worsen, but it's not always a decrease.",
+        "Adding variables always affects the model, even if the effect is minimal."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "irrelevant variables",
+        "r-squared",
+        "model selection"
+      ]
+    },
+    {
+      "id": "LRG_044",
+      "question": "What is the purpose of transforming variables in linear regression?",
+      "options": [
+        "To increase the number of features",
+        "To meet assumptions like linearity and normality",
+        "To make all variables positive",
+        "To increase computational speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Variable transformations (like log, square root, or polynomial) help meet regression assumptions such as linearity, normality of residuals, and homoscedasticity when the original variables violate these assumptions.",
+      "optionExplanations": [
+        "Transformation changes existing variables rather than increasing their number.",
+        "Correct. Transformations help satisfy regression assumptions when original variables don't.",
+        "Making variables positive isn't the goal; meeting statistical assumptions is.",
+        "Transformations typically don't significantly affect computational speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transformations",
+        "assumptions",
+        "linearity"
+      ]
+    },
+    {
+      "id": "LRG_045",
+      "question": "What is polynomial regression and how does it relate to linear regression?",
+      "options": [
+        "It's a completely different type of regression",
+        "It's linear regression with polynomial terms as features",
+        "It only works with non-continuous variables",
+        "It doesn't use the least squares method"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Polynomial regression is still linear regression, but with polynomial terms (x², x³, etc.) as features. It's linear in parameters even though it can model non-linear relationships.",
+      "optionExplanations": [
+        "Polynomial regression is a special case of linear regression, not completely different.",
+        "Correct. It's linear regression using polynomial features to capture non-linear relationships.",
+        "Polynomial regression works with continuous variables, using their powers as features.",
+        "Polynomial regression still uses OLS; it's linear in the parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial regression",
+        "feature engineering",
+        "non-linear relationships"
+      ]
+    },
+    {
+      "id": "LRG_046",
+      "question": "What is the difference between extrapolation and interpolation in regression?",
+      "options": [
+        "Extrapolation predicts within the data range, interpolation predicts outside",
+        "Interpolation predicts within the data range, extrapolation predicts outside",
+        "They are the same thing",
+        "Extrapolation is more accurate than interpolation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interpolation makes predictions within the range of the training data, while extrapolation makes predictions outside this range. Extrapolation is generally less reliable.",
+      "optionExplanations": [
+        "This reverses the definitions; interpolation is within range, extrapolation is outside.",
+        "Correct. Interpolation is within the observed data range, extrapolation is beyond it.",
+        "These are distinctly different concepts with different reliability levels.",
+        "Interpolation is generally more reliable than extrapolation due to staying within observed ranges."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interpolation",
+        "extrapolation",
+        "prediction range"
+      ]
+    },
+    {
+      "id": "LRG_047",
+      "question": "What is the impact of sample size on linear regression?",
+      "options": [
+        "Larger samples always lead to higher R-squared",
+        "Larger samples provide more stable and reliable coefficient estimates",
+        "Sample size has no impact on regression results",
+        "Smaller samples are always better for regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Larger sample sizes generally provide more stable coefficient estimates, narrower confidence intervals, and better power to detect true effects, though they don't automatically improve R-squared.",
+      "optionExplanations": [
+        "R-squared depends on the relationship strength, not just sample size.",
+        "Correct. Larger samples provide more stable estimates and better statistical inference.",
+        "Sample size significantly affects the reliability and power of regression analysis.",
+        "Larger samples are generally preferable for more reliable statistical inference."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sample size",
+        "stability",
+        "statistical power"
+      ]
+    },
+    {
+      "id": "LRG_048",
+      "question": "What is the difference between correlation and causation in regression analysis?",
+      "options": [
+        "Correlation and causation are the same thing",
+        "Regression coefficients always imply causation",
+        "Correlation shows association, but causation requires additional evidence",
+        "Causation is weaker than correlation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Regression can show statistical association (correlation) between variables, but establishing causation requires additional evidence like temporal ordering, controlling for confounders, and theoretical justification.",
+      "optionExplanations": [
+        "Correlation and causation are fundamentally different concepts in statistics.",
+        "Regression shows association; causation requires additional design and evidence.",
+        "Correct. Regression shows correlation; proving causation needs more rigorous evidence.",
+        "Causation is actually a stronger claim than correlation, requiring more evidence."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "correlation",
+        "causation",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "LRG_049",
+      "question": "What is the purpose of centering variables in regression?",
+      "options": [
+        "To make all coefficients equal",
+        "To improve interpretation of the intercept and reduce multicollinearity in polynomial models",
+        "To eliminate all correlations",
+        "To make the model run faster"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Centering variables (subtracting the mean) makes the intercept interpretable as the expected value when all variables are at their mean, and reduces multicollinearity in polynomial or interaction models.",
+      "optionExplanations": [
+        "Centering changes interpretation but doesn't make coefficients equal.",
+        "Correct. Centering improves intercept interpretation and reduces multicollinearity in complex models.",
+        "Centering doesn't eliminate correlations between different variables.",
+        "Centering is a preprocessing step that doesn't significantly affect computational speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "centering",
+        "intercept",
+        "multicollinearity"
+      ]
+    },
+    {
+      "id": "LRG_050",
+      "question": "What is the Akaike Information Criterion (AIC) used for in regression?",
+      "options": [
+        "To test normality of residuals",
+        "To compare and select among different models",
+        "To detect outliers",
+        "To calculate confidence intervals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AIC balances model fit with complexity, penalizing models with more parameters. Lower AIC values indicate better models when comparing alternatives.",
+      "optionExplanations": [
+        "Shapiro-Wilk or other tests check normality, not AIC which is for model comparison.",
+        "Correct. AIC helps select the best model by balancing fit and complexity.",
+        "Cook's distance or leverage identify outliers, not AIC which compares models.",
+        "AIC is for model selection, not calculating confidence intervals."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AIC",
+        "model selection",
+        "information criteria"
+      ]
+    },
+    {
+      "id": "LRG_051",
+      "question": "What is meant by 'shrinkage' in regularized regression?",
+      "options": [
+        "Reducing the dataset size",
+        "Pulling coefficient estimates toward zero",
+        "Decreasing the number of iterations",
+        "Compressing the prediction range"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Shrinkage refers to the regularization effect of pulling coefficient estimates toward zero, reducing their magnitude to prevent overfitting and improve generalization.",
+      "optionExplanations": [
+        "Shrinkage affects coefficients, not dataset size which remains unchanged.",
+        "Correct. Shrinkage pulls coefficients toward zero to reduce overfitting.",
+        "Shrinkage is about coefficient magnitude, not computational iterations.",
+        "Shrinkage affects coefficients, not the range of predictions directly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "shrinkage",
+        "regularization",
+        "coefficients"
+      ]
+    },
+    {
+      "id": "LRG_052",
+      "question": "What is the bias-variance tradeoff in the context of linear regression?",
+      "options": [
+        "The tradeoff between model accuracy and speed",
+        "The tradeoff between underfitting (high bias) and overfitting (high variance)",
+        "The tradeoff between Type I and Type II errors",
+        "The tradeoff between training and testing time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The bias-variance tradeoff involves balancing model simplicity (which may underfit with high bias) against complexity (which may overfit with high variance) to minimize total prediction error.",
+      "optionExplanations": [
+        "This describes computational considerations, not the statistical bias-variance tradeoff.",
+        "Correct. Simple models have high bias (underfit), complex models have high variance (overfit).",
+        "Type I/II errors relate to hypothesis testing, not the bias-variance tradeoff.",
+        "This is about computational efficiency, not the fundamental bias-variance concept."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias-variance tradeoff",
+        "overfitting",
+        "underfitting"
+      ]
+    },
+    {
+      "id": "LRG_053",
+      "question": "What is the purpose of interaction terms in regression?",
+      "options": [
+        "To increase the number of parameters",
+        "To model how the effect of one variable depends on another variable",
+        "To eliminate multicollinearity",
+        "To transform non-linear relationships"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interaction terms capture how the effect of one variable on the outcome changes depending on the value of another variable, allowing for more complex relationships.",
+      "optionExplanations": [
+        "While interactions add parameters, their purpose is to model conditional effects, not just increase complexity.",
+        "Correct. Interactions model how one variable's effect changes based on another variable's value.",
+        "Interactions often increase multicollinearity rather than eliminate it.",
+        "Polynomial terms handle non-linearity; interactions handle conditional effects between variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interaction terms",
+        "conditional effects",
+        "model complexity"
+      ]
+    },
+    {
+      "id": "LRG_054",
+      "question": "What is the difference between standardization and normalization of features?",
+      "options": [
+        "They are exactly the same process",
+        "Standardization scales to unit variance, normalization scales to a range",
+        "Standardization is only for categorical variables",
+        "Normalization is only used in regularized regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standardization (z-score) transforms variables to have mean 0 and standard deviation 1, while normalization typically scales variables to a specific range like [0,1].",
+      "optionExplanations": [
+        "These are different scaling techniques with different mathematical formulations.",
+        "Correct. Standardization uses mean and standard deviation, normalization uses min-max scaling.",
+        "Standardization is primarily for continuous variables, not categorical ones.",
+        "Both techniques can be used in various regression contexts, not just regularized models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standardization",
+        "normalization",
+        "feature scaling"
+      ]
+    },
+    {
+      "id": "LRG_055",
+      "question": "What is the mathematical relationship between SST, SSR, and SSE in regression?",
+      "options": [
+        "SST = SSR - SSE",
+        "SST = SSR + SSE",
+        "SST = SSR × SSE",
+        "SST = SSR / SSE"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Total Sum of Squares (SST) equals Regression Sum of Squares (SSR) plus Error Sum of Squares (SSE). This decomposition is fundamental to ANOVA and R-squared calculation.",
+      "optionExplanations": [
+        "This would mean SSE is negative, which is impossible since it's a sum of squared terms.",
+        "Correct. SST (total variation) = SSR (explained) + SSE (unexplained variation).",
+        "Sum of squares are additive, not multiplicative in the ANOVA decomposition.",
+        "This would give a ratio, not the additive decomposition of variance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sum of squares",
+        "ANOVA",
+        "variance decomposition"
+      ]
+    },
+    {
+      "id": "LRG_056",
+      "question": "What is collinearity and how does it differ from multicollinearity?",
+      "options": [
+        "Collinearity involves two variables, multicollinearity involves multiple variables",
+        "They are exactly the same concept",
+        "Collinearity is worse than multicollinearity",
+        "Collinearity only affects categorical variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Collinearity refers to high correlation between two variables, while multicollinearity is the broader term encompassing correlation among multiple variables in the model.",
+      "optionExplanations": [
+        "Correct. Collinearity is between two variables, multicollinearity involves multiple variables.",
+        "Collinearity is a special case of multicollinearity involving exactly two variables.",
+        "Both cause similar problems; neither is inherently worse than the other.",
+        "Both concepts apply to continuous variables primarily, not specifically categorical ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "collinearity",
+        "multicollinearity",
+        "correlation"
+      ]
+    },
+    {
+      "id": "LRG_057",
+      "question": "What is the purpose of the constant term (intercept) in linear regression?",
+      "options": [
+        "To make the model more complex",
+        "To represent the expected value of Y when all X variables equal zero",
+        "To ensure the model passes through the origin",
+        "To eliminate the need for other variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The intercept represents the expected value of the dependent variable when all independent variables equal zero. It allows the regression line to not pass through the origin.",
+      "optionExplanations": [
+        "The intercept is necessary for proper model specification, not to add complexity.",
+        "Correct. The intercept is the expected Y value when all X variables equal zero.",
+        "The intercept allows the line to NOT pass through the origin, providing better fit.",
+        "The intercept works with other variables to provide the best fit."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "intercept",
+        "constant term",
+        "model specification"
+      ]
+    },
+    {
+      "id": "LRG_058",
+      "question": "What does it mean when residuals are autocorrelated?",
+      "options": [
+        "Residuals are normally distributed",
+        "Consecutive residuals are correlated with each other",
+        "Residuals have constant variance",
+        "Residuals are independent of fitted values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Autocorrelated residuals means consecutive residuals (especially in time series) are correlated, violating the independence assumption and potentially indicating missing temporal patterns.",
+      "optionExplanations": [
+        "Normal distribution is a separate assumption from autocorrelation (independence).",
+        "Correct. Autocorrelation means residuals at different time points are correlated.",
+        "Constant variance (homoscedasticity) is different from autocorrelation (independence).",
+        "Independence from fitted values is heteroscedasticity; autocorrelation is about temporal correlation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "autocorrelation",
+        "independence",
+        "time series"
+      ]
+    },
+    {
+      "id": "LRG_059",
+      "question": "What is the difference between in-sample and out-of-sample performance?",
+      "options": [
+        "There is no difference",
+        "In-sample uses training data, out-of-sample uses test data",
+        "In-sample is always better than out-of-sample",
+        "Out-of-sample uses more complex models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In-sample performance is measured on the same data used to train the model, while out-of-sample performance is measured on new, unseen data and better reflects generalization ability.",
+      "optionExplanations": [
+        "These measure model performance on different datasets and serve different purposes.",
+        "Correct. In-sample is training data performance, out-of-sample is test data performance.",
+        "In-sample is often better due to overfitting, but out-of-sample is more important for generalization.",
+        "Model complexity doesn't determine which performance measure to use."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "in-sample",
+        "out-of-sample",
+        "generalization"
+      ]
+    },
+    {
+      "id": "LRG_060",
+      "question": "What is meant by 'parsimony' in model selection?",
+      "options": [
+        "Using as many variables as possible",
+        "Preferring simpler models when they perform similarly to complex ones",
+        "Always choosing the most complex model",
+        "Ignoring model performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Parsimony principle suggests preferring simpler models when they perform comparably to more complex ones, following Occam's razor to avoid unnecessary complexity.",
+      "optionExplanations": [
+        "Parsimony favors simplicity, not using as many variables as possible.",
+        "Correct. Parsimony means choosing simpler models when performance is similar.",
+        "Parsimony prefers simpler models, not the most complex ones.",
+        "Performance matters; parsimony is about balancing performance with simplicity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parsimony",
+        "model selection",
+        "simplicity"
+      ]
+    },
+    {
+      "id": "LRG_061",
+      "question": "What is the purpose of the hat matrix in linear regression?",
+      "options": [
+        "To calculate residuals",
+        "To transform Y values into fitted values",
+        "To invert the X matrix",
+        "To calculate correlation coefficients"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The hat matrix H transforms the observed Y values into fitted values (ŷ = HY). Its diagonal elements represent leverage values for each observation.",
+      "optionExplanations": [
+        "Residuals are calculated as Y - Ŷ, using the hat matrix indirectly.",
+        "Correct. The hat matrix H transforms observed Y into fitted values: ŷ = HY.",
+        "The hat matrix involves (X'X)⁻¹X', not just inverting X.",
+        "Correlation coefficients are calculated separately, not using the hat matrix."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hat matrix",
+        "fitted values",
+        "leverage"
+      ]
+    },
+    {
+      "id": "LRG_062",
+      "question": "What is the purpose of studentized residuals?",
+      "options": [
+        "To make residuals sum to zero",
+        "To standardize residuals by their standard errors for better comparison",
+        "To eliminate outliers automatically",
+        "To test for normality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Studentized residuals are standardized by their individual standard errors, making them more comparable and helping identify outliers more effectively than raw residuals.",
+      "optionExplanations": [
+        "Raw residuals already sum to zero in OLS; studentization doesn't ensure this.",
+        "Correct. Studentization standardizes residuals by their standard errors for better outlier detection.",
+        "Studentization helps identify outliers but doesn't automatically eliminate them.",
+        "While studentized residuals help assess outliers, normality tests use other methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "studentized residuals",
+        "standardization",
+        "outlier detection"
+      ]
+    },
+    {
+      "id": "LRG_063",
+      "question": "What happens to the regression coefficients when you add a perfectly correlated variable?",
+      "options": [
+        "All coefficients become zero",
+        "The model cannot be estimated due to perfect multicollinearity",
+        "Only the new coefficient becomes zero",
+        "The R-squared increases significantly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Perfect multicollinearity makes the X'X matrix singular (non-invertible), so OLS cannot provide unique coefficient estimates. The model cannot be estimated.",
+      "optionExplanations": [
+        "Coefficients don't become zero; the problem is that they cannot be uniquely determined.",
+        "Correct. Perfect correlation creates a singular matrix, making OLS estimation impossible.",
+        "The issue affects the entire coefficient vector, not just the new coefficient.",
+        "R-squared cannot be calculated because the model cannot be estimated."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "perfect multicollinearity",
+        "singular matrix",
+        "estimation"
+      ]
+    },
+    {
+      "id": "LRG_064",
+      "question": "What is the difference between PRESS and cross-validation?",
+      "options": [
+        "PRESS is a form of leave-one-out cross-validation",
+        "They measure completely different things",
+        "PRESS is only for time series data",
+        "Cross-validation is only for classification"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "PRESS (Prediction Error Sum of Squares) is calculated using leave-one-out cross-validation, where each observation is predicted using a model fitted without that observation.",
+      "optionExplanations": [
+        "Correct. PRESS uses leave-one-out CV to calculate prediction errors for each observation.",
+        "PRESS is specifically calculated using cross-validation methodology.",
+        "PRESS can be used for any regression problem, not just time series data.",
+        "Cross-validation is used for both regression and classification problems."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PRESS",
+        "cross-validation",
+        "leave-one-out"
+      ]
+    },
+    {
+      "id": "LRG_065",
+      "question": "What is the relationship between correlation and R-squared in multiple regression?",
+      "options": [
+        "R-squared equals the sum of all correlations",
+        "R-squared equals the squared multiple correlation coefficient",
+        "There is no relationship",
+        "R-squared equals the average correlation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In multiple regression, R-squared equals the square of the multiple correlation coefficient, which measures the correlation between observed and predicted values.",
+      "optionExplanations": [
+        "R-squared is not simply the sum of individual correlations between variables.",
+        "Correct. R² equals the squared correlation between observed and predicted Y values.",
+        "There is a direct mathematical relationship between these concepts.",
+        "R-squared is not the average of pairwise correlations between variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multiple correlation",
+        "r-squared",
+        "relationship"
+      ]
+    },
+    {
+      "id": "LRG_066",
+      "question": "What is the purpose of Box-Cox transformation in regression?",
+      "options": [
+        "To handle missing values",
+        "To stabilize variance and improve normality",
+        "To detect outliers",
+        "To reduce multicollinearity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Box-Cox transformation finds the optimal power transformation (λ) to stabilize variance and make the data more normally distributed, improving regression assumptions.",
+      "optionExplanations": [
+        "Box-Cox transforms existing values; it doesn't handle missing values.",
+        "Correct. Box-Cox finds optimal power transformation for normality and constant variance.",
+        "Outlier detection uses other methods like Cook's distance, not Box-Cox transformation.",
+        "Multicollinearity is about variable relationships, not addressed by transforming individual variables."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "box-cox",
+        "transformation",
+        "normality"
+      ]
+    },
+    {
+      "id": "LRG_067",
+      "question": "What is the difference between fixed and random effects in regression?",
+      "options": [
+        "Fixed effects are estimated, random effects are assumed",
+        "Fixed effects are constant across groups, random effects vary by group",
+        "There is no difference",
+        "Random effects are always better"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fixed effects are constant parameters estimated for specific groups, while random effects assume group effects come from a probability distribution and estimate variance components.",
+      "optionExplanations": [
+        "Both are estimated, but in different ways: fixed effects as parameters, random effects as distributions.",
+        "Correct. Fixed effects are group-specific constants, random effects vary and are modeled probabilistically.",
+        "These represent fundamentally different approaches to modeling group effects.",
+        "The choice depends on the research question and data structure, not inherent superiority."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "fixed effects",
+        "random effects",
+        "mixed models"
+      ]
+    },
+    {
+      "id": "LRG_068",
+      "question": "What is meant by 'robust regression'?",
+      "options": [
+        "Regression that works with any dataset",
+        "Regression methods that are less sensitive to outliers",
+        "Regression with very high R-squared",
+        "Regression that uses many variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Robust regression uses techniques that are less influenced by outliers or violations of assumptions, providing more reliable results when data doesn't meet standard OLS assumptions.",
+      "optionExplanations": [
+        "No regression method works optimally with any dataset; robust methods handle violations better.",
+        "Correct. Robust regression is less sensitive to outliers and assumption violations.",
+        "High R-squared doesn't define robustness; robustness is about handling problematic data.",
+        "The number of variables doesn't determine robustness; it's about handling violations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "robust regression",
+        "outliers",
+        "assumption violations"
+      ]
+    },
+    {
+      "id": "LRG_069",
+      "question": "What is the purpose of weighted least squares (WLS)?",
+      "options": [
+        "To give equal weight to all observations",
+        "To address heteroscedasticity by weighting observations based on their variance",
+        "To speed up computation",
+        "To handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "WLS addresses heteroscedasticity by giving different weights to observations, typically giving higher weight to observations with lower variance to improve efficiency.",
+      "optionExplanations": [
+        "WLS gives different weights to observations, not equal weights like OLS.",
+        "Correct. WLS weights observations inversely to their variance to handle heteroscedasticity.",
+        "WLS may actually be more computationally intensive than OLS due to weighting.",
+        "Imputation methods handle missing values, not WLS which addresses heteroscedasticity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weighted least squares",
+        "heteroscedasticity",
+        "variance weighting"
+      ]
+    },
+    {
+      "id": "LRG_070",
+      "question": "What is the geometric interpretation of least squares?",
+      "options": [
+        "Finding the line with maximum slope",
+        "Finding the line that minimizes the sum of vertical distances squared",
+        "Finding the line that passes through the most points",
+        "Finding the line with minimum slope"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Geometrically, OLS finds the line that minimizes the sum of squared vertical distances (residuals) from data points to the regression line.",
+      "optionExplanations": [
+        "OLS doesn't optimize slope magnitude; it minimizes residual sum of squares.",
+        "Correct. OLS minimizes the sum of squared vertical distances from points to the line.",
+        "The line rarely passes through actual data points; it minimizes overall squared distances.",
+        "Slope magnitude isn't the criterion; minimizing squared residuals is."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "geometric interpretation",
+        "least squares",
+        "residuals"
+      ]
+    },
+    {
+      "id": "LRG_071",
+      "question": "What is the concept of 'degrees of freedom' for the regression sum of squares?",
+      "options": [
+        "Always equal to the sample size",
+        "Equal to the number of independent variables (excluding intercept)",
+        "Always equal to 1",
+        "Equal to sample size minus 1"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The degrees of freedom for regression sum of squares equals the number of independent variables in the model (excluding the intercept), representing the number of constraints from the predictors.",
+      "optionExplanations": [
+        "Sample size determines total degrees of freedom, not just regression degrees of freedom.",
+        "Correct. Regression df equals the number of independent variables (excluding intercept).",
+        "This would only be true for simple regression with one predictor.",
+        "This describes degrees of freedom for total sum of squares, not regression sum of squares."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "degrees of freedom",
+        "regression sum of squares",
+        "ANOVA"
+      ]
+    },
+    {
+      "id": "LRG_072",
+      "question": "What is the purpose of partial correlation in regression analysis?",
+      "options": [
+        "To measure correlation between all variables",
+        "To measure correlation between two variables while controlling for others",
+        "To eliminate all correlations",
+        "To calculate R-squared"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Partial correlation measures the correlation between two variables while controlling for the linear effects of other variables, helping understand unique relationships.",
+      "optionExplanations": [
+        "Partial correlation focuses on two specific variables while controlling for others.",
+        "Correct. Partial correlation shows the relationship between two variables controlling for others.",
+        "Partial correlation measures specific relationships, not eliminating all correlations.",
+        "R-squared is calculated differently and measures overall model fit, not partial relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "partial correlation",
+        "controlling variables",
+        "unique relationships"
+      ]
+    },
+    {
+      "id": "LRG_073",
+      "question": "What is the assumption of no perfect multicollinearity in linear regression?",
+      "options": [
+        "No variable should be correlated with any other variable",
+        "No independent variable should be a perfect linear combination of other independent variables",
+        "All variables should be perfectly correlated",
+        "Only categorical variables can be correlated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The no perfect multicollinearity assumption means no independent variable should be a perfect linear combination of other independent variables, which would make the design matrix singular.",
+      "optionExplanations": [
+        "Some correlation is acceptable; the issue is perfect linear dependence among variables.",
+        "Correct. No variable should be perfectly predictable from other independent variables.",
+        "Perfect correlation among all variables would create severe multicollinearity problems.",
+        "The assumption applies to all types of variables, not just categorical ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "perfect multicollinearity",
+        "linear combination",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "LRG_074",
+      "question": "What is the relationship between the F-statistic and R-squared?",
+      "options": [
+        "F = R²/(1-R²) × (n-k-1)/k",
+        "F = R² × n",
+        "F = 1 - R²",
+        "There is no relationship"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The F-statistic for overall model significance is mathematically related to R-squared: F = [R²/(1-R²)] × [(n-k-1)/k], where n is sample size and k is number of predictors.",
+      "optionExplanations": [
+        "Correct. This is the mathematical relationship between F-statistic and R-squared.",
+        "This doesn't account for model complexity or degrees of freedom.",
+        "This would give 1 minus R-squared, not the F-statistic.",
+        "There is a direct mathematical relationship between these statistics."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "f-statistic",
+        "r-squared",
+        "mathematical relationship"
+      ]
+    },
+    {
+      "id": "LRG_075",
+      "question": "What is the purpose of ridge trace in Ridge regression?",
+      "options": [
+        "To plot residuals against fitted values",
+        "To show how coefficients change as the regularization parameter changes",
+        "To detect outliers",
+        "To test assumptions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A ridge trace plots regression coefficients against different values of the regularization parameter λ, helping choose an appropriate λ value by showing coefficient stability.",
+      "optionExplanations": [
+        "Residual plots serve different diagnostic purposes, not showing regularization effects.",
+        "Correct. Ridge trace shows how coefficients shrink as λ increases, aiding λ selection.",
+        "Cook's distance and other methods detect outliers, not ridge trace.",
+        "Assumption testing uses other diagnostic plots, not ridge trace for regularization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ridge trace",
+        "regularization parameter",
+        "coefficient paths"
+      ]
+    },
+    {
+      "id": "LRG_076",
+      "question": "What is the difference between Type II and Type III sum of squares?",
+      "options": [
+        "Type II tests main effects ignoring interactions, Type III tests effects with interactions",
+        "They are exactly the same",
+        "Type II is for categorical variables, Type III for continuous",
+        "Type III is always better than Type II"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Type II sum of squares tests each main effect after all other main effects but ignoring interactions. Type III tests each effect after all other effects including interactions.",
+      "optionExplanations": [
+        "Correct. Type II ignores interactions when testing main effects, Type III includes them.",
+        "These represent different approaches to partitioning variance in complex models.",
+        "Both types can be used with any variable type; the difference is in how effects are tested.",
+        "The choice depends on the research question and model structure, not inherent superiority."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "sum of squares",
+        "type II",
+        "type III",
+        "interactions"
+      ]
+    },
+    {
+      "id": "LRG_077",
+      "question": "What is the purpose of the Mallows' Cp statistic?",
+      "options": [
+        "To test normality of residuals",
+        "To select the optimal subset of variables in regression",
+        "To detect heteroscedasticity",
+        "To calculate confidence intervals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mallows' Cp helps select the best subset of variables by balancing model fit with complexity, penalizing models with too many variables relative to their improvement in fit.",
+      "optionExplanations": [
+        "Shapiro-Wilk or other tests check normality, not Mallows' Cp which is for variable selection.",
+        "Correct. Mallows' Cp balances fit and complexity to select optimal variable subsets.",
+        "Breusch-Pagan or White tests detect heteroscedasticity, not Mallows' Cp.",
+        "Confidence intervals are calculated using standard errors, not Mallows' Cp."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mallows cp",
+        "variable selection",
+        "model selection"
+      ]
+    },
+    {
+      "id": "LRG_078",
+      "question": "What is the difference between nested and non-nested models?",
+      "options": [
+        "Nested models have fewer observations",
+        "Nested models are subsets of larger models with restrictions on parameters",
+        "Non-nested models are always better",
+        "Nested models only use categorical variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Nested models are special cases of more general models, obtained by placing restrictions (like setting coefficients to zero) on the parameters of the larger model.",
+      "optionExplanations": [
+        "Nesting refers to parameter relationships, not the number of observations used.",
+        "Correct. Nested models are restrictions of more general models, creating hierarchical relationships.",
+        "Model quality depends on the specific context and data, not whether models are nested.",
+        "Nesting relationships apply regardless of variable types (continuous or categorical)."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "nested models",
+        "model hierarchy",
+        "restrictions"
+      ]
+    },
+    {
+      "id": "LRG_079",
+      "question": "What is the purpose of the likelihood ratio test in regression?",
+      "options": [
+        "To compare nested models",
+        "To test individual coefficients",
+        "To detect outliers",
+        "To calculate R-squared"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The likelihood ratio test compares the fit of nested models by testing whether the restrictions imposed by the simpler model significantly worsen the fit.",
+      "optionExplanations": [
+        "Correct. Likelihood ratio tests compare nested models to test parameter restrictions.",
+        "T-tests are used for individual coefficients, not likelihood ratio tests.",
+        "Cook's distance and other methods detect outliers, not likelihood ratio tests.",
+        "R-squared is calculated directly from sum of squares, not using likelihood ratio tests."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "likelihood ratio test",
+        "nested models",
+        "model comparison"
+      ]
+    },
+    {
+      "id": "LRG_080",
+      "question": "What is the purpose of stepwise regression?",
+      "options": [
+        "To manually select all variables",
+        "To automatically select variables using statistical criteria",
+        "To transform variables",
+        "To detect multicollinearity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stepwise regression automatically adds or removes variables based on statistical criteria (like p-values or information criteria) to find an optimal subset of predictors.",
+      "optionExplanations": [
+        "Stepwise is automatic, not manual variable selection based on statistical criteria.",
+        "Correct. Stepwise uses statistical criteria to automatically select optimal variable subsets.",
+        "Variable transformation is a separate preprocessing step, not part of stepwise selection.",
+        "VIF and correlation analysis detect multicollinearity, not stepwise regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stepwise regression",
+        "automatic selection",
+        "statistical criteria"
+      ]
+    },
+    {
+      "id": "LRG_081",
+      "question": "What is the difference between forward, backward, and bidirectional stepwise selection?",
+      "options": [
+        "Forward adds variables, backward removes variables, bidirectional does both",
+        "They all do the same thing",
+        "Forward is always the best method",
+        "Backward selection starts with no variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Forward selection starts empty and adds variables, backward starts with all variables and removes them, and bidirectional can both add and remove variables at each step.",
+      "optionExplanations": [
+        "Correct. Each method has a different strategy for variable inclusion/exclusion.",
+        "These are distinctly different approaches to variable selection with different strengths.",
+        "No single method is universally best; the choice depends on the specific problem.",
+        "Backward selection starts with all variables and removes them, not starting empty."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forward selection",
+        "backward elimination",
+        "bidirectional"
+      ]
+    },
+    {
+      "id": "LRG_082",
+      "question": "What is the interpretation of a negative coefficient in linear regression?",
+      "options": [
+        "The variable should be removed from the model",
+        "As the independent variable increases, the dependent variable decreases",
+        "There is an error in the calculation",
+        "The variable is not significant"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A negative coefficient indicates an inverse relationship: as the independent variable increases by one unit, the dependent variable decreases by the coefficient amount, holding other variables constant.",
+      "optionExplanations": [
+        "Negative coefficients are meaningful and don't indicate variables should be removed.",
+        "Correct. Negative coefficients indicate inverse relationships between variables.",
+        "Negative coefficients are mathematically valid and often meaningful in real contexts.",
+        "Coefficient sign is independent of statistical significance, which is determined by p-values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "negative coefficient",
+        "inverse relationship",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "LRG_083",
+      "question": "What is the purpose of the Breusch-Pagan test?",
+      "options": [
+        "To test for normality of residuals",
+        "To test for heteroscedasticity",
+        "To test for multicollinearity",
+        "To test for autocorrelation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Breusch-Pagan test is a formal statistical test for heteroscedasticity, testing whether the variance of residuals is constant across observations.",
+      "optionExplanations": [
+        "Shapiro-Wilk or Kolmogorov-Smirnov tests check normality, not Breusch-Pagan.",
+        "Correct. Breusch-Pagan specifically tests for heteroscedasticity in regression residuals.",
+        "VIF or correlation analysis detects multicollinearity, not Breusch-Pagan.",
+        "Durbin-Watson or Ljung-Box tests check autocorrelation, not Breusch-Pagan."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "breusch-pagan",
+        "heteroscedasticity",
+        "hypothesis testing"
+      ]
+    },
+    {
+      "id": "LRG_084",
+      "question": "What is the concept of 'shrinkage' in model evaluation?",
+      "options": [
+        "The difference between in-sample and out-of-sample performance",
+        "Reducing the number of variables",
+        "Compressing the data size",
+        "Standardizing the coefficients"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In model evaluation, shrinkage refers to the expected decrease in performance when moving from training data (in-sample) to new data (out-of-sample), indicating overfitting.",
+      "optionExplanations": [
+        "Correct. Shrinkage is the performance drop from training to test data due to overfitting.",
+        "Variable reduction is feature selection, not shrinkage in the evaluation context.",
+        "Data compression is unrelated to shrinkage in model evaluation contexts.",
+        "Coefficient standardization is a preprocessing step, not shrinkage in evaluation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "shrinkage",
+        "overfitting",
+        "performance evaluation"
+      ]
+    },
+    {
+      "id": "LRG_085",
+      "question": "What is the purpose of cross-validation in model selection?",
+      "options": [
+        "To increase the training data size",
+        "To estimate how well models will generalize to independent datasets",
+        "To reduce computational time",
+        "To eliminate the need for test data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation provides more robust estimates of model performance by testing on multiple train-test splits, helping select models that generalize well to new data.",
+      "optionExplanations": [
+        "Cross-validation uses existing data more efficiently but doesn't increase the actual data size.",
+        "Correct. Cross-validation estimates generalization performance for better model selection.",
+        "Cross-validation typically increases computational time due to multiple model fits.",
+        "Cross-validation helps with model selection but doesn't eliminate the need for final testing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "model selection",
+        "generalization"
+      ]
+    },
+    {
+      "id": "LRG_086",
+      "question": "What is the difference between MSE and RMSE?",
+      "options": [
+        "MSE is always larger than RMSE",
+        "RMSE is the square root of MSE and has the same units as the target variable",
+        "They measure different things entirely",
+        "RMSE is only used for classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RMSE (Root Mean Square Error) is the square root of MSE (Mean Square Error), bringing the error metric back to the same units as the target variable for easier interpretation.",
+      "optionExplanations": [
+        "RMSE is the square root of MSE, so RMSE ≤ MSE (equal when MSE ≤ 1).",
+        "Correct. RMSE = √MSE, providing error in the same units as the dependent variable.",
+        "Both measure prediction error; RMSE is just a transformed version of MSE.",
+        "Both MSE and RMSE are used for regression problems, not classification."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "MSE",
+        "RMSE",
+        "error metrics"
+      ]
+    },
+    {
+      "id": "LRG_087",
+      "question": "What is the purpose of regularization parameter tuning?",
+      "options": [
+        "To find the optimal balance between bias and variance",
+        "To make the model more complex",
+        "To increase the number of features",
+        "To eliminate all correlations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Tuning the regularization parameter helps find the optimal balance between underfitting (high bias) and overfitting (high variance) to minimize total prediction error.",
+      "optionExplanations": [
+        "Correct. Parameter tuning optimizes the bias-variance tradeoff for best generalization.",
+        "Regularization reduces effective model complexity, not increases it.",
+        "Regularization may eliminate features (Lasso) or reduce their impact, not increase them.",
+        "Regularization addresses overfitting, not specifically eliminating correlations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parameter tuning",
+        "bias-variance tradeoff",
+        "regularization"
+      ]
+    },
+    {
+      "id": "LRG_088",
+      "question": "What is the concept of 'effective degrees of freedom' in regularized regression?",
+      "options": [
+        "The actual number of parameters in the model",
+        "A measure of model complexity that accounts for regularization shrinkage",
+        "Always equal to the sample size",
+        "The number of significant variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Effective degrees of freedom accounts for how regularization reduces the effective complexity of the model, typically less than the actual number of parameters due to shrinkage.",
+      "optionExplanations": [
+        "Effective df accounts for regularization effects, not just the raw parameter count.",
+        "Correct. Effective df measures complexity considering regularization's constraining effect.",
+        "Effective df is typically much less than sample size and depends on regularization strength.",
+        "Statistical significance doesn't determine effective df, which is about model complexity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "effective degrees of freedom",
+        "regularization",
+        "model complexity"
+      ]
+    },
+    {
+      "id": "LRG_089",
+      "question": "What is the purpose of the condition number in regression diagnostics?",
+      "options": [
+        "To measure the strength of relationships",
+        "To assess multicollinearity and numerical stability",
+        "To calculate R-squared",
+        "To test for normality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The condition number measures how close the design matrix is to being singular, indicating multicollinearity severity and potential numerical instability in calculations.",
+      "optionExplanations": [
+        "Correlation coefficients measure relationship strength, not condition numbers.",
+        "Correct. Condition number assesses multicollinearity and numerical stability of matrix operations.",
+        "R-squared is calculated from sum of squares decomposition, not condition numbers.",
+        "Normality tests use different statistics like Shapiro-Wilk, not condition numbers."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "condition number",
+        "multicollinearity",
+        "numerical stability"
+      ]
+    },
+    {
+      "id": "LRG_090",
+      "question": "What is the difference between prediction intervals and tolerance intervals?",
+      "options": [
+        "They are exactly the same",
+        "Prediction intervals are for future observations, tolerance intervals contain a proportion of the population",
+        "Tolerance intervals are always wider",
+        "Prediction intervals are only for regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prediction intervals estimate where individual future observations will fall, while tolerance intervals contain a specified proportion of the population with a given confidence level.",
+      "optionExplanations": [
+        "These serve different purposes: prediction for individuals vs. population coverage.",
+        "Correct. Prediction intervals are for future values, tolerance intervals for population proportions.",
+        "Width depends on the specific confidence levels and proportions specified.",
+        "Both concepts can be applied in various statistical contexts, not just regression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "prediction intervals",
+        "tolerance intervals",
+        "statistical inference"
+      ]
+    },
+    {
+      "id": "LRG_091",
+      "question": "What is the purpose of influence measures in regression diagnostics?",
+      "options": [
+        "To measure how much individual observations affect the regression results",
+        "To calculate correlation coefficients",
+        "To test for normality",
+        "To determine sample size requirements"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Influence measures like Cook's distance, leverage, and DFFITS quantify how much individual observations affect regression coefficients, fitted values, or overall model fit.",
+      "optionExplanations": [
+        "Correct. Influence measures assess how much individual observations affect regression results.",
+        "Correlation coefficients are calculated separately and don't require influence measures.",
+        "Normality tests use different diagnostic tools, not influence measures.",
+        "Sample size calculations use power analysis, not influence measures from existing data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "influence measures",
+        "diagnostics",
+        "individual observations"
+      ]
+    },
+    {
+      "id": "LRG_092",
+      "question": "What is the concept of 'aliasing' in regression with categorical variables?",
+      "options": [
+        "Using different names for the same variable",
+        "When dummy variables are perfectly correlated, causing multicollinearity",
+        "Transforming categorical to numerical variables",
+        "Creating interaction terms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Aliasing occurs when dummy variables for categorical variables are perfectly correlated (e.g., including all levels plus intercept), creating perfect multicollinearity.",
+      "optionExplanations": [
+        "Aliasing is a statistical issue about perfect correlation, not variable naming.",
+        "Correct. Aliasing happens when dummy variables are perfectly correlated, causing estimation problems.",
+        "Variable transformation is encoding, not aliasing which is about perfect correlation.",
+        "Interaction terms create new variables but don't necessarily cause aliasing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "aliasing",
+        "dummy variables",
+        "categorical variables"
+      ]
+    },
+    {
+      "id": "LRG_093",
+      "question": "What is the purpose of the score test in regression?",
+      "options": [
+        "To calculate model accuracy scores",
+        "To test parameter restrictions without estimating the restricted model",
+        "To rank variables by importance",
+        "To detect outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The score test (Lagrange multiplier test) tests parameter restrictions by examining the score function at the restricted estimates, without needing to estimate the unrestricted model.",
+      "optionExplanations": [
+        "Score tests are for hypothesis testing, not calculating accuracy scores.",
+        "Correct. Score tests examine restrictions using only the restricted model estimates.",
+        "Variable ranking uses other methods like coefficients or importance measures.",
+        "Outlier detection uses influence measures, not score tests for parameter restrictions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "score test",
+        "parameter restrictions",
+        "hypothesis testing"
+      ]
+    },
+    {
+      "id": "LRG_094",
+      "question": "What is the difference between structural and reduced form equations?",
+      "options": [
+        "Structural equations show direct relationships, reduced form shows total effects",
+        "They are the same thing",
+        "Structural equations are simpler",
+        "Reduced form equations have fewer variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Structural equations show direct causal relationships between variables, while reduced form equations express endogenous variables solely in terms of exogenous variables and errors.",
+      "optionExplanations": [
+        "Correct. Structural shows direct effects, reduced form shows total effects through all pathways.",
+        "These represent different ways of expressing relationships in simultaneous equation systems.",
+        "Structural equations often appear simpler but may not show total effects clearly.",
+        "Reduced form may have the same or different number of variables, depending on the system."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "structural equations",
+        "reduced form",
+        "causal relationships"
+      ]
+    },
+    {
+      "id": "LRG_095",
+      "question": "What is the purpose of bootstrapping in regression analysis?",
+      "options": [
+        "To increase the sample size",
+        "To estimate sampling distributions and confidence intervals without distributional assumptions",
+        "To detect outliers",
+        "To transform variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bootstrapping creates many resampled datasets to estimate the sampling distribution of statistics, providing confidence intervals and standard errors without requiring normal distribution assumptions.",
+      "optionExplanations": [
+        "Bootstrapping resamples existing data; it doesn't actually increase the original sample size.",
+        "Correct. Bootstrapping estimates sampling distributions non-parametrically for robust inference.",
+        "Outlier detection uses other diagnostic methods, not bootstrapping procedures.",
+        "Variable transformation is a preprocessing step, not the purpose of bootstrapping."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bootstrapping",
+        "sampling distribution",
+        "non-parametric inference"
+      ]
+    },
+    {
+      "id": "LRG_096",
+      "question": "What is the interpretation of the standard error of a regression coefficient?",
+      "options": [
+        "The average error in predictions",
+        "The standard deviation of the coefficient estimate across repeated samples",
+        "The correlation between variables",
+        "The variance of the dependent variable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The standard error of a coefficient represents the standard deviation of that coefficient's sampling distribution - how much the estimate would vary across repeated samples.",
+      "optionExplanations": [
+        "Prediction error is measured by RMSE or other metrics, not coefficient standard errors.",
+        "Correct. Standard error measures the variability of the coefficient estimate across samples.",
+        "Correlation is measured by correlation coefficients, not standard errors.",
+        "Dependent variable variance is a separate concept from coefficient standard errors."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standard error",
+        "coefficient variability",
+        "sampling distribution"
+      ]
+    },
+    {
+      "id": "LRG_097",
+      "question": "What is the purpose of power analysis in regression?",
+      "options": [
+        "To calculate the computational power needed",
+        "To determine the probability of detecting a true effect given sample size",
+        "To measure model accuracy",
+        "To select variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Power analysis determines the probability of correctly rejecting a false null hypothesis (detecting a true effect) given the sample size, effect size, and significance level.",
+      "optionExplanations": [
+        "Power analysis is about statistical power, not computational requirements.",
+        "Correct. Statistical power is the probability of detecting true effects when they exist.",
+        "Model accuracy is measured by different metrics like R-squared or error measures.",
+        "Variable selection uses other criteria like significance or information criteria."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "power analysis",
+        "effect detection",
+        "sample size"
+      ]
+    },
+    {
+      "id": "LRG_098",
+      "question": "What is the concept of 'overfitting' versus 'underfitting' in regression?",
+      "options": [
+        "Overfitting is too simple, underfitting is too complex",
+        "Overfitting captures noise and doesn't generalize, underfitting misses important patterns",
+        "They are the same problem",
+        "Overfitting only occurs with small datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overfitting occurs when models are too complex and learn noise, failing to generalize. Underfitting occurs when models are too simple and miss important underlying patterns.",
+      "optionExplanations": [
+        "This reverses the definitions; overfitting is too complex, underfitting is too simple.",
+        "Correct. Overfitting learns noise and doesn't generalize, underfitting misses real patterns.",
+        "These are opposite problems along the bias-variance spectrum.",
+        "Overfitting can occur with any dataset size, especially with complex models."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "underfitting",
+        "model complexity"
+      ]
+    },
+    {
+      "id": "LRG_099",
+      "question": "What is the purpose of ridge regression compared to principal component regression?",
+      "options": [
+        "Ridge shrinks coefficients, PCR uses transformed uncorrelated components",
+        "They accomplish exactly the same thing",
+        "Ridge is always better than PCR",
+        "PCR can only be used with categorical variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Ridge regression shrinks original coefficients toward zero, while PCR first transforms variables into uncorrelated principal components and then performs regression on these components.",
+      "optionExplanations": [
+        "Correct. Ridge works with original variables, PCR transforms to principal components first.",
+        "While both address multicollinearity, they use fundamentally different approaches.",
+        "Neither method is universally superior; the choice depends on the specific problem context.",
+        "PCR is typically used with continuous variables to create principal components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ridge regression",
+        "principal component regression",
+        "dimensionality reduction"
+      ]
+    },
+    {
+      "id": "LRG_100",
+      "question": "What is the overall goal of linear regression analysis in data science?",
+      "options": [
+        "To classify data into categories",
+        "To model and predict continuous outcomes using linear relationships",
+        "To cluster similar observations",
+        "To reduce data storage requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear regression's primary goal is to model the relationship between variables and make predictions about continuous outcomes, providing interpretable coefficients and statistical inference capabilities.",
+      "optionExplanations": [
+        "Classification involves predicting categories, while regression predicts continuous values.",
+        "Correct. Linear regression models relationships to predict continuous outcomes with linear functions.",
+        "Clustering groups similar observations, which is an unsupervised learning task, not regression.",
+        "Data compression is about storage efficiency, not the analytical goal of regression modeling."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "linear regression",
+        "prediction",
+        "continuous outcomes",
+        "data science"
+      ]
+    }
+  ]
+}

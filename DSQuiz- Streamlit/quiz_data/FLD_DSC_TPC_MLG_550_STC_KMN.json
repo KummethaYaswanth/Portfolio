@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_KMN",
+  "subtopicName": "K-Means Clustering",
+  "str": 0.550,
+  "description": "K-Means is an unsupervised machine learning algorithm used for clustering data points into k clusters by minimizing within-cluster sum of squares. It iteratively assigns points to nearest centroids and updates centroid positions.",
+  "questions": [
+    {
+      "id": "KMN_001",
+      "question": "What type of machine learning algorithm is K-Means?",
+      "options": [
+        "Supervised learning",
+        "Unsupervised learning",
+        "Semi-supervised learning",
+        "Reinforcement learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means is an unsupervised learning algorithm because it finds patterns in data without labeled examples or target variables.",
+      "optionExplanations": [
+        "Supervised learning requires labeled data with input-output pairs, which K-Means doesn't use",
+        "Correct. K-Means discovers hidden patterns in unlabeled data by grouping similar data points",
+        "Semi-supervised learning uses both labeled and unlabeled data, but K-Means only uses unlabeled data",
+        "Reinforcement learning involves agents learning through rewards and punishments, not applicable to K-Means"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "basics",
+        "machine-learning-types",
+        "clustering"
+      ]
+    },
+    {
+      "id": "KMN_002",
+      "question": "What is the primary objective of the K-Means algorithm?",
+      "options": [
+        "Maximize between-cluster variance",
+        "Minimize within-cluster sum of squares (WCSS)",
+        "Maximize within-cluster variance",
+        "Minimize between-cluster distance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means aims to minimize the Within-Cluster Sum of Squares (WCSS), which measures the total squared distance of all points from their respective cluster centroids.",
+      "optionExplanations": [
+        "Maximizing between-cluster variance would spread clusters apart but isn't the primary K-Means objective",
+        "Correct. WCSS minimization ensures tight, cohesive clusters with points close to their centroids",
+        "Maximizing within-cluster variance would make clusters less cohesive, opposite of K-Means goal",
+        "This is related but not the precise mathematical objective that K-Means optimizes"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "objective-function",
+        "wcss",
+        "optimization"
+      ]
+    },
+    {
+      "id": "KMN_003",
+      "question": "In K-Means, what does 'K' represent?",
+      "options": [
+        "Number of features in the dataset",
+        "Number of data points",
+        "Number of clusters to form",
+        "Number of iterations"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "K represents the number of clusters that the algorithm will create. This is a hyperparameter that must be specified before running the algorithm.",
+      "optionExplanations": [
+        "The number of features is typically denoted as 'd' or 'p', not 'K' in K-Means",
+        "The number of data points is usually denoted as 'n', not 'K'",
+        "Correct. K is the predetermined number of clusters the algorithm will form",
+        "The number of iterations varies during execution and isn't represented by 'K'"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "basics",
+        "hyperparameter",
+        "cluster-count"
+      ]
+    },
+    {
+      "id": "KMN_004",
+      "question": "What is a centroid in K-Means clustering?",
+      "options": [
+        "The data point closest to the cluster center",
+        "The arithmetic mean of all points in a cluster",
+        "The median of all points in a cluster",
+        "The first data point assigned to a cluster"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A centroid is the arithmetic mean (average) of all data points assigned to a cluster, representing the center point of that cluster.",
+      "optionExplanations": [
+        "This describes a medoid, not a centroid. The closest point may not be the actual center",
+        "Correct. The centroid is calculated as the mean of all coordinates of points in the cluster",
+        "The median would be a different type of center measure, not used in standard K-Means",
+        "The first assigned point is just the initial assignment, not the cluster center"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "centroid",
+        "cluster-center",
+        "arithmetic-mean"
+      ]
+    },
+    {
+      "id": "KMN_005",
+      "question": "What is the first step in the K-Means algorithm?",
+      "options": [
+        "Assign each point to the nearest centroid",
+        "Calculate within-cluster sum of squares",
+        "Initialize K centroids randomly",
+        "Update centroid positions"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The first step is to initialize K centroids, typically by placing them randomly in the feature space or using more sophisticated initialization methods.",
+      "optionExplanations": [
+        "Point assignment happens after centroids are initialized, so it's the second step",
+        "WCSS calculation occurs during or after the algorithm, not as the first step",
+        "Correct. Initialization of K centroids is the essential first step before any assignments can be made",
+        "Centroid updates happen after points are assigned, so this comes later in the process"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "algorithm-steps",
+        "initialization",
+        "centroid-placement"
+      ]
+    },
+    {
+      "id": "KMN_006",
+      "question": "Which distance metric is most commonly used in K-Means?",
+      "options": [
+        "Manhattan distance",
+        "Euclidean distance",
+        "Cosine distance",
+        "Hamming distance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Euclidean distance is the standard distance metric in K-Means, measuring the straight-line distance between points in multidimensional space.",
+      "optionExplanations": [
+        "Manhattan distance could be used but isn't the standard choice for K-Means",
+        "Correct. Euclidean distance is the default metric, calculated as the square root of sum of squared differences",
+        "Cosine distance measures angular similarity, not typically used in standard K-Means",
+        "Hamming distance is for categorical data, not suitable for continuous features in K-Means"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "distance-metric",
+        "euclidean-distance",
+        "similarity-measure"
+      ]
+    },
+    {
+      "id": "KMN_007",
+      "question": "When does the K-Means algorithm converge?",
+      "options": [
+        "When all data points are assigned to clusters",
+        "When centroids stop moving significantly between iterations",
+        "When the number of iterations reaches K",
+        "When each cluster has equal number of points"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means converges when centroids stop moving between iterations, indicating that the cluster assignments have stabilized.",
+      "optionExplanations": [
+        "Points are assigned in every iteration; this doesn't indicate convergence",
+        "Correct. Convergence occurs when centroid positions stabilize, typically within a small tolerance",
+        "The number of iterations is unrelated to K; convergence depends on centroid stability",
+        "Equal cluster sizes aren't required for convergence; clusters can have different sizes"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "convergence",
+        "algorithm-termination",
+        "centroid-stability"
+      ]
+    },
+    {
+      "id": "KMN_008",
+      "question": "What is the elbow method used for in K-Means?",
+      "options": [
+        "Initializing centroids",
+        "Determining the optimal number of clusters (K)",
+        "Calculating distance between points",
+        "Updating centroid positions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The elbow method helps determine the optimal K by plotting WCSS against different K values and finding the 'elbow' point where improvement starts diminishing.",
+      "optionExplanations": [
+        "Centroid initialization is done by methods like K-Means++, not the elbow method",
+        "Correct. The elbow method identifies the optimal K by finding where WCSS reduction slows significantly",
+        "Distance calculation is a basic operation in K-Means, not related to the elbow method",
+        "Centroid updates follow a simple arithmetic mean calculation, not involving the elbow method"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "elbow-method",
+        "optimal-k",
+        "hyperparameter-tuning"
+      ]
+    },
+    {
+      "id": "KMN_009",
+      "question": "What does WCSS stand for in K-Means clustering?",
+      "options": [
+        "Weighted Cluster Sum of Squares",
+        "Within-Cluster Sum of Squares",
+        "Whole Cluster Statistical Score",
+        "Weighted Centroid Sum Score"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "WCSS stands for Within-Cluster Sum of Squares, which measures the total squared distance of all points from their respective cluster centroids.",
+      "optionExplanations": [
+        "This isn't the correct expansion; K-Means doesn't typically use weighted clusters",
+        "Correct. WCSS measures how tightly points are clustered around their centroids",
+        "This is not a standard term in K-Means clustering terminology",
+        "This is not the correct expansion of WCSS in clustering context"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "wcss",
+        "terminology",
+        "cluster-evaluation"
+      ]
+    },
+    {
+      "id": "KMN_010",
+      "question": "What happens to WCSS as the number of clusters (K) increases?",
+      "options": [
+        "WCSS increases monotonically",
+        "WCSS decreases monotonically",
+        "WCSS remains constant",
+        "WCSS fluctuates randomly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "WCSS always decreases as K increases because more clusters allow for tighter groupings, with the minimum WCSS of 0 when K equals the number of data points.",
+      "optionExplanations": [
+        "WCSS decreases, not increases, with more clusters due to tighter groupings",
+        "Correct. More clusters mean points are closer to centroids, reducing total squared distances",
+        "WCSS changes significantly with different K values, not remaining constant",
+        "WCSS follows a predictable decreasing pattern, not random fluctuations"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "wcss-behavior",
+        "cluster-count",
+        "optimization-curve"
+      ]
+    },
+    {
+      "id": "KMN_011",
+      "question": "What is inertia in K-Means clustering?",
+      "options": [
+        "The resistance of centroids to movement",
+        "Another term for WCSS",
+        "The number of iterations needed for convergence",
+        "The stability of cluster assignments"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Inertia is another term for WCSS (Within-Cluster Sum of Squares), representing the sum of squared distances from each point to its cluster centroid.",
+      "optionExplanations": [
+        "This is a conceptual interpretation but not the technical definition of inertia in K-Means",
+        "Correct. Inertia and WCSS are synonymous terms measuring cluster compactness",
+        "The number of iterations is a separate concept from inertia",
+        "Cluster stability is related but inertia specifically refers to the sum of squared distances"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "inertia",
+        "wcss",
+        "terminology"
+      ]
+    },
+    {
+      "id": "KMN_012",
+      "question": "Which initialization method is considered better than random initialization in K-Means?",
+      "options": [
+        "K-Means++",
+        "Sequential initialization",
+        "Grid-based initialization",
+        "Uniform initialization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "K-Means++ is a smart initialization method that selects initial centroids to be far apart from each other, leading to better clustering results and faster convergence.",
+      "optionExplanations": [
+        "Correct. K-Means++ chooses initial centroids probabilistically to maximize distance between them",
+        "Sequential initialization doesn't refer to a standard K-Means initialization method",
+        "Grid-based initialization isn't a commonly used method for K-Means",
+        "Uniform initialization is similar to random initialization and doesn't provide the advantages of K-Means++"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kmeans-plus-plus",
+        "initialization",
+        "centroid-selection"
+      ]
+    },
+    {
+      "id": "KMN_013",
+      "question": "What is a major limitation of K-Means clustering?",
+      "options": [
+        "It can only work with labeled data",
+        "It requires the number of clusters (K) to be specified in advance",
+        "It can only handle categorical features",
+        "It always produces the same results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A major limitation is that K must be specified beforehand, which requires domain knowledge or techniques like the elbow method to determine the optimal value.",
+      "optionExplanations": [
+        "K-Means works with unlabeled data, which is actually its strength as an unsupervised method",
+        "Correct. Requiring K to be predetermined is a significant limitation when the optimal number isn't known",
+        "K-Means works with continuous numerical features, not categorical ones",
+        "K-Means can produce different results due to random initialization, not the same results"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "limitations",
+        "hyperparameter",
+        "clustering-challenges"
+      ]
+    },
+    {
+      "id": "KMN_014",
+      "question": "K-Means assumes that clusters have which geometric shape?",
+      "options": [
+        "Elliptical clusters",
+        "Spherical (circular) clusters",
+        "Rectangular clusters",
+        "Irregular shaped clusters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means assumes clusters are spherical (circular) and of similar size, which is why it works well for globular data but struggles with elongated or irregular clusters.",
+      "optionExplanations": [
+        "K-Means doesn't handle elliptical clusters well due to its spherical assumption",
+        "Correct. The Euclidean distance metric and centroid-based approach assume spherical clusters",
+        "Rectangular clusters don't align with K-Means' distance-based clustering approach",
+        "K-Means struggles with irregular shapes due to its spherical cluster assumption"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "assumptions",
+        "cluster-shape",
+        "spherical-clusters"
+      ]
+    },
+    {
+      "id": "KMN_015",
+      "question": "What problem can occur if centroids are initialized poorly in K-Means?",
+      "options": [
+        "The algorithm will not converge",
+        "The algorithm may converge to a local optimum",
+        "All points will be assigned to one cluster",
+        "The algorithm will run indefinitely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Poor initialization can lead to convergence at a local optimum rather than the global optimum, resulting in suboptimal clustering results.",
+      "optionExplanations": [
+        "The algorithm will still converge, but possibly to a poor solution",
+        "Correct. Bad initialization can trap the algorithm in local optima, missing better global solutions",
+        "Points will still be distributed among clusters, though the distribution may be poor",
+        "K-Means will converge in finite iterations, not run indefinitely"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "initialization-problems",
+        "local-optimum",
+        "convergence-issues"
+      ]
+    },
+    {
+      "id": "KMN_016",
+      "question": "How is the new centroid position calculated after each iteration?",
+      "options": [
+        "As the median of all points in the cluster",
+        "As the mode of all points in the cluster",
+        "As the arithmetic mean of all points in the cluster",
+        "As the point furthest from other cluster centroids"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The new centroid position is calculated as the arithmetic mean (average) of all points currently assigned to that cluster.",
+      "optionExplanations": [
+        "Median-based clustering exists (K-medians) but standard K-Means uses the mean",
+        "Mode is used for categorical data, not applicable to continuous features in K-Means",
+        "Correct. The centroid is the arithmetic mean of all coordinates of points in the cluster",
+        "This would move centroids away from their clusters, opposite of the K-Means objective"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "centroid-update",
+        "arithmetic-mean",
+        "algorithm-steps"
+      ]
+    },
+    {
+      "id": "KMN_017",
+      "question": "What is the time complexity of K-Means algorithm?",
+      "options": [
+        "O(n)",
+        "O(nkdi)",
+        "O(n²)",
+        "O(k²)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means has time complexity O(nkdi) where n is the number of points, k is the number of clusters, d is the number of dimensions, and i is the number of iterations.",
+      "optionExplanations": [
+        "O(n) is too simple; K-Means involves multiple factors including clusters and dimensions",
+        "Correct. The complexity accounts for points (n), clusters (k), dimensions (d), and iterations (i)",
+        "O(n²) would suggest comparing every point with every other point, which K-Means doesn't do",
+        "O(k²) only considers clusters, ignoring data points and dimensions"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "time-complexity",
+        "algorithm-analysis",
+        "computational-cost"
+      ]
+    },
+    {
+      "id": "KMN_018",
+      "question": "Which of the following datasets would K-Means handle poorly?",
+      "options": [
+        "Spherical clusters of similar sizes",
+        "Clusters with very different densities",
+        "Uniformly distributed data",
+        "Data with clear cluster separation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means struggles with clusters of very different densities because it assumes clusters have similar sizes and densities.",
+      "optionExplanations": [
+        "This is the ideal case for K-Means, which it handles very well",
+        "Correct. Different densities violate K-Means' assumption of similar cluster characteristics",
+        "While challenging, uniformly distributed data doesn't create the same structural problems as density differences",
+        "Clear separation actually helps K-Means perform better"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "limitations",
+        "cluster-density",
+        "algorithm-assumptions"
+      ]
+    },
+    {
+      "id": "KMN_019",
+      "question": "What happens if you set K equal to the number of data points?",
+      "options": [
+        "The algorithm fails to converge",
+        "All points form one large cluster",
+        "Each point becomes its own cluster",
+        "The algorithm runs much faster"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When K equals the number of data points, each point becomes its own cluster with itself as the centroid, resulting in WCSS = 0.",
+      "optionExplanations": [
+        "The algorithm converges immediately since each point is already at its centroid",
+        "Setting K high creates many clusters, not one large cluster",
+        "Correct. Each data point becomes a cluster center with zero distance to itself",
+        "While it converges quickly, this isn't a practical or meaningful clustering solution"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "extreme-cases",
+        "cluster-count",
+        "trivial-solutions"
+      ]
+    },
+    {
+      "id": "KMN_020",
+      "question": "What is the silhouette score used for in K-Means evaluation?",
+      "options": [
+        "Determining the optimal number of iterations",
+        "Measuring the quality of clustering",
+        "Calculating centroid positions",
+        "Initializing cluster centers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The silhouette score measures clustering quality by evaluating how similar points are to their own cluster compared to other clusters.",
+      "optionExplanations": [
+        "Iteration count is determined by convergence criteria, not silhouette score",
+        "Correct. Silhouette score ranges from -1 to 1, with higher values indicating better clustering",
+        "Centroid positions are calculated using arithmetic means, not silhouette scores",
+        "Centroid initialization uses methods like K-Means++, not silhouette analysis"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "silhouette-score",
+        "cluster-evaluation",
+        "quality-metrics"
+      ]
+    },
+    {
+      "id": "KMN_021",
+      "question": "In the elbow method, what does the 'elbow' point represent?",
+      "options": [
+        "The point where WCSS is minimum",
+        "The point where WCSS starts decreasing rapidly",
+        "The point where adding more clusters provides diminishing returns",
+        "The point where all clusters have equal size"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The elbow point indicates where the rate of WCSS decrease slows down significantly, suggesting that additional clusters provide diminishing benefits.",
+      "optionExplanations": [
+        "WCSS continues to decrease after the elbow, reaching minimum when K equals data points",
+        "WCSS decreases throughout the curve; the elbow is where the rate of decrease slows",
+        "Correct. The elbow represents the optimal trade-off between cluster count and WCSS reduction",
+        "Cluster sizes aren't necessarily equal at the elbow point"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "elbow-method",
+        "optimal-k",
+        "diminishing-returns"
+      ]
+    },
+    {
+      "id": "KMN_022",
+      "question": "What is the main difference between K-Means and K-Medoids?",
+      "options": [
+        "K-Medoids uses medians instead of means",
+        "K-Medoids uses actual data points as cluster centers",
+        "K-Medoids requires more clusters",
+        "K-Medoids only works with categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Medoids uses actual data points as cluster centers (medoids) instead of calculated means (centroids), making it more robust to outliers.",
+      "optionExplanations": [
+        "K-Medoids doesn't use medians; it uses actual data points as representatives",
+        "Correct. Medoids are existing data points that minimize distance to other points in the cluster",
+        "Both algorithms can use the same number of clusters; K isn't restricted differently",
+        "K-Medoids can work with various data types, not limited to categorical data"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "k-medoids",
+        "comparison",
+        "cluster-centers"
+      ]
+    },
+    {
+      "id": "KMN_023",
+      "question": "Why might K-Means produce different results on multiple runs?",
+      "options": [
+        "The algorithm is deterministic",
+        "Random initialization of centroids",
+        "The data changes between runs",
+        "Different distance metrics are used"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random initialization of centroids can lead to different local optima, causing variations in final clustering results across multiple runs.",
+      "optionExplanations": [
+        "K-Means is non-deterministic due to random initialization, not deterministic",
+        "Correct. Different starting positions can lead to different final cluster configurations",
+        "The data remains constant; variations come from initialization differences",
+        "Standard K-Means uses the same distance metric (Euclidean) across runs"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "randomness",
+        "initialization",
+        "reproducibility"
+      ]
+    },
+    {
+      "id": "KMN_024",
+      "question": "What does it mean when we say K-Means is sensitive to outliers?",
+      "options": [
+        "Outliers cause the algorithm to fail",
+        "Outliers can significantly affect centroid positions",
+        "Outliers are automatically removed",
+        "Outliers create additional clusters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Outliers can dramatically shift centroid positions since centroids are calculated as means, and means are sensitive to extreme values.",
+      "optionExplanations": [
+        "The algorithm still runs but may produce poor results due to outlier influence",
+        "Correct. Since centroids are means, extreme values can pull centroids away from the main cluster",
+        "K-Means doesn't automatically detect or remove outliers",
+        "Outliers don't create new clusters but can distort existing cluster boundaries"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "outliers",
+        "sensitivity",
+        "centroid-distortion"
+      ]
+    },
+    {
+      "id": "KMN_025",
+      "question": "What is the space complexity of K-Means algorithm?",
+      "options": [
+        "O(n + k)",
+        "O(nk)",
+        "O(n²)",
+        "O(k²)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "K-Means space complexity is O(n + k) to store the data points (n) and cluster centroids (k), plus cluster assignments.",
+      "optionExplanations": [
+        "Correct. Space is needed for data points (n) and centroids (k), plus minimal additional storage",
+        "O(nk) would suggest storing a matrix of all point-centroid relationships, which isn't necessary",
+        "O(n²) would imply storing pairwise distances between all points, which K-Means doesn't require",
+        "O(k²) only accounts for centroids, ignoring the data points that must be stored"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "space-complexity",
+        "memory-requirements",
+        "algorithm-analysis"
+      ]
+    },
+    {
+      "id": "KMN_026",
+      "question": "Which of the following is NOT a step in the K-Means algorithm?",
+      "options": [
+        "Initialize K centroids",
+        "Assign points to nearest centroids",
+        "Update centroid positions",
+        "Remove outliers from the dataset"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "K-Means doesn't include outlier removal as part of its standard algorithm steps. Outlier handling would be a preprocessing step.",
+      "optionExplanations": [
+        "Initialization is the essential first step of K-Means",
+        "Point assignment is the core step that happens in each iteration",
+        "Centroid updates occur after each assignment step",
+        "Correct. Outlier removal isn't part of the standard K-Means algorithm"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "algorithm-steps",
+        "outlier-handling",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "KMN_027",
+      "question": "What is the effect of feature scaling on K-Means clustering?",
+      "options": [
+        "It has no effect on the results",
+        "It can significantly improve clustering quality",
+        "It makes the algorithm run slower",
+        "It reduces the number of required clusters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling is crucial for K-Means because the algorithm uses Euclidean distance, and features with larger scales can dominate the distance calculations.",
+      "optionExplanations": [
+        "Feature scaling can dramatically change K-Means results by balancing feature contributions",
+        "Correct. Scaling ensures all features contribute equally to distance calculations",
+        "Scaling is a preprocessing step and doesn't affect K-Means runtime significantly",
+        "The optimal number of clusters is independent of feature scaling"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "preprocessing",
+        "distance-calculation"
+      ]
+    },
+    {
+      "id": "KMN_028",
+      "question": "In K-Means++, how is the first centroid selected?",
+      "options": [
+        "As the point with maximum distance from origin",
+        "Randomly from the dataset",
+        "As the centroid of all data points",
+        "As the point with minimum distance to all others"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In K-Means++, the first centroid is chosen randomly from the data points, then subsequent centroids are chosen to maximize distance from existing centroids.",
+      "optionExplanations": [
+        "Distance from origin isn't considered in K-Means++ centroid selection",
+        "Correct. The first centroid is selected uniformly at random, then subsequent ones use distance-based probability",
+        "The overall centroid isn't used as the first cluster center in K-Means++",
+        "K-Means++ aims to maximize distances between centroids, not minimize them"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kmeans-plus-plus",
+        "initialization",
+        "first-centroid"
+      ]
+    },
+    {
+      "id": "KMN_029",
+      "question": "What happens when two centroids are initialized at the same location?",
+      "options": [
+        "The algorithm automatically separates them",
+        "One centroid will have no assigned points",
+        "The algorithm fails to run",
+        "Both centroids will compete for the same points"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "If two centroids start at the same location, they will move together initially, but one may end up with no assigned points if they don't separate naturally.",
+      "optionExplanations": [
+        "The algorithm doesn't have a mechanism to automatically separate identical centroids",
+        "Correct. Points equidistant from identical centroids may be assigned arbitrarily, potentially leaving one empty",
+        "The algorithm will still run, though it may produce suboptimal results",
+        "Initially they compete, but the assignment process may result in one getting no points"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "identical-centroids",
+        "initialization-issues",
+        "empty-clusters"
+      ]
+    },
+    {
+      "id": "KMN_030",
+      "question": "Which evaluation metric increases as clustering quality improves?",
+      "options": [
+        "Within-Cluster Sum of Squares (WCSS)",
+        "Inertia",
+        "Silhouette Score",
+        "Sum of Squared Errors"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Silhouette Score ranges from -1 to 1, with higher values indicating better clustering quality, unlike WCSS and inertia which decrease with better clustering.",
+      "optionExplanations": [
+        "WCSS decreases as clustering quality improves, not increases",
+        "Inertia is the same as WCSS, so it also decreases with better clustering",
+        "Correct. Higher silhouette scores (closer to 1) indicate better separated and cohesive clusters",
+        "Sum of Squared Errors decreases with better clustering, similar to WCSS"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-metrics",
+        "silhouette-score",
+        "quality-assessment"
+      ]
+    },
+    {
+      "id": "KMN_031",
+      "question": "What is the primary assumption K-Means makes about cluster variance?",
+      "options": [
+        "All clusters have equal variance",
+        "Clusters can have different variances",
+        "Variance doesn't matter for clustering",
+        "Only the largest cluster's variance matters"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "K-Means assumes that all clusters have approximately equal variance, which is why it works best with spherical clusters of similar sizes.",
+      "optionExplanations": [
+        "Correct. Equal variance assumption is why K-Means creates roughly spherical, similarly-sized clusters",
+        "K-Means doesn't handle clusters with significantly different variances well",
+        "Variance is crucial in K-Means as it affects cluster shape and size",
+        "K-Means considers variance equally across all clusters, not prioritizing any single cluster"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "assumptions",
+        "cluster-variance",
+        "equal-variance"
+      ]
+    },
+    {
+      "id": "KMN_032",
+      "question": "How does K-Means handle categorical features?",
+      "options": [
+        "It converts them to numerical values automatically",
+        "It works directly with categorical features",
+        "It cannot handle categorical features without preprocessing",
+        "It ignores categorical features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "K-Means requires numerical features for distance calculations and cannot directly handle categorical data without preprocessing like one-hot encoding.",
+      "optionExplanations": [
+        "K-Means doesn't have built-in categorical to numerical conversion",
+        "K-Means uses Euclidean distance which requires numerical features",
+        "Correct. Categorical features must be encoded (e.g., one-hot encoding) before using K-Means",
+        "K-Means doesn't ignore features; it requires all features to be numerical"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical-features",
+        "preprocessing",
+        "data-types"
+      ]
+    },
+    {
+      "id": "KMN_033",
+      "question": "What is the main advantage of using K-Means++ over random initialization?",
+      "options": [
+        "It guarantees global optimum",
+        "It reduces computational time",
+        "It provides better initial centroid spread",
+        "It automatically determines K"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "K-Means++ provides better initial centroid spread by selecting centroids that are far apart, leading to better clustering results and faster convergence.",
+      "optionExplanations": [
+        "K-Means++ doesn't guarantee global optimum, but improves chances of finding better solutions",
+        "While it may converge faster, the main advantage is better centroid positioning",
+        "Correct. K-Means++ spreads initial centroids apart, reducing chance of poor local optima",
+        "K-Means++ still requires K to be specified; it doesn't determine the optimal number"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kmeans-plus-plus",
+        "initialization-advantages",
+        "centroid-spread"
+      ]
+    },
+    {
+      "id": "KMN_034",
+      "question": "When would you prefer K-Medoids over K-Means?",
+      "options": [
+        "When you want faster computation",
+        "When the dataset contains outliers",
+        "When you need exactly spherical clusters",
+        "When working with continuous data only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Medoids is more robust to outliers because it uses actual data points as centers rather than means, which are sensitive to extreme values.",
+      "optionExplanations": [
+        "K-Medoids is generally slower than K-Means due to its need to evaluate distances between all points",
+        "Correct. K-Medoids using actual data points is less affected by outliers than K-Means using arithmetic means",
+        "K-Medoids doesn't necessarily produce more spherical clusters than K-Means",
+        "K-Medoids can work with various distance metrics and data types, not just continuous data"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "k-medoids",
+        "outlier-robustness",
+        "algorithm-comparison"
+      ]
+    },
+    {
+      "id": "KMN_035",
+      "question": "What is the relationship between the number of clusters K and model complexity?",
+      "options": [
+        "Higher K means lower complexity",
+        "Higher K means higher complexity",
+        "K doesn't affect model complexity",
+        "Only even values of K affect complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Higher K increases model complexity as more clusters mean more parameters (centroids) and potentially overfitting to the training data.",
+      "optionExplanations": [
+        "More clusters increase the number of parameters, raising complexity",
+        "Correct. More clusters create more complex models with more parameters to estimate",
+        "K directly affects complexity through the number of cluster centers and decision boundaries",
+        "The even/odd nature of K doesn't specifically relate to model complexity"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-complexity",
+        "overfitting",
+        "hyperparameter-effect"
+      ]
+    },
+    {
+      "id": "KMN_036",
+      "question": "In the context of K-Means, what is a 'dead centroid'?",
+      "options": [
+        "A centroid that doesn't move between iterations",
+        "A centroid with no points assigned to it",
+        "A centroid at the origin (0,0)",
+        "A centroid that moves too far from the data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A dead centroid is one that has no data points assigned to it, which can happen due to poor initialization or during the algorithm's execution.",
+      "optionExplanations": [
+        "A stationary centroid could still have assigned points; this isn't necessarily 'dead'",
+        "Correct. A dead centroid has no assigned points and contributes nothing to the clustering",
+        "Position at origin doesn't make a centroid dead if it has assigned points",
+        "Distance from data doesn't make a centroid dead unless it has no assigned points"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dead-centroid",
+        "empty-clusters",
+        "algorithm-issues"
+      ]
+    },
+    {
+      "id": "KMN_037",
+      "question": "How does increasing the number of features (dimensionality) affect K-Means performance?",
+      "options": [
+        "It improves clustering quality",
+        "It has no effect on performance",
+        "It can degrade performance due to curse of dimensionality",
+        "It only affects computational speed"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High dimensionality can hurt K-Means due to the curse of dimensionality, where distances become less meaningful and data becomes sparser.",
+      "optionExplanations": [
+        "Higher dimensions often make clustering more difficult, not easier",
+        "Dimensionality significantly affects both computational and clustering performance",
+        "Correct. In high dimensions, all points tend to be equidistant, making clustering less effective",
+        "Dimensionality affects both speed and clustering quality, not just computational aspects"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensions",
+        "performance-degradation"
+      ]
+    },
+    {
+      "id": "KMN_038",
+      "question": "What is the Davies-Bouldin Index used for in K-Means evaluation?",
+      "options": [
+        "Determining optimal K",
+        "Measuring clustering quality",
+        "Calculating centroid positions",
+        "Detecting outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Davies-Bouldin Index measures clustering quality by evaluating the ratio of within-cluster to between-cluster distances, with lower values indicating better clustering.",
+      "optionExplanations": [
+        "While it can help compare different K values, its primary purpose is quality measurement",
+        "Correct. Davies-Bouldin Index assesses cluster separation and compactness",
+        "Centroid positions are calculated using arithmetic means, not Davies-Bouldin Index",
+        "This index measures overall clustering quality, not specifically outlier detection"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "davies-bouldin-index",
+        "cluster-evaluation",
+        "quality-metrics"
+      ]
+    },
+    {
+      "id": "KMN_039",
+      "question": "What happens to K-Means when clusters have significantly different sizes?",
+      "options": [
+        "It handles different sizes perfectly",
+        "It tends to split large clusters and merge small ones",
+        "It only affects computational time",
+        "It automatically adjusts K"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means tends to create clusters of similar sizes, so it may split naturally large clusters and merge naturally small ones to achieve size balance.",
+      "optionExplanations": [
+        "K-Means has a bias toward equal-sized clusters, so it doesn't handle size differences perfectly",
+        "Correct. The algorithm's objective function favors similar cluster sizes",
+        "Different cluster sizes affect clustering quality, not just computational aspects",
+        "K-Means doesn't automatically adjust the number of clusters"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cluster-size-bias",
+        "size-imbalance",
+        "algorithm-limitations"
+      ]
+    },
+    {
+      "id": "KMN_040",
+      "question": "Which distance metric would be problematic for K-Means?",
+      "options": [
+        "Euclidean distance",
+        "Squared Euclidean distance",
+        "Manhattan distance",
+        "Cosine distance"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Cosine distance measures angular similarity rather than actual distance, which doesn't align well with K-Means' centroid-based approach and mean calculations.",
+      "optionExplanations": [
+        "Euclidean distance is the standard and most appropriate metric for K-Means",
+        "Squared Euclidean distance is commonly used and works well with K-Means",
+        "Manhattan distance can work with K-Means, though it's not the standard choice",
+        "Correct. Cosine distance focuses on direction rather than magnitude, conflicting with centroid calculations"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "distance-metrics",
+        "cosine-distance",
+        "metric-compatibility"
+      ]
+    },
+    {
+      "id": "KMN_041",
+      "question": "What is mini-batch K-Means?",
+      "options": [
+        "K-Means with very small K values",
+        "K-Means that processes data in small batches",
+        "K-Means for datasets with few features",
+        "K-Means with reduced iterations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mini-batch K-Means processes data in small random batches rather than using the entire dataset in each iteration, making it faster for large datasets.",
+      "optionExplanations": [
+        "Mini-batch refers to data processing approach, not cluster count",
+        "Correct. It uses random subsets of data in each iteration for computational efficiency",
+        "Mini-batch relates to data processing, not the number of features",
+        "While it may converge faster, the key difference is batch processing, not iteration reduction"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mini-batch-kmeans",
+        "scalability",
+        "batch-processing"
+      ]
+    },
+    {
+      "id": "KMN_042",
+      "question": "How does K-Means handle non-convex clusters?",
+      "options": [
+        "It identifies them perfectly",
+        "It struggles and may split them incorrectly",
+        "It automatically adjusts the algorithm",
+        "It increases K automatically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means assumes convex, spherical clusters and will struggle with non-convex shapes, often splitting them into multiple clusters inappropriately.",
+      "optionExplanations": [
+        "K-Means' spherical assumption makes it poor at handling non-convex shapes",
+        "Correct. Non-convex clusters often get split because K-Means assumes spherical cluster shapes",
+        "K-Means doesn't automatically adjust its approach for different cluster shapes",
+        "K-Means doesn't automatically modify the number of clusters"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "non-convex-clusters",
+        "algorithm-limitations",
+        "cluster-shapes"
+      ]
+    },
+    {
+      "id": "KMN_043",
+      "question": "What is the gap statistic used for in K-Means?",
+      "options": [
+        "Measuring distance between centroids",
+        "Determining optimal number of clusters",
+        "Calculating convergence speed",
+        "Detecting outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The gap statistic compares within-cluster dispersion for different K values with expected dispersion under null reference distribution to find optimal K.",
+      "optionExplanations": [
+        "Gap statistic doesn't measure centroid distances directly",
+        "Correct. It helps determine optimal K by comparing clustering structure to random data",
+        "Convergence speed isn't measured by gap statistic",
+        "Gap statistic focuses on cluster number optimization, not outlier detection"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gap-statistic",
+        "optimal-k",
+        "cluster-validation"
+      ]
+    },
+    {
+      "id": "KMN_044",
+      "question": "In K-Means, what does 'hard clustering' mean?",
+      "options": [
+        "Clustering very difficult datasets",
+        "Each point belongs to exactly one cluster",
+        "Using maximum number of clusters",
+        "Clustering without convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard clustering means each data point is assigned to exactly one cluster, as opposed to soft clustering where points can have probabilistic membership in multiple clusters.",
+      "optionExplanations": [
+        "Hard clustering refers to assignment method, not dataset difficulty",
+        "Correct. Each point has definitive membership in exactly one cluster",
+        "The number of clusters doesn't define hard vs soft clustering",
+        "Convergence is still expected in hard clustering"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hard-clustering",
+        "cluster-assignment",
+        "membership"
+      ]
+    },
+    {
+      "id": "KMN_045",
+      "question": "What is the main computational bottleneck in K-Means?",
+      "options": [
+        "Centroid initialization",
+        "Distance calculations between points and centroids",
+        "Convergence checking",
+        "Final cluster assignment"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The most computationally expensive step is calculating distances between all data points and all centroids in each iteration.",
+      "optionExplanations": [
+        "Initialization is done once and is relatively fast",
+        "Correct. O(nkd) distance calculations per iteration dominate computational cost",
+        "Convergence checking is simple comparison and doesn't dominate runtime",
+        "Final assignment is part of the distance calculation process"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-bottleneck",
+        "distance-calculations",
+        "performance"
+      ]
+    },
+    {
+      "id": "KMN_046",
+      "question": "How does K-Means perform with clusters of different densities?",
+      "options": [
+        "It handles density differences well",
+        "It tends to break dense clusters and merge sparse ones",
+        "Density doesn't affect K-Means performance",
+        "It automatically adjusts for density"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means tends to create clusters of similar sizes regardless of natural density, potentially breaking up dense clusters and merging sparse regions.",
+      "optionExplanations": [
+        "K-Means struggles with density differences due to its equal-size cluster assumption",
+        "Correct. The algorithm favors similar cluster sizes, disrupting natural density patterns",
+        "Density significantly affects clustering quality in K-Means",
+        "K-Means doesn't have built-in density adaptation mechanisms"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cluster-density",
+        "density-variation",
+        "algorithm-limitations"
+      ]
+    },
+    {
+      "id": "KMN_047",
+      "question": "What is the purpose of random restarts in K-Means?",
+      "options": [
+        "To speed up convergence",
+        "To handle different data types",
+        "To find better solutions by avoiding poor local optima",
+        "To automatically determine K"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random restarts involve running K-Means multiple times with different initializations and selecting the best result to avoid poor local optima.",
+      "optionExplanations": [
+        "Random restarts increase total computation time, not speed up individual runs",
+        "Data types are handled through preprocessing, not random restarts",
+        "Correct. Multiple runs with different initializations help find better global solutions",
+        "Random restarts don't determine K; they find better solutions for a given K"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "random-restarts",
+        "local-optima",
+        "solution-quality"
+      ]
+    },
+    {
+      "id": "KMN_048",
+      "question": "Which preprocessing step is most important for K-Means?",
+      "options": [
+        "Removing all outliers",
+        "Feature scaling/normalization",
+        "Converting to categorical data",
+        "Reducing the number of samples"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling is crucial because K-Means uses Euclidean distance, and features with different scales can dominate the distance calculations.",
+      "optionExplanations": [
+        "While outlier handling helps, complete removal isn't always necessary or advisable",
+        "Correct. Scaling ensures all features contribute equally to distance calculations",
+        "K-Means requires numerical data, not categorical conversion",
+        "Sample reduction isn't necessary unless computational resources are limited"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "feature-scaling",
+        "data-preparation"
+      ]
+    },
+    {
+      "id": "KMN_049",
+      "question": "What happens when K is set to 1 in K-Means?",
+      "options": [
+        "The algorithm fails to run",
+        "All points form one cluster centered at the data mean",
+        "Each point becomes its own cluster",
+        "The algorithm runs infinitely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With K=1, all data points are assigned to a single cluster, and the centroid becomes the overall mean of all data points.",
+      "optionExplanations": [
+        "The algorithm runs successfully with K=1, though it's not useful for clustering",
+        "Correct. One cluster contains all points with centroid at the global mean",
+        "This happens when K equals the number of data points, not when K=1",
+        "The algorithm converges quickly with K=1 since there's only one centroid to calculate"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "extreme-cases",
+        "single-cluster",
+        "trivial-solutions"
+      ]
+    },
+    {
+      "id": "KMN_050",
+      "question": "Which of the following best describes the K-Means objective function?",
+      "options": [
+        "Maximize the distance between cluster centroids",
+        "Minimize the sum of squared distances from points to their assigned centroids",
+        "Maximize the number of points in each cluster",
+        "Minimize the number of iterations required"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The K-Means objective is to minimize the Within-Cluster Sum of Squares (WCSS), which is the sum of squared distances from each point to its assigned centroid.",
+      "optionExplanations": [
+        "While separated centroids are desirable, this isn't the direct objective function",
+        "Correct. This is the mathematical definition of the WCSS objective that K-Means minimizes",
+        "Cluster sizes aren't directly optimized in the objective function",
+        "Number of iterations isn't part of the clustering quality objective"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "objective-function",
+        "wcss",
+        "mathematical-formulation"
+      ]
+    },
+    {
+      "id": "KMN_051",
+      "question": "What is the Calinski-Harabasz Index used for?",
+      "options": [
+        "Initializing centroids",
+        "Evaluating clustering quality",
+        "Determining convergence",
+        "Calculating distances"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Calinski-Harabasz Index (also called Variance Ratio Criterion) evaluates clustering quality by measuring the ratio of between-cluster to within-cluster variance.",
+      "optionExplanations": [
+        "Centroid initialization uses methods like K-Means++, not this index",
+        "Correct. Higher values indicate better clustering with well-separated, compact clusters",
+        "Convergence is determined by centroid movement, not this index",
+        "Distance calculations use metrics like Euclidean distance, not this index"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "calinski-harabasz-index",
+        "cluster-evaluation",
+        "quality-metrics"
+      ]
+    },
+    {
+      "id": "KMN_052",
+      "question": "How does K-Means handle missing values in the dataset?",
+      "options": [
+        "It automatically imputes missing values",
+        "It ignores samples with missing values",
+        "It cannot handle missing values without preprocessing",
+        "It treats missing values as zero"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "K-Means cannot directly handle missing values and requires preprocessing such as imputation or removal of incomplete samples before clustering.",
+      "optionExplanations": [
+        "K-Means doesn't have built-in imputation capabilities",
+        "K-Means doesn't automatically ignore incomplete samples",
+        "Correct. Missing values must be handled through preprocessing before applying K-Means",
+        "K-Means doesn't automatically treat missing values as zero"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-values",
+        "preprocessing",
+        "data-handling"
+      ]
+    },
+    {
+      "id": "KMN_053",
+      "question": "What is the relationship between K-Means and Expectation-Maximization (EM)?",
+      "options": [
+        "They are completely unrelated algorithms",
+        "K-Means is a special case of EM for Gaussian mixtures",
+        "EM is a special case of K-Means",
+        "They always produce identical results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means can be viewed as a special case of EM algorithm for Gaussian Mixture Models with spherical, equal-variance components and hard assignments.",
+      "optionExplanations": [
+        "K-Means and EM are related through the Gaussian Mixture Model framework",
+        "Correct. K-Means is EM with specific constraints on Gaussian components and hard clustering",
+        "EM is more general than K-Means, not a special case of it",
+        "They can produce different results due to different assumptions and assignment methods"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "em-algorithm",
+        "gaussian-mixture-models",
+        "algorithm-relationships"
+      ]
+    },
+    {
+      "id": "KMN_054",
+      "question": "What is the effect of poor centroid initialization on K-Means convergence?",
+      "options": [
+        "It prevents convergence entirely",
+        "It has no effect on final results",
+        "It may lead to slower convergence and suboptimal solutions",
+        "It always improves solution quality"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Poor initialization can lead to slower convergence and convergence to suboptimal local minima, but doesn't prevent convergence entirely.",
+      "optionExplanations": [
+        "K-Means will still converge, but possibly to a poor local optimum",
+        "Initialization significantly affects both convergence speed and solution quality",
+        "Correct. Bad initialization can cause slow convergence to suboptimal local minima",
+        "Poor initialization typically worsens solution quality, not improves it"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "initialization-effects",
+        "convergence-speed",
+        "solution-quality"
+      ]
+    },
+    {
+      "id": "KMN_055",
+      "question": "In K-Means, what determines when a point switches cluster assignment?",
+      "options": [
+        "Random probability",
+        "When it's closer to a different centroid",
+        "When the cluster becomes too large",
+        "After a fixed number of iterations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A point switches cluster assignment when it becomes closer to a different centroid than its current one, based on the distance metric used.",
+      "optionExplanations": [
+        "K-Means uses deterministic distance-based assignment, not random probability",
+        "Correct. Points are always assigned to the nearest centroid based on calculated distances",
+        "Cluster size doesn't directly determine individual point assignments",
+        "Assignment switching is based on distance calculations, not iteration count"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cluster-assignment",
+        "distance-based-assignment",
+        "point-switching"
+      ]
+    },
+    {
+      "id": "KMN_056",
+      "question": "What is fuzzy K-Means (also known as Fuzzy C-Means)?",
+      "options": [
+        "K-Means with uncertain number of clusters",
+        "K-Means that assigns soft membership probabilities to clusters",
+        "K-Means with noisy data",
+        "K-Means with missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fuzzy K-Means assigns probabilistic membership values to each point for all clusters, rather than hard assignment to a single cluster.",
+      "optionExplanations": [
+        "The number of clusters is still predetermined, not uncertain",
+        "Correct. Each point has membership degrees (probabilities) for all clusters summing to 1",
+        "Fuzzy refers to assignment method, not data quality",
+        "Missing values are a data preprocessing issue, not related to fuzzy membership"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fuzzy-clustering",
+        "soft-assignment",
+        "probabilistic-membership"
+      ]
+    },
+    {
+      "id": "KMN_057",
+      "question": "How does the choice of distance metric affect K-Means results?",
+      "options": [
+        "It has no effect on clustering results",
+        "It only affects computational speed",
+        "It can significantly change cluster shapes and assignments",
+        "It only matters for high-dimensional data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Different distance metrics can lead to different cluster shapes and point assignments because they measure similarity differently between data points.",
+      "optionExplanations": [
+        "Distance metric choice significantly impacts clustering results",
+        "While it affects speed, the main impact is on clustering quality and results",
+        "Correct. Different metrics (Euclidean vs Manhattan) can produce different cluster boundaries",
+        "Distance metric effects are important regardless of dimensionality"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distance-metrics",
+        "cluster-shapes",
+        "metric-effects"
+      ]
+    },
+    {
+      "id": "KMN_058",
+      "question": "What is the primary weakness of using only WCSS for determining optimal K?",
+      "options": [
+        "WCSS is too difficult to calculate",
+        "WCSS always decreases with increasing K",
+        "WCSS doesn't work with large datasets",
+        "WCSS is only valid for spherical clusters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "WCSS monotonically decreases as K increases, making it insufficient alone for determining optimal K without additional criteria like the elbow method.",
+      "optionExplanations": [
+        "WCSS calculation is straightforward, not computationally prohibitive",
+        "Correct. WCSS always decreases with more clusters, so minimum WCSS alone would always suggest K=n",
+        "WCSS scales with dataset size but remains applicable to large datasets",
+        "While K-Means assumes spherical clusters, WCSS calculation isn't limited to this shape"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "wcss-limitations",
+        "optimal-k",
+        "monotonic-decrease"
+      ]
+    },
+    {
+      "id": "KMN_059",
+      "question": "What happens to cluster quality when K approaches the number of data points?",
+      "options": [
+        "Quality improves dramatically",
+        "Quality remains constant",
+        "WCSS approaches zero but clustering becomes meaningless",
+        "The algorithm becomes more efficient"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "As K approaches n (number of points), WCSS approaches zero since each point can be in its own cluster, but this creates a meaningless clustering solution.",
+      "optionExplanations": [
+        "While WCSS improves, the clustering becomes less meaningful for practical purposes",
+        "Quality metrics change significantly as K approaches n",
+        "Correct. WCSS becomes minimal but the clustering provides no useful data insights",
+        "High K values increase computational complexity and reduce efficiency"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "extreme-k-values",
+        "clustering-meaningfulness",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "KMN_060",
+      "question": "How does K-Means handle data with different cluster orientations?",
+      "options": [
+        "It adapts to any orientation automatically",
+        "It works best with axis-aligned clusters",
+        "Orientation doesn't affect K-Means",
+        "It rotates data to optimal orientation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means works best with axis-aligned, spherical clusters due to its use of Euclidean distance and spherical cluster assumption.",
+      "optionExplanations": [
+        "K-Means doesn't adapt to different orientations due to its spherical cluster assumption",
+        "Correct. Diagonal or rotated clusters may be split inappropriately by K-Means",
+        "Cluster orientation significantly affects how well K-Means can identify natural clusters",
+        "K-Means doesn't perform data rotation; this would be a preprocessing step"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cluster-orientation",
+        "axis-alignment",
+        "geometric-assumptions"
+      ]
+    },
+    {
+      "id": "KMN_061",
+      "question": "What is the purpose of the tolerance parameter in K-Means?",
+      "options": [
+        "To handle outliers",
+        "To determine convergence criteria",
+        "To set the maximum number of clusters",
+        "To scale features automatically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The tolerance parameter sets the threshold for determining convergence - when centroid movement between iterations falls below this threshold, the algorithm stops.",
+      "optionExplanations": [
+        "Outlier handling isn't directly controlled by the tolerance parameter",
+        "Correct. Tolerance defines how small centroid changes must be to consider the algorithm converged",
+        "The maximum number of clusters is set by K, not tolerance",
+        "Feature scaling is a preprocessing step, not controlled by tolerance"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tolerance-parameter",
+        "convergence-criteria",
+        "stopping-condition"
+      ]
+    },
+    {
+      "id": "KMN_062",
+      "question": "Which statement about K-Means scalability is correct?",
+      "options": [
+        "K-Means doesn't scale well to large datasets",
+        "K-Means scales linearly with the number of data points",
+        "Scalability is only limited by the number of features",
+        "K-Means requires exponential time for large datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means has linear scalability with respect to the number of data points (O(nkdi)), making it suitable for large datasets.",
+      "optionExplanations": [
+        "K-Means actually scales quite well compared to many other clustering algorithms",
+        "Correct. The O(nkdi) complexity shows linear scaling with data points (n)",
+        "Scalability depends on multiple factors including data points, clusters, and features",
+        "K-Means has polynomial, not exponential, time complexity"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scalability",
+        "linear-complexity",
+        "large-datasets"
+      ]
+    },
+    {
+      "id": "KMN_063",
+      "question": "What is the main difference between K-Means and hierarchical clustering?",
+      "options": [
+        "K-Means is supervised, hierarchical is unsupervised",
+        "K-Means requires K to be specified, hierarchical doesn't",
+        "Hierarchical clustering is always faster",
+        "K-Means can only create spherical clusters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means requires the number of clusters K to be specified beforehand, while hierarchical clustering creates a tree of clusters without needing to specify K in advance.",
+      "optionExplanations": [
+        "Both K-Means and hierarchical clustering are unsupervised methods",
+        "Correct. Hierarchical clustering builds a dendrogram allowing flexible cluster count selection",
+        "Hierarchical clustering typically has higher computational complexity than K-Means",
+        "While K-Means assumes spherical clusters, hierarchical clustering can also have shape limitations depending on linkage method"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hierarchical-clustering",
+        "algorithm-comparison",
+        "cluster-specification"
+      ]
+    },
+    {
+      "id": "KMN_064",
+      "question": "How does random seed affect K-Means results?",
+      "options": [
+        "It has no effect on results",
+        "It only affects computational speed",
+        "It can lead to different final clusterings",
+        "It determines the optimal K value"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random seed affects the initial centroid placement, which can lead to different local optima and thus different final clustering results.",
+      "optionExplanations": [
+        "Random seed significantly affects results through initialization randomness",
+        "Speed may vary slightly, but the main effect is on clustering outcomes",
+        "Correct. Different seeds can lead to different initializations and potentially different final clusters",
+        "Optimal K is a property of the data, not determined by random seed"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "random-seed",
+        "reproducibility",
+        "initialization-randomness"
+      ]
+    },
+    {
+      "id": "KMN_065",
+      "question": "What is the advantage of using squared Euclidean distance over Euclidean distance in K-Means?",
+      "options": [
+        "It provides more accurate results",
+        "It's computationally more efficient",
+        "It handles outliers better",
+        "It works better with categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Squared Euclidean distance avoids the computational cost of taking square roots, while still preserving the relative ordering of distances for clustering purposes.",
+      "optionExplanations": [
+        "Accuracy isn't improved; the relative ordering of distances remains the same",
+        "Correct. Avoiding square root calculations reduces computational overhead",
+        "Squared distance actually emphasizes outliers more than regular Euclidean distance",
+        "Neither squared nor regular Euclidean distance is designed for categorical data"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "squared-euclidean",
+        "computational-efficiency",
+        "distance-optimization"
+      ]
+    },
+    {
+      "id": "KMN_066",
+      "question": "What is the typical approach for handling the local optimum problem in K-Means?",
+      "options": [
+        "Use a different clustering algorithm",
+        "Increase the number of iterations",
+        "Run multiple times with different initializations",
+        "Reduce the number of clusters"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Running K-Means multiple times with different random initializations and selecting the best result (lowest WCSS) is the standard approach to mitigate local optima.",
+      "optionExplanations": [
+        "While other algorithms exist, multiple runs can improve K-Means results",
+        "More iterations help reach convergence but don't solve the local optimum issue",
+        "Correct. Multiple runs with different initializations increase chances of finding better solutions",
+        "Changing K doesn't address the local optimum problem for a given K"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "local-optimum",
+        "multiple-runs",
+        "solution-improvement"
+      ]
+    },
+    {
+      "id": "KMN_067",
+      "question": "How does data standardization affect K-Means clustering?",
+      "options": [
+        "It makes clustering less accurate",
+        "It ensures all features contribute equally to distance calculations",
+        "It's only necessary for datasets with missing values",
+        "It automatically determines the optimal K"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standardization scales all features to have similar ranges, ensuring that no single feature dominates the distance calculations due to scale differences.",
+      "optionExplanations": [
+        "Standardization typically improves clustering accuracy by balancing feature contributions",
+        "Correct. Standardization prevents features with larger scales from dominating distance calculations",
+        "Standardization addresses scale differences, not missing values",
+        "Standardization doesn't determine K; it's a preprocessing step for feature scaling"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-standardization",
+        "feature-scaling",
+        "equal-contribution"
+      ]
+    },
+    {
+      "id": "KMN_068",
+      "question": "What is the main limitation of the elbow method?",
+      "options": [
+        "It's computationally expensive",
+        "The elbow point may not be clearly defined",
+        "It only works with small datasets",
+        "It requires labeled data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The elbow method's main limitation is that the elbow point may not be clearly visible or may be subjective, making it difficult to determine the optimal K definitively.",
+      "optionExplanations": [
+        "While it requires running K-Means multiple times, it's not prohibitively expensive",
+        "Correct. The elbow may be gradual or unclear, making optimal K selection subjective",
+        "The elbow method can be applied to datasets of various sizes",
+        "The elbow method works with unlabeled data, like K-Means itself"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "elbow-method-limitations",
+        "subjective-selection",
+        "unclear-elbow"
+      ]
+    },
+    {
+      "id": "KMN_069",
+      "question": "How does K-Means perform with high-dimensional data?",
+      "options": [
+        "Performance improves with more dimensions",
+        "Performance may degrade due to curse of dimensionality",
+        "Dimensionality has no effect",
+        "It only works well above 100 dimensions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In high dimensions, the curse of dimensionality makes all points appear equidistant, reducing the effectiveness of distance-based clustering methods like K-Means.",
+      "optionExplanations": [
+        "Higher dimensions typically make clustering more challenging, not easier",
+        "Correct. In high dimensions, distance differences become less meaningful, making clustering less effective",
+        "Dimensionality significantly affects clustering performance and distance calculations",
+        "K-Means typically performs worse, not better, in very high dimensions"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensions",
+        "performance-degradation"
+      ]
+    },
+    {
+      "id": "KMN_070",
+      "question": "What is the role of the maximum iterations parameter in K-Means?",
+      "options": [
+        "It determines the optimal K value",
+        "It prevents infinite loops in case of non-convergence",
+        "It controls the cluster size",
+        "It sets the tolerance level"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Maximum iterations provides a safety mechanism to stop the algorithm if it doesn't converge within a reasonable number of steps, preventing infinite loops.",
+      "optionExplanations": [
+        "Optimal K is determined by validation methods, not maximum iterations",
+        "Correct. This parameter ensures the algorithm terminates even if convergence criteria aren't met",
+        "Cluster sizes are determined by data distribution and centroid positions, not iteration limits",
+        "Tolerance is a separate parameter that controls convergence sensitivity"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "max-iterations",
+        "termination-condition",
+        "safety-mechanism"
+      ]
+    },
+    {
+      "id": "KMN_071",
+      "question": "Which scenario would make K-Means produce the most meaningful results?",
+      "options": [
+        "Data with overlapping clusters",
+        "Data with well-separated, spherical clusters",
+        "Data with irregular cluster shapes",
+        "Data with clusters of very different sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means performs optimally with well-separated, spherical clusters of similar sizes, which align with its algorithmic assumptions.",
+      "optionExplanations": [
+        "Overlapping clusters violate K-Means' assumption of clear cluster boundaries",
+        "Correct. This scenario matches K-Means' assumptions about cluster shape and separation",
+        "Irregular shapes conflict with K-Means' spherical cluster assumption",
+        "Very different cluster sizes can lead to suboptimal partitioning"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "optimal-scenarios",
+        "spherical-clusters",
+        "algorithm-assumptions"
+      ]
+    },
+    {
+      "id": "KMN_072",
+      "question": "What is the primary difference between batch and online versions of K-Means?",
+      "options": [
+        "Batch processes all data at once, online processes data incrementally",
+        "Batch is faster than online",
+        "Online requires more memory",
+        "Batch can only handle small datasets"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Batch K-Means processes the entire dataset in each iteration, while online K-Means updates centroids incrementally as new data points arrive.",
+      "optionExplanations": [
+        "Correct. Batch uses all data per iteration, online updates with each new data point",
+        "Speed comparison depends on dataset size and update frequency",
+        "Online versions typically use less memory by not storing all data simultaneously",
+        "Batch K-Means can handle large datasets, though online may be more suitable for streaming data"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-vs-online",
+        "incremental-learning",
+        "data-processing"
+      ]
+    },
+    {
+      "id": "KMN_073",
+      "question": "How does K-Means handle noise in the dataset?",
+      "options": [
+        "It automatically filters out noise",
+        "Noise can significantly affect centroid positions",
+        "It converts noise to useful signal",
+        "Noise improves clustering quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means is sensitive to noise because noisy points can pull centroids away from the true cluster centers, affecting the overall clustering quality.",
+      "optionExplanations": [
+        "K-Means doesn't have built-in noise filtering capabilities",
+        "Correct. Noise points can distort centroid calculations since they're based on arithmetic means",
+        "K-Means doesn't transform noise into signal; noise typically degrades performance",
+        "Noise generally reduces clustering quality by introducing unwanted variation"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise-sensitivity",
+        "robustness",
+        "centroid-distortion"
+      ]
+    },
+    {
+      "id": "KMN_074",
+      "question": "What is the Dunn Index used for in cluster validation?",
+      "options": [
+        "Measuring cluster compactness only",
+        "Measuring cluster separation only",
+        "Measuring both compactness and separation",
+        "Determining optimal initialization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Dunn Index evaluates clustering quality by measuring the ratio of minimum inter-cluster distance to maximum intra-cluster distance, capturing both separation and compactness.",
+      "optionExplanations": [
+        "The Dunn Index considers both compactness and separation, not just compactness",
+        "While separation is important, the index also considers within-cluster compactness",
+        "Correct. Higher Dunn Index values indicate better separation between clusters and tighter within-cluster grouping",
+        "The Dunn Index is for evaluation, not for initialization strategies"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dunn-index",
+        "cluster-validation",
+        "compactness-separation"
+      ]
+    },
+    {
+      "id": "KMN_075",
+      "question": "What happens when K-Means is applied to data that naturally has no cluster structure?",
+      "options": [
+        "The algorithm fails to run",
+        "It returns an error message",
+        "It will still partition the data into K clusters",
+        "It automatically reduces K to 1"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "K-Means will always partition data into K clusters regardless of whether natural clusters exist, potentially creating artificial groupings in uniform data.",
+      "optionExplanations": [
+        "The algorithm runs regardless of whether natural clusters exist",
+        "K-Means doesn't detect absence of cluster structure and doesn't return errors for this",
+        "Correct. K-Means will force K partitions even on randomly distributed or uniform data",
+        "K-Means doesn't automatically adjust K based on data structure"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "no-cluster-structure",
+        "forced-partitioning",
+        "artificial-clusters"
+      ]
+    },
+    {
+      "id": "KMN_076",
+      "question": "How does the initialization method affect the reproducibility of K-Means results?",
+      "options": [
+        "Initialization doesn't affect reproducibility",
+        "Random initialization makes results non-reproducible without fixed seeds",
+        "K-Means++ always gives identical results",
+        "Only the number of clusters affects reproducibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random initialization introduces variability in results, making K-Means non-reproducible unless random seeds are fixed to ensure consistent starting points.",
+      "optionExplanations": [
+        "Initialization method significantly affects reproducibility due to randomness",
+        "Correct. Random elements require fixed seeds for reproducible results across runs",
+        "K-Means++ also involves randomness and requires seed fixing for reproducibility",
+        "While K matters, initialization randomness is the primary factor affecting reproducibility"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reproducibility",
+        "random-initialization",
+        "seed-fixing"
+      ]
+    },
+    {
+      "id": "KMN_077",
+      "question": "What is the main advantage of spherical K-Means over standard K-Means?",
+      "options": [
+        "It works better with Euclidean distance",
+        "It normalizes data points to unit length",
+        "It requires fewer iterations",
+        "It automatically determines K"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Spherical K-Means normalizes data points to unit length and typically uses cosine similarity, making it suitable for text data and high-dimensional sparse data.",
+      "optionExplanations": [
+        "Spherical K-Means typically uses cosine similarity rather than Euclidean distance",
+        "Correct. Normalization to unit sphere makes it effective for directional data and text clustering",
+        "Iteration count depends on data characteristics, not necessarily fewer for spherical K-Means",
+        "Like standard K-Means, spherical K-Means also requires K to be specified"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "spherical-kmeans",
+        "unit-normalization",
+        "cosine-similarity"
+      ]
+    },
+    {
+      "id": "KMN_078",
+      "question": "How does K-Means behave with datasets containing only two data points?",
+      "options": [
+        "It cannot run with less than 3 points",
+        "It places one centroid on each point if K=2",
+        "It always creates one cluster",
+        "It requires K to be 1"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With two data points and K=2, K-Means will place one centroid on each point, creating two single-point clusters with zero WCSS.",
+      "optionExplanations": [
+        "K-Means can run with any number of points ≥ K",
+        "Correct. Each point becomes its own cluster center when K equals the number of points",
+        "The number of clusters depends on the K parameter, not automatically one",
+        "K can be 1 or 2 (or higher, though that would create empty clusters)"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "minimal-data",
+        "extreme-cases",
+        "two-points"
+      ]
+    },
+    {
+      "id": "KMN_079",
+      "question": "What is the purpose of cluster validation in K-Means?",
+      "options": [
+        "To speed up the algorithm",
+        "To assess the quality and appropriateness of clustering results",
+        "To determine centroid positions",
+        "To handle missing data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cluster validation evaluates how well the clustering algorithm has performed and whether the resulting clusters are meaningful and of good quality.",
+      "optionExplanations": [
+        "Validation is for assessment, not for improving computational speed",
+        "Correct. Validation measures help determine if clusters are well-formed and meaningful",
+        "Centroid positions are calculated by the algorithm, not determined by validation",
+        "Missing data is handled during preprocessing, not cluster validation"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cluster-validation",
+        "quality-assessment",
+        "clustering-evaluation"
+      ]
+    },
+    {
+      "id": "KMN_080",
+      "question": "Which statement about K-Means convergence is most accurate?",
+      "options": [
+        "K-Means always converges to the global optimum",
+        "K-Means is guaranteed to converge to some solution",
+        "K-Means may never converge",
+        "Convergence depends on the dataset size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means is guaranteed to converge because WCSS decreases (or stays same) with each iteration and has a lower bound, but it may converge to a local optimum.",
+      "optionExplanations": [
+        "K-Means can get stuck in local optima and doesn't guarantee global optimum",
+        "Correct. Convergence is guaranteed due to monotonic WCSS decrease, though possibly to local optimum",
+        "K-Means always converges due to the finite number of possible partitions",
+        "Convergence guarantee is mathematical, independent of dataset size"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "convergence-guarantee",
+        "local-vs-global",
+        "mathematical-properties"
+      ]
+    },
+    {
+      "id": "KMN_081",
+      "question": "What is the effect of duplicate data points on K-Means clustering?",
+      "options": [
+        "They prevent the algorithm from running",
+        "They can bias centroids toward their location",
+        "They are automatically removed",
+        "They have no effect on results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Duplicate points effectively increase the weight of that location in centroid calculations, potentially biasing clusters toward areas with more duplicates.",
+      "optionExplanations": [
+        "K-Means can handle duplicate points without issues",
+        "Correct. Multiple identical points pull centroids toward their location more strongly",
+        "K-Means doesn't automatically detect or remove duplicates",
+        "Duplicates do affect results by effectively weighting certain locations more heavily"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "duplicate-points",
+        "centroid-bias",
+        "data-weighting"
+      ]
+    },
+    {
+      "id": "KMN_082",
+      "question": "How does K-Means perform with linearly separable data?",
+      "options": [
+        "It always finds perfect separation",
+        "It may not find linear separation due to spherical assumptions",
+        "It automatically detects linear boundaries",
+        "Linear separability guarantees optimal clustering"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means creates spherical decision boundaries, so it may not optimally separate linearly separable data if the linear boundary doesn't align with spherical partitions.",
+      "optionExplanations": [
+        "K-Means doesn't specifically optimize for linear separation",
+        "Correct. Spherical cluster assumptions may not align with linear separation boundaries",
+        "K-Means doesn't have mechanisms to detect or create linear decision boundaries",
+        "Linear separability doesn't guarantee that spherical clustering will be optimal"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "linear-separability",
+        "spherical-boundaries",
+        "decision-boundaries"
+      ]
+    },
+    {
+      "id": "KMN_083",
+      "question": "What is the primary computational cost in each K-Means iteration?",
+      "options": [
+        "Calculating new centroids",
+        "Computing distances from points to centroids",
+        "Checking convergence condition",
+        "Updating cluster assignments"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Computing distances between all n data points and all k centroids dominates the computational cost at O(nkd) per iteration.",
+      "optionExplanations": [
+        "Centroid calculation is O(nd), significant but not the dominant cost",
+        "Correct. Distance computation is O(nkd) and typically the most expensive operation",
+        "Convergence checking is relatively inexpensive compared to distance calculations",
+        "Assignment updates are part of the distance computation process"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-cost",
+        "distance-computation",
+        "performance-bottleneck"
+      ]
+    },
+    {
+      "id": "KMN_084",
+      "question": "How does K-Means handle clusters with holes or concave shapes?",
+      "options": [
+        "It identifies them perfectly",
+        "It tends to fill holes and split concave regions",
+        "It automatically detects concavity",
+        "It works better with concave shapes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means assumes convex, spherical clusters, so it tends to fill holes in ring-shaped clusters and may inappropriately split concave regions.",
+      "optionExplanations": [
+        "K-Means' spherical assumption makes it poor at handling complex shapes",
+        "Correct. Spherical clusters can't properly represent holes or concave shapes",
+        "K-Means doesn't have shape detection capabilities",
+        "K-Means struggles with non-convex shapes due to its geometric assumptions"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "concave-shapes",
+        "holes-in-clusters",
+        "convexity-assumption"
+      ]
+    },
+    {
+      "id": "KMN_085",
+      "question": "What is the relationship between K-Means and Voronoi diagrams?",
+      "options": [
+        "They are unrelated concepts",
+        "K-Means partitions create Voronoi cells around centroids",
+        "Voronoi diagrams are used to initialize centroids",
+        "K-Means is a special case of Voronoi diagrams"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means clustering creates a Voronoi diagram where each cluster consists of points closer to one centroid than to any other centroid.",
+      "optionExplanations": [
+        "K-Means clustering is directly related to Voronoi tessellation",
+        "Correct. Each cluster forms a Voronoi cell with the centroid as the generating point",
+        "While possible, Voronoi diagrams aren't typically used for K-Means initialization",
+        "K-Means uses Voronoi principles but isn't a subset of Voronoi diagram algorithms"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "voronoi-diagrams",
+        "spatial-partitioning",
+        "geometric-interpretation"
+      ]
+    },
+    {
+      "id": "KMN_086",
+      "question": "How does the curse of dimensionality specifically affect distance calculations in K-Means?",
+      "options": [
+        "Distances become more discriminative",
+        "All distances become approximately equal",
+        "Distance calculations become faster",
+        "Only affects categorical features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In high dimensions, the ratio of nearest to farthest neighbor distances approaches 1, making all points appear equidistant and reducing clustering effectiveness.",
+      "optionExplanations": [
+        "High dimensions make distances less discriminative, not more",
+        "Correct. Distance differences become less meaningful as dimensionality increases",
+        "Higher dimensions increase computational cost, not speed",
+        "The curse of dimensionality affects all feature types in distance-based methods"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "distance-concentration",
+        "high-dimensional-effects"
+      ]
+    },
+    {
+      "id": "KMN_087",
+      "question": "What is the main purpose of feature selection before applying K-Means?",
+      "options": [
+        "To increase the number of clusters",
+        "To reduce computational cost and improve clustering quality",
+        "To make clusters more spherical",
+        "To ensure equal cluster sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature selection removes irrelevant or redundant features, reducing dimensionality for computational efficiency and removing noise that could degrade clustering quality.",
+      "optionExplanations": [
+        "Feature selection doesn't directly determine the number of clusters",
+        "Correct. Fewer features mean faster computation and potentially better clustering by removing noise",
+        "Feature selection doesn't change the fundamental spherical assumption of K-Means",
+        "Cluster sizes are determined by data distribution, not feature selection"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-selection",
+        "dimensionality-reduction",
+        "noise-reduction"
+      ]
+    },
+    {
+      "id": "KMN_088",
+      "question": "How does K-Means behave when all data points are identical?",
+      "options": [
+        "It cannot handle identical points",
+        "All centroids converge to the same location",
+        "It creates random clusters",
+        "It automatically sets K=1"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When all points are identical, every centroid will converge to that same location since the mean of identical points is the point itself.",
+      "optionExplanations": [
+        "K-Means can handle identical points, though the result isn't meaningful",
+        "Correct. All centroids move to the location of the identical points",
+        "The convergence is deterministic to the point location, not random",
+        "K-Means doesn't automatically adjust K; it uses the specified value"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "identical-points",
+        "degenerate-cases",
+        "centroid-convergence"
+      ]
+    },
+    {
+      "id": "KMN_089",
+      "question": "What is the primary difference between hard and soft clustering approaches?",
+      "options": [
+        "Hard clustering is more computationally expensive",
+        "Hard assigns each point to exactly one cluster, soft allows probabilistic membership",
+        "Soft clustering always produces better results",
+        "Hard clustering works with more data types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard clustering (like K-Means) assigns each point definitively to one cluster, while soft clustering (like fuzzy K-Means) assigns membership probabilities to all clusters.",
+      "optionExplanations": [
+        "Computational cost depends on specific implementation, not the hard/soft distinction",
+        "Correct. Hard clustering creates definitive assignments, soft clustering creates probabilistic memberships",
+        "Result quality depends on data characteristics and specific use case",
+        "Both approaches can be adapted for various data types with appropriate preprocessing"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hard-vs-soft",
+        "cluster-membership",
+        "assignment-types"
+      ]
+    },
+    {
+      "id": "KMN_090",
+      "question": "How does K-Means handle streaming data?",
+      "options": [
+        "Standard K-Means works perfectly with streaming data",
+        "It requires modifications like online K-Means for streaming data",
+        "It automatically adapts to streaming data",
+        "Streaming data cannot be clustered"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standard K-Means requires all data to be available simultaneously, so streaming data requires online or incremental variants that update centroids as new data arrives.",
+      "optionExplanations": [
+        "Standard K-Means needs the complete dataset, making it unsuitable for streaming",
+        "Correct. Online K-Means and similar variants are designed for incremental updates with streaming data",
+        "Standard K-Means doesn't have built-in streaming data capabilities",
+        "Streaming data can be clustered using appropriate incremental algorithms"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "streaming-data",
+        "online-kmeans",
+        "incremental-clustering"
+      ]
+    },
+    {
+      "id": "KMN_091",
+      "question": "What is the significance of the within-cluster sum of squares decomposition?",
+      "options": [
+        "It proves K-Means always finds global optimum",
+        "It shows total variance equals within-cluster plus between-cluster variance",
+        "It determines the maximum number of clusters",
+        "It calculates the optimal learning rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The variance decomposition shows that total data variance can be partitioned into within-cluster variance (which K-Means minimizes) and between-cluster variance.",
+      "optionExplanations": [
+        "The decomposition doesn't guarantee global optimum, only shows variance relationships",
+        "Correct. Total variance = within-cluster variance + between-cluster variance",
+        "The decomposition doesn't set limits on cluster numbers",
+        "Learning rates aren't relevant to K-Means, which doesn't use gradient-based optimization"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "variance-decomposition",
+        "statistical-theory",
+        "within-between-variance"
+      ]
+    },
+    {
+      "id": "KMN_092",
+      "question": "How does K-Means handle datasets with natural hierarchy in the cluster structure?",
+      "options": [
+        "It automatically detects hierarchy",
+        "It creates flat partitions ignoring hierarchical structure",
+        "It builds a dendrogram",
+        "It adjusts K based on hierarchy depth"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means creates flat, non-hierarchical partitions and cannot capture or represent hierarchical relationships between clusters.",
+      "optionExplanations": [
+        "K-Means doesn't have hierarchy detection capabilities",
+        "Correct. K-Means produces flat partitions without considering hierarchical relationships",
+        "Dendrograms are created by hierarchical clustering, not K-Means",
+        "K-Means doesn't automatically adjust parameters based on data structure"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hierarchical-structure",
+        "flat-partitions",
+        "non-hierarchical"
+      ]
+    },
+    {
+      "id": "KMN_093",
+      "question": "What is the effect of data correlation on K-Means clustering?",
+      "options": [
+        "Correlation has no effect on clustering",
+        "High correlation can lead to elongated clusters that K-Means handles poorly",
+        "Correlation improves K-Means performance",
+        "K-Means automatically decorrelates features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correlated features can create elongated or elliptical cluster shapes that conflict with K-Means' assumption of spherical clusters.",
+      "optionExplanations": [
+        "Feature correlation significantly affects cluster shapes and K-Means performance",
+        "Correct. Correlation creates non-spherical cluster shapes that K-Means struggles with",
+        "High correlation can actually degrade performance by violating spherical assumptions",
+        "K-Means doesn't perform decorrelation; this would be a preprocessing step"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-correlation",
+        "elongated-clusters",
+        "spherical-assumption"
+      ]
+    },
+    {
+      "id": "KMN_094",
+      "question": "How does the choice of centroid update rule affect K-Means?",
+      "options": [
+        "Update rules don't affect the algorithm",
+        "Different update rules can lead to different clustering algorithms",
+        "Only arithmetic mean can be used",
+        "Update rules only affect speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using different centroid update rules (like median instead of mean) creates different algorithms like K-Medians, which have different properties and robustness characteristics.",
+      "optionExplanations": [
+        "The update rule is fundamental to the algorithm's behavior and properties",
+        "Correct. Different update rules create variants like K-Medians, K-Medoids with different characteristics",
+        "While arithmetic mean is standard, other measures can be used to create algorithm variants",
+        "Update rules affect both convergence properties and final results, not just speed"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "centroid-update-rules",
+        "algorithm-variants",
+        "k-medians"
+      ]
+    },
+    {
+      "id": "KMN_095",
+      "question": "What is the relationship between K-Means and principal component analysis (PCA)?",
+      "options": [
+        "They are completely unrelated",
+        "PCA can be used as preprocessing to improve K-Means performance",
+        "K-Means automatically performs PCA",
+        "PCA is a type of clustering algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PCA can be used as preprocessing to reduce dimensionality and decorrelate features, potentially improving K-Means performance by addressing the curse of dimensionality.",
+      "optionExplanations": [
+        "PCA and K-Means can be used together effectively for clustering",
+        "Correct. PCA preprocessing can reduce noise and dimensionality, helping K-Means performance",
+        "K-Means doesn't perform dimensionality reduction internally",
+        "PCA is a dimensionality reduction technique, not a clustering algorithm"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pca-preprocessing",
+        "dimensionality-reduction",
+        "feature-transformation"
+      ]
+    },
+    {
+      "id": "KMN_096",
+      "question": "How does K-Means handle imbalanced cluster sizes in the ground truth?",
+      "options": [
+        "It perfectly adapts to any size imbalance",
+        "It tends to create more balanced clusters than may naturally exist",
+        "It only works with equal-sized clusters",
+        "Imbalance doesn't affect the algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means has a bias toward creating clusters of similar sizes, which can lead to suboptimal results when natural clusters have very different sizes.",
+      "optionExplanations": [
+        "K-Means has inherent size biases that prevent perfect adaptation to size imbalances",
+        "Correct. The algorithm tends to balance cluster sizes, potentially splitting large natural clusters",
+        "K-Means can work with different cluster sizes, but has biases toward similar sizes",
+        "Size imbalance significantly affects clustering quality and results"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cluster-size-imbalance",
+        "size-bias",
+        "natural-clusters"
+      ]
+    },
+    {
+      "id": "KMN_097",
+      "question": "What is the main advantage of using K-Means for market segmentation?",
+      "options": [
+        "It guarantees profit maximization",
+        "It provides interpretable, distinct customer segments",
+        "It handles categorical variables automatically",
+        "It requires no domain knowledge"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means creates clearly defined, non-overlapping customer segments that are easy to interpret and target with specific marketing strategies.",
+      "optionExplanations": [
+        "K-Means is a clustering technique and doesn't directly optimize business metrics",
+        "Correct. Hard clustering creates distinct, interpretable segments useful for targeted marketing",
+        "Categorical variables need preprocessing before using K-Means",
+        "Domain knowledge is valuable for choosing K and interpreting results"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "market-segmentation",
+        "interpretability",
+        "business-applications"
+      ]
+    },
+    {
+      "id": "KMN_098",
+      "question": "How does K-Means performance scale with the number of clusters K?",
+      "options": [
+        "Performance improves linearly with K",
+        "Computational cost increases linearly with K",
+        "K has no effect on performance",
+        "Performance degrades exponentially with K"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The computational complexity O(nkdi) shows that cost increases linearly with the number of clusters K, as more centroid distances must be calculated.",
+      "optionExplanations": [
+        "Higher K may improve WCSS but can lead to overfitting and increased computational cost",
+        "Correct. Each additional cluster requires distance calculations to all points, increasing cost linearly",
+        "K significantly affects both computational cost and clustering results",
+        "The increase is linear, not exponential, in the number of clusters"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scalability",
+        "computational-complexity",
+        "k-scaling"
+      ]
+    },
+    {
+      "id": "KMN_099",
+      "question": "What is the primary limitation of using silhouette analysis for very large datasets?",
+      "options": [
+        "Silhouette score becomes meaningless",
+        "Computational cost can be prohibitive",
+        "It only works with small K values",
+        "Large datasets don't have clusters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Silhouette analysis requires calculating distances between all pairs of points, resulting in O(n²) computational complexity that can be prohibitive for very large datasets.",
+      "optionExplanations": [
+        "Silhouette scores remain meaningful but become expensive to compute",
+        "Correct. O(n²) complexity makes silhouette analysis computationally expensive for large datasets",
+        "The number of clusters doesn't fundamentally limit silhouette analysis",
+        "Large datasets can have clusters; the issue is computational cost of validation"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "silhouette-analysis",
+        "computational-limitation",
+        "large-datasets"
+      ]
+    },
+    {
+      "id": "KMN_100",
+      "question": "What is the fundamental assumption that makes K-Means suitable for spherical clusters?",
+      "options": [
+        "It uses Manhattan distance",
+        "It minimizes Euclidean distances to centroids",
+        "It maximizes cluster separation",
+        "It uses median instead of mean"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K-Means minimizes squared Euclidean distances to centroids, which creates spherical decision boundaries around each centroid, making it naturally suited for spherical clusters.",
+      "optionExplanations": [
+        "Manhattan distance would create diamond-shaped regions, not spherical ones",
+        "Correct. Euclidean distance minimization creates spherical regions around centroids",
+        "While separation is desirable, the spherical assumption comes from the distance metric used",
+        "Using median would create a different algorithm (K-Medians) but doesn't explain the spherical assumption"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "spherical-assumption",
+        "euclidean-distance",
+        "geometric-properties"
+      ]
+    }
+  ]
+}

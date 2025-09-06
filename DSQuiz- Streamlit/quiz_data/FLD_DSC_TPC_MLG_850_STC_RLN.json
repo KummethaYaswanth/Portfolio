@@ -1,0 +1,2506 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_RLN",
+  "subtopicName": "Reinforcement Learning",
+  "str": 0.850,
+  "description": "Reinforcement Learning is a machine learning paradigm where an agent learns to make decisions by taking actions in an environment to maximize cumulative reward through trial and error interactions.",
+  "questions": [
+    {
+      "id": "RLN_001",
+      "question": "What is the primary goal of a reinforcement learning agent?",
+      "options": [
+        "To maximize cumulative reward over time",
+        "To minimize prediction error",
+        "To classify data into categories",
+        "To reduce computational complexity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The primary goal of a reinforcement learning agent is to maximize cumulative reward over time by learning optimal actions through interaction with the environment.",
+      "optionExplanations": [
+        "Correct. The fundamental objective in RL is to maximize the expected cumulative reward through optimal decision-making.",
+        "Incorrect. Minimizing prediction error is the goal in supervised learning, not reinforcement learning.",
+        "Incorrect. Classification is a supervised learning task, not a reinforcement learning objective.",
+        "Incorrect. While efficiency is important, the primary goal is reward maximization, not computational complexity reduction."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "agent",
+        "reward",
+        "basics"
+      ]
+    },
+    {
+      "id": "RLN_002",
+      "question": "What are the main components of a reinforcement learning system?",
+      "options": [
+        "Agent, Environment, Reward, Policy",
+        "Input, Hidden Layer, Output, Activation",
+        "Training Set, Test Set, Validation Set",
+        "Features, Labels, Model, Prediction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The four main components of reinforcement learning are: Agent (learner), Environment (world), Reward (feedback signal), and Policy (strategy for action selection).",
+      "optionExplanations": [
+        "Correct. These are the fundamental components that define any reinforcement learning system.",
+        "Incorrect. These are components of neural networks, not reinforcement learning systems.",
+        "Incorrect. These are data partitions used in supervised learning model evaluation.",
+        "Incorrect. These are components of supervised learning systems, not reinforcement learning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "components",
+        "basics",
+        "agent",
+        "environment"
+      ]
+    },
+    {
+      "id": "RLN_003",
+      "question": "What is a policy in reinforcement learning?",
+      "options": [
+        "A strategy that defines the agent's behavior at each state",
+        "The reward function of the environment",
+        "The transition probabilities between states",
+        "The learning rate parameter"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A policy is a strategy or mapping from states to actions that defines how an agent behaves in different situations.",
+      "optionExplanations": [
+        "Correct. A policy π(s) or π(a|s) defines the agent's action selection strategy in each state.",
+        "Incorrect. The reward function defines the immediate feedback from the environment, not the agent's behavior.",
+        "Incorrect. Transition probabilities define the environment dynamics, not the agent's policy.",
+        "Incorrect. Learning rate is a hyperparameter that controls the speed of learning, not a behavioral strategy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "policy",
+        "strategy",
+        "behavior"
+      ]
+    },
+    {
+      "id": "RLN_004",
+      "question": "What is the difference between deterministic and stochastic policies?",
+      "options": [
+        "Deterministic policies always choose the same action in a state, stochastic policies choose actions probabilistically",
+        "Deterministic policies are faster, stochastic policies are more accurate",
+        "Deterministic policies work in continuous spaces, stochastic policies work in discrete spaces",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Deterministic policies map each state to exactly one action, while stochastic policies define probability distributions over actions for each state.",
+      "optionExplanations": [
+        "Correct. Deterministic policies are functions π(s) → a, while stochastic policies are π(a|s) representing probability distributions.",
+        "Incorrect. The choice between deterministic and stochastic policies depends on the problem requirements, not speed vs accuracy trade-offs.",
+        "Incorrect. Both policy types can work in continuous or discrete action spaces depending on the implementation.",
+        "Incorrect. There is a fundamental difference in how actions are selected in each type of policy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "policy",
+        "deterministic",
+        "stochastic"
+      ]
+    },
+    {
+      "id": "RLN_005",
+      "question": "What is a Markov Decision Process (MDP)?",
+      "options": [
+        "A mathematical framework for modeling decision making in stochastic environments",
+        "A type of neural network architecture",
+        "A clustering algorithm for unsupervised learning",
+        "A method for feature selection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An MDP is a mathematical framework that provides a formal way to model decision-making situations where outcomes are partly random and partly under the control of a decision maker.",
+      "optionExplanations": [
+        "Correct. MDPs provide the theoretical foundation for reinforcement learning with states, actions, transitions, and rewards.",
+        "Incorrect. Neural networks are computational models, while MDPs are mathematical frameworks for decision problems.",
+        "Incorrect. Clustering algorithms group similar data points, which is unrelated to decision-making frameworks.",
+        "Incorrect. Feature selection chooses relevant input variables, not a framework for sequential decision making."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MDP",
+        "markov",
+        "framework",
+        "decision-making"
+      ]
+    },
+    {
+      "id": "RLN_006",
+      "question": "What does the Markov property state?",
+      "options": [
+        "The future state depends only on the current state, not on the history",
+        "All states have equal probability of occurrence",
+        "The reward is always positive",
+        "Actions are independent of states"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Markov property states that the future is independent of the past given the present state, meaning all relevant information is contained in the current state.",
+      "optionExplanations": [
+        "Correct. This memoryless property is fundamental to MDPs: P(s_{t+1}|s_t, a_t) is independent of states before s_t.",
+        "Incorrect. The Markov property doesn't impose any constraints on state probabilities or their equality.",
+        "Incorrect. Rewards can be positive, negative, or zero; the Markov property doesn't constrain reward values.",
+        "Incorrect. In MDPs, actions are typically chosen based on states, so they are dependent on states."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "markov-property",
+        "MDP",
+        "states",
+        "independence"
+      ]
+    },
+    {
+      "id": "RLN_007",
+      "question": "What are the components of an MDP tuple?",
+      "options": [
+        "(S, A, P, R, γ) - States, Actions, Transitions, Rewards, Discount factor",
+        "(X, Y, θ, α) - Features, Labels, Parameters, Learning rate",
+        "(μ, σ, π, e) - Mean, Variance, Pi, Epsilon",
+        "(W, b, f, L) - Weights, Bias, Function, Loss"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An MDP is formally defined by the tuple (S, A, P, R, γ) representing state space, action space, transition probabilities, reward function, and discount factor.",
+      "optionExplanations": [
+        "Correct. These five components completely define a Markov Decision Process for reinforcement learning.",
+        "Incorrect. These are parameters typically found in supervised learning models, not MDP definitions.",
+        "Incorrect. These are statistical and mathematical constants, not components of decision processes.",
+        "Incorrect. These are neural network components, not elements of Markov Decision Processes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MDP",
+        "components",
+        "states",
+        "actions",
+        "transitions"
+      ]
+    },
+    {
+      "id": "RLN_008",
+      "question": "What is the discount factor (gamma) in reinforcement learning?",
+      "options": [
+        "A parameter that determines the importance of future rewards relative to immediate rewards",
+        "The learning rate of the algorithm",
+        "The probability of taking a random action",
+        "The number of episodes in training"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The discount factor γ ∈ [0,1] determines how much weight is given to future rewards, with γ=0 meaning only immediate rewards matter and γ=1 giving equal weight to all future rewards.",
+      "optionExplanations": [
+        "Correct. Gamma controls the trade-off between immediate and long-term rewards in the cumulative return calculation.",
+        "Incorrect. Learning rate (often α) controls how quickly the agent updates its knowledge, not reward weighting.",
+        "Incorrect. The probability of random actions is typically controlled by epsilon (ε) in exploration strategies.",
+        "Incorrect. The number of episodes is a training parameter, not a weighting factor for rewards."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "discount-factor",
+        "gamma",
+        "future-rewards",
+        "parameters"
+      ]
+    },
+    {
+      "id": "RLN_009",
+      "question": "What happens when the discount factor γ = 0?",
+      "options": [
+        "The agent only cares about immediate rewards",
+        "The agent gives equal weight to all future rewards",
+        "The agent cannot learn anything",
+        "The environment becomes deterministic"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When γ = 0, future rewards are completely discounted, so the agent only considers the immediate reward from each action.",
+      "optionExplanations": [
+        "Correct. With γ = 0, the return becomes just the immediate reward: R_t = r_{t+1}.",
+        "Incorrect. Equal weighting occurs when γ = 1, not γ = 0.",
+        "Incorrect. The agent can still learn, but only about immediate consequences of actions.",
+        "Incorrect. The discount factor doesn't affect the deterministic or stochastic nature of the environment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "discount-factor",
+        "immediate-rewards",
+        "myopic"
+      ]
+    },
+    {
+      "id": "RLN_010",
+      "question": "What is a value function in reinforcement learning?",
+      "options": [
+        "A function that estimates the expected cumulative reward from a state or state-action pair",
+        "A function that determines the next action to take",
+        "A function that calculates the probability of state transitions",
+        "A function that generates random rewards"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Value functions estimate how good it is to be in a particular state or to take a particular action in a state, in terms of expected future rewards.",
+      "optionExplanations": [
+        "Correct. V(s) estimates expected return from state s, and Q(s,a) estimates expected return from taking action a in state s.",
+        "Incorrect. Action selection is determined by the policy, not the value function, though policies often use value functions.",
+        "Incorrect. Transition probabilities are part of the environment model, not value functions.",
+        "Incorrect. Value functions estimate expected rewards based on learned experience, they don't generate random rewards."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value-function",
+        "expected-reward",
+        "estimation"
+      ]
+    },
+    {
+      "id": "RLN_011",
+      "question": "What is the difference between V(s) and Q(s,a)?",
+      "options": [
+        "V(s) is state value function, Q(s,a) is action-value function",
+        "V(s) is for discrete actions, Q(s,a) is for continuous actions",
+        "V(s) is faster to compute than Q(s,a)",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "V(s) represents the value of being in state s under a policy, while Q(s,a) represents the value of taking action a in state s under a policy.",
+      "optionExplanations": [
+        "Correct. V(s) evaluates states, Q(s,a) evaluates state-action pairs, providing more granular information for decision making.",
+        "Incorrect. Both functions can work with discrete or continuous action spaces depending on the implementation.",
+        "Incorrect. Computational complexity depends on the specific algorithm and implementation, not inherently on the function type.",
+        "Incorrect. These represent fundamentally different concepts - state values vs action values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "state-value",
+        "action-value",
+        "V-function",
+        "Q-function"
+      ]
+    },
+    {
+      "id": "RLN_012",
+      "question": "What is Q-learning?",
+      "options": [
+        "A model-free reinforcement learning algorithm that learns action-value functions",
+        "A supervised learning algorithm for classification",
+        "A method for dimensionality reduction",
+        "A technique for feature selection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Q-learning is an off-policy, model-free algorithm that learns the optimal action-value function Q*(s,a) without requiring a model of the environment.",
+      "optionExplanations": [
+        "Correct. Q-learning directly learns Q(s,a) values through temporal difference learning without needing environment dynamics.",
+        "Incorrect. Q-learning is specifically a reinforcement learning algorithm, not supervised learning for classification.",
+        "Incorrect. Dimensionality reduction techniques like PCA reduce feature space, which is unrelated to Q-learning.",
+        "Incorrect. Feature selection chooses relevant input variables, while Q-learning learns optimal policies."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Q-learning",
+        "model-free",
+        "temporal-difference",
+        "off-policy"
+      ]
+    },
+    {
+      "id": "RLN_013",
+      "question": "What is the Q-learning update rule?",
+      "options": [
+        "Q(s,a) ← Q(s,a) + α[r + γ max Q(s',a') - Q(s,a)]",
+        "Q(s,a) ← r + γ max Q(s',a')",
+        "Q(s,a) ← α[r + γ Q(s',a')]",
+        "Q(s,a) ← Q(s,a) - α∇Q(s,a)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Q-learning update uses temporal difference error to incrementally improve Q-value estimates using the learning rate α.",
+      "optionExplanations": [
+        "Correct. This is the standard Q-learning update formula incorporating learning rate, reward, discount factor, and TD error.",
+        "Incorrect. This replaces the Q-value entirely rather than incrementally updating it, ignoring the learning rate.",
+        "Incorrect. This doesn't include the current Q-value in the update and uses the wrong action selection in the next state.",
+        "Incorrect. This looks like gradient descent, which is not the Q-learning update rule."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Q-learning",
+        "update-rule",
+        "temporal-difference",
+        "learning-rate"
+      ]
+    },
+    {
+      "id": "RLN_014",
+      "question": "What does 'off-policy' mean in the context of Q-learning?",
+      "options": [
+        "The algorithm can learn from actions taken by any policy, not just the current policy",
+        "The algorithm works without a policy",
+        "The algorithm only works offline",
+        "The algorithm uses a different policy for each state"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Off-policy means Q-learning can learn the optimal policy while following a different behavior policy, making it very flexible for exploration.",
+      "optionExplanations": [
+        "Correct. Q-learning learns Q* regardless of the policy generating the experience, enabling learning from exploratory or even random actions.",
+        "Incorrect. Q-learning still uses policies; it just separates the policy being learned from the policy being followed.",
+        "Incorrect. 'Off-policy' refers to policy separation, not online vs offline learning capabilities.",
+        "Incorrect. Off-policy doesn't mean using different policies per state, but learning one policy while following another."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "off-policy",
+        "Q-learning",
+        "behavior-policy",
+        "target-policy"
+      ]
+    },
+    {
+      "id": "RLN_015",
+      "question": "What is the exploration vs exploitation dilemma?",
+      "options": [
+        "The trade-off between trying new actions (exploration) and using known good actions (exploitation)",
+        "The choice between online and offline learning",
+        "The decision between model-based and model-free methods",
+        "The balance between accuracy and computational speed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This fundamental dilemma in RL involves balancing the need to explore unknown actions to potentially find better strategies versus exploiting current knowledge to maximize immediate rewards.",
+      "optionExplanations": [
+        "Correct. This is the core challenge of balancing discovery of potentially better actions with using currently known best actions.",
+        "Incorrect. Online vs offline learning refers to when learning occurs relative to interaction, not exploration strategies.",
+        "Incorrect. Model-based vs model-free refers to whether the algorithm learns environment dynamics, not exploration strategies.",
+        "Incorrect. While exploration affects computational requirements, the dilemma is fundamentally about information gathering vs reward maximization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploration",
+        "exploitation",
+        "trade-off",
+        "dilemma"
+      ]
+    },
+    {
+      "id": "RLN_016",
+      "question": "What is ε-greedy exploration?",
+      "options": [
+        "Choose the best action with probability (1-ε) and a random action with probability ε",
+        "Choose actions based on their Q-values weighted by ε",
+        "Always choose the action with the highest ε value",
+        "Decrease the learning rate by ε each episode"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ε-greedy is a simple exploration strategy that balances exploitation (choosing the best known action) with exploration (choosing random actions).",
+      "optionExplanations": [
+        "Correct. This strategy ensures continued exploration while predominantly exploiting current knowledge.",
+        "Incorrect. This describes a different exploration method, not the binary choice mechanism of ε-greedy.",
+        "Incorrect. ε is a probability parameter, not an action value; actions are chosen based on Q-values or randomly.",
+        "Incorrect. ε controls exploration probability, not learning rate adjustment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "epsilon-greedy",
+        "exploration",
+        "random-action",
+        "probability"
+      ]
+    },
+    {
+      "id": "RLN_017",
+      "question": "What happens when ε = 0 in ε-greedy?",
+      "options": [
+        "The agent always chooses the greedy action (pure exploitation)",
+        "The agent always chooses random actions",
+        "The agent cannot learn anything",
+        "The learning rate becomes zero"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When ε = 0, the agent never explores randomly and always chooses the action with the highest current Q-value estimate.",
+      "optionExplanations": [
+        "Correct. With ε = 0, there's no probability of random action selection, resulting in purely greedy behavior.",
+        "Incorrect. Random actions occur with probability ε, so ε = 0 means no random actions.",
+        "Incorrect. The agent can still learn from the actions it takes, though it may get stuck in suboptimal policies.",
+        "Incorrect. ε controls exploration, not the learning rate parameter α."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "epsilon-greedy",
+        "exploitation",
+        "greedy-action"
+      ]
+    },
+    {
+      "id": "RLN_018",
+      "question": "What is the main disadvantage of ε-greedy exploration?",
+      "options": [
+        "It treats all non-greedy actions equally, regardless of their potential",
+        "It's too computationally expensive",
+        "It only works with discrete action spaces",
+        "It requires knowing the optimal policy in advance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ε-greedy exploration randomly selects among all non-greedy actions with equal probability, ignoring that some actions might be more promising than others.",
+      "optionExplanations": [
+        "Correct. This uniform random selection doesn't consider that some actions might be nearly as good as the greedy action.",
+        "Incorrect. ε-greedy is computationally simple, requiring only random number generation and Q-value comparison.",
+        "Incorrect. ε-greedy can be adapted to continuous action spaces through action discretization or other techniques.",
+        "Incorrect. ε-greedy doesn't require prior knowledge of the optimal policy; it learns through exploration."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "epsilon-greedy",
+        "disadvantages",
+        "uniform-exploration"
+      ]
+    },
+    {
+      "id": "RLN_019",
+      "question": "What is softmax (Boltzmann) exploration?",
+      "options": [
+        "Action selection based on probability distribution proportional to Q-values",
+        "Always selecting the action with maximum Q-value",
+        "Randomly selecting actions with equal probability",
+        "Alternating between exploration and exploitation phases"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Softmax exploration uses a probability distribution where actions with higher Q-values are more likely to be selected, but all actions retain some selection probability.",
+      "optionExplanations": [
+        "Correct. Softmax uses P(a) ∝ exp(Q(s,a)/τ) where τ is the temperature parameter controlling exploration intensity.",
+        "Incorrect. This describes pure greedy action selection, not softmax exploration.",
+        "Incorrect. This describes uniform random selection, not the Q-value-based probabilities of softmax.",
+        "Incorrect. Softmax continuously balances exploration and exploitation, not in alternating phases."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "softmax",
+        "boltzmann",
+        "probability-distribution",
+        "temperature"
+      ]
+    },
+    {
+      "id": "RLN_020",
+      "question": "What is the temperature parameter in softmax exploration?",
+      "options": [
+        "Controls the randomness of action selection - higher temperature means more exploration",
+        "The learning rate of the algorithm",
+        "The discount factor for future rewards",
+        "The number of actions available"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The temperature parameter τ controls the 'greediness' of action selection: high temperature approaches uniform random selection, low temperature approaches greedy selection.",
+      "optionExplanations": [
+        "Correct. Temperature τ in the softmax formula exp(Q(s,a)/τ) determines the exploration level.",
+        "Incorrect. Learning rate (α) controls how quickly Q-values are updated, not action selection randomness.",
+        "Incorrect. Discount factor (γ) weights future rewards, not the randomness of current action selection.",
+        "Incorrect. The number of actions affects the action space size but doesn't control exploration intensity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "temperature",
+        "softmax",
+        "exploration",
+        "randomness"
+      ]
+    },
+    {
+      "id": "RLN_021",
+      "question": "What is Upper Confidence Bound (UCB) action selection?",
+      "options": [
+        "Selects actions based on both estimated value and uncertainty",
+        "Always selects the action with highest Q-value",
+        "Randomly selects actions with decreasing probability",
+        "Cycles through all available actions systematically"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "UCB balances exploitation (high estimated values) with exploration (high uncertainty) by selecting actions that maximize an upper confidence bound on their value.",
+      "optionExplanations": [
+        "Correct. UCB uses the formula Q(s,a) + c√(ln(t)/N(s,a)) where the second term represents uncertainty.",
+        "Incorrect. This is pure greedy selection, which doesn't account for uncertainty in value estimates.",
+        "Incorrect. UCB uses a principled uncertainty-based approach, not decreasing random probabilities.",
+        "Incorrect. UCB selects actions based on confidence bounds, not systematic cycling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "UCB",
+        "upper-confidence-bound",
+        "uncertainty",
+        "exploration"
+      ]
+    },
+    {
+      "id": "RLN_022",
+      "question": "What is temporal difference (TD) learning?",
+      "options": [
+        "Learning method that updates estimates based on differences between successive predictions",
+        "Learning method that requires complete episodes",
+        "Learning method that only works with continuous states",
+        "Learning method that uses gradient descent"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "TD learning updates value estimates using the difference between current prediction and a new prediction based on observed reward and next state.",
+      "optionExplanations": [
+        "Correct. TD learning uses the TD error δ = r + γV(s') - V(s) to update value estimates incrementally.",
+        "Incorrect. TD learning can update after each step, not requiring complete episodes like Monte Carlo methods.",
+        "Incorrect. TD learning works with both discrete and continuous state spaces depending on function approximation.",
+        "Incorrect. While some TD methods may use gradient descent for function approximation, TD learning itself is about bootstrapping updates."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temporal-difference",
+        "TD-learning",
+        "bootstrapping",
+        "incremental"
+      ]
+    },
+    {
+      "id": "RLN_023",
+      "question": "What is the TD error in temporal difference learning?",
+      "options": [
+        "The difference between expected and actual return: r + γV(s') - V(s)",
+        "The difference between two consecutive rewards",
+        "The error in policy estimation",
+        "The difference between Q-values of different actions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "TD error represents how much the current value estimate differs from what it should be based on the immediate reward and next state value.",
+      "optionExplanations": [
+        "Correct. TD error δ = r + γV(s') - V(s) measures the prediction error used to update value estimates.",
+        "Incorrect. TD error compares value predictions, not consecutive rewards directly.",
+        "Incorrect. TD error relates to value function accuracy, not policy estimation errors specifically.",
+        "Incorrect. This would be comparing action values, not the prediction error for temporal difference learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TD-error",
+        "prediction-error",
+        "value-update"
+      ]
+    },
+    {
+      "id": "RLN_024",
+      "question": "What is SARSA?",
+      "options": [
+        "An on-policy temporal difference learning algorithm: State-Action-Reward-State-Action",
+        "A deep learning architecture for reinforcement learning",
+        "A method for state space reduction",
+        "A reward shaping technique"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SARSA learns Q-values using the actual action taken in the next state, making it on-policy unlike Q-learning which uses the maximum Q-value.",
+      "optionExplanations": [
+        "Correct. SARSA updates Q(s,a) using the actual next action: Q(s,a) ← Q(s,a) + α[r + γQ(s',a') - Q(s,a)].",
+        "Incorrect. SARSA is a tabular RL algorithm, not a deep learning architecture.",
+        "Incorrect. SARSA learns value functions, it doesn't reduce the state space size.",
+        "Incorrect. Reward shaping modifies the reward function, while SARSA is a learning algorithm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SARSA",
+        "on-policy",
+        "temporal-difference",
+        "Q-learning-variant"
+      ]
+    },
+    {
+      "id": "RLN_025",
+      "question": "What is the key difference between SARSA and Q-learning?",
+      "options": [
+        "SARSA is on-policy (uses actual next action), Q-learning is off-policy (uses max action)",
+        "SARSA works with continuous actions, Q-learning works with discrete actions",
+        "SARSA is faster than Q-learning",
+        "SARSA requires a model, Q-learning is model-free"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The fundamental difference is that SARSA updates using the actual action taken next (following current policy), while Q-learning uses the greedy action (optimal policy).",
+      "optionExplanations": [
+        "Correct. SARSA: Q(s,a) + α[r + γQ(s',a') - Q(s,a)] vs Q-learning: Q(s,a) + α[r + γmax Q(s',a') - Q(s,a)].",
+        "Incorrect. Both algorithms can be adapted for continuous or discrete action spaces with appropriate modifications.",
+        "Incorrect. Computational speed depends on implementation details, not the fundamental algorithmic difference.",
+        "Incorrect. Both SARSA and Q-learning are model-free algorithms that don't require environment dynamics."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SARSA",
+        "Q-learning",
+        "on-policy",
+        "off-policy",
+        "comparison"
+      ]
+    },
+    {
+      "id": "RLN_026",
+      "question": "What is a reward signal in reinforcement learning?",
+      "options": [
+        "Immediate feedback from the environment indicating the quality of the agent's action",
+        "The cumulative sum of all future rewards",
+        "The probability distribution over next states",
+        "The agent's internal motivation function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The reward signal is the immediate numerical feedback the agent receives after taking an action, serving as the primary learning signal.",
+      "optionExplanations": [
+        "Correct. The reward r_t is the immediate scalar feedback that guides learning by indicating action quality.",
+        "Incorrect. This describes the return or cumulative reward, not the immediate reward signal.",
+        "Incorrect. Probability distributions over states are part of the transition model, not reward signals.",
+        "Incorrect. Rewards come from the environment, not from the agent's internal processes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "reward",
+        "signal",
+        "feedback",
+        "environment"
+      ]
+    },
+    {
+      "id": "RLN_027",
+      "question": "What is reward shaping?",
+      "options": [
+        "Modifying the reward function to guide learning while preserving optimal policies",
+        "Normalizing rewards to have zero mean and unit variance",
+        "Randomly generating rewards for exploration",
+        "Delaying rewards until episode completion"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Reward shaping adds additional reward terms to help guide the agent's learning without changing the optimal policy, often using potential-based shaping.",
+      "optionExplanations": [
+        "Correct. Proper reward shaping (like potential-based shaping) can accelerate learning while maintaining policy optimality.",
+        "Incorrect. This describes reward normalization for numerical stability, not reward shaping for learning guidance.",
+        "Incorrect. Random reward generation would hinder learning, not provide helpful guidance.",
+        "Incorrect. This describes sparse reward scenarios, not active reward modification techniques."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "reward-shaping",
+        "potential-based",
+        "learning-guidance"
+      ]
+    },
+    {
+      "id": "RLN_028",
+      "question": "What is the credit assignment problem in reinforcement learning?",
+      "options": [
+        "Determining which actions were responsible for received rewards",
+        "Calculating the total reward in an episode",
+        "Assigning states to different categories",
+        "Distributing computational resources among agents"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Credit assignment involves figuring out which of the many actions taken contributed to the eventual reward, especially challenging with delayed rewards.",
+      "optionExplanations": [
+        "Correct. This fundamental RL problem involves determining which actions in a sequence led to positive or negative outcomes.",
+        "Incorrect. This is simple summation, not the complex problem of attributing causality to individual actions.",
+        "Incorrect. State categorization is a different problem related to state representation, not credit assignment.",
+        "Incorrect. This refers to resource allocation in multi-agent systems, not the temporal credit assignment problem."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "credit-assignment",
+        "temporal",
+        "causality",
+        "delayed-rewards"
+      ]
+    },
+    {
+      "id": "RLN_029",
+      "question": "What is a sparse reward environment?",
+      "options": [
+        "An environment where rewards are infrequent and mostly zero",
+        "An environment with continuous reward values",
+        "An environment with negative rewards only",
+        "An environment with random reward distributions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sparse reward environments provide little feedback to the agent, making learning challenging as most actions receive zero reward with occasional non-zero rewards.",
+      "optionExplanations": [
+        "Correct. Sparse rewards make exploration difficult since the agent receives little guidance about action quality.",
+        "Incorrect. Continuous rewards can still be dense (frequent); sparsity refers to frequency, not value type.",
+        "Incorrect. Sparse rewards can be positive, negative, or zero; the key is their infrequency.",
+        "Incorrect. Random distribution doesn't necessarily mean sparse; randomness and sparsity are different concepts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sparse-rewards",
+        "exploration",
+        "learning-challenges"
+      ]
+    },
+    {
+      "id": "RLN_030",
+      "question": "What is an episode in reinforcement learning?",
+      "options": [
+        "A complete sequence of states and actions from start to terminal state",
+        "A single action taken by the agent",
+        "A batch of training data",
+        "A checkpoint in the learning process"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An episode represents one complete run through the task, starting from an initial state and ending when a terminal state is reached.",
+      "optionExplanations": [
+        "Correct. Episodes define natural boundaries for tasks with clear beginnings and endings, like games or finite-horizon problems.",
+        "Incorrect. A single action is just one step within an episode, not the entire sequence.",
+        "Incorrect. Training batches are collections of data for learning, not sequences of environment interaction.",
+        "Incorrect. Checkpoints are for saving progress, while episodes are natural task boundaries."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "episode",
+        "terminal-state",
+        "sequence",
+        "task-boundary"
+      ]
+    },
+    {
+      "id": "RLN_031",
+      "question": "What is the difference between episodic and continuing tasks?",
+      "options": [
+        "Episodic tasks have terminal states, continuing tasks run indefinitely",
+        "Episodic tasks are shorter than continuing tasks",
+        "Episodic tasks use different algorithms than continuing tasks",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Episodic tasks have natural ending points (terminal states), while continuing tasks go on forever without terminal states.",
+      "optionExplanations": [
+        "Correct. The presence or absence of terminal states fundamentally distinguishes these task types.",
+        "Incorrect. Episode length can vary widely; the distinguishing factor is the existence of terminal states, not duration.",
+        "Incorrect. Many algorithms can work with both task types, though some modifications may be needed for continuing tasks.",
+        "Incorrect. The distinction is fundamental for RL problem formulation and affects algorithm design."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "episodic",
+        "continuing",
+        "terminal-states",
+        "task-types"
+      ]
+    },
+    {
+      "id": "RLN_032",
+      "question": "What is model-based reinforcement learning?",
+      "options": [
+        "RL approach that learns a model of the environment dynamics and uses it for planning",
+        "RL that only works with supervised learning models",
+        "RL that requires pre-trained neural networks",
+        "RL that uses multiple agents simultaneously"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Model-based RL learns the transition probabilities P(s'|s,a) and reward function R(s,a) to enable planning and value computation without direct environment interaction.",
+      "optionExplanations": [
+        "Correct. By learning environment dynamics, the agent can simulate experiences and plan ahead without real interactions.",
+        "Incorrect. Model-based RL learns environment models, not supervised learning models for classification or regression.",
+        "Incorrect. Model-based RL learns its own models during interaction, not requiring pre-trained networks.",
+        "Incorrect. Single or multiple agents can use model-based approaches; the key is learning environment dynamics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-based",
+        "environment-dynamics",
+        "planning",
+        "transition-model"
+      ]
+    },
+    {
+      "id": "RLN_033",
+      "question": "What is model-free reinforcement learning?",
+      "options": [
+        "RL approach that learns directly from experience without modeling environment dynamics",
+        "RL that doesn't use any mathematical models",
+        "RL that works without value functions",
+        "RL that requires no computational resources"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Model-free RL learns optimal policies or value functions directly from experience without explicitly learning how the environment works.",
+      "optionExplanations": [
+        "Correct. Algorithms like Q-learning and SARSA learn from experience without building explicit models of P(s'|s,a).",
+        "Incorrect. Model-free methods still use mathematical models for value functions and policies, just not environment dynamics.",
+        "Incorrect. Most model-free methods rely heavily on value functions for learning optimal policies.",
+        "Incorrect. Model-free methods still require computational resources; they just don't model environment dynamics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-free",
+        "direct-learning",
+        "experience",
+        "no-dynamics"
+      ]
+    },
+    {
+      "id": "RLN_034",
+      "question": "What are the advantages of model-based RL over model-free RL?",
+      "options": [
+        "More sample efficient and enables planning, but requires accurate environment models",
+        "Always faster and more accurate than model-free methods",
+        "Works better with continuous action spaces",
+        "Requires less computational power"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Model-based RL can be more sample efficient because it can generate simulated experience and plan ahead, but it depends on having accurate models.",
+      "optionExplanations": [
+        "Correct. Model-based methods can plan multiple steps ahead and generate synthetic experience, but model errors can hurt performance.",
+        "Incorrect. Performance depends on model accuracy and problem characteristics; neither approach is universally superior.",
+        "Incorrect. Both approaches can be adapted for continuous action spaces; the choice doesn't depend on action space type.",
+        "Incorrect. Model-based methods often require more computation for model learning and planning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-based",
+        "advantages",
+        "sample-efficiency",
+        "planning"
+      ]
+    },
+    {
+      "id": "RLN_035",
+      "question": "What is the Bellman equation?",
+      "options": [
+        "A recursive equation expressing the relationship between a value and the values of successor states",
+        "An equation for calculating reward functions",
+        "A formula for action selection probabilities",
+        "A method for state space discretization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Bellman equation expresses that the value of a state equals the expected immediate reward plus the discounted value of the next state.",
+      "optionExplanations": [
+        "Correct. V(s) = Σ π(a|s) Σ P(s'|s,a)[R(s,a,s') + γV(s')] expresses this recursive relationship.",
+        "Incorrect. The Bellman equation uses reward functions but doesn't calculate them; rewards are given by the environment.",
+        "Incorrect. Action selection probabilities are defined by the policy, not calculated by Bellman equations.",
+        "Incorrect. State discretization is a representation issue, not related to value function relationships."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bellman-equation",
+        "recursive",
+        "value-function",
+        "dynamic-programming"
+      ]
+    },
+    {
+      "id": "RLN_036",
+      "question": "What is the Bellman optimality equation?",
+      "options": [
+        "The equation satisfied by the optimal value function: V*(s) = max_a Σ P(s'|s,a)[R + γV*(s')]",
+        "The equation for finding optimal policies directly",
+        "The equation for calculating exploration probabilities",
+        "The equation for model learning in model-based RL"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Bellman optimality equation characterizes the optimal value function by taking the maximum over actions rather than averaging over a policy.",
+      "optionExplanations": [
+        "Correct. This equation defines the optimal value function by selecting the best action at each state.",
+        "Incorrect. While optimal policies can be derived from optimal value functions, the equation characterizes values, not policies directly.",
+        "Incorrect. Exploration probabilities are determined by exploration strategies, not optimality equations.",
+        "Incorrect. Model learning involves estimating transition probabilities and rewards, not value function optimality."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bellman-optimality",
+        "optimal-value",
+        "max-operator",
+        "dynamic-programming"
+      ]
+    },
+    {
+      "id": "RLN_037",
+      "question": "What is dynamic programming in the context of reinforcement learning?",
+      "options": [
+        "A method for computing optimal policies using complete knowledge of environment dynamics",
+        "A technique for reducing memory usage in RL algorithms",
+        "A method for handling continuous state spaces",
+        "A way to parallelize reinforcement learning computations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dynamic programming in RL uses the Bellman equations to iteratively compute optimal value functions when the full MDP is known.",
+      "optionExplanations": [
+        "Correct. DP methods like value iteration and policy iteration require complete knowledge of P(s'|s,a) and R(s,a,s').",
+        "Incorrect. While DP can be memory-efficient, its defining characteristic is using complete environment knowledge, not memory optimization.",
+        "Incorrect. DP typically works with discrete states; continuous spaces require function approximation or discretization.",
+        "Incorrect. Parallelization is an implementation choice, not the defining feature of dynamic programming."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dynamic-programming",
+        "complete-knowledge",
+        "bellman-equations",
+        "optimal-policy"
+      ]
+    },
+    {
+      "id": "RLN_038",
+      "question": "What is value iteration?",
+      "options": [
+        "An algorithm that iteratively updates value estimates using the Bellman optimality equation",
+        "A method for iterating through all possible actions",
+        "A technique for generating training episodes",
+        "An approach for updating policy parameters"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Value iteration repeatedly applies the Bellman optimality operator to improve value function estimates until convergence to the optimal value function.",
+      "optionExplanations": [
+        "Correct. Value iteration updates V(s) ← max_a Σ P(s'|s,a)[R + γV(s')] for all states until convergence.",
+        "Incorrect. Value iteration updates value estimates, not action iteration; actions are considered during each value update.",
+        "Incorrect. Episode generation is for experience collection, not value function computation.",
+        "Incorrect. Policy parameters are updated in policy gradient methods, not value iteration which computes value functions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value-iteration",
+        "bellman-optimality",
+        "convergence",
+        "dynamic-programming"
+      ]
+    },
+    {
+      "id": "RLN_039",
+      "question": "What is policy iteration?",
+      "options": [
+        "An algorithm alternating between policy evaluation and policy improvement",
+        "A method for iterating through different exploration strategies",
+        "A technique for updating Q-values iteratively",
+        "An approach for training neural network policies"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Policy iteration consists of two steps: evaluating the current policy to find its value function, then improving the policy by acting greedily with respect to this value function.",
+      "optionExplanations": [
+        "Correct. Policy iteration alternates between computing V^π (evaluation) and updating π to be greedy w.r.t. V^π (improvement).",
+        "Incorrect. Exploration strategies are separate from the policy iteration algorithm for finding optimal policies.",
+        "Incorrect. Q-value iteration is a variant, but policy iteration traditionally works with state values and explicit policies.",
+        "Incorrect. Neural network training uses gradient-based methods, not the discrete policy iteration algorithm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "policy-iteration",
+        "evaluation",
+        "improvement",
+        "alternating"
+      ]
+    },
+    {
+      "id": "RLN_040",
+      "question": "What is Monte Carlo learning in reinforcement learning?",
+      "options": [
+        "Learning method that uses complete episode returns to update value estimates",
+        "A method for random action selection",
+        "A technique for state space exploration",
+        "An approach for generating synthetic data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Monte Carlo methods learn from complete episodes by using the actual returns (cumulative rewards) to update value function estimates.",
+      "optionExplanations": [
+        "Correct. MC methods wait until episode completion to update V(s) using the actual return G_t from each visited state.",
+        "Incorrect. Random action selection is an exploration strategy, not a learning method for value functions.",
+        "Incorrect. While MC methods do explore state spaces, their defining feature is learning from complete returns.",
+        "Incorrect. MC methods use actual experience returns, not synthetic data generation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "monte-carlo",
+        "episode-returns",
+        "complete-episodes",
+        "sampling"
+      ]
+    },
+    {
+      "id": "RLN_041",
+      "question": "What is the key difference between Monte Carlo and Temporal Difference learning?",
+      "options": [
+        "MC learns from complete episodes, TD learns from individual steps using bootstrapping",
+        "MC is model-based, TD is model-free",
+        "MC works with continuous states, TD works with discrete states",
+        "MC is faster than TD learning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Monte Carlo waits for episode completion to use actual returns, while TD learning updates after each step using estimated future values.",
+      "optionExplanations": [
+        "Correct. MC uses actual returns G_t, while TD uses estimates like r + γV(s') (bootstrapping from current estimates).",
+        "Incorrect. Both MC and TD methods can be model-free; the distinction is about when and how they update estimates.",
+        "Incorrect. Both methods can work with continuous or discrete states depending on function approximation.",
+        "Incorrect. Speed depends on implementation and problem characteristics; TD's online updates can be advantageous in some cases."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "monte-carlo",
+        "temporal-difference",
+        "bootstrapping",
+        "episodes-vs-steps"
+      ]
+    },
+    {
+      "id": "RLN_042",
+      "question": "What is function approximation in reinforcement learning?",
+      "options": [
+        "Using parameterized functions to represent value functions or policies in large state spaces",
+        "Approximating reward functions with simpler mathematical expressions",
+        "Estimating transition probabilities in model-based RL",
+        "Reducing the complexity of action selection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Function approximation allows RL algorithms to work with large or continuous state spaces by using parameterized functions (like neural networks) instead of tables.",
+      "optionExplanations": [
+        "Correct. Function approximation generalizes from visited states to unvisited ones using functions like V(s;θ) or Q(s,a;θ).",
+        "Incorrect. Reward functions are typically given by the environment, not approximated (though reward learning exists).",
+        "Incorrect. This describes model learning, which is different from value function approximation.",
+        "Incorrect. Action selection complexity relates to exploration strategies, not function approximation for representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "function-approximation",
+        "large-state-spaces",
+        "generalization",
+        "parametric"
+      ]
+    },
+    {
+      "id": "RLN_043",
+      "question": "Why is function approximation necessary in many RL problems?",
+      "options": [
+        "State spaces are too large or continuous for tabular methods",
+        "It makes algorithms run faster",
+        "It reduces memory requirements in all cases",
+        "It's required for multi-agent systems"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Tabular methods become impractical when state spaces are large or continuous, requiring function approximation to generalize across states.",
+      "optionExplanations": [
+        "Correct. With millions of states or continuous state spaces, storing individual values for each state becomes impossible.",
+        "Incorrect. Function approximation can be slower due to computation overhead, though it enables tackling larger problems.",
+        "Incorrect. While often more memory-efficient, the primary motivation is handling large/continuous spaces, not memory reduction per se.",
+        "Incorrect. Multi-agent systems can use tabular or function approximation methods depending on the state space size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "function-approximation",
+        "scalability",
+        "continuous-spaces",
+        "tabular-limitations"
+      ]
+    },
+    {
+      "id": "RLN_044",
+      "question": "What is deep reinforcement learning?",
+      "options": [
+        "RL that uses deep neural networks for function approximation",
+        "RL with multiple levels of abstraction in the environment",
+        "RL that learns very detailed policies",
+        "RL with many sequential decision steps"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Deep RL combines reinforcement learning algorithms with deep neural networks to handle high-dimensional state spaces like images.",
+      "optionExplanations": [
+        "Correct. Deep RL uses neural networks with multiple hidden layers to approximate value functions, policies, or models.",
+        "Incorrect. 'Deep' refers to neural network depth, not environmental hierarchy or abstraction levels.",
+        "Incorrect. Policy detail depends on the problem and representation, not specifically on using deep networks.",
+        "Incorrect. Sequence length is a problem characteristic, not related to the 'deep' in deep RL."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deep-RL",
+        "neural-networks",
+        "function-approximation",
+        "high-dimensional"
+      ]
+    },
+    {
+      "id": "RLN_045",
+      "question": "What is Deep Q-Network (DQN)?",
+      "options": [
+        "A deep learning approach to Q-learning using neural networks to approximate Q-functions",
+        "A method for learning deep environment models",
+        "A technique for hierarchical policy learning",
+        "An algorithm for multi-task reinforcement learning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DQN uses a deep neural network to approximate the Q-function Q(s,a;θ), enabling Q-learning in high-dimensional state spaces like Atari games.",
+      "optionExplanations": [
+        "Correct. DQN replaces the Q-table with a neural network that maps states (and actions) to Q-values.",
+        "Incorrect. DQN learns Q-functions, not environment models; it remains a model-free approach.",
+        "Incorrect. DQN learns single-level policies, not hierarchical decompositions of behavior.",
+        "Incorrect. DQN focuses on single-task learning, though extensions exist for multi-task scenarios."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "DQN",
+        "deep-Q-learning",
+        "neural-networks",
+        "atari"
+      ]
+    },
+    {
+      "id": "RLN_046",
+      "question": "What are the key innovations in DQN compared to basic Q-learning?",
+      "options": [
+        "Experience replay and target network for stability",
+        "Using multiple agents for parallel learning",
+        "Implementing continuous action spaces",
+        "Adding hierarchical state representations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DQN introduces experience replay (storing and reusing past experiences) and a target network (for stable learning) to address instability in neural network training.",
+      "optionExplanations": [
+        "Correct. Experience replay breaks correlation between consecutive samples, and target networks stabilize learning targets.",
+        "Incorrect. Basic DQN uses single agents; multi-agent extensions exist but aren't core DQN innovations.",
+        "Incorrect. DQN typically handles discrete actions; continuous action variants came later.",
+        "Incorrect. DQN uses standard neural network representations, not specifically hierarchical state decompositions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "DQN",
+        "experience-replay",
+        "target-network",
+        "stability"
+      ]
+    },
+    {
+      "id": "RLN_047",
+      "question": "What is experience replay in deep reinforcement learning?",
+      "options": [
+        "Storing past experiences in a buffer and randomly sampling them for training",
+        "Replaying episodes multiple times for better learning",
+        "Using multiple agents to replay the same experiences",
+        "Generating synthetic experiences using learned models"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Experience replay maintains a buffer of past (s,a,r,s') transitions and samples random mini-batches for neural network training, breaking temporal correlations.",
+      "optionExplanations": [
+        "Correct. Random sampling from stored experiences reduces correlation and improves sample efficiency in neural network training.",
+        "Incorrect. While episodes might be used multiple times indirectly, experience replay refers to the buffer sampling mechanism.",
+        "Incorrect. Experience replay is about data reuse, not multi-agent coordination or sharing.",
+        "Incorrect. Synthetic experience generation is a different technique (model-based); experience replay uses actual stored transitions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "experience-replay",
+        "buffer",
+        "sampling",
+        "correlation"
+      ]
+    },
+    {
+      "id": "RLN_048",
+      "question": "What is a target network in DQN?",
+      "options": [
+        "A separate network with periodically updated parameters used for computing learning targets",
+        "A network that predicts the next state",
+        "A network used only during testing",
+        "A network that learns the reward function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The target network θ^- provides stable learning targets by updating its parameters less frequently than the main network θ, preventing moving target problems.",
+      "optionExplanations": [
+        "Correct. The target network computes r + γmax Q(s',a';θ^-) while keeping θ^- fixed for several updates to θ.",
+        "Incorrect. State prediction is not the target network's purpose; it computes Q-value targets for learning.",
+        "Incorrect. The target network is used during training to compute learning targets, not exclusively for testing.",
+        "Incorrect. Reward functions are typically given by the environment; the target network computes value targets."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "target-network",
+        "stability",
+        "learning-targets",
+        "moving-targets"
+      ]
+    },
+    {
+      "id": "RLN_049",
+      "question": "What is policy gradient in reinforcement learning?",
+      "options": [
+        "A method that directly optimizes policy parameters using gradient ascent on expected reward",
+        "The gradient of the value function with respect to states",
+        "A technique for computing action probabilities",
+        "A method for learning state transition gradients"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Policy gradient methods directly parameterize the policy π(a|s;θ) and use gradient ascent to maximize expected cumulative reward J(θ).",
+      "optionExplanations": [
+        "Correct. Policy gradients optimize ∇J(θ) = ∇E[Σγ^t r_t] with respect to policy parameters θ.",
+        "Incorrect. This would be gradients of value functions, not policy optimization gradients.",
+        "Incorrect. Action probabilities are outputs of the policy, not the gradient computation method.",
+        "Incorrect. State transition gradients relate to environment dynamics, not policy optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "policy-gradient",
+        "direct-optimization",
+        "gradient-ascent",
+        "parameterized-policy"
+      ]
+    },
+    {
+      "id": "RLN_050",
+      "question": "What is the REINFORCE algorithm?",
+      "options": [
+        "A basic policy gradient algorithm using Monte Carlo estimates of returns",
+        "A deep Q-learning variant",
+        "A method for environment model learning",
+        "A technique for state space discretization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "REINFORCE uses the policy gradient theorem with Monte Carlo returns to update policy parameters: ∇J(θ) = E[∇ log π(a|s;θ) G_t].",
+      "optionExplanations": [
+        "Correct. REINFORCE is the foundational policy gradient algorithm that uses complete episode returns for gradient estimation.",
+        "Incorrect. REINFORCE is policy-based, not value-based like Q-learning methods.",
+        "Incorrect. REINFORCE learns policies directly, not environment models.",
+        "Incorrect. REINFORCE is a learning algorithm, not a state representation technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REINFORCE",
+        "policy-gradient",
+        "monte-carlo",
+        "gradient-theorem"
+      ]
+    },
+    {
+      "id": "RLN_051",
+      "question": "What is the advantage of policy gradient methods over value-based methods?",
+      "options": [
+        "Can directly learn stochastic policies and handle continuous action spaces naturally",
+        "Always converge faster than value-based methods",
+        "Require less computational resources",
+        "Work better with discrete action spaces"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Policy gradient methods can naturally represent stochastic policies and work with continuous actions, while value-based methods typically require discretization or additional techniques.",
+      "optionExplanations": [
+        "Correct. Policy gradients parameterize policies directly, naturally handling continuous actions and stochastic behavior.",
+        "Incorrect. Convergence speed depends on many factors; policy gradients can have high variance and slow convergence.",
+        "Incorrect. Policy gradients often require more samples due to high variance, potentially increasing computational needs.",
+        "Incorrect. Value-based methods often work well with discrete actions; policy gradients' advantage is with continuous actions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "policy-gradient",
+        "advantages",
+        "continuous-actions",
+        "stochastic-policies"
+      ]
+    },
+    {
+      "id": "RLN_052",
+      "question": "What is an actor-critic method?",
+      "options": [
+        "A hybrid approach combining policy gradients (actor) with value functions (critic)",
+        "A method using two competing agents",
+        "A technique for multi-objective optimization",
+        "An approach for distributed reinforcement learning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Actor-critic methods use a policy (actor) to select actions and a value function (critic) to evaluate those actions, reducing variance in policy gradient estimates.",
+      "optionExplanations": [
+        "Correct. The actor updates the policy using policy gradients, while the critic learns value functions to reduce gradient variance.",
+        "Incorrect. While there are two components, they cooperate rather than compete, and both belong to the same agent.",
+        "Incorrect. Actor-critic addresses single-objective RL problems, not specifically multi-objective optimization.",
+        "Incorrect. Actor-critic is an algorithmic approach that can be used in distributed or centralized settings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "actor-critic",
+        "hybrid",
+        "policy-gradient",
+        "value-function",
+        "variance-reduction"
+      ]
+    },
+    {
+      "id": "RLN_053",
+      "question": "What role does the critic play in actor-critic methods?",
+      "options": [
+        "Evaluates the quality of actions taken by the actor to reduce gradient variance",
+        "Selects actions for the agent",
+        "Learns the environment model",
+        "Generates exploration noise"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The critic learns value functions V(s) or Q(s,a) to provide lower-variance estimates for policy gradient updates, replacing Monte Carlo returns.",
+      "optionExplanations": [
+        "Correct. The critic provides baseline values or action evaluations to reduce the high variance of pure policy gradient methods.",
+        "Incorrect. Action selection is the actor's responsibility; the critic only evaluates actions.",
+        "Incorrect. Actor-critic methods are typically model-free; the critic learns value functions, not environment dynamics.",
+        "Incorrect. Exploration is typically handled by the policy (actor) structure, not the critic's value estimation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "critic",
+        "evaluation",
+        "variance-reduction",
+        "baseline"
+      ]
+    },
+    {
+      "id": "RLN_054",
+      "question": "What is the difference between on-policy and off-policy learning?",
+      "options": [
+        "On-policy learns from actions of the current policy, off-policy learns from any policy's actions",
+        "On-policy works online, off-policy works offline",
+        "On-policy uses neural networks, off-policy uses tables",
+        "On-policy is faster than off-policy learning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "On-policy methods like SARSA learn about the policy they're currently following, while off-policy methods like Q-learning can learn about different policies.",
+      "optionExplanations": [
+        "Correct. On-policy methods evaluate and improve the same policy that generates experience, while off-policy methods can learn from different policies.",
+        "Incorrect. Both on-policy and off-policy methods can work in online or offline settings.",
+        "Incorrect. The choice of function approximation (neural networks vs tables) is independent of on-policy vs off-policy distinction.",
+        "Incorrect. Speed depends on specific algorithms and problems; the on/off-policy distinction is about policy consistency, not speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "on-policy",
+        "off-policy",
+        "policy-consistency",
+        "learning-distinction"
+      ]
+    },
+    {
+      "id": "RLN_055",
+      "question": "What is importance sampling in off-policy learning?",
+      "options": [
+        "A technique to correct for the difference between behavior and target policies",
+        "A method for selecting important states for learning",
+        "A technique for prioritizing experiences in replay buffers",
+        "A method for sampling actions uniformly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Importance sampling uses the ratio of target to behavior policy probabilities to correct return estimates when learning off-policy.",
+      "optionExplanations": [
+        "Correct. Importance sampling weights returns by π(a|s)/μ(a|s) where π is target policy and μ is behavior policy.",
+        "Incorrect. State importance is handled differently; importance sampling corrects for policy differences, not state selection.",
+        "Incorrect. Prioritized experience replay is a different technique for experience selection based on TD errors.",
+        "Incorrect. Uniform sampling is one strategy, but importance sampling specifically addresses policy mismatch corrections."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "importance-sampling",
+        "off-policy",
+        "policy-ratio",
+        "correction"
+      ]
+    },
+    {
+      "id": "RLN_056",
+      "question": "What is multi-armed bandit problem?",
+      "options": [
+        "A simplified RL problem with only one state and multiple actions",
+        "A problem with multiple agents competing for rewards",
+        "A problem requiring coordination between multiple arms/appendages",
+        "A classification problem with multiple classes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The multi-armed bandit problem focuses purely on the exploration-exploitation dilemma without state transitions, making it a fundamental RL subproblem.",
+      "optionExplanations": [
+        "Correct. Bandits have no states, just actions (arms) with unknown reward distributions, focusing on exploration vs exploitation.",
+        "Incorrect. While multi-agent bandits exist, the classic problem involves a single agent choosing among actions.",
+        "Incorrect. 'Arms' refer to slot machine arms (actions), not physical appendages requiring coordination.",
+        "Incorrect. Bandits are decision problems about action selection, not supervised learning classification tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-armed-bandit",
+        "exploration-exploitation",
+        "stateless",
+        "action-selection"
+      ]
+    },
+    {
+      "id": "RLN_057",
+      "question": "What is the regret in multi-armed bandits?",
+      "options": [
+        "The difference between optimal rewards and actual rewards obtained",
+        "The agent's emotional response to poor decisions",
+        "The computational cost of action selection",
+        "The number of suboptimal actions taken"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Regret measures the cumulative loss from not always choosing the optimal action, quantifying the cost of exploration and imperfect knowledge.",
+      "optionExplanations": [
+        "Correct. Regret = Σ(μ* - μ_a_t) where μ* is the optimal action's mean reward and μ_a_t is the chosen action's mean reward.",
+        "Incorrect. Regret is a mathematical performance measure, not an emotional or psychological concept.",
+        "Incorrect. Computational cost is measured separately; regret specifically measures reward loss from suboptimal choices.",
+        "Incorrect. While related, regret measures the cumulative reward loss, not just the count of suboptimal actions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regret",
+        "bandit",
+        "performance-measure",
+        "optimal-reward"
+      ]
+    },
+    {
+      "id": "RLN_058",
+      "question": "What is contextual bandit?",
+      "options": [
+        "A bandit problem where action rewards depend on observable context/state information",
+        "A bandit problem with multiple simultaneous players",
+        "A bandit problem where arms change over time",
+        "A bandit problem with hierarchical action structures"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Contextual bandits extend basic bandits by including context (state) information that influences action rewards, bridging bandits and full RL.",
+      "optionExplanations": [
+        "Correct. Contextual bandits provide context s_t and learn rewards R(s_t, a_t), but without state transitions between decisions.",
+        "Incorrect. Multi-player scenarios exist but aren't the defining feature of contextual bandits; context information is key.",
+        "Incorrect. Non-stationary bandits have changing rewards over time, which is different from context-dependent rewards.",
+        "Incorrect. Hierarchical structures relate to action organization, not the context-dependent nature of rewards."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "contextual-bandit",
+        "context",
+        "state-information",
+        "reward-dependence"
+      ]
+    },
+    {
+      "id": "RLN_059",
+      "question": "What is the difference between bandits and full reinforcement learning?",
+      "options": [
+        "Bandits have no state transitions, RL has sequential state changes",
+        "Bandits use discrete actions, RL uses continuous actions",
+        "Bandits are solved optimally, RL problems are always approximate",
+        "Bandits have single rewards, RL has cumulative rewards"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The key difference is that bandits make independent decisions without state transitions, while RL involves sequential decisions with state changes.",
+      "optionExplanations": [
+        "Correct. Bandits are essentially single-state MDPs, while full RL involves navigating through multiple states over time.",
+        "Incorrect. Both bandits and RL can have discrete or continuous action spaces depending on the problem formulation.",
+        "Incorrect. Both problem types can have optimal or approximate solutions depending on complexity and available information.",
+        "Incorrect. Both can involve cumulative rewards; the key difference is the presence or absence of state transitions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bandits",
+        "RL-comparison",
+        "state-transitions",
+        "sequential-decisions"
+      ]
+    },
+    {
+      "id": "RLN_060",
+      "question": "What is hierarchical reinforcement learning?",
+      "options": [
+        "RL approach that decomposes problems into multiple levels of abstraction with sub-goals",
+        "RL that uses multiple neural networks in sequence",
+        "RL that requires a hierarchy of human supervisors",
+        "RL that only works with tree-structured environments"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hierarchical RL breaks down complex tasks into simpler sub-tasks organized in a hierarchy, enabling better learning and transfer in complex domains.",
+      "optionExplanations": [
+        "Correct. HRL uses temporal abstraction with options, sub-goals, and macro-actions to solve complex problems more efficiently.",
+        "Incorrect. While HRL may use multiple networks, the key is hierarchical task decomposition, not just network architecture.",
+        "Incorrect. HRL is about algorithmic hierarchy, not human supervision hierarchies.",
+        "Incorrect. HRL can work with various environment structures, not limited to tree structures."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hierarchical-RL",
+        "abstraction",
+        "sub-goals",
+        "temporal-abstraction"
+      ]
+    },
+    {
+      "id": "RLN_061",
+      "question": "What are options in hierarchical reinforcement learning?",
+      "options": [
+        "Temporally extended actions that consist of a policy, termination condition, and initiation set",
+        "Different reward functions to choose from",
+        "Alternative environment models",
+        "Various exploration strategies"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Options extend the action space with temporal abstraction, allowing agents to reason at different time scales through structured sub-behaviors.",
+      "optionExplanations": [
+        "Correct. An option o = (I, π, β) where I is initiation set, π is policy, and β is termination condition.",
+        "Incorrect. Options are about temporal abstraction of actions, not reward function selection.",
+        "Incorrect. Options are behavioral abstractions, not different models of environment dynamics.",
+        "Incorrect. While options may affect exploration, they're primarily about temporal action abstraction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "options",
+        "temporal-abstraction",
+        "sub-policies",
+        "hierarchical"
+      ]
+    },
+    {
+      "id": "RLN_062",
+      "question": "What is transfer learning in reinforcement learning?",
+      "options": [
+        "Using knowledge gained from one task to improve learning on related tasks",
+        "Transferring data between different algorithms",
+        "Moving agents between different environments",
+        "Converting between different RL algorithm types"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transfer learning leverages experience from source tasks to accelerate learning in target tasks, reducing sample complexity for new but related problems.",
+      "optionExplanations": [
+        "Correct. Transfer learning reuses policies, value functions, or representations from previous tasks to bootstrap learning on new tasks.",
+        "Incorrect. Data transfer is a mechanism, but transfer learning is about knowledge reuse across tasks.",
+        "Incorrect. Physical agent movement isn't transfer learning; it's about knowledge transfer across problem domains.",
+        "Incorrect. Algorithm conversion is about implementation, not knowledge transfer across learning tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transfer-learning",
+        "knowledge-reuse",
+        "sample-efficiency",
+        "related-tasks"
+      ]
+    },
+    {
+      "id": "RLN_063",
+      "question": "What is meta-learning in reinforcement learning?",
+      "options": [
+        "Learning to learn - acquiring skills that help learn new tasks quickly",
+        "Learning about the learning process itself",
+        "Using metadata to improve learning",
+        "Learning multiple tasks simultaneously"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Meta-learning in RL focuses on learning algorithms or representations that enable rapid adaptation to new tasks with minimal experience.",
+      "optionExplanations": [
+        "Correct. Meta-learning aims to learn inductive biases, initialization, or adaptation procedures that accelerate learning on new tasks.",
+        "Incorrect. While related, meta-learning specifically targets rapid adaptation capabilities, not just understanding learning processes.",
+        "Incorrect. Metadata usage is a technique, but meta-learning is about learning adaptation strategies.",
+        "Incorrect. Multi-task learning is different from meta-learning, though they can be combined."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "meta-learning",
+        "learning-to-learn",
+        "adaptation",
+        "few-shot"
+      ]
+    },
+    {
+      "id": "RLN_064",
+      "question": "What is inverse reinforcement learning?",
+      "options": [
+        "Learning reward functions from observed expert behavior",
+        "Running reinforcement learning algorithms backwards",
+        "Learning policies that minimize rewards",
+        "Reversing the roles of agent and environment"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Inverse RL infers the reward function that best explains expert demonstrations, solving the problem of reward specification in complex domains.",
+      "optionExplanations": [
+        "Correct. IRL assumes expert behavior is optimal and tries to recover the underlying reward function that would produce such behavior.",
+        "Incorrect. IRL isn't about running algorithms in reverse time, but about inferring rewards from behavior.",
+        "Incorrect. IRL doesn't minimize rewards; it infers the reward function that experts were implicitly maximizing.",
+        "Incorrect. Agent and environment roles remain the same; IRL changes the learning objective from policy to reward learning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "inverse-RL",
+        "reward-learning",
+        "expert-demonstrations",
+        "imitation"
+      ]
+    },
+    {
+      "id": "RLN_065",
+      "question": "What is imitation learning?",
+      "options": [
+        "Learning policies by mimicking expert demonstrations without explicit reward signals",
+        "Teaching multiple agents to behave identically",
+        "Learning by copying other learning algorithms",
+        "Learning to imitate different environment dynamics"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Imitation learning directly learns policies from expert demonstrations, avoiding the need to specify reward functions explicitly.",
+      "optionExplanations": [
+        "Correct. Imitation learning methods like behavioral cloning learn policies π(a|s) directly from state-action pairs in expert demonstrations.",
+        "Incorrect. While multiple agents might learn similar behaviors, imitation learning is about learning from expert demonstrations.",
+        "Incorrect. Algorithm copying is different from learning behaviors from demonstrated trajectories.",
+        "Incorrect. Imitation learning focuses on behavioral mimicking, not environment dynamics modeling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "imitation-learning",
+        "expert-demonstrations",
+        "behavioral-cloning",
+        "policy-learning"
+      ]
+    },
+    {
+      "id": "RLN_066",
+      "question": "What is the difference between imitation learning and inverse reinforcement learning?",
+      "options": [
+        "Imitation learning directly copies behavior, IRL infers rewards then finds optimal policy",
+        "Imitation learning works offline, IRL works online",
+        "Imitation learning uses neural networks, IRL uses tabular methods",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Imitation learning directly learns policies from demonstrations, while IRL first recovers reward functions and then optimizes policies.",
+      "optionExplanations": [
+        "Correct. Imitation learning is direct policy learning, while IRL is a two-step process: reward recovery then policy optimization.",
+        "Incorrect. Both can work in online or offline settings depending on the specific algorithm and implementation.",
+        "Incorrect. Both approaches can use various function approximation methods including neural networks or tabular representations.",
+        "Incorrect. These are fundamentally different approaches with different assumptions and computational steps."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "imitation-learning",
+        "inverse-RL",
+        "comparison",
+        "approach-differences"
+      ]
+    },
+    {
+      "id": "RLN_067",
+      "question": "What is curriculum learning in reinforcement learning?",
+      "options": [
+        "Gradually increasing task difficulty to improve learning efficiency",
+        "Learning multiple subjects simultaneously",
+        "Following a predetermined learning schedule",
+        "Learning from educational textbooks"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Curriculum learning structures the learning process by presenting tasks in order of increasing difficulty, mimicking how humans learn complex skills.",
+      "optionExplanations": [
+        "Correct. Curriculum learning starts with easier tasks and progressively introduces more complex challenges to accelerate learning.",
+        "Incorrect. While multiple tasks may be involved, the key is the structured progression of difficulty, not simultaneity.",
+        "Incorrect. The schedule is often adaptive based on performance, not just predetermined timing.",
+        "Incorrect. Curriculum learning refers to task difficulty progression, not literal educational materials."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curriculum-learning",
+        "difficulty-progression",
+        "learning-efficiency",
+        "structured-learning"
+      ]
+    },
+    {
+      "id": "RLN_068",
+      "question": "What is reward shaping in reinforcement learning?",
+      "options": [
+        "Modifying reward signals to guide learning while preserving optimal policies",
+        "Changing the shape of reward distributions",
+        "Normalizing rewards to unit variance",
+        "Creating reward functions from scratch"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Reward shaping adds auxiliary rewards to guide learning toward desired behaviors without changing the optimal policy, often using potential-based methods.",
+      "optionExplanations": [
+        "Correct. Proper reward shaping (like F(s,a,s') = γΦ(s') - Φ(s)) guides learning while maintaining policy optimality.",
+        "Incorrect. This refers to statistical distribution properties, not the guidance aspect of reward shaping.",
+        "Incorrect. Normalization is for numerical stability, not the behavioral guidance that reward shaping provides.",
+        "Incorrect. Reward shaping modifies existing rewards rather than creating entirely new reward functions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "reward-shaping",
+        "potential-based",
+        "learning-guidance",
+        "optimal-policy-preservation"
+      ]
+    },
+    {
+      "id": "RLN_069",
+      "question": "What is the exploration problem in reinforcement learning?",
+      "options": [
+        "How to efficiently discover rewarding actions and states in unknown environments",
+        "How to map all possible states in the environment",
+        "How to reduce computational complexity of action selection",
+        "How to visualize the agent's learning progress"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The exploration problem involves efficiently gathering information about the environment to find good policies without excessive random sampling.",
+      "optionExplanations": [
+        "Correct. Exploration seeks to discover high-reward regions of the state-action space while minimizing wasted effort on poor actions.",
+        "Incorrect. Complete state mapping isn't always necessary or feasible; exploration focuses on finding rewarding regions.",
+        "Incorrect. Computational complexity is important but separate from the information-gathering challenge of exploration.",
+        "Incorrect. Visualization is for analysis, not the fundamental challenge of discovering rewarding behaviors."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploration-problem",
+        "information-gathering",
+        "discovery",
+        "unknown-environments"
+      ]
+    },
+    {
+      "id": "RLN_070",
+      "question": "What is count-based exploration?",
+      "options": [
+        "Exploration strategy that favors visiting less-frequently encountered states or actions",
+        "Counting the total number of exploration steps",
+        "Exploration based on counting available actions",
+        "Setting a fixed count limit for exploration episodes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Count-based exploration uses visit counts to guide exploration toward less-visited states or actions, encouraging systematic coverage of the state space.",
+      "optionExplanations": [
+        "Correct. Methods like UCB use visit counts N(s,a) to balance exploration with exploitation based on uncertainty from limited visits.",
+        "Incorrect. Total step counting is for episode management, not the state-specific guidance of count-based exploration.",
+        "Incorrect. Action counting refers to action space size, not the visit-frequency-based exploration strategy.",
+        "Incorrect. Fixed limits are stopping criteria, not the count-based guidance mechanism for exploration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "count-based-exploration",
+        "visit-frequency",
+        "systematic-coverage",
+        "uncertainty"
+      ]
+    },
+    {
+      "id": "RLN_071",
+      "question": "What is curiosity-driven exploration?",
+      "options": [
+        "Exploration guided by intrinsic motivation to seek novel or surprising experiences",
+        "Exploration based on predetermined curious behaviors",
+        "Random exploration without any specific guidance",
+        "Exploration that only occurs when rewards are sparse"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Curiosity-driven exploration uses intrinsic rewards based on prediction errors, information gain, or novelty to encourage exploration of interesting states.",
+      "optionExplanations": [
+        "Correct. Curiosity methods often use prediction error or information gain as intrinsic rewards to drive exploration toward surprising experiences.",
+        "Incorrect. Curiosity is emergent from the learning process, not predetermined behaviors programmed in advance.",
+        "Incorrect. Curiosity-driven exploration is structured around intrinsic motivation, not random action selection.",
+        "Incorrect. While useful in sparse reward settings, curiosity can benefit exploration in various reward conditions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curiosity",
+        "intrinsic-motivation",
+        "novelty",
+        "prediction-error"
+      ]
+    },
+    {
+      "id": "RLN_072",
+      "question": "What is the cold start problem in reinforcement learning?",
+      "options": [
+        "Difficulty in learning when starting with no prior knowledge or experience",
+        "Problems caused by low computational temperatures",
+        "Issues with initializing neural network weights",
+        "Challenges in starting learning algorithms from scratch"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The cold start problem refers to poor initial performance when agents begin learning without prior knowledge, requiring extensive exploration to find good policies.",
+      "optionExplanations": [
+        "Correct. Cold start means learning from scratch without demonstrations, pre-trained models, or domain knowledge to bootstrap performance.",
+        "Incorrect. 'Cold' refers to lack of prior knowledge, not computational temperature parameters.",
+        "Incorrect. Weight initialization is important but the cold start problem is broader, encompassing lack of domain knowledge.",
+        "Incorrect. Algorithm initialization is part of it, but cold start specifically refers to learning without prior task knowledge."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cold-start",
+        "no-prior-knowledge",
+        "initial-performance",
+        "bootstrapping"
+      ]
+    },
+    {
+      "id": "RLN_073",
+      "question": "What is safe reinforcement learning?",
+      "options": [
+        "RL approaches that avoid harmful actions or states during learning and deployment",
+        "RL algorithms that are computationally secure",
+        "RL that uses safe programming practices",
+        "RL that only works in simulated environments"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Safe RL incorporates safety constraints to prevent agents from taking actions that could cause harm during exploration or deployment.",
+      "optionExplanations": [
+        "Correct. Safe RL uses constraints, risk measures, or safe exploration techniques to prevent dangerous behaviors while learning.",
+        "Incorrect. Computational security relates to data protection, not preventing harmful physical or system actions.",
+        "Incorrect. Programming practices are about code quality, not about preventing harmful agent behaviors.",
+        "Incorrect. Safe RL is especially important for real-world deployment where safety constraints are critical."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "safe-RL",
+        "safety-constraints",
+        "harm-prevention",
+        "constrained-exploration"
+      ]
+    },
+    {
+      "id": "RLN_074",
+      "question": "What is constrained reinforcement learning?",
+      "options": [
+        "RL that optimizes rewards subject to constraint satisfaction requirements",
+        "RL with limited computational resources",
+        "RL that works only with discrete action spaces",
+        "RL with fixed policy structures"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Constrained RL formulates problems as optimization of expected rewards subject to constraints on expected costs or other measures.",
+      "optionExplanations": [
+        "Correct. Constrained RL solves problems like max E[R] subject to E[C] ≤ threshold, balancing performance with constraint satisfaction.",
+        "Incorrect. Resource constraints affect implementation but aren't the mathematical constraints that define constrained RL.",
+        "Incorrect. Action space type is independent of whether the RL problem includes mathematical constraints.",
+        "Incorrect. Policy structure constraints are different from the environmental or safety constraints in constrained RL."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "constrained-RL",
+        "optimization",
+        "constraint-satisfaction",
+        "cost-constraints"
+      ]
+    },
+    {
+      "id": "RLN_075",
+      "question": "What is multi-agent reinforcement learning?",
+      "options": [
+        "RL involving multiple learning agents interacting in shared environments",
+        "RL that uses multiple neural networks for one agent",
+        "RL with multiple reward functions",
+        "RL that solves multiple tasks simultaneously"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multi-agent RL studies how multiple learning agents interact, coordinate, or compete in shared environments, introducing game-theoretic considerations.",
+      "optionExplanations": [
+        "Correct. MARL deals with multiple agents learning simultaneously, creating non-stationary environments from each agent's perspective.",
+        "Incorrect. Multiple networks for one agent is an architectural choice, not multi-agent RL.",
+        "Incorrect. Multiple rewards could exist in single-agent settings; MARL is specifically about multiple learning agents.",
+        "Incorrect. Multi-task learning can be done by single agents; MARL requires multiple interacting agents."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-agent-RL",
+        "agent-interaction",
+        "shared-environments",
+        "non-stationarity"
+      ]
+    },
+    {
+      "id": "RLN_076",
+      "question": "What makes multi-agent RL more challenging than single-agent RL?",
+      "options": [
+        "Non-stationary environments due to other learning agents changing their policies",
+        "Increased computational requirements only",
+        "More complex reward functions",
+        "Larger state spaces"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The main challenge in MARL is that other agents are also learning and changing their behaviors, making the environment non-stationary from each agent's perspective.",
+      "optionExplanations": [
+        "Correct. As other agents learn and change policies, the environment appears non-stationary, violating standard RL assumptions.",
+        "Incorrect. While computation may increase, the fundamental challenge is the non-stationarity, not just computational complexity.",
+        "Incorrect. Reward complexity can vary, but the key challenge is dealing with other learning agents, not reward structure.",
+        "Incorrect. State space size depends on the problem formulation, not specifically on having multiple agents."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-agent-challenges",
+        "non-stationarity",
+        "learning-agents",
+        "environment-dynamics"
+      ]
+    },
+    {
+      "id": "RLN_077",
+      "question": "What is cooperative multi-agent reinforcement learning?",
+      "options": [
+        "MARL where agents work together toward common goals or shared rewards",
+        "MARL where agents copy each other's behaviors",
+        "MARL where agents take turns making decisions",
+        "MARL where agents communicate continuously"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cooperative MARL involves agents working together to maximize shared objectives, requiring coordination and teamwork strategies.",
+      "optionExplanations": [
+        "Correct. Cooperative MARL focuses on coordination mechanisms to achieve shared goals or maximize joint rewards.",
+        "Incorrect. Copying behaviors is one possible strategy, but cooperation is about shared objectives, not mimicking.",
+        "Incorrect. Turn-taking is one coordination mechanism, but cooperation is broader than just sequential decision-making.",
+        "Incorrect. Communication can facilitate cooperation but isn't required; cooperation is defined by shared objectives."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cooperative-MARL",
+        "shared-goals",
+        "coordination",
+        "teamwork"
+      ]
+    },
+    {
+      "id": "RLN_078",
+      "question": "What is competitive multi-agent reinforcement learning?",
+      "options": [
+        "MARL where agents have conflicting objectives and compete for rewards",
+        "MARL with tournament-style learning",
+        "MARL where agents race to finish tasks first",
+        "MARL that uses competitive neural networks"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Competitive MARL involves agents with conflicting interests, often modeled as zero-sum or general-sum games where one agent's gain may be another's loss.",
+      "optionExplanations": [
+        "Correct. Competitive MARL studies scenarios where agents have opposing objectives, leading to strategic interactions and game-theoretic considerations.",
+        "Incorrect. Tournament structures are one format, but competition in MARL is about conflicting objectives, not specific tournament formats.",
+        "Incorrect. Racing is one type of competition, but competitive MARL encompasses broader scenarios with conflicting interests.",
+        "Incorrect. Network architecture is separate from the competitive nature of agent objectives in the environment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "competitive-MARL",
+        "conflicting-objectives",
+        "game-theory",
+        "strategic-interaction"
+      ]
+    },
+    {
+      "id": "RLN_079",
+      "question": "What is the Nash equilibrium in multi-agent RL context?",
+      "options": [
+        "A strategy profile where no agent can improve by unilaterally changing their policy",
+        "The point where all agents have equal rewards",
+        "The optimal policy for all agents combined",
+        "The point where learning converges for all agents"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Nash equilibrium represents a stable solution concept where each agent's policy is a best response to the other agents' policies.",
+      "optionExplanations": [
+        "Correct. In Nash equilibrium, each agent's policy is optimal given the other agents' policies, creating a stable strategic configuration.",
+        "Incorrect. Equal rewards aren't required for Nash equilibrium; agents may have different reward levels in equilibrium.",
+        "Incorrect. Nash equilibrium is about strategic stability, not global optimality; it may not maximize joint welfare.",
+        "Incorrect. Learning convergence is a separate concept; Nash equilibrium is about strategic stability regardless of learning dynamics."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "nash-equilibrium",
+        "strategic-stability",
+        "best-response",
+        "game-theory"
+      ]
+    },
+    {
+      "id": "RLN_080",
+      "question": "What is partial observability in reinforcement learning?",
+      "options": [
+        "Situations where the agent cannot observe the complete state of the environment",
+        "When only part of the action space is available",
+        "When rewards are only partially visible",
+        "When the environment is only partially simulated"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Partial observability means the agent receives incomplete information about the environment state, requiring inference and memory to make good decisions.",
+      "optionExplanations": [
+        "Correct. POMDPs (Partially Observable MDPs) model situations where agents observe only parts of the true state through observations.",
+        "Incorrect. Limited action availability is about action space constraints, not state observability issues.",
+        "Incorrect. Reward visibility is separate from state observability; partial observability refers to incomplete state information.",
+        "Incorrect. Simulation completeness is an implementation issue, not the fundamental problem of incomplete state observation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "partial-observability",
+        "POMDP",
+        "incomplete-information",
+        "state-inference"
+      ]
+    },
+    {
+      "id": "RLN_081",
+      "question": "What is a POMDP?",
+      "options": [
+        "Partially Observable Markov Decision Process - MDP where agent observes incomplete state information",
+        "Parallel Optimization for Multiple Decision Problems",
+        "Policy Optimization with Multiple Dynamic Parameters",
+        "Probabilistic Optimization for Markov Decision Processes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "POMDPs extend MDPs by adding an observation model, where agents receive observations rather than direct access to the true state.",
+      "optionExplanations": [
+        "Correct. POMDPs add observation function O(s,a,o) to MDPs, where agents observe o instead of directly seeing state s.",
+        "Incorrect. POMDP specifically refers to partial observability in decision processes, not parallel optimization.",
+        "Incorrect. While policies may be optimized, POMDP refers to the observability structure, not parameter optimization.",
+        "Incorrect. POMDPs are about partial observability, not probabilistic optimization methods for decision processes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "POMDP",
+        "partial-observability",
+        "observation-model",
+        "incomplete-state"
+      ]
+    },
+    {
+      "id": "RLN_082",
+      "question": "What additional challenges do POMDPs introduce compared to fully observable MDPs?",
+      "options": [
+        "Belief state maintenance and memory requirements for optimal policies",
+        "Larger action spaces only",
+        "More complex reward functions",
+        "Increased computational speed requirements"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "POMDPs require tracking probability distributions over states (belief states) and may need memory of past observations for optimal decision making.",
+      "optionExplanations": [
+        "Correct. Optimal POMDP policies often require maintaining belief states P(s|history) and using observation history for decisions.",
+        "Incorrect. Action space size is problem-dependent; partial observability doesn't inherently increase action spaces.",
+        "Incorrect. Reward function complexity is separate from observability; POMDPs can have simple rewards with complex observations.",
+        "Incorrect. Speed requirements depend on solution methods; the fundamental challenge is handling incomplete information, not speed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "POMDP-challenges",
+        "belief-states",
+        "memory",
+        "observation-history"
+      ]
+    },
+    {
+      "id": "RLN_083",
+      "question": "What is a belief state in POMDPs?",
+      "options": [
+        "A probability distribution over possible true states given observation history",
+        "The agent's confidence in its current policy",
+        "A summary of the agent's learning progress",
+        "The set of actions the agent believes are available"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Belief states represent the agent's uncertainty about the true state by maintaining a probability distribution over all possible states.",
+      "optionExplanations": [
+        "Correct. Belief state b(s) = P(s|o_1, a_1, ..., o_t) captures what the agent knows about the current state given observation history.",
+        "Incorrect. Policy confidence is different from state uncertainty; belief states track state probability distributions.",
+        "Incorrect. Learning progress relates to value function or policy improvement, not state uncertainty quantification.",
+        "Incorrect. Action availability is typically known; belief states address uncertainty about which state the agent is in."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "belief-state",
+        "probability-distribution",
+        "state-uncertainty",
+        "observation-history"
+      ]
+    },
+    {
+      "id": "RLN_084",
+      "question": "What is the role of memory in partially observable environments?",
+      "options": [
+        "Memory helps maintain information about past observations to infer current state",
+        "Memory is only used to store learned policies",
+        "Memory reduces computational requirements",
+        "Memory is not important in partially observable settings"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Memory allows agents to accumulate information over time to better estimate the current state when observations are incomplete.",
+      "optionExplanations": [
+        "Correct. Memory of past observations and actions helps disambiguate current state when single observations are insufficient.",
+        "Incorrect. While policies may be stored, memory's key role in POMDPs is state inference from observation sequences.",
+        "Incorrect. Memory typically increases computational requirements but is necessary for handling partial observability.",
+        "Incorrect. Memory is crucial in POMDPs for maintaining sufficient statistics about state uncertainty over time."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "memory",
+        "partial-observability",
+        "state-inference",
+        "observation-sequences"
+      ]
+    },
+    {
+      "id": "RLN_085",
+      "question": "What is recurrent neural network's role in partially observable RL?",
+      "options": [
+        "RNNs provide memory to handle partial observability by processing observation sequences",
+        "RNNs speed up computation in partially observable environments",
+        "RNNs reduce the observation space dimensionality",
+        "RNNs eliminate the need for exploration"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "RNNs can maintain internal state across time steps, effectively providing memory to handle temporal dependencies in partially observable environments.",
+      "optionExplanations": [
+        "Correct. RNNs' hidden states can serve as approximate belief states, integrating information from observation sequences over time.",
+        "Incorrect. RNNs may be slower than feedforward networks; their advantage is handling temporal dependencies, not speed.",
+        "Incorrect. RNNs don't reduce observation dimensionality; they process sequences of observations to extract temporal patterns.",
+        "Incorrect. Exploration is still necessary in partially observable environments; RNNs help with state inference, not exploration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RNN",
+        "memory",
+        "temporal-dependencies",
+        "belief-approximation"
+      ]
+    },
+    {
+      "id": "RLN_086",
+      "question": "What is the difference between model-based and model-free approaches in dealing with partial observability?",
+      "options": [
+        "Model-based approaches learn observation models, model-free approaches learn directly from observation-action sequences",
+        "Model-based approaches are always better for partial observability",
+        "Model-free approaches don't work with partial observability",
+        "There is no difference in how they handle partial observability"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Model-based approaches can explicitly model the observation function and maintain belief states, while model-free approaches learn policies directly from experience.",
+      "optionExplanations": [
+        "Correct. Model-based methods can learn P(o|s,a) and maintain explicit belief states, while model-free methods use function approximation or recurrent networks.",
+        "Incorrect. Both approaches have advantages; model-based can be more sample efficient but model-free can be more robust to model errors.",
+        "Incorrect. Model-free approaches can work with partial observability using techniques like RNNs or frame stacking.",
+        "Incorrect. The approaches differ significantly in how they represent and use information about state uncertainty."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-based-vs-model-free",
+        "partial-observability",
+        "observation-models",
+        "belief-states"
+      ]
+    },
+    {
+      "id": "RLN_087",
+      "question": "What is distributional reinforcement learning?",
+      "options": [
+        "RL that learns the full distribution of returns rather than just expected values",
+        "RL that works with distributed computing systems",
+        "RL that learns probability distributions over actions",
+        "RL that distributes learning across multiple agents"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Distributional RL learns the distribution of returns Z(s,a) rather than just the expected return Q(s,a), providing richer information about value uncertainty.",
+      "optionExplanations": [
+        "Correct. Distributional RL models the random variable Z(s,a) representing return distributions, not just E[Z(s,a)] = Q(s,a).",
+        "Incorrect. This refers to computational distribution across machines, not learning return distributions.",
+        "Incorrect. Action probability distributions are handled by stochastic policies, not specifically distributional RL.",
+        "Incorrect. Multi-agent distribution is different from learning return distributions in single-agent settings."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "distributional-RL",
+        "return-distributions",
+        "value-uncertainty",
+        "risk-modeling"
+      ]
+    },
+    {
+      "id": "RLN_088",
+      "question": "What advantages does distributional RL provide over standard value-based RL?",
+      "options": [
+        "Better representation of risk, uncertainty, and multi-modal value distributions",
+        "Faster convergence in all environments",
+        "Lower computational requirements",
+        "Simpler algorithm implementation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Distributional RL captures rich information about return variability, enabling risk-aware policies and better handling of multi-modal reward scenarios.",
+      "optionExplanations": [
+        "Correct. Full return distributions enable risk-sensitive decision making and capture complex reward structures that expected values miss.",
+        "Incorrect. Convergence speed depends on many factors; distributional RL's advantage is richer value representation, not speed.",
+        "Incorrect. Distributional RL typically requires more computation to maintain and update full distributions rather than scalar values.",
+        "Incorrect. Distributional algorithms are generally more complex, requiring additional machinery to handle return distributions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "distributional-advantages",
+        "risk-awareness",
+        "uncertainty-modeling",
+        "multi-modal"
+      ]
+    },
+    {
+      "id": "RLN_089",
+      "question": "What is the exploration bonus in curiosity-driven methods?",
+      "options": [
+        "Additional intrinsic reward based on state novelty or prediction error to encourage exploration",
+        "Extra time allowed for exploration phases",
+        "Bonus rewards given for completing exploration objectives",
+        "Additional actions available during exploration"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Exploration bonuses add intrinsic motivation signals to extrinsic rewards, encouraging agents to visit novel or surprising states.",
+      "optionExplanations": [
+        "Correct. Methods like ICM add intrinsic rewards r_intrinsic based on prediction error to encourage exploration of novel states.",
+        "Incorrect. Time bonuses relate to episode length, not the intrinsic reward signals that drive curious exploration.",
+        "Incorrect. Completion bonuses are extrinsic rewards for specific objectives, not the continuous intrinsic signals of curiosity.",
+        "Incorrect. Action availability is about action space structure, not the reward-based motivation for exploration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploration-bonus",
+        "intrinsic-reward",
+        "novelty",
+        "curiosity"
+      ]
+    },
+    {
+      "id": "RLN_090",
+      "question": "What is the credit assignment problem in multi-step environments?",
+      "options": [
+        "Determining which actions in a sequence were responsible for delayed rewards",
+        "Assigning credit scores to different learning algorithms",
+        "Distributing computational credits across processing units",
+        "Assigning blame for poor performance to specific components"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multi-step credit assignment involves tracing back through action sequences to determine which actions contributed to eventual outcomes.",
+      "optionExplanations": [
+        "Correct. With delayed rewards, agents must determine which of many preceding actions actually caused the observed reward.",
+        "Incorrect. Algorithm evaluation is different from the temporal credit assignment problem in sequential decision making.",
+        "Incorrect. Computational resource allocation is separate from the causality problem in action-reward relationships.",
+        "Incorrect. While related to attribution, credit assignment specifically focuses on action-reward causality in temporal sequences."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "credit-assignment",
+        "delayed-rewards",
+        "temporal-causality",
+        "action-sequences"
+      ]
+    },
+    {
+      "id": "RLN_091",
+      "question": "What is eligibility traces in reinforcement learning?",
+      "options": [
+        "A mechanism to assign credit to recently visited states and actions",
+        "A method to trace the agent's path through the environment",
+        "A technique to verify that states are eligible for updates",
+        "A way to track which actions are available in each state"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Eligibility traces maintain decaying memory of visited states and actions, allowing credit assignment over multiple time steps in TD learning.",
+      "optionExplanations": [
+        "Correct. Eligibility traces e_t(s) decay over time and determine how much credit each state receives for current TD errors.",
+        "Incorrect. Path tracing is about recording trajectories, not the credit assignment mechanism of eligibility traces.",
+        "Incorrect. Eligibility traces are about credit assignment, not verification of update eligibility or permissions.",
+        "Incorrect. Action availability is determined by the environment, not by the credit assignment mechanism of eligibility traces."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "eligibility-traces",
+        "credit-assignment",
+        "decaying-memory",
+        "TD-learning"
+      ]
+    },
+    {
+      "id": "RLN_092",
+      "question": "What is TD(λ) learning?",
+      "options": [
+        "Temporal difference learning that uses eligibility traces with decay parameter λ",
+        "TD learning with λ discount factor",
+        "TD learning that runs λ times faster",
+        "TD learning with λ neural network layers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "TD(λ) combines TD learning with eligibility traces, where λ controls the decay rate of the traces for multi-step credit assignment.",
+      "optionExplanations": [
+        "Correct. TD(λ) uses eligibility traces e_t(s) = γλe_{t-1}(s) + I(S_t = s) to bridge between TD(0) and Monte Carlo methods.",
+        "Incorrect. The discount factor is typically γ, while λ is the trace decay parameter for eligibility traces.",
+        "Incorrect. λ doesn't control computational speed but rather the temporal extent of credit assignment.",
+        "Incorrect. λ is not related to network architecture but to the eligibility trace decay mechanism."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "TD-lambda",
+        "eligibility-traces",
+        "trace-decay",
+        "multi-step"
+      ]
+    },
+    {
+      "id": "RLN_093",
+      "question": "What happens when λ = 0 in TD(λ)?",
+      "options": [
+        "TD(λ) reduces to standard TD(0) learning with no eligibility traces",
+        "The algorithm stops learning entirely",
+        "All states get equal credit assignment",
+        "The learning rate becomes zero"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When λ = 0, eligibility traces decay immediately, so only the current state receives credit, making TD(λ) equivalent to standard TD learning.",
+      "optionExplanations": [
+        "Correct. With λ = 0, eligibility traces don't propagate to previous states, resulting in single-step TD updates.",
+        "Incorrect. Learning continues but without multi-step credit assignment; only current states are updated.",
+        "Incorrect. With λ = 0, only the current state receives credit, not equal distribution across all states.",
+        "Incorrect. λ controls trace decay, not the learning rate α which remains independent."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TD-lambda",
+        "lambda-zero",
+        "single-step",
+        "no-traces"
+      ]
+    },
+    {
+      "id": "RLN_094",
+      "question": "What happens when λ = 1 in TD(λ)?",
+      "options": [
+        "TD(λ) approaches Monte Carlo learning with full episode credit assignment",
+        "The algorithm becomes purely greedy",
+        "Eligibility traces never decay",
+        "The discount factor becomes 1"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When λ = 1, eligibility traces don't decay within episodes, so all visited states receive credit based on the final episode outcome, approaching Monte Carlo methods.",
+      "optionExplanations": [
+        "Correct. With λ = 1, traces persist throughout episodes, making updates equivalent to Monte Carlo returns for episodic tasks.",
+        "Incorrect. λ affects credit assignment, not the exploration vs exploitation balance in action selection.",
+        "Incorrect. Traces still decay due to the discount factor γ, but λ = 1 means no additional decay from the trace parameter.",
+        "Incorrect. The discount factor γ is separate from the trace decay parameter λ."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TD-lambda",
+        "lambda-one",
+        "monte-carlo",
+        "full-episode"
+      ]
+    },
+    {
+      "id": "RLN_095",
+      "question": "What is the difference between forward and backward view of eligibility traces?",
+      "options": [
+        "Forward view looks ahead to future returns, backward view updates past states based on current TD error",
+        "Forward view is faster than backward view",
+        "Forward view uses neural networks, backward view uses tables",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The forward view conceptually looks at multi-step returns, while the backward view mechanically updates eligibility traces and applies current TD errors to traced states.",
+      "optionExplanations": [
+        "Correct. Forward view: V(s) ← V(s) + α∑λ^n δ_{t+n}, Backward view: e_t(s) ← γλe_{t-1}(s) + I(s), V(s) ← V(s) + αδ_t e_t(s).",
+        "Incorrect. Both views are computationally equivalent; the backward view is typically used for online implementation.",
+        "Incorrect. Both views can use any function approximation method; the distinction is conceptual, not architectural.",
+        "Incorrect. While mathematically equivalent, they represent different ways of thinking about multi-step credit assignment."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "eligibility-traces",
+        "forward-view",
+        "backward-view",
+        "multi-step"
+      ]
+    },
+    {
+      "id": "RLN_096",
+      "question": "What is the role of baseline in policy gradient methods?",
+      "options": [
+        "Reduces variance in gradient estimates without introducing bias",
+        "Determines the learning rate for policy updates",
+        "Sets the minimum acceptable reward threshold",
+        "Controls the exploration level in policy learning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Baselines like value functions V(s) reduce the variance of policy gradient estimates while maintaining unbiased gradient computation.",
+      "optionExplanations": [
+        "Correct. Using baseline b(s), the gradient becomes ∇E[(G_t - b(s))∇log π(a|s)], reducing variance while keeping expectation unchanged.",
+        "Incorrect. Learning rate α is a separate hyperparameter; baselines affect gradient variance, not the update step size.",
+        "Incorrect. Reward thresholds are different from variance reduction baselines in gradient estimation.",
+        "Incorrect. Exploration is typically handled by the policy parameterization, not by variance reduction baselines."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "baseline",
+        "variance-reduction",
+        "policy-gradient",
+        "unbiased"
+      ]
+    },
+    {
+      "id": "RLN_097",
+      "question": "What is the advantage function in actor-critic methods?",
+      "options": [
+        "A(s,a) = Q(s,a) - V(s), measuring how much better an action is than average",
+        "The probability of taking action a in state s",
+        "The difference between current and target policy performance",
+        "The gradient of the value function with respect to parameters"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The advantage function quantifies how much better (or worse) a specific action is compared to the average value of being in that state.",
+      "optionExplanations": [
+        "Correct. A(s,a) = Q(s,a) - V(s) provides a centered measure of action quality, often used as a baseline in policy gradients.",
+        "Incorrect. Action probabilities are given by the policy π(a|s), not the advantage function.",
+        "Incorrect. Policy performance differences are measured by other metrics; advantage compares actions within states.",
+        "Incorrect. Value function gradients are different mathematical objects used in critic updates, not advantage functions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "advantage-function",
+        "action-quality",
+        "baseline",
+        "actor-critic"
+      ]
+    },
+    {
+      "id": "RLN_098",
+      "question": "What is the exploration-exploitation trade-off in online learning?",
+      "options": [
+        "Balancing between gathering new information and using current knowledge for immediate gain",
+        "Trading off between online and offline learning methods",
+        "Choosing between different neural network architectures",
+        "Balancing computational resources between exploration and exploitation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Online learning requires continuously balancing the acquisition of new information (exploration) with leveraging current knowledge for immediate rewards (exploitation).",
+      "optionExplanations": [
+        "Correct. Online agents must decide whether to explore potentially better options or exploit currently known good options at each step.",
+        "Incorrect. Online vs offline refers to when learning occurs, not the exploration-exploitation balance within online learning.",
+        "Incorrect. Architecture choices are separate from the fundamental information gathering vs reward maximization trade-off.",
+        "Incorrect. While computation matters, the core trade-off is about information value vs immediate reward, not resource allocation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploration-exploitation",
+        "online-learning",
+        "information-gathering",
+        "immediate-reward"
+      ]
+    },
+    {
+      "id": "RLN_099",
+      "question": "What is the difference between sample efficiency and computational efficiency in RL?",
+      "options": [
+        "Sample efficiency measures learning speed with limited data, computational efficiency measures algorithm runtime",
+        "Sample efficiency is for discrete environments, computational efficiency is for continuous environments",
+        "Sample efficiency applies to model-based RL, computational efficiency applies to model-free RL",
+        "There is no meaningful difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sample efficiency concerns how quickly an algorithm learns from experience data, while computational efficiency concerns the algorithm's runtime and memory requirements.",
+      "optionExplanations": [
+        "Correct. Sample efficiency measures data requirements to reach good performance, computational efficiency measures processing time and memory usage.",
+        "Incorrect. Both efficiency types apply to any environment type; the distinction is about data vs computation, not environment characteristics.",
+        "Incorrect. Both model-based and model-free methods can be evaluated on sample and computational efficiency independently.",
+        "Incorrect. These represent fundamentally different efficiency measures: data usage vs computational resource usage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sample-efficiency",
+        "computational-efficiency",
+        "learning-speed",
+        "resource-usage"
+      ]
+    },
+    {
+      "id": "RLN_100",
+      "question": "What are the key research directions in modern reinforcement learning?",
+      "options": [
+        "Sample efficiency, safety, generalization, and real-world deployment",
+        "Only deep neural network architectures",
+        "Exclusively multi-agent systems",
+        "Only theoretical convergence proofs"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Modern RL research focuses on making algorithms more data-efficient, safe for real applications, able to generalize across tasks, and practical for deployment.",
+      "optionExplanations": [
+        "Correct. Current RL research emphasizes practical challenges like learning from limited data, ensuring safety, transferring knowledge, and real-world applicability.",
+        "Incorrect. While deep learning is important, modern RL encompasses broader challenges beyond just neural network architectures.",
+        "Incorrect. Multi-agent systems are one research area, but modern RL includes many other important directions.",
+        "Incorrect. Theory is important, but practical considerations like safety and deployment are equally crucial in modern RL research."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "modern-RL",
+        "research-directions",
+        "sample-efficiency",
+        "safety",
+        "generalization"
+      ]
+    }
+  ]
+}

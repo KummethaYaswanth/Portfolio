@@ -1,0 +1,2418 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_NLP",
+  "topicName": "Natural Language Processing",
+  "subtopicId": "STC_WEM",
+  "subtopicName": "Word Embeddings",
+  "str": 0.200,
+  "description": "Word embeddings are dense vector representations of words in continuous vector space where semantically similar words are located close to each other. This subtopic covers various embedding techniques including Word2Vec, GloVe, FastText, and their applications in NLP.",
+  "questions": [
+    {
+      "id": "WEM_001",
+      "question": "What is the primary purpose of word embeddings in natural language processing?",
+      "options": [
+        "To convert words into dense numerical vector representations",
+        "To compress text files for storage efficiency",
+        "To translate text between different languages",
+        "To count word frequencies in documents"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Word embeddings convert words into dense numerical vector representations that capture semantic relationships between words, enabling machines to understand and process text more effectively.",
+      "optionExplanations": [
+        "Correct. Word embeddings create dense numerical vectors that represent words in a continuous vector space, capturing semantic meaning and relationships.",
+        "Incorrect. While embeddings can reduce dimensionality compared to one-hot encoding, their primary purpose is not file compression but semantic representation.",
+        "Incorrect. Translation is an application that may use embeddings, but it's not the primary purpose of embeddings themselves.",
+        "Incorrect. Word frequency counting is a basic text preprocessing step, not the purpose of embeddings which focus on semantic representation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "word-embeddings",
+        "basics",
+        "semantic-representation"
+      ]
+    },
+    {
+      "id": "WEM_002",
+      "question": "Which of the following is a major advantage of word embeddings over one-hot encoding?",
+      "options": [
+        "Word embeddings are faster to compute",
+        "Word embeddings capture semantic relationships between words",
+        "Word embeddings use less memory for small vocabularies",
+        "Word embeddings are easier to interpret"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word embeddings capture semantic relationships by placing similar words close together in vector space, unlike one-hot encoding which treats all words as equally distant.",
+      "optionExplanations": [
+        "Incorrect. One-hot encoding is actually faster to compute as it's just creating sparse vectors, while embeddings require training or lookup operations.",
+        "Correct. Word embeddings encode semantic meaning where similar words have similar vectors, enabling the model to understand relationships like king-man+woman≈queen.",
+        "Incorrect. For small vocabularies, one-hot vectors might actually use comparable memory, and this isn't the main advantage of embeddings.",
+        "Incorrect. One-hot encoding is more interpretable as each dimension clearly corresponds to a specific word, while embedding dimensions are learned features that are harder to interpret."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "word-embeddings",
+        "one-hot-encoding",
+        "semantic-similarity"
+      ]
+    },
+    {
+      "id": "WEM_003",
+      "question": "In Word2Vec, what does the CBOW (Continuous Bag of Words) model predict?",
+      "options": [
+        "Context words given a target word",
+        "Target word given context words",
+        "The next word in a sequence",
+        "The frequency of words in a document"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CBOW predicts the target word given its surrounding context words, essentially filling in the blank word from its neighbors.",
+      "optionExplanations": [
+        "Incorrect. This describes the Skip-gram model, which predicts context words given a target word.",
+        "Correct. CBOW takes context words as input and predicts the target word in the center, like predicting a missing word from its surrounding context.",
+        "Incorrect. This describes language modeling or next-word prediction tasks, not specifically CBOW's objective.",
+        "Incorrect. Word frequency is not what CBOW predicts; it focuses on word relationships in context windows."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word2vec",
+        "cbow",
+        "prediction-task"
+      ]
+    },
+    {
+      "id": "WEM_004",
+      "question": "What is the main difference between CBOW and Skip-gram models in Word2Vec?",
+      "options": [
+        "CBOW is faster to train than Skip-gram",
+        "CBOW predicts target words from context, Skip-gram predicts context from target",
+        "CBOW uses negative sampling, Skip-gram doesn't",
+        "CBOW works better with small datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The fundamental difference is in their prediction direction: CBOW predicts the center word from context, while Skip-gram predicts context words from the center word.",
+      "optionExplanations": [
+        "Partially correct but not the main difference. CBOW can be faster because it has fewer output predictions, but this is a consequence of the architectural difference.",
+        "Correct. This is the core architectural difference - CBOW aggregates context to predict target, while Skip-gram uses target to predict each context word separately.",
+        "Incorrect. Both models can use negative sampling as an optimization technique; this is not what differentiates them.",
+        "Incorrect. Skip-gram actually tends to work better with small datasets and rare words because it generates more training examples per word."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word2vec",
+        "cbow",
+        "skip-gram",
+        "comparison"
+      ]
+    },
+    {
+      "id": "WEM_005",
+      "question": "Which technique is used in Word2Vec to make training more efficient by avoiding the computation of the full softmax?",
+      "options": [
+        "Hierarchical softmax",
+        "Batch normalization",
+        "Dropout regularization",
+        "Learning rate decay"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hierarchical softmax uses a binary tree structure to reduce computational complexity from O(V) to O(log V) where V is vocabulary size.",
+      "optionExplanations": [
+        "Correct. Hierarchical softmax organizes words in a binary tree, making probability computation logarithmic in vocabulary size instead of linear.",
+        "Incorrect. Batch normalization is a technique for stabilizing neural network training but isn't specific to Word2Vec efficiency optimization.",
+        "Incorrect. Dropout is a regularization technique to prevent overfitting, not specifically for softmax computation efficiency.",
+        "Incorrect. Learning rate decay is an optimization technique for convergence but doesn't address the softmax computational bottleneck."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word2vec",
+        "hierarchical-softmax",
+        "optimization"
+      ]
+    },
+    {
+      "id": "WEM_006",
+      "question": "What is negative sampling in the context of Word2Vec?",
+      "options": [
+        "Removing negative words from the training corpus",
+        "Sampling negative examples to approximate the softmax computation",
+        "Using negative gradients for backpropagation",
+        "Inverting word vectors to get negative representations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Negative sampling selects a few negative examples (non-context words) for each positive example to approximate the full softmax, making training more efficient.",
+      "optionExplanations": [
+        "Incorrect. Negative sampling doesn't involve removing words from the corpus but rather selecting non-context words as negative examples during training.",
+        "Correct. Negative sampling randomly selects a small number of 'negative' words (that don't appear in the context) to contrast with positive examples, approximating the full softmax.",
+        "Incorrect. Negative sampling is about data sampling strategy, not about gradient computation which remains standard backpropagation.",
+        "Incorrect. It doesn't involve mathematical inversion of vectors but rather sampling strategy for training efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word2vec",
+        "negative-sampling",
+        "optimization"
+      ]
+    },
+    {
+      "id": "WEM_007",
+      "question": "In GloVe (Global Vectors), what does the model primarily optimize?",
+      "options": [
+        "The probability of word co-occurrence",
+        "The ratio of co-occurrence probabilities",
+        "The distance between word vectors",
+        "The frequency of individual words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GloVe optimizes word vectors such that their dot product equals the logarithm of the ratio of co-occurrence probabilities, capturing semantic relationships.",
+      "optionExplanations": [
+        "Incorrect. While co-occurrence is important, GloVe specifically focuses on the ratios between different co-occurrence probabilities, not the probabilities themselves.",
+        "Correct. GloVe is based on the insight that ratios of co-occurrence probabilities encode semantic relationships better than raw probabilities or counts.",
+        "Incorrect. While vector distances are important in the final representation, GloVe doesn't directly optimize distances but rather dot products related to co-occurrence ratios.",
+        "Incorrect. Individual word frequencies are less important than the relationships between words captured through co-occurrence ratios."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "glove",
+        "co-occurrence",
+        "probability-ratios"
+      ]
+    },
+    {
+      "id": "WEM_008",
+      "question": "What is the key innovation of GloVe compared to Word2Vec?",
+      "options": [
+        "GloVe uses global corpus statistics",
+        "GloVe trains faster than Word2Vec",
+        "GloVe produces shorter vector dimensions",
+        "GloVe handles out-of-vocabulary words better"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GloVe's key innovation is incorporating global corpus statistics through a co-occurrence matrix, while Word2Vec uses local context windows.",
+      "optionExplanations": [
+        "Correct. GloVe constructs a global word co-occurrence matrix from the entire corpus and optimizes vectors based on this global statistical information.",
+        "Incorrect. Training speed depends on implementation and parameters; this is not GloVe's key innovation over Word2Vec.",
+        "Incorrect. Vector dimensions are configurable in both methods; this is not a distinguishing feature.",
+        "Incorrect. Handling out-of-vocabulary words is actually better addressed by FastText, not specifically a GloVe innovation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "glove",
+        "global-statistics",
+        "innovation"
+      ]
+    },
+    {
+      "id": "WEM_009",
+      "question": "What is the main advantage of FastText over Word2Vec?",
+      "options": [
+        "FastText trains significantly faster",
+        "FastText can handle out-of-vocabulary words",
+        "FastText produces more accurate embeddings",
+        "FastText requires less memory"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "FastText's key advantage is handling out-of-vocabulary words by using subword information (character n-grams) in addition to whole words.",
+      "optionExplanations": [
+        "Incorrect. The name 'FastText' refers to the fast training, but this is not the main conceptual advantage over Word2Vec.",
+        "Correct. FastText represents words as bags of character n-grams, allowing it to generate embeddings for words not seen during training by combining subword vectors.",
+        "Incorrect. Accuracy depends on the task and dataset; FastText's main advantage is coverage, not necessarily accuracy.",
+        "Incorrect. FastText actually uses more memory because it stores embeddings for character n-grams in addition to words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fasttext",
+        "out-of-vocabulary",
+        "subword"
+      ]
+    },
+    {
+      "id": "WEM_010",
+      "question": "How does FastText handle subword information?",
+      "options": [
+        "By breaking words into syllables",
+        "By using character n-grams",
+        "By analyzing word roots and suffixes",
+        "By clustering similar words together"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "FastText represents words as bags of character n-grams, allowing it to capture morphological information and handle unseen words.",
+      "optionExplanations": [
+        "Incorrect. FastText doesn't use linguistic syllable segmentation but rather fixed-size character sequences.",
+        "Correct. FastText breaks words into character n-grams (e.g., 3-6 character sequences) and represents each word as the sum of its n-gram vectors.",
+        "Incorrect. FastText doesn't perform linguistic morphological analysis but uses simpler character-based segmentation.",
+        "Incorrect. Word clustering is a different technique; FastText focuses on character-level subword representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fasttext",
+        "character-ngrams",
+        "subword"
+      ]
+    },
+    {
+      "id": "WEM_011",
+      "question": "What does the famous word analogy 'king - man + woman ≈ queen' demonstrate about word embeddings?",
+      "options": [
+        "Word embeddings can perform mathematical operations",
+        "Word embeddings capture semantic relationships through vector arithmetic",
+        "Word embeddings are better than traditional NLP methods",
+        "Word embeddings can solve all NLP problems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This analogy demonstrates that word embeddings capture semantic relationships in vector space, where meaningful relationships can be expressed through vector arithmetic operations.",
+      "optionExplanations": [
+        "Incorrect. While mathematical operations are performed, the key point is not the math itself but what the operations represent semantically.",
+        "Correct. This shows that semantic relationships (like gender relationships) are encoded as consistent vector directions in the embedding space.",
+        "Incorrect. This example doesn't prove superiority over all traditional methods, just demonstrates a specific capability of embeddings.",
+        "Incorrect. This is an overgeneralization; embeddings have limitations and don't solve all NLP problems."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "semantic-relationships",
+        "vector-arithmetic",
+        "analogies"
+      ]
+    },
+    {
+      "id": "WEM_012",
+      "question": "What is cosine similarity commonly used for in word embeddings?",
+      "options": [
+        "To calculate the length of word vectors",
+        "To measure semantic similarity between words",
+        "To normalize word vectors",
+        "To reduce dimensionality of embeddings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cosine similarity measures the angle between vectors, providing a measure of semantic similarity that is independent of vector magnitude.",
+      "optionExplanations": [
+        "Incorrect. Vector length is calculated using Euclidean norm, not cosine similarity which measures angles between vectors.",
+        "Correct. Cosine similarity measures the cosine of the angle between two vectors, indicating how semantically similar the corresponding words are.",
+        "Incorrect. Vector normalization involves dividing by magnitude, not computing cosine similarity.",
+        "Incorrect. Dimensionality reduction uses techniques like PCA or t-SNE, not cosine similarity."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cosine-similarity",
+        "semantic-similarity",
+        "vector-operations"
+      ]
+    },
+    {
+      "id": "WEM_013",
+      "question": "What is the typical range of cosine similarity values?",
+      "options": [
+        "0 to 1",
+        "-1 to 1",
+        "0 to infinity",
+        "-infinity to infinity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cosine similarity ranges from -1 (completely opposite) to 1 (identical direction), with 0 indicating orthogonal vectors.",
+      "optionExplanations": [
+        "Incorrect. This would be the range if we only considered the magnitude, but cosine can be negative when vectors point in opposite directions.",
+        "Correct. Cosine similarity equals cos(θ) where θ is the angle between vectors, so it ranges from -1 to 1.",
+        "Incorrect. Cosine similarity is bounded because it's based on the cosine function, not raw distances which could be infinite.",
+        "Incorrect. The cosine function is bounded between -1 and 1 regardless of vector magnitudes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cosine-similarity",
+        "range",
+        "mathematics"
+      ]
+    },
+    {
+      "id": "WEM_014",
+      "question": "In the context of word embeddings, what does it mean for two words to be 'close' in vector space?",
+      "options": [
+        "They appear next to each other in text frequently",
+        "They have similar semantic meaning or usage",
+        "They have the same number of letters",
+        "They belong to the same part of speech"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Words that are close in embedding vector space typically have similar semantic meanings or are used in similar contexts, regardless of their surface form.",
+      "optionExplanations": [
+        "Incorrect. Physical proximity in text is one factor but not the primary determinant of embedding similarity, which captures deeper semantic relationships.",
+        "Correct. Vector space proximity in embeddings reflects semantic similarity - words with similar meanings or contextual usage cluster together.",
+        "Incorrect. Word length or spelling similarity doesn't determine embedding similarity, which is based on meaning and usage patterns.",
+        "Incorrect. While part-of-speech can influence similarity, words of different parts of speech can still be semantically similar in embedding space."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "vector-space",
+        "semantic-similarity",
+        "clustering"
+      ]
+    },
+    {
+      "id": "WEM_015",
+      "question": "What is the purpose of the context window in Word2Vec?",
+      "options": [
+        "To limit the vocabulary size",
+        "To define how many surrounding words to consider for training",
+        "To set the dimension of the embedding vectors",
+        "To control the learning rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The context window defines how many words before and after the target word are considered as context for training the embedding model.",
+      "optionExplanations": [
+        "Incorrect. Vocabulary size is determined by the corpus content and preprocessing choices, not the context window.",
+        "Correct. The context window (e.g., window size 5) means 5 words before and 5 words after the target word are used as context during training.",
+        "Incorrect. Embedding dimension is a separate hyperparameter that determines the size of the vector representation.",
+        "Incorrect. Learning rate is an optimization parameter, not related to the context window which defines training data structure."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "word2vec",
+        "context-window",
+        "training"
+      ]
+    },
+    {
+      "id": "WEM_016",
+      "question": "How does increasing the context window size typically affect word embeddings?",
+      "options": [
+        "It makes training faster",
+        "It captures more topical/semantic information",
+        "It reduces the vocabulary size",
+        "It increases vector dimensions automatically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Larger context windows capture broader semantic and topical relationships, while smaller windows focus more on syntactic and functional relationships.",
+      "optionExplanations": [
+        "Incorrect. Larger context windows actually make training slower because there are more context words to process for each target word.",
+        "Correct. Larger windows include more distant words, capturing broader topical and semantic relationships rather than just immediate syntactic ones.",
+        "Incorrect. Context window size doesn't affect vocabulary size, which is determined by the unique words in the corpus.",
+        "Incorrect. Vector dimensions are set independently; context window size affects training data but not vector dimensionality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-window",
+        "semantic-information",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "WEM_017",
+      "question": "What is a common dimension size for word embedding vectors?",
+      "options": [
+        "10-50 dimensions",
+        "100-300 dimensions",
+        "1000-5000 dimensions",
+        "10000+ dimensions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Most word embedding models use vectors in the range of 100-300 dimensions, balancing expressiveness with computational efficiency.",
+      "optionExplanations": [
+        "Incorrect. This range is too small to capture the complexity of semantic relationships effectively.",
+        "Correct. Typical embedding dimensions range from 100-300, with 200-300 being very common choices that balance representation power with efficiency.",
+        "Incorrect. This range is unnecessarily large and would be computationally expensive while potentially leading to overfitting.",
+        "Incorrect. Such high dimensions would be extremely computationally expensive and impractical for most applications."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "embedding-dimensions",
+        "hyperparameters",
+        "best-practices"
+      ]
+    },
+    {
+      "id": "WEM_018",
+      "question": "What happens to embedding quality as you increase the vector dimension indefinitely?",
+      "options": [
+        "Quality always improves",
+        "Quality improves up to a point then plateaus or degrades",
+        "Quality remains constant",
+        "Quality always degrades"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Embedding quality typically improves with dimension up to a point, after which additional dimensions provide diminishing returns and may lead to overfitting.",
+      "optionExplanations": [
+        "Incorrect. Beyond a certain point, additional dimensions can lead to overfitting, increased noise, and computational inefficiency without semantic benefit.",
+        "Correct. There's a sweet spot for embedding dimensions - too few loses information, too many leads to overfitting and computational waste.",
+        "Incorrect. Dimension size significantly affects the model's capacity to represent semantic relationships.",
+        "Incorrect. Some increase in dimension is generally beneficial; the issue is finding the optimal point before diminishing returns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "embedding-dimensions",
+        "overfitting",
+        "optimization"
+      ]
+    },
+    {
+      "id": "WEM_019",
+      "question": "Which preprocessing step is typically applied before training word embeddings?",
+      "options": [
+        "Stemming only",
+        "Tokenization and lowercasing",
+        "Translation to English",
+        "Word sense disambiguation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Tokenization splits text into individual words, and lowercasing ensures that 'Word' and 'word' are treated as the same token, which is standard preprocessing for embeddings.",
+      "optionExplanations": [
+        "Incorrect. Stemming is optional and can actually hurt embedding quality by over-normalizing words that should remain distinct.",
+        "Correct. Tokenization breaks text into words, and lowercasing normalizes different cases of the same word to ensure consistent representation.",
+        "Incorrect. Embeddings can be trained on any language; translation is not a preprocessing step for embeddings.",
+        "Incorrect. Word sense disambiguation is complex and typically not done before embedding training, though it could be a downstream application."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "preprocessing",
+        "tokenization",
+        "lowercasing"
+      ]
+    },
+    {
+      "id": "WEM_020",
+      "question": "Why might you want to keep punctuation when training word embeddings?",
+      "options": [
+        "Punctuation has no semantic meaning",
+        "Punctuation can provide contextual and syntactic information",
+        "It makes training faster",
+        "It reduces vocabulary size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Punctuation marks like periods, commas, and question marks can provide valuable contextual and syntactic information that helps in understanding sentence structure and meaning.",
+      "optionExplanations": [
+        "Incorrect. Punctuation carries significant contextual information - question marks indicate queries, periods end statements, etc.",
+        "Correct. Punctuation provides syntactic cues and can help distinguish different contexts, such as questions vs. statements.",
+        "Incorrect. Including punctuation actually increases vocabulary size and training complexity, not speed.",
+        "Incorrect. Keeping punctuation increases vocabulary size by adding punctuation tokens to the vocabulary."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "punctuation",
+        "context"
+      ]
+    },
+    {
+      "id": "WEM_021",
+      "question": "What is the co-occurrence matrix in GloVe?",
+      "options": [
+        "A matrix of word frequencies",
+        "A matrix counting how often words appear together in contexts",
+        "A matrix of word embeddings",
+        "A matrix of semantic similarities"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The co-occurrence matrix in GloVe counts how frequently each pair of words appears together within a specified context window across the entire corpus.",
+      "optionExplanations": [
+        "Incorrect. Word frequencies would be a vector, not a matrix showing relationships between word pairs.",
+        "Correct. The co-occurrence matrix X has entries X_ij representing how often word i appears in the context of word j.",
+        "Incorrect. The co-occurrence matrix is input to GloVe training; the embeddings are the learned output vectors.",
+        "Incorrect. Semantic similarities are computed from embeddings; the co-occurrence matrix contains raw count statistics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "glove",
+        "co-occurrence-matrix",
+        "statistics"
+      ]
+    },
+    {
+      "id": "WEM_022",
+      "question": "In GloVe, why are co-occurrence ratios more informative than raw co-occurrence counts?",
+      "options": [
+        "Ratios are easier to compute",
+        "Ratios normalize for different word frequencies",
+        "Ratios eliminate noise in the data",
+        "Ratios reduce memory requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Co-occurrence ratios normalize for the baseline frequency of words, making it easier to identify meaningful semantic relationships independent of how common words are.",
+      "optionExplanations": [
+        "Incorrect. Ratios require additional computation (division) compared to raw counts, so they're not computationally simpler.",
+        "Correct. Ratios like P(k|ice)/P(k|steam) normalize for base frequencies, revealing genuine semantic relationships rather than just frequency effects.",
+        "Incorrect. Ratios don't eliminate noise but rather normalize it; noise reduction requires other techniques.",
+        "Incorrect. Computing ratios doesn't reduce memory requirements; the same co-occurrence matrix is needed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "glove",
+        "co-occurrence-ratios",
+        "normalization"
+      ]
+    },
+    {
+      "id": "WEM_023",
+      "question": "What does the loss function in GloVe minimize?",
+      "options": [
+        "The prediction error of context words",
+        "The difference between dot products and log co-occurrence",
+        "The distance between similar word vectors",
+        "The computational complexity of training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GloVe minimizes the squared difference between word vector dot products and the logarithm of co-occurrence probabilities, weighted by frequency.",
+      "optionExplanations": [
+        "Incorrect. This describes Word2Vec's objective, not GloVe's approach which focuses on global statistics.",
+        "Correct. GloVe optimizes vectors so that w_i^T w_j + b_i + b_j = log(X_ij) where X_ij is the co-occurrence count.",
+        "Incorrect. GloVe doesn't directly minimize distances but rather matches dot products to log probabilities.",
+        "Incorrect. Computational complexity is a consideration in algorithm design but not what the loss function optimizes."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "glove",
+        "loss-function",
+        "optimization"
+      ]
+    },
+    {
+      "id": "WEM_024",
+      "question": "Which of the following is NOT a common evaluation method for word embeddings?",
+      "options": [
+        "Word similarity tasks",
+        "Word analogy tasks",
+        "Downstream task performance",
+        "Grammar checking accuracy"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Grammar checking is a specific application that might use embeddings, but it's not a standard method for evaluating the quality of embedding representations themselves.",
+      "optionExplanations": [
+        "Incorrect. Word similarity tasks (like WordSim-353) are standard benchmarks that test if embedding similarity correlates with human judgments.",
+        "Incorrect. Word analogy tasks (like 'king:man::queen:woman') are classic evaluation methods testing if embeddings capture semantic relationships.",
+        "Incorrect. Evaluating embeddings on downstream tasks (sentiment analysis, NER, etc.) is a common extrinsic evaluation approach.",
+        "Correct. Grammar checking is too specific and not a standard embedding evaluation method; it's more about syntactic correctness than semantic representation quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "benchmarks",
+        "tasks"
+      ]
+    },
+    {
+      "id": "WEM_025",
+      "question": "What is the word analogy task in word embedding evaluation?",
+      "options": [
+        "Finding words with similar spellings",
+        "Completing analogies like 'a:b::c:?' using vector arithmetic",
+        "Ranking words by frequency",
+        "Clustering words by topic"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word analogy tasks test whether embeddings can complete analogies using vector arithmetic, such as finding 'd' where 'a:b::c:d' by computing c + (b - a).",
+      "optionExplanations": [
+        "Incorrect. Spelling similarity is about surface form, not the semantic and syntactic relationships that analogies test.",
+        "Correct. Analogy tasks test if vec(b) - vec(a) + vec(c) ≈ vec(d), showing that relationships are encoded as vector directions.",
+        "Incorrect. Frequency ranking doesn't test semantic relationships or embedding quality.",
+        "Incorrect. Topic clustering is different from analogy completion, which tests specific relational knowledge."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word-analogies",
+        "evaluation",
+        "vector-arithmetic"
+      ]
+    },
+    {
+      "id": "WEM_026",
+      "question": "What type of relationships do syntactic analogies in word embeddings typically test?",
+      "options": [
+        "Semantic relationships like synonymy",
+        "Grammatical relationships like verb tense or plural forms",
+        "Topical relationships like domain-specific terms",
+        "Frequency-based relationships"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Syntactic analogies test grammatical relationships such as 'walk:walked::talk:talked' or 'car:cars::book:books', focusing on morphological patterns.",
+      "optionExplanations": [
+        "Incorrect. Semantic analogies test meaning relationships; syntactic analogies focus on grammatical structure.",
+        "Correct. Syntactic analogies test morphological and grammatical patterns like tense, number, case, and other inflectional relationships.",
+        "Incorrect. Topical relationships are semantic rather than syntactic and don't involve grammatical transformations.",
+        "Incorrect. Frequency relationships don't involve grammatical structure or morphological patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "syntactic-analogies",
+        "grammar",
+        "morphology"
+      ]
+    },
+    {
+      "id": "WEM_027",
+      "question": "In FastText, what is the typical range for character n-gram sizes?",
+      "options": [
+        "1-2 characters",
+        "3-6 characters",
+        "7-10 characters",
+        "10+ characters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "FastText typically uses character n-grams of length 3-6, which capture meaningful morphological patterns without being too sparse or too granular.",
+      "optionExplanations": [
+        "Incorrect. 1-2 character n-grams are too short to capture meaningful morphological information and would be very noisy.",
+        "Correct. The 3-6 character range captures prefixes, suffixes, and morphological patterns effectively while maintaining reasonable vocabulary size.",
+        "Incorrect. 7-10 character n-grams would often encompass entire words, losing the benefit of subword representation.",
+        "Incorrect. Very long n-grams would defeat the purpose of subword modeling and become very sparse."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fasttext",
+        "character-ngrams",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "WEM_028",
+      "question": "How does FastText compute the final word representation?",
+      "options": [
+        "By selecting the best character n-gram",
+        "By concatenating all character n-gram vectors",
+        "By averaging all character n-gram vectors for that word",
+        "By using only the word vector, ignoring n-grams"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "FastText computes the final word representation by averaging the vectors of all character n-grams that appear in the word, plus the whole word vector if available.",
+      "optionExplanations": [
+        "Incorrect. FastText doesn't select just one n-gram but combines information from all relevant n-grams.",
+        "Incorrect. Concatenation would create very high-dimensional vectors; FastText uses averaging to maintain fixed dimensionality.",
+        "Correct. FastText sums (or averages) the vectors for all character n-grams in a word, combining subword information into a single representation.",
+        "Incorrect. FastText specifically uses n-gram information - using only whole word vectors would make it identical to Word2Vec."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fasttext",
+        "vector-composition",
+        "averaging"
+      ]
+    },
+    {
+      "id": "WEM_029",
+      "question": "What is a major computational challenge when training word embeddings on large corpora?",
+      "options": [
+        "Limited vocabulary size",
+        "Expensive softmax computation over large vocabularies",
+        "Lack of training data",
+        "Insufficient vector dimensions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The softmax computation requires normalizing over the entire vocabulary, which becomes computationally expensive as vocabulary size grows to hundreds of thousands or millions of words.",
+      "optionExplanations": [
+        "Incorrect. Large corpora typically have large vocabularies, and vocabulary size is actually part of the computational challenge, not a limitation.",
+        "Correct. Computing softmax requires summing over all vocabulary items for normalization, making it O(V) where V can be very large.",
+        "Incorrect. Large corpora provide abundant training data; the challenge is computational efficiency, not data scarcity.",
+        "Incorrect. Vector dimensions are typically chosen to be manageable (100-300); the challenge is vocabulary size, not dimension size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-complexity",
+        "softmax",
+        "scalability"
+      ]
+    },
+    {
+      "id": "WEM_030",
+      "question": "Which technique helps address the computational bottleneck of large vocabulary softmax in word embeddings?",
+      "options": [
+        "Increasing batch size",
+        "Using hierarchical softmax or negative sampling",
+        "Reducing embedding dimensions",
+        "Using more training epochs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hierarchical softmax reduces complexity to O(log V) and negative sampling approximates the full softmax by using only a few negative examples, both avoiding full vocabulary computation.",
+      "optionExplanations": [
+        "Incorrect. Larger batch sizes can improve training efficiency but don't address the fundamental O(V) softmax computational complexity.",
+        "Correct. These techniques avoid computing probabilities over the full vocabulary by using tree structures or sampling approximations.",
+        "Incorrect. Reducing dimensions helps with some computational costs but doesn't address the vocabulary size issue in softmax.",
+        "Incorrect. More epochs improve training but don't reduce the per-step computational cost of the softmax."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "optimization",
+        "hierarchical-softmax",
+        "negative-sampling"
+      ]
+    },
+    {
+      "id": "WEM_031",
+      "question": "What is the distributional hypothesis that underlies word embeddings?",
+      "options": [
+        "Words with similar frequencies have similar meanings",
+        "Words that appear in similar contexts have similar meanings",
+        "Words with similar spellings have similar meanings",
+        "Words in the same sentence have related meanings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The distributional hypothesis, often summarized as 'you shall know a word by the company it keeps,' states that words appearing in similar contexts tend to have similar meanings.",
+      "optionExplanations": [
+        "Incorrect. Word frequency doesn't necessarily correlate with semantic similarity - common words like 'the' and 'a' have very different meanings.",
+        "Correct. This is the core assumption behind distributional semantics - words used in similar contexts share semantic properties.",
+        "Incorrect. Spelling similarity (orthographic similarity) doesn't indicate semantic similarity - 'car' and 'cat' are spelled similarly but mean different things.",
+        "Incorrect. Sentence co-occurrence is too broad; the hypothesis is specifically about contextual patterns across the corpus."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distributional-hypothesis",
+        "linguistics",
+        "semantics"
+      ]
+    },
+    {
+      "id": "WEM_032",
+      "question": "Which mathematical operation is commonly used to find the most similar words to a given word in embedding space?",
+      "options": [
+        "Euclidean distance",
+        "Manhattan distance",
+        "Cosine similarity",
+        "Hamming distance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cosine similarity is preferred for word embeddings because it measures the angle between vectors, focusing on direction rather than magnitude, which better captures semantic similarity.",
+      "optionExplanations": [
+        "Incorrect. Euclidean distance considers both direction and magnitude, which can be misleading for semantic similarity where direction is more important.",
+        "Incorrect. Manhattan distance, like Euclidean distance, is influenced by vector magnitudes which may not correspond to semantic differences.",
+        "Correct. Cosine similarity measures the angle between vectors, capturing semantic similarity independent of vector magnitude.",
+        "Incorrect. Hamming distance is for discrete/binary vectors, not continuous embedding vectors."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cosine-similarity",
+        "vector-operations",
+        "similarity-measures"
+      ]
+    },
+    {
+      "id": "WEM_033",
+      "question": "What is meant by the term 'semantic compositionality' in word embeddings?",
+      "options": [
+        "Words can be broken into smaller parts",
+        "Meaning of phrases can be derived from combining word vectors",
+        "Similar words have similar vector representations",
+        "Word vectors can be reduced in dimensionality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Semantic compositionality refers to the idea that the meaning of a phrase or sentence can be understood by combining the meanings of its constituent words, often through vector operations.",
+      "optionExplanations": [
+        "Incorrect. This describes morphological decomposition, not semantic compositionality which is about combining meanings.",
+        "Correct. Compositionality assumes that phrase meanings can be computed from word meanings, often by adding or averaging word vectors.",
+        "Incorrect. This describes the clustering property of embeddings, not compositionality which is about combination.",
+        "Incorrect. This refers to dimensionality reduction techniques, not semantic compositionality."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "semantic-compositionality",
+        "vector-composition",
+        "linguistics"
+      ]
+    },
+    {
+      "id": "WEM_034",
+      "question": "What is a limitation of simple vector addition for semantic compositionality?",
+      "options": [
+        "It's computationally expensive",
+        "It treats all words as equally important",
+        "It requires too much memory",
+        "It only works with short sentences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Simple vector addition treats all words equally, ignoring the fact that some words (like function words) may be less semantically important than others (like content words).",
+      "optionExplanations": [
+        "Incorrect. Vector addition is actually computationally cheap and efficient.",
+        "Correct. Addition gives equal weight to all words, ignoring that words like 'the', 'and', 'very' may contribute less semantic content than nouns and verbs.",
+        "Incorrect. Vector addition doesn't require additional memory beyond storing the individual word vectors.",
+        "Incorrect. Vector addition works regardless of sentence length; the issue is about semantic weighting, not length."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "semantic-compositionality",
+        "vector-addition",
+        "limitations"
+      ]
+    },
+    {
+      "id": "WEM_035",
+      "question": "What approach can help address the limitation of equal weighting in vector composition?",
+      "options": [
+        "Using longer vectors",
+        "Training for more epochs",
+        "Weighted averaging based on word importance",
+        "Using smaller context windows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Weighted averaging allows more semantically important words to contribute more to the final representation, using techniques like TF-IDF weighting or attention mechanisms.",
+      "optionExplanations": [
+        "Incorrect. Vector length doesn't address the weighting issue; it's about how much each word contributes, not vector dimensionality.",
+        "Incorrect. More training epochs improve word representations but don't solve the composition weighting problem.",
+        "Correct. Weighting words by importance (using TF-IDF, attention, or other schemes) allows more meaningful words to dominate the composition.",
+        "Incorrect. Context window size affects training but doesn't address the composition weighting issue."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "weighted-averaging",
+        "tf-idf",
+        "attention"
+      ]
+    },
+    {
+      "id": "WEM_036",
+      "question": "What is the cold start problem in word embeddings?",
+      "options": [
+        "Slow training on large datasets",
+        "Difficulty handling words not seen during training",
+        "Poor performance on short sentences",
+        "High memory requirements for large vocabularies"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The cold start problem refers to the inability to generate embeddings for out-of-vocabulary (OOV) words that weren't present in the training corpus.",
+      "optionExplanations": [
+        "Incorrect. Training speed is a computational issue, not the cold start problem which is about coverage.",
+        "Correct. Traditional embeddings like Word2Vec and GloVe cannot handle words not seen during training, creating a coverage problem.",
+        "Incorrect. Short sentences can still use the available word embeddings; the issue is about missing words, not sentence length.",
+        "Incorrect. Memory requirements are a scalability issue, not the cold start problem which is about unknown words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cold-start",
+        "out-of-vocabulary",
+        "coverage"
+      ]
+    },
+    {
+      "id": "WEM_037",
+      "question": "How does FastText address the cold start problem?",
+      "options": [
+        "By using larger training datasets",
+        "By representing words as character n-grams",
+        "By using deeper neural networks",
+        "By training for longer periods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "FastText uses character n-grams to represent words, allowing it to generate representations for unseen words by combining the embeddings of their constituent character sequences.",
+      "optionExplanations": [
+        "Incorrect. Larger datasets help but don't solve the fundamental problem of completely new words appearing after training.",
+        "Correct. Character n-grams allow FastText to generate embeddings for new words by combining subword components that were seen during training.",
+        "Incorrect. Network depth doesn't address the OOV problem; it's about the representation method, not model complexity.",
+        "Incorrect. Training longer improves existing embeddings but doesn't help with words that weren't in the training data at all."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fasttext",
+        "cold-start",
+        "character-ngrams"
+      ]
+    },
+    {
+      "id": "WEM_038",
+      "question": "What is polysemy in the context of word embeddings?",
+      "options": [
+        "Words having multiple possible spellings",
+        "Words having multiple meanings or senses",
+        "Words appearing in multiple languages",
+        "Words having multiple pronunciations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Polysemy refers to words having multiple meanings or senses, such as 'bank' (financial institution) vs 'bank' (river bank), which is challenging for single-vector embeddings.",
+      "optionExplanations": [
+        "Incorrect. Multiple spellings is an orthographic issue, not polysemy which is about meaning.",
+        "Correct. Polysemy is the phenomenon where a single word has multiple related meanings, challenging for embeddings that assign one vector per word.",
+        "Incorrect. Cross-lingual occurrence is about language coverage, not polysemy which is about multiple meanings within a language.",
+        "Incorrect. Multiple pronunciations is a phonetic issue, not semantic polysemy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polysemy",
+        "word-senses",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "WEM_039",
+      "question": "Why is polysemy challenging for traditional word embeddings?",
+      "options": [
+        "It increases training time significantly",
+        "Single vector per word cannot capture multiple meanings",
+        "It requires more memory storage",
+        "It makes the model more complex to understand"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Traditional embeddings assign one vector per word, so different meanings of polysemous words get averaged into a single representation, potentially losing distinct semantic information.",
+      "optionExplanations": [
+        "Incorrect. Polysemy doesn't necessarily increase training time; it's about representation quality, not computational complexity.",
+        "Correct. One vector per word means different senses of 'bank' get mixed together, resulting in a representation that may not capture either sense well.",
+        "Incorrect. Memory usage doesn't increase with polysemy since there's still one vector per word type.",
+        "Incorrect. Model complexity is not the main issue; the problem is representational adequacy for multiple meanings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polysemy",
+        "single-vector",
+        "limitations"
+      ]
+    },
+    {
+      "id": "WEM_040",
+      "question": "What is one approach to handle polysemy in word embeddings?",
+      "options": [
+        "Using longer vector dimensions",
+        "Training separate models for each domain",
+        "Creating multiple vectors per word (multi-prototype embeddings)",
+        "Using larger context windows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multi-prototype embeddings create multiple vectors for each word to capture different senses, allowing better representation of polysemous words.",
+      "optionExplanations": [
+        "Incorrect. Longer vectors don't solve the fundamental problem of mixing different senses into one representation.",
+        "Incorrect. Domain-specific models help but don't address polysemy within a single domain where words can still have multiple meanings.",
+        "Correct. Multi-prototype approaches like ELMo or BERT learn context-dependent representations, effectively creating different vectors for different word senses.",
+        "Incorrect. Larger context windows might provide more disambiguating information but don't fundamentally solve the single-vector limitation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-prototype",
+        "polysemy",
+        "context-dependent"
+      ]
+    },
+    {
+      "id": "WEM_041",
+      "question": "What is the difference between intrinsic and extrinsic evaluation of word embeddings?",
+      "options": [
+        "Intrinsic uses smaller datasets than extrinsic",
+        "Intrinsic evaluates embeddings directly, extrinsic uses them in downstream tasks",
+        "Intrinsic is more accurate than extrinsic evaluation",
+        "Intrinsic requires labeled data while extrinsic doesn't"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Intrinsic evaluation tests embedding quality directly through tasks like similarity or analogy, while extrinsic evaluation measures performance when embeddings are used in applications like sentiment analysis.",
+      "optionExplanations": [
+        "Incorrect. Dataset size varies by specific evaluation; this is not what distinguishes intrinsic from extrinsic evaluation.",
+        "Correct. Intrinsic evaluation directly tests embedding properties (similarity, analogies), while extrinsic evaluation tests their utility in real applications.",
+        "Incorrect. Neither is inherently more accurate; they measure different aspects of embedding quality.",
+        "Incorrect. Both can use labeled data, and the distinction is not about labeling but about direct vs. application-based evaluation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "intrinsic",
+        "extrinsic"
+      ]
+    },
+    {
+      "id": "WEM_042",
+      "question": "Which is an example of intrinsic evaluation for word embeddings?",
+      "options": [
+        "Sentiment analysis accuracy",
+        "Named entity recognition F1-score",
+        "Word similarity correlation with human judgments",
+        "Machine translation BLEU score"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Word similarity tasks directly evaluate how well embedding similarities correlate with human judgments of word relatedness, testing the embeddings themselves rather than their application performance.",
+      "optionExplanations": [
+        "Incorrect. Sentiment analysis is a downstream application, making this extrinsic evaluation.",
+        "Incorrect. Named entity recognition is a downstream NLP task, representing extrinsic evaluation.",
+        "Correct. Testing whether embedding similarities match human similarity judgments directly evaluates the quality of the semantic representations.",
+        "Incorrect. Machine translation is a complex downstream application, making this extrinsic evaluation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "intrinsic-evaluation",
+        "word-similarity",
+        "human-judgments"
+      ]
+    },
+    {
+      "id": "WEM_043",
+      "question": "What is a potential limitation of intrinsic evaluation methods?",
+      "options": [
+        "They are too computationally expensive",
+        "They may not correlate with downstream task performance",
+        "They require too much training data",
+        "They are too difficult to implement"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Intrinsic evaluations may not predict how well embeddings will perform in real applications, as good performance on similarity tasks doesn't guarantee success in complex downstream tasks.",
+      "optionExplanations": [
+        "Incorrect. Intrinsic evaluations are typically much less computationally expensive than training full downstream models.",
+        "Correct. High scores on word similarity or analogy tasks don't necessarily translate to better performance in practical applications like sentiment analysis or machine translation.",
+        "Incorrect. Intrinsic evaluations typically use pre-existing benchmarks and don't require additional training data.",
+        "Incorrect. Intrinsic evaluations are generally simpler to implement than full downstream task evaluations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "intrinsic-evaluation",
+        "limitations",
+        "correlation"
+      ]
+    },
+    {
+      "id": "WEM_044",
+      "question": "What is t-SNE commonly used for in word embedding analysis?",
+      "options": [
+        "Training better embeddings",
+        "Computing word similarities",
+        "Visualizing high-dimensional embeddings in 2D/3D space",
+        "Evaluating embedding quality"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "t-SNE (t-distributed Stochastic Neighbor Embedding) is a dimensionality reduction technique used to visualize high-dimensional word embeddings in 2D or 3D space for human interpretation.",
+      "optionExplanations": [
+        "Incorrect. t-SNE is a visualization technique, not a method for training embeddings.",
+        "Incorrect. Word similarities are computed directly from embeddings using metrics like cosine similarity, not t-SNE.",
+        "Correct. t-SNE reduces embedding dimensionality to 2D or 3D while preserving local neighborhood relationships, allowing visualization of semantic clusters.",
+        "Incorrect. While t-SNE visualizations can provide insights about embedding quality, it's primarily a visualization tool, not a formal evaluation method."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-sne",
+        "visualization",
+        "dimensionality-reduction"
+      ]
+    },
+    {
+      "id": "WEM_045",
+      "question": "What should you be cautious about when interpreting t-SNE visualizations of embeddings?",
+      "options": [
+        "t-SNE is too slow to compute",
+        "t-SNE can distort global relationships and distances",
+        "t-SNE only works with small vocabularies",
+        "t-SNE requires too much memory"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "t-SNE preserves local neighborhoods but can distort global structure and distances, so cluster distances in t-SNE plots may not reflect actual embedding relationships.",
+      "optionExplanations": [
+        "Incorrect. While t-SNE can be computationally intensive, the main interpretive caution is about distortion, not speed.",
+        "Correct. t-SNE focuses on preserving local neighborhoods, often at the expense of global structure, so distances between clusters in the visualization may be misleading.",
+        "Incorrect. t-SNE can handle large vocabularies, though it may require sampling for very large datasets.",
+        "Incorrect. Memory usage is a practical consideration but not the main interpretive warning about t-SNE visualizations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "t-sne",
+        "visualization",
+        "interpretation",
+        "distortion"
+      ]
+    },
+    {
+      "id": "WEM_046",
+      "question": "In Word2Vec, what is the purpose of subsampling frequent words?",
+      "options": [
+        "To reduce vocabulary size",
+        "To speed up training by removing uninformative frequent words",
+        "To improve rare word representations",
+        "To normalize word frequencies"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Subsampling removes very frequent words (like 'the', 'and') probabilistically during training because they occur so often that they provide little additional information while slowing down training.",
+      "optionExplanations": [
+        "Incorrect. Subsampling doesn't remove words from vocabulary permanently; it reduces their occurrence during training.",
+        "Correct. Very frequent words like 'the' and 'and' provide little semantic information but slow training, so they're randomly skipped during training.",
+        "Incorrect. While subsampling might indirectly help rare words by giving them relatively more attention, this is not the primary purpose.",
+        "Incorrect. Subsampling doesn't normalize frequencies but rather reduces the impact of extremely frequent words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word2vec",
+        "subsampling",
+        "frequent-words"
+      ]
+    },
+    {
+      "id": "WEM_047",
+      "question": "What is the mathematical formula used in Word2Vec subsampling?",
+      "options": [
+        "P(w) = 1 - frequency(w)",
+        "P(w) = frequency(w) / total_words",
+        "P(w) = 1 - sqrt(threshold / frequency(w))",
+        "P(w) = log(frequency(w))"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Word2Vec subsampling formula calculates the probability of keeping a word as P(w) = 1 - sqrt(t/f(w)) where t is the threshold and f(w) is the word's frequency.",
+      "optionExplanations": [
+        "Incorrect. This would simply be 1 minus frequency, which doesn't match the subsampling formula used in Word2Vec.",
+        "Incorrect. This is just the standard probability of a word, not the subsampling probability.",
+        "Correct. This is the actual formula where words with frequency higher than threshold t are subsampled with probability proportional to sqrt(t/f(w)).",
+        "Incorrect. Logarithm of frequency is not used in the Word2Vec subsampling formula."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "word2vec",
+        "subsampling",
+        "mathematical-formula"
+      ]
+    },
+    {
+      "id": "WEM_048",
+      "question": "What is the typical threshold value used for subsampling in Word2Vec?",
+      "options": [
+        "1e-2",
+        "1e-3",
+        "1e-5",
+        "1e-7"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The typical threshold for subsampling in Word2Vec is around 1e-5, which means words occurring more frequently than 0.001% of all tokens are candidates for subsampling.",
+      "optionExplanations": [
+        "Incorrect. 1e-2 (1%) would be too high, affecting too many words including moderately frequent content words.",
+        "Incorrect. 1e-3 (0.1%) would still affect many important content words, not just function words.",
+        "Correct. 1e-5 (0.001%) typically captures very frequent function words like 'the', 'and', 'in' while preserving most content words.",
+        "Incorrect. 1e-7 would be too low, affecting only extremely frequent words and missing some function words that should be subsampled."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "word2vec",
+        "subsampling",
+        "threshold"
+      ]
+    },
+    {
+      "id": "WEM_049",
+      "question": "What is the main benefit of using pre-trained word embeddings?",
+      "options": [
+        "They are always more accurate",
+        "They save computational resources and training time",
+        "They work better on small datasets",
+        "They are easier to interpret"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-trained embeddings save significant computational resources and time since they've already been trained on large corpora, allowing immediate use without expensive training.",
+      "optionExplanations": [
+        "Incorrect. Pre-trained embeddings may not always be more accurate for specific domains or tasks; domain-specific training might be better.",
+        "Correct. Pre-trained embeddings eliminate the need for expensive training on large corpora, providing immediate access to quality representations.",
+        "Incorrect. While pre-trained embeddings can help with small datasets by providing external knowledge, this is not their main benefit.",
+        "Incorrect. Pre-trained embeddings are not necessarily more interpretable than embeddings trained from scratch."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pre-trained",
+        "computational-efficiency",
+        "resources"
+      ]
+    },
+    {
+      "id": "WEM_050",
+      "question": "What is a potential drawback of using pre-trained word embeddings?",
+      "options": [
+        "They are too large to store",
+        "They may not capture domain-specific meanings",
+        "They are too slow to use",
+        "They require special software to load"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-trained embeddings may not capture domain-specific meanings or terminology, as they're typically trained on general corpora and might not reflect specialized usage in specific fields.",
+      "optionExplanations": [
+        "Incorrect. While embeddings can be large, storage is rarely the main drawback; domain specificity is more concerning.",
+        "Correct. Pre-trained embeddings may not capture specialized meanings in domains like medicine or law, where words may have different semantic relationships.",
+        "Incorrect. Loading and using pre-trained embeddings is typically fast since no training is required.",
+        "Incorrect. Most pre-trained embeddings use standard formats and can be loaded with common libraries."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-trained",
+        "domain-specificity",
+        "limitations"
+      ]
+    },
+    {
+      "id": "WEM_051",
+      "question": "Which of the following is a popular source for pre-trained word embeddings?",
+      "options": [
+        "Google's Word2Vec vectors",
+        "Stanford's GloVe vectors",
+        "Facebook's FastText vectors",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three are popular sources of pre-trained embeddings: Google released Word2Vec vectors, Stanford released GloVe vectors, and Facebook released FastText vectors, all trained on large corpora.",
+      "optionExplanations": [
+        "Partially correct. Google's Word2Vec vectors are popular, but this is not the complete answer.",
+        "Partially correct. Stanford's GloVe vectors are widely used, but this is not the complete answer.",
+        "Partially correct. Facebook's FastText vectors are popular, especially for handling OOV words, but this is not the complete answer.",
+        "Correct. All three organizations have released widely-used pre-trained word embeddings that are commonly used in NLP applications."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pre-trained",
+        "sources",
+        "google",
+        "stanford",
+        "facebook"
+      ]
+    },
+    {
+      "id": "WEM_052",
+      "question": "What is fine-tuning in the context of word embeddings?",
+      "options": [
+        "Adjusting hyperparameters during training",
+        "Further training pre-trained embeddings on domain-specific data",
+        "Reducing the dimensionality of embeddings",
+        "Removing noisy words from embeddings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fine-tuning involves taking pre-trained embeddings and continuing training on domain-specific data to adapt them to particular use cases while preserving general knowledge.",
+      "optionExplanations": [
+        "Incorrect. Hyperparameter adjustment is part of model tuning but not what fine-tuning specifically refers to in the context of embeddings.",
+        "Correct. Fine-tuning adapts pre-trained embeddings to specific domains by continuing training on relevant data, combining general and domain knowledge.",
+        "Incorrect. Dimensionality reduction is a separate technique and not what fine-tuning refers to.",
+        "Incorrect. Vocabulary cleaning is preprocessing, not fine-tuning which involves continued training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fine-tuning",
+        "domain-adaptation",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "WEM_053",
+      "question": "What is the bias problem in word embeddings?",
+      "options": [
+        "Embeddings favor frequent words over rare words",
+        "Embeddings reflect social and cultural biases present in training data",
+        "Embeddings are biased toward shorter words",
+        "Embeddings work better for English than other languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word embeddings can perpetuate and amplify social biases (gender, racial, cultural) present in their training corpora, leading to problematic associations in downstream applications.",
+      "optionExplanations": [
+        "Incorrect. While frequency effects exist, the bias problem specifically refers to social and cultural biases, not statistical frequency bias.",
+        "Correct. Embeddings trained on biased data can learn and perpetuate harmful stereotypes, such as associating certain professions with specific genders.",
+        "Incorrect. Word length is not a significant source of bias in embeddings; the concern is about social biases.",
+        "Incorrect. While embeddings may work differently across languages, the bias problem refers to social biases within languages, not cross-lingual performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "social-bias",
+        "ethics"
+      ]
+    },
+    {
+      "id": "WEM_054",
+      "question": "Which of the following is an example of gender bias in word embeddings?",
+      "options": [
+        "Male names clustering together",
+        "'Doctor' being closer to 'man' than 'woman' in vector space",
+        "Gendered pronouns having different vector lengths",
+        "Female names having higher dimensions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gender bias occurs when profession words like 'doctor' or 'engineer' are systematically closer to male terms than female terms, reflecting societal biases in training data.",
+      "optionExplanations": [
+        "Incorrect. Names clustering by gender is expected and not necessarily problematic; the issue is when occupations become unfairly gendered.",
+        "Correct. This represents harmful bias where professional roles become inappropriately associated with specific genders based on training data patterns.",
+        "Incorrect. Vector lengths or magnitudes are not the main concern for gender bias; it's about semantic relationships and distances.",
+        "Incorrect. Dimensionality is fixed for all words in a given embedding space; bias manifests in relationships, not dimensions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gender-bias",
+        "occupations",
+        "stereotypes"
+      ]
+    },
+    {
+      "id": "WEM_055",
+      "question": "What is one approach to mitigate bias in word embeddings?",
+      "options": [
+        "Using larger training datasets",
+        "Post-processing to remove bias directions",
+        "Training with higher learning rates",
+        "Using shorter context windows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Post-processing techniques can identify and remove bias directions from embeddings, such as the gender direction, to reduce biased associations while preserving other semantic information.",
+      "optionExplanations": [
+        "Incorrect. Larger datasets might actually amplify existing biases if the additional data contains similar biases.",
+        "Correct. Techniques like hard debiasing identify bias subspaces (e.g., gender direction) and remove or neutralize them from embedding spaces.",
+        "Incorrect. Learning rate affects training dynamics but doesn't address the fundamental issue of biased training data.",
+        "Incorrect. Context window size affects what relationships are captured but doesn't inherently reduce bias if the underlying data is biased."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "debiasing",
+        "post-processing",
+        "bias-mitigation"
+      ]
+    },
+    {
+      "id": "WEM_056",
+      "question": "What is the curse of dimensionality in the context of word embeddings?",
+      "options": [
+        "Higher dimensions always lead to better performance",
+        "In high dimensions, all points become approximately equidistant",
+        "High dimensions require more memory",
+        "High dimensions make training slower"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In very high-dimensional spaces, the curse of dimensionality causes distances between points to become more uniform, potentially making similarity measures less meaningful.",
+      "optionExplanations": [
+        "Incorrect. Higher dimensions can lead to overfitting and don't always improve performance; there's an optimal dimension range.",
+        "Correct. In high-dimensional spaces, distance measures become less discriminative as most points appear roughly equidistant from each other.",
+        "Incorrect. While high dimensions do require more memory, this is a practical concern, not the curse of dimensionality phenomenon.",
+        "Incorrect. Training speed is a computational concern, not the core issue of the curse of dimensionality."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensions",
+        "distance-measures"
+      ]
+    },
+    {
+      "id": "WEM_057",
+      "question": "How do typical word embedding dimensions (100-300) relate to the curse of dimensionality?",
+      "options": [
+        "They are too high and suffer from the curse",
+        "They are in a reasonable range that balances expressiveness and curse effects",
+        "They are too low to be affected",
+        "The curse doesn't apply to word embeddings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The typical range of 100-300 dimensions represents a practical balance where embeddings are expressive enough to capture semantic relationships without being so high-dimensional that similarity measures become meaningless.",
+      "optionExplanations": [
+        "Incorrect. While 300 dimensions is significant, it's not high enough for severe curse of dimensionality effects, and empirical results show these dimensions work well.",
+        "Correct. This range provides sufficient expressiveness to capture complex semantic relationships while avoiding the worst effects of high-dimensional spaces.",
+        "Incorrect. Even 100+ dimensions can show some effects of the curse of dimensionality, but they're manageable in this range.",
+        "Incorrect. The curse of dimensionality applies to all high-dimensional data, including word embeddings, but the effect varies with the specific dimension count."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "optimal-dimensions",
+        "balance"
+      ]
+    },
+    {
+      "id": "WEM_058",
+      "question": "What is the relationship between corpus size and embedding quality?",
+      "options": [
+        "Larger corpora always produce better embeddings",
+        "Corpus size doesn't affect embedding quality",
+        "Larger corpora generally improve quality up to a point",
+        "Smaller corpora always produce better embeddings"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Larger corpora generally provide more examples of word usage patterns, improving embedding quality, but beyond a certain point, additional data provides diminishing returns.",
+      "optionExplanations": [
+        "Incorrect. While larger corpora generally help, there are diminishing returns, and very large noisy corpora might not always be beneficial.",
+        "Incorrect. Corpus size significantly affects embedding quality, especially for rare words that need sufficient examples to learn good representations.",
+        "Correct. More data provides better statistics for learning word relationships, but there's a point where additional data provides minimal improvement.",
+        "Incorrect. Smaller corpora typically provide insufficient examples for learning robust word representations, especially for rare words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "corpus-size",
+        "data-requirements",
+        "quality"
+      ]
+    },
+    {
+      "id": "WEM_059",
+      "question": "How does corpus domain affect word embedding performance?",
+      "options": [
+        "Domain doesn't matter for embedding performance",
+        "General domain corpora always work best",
+        "Domain-specific corpora work better for domain-specific tasks",
+        "Mixed domain corpora always perform worst"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Embeddings trained on domain-specific corpora (medical, legal, technical) typically perform better on tasks within that domain because they capture specialized usage and terminology.",
+      "optionExplanations": [
+        "Incorrect. Domain significantly affects performance, as word usage patterns and meanings can vary considerably across different fields.",
+        "Incorrect. General corpora provide broad coverage but may miss domain-specific nuances important for specialized applications.",
+        "Correct. Medical embeddings work better for medical NLP, legal embeddings for legal tasks, etc., because they capture domain-specific semantics.",
+        "Incorrect. Mixed domain corpora can provide good general-purpose embeddings and aren't inherently worse than other approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-specificity",
+        "corpus-domain",
+        "performance"
+      ]
+    },
+    {
+      "id": "WEM_060",
+      "question": "What is the difference between static and contextual word embeddings?",
+      "options": [
+        "Static embeddings change during training, contextual ones don't",
+        "Static embeddings assign one vector per word, contextual ones vary by context",
+        "Static embeddings are faster to compute than contextual ones",
+        "Static embeddings work better for rare words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Static embeddings like Word2Vec assign a fixed vector to each word regardless of context, while contextual embeddings like BERT generate different vectors for the same word in different contexts.",
+      "optionExplanations": [
+        "Incorrect. 'Static' refers to the final representation being fixed, not the training process. Both types change during training.",
+        "Correct. Static embeddings have one vector per word type, while contextual embeddings generate different vectors for the same word based on its surrounding context.",
+        "Incorrect. While static embeddings are typically faster to use (just lookup), this is a consequence of the representation difference, not the defining characteristic.",
+        "Incorrect. Contextual embeddings often handle rare words better by using context information, unlike static embeddings which struggle with low-frequency words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "static-embeddings",
+        "contextual-embeddings",
+        "context-dependent"
+      ]
+    },
+    {
+      "id": "WEM_061",
+      "question": "Why are contextual embeddings better at handling polysemy than static embeddings?",
+      "options": [
+        "They use larger vocabularies",
+        "They generate different vectors for different contexts of the same word",
+        "They train on larger datasets",
+        "They use more sophisticated neural networks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Contextual embeddings solve polysemy by generating different vector representations for the same word based on its context, allowing 'bank' (financial) and 'bank' (river) to have different representations.",
+      "optionExplanations": [
+        "Incorrect. Vocabulary size doesn't directly address polysemy; the issue is having multiple representations for the same word.",
+        "Correct. Contextual embeddings can represent 'bank' differently when used in financial vs. geographical contexts, capturing the appropriate meaning.",
+        "Incorrect. While larger datasets might help, the key advantage is the context-dependent representation, not dataset size.",
+        "Incorrect. Neural network sophistication enables contextual embeddings but doesn't explain why they're better for polysemy specifically."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "contextual-embeddings",
+        "polysemy",
+        "context-dependent"
+      ]
+    },
+    {
+      "id": "WEM_062",
+      "question": "What is the main computational disadvantage of contextual embeddings compared to static embeddings?",
+      "options": [
+        "They require more training data",
+        "They need to be computed dynamically for each context",
+        "They use more memory for storage",
+        "They require specialized hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Contextual embeddings must be computed on-the-fly for each occurrence of a word in context, while static embeddings can be pre-computed and simply looked up during inference.",
+      "optionExplanations": [
+        "Incorrect. Training data requirements vary by model, not by whether embeddings are static or contextual.",
+        "Correct. Static embeddings are pre-computed lookup tables, while contextual embeddings require running neural networks to generate representations for each context.",
+        "Incorrect. Storage requirements depend on the specific model architecture, not the static vs. contextual distinction.",
+        "Incorrect. While some contextual models benefit from specialized hardware, this isn't the main computational disadvantage compared to static embeddings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "contextual-embeddings",
+        "computational-cost",
+        "inference"
+      ]
+    },
+    {
+      "id": "WEM_063",
+      "question": "What is word sense disambiguation (WSD) in relation to word embeddings?",
+      "options": [
+        "Removing ambiguous words from the vocabulary",
+        "Determining which meaning of a polysemous word is intended in context",
+        "Finding words with similar meanings",
+        "Correcting spelling errors in text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word sense disambiguation involves determining which specific meaning of a polysemous word is intended in a given context, such as distinguishing 'bank' as financial institution vs. riverbank.",
+      "optionExplanations": [
+        "Incorrect. WSD doesn't remove words but rather determines which sense of ambiguous words is intended.",
+        "Correct. WSD identifies which meaning of words like 'bank', 'mouse', or 'plant' is intended based on the surrounding context.",
+        "Incorrect. Finding similar words is a different task; WSD focuses on disambiguating multiple senses of the same word.",
+        "Incorrect. Spelling correction is orthographic error handling, not semantic sense disambiguation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word-sense-disambiguation",
+        "polysemy",
+        "context"
+      ]
+    },
+    {
+      "id": "WEM_064",
+      "question": "How can word embeddings be used for word sense disambiguation?",
+      "options": [
+        "By comparing context embeddings to sense-specific embeddings",
+        "By using longer embedding vectors",
+        "By training separate models for each word",
+        "By increasing the context window size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "WSD can be performed by comparing the embedding of a word's context to pre-defined embeddings for different senses, choosing the sense with the most similar context representation.",
+      "optionExplanations": [
+        "Correct. Context embeddings can be compared to embeddings representing different word senses to determine the most likely meaning in context.",
+        "Incorrect. Vector length doesn't inherently solve the disambiguation problem; it's about comparing context to sense representations.",
+        "Incorrect. While possible, training separate models is inefficient; the key is using contextual information to disambiguate.",
+        "Incorrect. Larger context windows provide more information but don't directly solve the disambiguation algorithm."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "word-sense-disambiguation",
+        "context-comparison",
+        "sense-embeddings"
+      ]
+    },
+    {
+      "id": "WEM_065",
+      "question": "What is the key insight behind GloVe's approach to word embeddings?",
+      "options": [
+        "Local context windows are sufficient for learning word meanings",
+        "Global co-occurrence ratios reveal semantic relationships",
+        "Negative sampling is essential for efficient training",
+        "Character-level information improves word representations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GloVe's key insight is that ratios of co-occurrence probabilities between words reveal meaningful semantic relationships better than raw counts or local context alone.",
+      "optionExplanations": [
+        "Incorrect. This describes Word2Vec's approach; GloVe specifically incorporates global corpus statistics rather than just local windows.",
+        "Correct. GloVe focuses on ratios like P(k|ice)/P(k|steam) which reveal semantic relationships like the ice-steam distinction.",
+        "Incorrect. Negative sampling is a Word2Vec optimization technique, not GloVe's core insight.",
+        "Incorrect. Character-level information is FastText's contribution, not GloVe's key insight."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "glove",
+        "co-occurrence-ratios",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "WEM_066",
+      "question": "In the GloVe paper, what example demonstrates the power of co-occurrence ratios?",
+      "options": [
+        "King - man + woman = queen",
+        "Ice and steam with words like 'solid' and 'gas'",
+        "Cat and dog similarity calculations",
+        "Synonym detection using cosine similarity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The GloVe paper uses ice/steam example showing how ratios P(solid|ice)/P(solid|steam) are large while P(gas|ice)/P(gas|steam) are small, revealing semantic relationships through co-occurrence ratios.",
+      "optionExplanations": [
+        "Incorrect. This analogy example is commonly used to demonstrate Word2Vec capabilities, not specifically GloVe's co-occurrence ratio insight.",
+        "Correct. The ice/steam example shows how co-occurrence ratios with discriminative words like 'solid' and 'gas' reveal semantic relationships better than raw counts.",
+        "Incorrect. Cat/dog similarity is a general embedding evaluation example, not specific to demonstrating GloVe's co-occurrence ratio approach.",
+        "Incorrect. Synonym detection is a general application of embeddings, not the specific example used to motivate GloVe's methodology."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "glove",
+        "ice-steam-example",
+        "co-occurrence-ratios"
+      ]
+    },
+    {
+      "id": "WEM_067",
+      "question": "What is the relationship between PMI (Pointwise Mutual Information) and word embeddings?",
+      "options": [
+        "PMI is used to evaluate embedding quality",
+        "Word2Vec implicitly factorizes a PMI matrix",
+        "PMI is used to select optimal embedding dimensions",
+        "PMI determines the context window size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Research has shown that Word2Vec with negative sampling implicitly performs matrix factorization of a shifted PMI matrix, providing theoretical grounding for why Word2Vec works.",
+      "optionExplanations": [
+        "Incorrect. PMI can be used for evaluation but this is not its primary relationship to word embeddings.",
+        "Correct. Levy & Goldberg showed that Word2Vec SGNS is implicitly factorizing a word-context PMI matrix shifted by a constant.",
+        "Incorrect. PMI doesn't directly determine optimal dimensions; dimension selection uses other criteria like performance on downstream tasks.",
+        "Incorrect. Context window size is a hyperparameter choice, not determined by PMI calculations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pmi",
+        "matrix-factorization",
+        "word2vec",
+        "theory"
+      ]
+    },
+    {
+      "id": "WEM_068",
+      "question": "What does it mean that Word2Vec 'implicitly factorizes' a PMI matrix?",
+      "options": [
+        "Word2Vec directly computes PMI values during training",
+        "The learned embeddings approximate the factors of a PMI-based matrix",
+        "Word2Vec uses PMI as its loss function",
+        "Word2Vec requires pre-computing PMI values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The word and context embeddings learned by Word2Vec, when multiplied together, approximate a matrix whose entries are related to PMI values, even though PMI is never explicitly computed.",
+      "optionExplanations": [
+        "Incorrect. Word2Vec doesn't explicitly compute PMI values; the connection is implicit through the optimization objective.",
+        "Correct. The product of word and context embeddings approximates a matrix related to PMI, revealing the theoretical foundation of Word2Vec.",
+        "Incorrect. Word2Vec uses softmax-based objectives, not PMI directly as the loss function.",
+        "Incorrect. Word2Vec doesn't require pre-computing PMI; the relationship emerges from the training objective."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pmi",
+        "implicit-factorization",
+        "theory",
+        "matrix-approximation"
+      ]
+    },
+    {
+      "id": "WEM_069",
+      "question": "What is the significance of the theoretical connection between Word2Vec and PMI?",
+      "options": [
+        "It proves Word2Vec is the optimal embedding method",
+        "It provides theoretical justification for why Word2Vec captures semantic relationships",
+        "It shows Word2Vec is equivalent to classical NLP methods",
+        "It demonstrates Word2Vec's superiority over GloVe"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The PMI connection provides theoretical insight into why Word2Vec works by showing it learns representations that encode statistical relationships between words and contexts.",
+      "optionExplanations": [
+        "Incorrect. The connection explains why Word2Vec works but doesn't prove it's optimal; different methods may be better for different tasks.",
+        "Correct. Understanding that Word2Vec approximates PMI matrix factorization explains why it captures meaningful word relationships.",
+        "Incorrect. While it connects to information theory, Word2Vec uses neural methods rather than being equivalent to classical approaches.",
+        "Incorrect. The PMI connection explains Word2Vec but doesn't establish superiority over other methods like GloVe."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pmi",
+        "theoretical-justification",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "WEM_070",
+      "question": "What is the vocabulary size challenge in training word embeddings?",
+      "options": [
+        "Small vocabularies lead to poor embeddings",
+        "Large vocabularies make softmax computation expensive",
+        "Vocabulary size must equal embedding dimensions",
+        "Vocabularies cannot exceed 10,000 words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Large vocabularies (often 100K+ words) make the softmax normalization computationally expensive, requiring techniques like hierarchical softmax or negative sampling.",
+      "optionExplanations": [
+        "Incorrect. Small vocabularies can actually be easier to train, though they may miss some semantic relationships.",
+        "Correct. Softmax requires summing over all vocabulary items, making computation O(V) where V can be very large.",
+        "Incorrect. Vocabulary size and embedding dimensions are independent parameters with no required relationship.",
+        "Incorrect. Modern embedding models routinely handle vocabularies of hundreds of thousands or millions of words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vocabulary-size",
+        "computational-complexity",
+        "softmax"
+      ]
+    },
+    {
+      "id": "WEM_071",
+      "question": "How do you typically handle rare words when training word embeddings?",
+      "options": [
+        "Remove all rare words from the vocabulary",
+        "Replace rare words with a special <UNK> token",
+        "Give rare words higher learning rates",
+        "Use longer context windows for rare words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rare words (appearing fewer than a threshold number of times) are typically replaced with a special unknown token <UNK> to reduce vocabulary size and improve training efficiency.",
+      "optionExplanations": [
+        "Incorrect. Simply removing rare words loses information; replacing with <UNK> preserves the information that an unknown word occurred.",
+        "Correct. Words below a frequency threshold (e.g., 5 occurrences) are replaced with <UNK>, reducing vocabulary while handling rare word positions.",
+        "Incorrect. Higher learning rates for rare words could lead to unstable training and isn't a standard approach.",
+        "Incorrect. Context window size is typically fixed for all words; the rare word problem is addressed through vocabulary management."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "rare-words",
+        "unk-token",
+        "vocabulary-management"
+      ]
+    },
+    {
+      "id": "WEM_072",
+      "question": "What is the typical frequency threshold for replacing words with <UNK> tokens?",
+      "options": [
+        "1 occurrence",
+        "2-5 occurrences",
+        "10-20 occurrences",
+        "50+ occurrences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Words appearing fewer than 2-5 times in the corpus are typically replaced with <UNK> tokens, as they don't provide enough examples to learn reliable representations.",
+      "optionExplanations": [
+        "Incorrect. A threshold of 1 would mean keeping all words, which doesn't address the rare word problem.",
+        "Correct. The 2-5 occurrence threshold balances vocabulary reduction with preserving words that have sufficient training examples.",
+        "Incorrect. A threshold of 10-20 would be too high, removing many words that could still benefit from learning representations.",
+        "Incorrect. A threshold of 50+ would eliminate too many potentially useful words from the vocabulary."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "unk-token",
+        "frequency-threshold",
+        "vocabulary-pruning"
+      ]
+    },
+    {
+      "id": "WEM_073",
+      "question": "What is a potential issue with using <UNK> tokens for rare words?",
+      "options": [
+        "<UNK> tokens slow down training significantly",
+        "All rare words get the same representation, losing distinctiveness",
+        "<UNK> tokens require more memory",
+        "<UNK> tokens are difficult to implement"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "All rare words replaced with <UNK> receive the same embedding, potentially losing important semantic distinctions between different rare words.",
+      "optionExplanations": [
+        "Incorrect. <UNK> tokens actually speed up training by reducing vocabulary size and computational complexity.",
+        "Correct. Words like 'cryptocurrency' and 'nanotechnology' might both become <UNK> but have very different meanings that are lost.",
+        "Incorrect. <UNK> tokens reduce memory usage by decreasing the total vocabulary size.",
+        "Incorrect. <UNK> token implementation is straightforward - just a vocabulary preprocessing step."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "unk-token",
+        "limitations",
+        "semantic-loss"
+      ]
+    },
+    {
+      "id": "WEM_074",
+      "question": "How does FastText address the <UNK> token limitation?",
+      "options": [
+        "By using larger vocabularies without <UNK> tokens",
+        "By creating multiple <UNK> tokens for different word types",
+        "By generating embeddings for unseen words using character n-grams",
+        "By using contextual information to disambiguate <UNK> tokens"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "FastText can generate embeddings for previously unseen words by combining the embeddings of their constituent character n-grams, eliminating the need for <UNK> tokens.",
+      "optionExplanations": [
+        "Incorrect. FastText still has vocabulary limits; its advantage is handling words outside the vocabulary, not eliminating vocabulary constraints.",
+        "Incorrect. Multiple <UNK> tokens is not FastText's approach; it uses subword information instead.",
+        "Correct. FastText's character n-gram approach allows it to generate meaningful embeddings for any word, even if not seen during training.",
+        "Incorrect. While context helps, FastText's key innovation is subword modeling, not contextual disambiguation of <UNK> tokens."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fasttext",
+        "character-ngrams",
+        "oov-handling"
+      ]
+    },
+    {
+      "id": "WEM_075",
+      "question": "What is the window size parameter in Word2Vec?",
+      "options": [
+        "The number of training epochs",
+        "The number of words on each side of the target word to consider as context",
+        "The size of the embedding vectors",
+        "The number of negative samples to use"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Window size determines how many words before and after the target word are considered as context during training, affecting what relationships the model learns.",
+      "optionExplanations": [
+        "Incorrect. The number of training epochs is a separate parameter controlling how many times the algorithm passes through the data.",
+        "Correct. A window size of 5 means 5 words before and 5 words after the target word are used as context.",
+        "Incorrect. Embedding vector size is the dimensionality parameter, separate from context window size.",
+        "Incorrect. The number of negative samples is a parameter for negative sampling optimization, not window size."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "window-size",
+        "context-window",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "WEM_076",
+      "question": "How does window size affect the types of relationships captured in embeddings?",
+      "options": [
+        "Window size doesn't affect relationship types",
+        "Smaller windows capture more syntactic relationships, larger windows capture more semantic relationships",
+        "Larger windows always produce better embeddings",
+        "Window size only affects training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Smaller windows focus on immediate neighbors, capturing syntactic and functional relationships, while larger windows include more distant words, capturing broader topical and semantic relationships.",
+      "optionExplanations": [
+        "Incorrect. Window size significantly affects what types of word relationships are learned by the model.",
+        "Correct. Small windows (2-3) learn syntax-like relationships, large windows (10+) learn topic-like relationships.",
+        "Incorrect. The optimal window size depends on the intended application; larger isn't always better.",
+        "Incorrect. While window size affects training speed, its main impact is on the types of relationships learned."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "window-size",
+        "syntactic-relationships",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "WEM_077",
+      "question": "What is a typical window size range used in Word2Vec?",
+      "options": [
+        "1-2",
+        "5-10",
+        "15-20",
+        "25-50"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Window sizes of 5-10 are commonly used in Word2Vec, providing a good balance between capturing local syntactic relationships and broader semantic relationships.",
+      "optionExplanations": [
+        "Incorrect. Windows of 1-2 are too small and would miss important contextual relationships.",
+        "Correct. The 5-10 range is widely used and provides good performance across various tasks.",
+        "Incorrect. Windows of 15-20 are quite large and may introduce noise while being computationally expensive.",
+        "Incorrect. Windows of 25-50 are extremely large and would likely hurt performance while being very expensive to compute."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "window-size",
+        "typical-values",
+        "best-practices"
+      ]
+    },
+    {
+      "id": "WEM_078",
+      "question": "What is dynamic context window in some Word2Vec implementations?",
+      "options": [
+        "The window size changes during training",
+        "The actual context size is randomly sampled from 1 to the maximum window size",
+        "The window adapts based on the target word frequency",
+        "The window size depends on the sentence length"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dynamic context windows randomly sample the actual context size for each training example from 1 to the specified maximum, adding variability and potentially improving generalization.",
+      "optionExplanations": [
+        "Incorrect. The maximum window size typically remains fixed during training; the variation is per-example, not over time.",
+        "Correct. For each word, the actual context is randomly chosen between 1 and the maximum window size, providing training variety.",
+        "Incorrect. Word frequency might affect subsampling but doesn't typically determine dynamic window size.",
+        "Incorrect. Sentence length may limit the effective window but doesn't drive dynamic window size selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dynamic-window",
+        "random-sampling",
+        "training-variation"
+      ]
+    },
+    {
+      "id": "WEM_079",
+      "question": "What is the purpose of the learning rate schedule in Word2Vec training?",
+      "options": [
+        "To increase model capacity over time",
+        "To gradually reduce the learning rate as training progresses",
+        "To adjust the window size during training",
+        "To control the negative sampling rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning rate scheduling gradually reduces the learning rate during training, starting high for rapid initial learning and decreasing for fine-tuning and convergence.",
+      "optionExplanations": [
+        "Incorrect. Model capacity is determined by architecture (embedding dimensions, etc.), not learning rate.",
+        "Correct. Learning rate typically starts at a value like 0.025 and decreases linearly to 0.0001, improving convergence.",
+        "Incorrect. Window size is typically fixed during training and not controlled by learning rate scheduling.",
+        "Incorrect. Negative sampling rate is a separate hyperparameter and not adjusted by learning rate scheduling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "scheduling",
+        "convergence"
+      ]
+    },
+    {
+      "id": "WEM_080",
+      "question": "What is a typical initial learning rate for Word2Vec training?",
+      "options": [
+        "0.001",
+        "0.025",
+        "0.1",
+        "1.0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word2Vec typically starts with a learning rate of 0.025, which is relatively high compared to many deep learning models, allowing for rapid initial learning of word associations.",
+      "optionExplanations": [
+        "Incorrect. 0.001 is quite low for Word2Vec's initial learning rate, more typical of later stages or other models.",
+        "Correct. 0.025 is the standard initial learning rate in many Word2Vec implementations.",
+        "Incorrect. 0.1 would be too high and could lead to unstable training and poor convergence.",
+        "Incorrect. 1.0 is far too high and would cause training instability and failure to converge."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "initial-value",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "WEM_081",
+      "question": "What happens to embeddings of words that never appear together in the training corpus?",
+      "options": [
+        "They become identical vectors",
+        "They become maximally distant",
+        "Their relationship is essentially random",
+        "They are removed from the vocabulary"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Words that never co-occur have no direct training signal to learn their relationship, so their relative positioning in the embedding space is essentially random with respect to each other.",
+      "optionExplanations": [
+        "Incorrect. Words that don't co-occur don't become identical; they maintain distinct learned patterns from their other contexts.",
+        "Incorrect. There's no mechanism that would make non-co-occurring words maximally distant; they could end up at any relative distance.",
+        "Correct. Without co-occurrence data, there's no signal to learn meaningful relationships between these words.",
+        "Incorrect. Words can remain in vocabulary even if they don't co-occur with every other word; removal is based on frequency thresholds."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "co-occurrence",
+        "word-relationships",
+        "training-signal"
+      ]
+    },
+    {
+      "id": "WEM_082",
+      "question": "How can you measure the semantic coherence of word embedding clusters?",
+      "options": [
+        "By calculating average vector magnitudes",
+        "By measuring intra-cluster similarity and inter-cluster dissimilarity",
+        "By counting the number of clusters formed",
+        "By measuring the computational cost of clustering"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Semantic coherence is measured by ensuring words within clusters are similar to each other (high intra-cluster similarity) while different clusters are distinct (low inter-cluster similarity).",
+      "optionExplanations": [
+        "Incorrect. Vector magnitudes don't indicate semantic coherence; normalization typically makes magnitudes uniform anyway.",
+        "Correct. Good clusters have high internal similarity (words like 'cat', 'dog', 'mouse' cluster together) and are distinct from other clusters.",
+        "Incorrect. The number of clusters doesn't indicate their semantic quality; you could have many poor clusters or few good ones.",
+        "Incorrect. Computational cost is about efficiency, not about whether the clusters make semantic sense."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "semantic-coherence",
+        "clustering",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "WEM_083",
+      "question": "What is the silhouette score in the context of evaluating word embedding clusters?",
+      "options": [
+        "A measure of cluster visualization quality",
+        "A measure of how well-separated and cohesive clusters are",
+        "A measure of computational efficiency",
+        "A measure of vocabulary coverage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Silhouette score measures cluster quality by comparing how similar each point is to its own cluster versus other clusters, with values ranging from -1 to 1.",
+      "optionExplanations": [
+        "Incorrect. Silhouette score is a quantitative measure, not specifically about visualization quality.",
+        "Correct. Silhouette score measures cluster cohesion (how similar items are within clusters) and separation (how distinct clusters are from each other).",
+        "Incorrect. Silhouette score evaluates cluster quality, not computational efficiency of the clustering algorithm.",
+        "Incorrect. Vocabulary coverage refers to how many words are included, not cluster quality measurement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "silhouette-score",
+        "cluster-evaluation",
+        "quality-metrics"
+      ]
+    },
+    {
+      "id": "WEM_084",
+      "question": "What does a silhouette score close to 1 indicate?",
+      "options": [
+        "Poor clustering with overlapping clusters",
+        "Excellent clustering with well-separated, cohesive clusters",
+        "Average clustering quality",
+        "Too many clusters were formed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A silhouette score near 1 indicates that points are much closer to their own cluster than to neighboring clusters, representing excellent clustering quality.",
+      "optionExplanations": [
+        "Incorrect. Poor clustering would result in scores close to -1 or 0, not 1.",
+        "Correct. Scores near 1 mean points are well-matched to their own cluster and poorly matched to neighboring clusters.",
+        "Incorrect. Average clustering typically results in scores around 0.3-0.5, not close to 1.",
+        "Incorrect. The number of clusters affects the score but a high score indicates quality regardless of cluster count."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "silhouette-score",
+        "cluster-quality",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "WEM_085",
+      "question": "What is the relationship between word frequency and embedding quality in Word2Vec?",
+      "options": [
+        "Frequency doesn't affect embedding quality",
+        "More frequent words generally have better embeddings",
+        "Less frequent words always have better embeddings",
+        "Only medium-frequency words have good embeddings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "More frequent words have more training examples and co-occurrence statistics, leading to more stable and reliable embedding representations.",
+      "optionExplanations": [
+        "Incorrect. Word frequency significantly affects embedding quality because it determines how many training examples each word has.",
+        "Correct. Frequent words appear in more contexts, providing more training signal and resulting in more robust embeddings.",
+        "Incorrect. Less frequent words have fewer training examples, making their embeddings less reliable and more prone to noise.",
+        "Incorrect. While extremely frequent words might be less informative (like 'the'), generally higher frequency correlates with better embeddings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word-frequency",
+        "embedding-quality",
+        "training-examples"
+      ]
+    },
+    {
+      "id": "WEM_086",
+      "question": "How does the minimum word count parameter affect Word2Vec training?",
+      "options": [
+        "It sets the maximum vocabulary size",
+        "It removes words below a frequency threshold from training",
+        "It determines the embedding vector dimensions",
+        "It controls the context window size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The minimum word count parameter excludes words that appear fewer than the specified number of times, reducing vocabulary size and focusing training on words with sufficient examples.",
+      "optionExplanations": [
+        "Incorrect. Maximum vocabulary size is controlled by other parameters; minimum count sets a frequency floor, not a ceiling.",
+        "Correct. Words appearing fewer than min_count times are excluded from the vocabulary, ensuring all retained words have sufficient training examples.",
+        "Incorrect. Vector dimensions are set by a separate parameter and are unrelated to word frequency thresholds.",
+        "Incorrect. Context window size is an independent parameter that determines how many surrounding words to consider."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "min-count",
+        "vocabulary-filtering",
+        "frequency-threshold"
+      ]
+    },
+    {
+      "id": "WEM_087",
+      "question": "What is a typical value for the minimum word count parameter in Word2Vec?",
+      "options": [
+        "1",
+        "5",
+        "50",
+        "100"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A minimum count of 5 is commonly used, ensuring words have enough training examples while not being so restrictive as to eliminate too many potentially useful words.",
+      "optionExplanations": [
+        "Incorrect. A minimum count of 1 would include all words, including those with insufficient training examples.",
+        "Correct. 5 is a typical value that balances keeping useful words while filtering out words with too few examples.",
+        "Incorrect. 50 would be quite restrictive and would eliminate many words that could still benefit from learning representations.",
+        "Incorrect. 100 would be very restrictive and suitable only for very large corpora where you want to focus on common words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "min-count",
+        "typical-values",
+        "parameter-tuning"
+      ]
+    },
+    {
+      "id": "WEM_088",
+      "question": "What is the downsampling formula threshold typically set to in Word2Vec?",
+      "options": [
+        "1e-2",
+        "1e-3",
+        "1e-5",
+        "1e-7"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The downsampling threshold is typically set to 1e-5, which affects words occurring more frequently than 0.001% of all tokens, targeting very common function words.",
+      "optionExplanations": [
+        "Incorrect. 1e-2 (1%) would affect too many words, including important content words.",
+        "Incorrect. 1e-3 (0.1%) would still affect many moderately frequent content words unnecessarily.",
+        "Correct. 1e-5 (0.001%) typically targets function words like 'the', 'and', 'in' while preserving most content words.",
+        "Incorrect. 1e-7 would be too restrictive and would miss some function words that should be downsampled."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "downsampling",
+        "threshold",
+        "frequent-words"
+      ]
+    },
+    {
+      "id": "WEM_089",
+      "question": "What is the purpose of word embedding alignment between different models or languages?",
+      "options": [
+        "To make all embeddings the same size",
+        "To map corresponding concepts across different embedding spaces",
+        "To improve training speed",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Embedding alignment maps corresponding words or concepts between different embedding spaces, enabling cross-lingual applications or comparing models trained on different corpora.",
+      "optionExplanations": [
+        "Incorrect. Alignment doesn't change embedding dimensions but rather finds transformations between spaces.",
+        "Correct. Alignment finds transformations that map 'cat' in English embeddings to 'chat' in French embeddings, enabling cross-lingual tasks.",
+        "Incorrect. Alignment is typically done after training and doesn't affect the speed of the original training.",
+        "Incorrect. Alignment doesn't reduce memory usage; it may actually require additional transformation matrices."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "embedding-alignment",
+        "cross-lingual",
+        "transformation"
+      ]
+    },
+    {
+      "id": "WEM_090",
+      "question": "What is the Procrustes alignment method for word embeddings?",
+      "options": [
+        "A method for training embeddings faster",
+        "A method for finding orthogonal transformations between embedding spaces",
+        "A method for reducing embedding dimensions",
+        "A method for handling out-of-vocabulary words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Procrustes alignment finds the optimal orthogonal transformation (rotation and reflection) to align one embedding space with another, preserving distances within each space.",
+      "optionExplanations": [
+        "Incorrect. Procrustes alignment is applied after training to align existing embeddings, not to speed up training.",
+        "Correct. Procrustes finds the optimal rotation matrix to align two embedding spaces while preserving their internal geometric structure.",
+        "Incorrect. Procrustes alignment doesn't change dimensions but finds transformations between spaces of the same dimension.",
+        "Incorrect. OOV words are handled by methods like FastText's subword approach, not by alignment techniques."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "procrustes-alignment",
+        "orthogonal-transformation",
+        "space-alignment"
+      ]
+    },
+    {
+      "id": "WEM_091",
+      "question": "What constraint does Procrustes alignment impose on the transformation?",
+      "options": [
+        "The transformation must be linear",
+        "The transformation must be orthogonal (preserve distances)",
+        "The transformation must reduce dimensions",
+        "The transformation must be reversible"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Procrustes alignment finds orthogonal transformations that preserve distances and angles within each embedding space, ensuring geometric structure is maintained.",
+      "optionExplanations": [
+        "Incorrect. While orthogonal transformations are linear, the key constraint is orthogonality, not just linearity.",
+        "Correct. Orthogonal transformations preserve dot products, distances, and angles, maintaining the geometric structure of embeddings.",
+        "Incorrect. Procrustes alignment works between spaces of the same dimension and doesn't reduce dimensionality.",
+        "Incorrect. While orthogonal transformations are reversible, the key property is distance preservation, not reversibility per se."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "procrustes-alignment",
+        "orthogonal-constraint",
+        "distance-preservation"
+      ]
+    },
+    {
+      "id": "WEM_092",
+      "question": "What is the main application of cross-lingual word embedding alignment?",
+      "options": [
+        "Improving monolingual word embeddings",
+        "Machine translation and cross-lingual transfer learning",
+        "Reducing computational costs",
+        "Handling polysemous words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-lingual alignment enables machine translation by mapping words across languages and allows transfer learning where models trained on one language can be applied to another.",
+      "optionExplanations": [
+        "Incorrect. Cross-lingual alignment works between languages, not within a single language for improvement.",
+        "Correct. Alignment enables finding translation pairs and transferring NLP models trained on resource-rich languages to resource-poor ones.",
+        "Incorrect. Cross-lingual alignment adds computational overhead rather than reducing it.",
+        "Incorrect. Polysemy is about multiple meanings within a language; cross-lingual alignment is about mapping between languages."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-lingual",
+        "machine-translation",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "WEM_093",
+      "question": "What is the hubness problem in high-dimensional embedding spaces?",
+      "options": [
+        "Some dimensions become more important than others",
+        "Some points become nearest neighbors to many other points",
+        "Embeddings cluster too tightly together",
+        "Training becomes unstable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hubness occurs when certain points (hubs) appear as nearest neighbors to disproportionately many other points, distorting similarity-based applications in high-dimensional spaces.",
+      "optionExplanations": [
+        "Incorrect. While dimension importance varies, hubness specifically refers to certain points dominating nearest neighbor relationships.",
+        "Correct. Hubs are points that appear in the k-nearest neighbors of many other points, creating skewed similarity distributions.",
+        "Incorrect. Hubness is about asymmetric nearest neighbor relationships, not overall clustering tightness.",
+        "Incorrect. Hubness affects the use of trained embeddings, not the training stability itself."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hubness",
+        "nearest-neighbors",
+        "high-dimensional"
+      ]
+    },
+    {
+      "id": "WEM_094",
+      "question": "How can the hubness problem be mitigated?",
+      "options": [
+        "Using lower-dimensional embeddings",
+        "Applying normalization or using alternative similarity measures",
+        "Training for more epochs",
+        "Using larger vocabularies"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hubness can be reduced through techniques like centering and normalization of embeddings, or using alternative similarity measures that are less prone to hubness effects.",
+      "optionExplanations": [
+        "Incorrect. While lower dimensions might reduce hubness, this could also lose important semantic information.",
+        "Correct. Centering embeddings (subtracting mean) and using normalized measures can reduce hubness effects in similarity computations.",
+        "Incorrect. Training duration doesn't address the fundamental geometric issue of hubness in high-dimensional spaces.",
+        "Incorrect. Vocabulary size doesn't directly affect the hubness phenomenon in the embedding space."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hubness",
+        "mitigation",
+        "normalization"
+      ]
+    },
+    {
+      "id": "WEM_095",
+      "question": "What is the difference between additive and multiplicative compositionality in embeddings?",
+      "options": [
+        "Additive uses vector addition, multiplicative uses element-wise multiplication",
+        "Additive is faster, multiplicative is more accurate",
+        "Additive works for phrases, multiplicative works for sentences",
+        "There is no significant difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Additive compositionality combines word vectors through addition (or averaging), while multiplicative compositionality uses element-wise multiplication to combine semantic information.",
+      "optionExplanations": [
+        "Correct. Additive methods sum or average vectors (king + queen), while multiplicative methods use element-wise multiplication of vector components.",
+        "Incorrect. Speed and accuracy differences depend on implementation and task; the fundamental difference is the mathematical operation.",
+        "Incorrect. Both methods can be applied to phrases or sentences; the choice depends on the semantic theory and empirical performance.",
+        "Incorrect. The mathematical operations are fundamentally different and can lead to different semantic interpretations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "compositionality",
+        "additive",
+        "multiplicative"
+      ]
+    },
+    {
+      "id": "WEM_096",
+      "question": "What is the main limitation of multiplicative compositionality?",
+      "options": [
+        "It's computationally more expensive than addition",
+        "Zero values in any dimension make the entire result zero",
+        "It requires longer embedding vectors",
+        "It only works with positive values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Element-wise multiplication has the problem that if any word has a zero (or near-zero) value in a dimension, the entire composed representation becomes zero in that dimension, potentially losing information.",
+      "optionExplanations": [
+        "Incorrect. Element-wise multiplication has similar computational complexity to addition.",
+        "Correct. If one word vector has zero in dimension i, the multiplicative composition will be zero in dimension i regardless of other words.",
+        "Incorrect. Vector length requirements are the same for both additive and multiplicative approaches.",
+        "Incorrect. Multiplicative composition can work with negative values, though the zero problem still applies."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multiplicative-compositionality",
+        "zero-problem",
+        "limitations"
+      ]
+    },
+    {
+      "id": "WEM_097",
+      "question": "What is the geometric interpretation of the king-man+woman=queen analogy?",
+      "options": [
+        "The words form a square in embedding space",
+        "The relationship forms parallel vectors representing the gender difference",
+        "The words are equidistant from each other",
+        "The analogy only works in 2D space"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The analogy works because the vector from 'man' to 'king' is approximately parallel to the vector from 'woman' to 'queen', representing the same relationship (gender difference) in vector space.",
+      "optionExplanations": [
+        "Incorrect. The geometric relationship is about parallel vectors, not necessarily forming a perfect square.",
+        "Correct. vec(king) - vec(man) ≈ vec(queen) - vec(woman), showing that gender relationships are encoded as consistent vector directions.",
+        "Incorrect. The words are not equidistant; the key is that relationship vectors are parallel.",
+        "Incorrect. The analogy works in high-dimensional space; 2D is just used for visualization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "geometric-interpretation",
+        "parallel-vectors",
+        "analogies"
+      ]
+    },
+    {
+      "id": "WEM_098",
+      "question": "What does it mean when we say word embeddings capture 'linear relationships'?",
+      "options": [
+        "Word vectors are arranged in straight lines",
+        "Semantic relationships can be expressed as vector differences that generalize across word pairs",
+        "The embedding space is one-dimensional",
+        "Words are ordered linearly by frequency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear relationships mean consistent semantic relationships (like gender, tense, or plural) are represented by consistent vector directions that apply across different word pairs.",
+      "optionExplanations": [
+        "Incorrect. Words don't need to be physically arranged in lines; linearity refers to relationship consistency.",
+        "Correct. The 'gender' relationship vector works consistently: vec(king)-vec(man) ≈ vec(queen)-vec(woman) ≈ vec(actress)-vec(actor).",
+        "Incorrect. Embedding spaces are typically high-dimensional (100-300 dimensions).",
+        "Incorrect. Linear relationships refer to semantic patterns, not frequency-based ordering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "linear-relationships",
+        "vector-differences",
+        "consistency"
+      ]
+    },
+    {
+      "id": "WEM_099",
+      "question": "What is the main challenge in evaluating word embeddings for downstream tasks?",
+      "options": [
+        "Embeddings are too slow to use in real applications",
+        "Good performance on intrinsic tasks doesn't guarantee good downstream performance",
+        "Embeddings are too large for most applications",
+        "There are no standard evaluation metrics"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main challenge is that embeddings that perform well on word similarity or analogy tasks may not necessarily improve performance on real NLP applications like sentiment analysis or named entity recognition.",
+      "optionExplanations": [
+        "Incorrect. Modern embeddings are generally efficient enough for most applications.",
+        "Correct. High scores on similarity benchmarks don't guarantee that embeddings will improve downstream NLP task performance.",
+        "Incorrect. While size can be a concern, it's not the main evaluation challenge.",
+        "Incorrect. There are established metrics for downstream tasks; the challenge is the disconnect between intrinsic and extrinsic performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-challenge",
+        "intrinsic-vs-extrinsic",
+        "downstream-tasks"
+      ]
+    },
+    {
+      "id": "WEM_100",
+      "question": "What is the most important factor to consider when choosing word embeddings for a specific application?",
+      "options": [
+        "The size of the embedding vectors",
+        "The speed of training the embeddings",
+        "The domain and task-specific performance of the embeddings",
+        "The popularity of the embedding method"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The most crucial factor is how well the embeddings perform on your specific domain and task, as embeddings trained on general text may not capture domain-specific meanings and relationships.",
+      "optionExplanations": [
+        "Incorrect. While vector size matters for computational efficiency, it's less important than task-relevant performance.",
+        "Incorrect. For most applications, you use pre-trained embeddings, so training speed is irrelevant.",
+        "Correct. Medical embeddings for medical NLP, legal embeddings for legal tasks, etc. Domain-specific performance trumps other considerations.",
+        "Incorrect. Popularity doesn't guarantee suitability for your specific use case and domain."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "application-choice",
+        "domain-specificity",
+        "task-performance"
+      ]
+    }
+  ]
+}

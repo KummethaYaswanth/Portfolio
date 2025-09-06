@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_FEG",
+  "subtopicName": "Feature Engineering",
+  "str": 0.750,
+  "description": "Comprehensive coverage of feature engineering techniques including scaling, encoding, missing data handling, feature creation, polynomial features, and binning methods",
+  "questions": [
+    {
+      "id": "FEG_001",
+      "question": "Which normalization technique scales features to a range between 0 and 1?",
+      "options": [
+        "Min-Max Scaling",
+        "Standard Scaling",
+        "Robust Scaling",
+        "Unit Vector Scaling"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Min-Max Scaling transforms features to a fixed range [0,1] using the formula: (X - X_min) / (X_max - X_min)",
+      "optionExplanations": [
+        "Min-Max Scaling correctly scales features to [0,1] range by subtracting minimum and dividing by range",
+        "Standard Scaling centers data around mean=0 and std=1, but doesn't guarantee [0,1] range",
+        "Robust Scaling uses median and IQR, doesn't guarantee [0,1] range",
+        "Unit Vector Scaling scales to unit norm, not [0,1] range"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-scaling",
+        "normalization",
+        "min-max"
+      ]
+    },
+    {
+      "id": "FEG_002",
+      "question": "What is the primary advantage of Standard Scaling over Min-Max Scaling?",
+      "options": [
+        "Always produces values between 0 and 1",
+        "Less sensitive to outliers",
+        "More robust to outliers",
+        "Faster computation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Standard Scaling is more robust to outliers because it uses mean and standard deviation, which are less affected by extreme values compared to min/max values used in Min-Max scaling",
+      "optionExplanations": [
+        "Standard Scaling doesn't guarantee [0,1] range - it centers around mean=0 with std=1",
+        "Standard Scaling is actually more sensitive to outliers than robust scaling methods",
+        "Standard Scaling is more robust to outliers than Min-Max scaling because extreme values don't directly determine the scaling parameters",
+        "Computation speed is similar between both methods"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "standard-scaling",
+        "outliers"
+      ]
+    },
+    {
+      "id": "FEG_003",
+      "question": "Which encoding technique is most suitable for nominal categorical variables with no ordinal relationship?",
+      "options": [
+        "Label Encoding",
+        "Ordinal Encoding",
+        "One-Hot Encoding",
+        "Binary Encoding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "One-Hot Encoding is ideal for nominal categories as it creates binary columns for each category without imposing any artificial ordering",
+      "optionExplanations": [
+        "Label Encoding assigns arbitrary numbers which can mislead algorithms into thinking there's an order",
+        "Ordinal Encoding is specifically for categories with natural ordering",
+        "One-Hot Encoding creates separate binary features for each category, preserving the nominal nature",
+        "Binary Encoding reduces dimensionality but may not be necessary for smaller category counts"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "categorical-encoding",
+        "one-hot",
+        "nominal"
+      ]
+    },
+    {
+      "id": "FEG_004",
+      "question": "What problem does the 'curse of dimensionality' refer to in the context of One-Hot Encoding?",
+      "options": [
+        "Increased memory usage only",
+        "Sparse matrices and increased computational complexity",
+        "Loss of information",
+        "Reduced model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The curse of dimensionality in One-Hot Encoding refers to the creation of sparse, high-dimensional matrices that increase computational complexity and memory requirements",
+      "optionExplanations": [
+        "Memory usage is increased, but this is just one aspect of the broader dimensionality problem",
+        "One-Hot Encoding creates sparse matrices with many zeros, leading to high dimensionality and computational challenges",
+        "One-Hot Encoding preserves all information, doesn't lose any",
+        "Dimensionality itself doesn't directly reduce accuracy, though it can affect model performance indirectly"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "one-hot-encoding",
+        "curse-dimensionality",
+        "sparse-matrix"
+      ]
+    },
+    {
+      "id": "FEG_005",
+      "question": "When should you use Mean Imputation for handling missing values?",
+      "options": [
+        "Always as the default method",
+        "When data is Missing Completely At Random (MCAR)",
+        "For categorical variables",
+        "When there are many outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mean imputation is most appropriate when data is MCAR, as it doesn't introduce bias. For other missing data patterns, it can distort distributions and relationships",
+      "optionExplanations": [
+        "Mean imputation shouldn't be used by default as it can introduce bias in many scenarios",
+        "Mean imputation works best under MCAR assumption where missingness is completely random",
+        "Mean imputation is for numerical variables, not categorical ones",
+        "Mean imputation with outliers can lead to poor estimates as mean is sensitive to extreme values"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-data",
+        "mean-imputation",
+        "MCAR"
+      ]
+    },
+    {
+      "id": "FEG_006",
+      "question": "What is the main disadvantage of using Mode Imputation for categorical variables?",
+      "options": [
+        "It's computationally expensive",
+        "It can't handle numerical data",
+        "It reduces variance and can create artificial patterns",
+        "It introduces random noise"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Mode imputation reduces variance by overrepresenting the most common category, potentially creating artificial patterns and biasing the distribution",
+      "optionExplanations": [
+        "Mode imputation is computationally simple and fast",
+        "Mode imputation is designed for categorical data, not numerical data",
+        "Mode imputation artificially increases the frequency of the most common category, reducing natural variance",
+        "Mode imputation is deterministic, not random - it always uses the most frequent value"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-data",
+        "mode-imputation",
+        "categorical"
+      ]
+    },
+    {
+      "id": "FEG_007",
+      "question": "Which technique combines multiple features to create interaction terms?",
+      "options": [
+        "Feature Selection",
+        "Principal Component Analysis",
+        "Polynomial Feature Generation",
+        "Feature Scaling"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Polynomial Feature Generation creates interaction terms by combining features through multiplication, enabling models to capture non-linear relationships",
+      "optionExplanations": [
+        "Feature Selection reduces features, doesn't create interactions between them",
+        "PCA creates linear combinations but for dimensionality reduction, not interaction modeling",
+        "Polynomial Feature Generation explicitly creates interaction terms like X1*X2, X1*X2*X3, etc.",
+        "Feature Scaling transforms individual features but doesn't create interactions"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-creation",
+        "polynomial-features",
+        "interactions"
+      ]
+    },
+    {
+      "id": "FEG_008",
+      "question": "What is the primary purpose of binning continuous variables?",
+      "options": [
+        "To reduce memory usage",
+        "To handle non-linear relationships and reduce noise",
+        "To increase the number of features",
+        "To normalize the data distribution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Binning converts continuous variables into categorical ones, helping capture non-linear patterns and reducing the impact of noise and outliers",
+      "optionExplanations": [
+        "Memory usage may actually increase when binning creates multiple categorical columns",
+        "Binning helps capture non-linear relationships by creating step functions and reduces noise by grouping similar values",
+        "Binning typically reduces the effective number of distinct values, not increases features",
+        "Binning doesn't normalize distributions - it discretizes them into categories"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "binning",
+        "discretization",
+        "non-linear"
+      ]
+    },
+    {
+      "id": "FEG_009",
+      "question": "Which binning method ensures equal number of observations in each bin?",
+      "options": [
+        "Equal Width Binning",
+        "Equal Frequency Binning (Quantile)",
+        "K-Means Binning",
+        "Entropy-based Binning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Equal Frequency Binning (also called Quantile Binning) divides data so each bin contains approximately the same number of observations",
+      "optionExplanations": [
+        "Equal Width Binning creates bins of equal range but unequal frequencies",
+        "Equal Frequency Binning ensures each bin has roughly the same number of data points",
+        "K-Means Binning clusters data points but doesn't guarantee equal frequencies",
+        "Entropy-based Binning optimizes information gain, not equal frequencies"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binning",
+        "quantile",
+        "equal-frequency"
+      ]
+    },
+    {
+      "id": "FEG_010",
+      "question": "What is the risk of applying feature scaling after train-test split incorrectly?",
+      "options": [
+        "Increased computational time",
+        "Data leakage from test set to training set",
+        "Loss of interpretability",
+        "Overfitting on training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "If scaling parameters (like mean, std, min, max) are computed on the entire dataset before splitting, information from the test set leaks into training, leading to overly optimistic performance estimates",
+      "optionExplanations": [
+        "Computational time is not significantly affected by the order of operations",
+        "Computing scaling parameters on the full dataset before splitting causes test set information to influence training set preprocessing",
+        "Interpretability issues exist regardless of when scaling is applied",
+        "The order of scaling doesn't directly cause overfitting, but data leakage can mask overfitting"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "data-leakage",
+        "train-test-split"
+      ]
+    },
+    {
+      "id": "FEG_011",
+      "question": "Which technique is best for encoding high-cardinality categorical variables?",
+      "options": [
+        "One-Hot Encoding",
+        "Label Encoding",
+        "Target Encoding",
+        "Ordinal Encoding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Target Encoding (mean encoding) is effective for high-cardinality categorical variables as it creates a single numerical feature instead of many binary columns",
+      "optionExplanations": [
+        "One-Hot Encoding creates too many dimensions for high-cardinality variables, leading to curse of dimensionality",
+        "Label Encoding assigns arbitrary order which can mislead algorithms",
+        "Target Encoding replaces categories with their target mean, handling high cardinality efficiently while preserving predictive information",
+        "Ordinal Encoding imposes artificial ordering on nominal categories"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical-encoding",
+        "high-cardinality",
+        "target-encoding"
+      ]
+    },
+    {
+      "id": "FEG_012",
+      "question": "What is a major risk when using Target Encoding?",
+      "options": [
+        "Increased computational complexity",
+        "Loss of categorical information",
+        "Target leakage and overfitting",
+        "Memory usage problems"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Target Encoding can cause overfitting because it directly uses target variable information to encode features, potentially leading to inflated performance on training data",
+      "optionExplanations": [
+        "Target Encoding is computationally efficient compared to one-hot encoding",
+        "Target Encoding preserves predictive information about categories",
+        "Using target information to encode features can cause the model to memorize training patterns, leading to poor generalization",
+        "Target Encoding reduces memory usage compared to one-hot encoding"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "target-encoding",
+        "overfitting",
+        "target-leakage"
+      ]
+    },
+    {
+      "id": "FEG_013",
+      "question": "Which scaling method is most robust to outliers?",
+      "options": [
+        "Min-Max Scaling",
+        "Standard Scaling",
+        "Robust Scaling",
+        "Unit Vector Scaling"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Robust Scaling uses median and Interquartile Range (IQR) which are less sensitive to outliers compared to mean/std or min/max values",
+      "optionExplanations": [
+        "Min-Max Scaling is highly sensitive to outliers as it uses minimum and maximum values",
+        "Standard Scaling uses mean and standard deviation which are affected by outliers",
+        "Robust Scaling uses median (50th percentile) and IQR (75th - 25th percentile) which are robust to outliers",
+        "Unit Vector Scaling normalizes by vector magnitude, still affected by outlier values"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-scaling",
+        "robust-scaling",
+        "outliers"
+      ]
+    },
+    {
+      "id": "FEG_014",
+      "question": "What is the formula for Min-Max Scaling?",
+      "options": [
+        "(X - mean) / std",
+        "(X - X_min) / (X_max - X_min)",
+        "(X - median) / IQR",
+        "X / ||X||"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Min-Max Scaling formula is (X - X_min) / (X_max - X_min), which transforms data to [0,1] range",
+      "optionExplanations": [
+        "This is the Standard Scaling (Z-score normalization) formula",
+        "This is the correct Min-Max Scaling formula that transforms features to [0,1] range",
+        "This is the Robust Scaling formula using median and Interquartile Range",
+        "This is Unit Vector Scaling formula for L2 normalization"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "min-max-scaling",
+        "formula",
+        "normalization"
+      ]
+    },
+    {
+      "id": "FEG_015",
+      "question": "When dealing with missing values, what does MICE stand for?",
+      "options": [
+        "Multiple Imputation by Chained Equations",
+        "Mean Imputation for Categorical Estimates",
+        "Maximum Information Content Estimation",
+        "Missing Information Correction Engine"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "MICE stands for Multiple Imputation by Chained Equations, an advanced technique that models each incomplete variable based on other variables",
+      "optionExplanations": [
+        "MICE is Multiple Imputation by Chained Equations, which creates multiple imputed datasets using iterative modeling",
+        "This is not what MICE stands for - it's not specifically about categorical estimates",
+        "This is not the correct expansion of MICE acronym",
+        "This is not the correct expansion of MICE acronym"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-data",
+        "MICE",
+        "multiple-imputation"
+      ]
+    },
+    {
+      "id": "FEG_016",
+      "question": "Which feature creation technique helps capture seasonality in time series data?",
+      "options": [
+        "Polynomial Features",
+        "Interaction Terms",
+        "Cyclical Encoding",
+        "Binning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cyclical Encoding using sine and cosine transformations captures periodic patterns like seasonality in time series data",
+      "optionExplanations": [
+        "Polynomial Features capture non-linear relationships but not cyclical patterns",
+        "Interaction Terms combine features but don't specifically address seasonality",
+        "Cyclical Encoding using trigonometric functions (sin/cos) effectively captures repeating seasonal patterns",
+        "Binning discretizes variables but doesn't specifically capture cyclical nature"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-creation",
+        "cyclical-encoding",
+        "time-series"
+      ]
+    },
+    {
+      "id": "FEG_017",
+      "question": "What is the main advantage of Binary Encoding over One-Hot Encoding?",
+      "options": [
+        "Better interpretability",
+        "Handles missing values better",
+        "Reduces dimensionality significantly",
+        "Works better with numerical data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Binary Encoding reduces dimensionality from n categories to log2(n) binary features, making it more efficient for high-cardinality variables",
+      "optionExplanations": [
+        "Binary Encoding is less interpretable as it uses binary representation of category indices",
+        "Both techniques handle missing values similarly",
+        "Binary Encoding creates log2(n) features instead of n features, significantly reducing dimensionality",
+        "Both techniques are for categorical data, not specifically numerical"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binary-encoding",
+        "dimensionality",
+        "categorical-encoding"
+      ]
+    },
+    {
+      "id": "FEG_018",
+      "question": "Which imputation method preserves the original data distribution best?",
+      "options": [
+        "Mean Imputation",
+        "Median Imputation",
+        "Multiple Imputation",
+        "Forward Fill"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multiple Imputation preserves the original distribution by creating multiple plausible values and accounting for imputation uncertainty",
+      "optionExplanations": [
+        "Mean Imputation reduces variance and distorts the distribution",
+        "Median Imputation also reduces variance, though less than mean imputation",
+        "Multiple Imputation creates multiple datasets with different plausible values, preserving the natural variability and distribution",
+        "Forward Fill is for time series and doesn't preserve statistical distributions"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multiple-imputation",
+        "distribution",
+        "missing-data"
+      ]
+    },
+    {
+      "id": "FEG_019",
+      "question": "What is the purpose of adding polynomial features of degree 2?",
+      "options": [
+        "To reduce overfitting",
+        "To capture quadratic relationships",
+        "To handle missing values",
+        "To reduce dimensionality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Polynomial features of degree 2 add squared terms and interaction terms, allowing linear models to capture quadratic and interaction effects",
+      "optionExplanations": [
+        "Adding polynomial features typically increases model complexity and can increase overfitting risk",
+        "Degree 2 polynomial features include X², X₁X₂ terms that capture quadratic and interaction relationships",
+        "Polynomial features don't address missing values",
+        "Polynomial features increase dimensionality, not reduce it"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "polynomial-features",
+        "quadratic",
+        "feature-creation"
+      ]
+    },
+    {
+      "id": "FEG_020",
+      "question": "In feature scaling, when should you fit the scaler only on training data?",
+      "options": [
+        "Never, always use all data",
+        "Only for Min-Max scaling",
+        "Always, to prevent data leakage",
+        "Only when there are outliers"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The scaler should always be fitted only on training data to prevent data leakage, then applied to both training and test sets using the same parameters",
+      "optionExplanations": [
+        "Using all data for fitting creates data leakage from test set",
+        "This principle applies to all scaling methods, not just Min-Max",
+        "Fitting only on training data prevents test set information from influencing the preprocessing parameters",
+        "This principle applies regardless of outliers presence"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "data-leakage",
+        "training"
+      ]
+    },
+    {
+      "id": "FEG_021",
+      "question": "Which encoding is most appropriate for ordinal categorical variables?",
+      "options": [
+        "One-Hot Encoding",
+        "Label Encoding",
+        "Ordinal Encoding",
+        "Binary Encoding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Ordinal Encoding assigns meaningful numerical values that preserve the natural ordering of ordinal categories",
+      "optionExplanations": [
+        "One-Hot Encoding treats categories as nominal, losing the ordinal information",
+        "Label Encoding assigns arbitrary numbers without considering the natural order",
+        "Ordinal Encoding specifically preserves the meaningful order of ordinal categories",
+        "Binary Encoding doesn't preserve ordinal relationships"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ordinal-encoding",
+        "categorical-encoding",
+        "ordinal"
+      ]
+    },
+    {
+      "id": "FEG_022",
+      "question": "What is the main disadvantage of forward fill imputation in time series?",
+      "options": [
+        "High computational cost",
+        "Can create unrealistic constant values over long periods",
+        "Only works with numerical data",
+        "Requires sorted data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forward fill can create unrealistic flat lines when there are long consecutive missing periods, not reflecting natural data variation",
+      "optionExplanations": [
+        "Forward fill is computationally efficient",
+        "Extended periods of missing data result in unrealistic constant values that don't reflect natural variation",
+        "Forward fill works with both numerical and categorical data",
+        "While sorted data helps, this isn't the main disadvantage"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forward-fill",
+        "time-series",
+        "missing-data"
+      ]
+    },
+    {
+      "id": "FEG_023",
+      "question": "Which technique helps reduce the curse of dimensionality when working with many categorical variables?",
+      "options": [
+        "Use One-Hot Encoding for all variables",
+        "Feature Selection or Dimensionality Reduction",
+        "Convert all to numerical using Label Encoding",
+        "Increase the training data size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature Selection removes irrelevant features, while dimensionality reduction techniques like PCA can compress high-dimensional categorical encodings",
+      "optionExplanations": [
+        "One-Hot Encoding for many categorical variables worsens the curse of dimensionality",
+        "Feature Selection and dimensionality reduction directly address high dimensionality issues",
+        "Label Encoding doesn't reduce dimensions and can mislead algorithms with artificial ordering",
+        "More data helps but doesn't address the fundamental dimensionality problem"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse-dimensionality",
+        "feature-selection",
+        "categorical"
+      ]
+    },
+    {
+      "id": "FEG_024",
+      "question": "What is the purpose of log transformation in feature engineering?",
+      "options": [
+        "To handle missing values",
+        "To reduce skewness and stabilize variance",
+        "To create interaction terms",
+        "To encode categorical variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Log transformation reduces right skewness and can stabilize variance, making data more suitable for algorithms that assume normality",
+      "optionExplanations": [
+        "Log transformation doesn't handle missing values",
+        "Log transformation reduces right skewness and can stabilize variance in heteroscedastic data",
+        "Log transformation is a univariate transformation, not for creating interactions",
+        "Log transformation is for numerical data, not categorical encoding"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "log-transformation",
+        "skewness",
+        "variance-stabilization"
+      ]
+    },
+    {
+      "id": "FEG_025",
+      "question": "In K-Means binning, what determines the bin boundaries?",
+      "options": [
+        "Equal intervals",
+        "Equal frequencies",
+        "Cluster centroids",
+        "Quantile values"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "K-Means binning uses cluster centroids to determine bin boundaries, grouping similar values together based on distance to centroids",
+      "optionExplanations": [
+        "Equal intervals is used in equal-width binning",
+        "Equal frequencies is used in quantile binning",
+        "K-Means binning creates clusters and uses centroids to define bin boundaries",
+        "Quantile values are used in equal-frequency binning"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "k-means-binning",
+        "clustering",
+        "centroids"
+      ]
+    },
+    {
+      "id": "FEG_026",
+      "question": "Which technique is used to handle the cold start problem in recommendation systems?",
+      "options": [
+        "One-Hot Encoding",
+        "Feature Hashing",
+        "Content-based Features",
+        "Standard Scaling"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Content-based features help handle cold start problems by using item or user characteristics when historical interaction data is unavailable",
+      "optionExplanations": [
+        "One-Hot Encoding is a general categorical encoding technique",
+        "Feature Hashing reduces dimensionality but doesn't address cold start",
+        "Content-based features use item/user attributes to make predictions for new items/users without interaction history",
+        "Standard Scaling is a normalization technique"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "content-based",
+        "cold-start",
+        "recommendation-systems"
+      ]
+    },
+    {
+      "id": "FEG_027",
+      "question": "What is the main advantage of using Robust Scaling over Standard Scaling?",
+      "options": [
+        "Faster computation",
+        "Better handling of outliers",
+        "Guarantees [0,1] range",
+        "Works better with categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Robust Scaling uses median and IQR which are less affected by outliers compared to mean and standard deviation used in Standard Scaling",
+      "optionExplanations": [
+        "Computation speed is similar between both methods",
+        "Robust Scaling uses statistics (median, IQR) that are less influenced by extreme values",
+        "Robust Scaling doesn't guarantee [0,1] range - it centers around median",
+        "Both are for numerical data scaling, not categorical"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "robust-scaling",
+        "outliers",
+        "feature-scaling"
+      ]
+    },
+    {
+      "id": "FEG_028",
+      "question": "Which missing data pattern is most problematic for analysis?",
+      "options": [
+        "Missing Completely At Random (MCAR)",
+        "Missing At Random (MAR)",
+        "Missing Not At Random (MNAR)",
+        "Systematic Missing"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "MNAR (Missing Not At Random) is most problematic because the missingness depends on unobserved values, making it impossible to model without additional assumptions",
+      "optionExplanations": [
+        "MCAR is the least problematic as missingness is completely random",
+        "MAR can be handled well with appropriate modeling techniques",
+        "MNAR is most problematic because missingness depends on the missing values themselves, requiring strong assumptions for proper handling",
+        "Systematic Missing is a type of MNAR but not a standard classification"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-data",
+        "MNAR",
+        "data-quality"
+      ]
+    },
+    {
+      "id": "FEG_029",
+      "question": "What does Feature Hashing (Hashing Trick) primarily help with?",
+      "options": [
+        "Handling missing values",
+        "Reducing memory usage for high-dimensional sparse features",
+        "Improving model accuracy",
+        "Creating interaction terms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature Hashing maps high-dimensional sparse features to a lower-dimensional space using hash functions, significantly reducing memory usage",
+      "optionExplanations": [
+        "Feature Hashing doesn't address missing values",
+        "Feature Hashing reduces memory by mapping sparse high-dimensional features to fixed-size hash tables",
+        "Feature Hashing may actually slightly reduce accuracy due to hash collisions",
+        "Feature Hashing is for dimensionality reduction, not creating interactions"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-hashing",
+        "dimensionality-reduction",
+        "sparse-features"
+      ]
+    },
+    {
+      "id": "FEG_030",
+      "question": "In polynomial feature generation, what happens when you set degree=3?",
+      "options": [
+        "Only cubic terms are created",
+        "Terms up to degree 3 are created including interactions",
+        "Only interaction terms are created",
+        "Features are cubed individually"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Setting degree=3 creates all polynomial terms up to degree 3, including individual features, squares, cubes, and all interaction combinations up to degree 3",
+      "optionExplanations": [
+        "Degree=3 creates terms of all degrees up to 3, not just cubic terms",
+        "Polynomial features with degree=3 creates 1, X, X², X³, XY, XZ, XYZ, X²Y, etc. - all combinations up to degree 3",
+        "It creates individual terms, squares, cubes, and interactions",
+        "It creates much more than just individual cubic terms"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial-features",
+        "degree",
+        "interactions"
+      ]
+    },
+    {
+      "id": "FEG_031",
+      "question": "Which binning method is best when you want each bin to represent similar business significance?",
+      "options": [
+        "Equal Width Binning",
+        "Equal Frequency Binning",
+        "Domain-based Binning",
+        "K-Means Binning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Domain-based binning uses business logic and domain expertise to create meaningful bins that represent important business thresholds or categories",
+      "optionExplanations": [
+        "Equal Width Binning uses mathematical intervals, not business significance",
+        "Equal Frequency Binning ensures equal sample sizes but ignores business meaning",
+        "Domain-based binning incorporates business knowledge to create meaningful, interpretable bins",
+        "K-Means Binning uses statistical clustering, not business logic"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-based-binning",
+        "business-logic",
+        "binning"
+      ]
+    },
+    {
+      "id": "FEG_032",
+      "question": "What is the primary concern when using Target Encoding in cross-validation?",
+      "options": [
+        "Computational complexity",
+        "Memory usage",
+        "Target leakage across folds",
+        "Loss of information"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Target Encoding must be computed separately for each fold to prevent target information from test folds leaking into training folds",
+      "optionExplanations": [
+        "Computational complexity is manageable for Target Encoding",
+        "Memory usage is actually reduced compared to one-hot encoding",
+        "Target Encoding parameters must be computed on each training fold separately to prevent leakage from validation folds",
+        "Target Encoding preserves predictive information rather than losing it"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "target-encoding",
+        "cross-validation",
+        "target-leakage"
+      ]
+    },
+    {
+      "id": "FEG_033",
+      "question": "Which transformation is most effective for handling right-skewed data?",
+      "options": [
+        "Square root transformation",
+        "Square transformation",
+        "Linear scaling",
+        "Z-score normalization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Square root transformation compresses larger values more than smaller values, effectively reducing right skewness in data distributions",
+      "optionExplanations": [
+        "Square root transformation compresses the right tail, reducing right skewness effectively",
+        "Square transformation increases right skewness rather than reducing it",
+        "Linear scaling preserves the shape of distribution including skewness",
+        "Z-score normalization centers and scales but doesn't change skewness"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "skewness",
+        "transformation",
+        "square-root"
+      ]
+    },
+    {
+      "id": "FEG_034",
+      "question": "In feature engineering, what is the purpose of creating lag features?",
+      "options": [
+        "To handle missing values",
+        "To capture temporal dependencies in time series",
+        "To reduce overfitting",
+        "To encode categorical variables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lag features use previous time period values as features for the current prediction, helping models learn temporal patterns and dependencies",
+      "optionExplanations": [
+        "Lag features don't specifically handle missing values",
+        "Lag features capture how past values influence current outcomes, essential for time series modeling",
+        "Lag features can actually increase overfitting risk if not properly managed",
+        "Lag features are for temporal data, not categorical encoding"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lag-features",
+        "time-series",
+        "temporal-dependencies"
+      ]
+    },
+    {
+      "id": "FEG_035",
+      "question": "What is the main drawback of using too many polynomial features?",
+      "options": [
+        "Reduced interpretability",
+        "Overfitting and curse of dimensionality",
+        "Slower prediction time",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Too many polynomial features cause multiple problems: overfitting due to high complexity, curse of dimensionality from too many features, reduced interpretability, and slower computation",
+      "optionExplanations": [
+        "Polynomial features do reduce interpretability, but this is not the only drawback",
+        "Overfitting and dimensionality issues occur, but there are other problems too",
+        "Slower computation is an issue, but not the only one",
+        "All mentioned issues occur with excessive polynomial features: overfitting, dimensionality curse, interpretability loss, and computational overhead"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial-features",
+        "overfitting",
+        "dimensionality"
+      ]
+    },
+    {
+      "id": "FEG_036",
+      "question": "Which technique helps identify the optimal number of bins in binning?",
+      "options": [
+        "Cross-validation performance",
+        "Sturges' rule",
+        "Information gain analysis",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Multiple approaches can determine optimal bin count: cross-validation tests predictive performance, Sturges' rule provides statistical guidance, and information gain measures discriminative power",
+      "optionExplanations": [
+        "Cross-validation helps but isn't the only method",
+        "Sturges' rule is useful but not the complete solution",
+        "Information gain analysis helps but other methods are also valuable",
+        "All three approaches provide valuable insights for determining optimal bin count from different perspectives"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binning",
+        "optimization",
+        "cross-validation"
+      ]
+    },
+    {
+      "id": "FEG_037",
+      "question": "What is the advantage of using Median Imputation over Mean Imputation?",
+      "options": [
+        "Faster computation",
+        "Better handling of outliers",
+        "Works with categorical data",
+        "Preserves variance better"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Median is robust to outliers, so Median Imputation provides more reliable estimates when the data contains extreme values compared to Mean Imputation",
+      "optionExplanations": [
+        "Both median and mean computation are similarly fast for imputation",
+        "Median is less affected by outliers, making Median Imputation more robust than Mean Imputation",
+        "Neither median nor mean imputation is designed for categorical data",
+        "Both methods reduce variance, median doesn't preserve it better"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "median-imputation",
+        "outliers",
+        "missing-data"
+      ]
+    },
+    {
+      "id": "FEG_038",
+      "question": "Which encoding technique is memory-efficient for text data with large vocabulary?",
+      "options": [
+        "One-Hot Encoding",
+        "Label Encoding",
+        "Feature Hashing",
+        "Binary Encoding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Feature Hashing maps large vocabularies to fixed-size hash tables, making it very memory-efficient for high-cardinality text features",
+      "optionExplanations": [
+        "One-Hot Encoding creates massive sparse matrices for large vocabularies",
+        "Label Encoding assigns arbitrary numbers, not suitable for text and doesn't save much memory",
+        "Feature Hashing maps any number of text features to a fixed-size vector, providing excellent memory efficiency",
+        "Binary Encoding reduces dimensionality but not as effectively as hashing for very large vocabularies"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-hashing",
+        "text-data",
+        "memory-efficiency"
+      ]
+    },
+    {
+      "id": "FEG_039",
+      "question": "What does it mean when we say an imputation method is 'unbiased' under MCAR?",
+      "options": [
+        "It doesn't favor any particular value",
+        "The expected value of imputed data equals the true expected value",
+        "It handles all missing patterns equally",
+        "It preserves the original data order"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Under MCAR (Missing Completely At Random), an unbiased imputation method produces imputed values whose expected value equals what the true complete data expected value would be",
+      "optionExplanations": [
+        "Not favoring particular values is related but doesn't capture the statistical definition of unbiasedness",
+        "Statistical unbiasedness means the expected value of the imputation equals the true parameter value",
+        "Handling missing patterns equally is about consistency, not statistical bias",
+        "Preserving data order is unrelated to statistical bias in imputation"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "imputation-bias",
+        "MCAR",
+        "statistical-bias"
+      ]
+    },
+    {
+      "id": "FEG_040",
+      "question": "In cyclical encoding of time features, why do we use both sine and cosine?",
+      "options": [
+        "To increase the number of features",
+        "To maintain the cyclical distance relationship",
+        "To handle missing values in time",
+        "To reduce computational complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using both sine and cosine preserves the proper distance relationships in cyclical data - for example, 11 PM and 1 AM are close in time but far apart numerically without cyclical encoding",
+      "optionExplanations": [
+        "The goal isn't to increase features but to properly represent cyclical relationships",
+        "Both sine and cosine are needed to maintain proper cyclical distances - sine alone would make values at opposite ends of cycle appear maximally different",
+        "Cyclical encoding doesn't address missing values",
+        "Using both functions adds computation rather than reducing it"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cyclical-encoding",
+        "sine-cosine",
+        "distance-relationship"
+      ]
+    },
+    {
+      "id": "FEG_041",
+      "question": "What is the key difference between Feature Selection and Feature Engineering?",
+      "options": [
+        "Feature Selection is faster",
+        "Feature Selection removes features, Feature Engineering creates/transforms them",
+        "Feature Engineering only works with numerical data",
+        "They are the same process"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature Selection identifies and keeps the most relevant existing features, while Feature Engineering creates new features or transforms existing ones to improve model performance",
+      "optionExplanations": [
+        "Speed difference isn't the key distinguishing factor between these processes",
+        "Feature Selection reduces dimensionality by choosing relevant features, while Feature Engineering creates/transforms features to better represent patterns",
+        "Feature Engineering works with all data types, not just numerical",
+        "These are distinct processes with different goals and methodologies"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-selection",
+        "feature-engineering",
+        "difference"
+      ]
+    },
+    {
+      "id": "FEG_042",
+      "question": "Which scaling method preserves sparsity in sparse matrices?",
+      "options": [
+        "Standard Scaling",
+        "Min-Max Scaling",
+        "MaxAbs Scaling",
+        "Robust Scaling"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "MaxAbs Scaling divides by the maximum absolute value, preserving zeros in sparse matrices since 0/max = 0",
+      "optionExplanations": [
+        "Standard Scaling subtracts mean, converting zeros to negative values and destroying sparsity",
+        "Min-Max Scaling subtracts minimum, typically converting zeros to non-zero values",
+        "MaxAbs Scaling divides by maximum absolute value, keeping zeros as zeros and preserving sparsity",
+        "Robust Scaling subtracts median, typically converting zeros to negative values"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "maxabs-scaling",
+        "sparsity",
+        "sparse-matrices"
+      ]
+    },
+    {
+      "id": "FEG_043",
+      "question": "What is the primary risk of binning continuous variables with too few bins?",
+      "options": [
+        "Increased computational complexity",
+        "Loss of information and underfitting",
+        "Overfitting to training data",
+        "Memory usage issues"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Too few bins cause significant information loss by grouping very different values together, potentially leading to underfitting as important patterns are obscured",
+      "optionExplanations": [
+        "Fewer bins actually reduce computational complexity",
+        "Too few bins lose important granular information and can cause underfitting by oversimplifying relationships",
+        "Too few bins typically lead to underfitting, not overfitting",
+        "Fewer bins use less memory, not more"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binning",
+        "underfitting",
+        "information-loss"
+      ]
+    },
+    {
+      "id": "FEG_044",
+      "question": "In Target Encoding, what is Leave-One-Out encoding designed to prevent?",
+      "options": [
+        "Memory overflow",
+        "Computational complexity",
+        "Overfitting on individual samples",
+        "Information loss"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Leave-One-Out encoding calculates the target mean excluding the current sample to prevent the model from perfectly memorizing individual training examples",
+      "optionExplanations": [
+        "Memory usage isn't the primary concern addressed by Leave-One-Out",
+        "It slightly increases computation but that's not the main purpose",
+        "Leave-One-Out prevents overfitting by ensuring the target encoding for each sample doesn't include that sample's own target value",
+        "It preserves information rather than losing it"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "target-encoding",
+        "leave-one-out",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "FEG_045",
+      "question": "Which transformation should be applied to percentage or proportion data bounded between 0 and 1?",
+      "options": [
+        "Log transformation",
+        "Square root transformation",
+        "Logit transformation",
+        "Box-Cox transformation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Logit transformation ln(p/(1-p)) is specifically designed for proportion data bounded between 0 and 1, mapping it to the entire real line",
+      "optionExplanations": [
+        "Log transformation doesn't handle the upper bound of 1 appropriately",
+        "Square root transformation doesn't properly handle the [0,1] bounded nature",
+        "Logit transformation is specifically designed for proportions, mapping [0,1] to (-∞,+∞)",
+        "Box-Cox can work but logit is more specifically suited for proportion data"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "logit-transformation",
+        "proportion-data",
+        "bounded-data"
+      ]
+    },
+    {
+      "id": "FEG_046",
+      "question": "What is the main advantage of using Interaction Features in linear models?",
+      "options": [
+        "Reduced overfitting",
+        "Faster training time",
+        "Ability to capture non-linear relationships",
+        "Better handling of missing values"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Interaction features allow linear models to capture non-linear relationships by including multiplicative terms between features",
+      "optionExplanations": [
+        "Interaction features typically increase model complexity and overfitting risk",
+        "More features generally increase training time",
+        "Interaction terms like X₁*X₂ allow linear models to capture non-additive, multiplicative relationships",
+        "Interaction features don't address missing values"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interaction-features",
+        "non-linear",
+        "linear-models"
+      ]
+    },
+    {
+      "id": "FEG_047",
+      "question": "Which method is best for handling missing values when the mechanism is MAR (Missing At Random)?",
+      "options": [
+        "Listwise deletion",
+        "Mean imputation",
+        "Multiple imputation or model-based methods",
+        "Forward fill"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For MAR data, sophisticated methods like multiple imputation or model-based approaches that can model the relationship between missingness and observed variables work best",
+      "optionExplanations": [
+        "Listwise deletion can introduce bias and reduce power for MAR data",
+        "Mean imputation ignores the relationships that cause MAR missingness",
+        "Multiple imputation and model-based methods can properly account for the relationships underlying MAR missingness",
+        "Forward fill is for time series and doesn't address MAR mechanisms"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MAR",
+        "multiple-imputation",
+        "model-based-imputation"
+      ]
+    },
+    {
+      "id": "FEG_048",
+      "question": "What is the purpose of regularization when using polynomial features?",
+      "options": [
+        "To increase model complexity",
+        "To prevent overfitting due to high dimensionality",
+        "To improve interpretability",
+        "To handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization (L1/L2) helps control overfitting when polynomial features create high-dimensional, complex models by penalizing large coefficients",
+      "optionExplanations": [
+        "Regularization reduces model complexity, not increases it",
+        "Regularization prevents overfitting by constraining coefficient magnitudes in high-dimensional polynomial feature spaces",
+        "Regularization can hurt interpretability by shrinking coefficients",
+        "Regularization doesn't address missing values"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "polynomial-features",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "FEG_049",
+      "question": "In equal-width binning, what determines the bin boundaries?",
+      "options": [
+        "Data distribution percentiles",
+        "Cluster centroids",
+        "Fixed intervals between min and max values",
+        "Target variable correlations"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Equal-width binning divides the range from minimum to maximum value into equal-sized intervals, regardless of data distribution",
+      "optionExplanations": [
+        "Percentiles are used in equal-frequency binning, not equal-width",
+        "Cluster centroids are used in K-means binning",
+        "Equal-width binning creates bins of equal range size: (max-min)/n_bins",
+        "Target correlations might influence supervised binning methods but not equal-width"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "equal-width-binning",
+        "intervals",
+        "binning"
+      ]
+    },
+    {
+      "id": "FEG_050",
+      "question": "Which encoding method creates the least number of new features for categorical variables?",
+      "options": [
+        "One-Hot Encoding",
+        "Binary Encoding",
+        "Label Encoding",
+        "Target Encoding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Label Encoding creates only one numerical feature regardless of the number of categories, making it the most compact encoding method",
+      "optionExplanations": [
+        "One-Hot Encoding creates n-1 or n binary features for n categories",
+        "Binary Encoding creates log₂(n) features for n categories",
+        "Label Encoding creates exactly one feature by assigning numbers to categories",
+        "Target Encoding also creates one feature but with different methodology"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "label-encoding",
+        "dimensionality",
+        "categorical-encoding"
+      ]
+    },
+    {
+      "id": "FEG_051",
+      "question": "What is the main concern when applying Box-Cox transformation?",
+      "options": [
+        "It only works with positive values",
+        "It's computationally expensive",
+        "It can't handle categorical data",
+        "It reduces interpretability"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Box-Cox transformation requires strictly positive values because it involves logarithmic operations that are undefined for zero or negative numbers",
+      "optionExplanations": [
+        "Box-Cox transformation requires positive values due to the logarithmic component in the formula",
+        "Box-Cox is not particularly computationally expensive",
+        "Box-Cox is designed for numerical data, like most transformations",
+        "While it affects interpretability, the positivity requirement is the main constraint"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "box-cox",
+        "positive-values",
+        "transformation"
+      ]
+    },
+    {
+      "id": "FEG_052",
+      "question": "In feature engineering for text data, what does TF-IDF help achieve?",
+      "options": [
+        "Better handling of missing values",
+        "Reducing the importance of common words",
+        "Creating polynomial features",
+        "Binning text data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TF-IDF (Term Frequency-Inverse Document Frequency) reduces the weight of common words that appear in many documents while highlighting discriminative terms",
+      "optionExplanations": [
+        "TF-IDF doesn't address missing values in text",
+        "TF-IDF downweights words that appear frequently across documents (high DF) and emphasizes rare, discriminative terms",
+        "TF-IDF is not related to polynomial feature creation",
+        "TF-IDF is a weighting scheme, not a binning method"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tf-idf",
+        "text-features",
+        "feature-weighting"
+      ]
+    },
+    {
+      "id": "FEG_053",
+      "question": "Which technique helps handle the problem of different scales in distance-based algorithms?",
+      "options": [
+        "Feature Selection",
+        "Feature Scaling",
+        "Feature Creation",
+        "Feature Encoding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling ensures all features contribute equally to distance calculations in algorithms like KNN, K-means, and SVM with RBF kernels",
+      "optionExplanations": [
+        "Feature Selection removes features but doesn't address scale differences",
+        "Feature Scaling normalizes different scales so no single feature dominates distance calculations",
+        "Feature Creation adds new features but doesn't solve scale issues",
+        "Feature Encoding converts categorical to numerical but doesn't address scale differences"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-scaling",
+        "distance-based",
+        "algorithms"
+      ]
+    },
+    {
+      "id": "FEG_054",
+      "question": "What is the advantage of using entropy-based binning over equal-width binning?",
+      "options": [
+        "Faster computation",
+        "Simpler implementation",
+        "Better preservation of information content",
+        "Requires no hyperparameters"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Entropy-based binning optimizes information gain, creating bins that better preserve the relationship between features and target variables",
+      "optionExplanations": [
+        "Entropy-based binning is computationally more complex than equal-width",
+        "Equal-width binning is simpler to implement",
+        "Entropy-based binning maximizes information gain, preserving predictive information better than arbitrary equal-width bins",
+        "Entropy-based binning requires parameters like minimum samples per bin"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "entropy-based-binning",
+        "information-gain",
+        "supervised-binning"
+      ]
+    },
+    {
+      "id": "FEG_055",
+      "question": "In time series feature engineering, what are rolling window features used for?",
+      "options": [
+        "Handling missing values",
+        "Encoding categorical variables",
+        "Capturing local trends and patterns",
+        "Reducing data size"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rolling window features (like moving averages, rolling std) capture local temporal patterns and trends by aggregating recent historical values",
+      "optionExplanations": [
+        "Rolling windows don't specifically handle missing values",
+        "Rolling windows are for numerical time series, not categorical encoding",
+        "Rolling window features capture short-term trends, volatility, and patterns by computing statistics over recent time periods",
+        "Rolling windows typically increase features rather than reduce data size"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "rolling-window",
+        "time-series",
+        "temporal-patterns"
+      ]
+    },
+    {
+      "id": "FEG_056",
+      "question": "What is the main drawback of using KNN imputation?",
+      "options": [
+        "Only works with numerical data",
+        "High computational complexity for large datasets",
+        "Introduces random noise",
+        "Reduces data variance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN imputation requires calculating distances between all samples, making it computationally expensive for large datasets with O(n²) complexity",
+      "optionExplanations": [
+        "KNN imputation can work with both numerical and categorical data using appropriate distance metrics",
+        "KNN imputation has high computational cost due to distance calculations between all data points",
+        "KNN imputation is deterministic based on nearest neighbors, not random",
+        "KNN imputation can actually preserve variance better than simple statistical methods"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "knn-imputation",
+        "computational-complexity",
+        "scalability"
+      ]
+    },
+    {
+      "id": "FEG_057",
+      "question": "Which transformation is most appropriate for count data (e.g., number of website visits)?",
+      "options": [
+        "Min-Max Scaling",
+        "Log transformation",
+        "Standard Scaling",
+        "Logit transformation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Log transformation is ideal for count data as it handles the right-skewed nature typical of count distributions and stabilizes variance",
+      "optionExplanations": [
+        "Min-Max scaling preserves the skewed distribution of count data",
+        "Log transformation reduces right skewness common in count data and stabilizes variance across different count levels",
+        "Standard scaling doesn't address the skewed nature of count distributions",
+        "Logit transformation is for proportion data bounded between 0 and 1, not counts"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "count-data",
+        "log-transformation",
+        "skewness"
+      ]
+    },
+    {
+      "id": "FEG_058",
+      "question": "What is the purpose of smoothing in Target Encoding?",
+      "options": [
+        "To handle missing values",
+        "To prevent overfitting on categories with few samples",
+        "To increase computational speed",
+        "To handle high cardinality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Smoothing in Target Encoding blends category-specific target means with global means, preventing overfitting on rare categories with few observations",
+      "optionExplanations": [
+        "Smoothing doesn't address missing values directly",
+        "Smoothing combines category means with global mean, stabilizing estimates for rare categories and reducing overfitting",
+        "Smoothing adds computation rather than reducing it",
+        "While useful for high cardinality, smoothing's main purpose is preventing overfitting on small samples"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "target-encoding",
+        "smoothing",
+        "rare-categories"
+      ]
+    },
+    {
+      "id": "FEG_059",
+      "question": "Which feature engineering technique is most suitable for handling seasonal patterns in hourly data?",
+      "options": [
+        "Linear scaling",
+        "Polynomial features",
+        "Fourier transforms",
+        "Binning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fourier transforms decompose time series into frequency components, effectively capturing multiple seasonal patterns (daily, weekly, etc.) in hourly data",
+      "optionExplanations": [
+        "Linear scaling doesn't capture temporal patterns",
+        "Polynomial features don't specifically address seasonality",
+        "Fourier transforms identify cyclical components and seasonal frequencies in time series data",
+        "Binning discretizes values but doesn't capture seasonal patterns"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fourier-transforms",
+        "seasonality",
+        "time-series"
+      ]
+    },
+    {
+      "id": "FEG_060",
+      "question": "What is the key advantage of using Quantile Transformation?",
+      "options": [
+        "Preserves original data distribution",
+        "Creates uniform or normal distributions",
+        "Reduces computational complexity",
+        "Only works with positive data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Quantile Transformation maps data to a uniform distribution or approximates a normal distribution by using cumulative distribution functions",
+      "optionExplanations": [
+        "Quantile Transformation changes the distribution shape rather than preserving it",
+        "Quantile Transformation forces data into uniform [0,1] or normal distribution, making it robust to outliers",
+        "Computational complexity is moderate, not the main advantage",
+        "Quantile Transformation works with any numerical data, not just positive values"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantile-transformation",
+        "distribution",
+        "uniform-normal"
+      ]
+    },
+    {
+      "id": "FEG_061",
+      "question": "In feature engineering, what does 'feature leakage' refer to?",
+      "options": [
+        "Missing values in features",
+        "Features that wouldn't be available at prediction time",
+        "Correlated features in the dataset",
+        "Features with too many categories"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature leakage occurs when features contain information that wouldn't be available at prediction time, leading to overly optimistic model performance estimates",
+      "optionExplanations": [
+        "Missing values are a data quality issue, not leakage",
+        "Feature leakage happens when features include future information or data not available during actual prediction scenarios",
+        "Feature correlation is multicollinearity, not leakage",
+        "High cardinality is a dimensionality issue, not leakage"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-leakage",
+        "temporal-validation",
+        "prediction-time"
+      ]
+    },
+    {
+      "id": "FEG_062",
+      "question": "Which binning approach is most suitable for supervised learning tasks?",
+      "options": [
+        "Equal Width Binning",
+        "Equal Frequency Binning",
+        "Supervised Binning (ChiMerge)",
+        "Random Binning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Supervised binning methods like ChiMerge consider the target variable when creating bins, optimizing for predictive performance rather than just data distribution",
+      "optionExplanations": [
+        "Equal Width Binning ignores target variable information",
+        "Equal Frequency Binning focuses on sample distribution, not predictive value",
+        "Supervised binning incorporates target variable information to create bins that maximize predictive power",
+        "Random binning provides no systematic benefit for supervised learning"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "supervised-binning",
+        "chimerge",
+        "target-aware"
+      ]
+    },
+    {
+      "id": "FEG_063",
+      "question": "What is the main purpose of using feature crosses in machine learning?",
+      "options": [
+        "To reduce dimensionality",
+        "To capture interactions between categorical features",
+        "To handle missing values",
+        "To normalize feature scales"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature crosses create new features by combining categorical features, allowing models to learn specific interactions between category combinations",
+      "optionExplanations": [
+        "Feature crosses increase dimensionality rather than reduce it",
+        "Feature crosses combine categorical features to capture joint effects that individual features might miss",
+        "Feature crosses don't address missing values",
+        "Feature crosses work with categorical data, not numerical scaling"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-crosses",
+        "categorical-interactions",
+        "combinations"
+      ]
+    },
+    {
+      "id": "FEG_064",
+      "question": "Which scaling method should be used when features need to maintain their relative relationships?",
+      "options": [
+        "Min-Max Scaling",
+        "Standard Scaling",
+        "Unit Vector Scaling",
+        "Robust Scaling"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Min-Max Scaling preserves the relative relationships between feature values by applying a linear transformation that maintains proportional differences",
+      "optionExplanations": [
+        "Min-Max scaling preserves relative relationships through linear transformation (X-min)/(max-min)",
+        "Standard scaling changes relative relationships by centering around mean",
+        "Unit Vector scaling normalizes by vector magnitude, changing relative magnitudes",
+        "Robust scaling changes relationships by using median and IQR"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "min-max-scaling",
+        "relative-relationships",
+        "linear-transformation"
+      ]
+    },
+    {
+      "id": "FEG_065",
+      "question": "What is the advantage of using regularized Target Encoding over simple Target Encoding?",
+      "options": [
+        "Faster computation",
+        "Better handling of rare categories and reduced overfitting",
+        "Works with numerical features",
+        "Reduces memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularized Target Encoding adds smoothing/regularization to prevent overfitting on categories with few samples by blending with global statistics",
+      "optionExplanations": [
+        "Regularization adds computational overhead rather than reducing it",
+        "Regularization techniques like smoothing help stabilize estimates for rare categories and reduce overfitting risk",
+        "Both techniques are for categorical features, not numerical",
+        "Memory usage is similar between regularized and simple target encoding"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularized-target-encoding",
+        "smoothing",
+        "rare-categories"
+      ]
+    },
+    {
+      "id": "FEG_066",
+      "question": "In feature engineering for NLP, what is the purpose of n-gram features?",
+      "options": [
+        "To handle missing text data",
+        "To capture word order and context",
+        "To reduce vocabulary size",
+        "To normalize text length"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "N-gram features capture sequences of words (bigrams, trigrams, etc.) preserving word order and local context that individual word features miss",
+      "optionExplanations": [
+        "N-grams don't specifically handle missing text data",
+        "N-grams capture word sequences and context by including consecutive word combinations",
+        "N-grams typically increase feature space rather than reduce vocabulary",
+        "N-grams don't normalize text length"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "n-grams",
+        "NLP",
+        "word-order"
+      ]
+    },
+    {
+      "id": "FEG_067",
+      "question": "What is the main challenge when applying polynomial features to high-dimensional data?",
+      "options": [
+        "Loss of interpretability only",
+        "Exponential growth in feature count",
+        "Increased prediction time only",
+        "Memory usage only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Polynomial features grow exponentially with the number of original features and polynomial degree, creating a combinatorial explosion in high dimensions",
+      "optionExplanations": [
+        "While interpretability is lost, the exponential growth is the primary challenge",
+        "With d features and degree n, polynomial features create O(d^n) combinations, leading to exponential feature explosion",
+        "Prediction time increase is a consequence of the exponential feature growth",
+        "Memory issues stem from the underlying exponential growth problem"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial-features",
+        "exponential-growth",
+        "high-dimensional"
+      ]
+    },
+    {
+      "id": "FEG_068",
+      "question": "Which technique is best for creating features from geospatial data?",
+      "options": [
+        "One-Hot Encoding coordinates",
+        "Distance-based features and spatial binning",
+        "Standard scaling coordinates",
+        "Log transformation of coordinates"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Geospatial data benefits from distance calculations (to landmarks, centers), spatial clustering, and geographic binning rather than treating coordinates as independent numerical features",
+      "optionExplanations": [
+        "One-Hot Encoding coordinates would create too many categories and lose spatial relationships",
+        "Distance features (to POIs, city centers) and spatial binning (geo-hashing, administrative regions) capture spatial relationships effectively",
+        "Simple scaling doesn't capture geographic relationships between coordinates",
+        "Log transformation doesn't preserve spatial meaning of coordinates"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "geospatial",
+        "distance-features",
+        "spatial-binning"
+      ]
+    },
+    {
+      "id": "FEG_069",
+      "question": "What is the purpose of using embedding techniques for categorical features?",
+      "options": [
+        "To reduce memory usage",
+        "To learn dense representations that capture semantic relationships",
+        "To handle missing values",
+        "To speed up computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Embeddings learn dense, low-dimensional representations where similar categories are close in vector space, capturing semantic relationships better than one-hot encoding",
+      "optionExplanations": [
+        "While embeddings can reduce memory vs one-hot, that's not the primary purpose",
+        "Embeddings learn dense vectors where semantically similar categories have similar representations",
+        "Embeddings don't specifically handle missing values",
+        "Computational speed is a side benefit, not the main purpose"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "embeddings",
+        "categorical-features",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "FEG_070",
+      "question": "In feature engineering, what is the difference between imputation and interpolation?",
+      "options": [
+        "They are the same technique",
+        "Imputation fills missing values, interpolation estimates values between known points",
+        "Interpolation only works with time series",
+        "Imputation is more accurate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Imputation fills in missing values using various strategies, while interpolation estimates values at intermediate points between known data points using mathematical functions",
+      "optionExplanations": [
+        "These are different techniques with different purposes and methodologies",
+        "Imputation addresses missing data gaps, while interpolation estimates intermediate values using smooth functions between known points",
+        "Interpolation works with any ordered data, not just time series",
+        "Accuracy depends on the specific method and data characteristics"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "imputation",
+        "interpolation",
+        "missing-values"
+      ]
+    },
+    {
+      "id": "FEG_071",
+      "question": "Which transformation is most effective for handling heteroscedasticity (non-constant variance)?",
+      "options": [
+        "Min-Max Scaling",
+        "Standard Scaling",
+        "Log transformation or Box-Cox",
+        "Label Encoding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Log transformation and Box-Cox transformation can stabilize variance across different levels of the response variable, addressing heteroscedasticity",
+      "optionExplanations": [
+        "Min-Max scaling preserves the relative variance patterns",
+        "Standard scaling normalizes variance globally but doesn't address changing variance patterns",
+        "Log and Box-Cox transformations can stabilize variance by compressing larger values more than smaller ones",
+        "Label Encoding is for categorical variables, not variance stabilization"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "heteroscedasticity",
+        "variance-stabilization",
+        "log-transformation"
+      ]
+    },
+    {
+      "id": "FEG_072",
+      "question": "What is the main advantage of using frequency encoding for categorical variables?",
+      "options": [
+        "Preserves category order",
+        "Captures category importance based on occurrence frequency",
+        "Reduces memory usage",
+        "Handles missing values automatically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Frequency encoding replaces categories with their occurrence counts, providing information about category rarity/commonality which can be predictively valuable",
+      "optionExplanations": [
+        "Frequency encoding doesn't preserve any inherent order of categories",
+        "Frequency encoding captures how common each category is, which often correlates with predictive importance",
+        "Memory usage reduction is minimal compared to other benefits",
+        "Missing values still need separate handling with frequency encoding"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "frequency-encoding",
+        "category-importance",
+        "occurrence-counts"
+      ]
+    },
+    {
+      "id": "FEG_073",
+      "question": "Which feature engineering technique helps address the class imbalance problem indirectly?",
+      "options": [
+        "Standard Scaling",
+        "Feature Selection",
+        "Target Encoding with smoothing",
+        "Polynomial Features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Target Encoding with smoothing can help with class imbalance by providing more stable estimates for minority class categories and incorporating global class distribution information",
+      "optionExplanations": [
+        "Standard Scaling normalizes features but doesn't address class imbalance",
+        "Feature Selection can help but doesn't directly address class distribution",
+        "Target Encoding with smoothing incorporates global target distribution, providing more stable estimates for rare classes",
+        "Polynomial Features increase complexity but don't address class imbalance"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "target-encoding",
+        "class-imbalance",
+        "smoothing"
+      ]
+    },
+    {
+      "id": "FEG_074",
+      "question": "What is the purpose of feature discretization in decision trees?",
+      "options": [
+        "Decision trees automatically handle continuous features",
+        "To create more interpretable splits and reduce overfitting",
+        "To increase model complexity",
+        "To handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "While decision trees can handle continuous features, discretization can create more interpretable rules and potentially reduce overfitting by limiting the number of possible splits",
+      "optionExplanations": [
+        "While decision trees handle continuous features well, discretization can still be beneficial",
+        "Discretization creates clearer decision boundaries and can reduce the complexity of the learned tree structure",
+        "Discretization typically reduces complexity rather than increases it",
+        "Discretization doesn't specifically address missing values"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "discretization",
+        "decision-trees",
+        "interpretability"
+      ]
+    },
+    {
+      "id": "FEG_075",
+      "question": "Which approach is best for handling cyclical features like 'day of week' or 'month'?",
+      "options": [
+        "Label Encoding (0,1,2...)",
+        "One-Hot Encoding",
+        "Sine/Cosine transformation",
+        "Standard Scaling"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sine/Cosine transformation preserves the cyclical nature where the last value (e.g., December) is close to the first value (e.g., January)",
+      "optionExplanations": [
+        "Label Encoding creates artificial distances (December=11, January=0 seem far apart)",
+        "One-Hot Encoding treats all values as equally different, losing cyclical relationships",
+        "Sine/Cosine transformation maintains cyclical distance relationships (December and January are close)",
+        "Standard Scaling doesn't address the cyclical nature of the data"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cyclical-features",
+        "sine-cosine",
+        "temporal-features"
+      ]
+    },
+    {
+      "id": "FEG_076",
+      "question": "What is the main disadvantage of using too many interaction terms in polynomial features?",
+      "options": [
+        "Reduced model accuracy",
+        "Overfitting and computational complexity",
+        "Loss of original feature information",
+        "Incompatibility with linear models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Too many interaction terms lead to high dimensionality, overfitting due to model complexity, and increased computational requirements for training and prediction",
+      "optionExplanations": [
+        "More interactions can improve accuracy on training data but hurt generalization",
+        "Excessive interactions create high-dimensional spaces prone to overfitting and require more computational resources",
+        "Original features are typically retained alongside interaction terms",
+        "Interaction terms are specifically designed for linear models"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interaction-terms",
+        "overfitting",
+        "computational-complexity"
+      ]
+    },
+    {
+      "id": "FEG_077",
+      "question": "Which imputation strategy is most appropriate for categorical variables with no natural ordering?",
+      "options": [
+        "Mean imputation",
+        "Median imputation",
+        "Mode imputation",
+        "Linear interpolation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Mode imputation (most frequent category) is the most appropriate for nominal categorical variables since mean and median are undefined for non-ordinal categories",
+      "optionExplanations": [
+        "Mean is undefined for nominal categorical variables",
+        "Median is undefined for nominal categorical variables without natural ordering",
+        "Mode (most frequent value) is the appropriate measure of central tendency for nominal categorical data",
+        "Linear interpolation requires ordered data and is not applicable to nominal categories"
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "mode-imputation",
+        "categorical-variables",
+        "nominal"
+      ]
+    },
+    {
+      "id": "FEG_078",
+      "question": "What is the key benefit of using Group-based Target Encoding?",
+      "options": [
+        "Faster computation",
+        "Better handling of hierarchical categorical structures",
+        "Reduced memory usage",
+        "Automatic missing value handling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Group-based Target Encoding considers hierarchical relationships in categorical data, creating more stable estimates by leveraging group-level information",
+      "optionExplanations": [
+        "Group-based encoding adds computational complexity rather than reducing it",
+        "Group-based encoding leverages hierarchical structures (e.g., city within state) for more robust target estimates",
+        "Memory usage is similar to regular target encoding",
+        "Missing values still require separate handling strategies"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "group-target-encoding",
+        "hierarchical",
+        "categorical-structures"
+      ]
+    },
+    {
+      "id": "FEG_079",
+      "question": "Which technique is most suitable for creating features from text data with very large vocabulary?",
+      "options": [
+        "One-Hot Encoding all words",
+        "TF-IDF with feature hashing",
+        "Label Encoding words",
+        "Mean encoding words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TF-IDF with feature hashing handles large vocabularies by mapping words to fixed-size hash buckets while preserving term importance weighting",
+      "optionExplanations": [
+        "One-Hot Encoding large vocabularies creates extremely high-dimensional sparse matrices",
+        "TF-IDF with hashing provides importance weighting while managing dimensionality through hash functions",
+        "Label Encoding assigns arbitrary numbers to words, losing semantic meaning",
+        "Mean encoding isn't standard for text features and requires target information"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "text-features",
+        "tf-idf",
+        "feature-hashing"
+      ]
+    },
+    {
+      "id": "FEG_080",
+      "question": "What is the primary purpose of using Yeo-Johnson transformation?",
+      "options": [
+        "Handling negative values in Box-Cox transformation",
+        "Creating interaction terms",
+        "Encoding categorical variables",
+        "Imputing missing values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Yeo-Johnson transformation extends Box-Cox to handle negative values and zeros, providing the same variance stabilization benefits for a broader range of data",
+      "optionExplanations": [
+        "Yeo-Johnson transformation allows Box-Cox-like normalization for data containing negative values and zeros",
+        "Yeo-Johnson is a univariate transformation, not for creating interactions",
+        "Yeo-Johnson is for numerical transformation, not categorical encoding",
+        "Yeo-Johnson doesn't address missing values directly"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "yeo-johnson",
+        "negative-values",
+        "transformation"
+      ]
+    },
+    {
+      "id": "FEG_081",
+      "question": "In feature engineering for time series, what do expanding window features capture?",
+      "options": [
+        "Only recent patterns",
+        "Cumulative information from the beginning of the series",
+        "Fixed-size local patterns",
+        "Seasonal patterns only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Expanding window features use all data from the beginning up to the current point, capturing cumulative trends and long-term patterns",
+      "optionExplanations": [
+        "Rolling windows capture recent patterns, not expanding windows",
+        "Expanding windows include all historical data up to the current point, providing cumulative statistics",
+        "Rolling windows have fixed sizes, not expanding windows",
+        "Expanding windows capture long-term trends, not specifically seasonal patterns"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "expanding-window",
+        "cumulative",
+        "time-series"
+      ]
+    },
+    {
+      "id": "FEG_082",
+      "question": "Which encoding method is most memory-efficient for extremely high-cardinality categorical variables?",
+      "options": [
+        "One-Hot Encoding",
+        "Binary Encoding",
+        "Feature Hashing",
+        "Ordinal Encoding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Feature Hashing maps any number of categories to a fixed-size vector using hash functions, providing constant memory usage regardless of cardinality",
+      "optionExplanations": [
+        "One-Hot Encoding memory usage grows linearly with number of categories",
+        "Binary Encoding uses log₂(n) features, still grows with cardinality",
+        "Feature Hashing uses fixed memory regardless of category count by mapping to hash buckets",
+        "Ordinal Encoding is memory-efficient but can mislead algorithms with artificial ordering"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-hashing",
+        "high-cardinality",
+        "memory-efficiency"
+      ]
+    },
+    {
+      "id": "FEG_083",
+      "question": "What is the main advantage of using quantile-based binning over equal-width binning?",
+      "options": [
+        "Simpler implementation",
+        "Faster computation",
+        "Better distribution balance across bins",
+        "Works only with normal distributions"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Quantile-based binning ensures each bin has approximately the same number of observations, providing better statistical power and avoiding empty bins",
+      "optionExplanations": [
+        "Equal-width binning is simpler to implement",
+        "Both methods have similar computational complexity",
+        "Quantile binning ensures balanced sample sizes across bins, preventing empty bins and providing stable statistics",
+        "Quantile binning works with any distribution, not just normal"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantile-binning",
+        "distribution-balance",
+        "sample-size"
+      ]
+    },
+    {
+      "id": "FEG_084",
+      "question": "Which technique helps create robust features when dealing with noisy sensor data?",
+      "options": [
+        "Direct use of raw values",
+        "Moving averages and filtering",
+        "Increasing sampling frequency",
+        "Random sampling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Moving averages and filtering techniques smooth out noise while preserving underlying signal patterns, creating more robust features for model training",
+      "optionExplanations": [
+        "Raw sensor values often contain noise that can mislead model training",
+        "Moving averages and filters (low-pass, median filters) reduce noise while preserving signal trends",
+        "Higher sampling frequency increases noise along with signal",
+        "Random sampling doesn't address the underlying noise issue"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sensor-data",
+        "noise-reduction",
+        "moving-averages"
+      ]
+    },
+    {
+      "id": "FEG_085",
+      "question": "What is the purpose of using feature crosses in recommendation systems?",
+      "options": [
+        "To reduce dimensionality",
+        "To capture user-item interaction patterns",
+        "To handle cold start problems",
+        "To normalize ratings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature crosses in recommendation systems capture specific user-item combinations and interaction patterns that individual features might miss",
+      "optionExplanations": [
+        "Feature crosses increase dimensionality rather than reduce it",
+        "Feature crosses capture joint effects between users and items, revealing specific interaction preferences",
+        "Feature crosses require existing interactions, don't help with cold start",
+        "Feature crosses don't perform normalization"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-crosses",
+        "recommendation-systems",
+        "user-item-interactions"
+      ]
+    },
+    {
+      "id": "FEG_086",
+      "question": "Which imputation method is most appropriate for time series data with trend?",
+      "options": [
+        "Mean imputation",
+        "Mode imputation",
+        "Linear interpolation",
+        "Random sampling"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Linear interpolation respects the temporal order and trend in time series data by estimating missing values using neighboring time points",
+      "optionExplanations": [
+        "Mean imputation ignores temporal structure and trends",
+        "Mode imputation is for categorical data and ignores trends",
+        "Linear interpolation uses adjacent time points to estimate missing values, preserving temporal patterns and trends",
+        "Random sampling doesn't respect temporal structure or trends"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "time-series",
+        "linear-interpolation",
+        "trend"
+      ]
+    },
+    {
+      "id": "FEG_087",
+      "question": "What is the main challenge when applying feature scaling to streaming data?",
+      "options": [
+        "Increased memory usage",
+        "Computing statistics without seeing all future data",
+        "Reduced model accuracy",
+        "Incompatibility with online learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In streaming data, scaling parameters (min, max, mean, std) must be computed incrementally or estimated from initial batches since future data is unknown",
+      "optionExplanations": [
+        "Memory usage is similar for streaming vs batch scaling",
+        "Streaming requires online estimation of scaling parameters since global statistics are unknown",
+        "Proper streaming scaling maintains model accuracy",
+        "Scaled features are compatible with online learning algorithms"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "streaming-data",
+        "online-scaling",
+        "incremental-statistics"
+      ]
+    },
+    {
+      "id": "FEG_088",
+      "question": "Which technique is best for handling ordinal categorical variables with many levels?",
+      "options": [
+        "One-Hot Encoding",
+        "Ordinal Encoding with proper ordering",
+        "Binary Encoding",
+        "Target Encoding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ordinal Encoding preserves the natural ordering relationship while using only one feature, making it efficient and semantically correct for ordinal data",
+      "optionExplanations": [
+        "One-Hot Encoding loses ordinal information and creates high dimensionality",
+        "Ordinal Encoding preserves the meaningful order while being memory-efficient",
+        "Binary Encoding loses ordinal relationships between categories",
+        "Target Encoding can work but doesn't preserve the inherent ordinal structure"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ordinal-encoding",
+        "ordinal-categorical",
+        "ordering"
+      ]
+    },
+    {
+      "id": "FEG_089",
+      "question": "What is the advantage of using polynomial features with interaction_only=True?",
+      "options": [
+        "Creates only squared terms",
+        "Creates only interaction terms between different features",
+        "Reduces computational complexity significantly",
+        "Works only with categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Setting interaction_only=True creates only multiplicative combinations between different features (X₁*X₂, X₁*X₃) without including powers of individual features (X₁², X₂²)",
+      "optionExplanations": [
+        "interaction_only=True excludes squared terms and focuses on cross-feature interactions",
+        "This parameter creates only interaction terms between different features, avoiding individual feature powers",
+        "It reduces complexity compared to full polynomial expansion but still adds many features",
+        "Polynomial features work with numerical data, not specifically categorical"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial-features",
+        "interaction-only",
+        "cross-features"
+      ]
+    },
+    {
+      "id": "FEG_090",
+      "question": "Which transformation is most effective for handling percentage data that includes 0% and 100% values?",
+      "options": [
+        "Standard logit transformation",
+        "Modified logit with epsilon adjustment",
+        "Log transformation",
+        "Square root transformation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Modified logit transformation adds small epsilon values to avoid undefined results at 0% and 100%, enabling proper transformation of boundary values",
+      "optionExplanations": [
+        "Standard logit is undefined at exactly 0 and 1 (0% and 100%)",
+        "Modified logit adds small values (epsilon) to avoid division by zero: logit((x+ε)/(1+2ε))",
+        "Log transformation doesn't handle the bounded [0,1] nature properly",
+        "Square root doesn't address the specific challenges of proportion data"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "logit-transformation",
+        "percentage-data",
+        "epsilon-adjustment"
+      ]
+    },
+    {
+      "id": "FEG_091",
+      "question": "In feature engineering for fraud detection, which approach helps capture user behavior patterns?",
+      "options": [
+        "Standard scaling of transaction amounts",
+        "Aggregation features over time windows",
+        "One-hot encoding merchant categories",
+        "Min-max scaling timestamps"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Aggregation features like transaction frequency, average amounts, and velocity over various time windows capture behavioral patterns that indicate normal vs fraudulent behavior",
+      "optionExplanations": [
+        "Scaling amounts normalizes but doesn't capture behavioral patterns",
+        "Aggregation features (count, sum, avg over time periods) reveal spending patterns and behavioral anomalies",
+        "Encoding categories helps but doesn't capture temporal behavioral patterns",
+        "Scaling timestamps doesn't reveal behavioral patterns"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "aggregation-features",
+        "fraud-detection",
+        "behavioral-patterns"
+      ]
+    },
+    {
+      "id": "FEG_092",
+      "question": "What is the main benefit of using weight of evidence (WoE) encoding?",
+      "options": [
+        "Reduces memory usage",
+        "Measures the predictive power of each category",
+        "Handles missing values automatically",
+        "Works only with binary targets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weight of Evidence encoding measures how much each category contributes to the likelihood of the target outcome, providing interpretable predictive strength",
+      "optionExplanations": [
+        "WoE doesn't specifically focus on memory reduction",
+        "WoE quantifies the predictive relationship between each category and target: ln(P(target=1|category)/P(target=0|category))",
+        "Missing values need separate handling with WoE",
+        "While commonly used with binary targets, WoE can be adapted for multiclass"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-of-evidence",
+        "predictive-power",
+        "categorical-encoding"
+      ]
+    },
+    {
+      "id": "FEG_093",
+      "question": "Which technique is most suitable for creating features from irregular time series data?",
+      "options": [
+        "Fixed-window aggregations",
+        "Resampling and interpolation",
+        "Simple lag features",
+        "Standard scaling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Irregular time series require resampling to regular intervals and interpolation to fill gaps, creating consistent temporal features for modeling",
+      "optionExplanations": [
+        "Fixed windows don't work well with irregular intervals",
+        "Resampling creates regular intervals while interpolation fills missing time points, enabling standard time series features",
+        "Simple lag features are problematic with irregular intervals",
+        "Standard scaling doesn't address the irregular timing issue"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "irregular-time-series",
+        "resampling",
+        "interpolation"
+      ]
+    },
+    {
+      "id": "FEG_094",
+      "question": "What is the primary concern when using forward fill imputation for financial time series?",
+      "options": [
+        "Computational complexity",
+        "Look-ahead bias",
+        "Perpetuating stale values during market changes",
+        "Memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Forward fill can perpetuate outdated prices during periods of missing data, which doesn't reflect true market conditions and can lead to unrealistic trading signals",
+      "optionExplanations": [
+        "Forward fill is computationally simple",
+        "Forward fill uses past information, avoiding look-ahead bias",
+        "In financial markets, prices change rapidly; forward fill can maintain stale prices that don't reflect current market reality",
+        "Memory usage is not a significant concern with forward fill"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forward-fill",
+        "financial-data",
+        "stale-values"
+      ]
+    },
+    {
+      "id": "FEG_095",
+      "question": "Which binning method is most appropriate when you want to maintain statistical significance in each bin?",
+      "options": [
+        "Equal Width Binning",
+        "Equal Frequency Binning",
+        "Chi-squared based binning",
+        "Random binning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Equal Frequency Binning ensures each bin has sufficient sample size for statistical significance, avoiding bins with too few observations",
+      "optionExplanations": [
+        "Equal Width Binning can create bins with very few samples, reducing statistical power",
+        "Equal Frequency Binning ensures adequate sample size in each bin for meaningful statistical analysis",
+        "Chi-squared binning optimizes for target association but doesn't guarantee sample size",
+        "Random binning provides no systematic approach to maintaining statistical significance"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "equal-frequency-binning",
+        "statistical-significance",
+        "sample-size"
+      ]
+    },
+    {
+      "id": "FEG_096",
+      "question": "What is the main advantage of using Information Value (IV) in feature engineering?",
+      "options": [
+        "Reduces computational time",
+        "Quantifies predictive strength of features",
+        "Handles missing values automatically",
+        "Works only with numerical features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Information Value measures the strength of a feature's relationship with the target variable, helping prioritize features for model building",
+      "optionExplanations": [
+        "IV calculation adds computational overhead rather than reducing it",
+        "Information Value quantifies how much information a feature provides about the target, guiding feature selection",
+        "Missing values require separate handling before IV calculation",
+        "IV works with both categorical and binned numerical features"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "information-value",
+        "feature-selection",
+        "predictive-strength"
+      ]
+    },
+    {
+      "id": "FEG_097",
+      "question": "Which technique is best for handling features with extreme outliers that cannot be removed?",
+      "options": [
+        "Min-Max Scaling",
+        "Winsorization followed by scaling",
+        "Standard Scaling",
+        "Log transformation only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Winsorization caps extreme values at specified percentiles (e.g., 95th), followed by scaling, effectively handling outliers without removing data points",
+      "optionExplanations": [
+        "Min-Max Scaling is highly sensitive to extreme outliers",
+        "Winsorization clips extreme values to percentile thresholds before scaling, handling outliers while retaining all data points",
+        "Standard Scaling is affected by outliers through mean and standard deviation",
+        "Log transformation helps but may not be sufficient for extreme outliers"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "winsorization",
+        "outliers",
+        "extreme-values"
+      ]
+    },
+    {
+      "id": "FEG_098",
+      "question": "In feature engineering for computer vision, what is the purpose of spatial pyramid features?",
+      "options": [
+        "To reduce image resolution",
+        "To capture multi-scale spatial information",
+        "To handle color variations",
+        "To compress image data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Spatial pyramid features divide images into grids at multiple scales, capturing both local details and global spatial relationships",
+      "optionExplanations": [
+        "Spatial pyramids don't aim to reduce resolution but capture information at multiple scales",
+        "Spatial pyramid features extract features from different grid sizes, capturing both fine-grained and coarse spatial patterns",
+        "Color variations are handled by other preprocessing techniques",
+        "The goal is feature extraction, not compression"
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "spatial-pyramid",
+        "computer-vision",
+        "multi-scale"
+      ]
+    },
+    {
+      "id": "FEG_099",
+      "question": "What is the key consideration when using Target Encoding in time series forecasting?",
+      "options": [
+        "Computational efficiency",
+        "Preventing future information leakage",
+        "Memory usage optimization",
+        "Handling seasonality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In time series, Target Encoding must only use historical target information to avoid future leakage, calculating encodings based on past data only",
+      "optionExplanations": [
+        "While efficiency matters, preventing leakage is the critical consideration",
+        "Target encoding must be computed using only past target values to prevent using future information that wouldn't be available at prediction time",
+        "Memory usage is not the primary concern in time series target encoding",
+        "Seasonality is important but secondary to preventing temporal leakage"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "target-encoding",
+        "time-series",
+        "future-leakage"
+      ]
+    },
+    {
+      "id": "FEG_100",
+      "question": "Which feature engineering approach is most effective for handling high-frequency trading data?",
+      "options": [
+        "Simple moving averages only",
+        "Microstructure features and order book statistics",
+        "Daily aggregations",
+        "Standard technical indicators only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High-frequency trading requires microstructure features like bid-ask spreads, order book depth, trade size distributions, and tick-level statistics that capture market dynamics at microsecond scales",
+      "optionExplanations": [
+        "Simple moving averages are too slow for high-frequency patterns",
+        "Microstructure features capture bid-ask dynamics, order flow, and market depth crucial for HFT strategies",
+        "Daily aggregations lose the high-frequency information that's essential for HFT",
+        "Standard technical indicators operate on too slow timescales for high-frequency trading"
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "high-frequency-trading",
+        "microstructure-features",
+        "order-book"
+      ]
+    }
+  ]
+}

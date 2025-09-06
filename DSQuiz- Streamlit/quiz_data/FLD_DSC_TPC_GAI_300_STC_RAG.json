@@ -1,0 +1,2420 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_RAG",
+  "subtopicName": "Retrieval Augmented Generation",
+  "str": 0.300,
+  "description": "Retrieval Augmented Generation (RAG) combines the power of large language models with external knowledge retrieval to provide more accurate, up-to-date, and contextually relevant responses by accessing relevant information from external sources during generation.",
+  "questions": [
+    {
+      "id": "RAG_001",
+      "question": "What is the primary purpose of Retrieval Augmented Generation (RAG)?",
+      "options": [
+        "To combine pre-trained language models with external knowledge retrieval",
+        "To replace traditional search engines",
+        "To generate completely novel content without any references",
+        "To compress large datasets into smaller models"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "RAG combines the generative capabilities of large language models with the ability to retrieve relevant information from external knowledge sources, enhancing the accuracy and relevance of generated responses.",
+      "optionExplanations": [
+        "This is correct. RAG integrates retrieval mechanisms with generative models to access external knowledge during text generation.",
+        "RAG doesn't replace search engines but rather uses retrieval mechanisms as a component in the generation process.",
+        "RAG specifically uses retrieved references to inform generation, rather than generating content without any external context.",
+        "RAG doesn't focus on model compression but on augmenting generation with retrieved information."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "rag-basics",
+        "architecture",
+        "overview"
+      ]
+    },
+    {
+      "id": "RAG_002",
+      "question": "Which component is NOT typically part of a RAG system?",
+      "options": [
+        "Document retriever",
+        "Text generator",
+        "Knowledge base",
+        "Data compression module"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A typical RAG system consists of a retriever (to find relevant documents), a generator (language model), and a knowledge base, but not a data compression module.",
+      "optionExplanations": [
+        "Document retriever is essential for finding relevant information from the knowledge base.",
+        "Text generator (usually a language model) is the core component that produces the final output.",
+        "Knowledge base stores the external information that can be retrieved and used for generation.",
+        "This is correct. Data compression modules are not standard components of RAG systems, which focus on retrieval and generation rather than compression."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "rag-components",
+        "architecture"
+      ]
+    },
+    {
+      "id": "RAG_003",
+      "question": "What is the main advantage of using vector databases in RAG systems?",
+      "options": [
+        "They store data in a compressed format",
+        "They enable fast similarity search using embeddings",
+        "They automatically generate new content",
+        "They eliminate the need for preprocessing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Vector databases excel at storing and querying high-dimensional embeddings, enabling efficient similarity search which is crucial for finding relevant documents in RAG systems.",
+      "optionExplanations": [
+        "While vector databases may compress data, their main advantage in RAG is similarity search capability.",
+        "This is correct. Vector databases are optimized for similarity search using vector embeddings, making them ideal for RAG retrieval.",
+        "Vector databases store and retrieve information but don't generate new content themselves.",
+        "Preprocessing is still required to create embeddings that vector databases can store and search."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vector-databases",
+        "embeddings",
+        "similarity-search"
+      ]
+    },
+    {
+      "id": "RAG_004",
+      "question": "In the context of RAG, what does 'chunking' refer to?",
+      "options": [
+        "Combining multiple documents into one",
+        "Breaking down large documents into smaller, manageable pieces",
+        "Encrypting sensitive information",
+        "Compressing data to save storage space"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Chunking in RAG involves dividing large documents into smaller segments to improve retrieval accuracy and ensure that retrieved context fits within model input limits.",
+      "optionExplanations": [
+        "This describes document merging, not chunking, which involves breaking documents apart.",
+        "This is correct. Chunking splits large documents into smaller pieces that can be more effectively retrieved and processed.",
+        "Chunking is about document segmentation, not data encryption or security measures.",
+        "While chunking may affect storage, its primary purpose is to improve retrieval effectiveness, not compression."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "chunking",
+        "preprocessing",
+        "document-processing"
+      ]
+    },
+    {
+      "id": "RAG_005",
+      "question": "Which embedding model characteristic is most important for effective semantic search in RAG?",
+      "options": [
+        "Model size",
+        "Training speed",
+        "Semantic similarity preservation",
+        "Memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For semantic search to work effectively, the embedding model must preserve semantic similarity, meaning similar texts should have similar vector representations.",
+      "optionExplanations": [
+        "While model size can affect performance, it's not the most critical factor for semantic search effectiveness.",
+        "Training speed affects development time but not the quality of semantic search during inference.",
+        "This is correct. Preserving semantic similarity ensures that related content is found during retrieval, which is fundamental to effective RAG.",
+        "Memory usage is a practical consideration but doesn't directly impact the quality of semantic search."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "embeddings",
+        "semantic-search",
+        "similarity"
+      ]
+    },
+    {
+      "id": "RAG_006",
+      "question": "What is the typical workflow order in a RAG system?",
+      "options": [
+        "Generate → Retrieve → Output",
+        "Retrieve → Generate → Output",
+        "Query → Retrieve → Generate",
+        "Preprocess → Generate → Retrieve"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The standard RAG workflow starts with a query, retrieves relevant documents based on that query, and then generates a response using both the query and retrieved context.",
+      "optionExplanations": [
+        "This reverses the typical order - retrieval should happen before generation to provide context.",
+        "This misses the initial query step that drives the retrieval process.",
+        "This is correct. RAG follows Query → Retrieve → Generate workflow to ensure relevant context informs the generation.",
+        "This places generation before retrieval, which doesn't allow the retrieved context to inform the generation process."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "workflow",
+        "rag-process",
+        "architecture"
+      ]
+    },
+    {
+      "id": "RAG_007",
+      "question": "Which similarity metric is commonly used in vector databases for RAG retrieval?",
+      "options": [
+        "Hamming distance",
+        "Cosine similarity",
+        "Edit distance",
+        "Jaccard similarity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cosine similarity is widely used in vector databases for RAG because it effectively measures the angle between vectors, capturing semantic similarity regardless of vector magnitude.",
+      "optionExplanations": [
+        "Hamming distance is used for binary vectors or strings, not for dense embeddings typical in RAG systems.",
+        "This is correct. Cosine similarity is ideal for measuring semantic similarity in high-dimensional embedding spaces used in RAG.",
+        "Edit distance measures string differences, not semantic similarity in vector spaces.",
+        "Jaccard similarity is used for set comparisons, not for dense vector embeddings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "similarity-metrics",
+        "vector-databases",
+        "cosine-similarity"
+      ]
+    },
+    {
+      "id": "RAG_008",
+      "question": "What is context injection in RAG systems?",
+      "options": [
+        "Adding malicious code to the system",
+        "Inserting retrieved documents into the prompt for the language model",
+        "Modifying the training data of the language model",
+        "Compressing context to fit memory limits"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Context injection refers to the process of incorporating retrieved relevant documents into the prompt that is fed to the language model for generation.",
+      "optionExplanations": [
+        "Context injection is not about security vulnerabilities but about providing relevant information to the model.",
+        "This is correct. Context injection involves adding retrieved documents to the prompt so the language model can use this information in its response.",
+        "RAG doesn't modify the language model's training data but provides context at inference time.",
+        "While context may need to be managed for length, injection specifically refers to adding retrieved content to prompts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-injection",
+        "prompting",
+        "rag-process"
+      ]
+    },
+    {
+      "id": "RAG_009",
+      "question": "Which of the following is a challenge when implementing chunking strategies?",
+      "options": [
+        "Maintaining semantic coherence across chunk boundaries",
+        "Increasing model training time",
+        "Reducing vector database size",
+        "Eliminating the need for embeddings"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A key challenge in chunking is ensuring that important semantic relationships and context are preserved when documents are split into smaller pieces.",
+      "optionExplanations": [
+        "This is correct. Chunking can break semantic coherence if important context spans across chunk boundaries, affecting retrieval quality.",
+        "Chunking affects retrieval and preprocessing, not model training time in RAG systems.",
+        "Chunking typically creates more pieces, potentially increasing rather than reducing database size.",
+        "Chunking doesn't eliminate the need for embeddings; chunks still need to be embedded for vector search."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chunking",
+        "challenges",
+        "semantic-coherence"
+      ]
+    },
+    {
+      "id": "RAG_010",
+      "question": "What is the purpose of using dense retrievers in RAG systems?",
+      "options": [
+        "To compress the knowledge base",
+        "To find semantically similar content using learned representations",
+        "To speed up text generation",
+        "To reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dense retrievers use learned dense vector representations to find semantically similar content, even when there's no exact keyword match.",
+      "optionExplanations": [
+        "Dense retrievers focus on semantic similarity search, not knowledge base compression.",
+        "This is correct. Dense retrievers excel at finding semantically related content through learned vector representations.",
+        "Dense retrievers improve retrieval quality but don't directly speed up the text generation process.",
+        "While efficiency is a consideration, the main purpose is to improve semantic retrieval quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dense-retrievers",
+        "semantic-search",
+        "embeddings"
+      ]
+    },
+    {
+      "id": "RAG_011",
+      "question": "In RAG systems, what does 'top-k retrieval' mean?",
+      "options": [
+        "Retrieving the k most recent documents",
+        "Retrieving the k most similar documents to the query",
+        "Retrieving exactly k words from each document",
+        "Retrieving documents from the top k categories"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Top-k retrieval refers to retrieving the k documents that are most similar to the query based on similarity scores.",
+      "optionExplanations": [
+        "Top-k retrieval is based on similarity scores, not recency or temporal ordering.",
+        "This is correct. Top-k retrieval selects the k documents with the highest similarity scores to the input query.",
+        "Top-k refers to the number of documents retrieved, not the number of words from each document.",
+        "Top-k retrieval is based on similarity scoring, not categorical organization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "retrieval-strategies",
+        "top-k",
+        "similarity-ranking"
+      ]
+    },
+    {
+      "id": "RAG_012",
+      "question": "Which factor most significantly affects the quality of semantic search in RAG?",
+      "options": [
+        "Database size",
+        "Quality of embeddings",
+        "Query length",
+        "Number of retrieved documents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The quality of embeddings is crucial because they determine how well semantic similarity is captured and how accurately relevant documents are retrieved.",
+      "optionExplanations": [
+        "While database size affects coverage, embedding quality is more critical for semantic accuracy.",
+        "This is correct. High-quality embeddings that capture semantic meaning are essential for effective semantic search.",
+        "Query length can affect results but embedding quality has a more fundamental impact on semantic search.",
+        "The number of retrieved documents affects coverage but doesn't determine the fundamental quality of semantic matching."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "semantic-search",
+        "embeddings",
+        "quality-factors"
+      ]
+    },
+    {
+      "id": "RAG_013",
+      "question": "What is a common approach to handle very long documents in RAG systems?",
+      "options": [
+        "Ignore them completely",
+        "Use hierarchical chunking with overlapping segments",
+        "Compress them using lossy algorithms",
+        "Store only the first paragraph"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hierarchical chunking with overlapping segments helps maintain context while making long documents manageable for retrieval and processing.",
+      "optionExplanations": [
+        "Ignoring long documents would result in significant information loss and reduced system coverage.",
+        "This is correct. Hierarchical chunking with overlaps preserves context across boundaries while making documents manageable.",
+        "Lossy compression could remove important information needed for accurate retrieval and generation.",
+        "Using only the first paragraph would lose most of the document's valuable content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chunking",
+        "long-documents",
+        "hierarchical-chunking"
+      ]
+    },
+    {
+      "id": "RAG_014",
+      "question": "Which embedding technique is most suitable for capturing semantic relationships in RAG?",
+      "options": [
+        "One-hot encoding",
+        "TF-IDF vectors",
+        "Transformer-based dense embeddings",
+        "Bag-of-words representations"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Transformer-based dense embeddings excel at capturing complex semantic relationships and contextual meaning, making them ideal for RAG systems.",
+      "optionExplanations": [
+        "One-hot encoding creates sparse vectors that don't capture semantic relationships between different words.",
+        "TF-IDF captures term importance but struggles with semantic similarity between different but related terms.",
+        "This is correct. Transformer-based embeddings capture deep semantic relationships and contextual meaning essential for effective RAG.",
+        "Bag-of-words loses word order and context, missing important semantic relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "embeddings",
+        "transformers",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "RAG_015",
+      "question": "What is the main benefit of using approximate nearest neighbor (ANN) search in vector databases?",
+      "options": [
+        "Perfect accuracy in all cases",
+        "Faster query processing with acceptable accuracy trade-offs",
+        "Smaller storage requirements",
+        "Simplified implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ANN algorithms provide significant speed improvements by trading off some accuracy, which is often acceptable for large-scale RAG applications.",
+      "optionExplanations": [
+        "ANN algorithms sacrifice some accuracy for speed, so they don't guarantee perfect accuracy.",
+        "This is correct. ANN search dramatically improves query speed while maintaining acceptable accuracy for practical applications.",
+        "ANN algorithms focus on search speed rather than reducing storage requirements.",
+        "ANN implementations can be complex, but their main benefit is the speed-accuracy trade-off."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ann-search",
+        "vector-databases",
+        "performance"
+      ]
+    },
+    {
+      "id": "RAG_016",
+      "question": "In RAG systems, what is the purpose of query expansion?",
+      "options": [
+        "To make queries longer for better performance",
+        "To enhance queries with additional relevant terms for better retrieval",
+        "To translate queries into multiple languages",
+        "To encrypt query content"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Query expansion adds relevant terms or rephrases queries to improve the likelihood of retrieving relevant documents that might not match the original query exactly.",
+      "optionExplanations": [
+        "Query expansion isn't about making queries longer but about making them more effective for retrieval.",
+        "This is correct. Query expansion enhances queries with related terms to improve retrieval coverage and relevance.",
+        "While translation might be part of some systems, query expansion specifically refers to adding relevant terms, not language translation.",
+        "Query expansion is about improving retrieval effectiveness, not security or encryption."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "query-expansion",
+        "retrieval-strategies",
+        "query-enhancement"
+      ]
+    },
+    {
+      "id": "RAG_017",
+      "question": "Which metric is commonly used to evaluate RAG system performance?",
+      "options": [
+        "BLEU score only",
+        "Retrieval accuracy and generation quality combined",
+        "Model size",
+        "Training time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RAG systems require evaluation of both retrieval quality (how well relevant documents are found) and generation quality (how well the final answer is produced).",
+      "optionExplanations": [
+        "BLEU score evaluates generation quality but doesn't assess retrieval effectiveness, which is crucial in RAG.",
+        "This is correct. RAG evaluation must consider both how well the system retrieves relevant information and how well it generates responses.",
+        "Model size is a system characteristic, not a performance metric for evaluating RAG effectiveness.",
+        "Training time is an efficiency metric, not a measure of RAG system output quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "metrics",
+        "rag-performance"
+      ]
+    },
+    {
+      "id": "RAG_018",
+      "question": "What is a potential drawback of using very small chunk sizes in RAG?",
+      "options": [
+        "Increased storage costs",
+        "Loss of important context and coherence",
+        "Faster processing times",
+        "Better semantic search"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Very small chunks may not contain enough context to be meaningful on their own, leading to fragmented information that doesn't provide adequate context for generation.",
+      "optionExplanations": [
+        "Smaller chunks might actually reduce storage per chunk, though more chunks may increase overhead.",
+        "This is correct. Small chunks can break up important context, making individual chunks less informative and coherent.",
+        "Faster processing would be a benefit, not a drawback of smaller chunks.",
+        "Better semantic search would be an advantage, not a drawback."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chunking",
+        "chunk-size",
+        "context-preservation"
+      ]
+    },
+    {
+      "id": "RAG_019",
+      "question": "Which approach helps maintain context across chunk boundaries?",
+      "options": [
+        "Random chunking",
+        "Overlapping chunks",
+        "Smaller chunk sizes",
+        "Single large chunks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overlapping chunks ensure that important information near boundaries is preserved in multiple chunks, maintaining context across splits.",
+      "optionExplanations": [
+        "Random chunking would likely break semantic coherence and doesn't address boundary context issues.",
+        "This is correct. Overlapping chunks preserve context at boundaries by including some content from adjacent chunks.",
+        "Smaller chunks would worsen boundary context problems, not solve them.",
+        "Single large chunks avoid boundary issues but create other problems with retrieval granularity and model input limits."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chunking",
+        "overlapping-chunks",
+        "context-preservation"
+      ]
+    },
+    {
+      "id": "RAG_020",
+      "question": "What is the role of re-ranking in RAG systems?",
+      "options": [
+        "To sort documents alphabetically",
+        "To improve the relevance ranking of initially retrieved documents",
+        "To compress retrieved documents",
+        "To translate documents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Re-ranking applies more sophisticated relevance scoring to initially retrieved documents to improve the final ranking and select the most relevant ones for generation.",
+      "optionExplanations": [
+        "Re-ranking focuses on relevance to the query, not alphabetical or arbitrary ordering.",
+        "This is correct. Re-ranking refines the initial retrieval results to improve relevance ranking before generation.",
+        "Re-ranking is about relevance scoring, not document compression or size reduction.",
+        "Re-ranking deals with relevance assessment, not language translation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "re-ranking",
+        "retrieval-strategies",
+        "relevance-scoring"
+      ]
+    },
+    {
+      "id": "RAG_021",
+      "question": "Which vector database feature is most important for scaling RAG systems?",
+      "options": [
+        "Color-coded interface",
+        "Horizontal scalability and distributed search",
+        "Built-in text editor",
+        "Automatic backup"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As RAG systems grow, they need vector databases that can scale horizontally and distribute search operations across multiple nodes to maintain performance.",
+      "optionExplanations": [
+        "Interface aesthetics don't affect the scalability or performance of RAG systems.",
+        "This is correct. Horizontal scalability and distributed search capabilities are essential for handling large-scale RAG deployments.",
+        "Text editing features are not relevant to vector database performance or scalability.",
+        "While backup is important for data safety, it doesn't directly address scaling challenges."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vector-databases",
+        "scalability",
+        "distributed-systems"
+      ]
+    },
+    {
+      "id": "RAG_022",
+      "question": "What is the purpose of embedding normalization in RAG systems?",
+      "options": [
+        "To make all embeddings the same length",
+        "To ensure consistent similarity calculations and improve search quality",
+        "To reduce storage space",
+        "To encrypt the embeddings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Normalizing embeddings ensures that similarity calculations (especially cosine similarity) are computed correctly and consistently across all vectors.",
+      "optionExplanations": [
+        "Normalization affects vector magnitude, not the dimensionality or length of embeddings.",
+        "This is correct. Normalization ensures consistent similarity calculations and can improve the quality of similarity-based retrieval.",
+        "Normalization may slightly affect storage efficiency but its main purpose is improving similarity calculations.",
+        "Normalization is about mathematical standardization, not security or encryption."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "embeddings",
+        "normalization",
+        "similarity-calculations"
+      ]
+    },
+    {
+      "id": "RAG_023",
+      "question": "Which strategy is effective for handling multi-modal content in RAG systems?",
+      "options": [
+        "Ignore non-text content",
+        "Use separate embedding models for different modalities and combine results",
+        "Convert everything to text only",
+        "Use only image processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-modal RAG systems typically use specialized embedding models for each modality (text, images, etc.) and then combine or align the results for comprehensive retrieval.",
+      "optionExplanations": [
+        "Ignoring non-text content would result in significant information loss in multi-modal scenarios.",
+        "This is correct. Using modality-specific embeddings and combining results allows effective handling of diverse content types.",
+        "Converting everything to text loses important information that other modalities might contain.",
+        "Using only image processing would ignore valuable text and other modality information."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-modal",
+        "embeddings",
+        "content-types"
+      ]
+    },
+    {
+      "id": "RAG_024",
+      "question": "What is the main challenge with temporal information in RAG systems?",
+      "options": [
+        "Time zones",
+        "Ensuring retrieved information is current and relevant to the query time",
+        "Clock synchronization",
+        "Date formatting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RAG systems must handle the temporal relevance of information, ensuring that time-sensitive queries retrieve information that was valid at the appropriate time period.",
+      "optionExplanations": [
+        "Time zones are a technical detail but not the main conceptual challenge in RAG temporal handling.",
+        "This is correct. Managing temporal relevance ensures that RAG systems provide information appropriate to the temporal context of queries.",
+        "Clock synchronization is a technical implementation detail, not a fundamental RAG challenge.",
+        "Date formatting is a presentation issue, not a core challenge in temporal information retrieval."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "temporal-information",
+        "time-relevance",
+        "challenges"
+      ]
+    },
+    {
+      "id": "RAG_025",
+      "question": "Which technique helps reduce hallucinations in RAG-generated responses?",
+      "options": [
+        "Increasing model temperature",
+        "Grounding responses in retrieved context and fact-checking",
+        "Using smaller models",
+        "Removing all context"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Grounding responses in retrieved factual context and implementing fact-checking mechanisms helps ensure that generated content is based on reliable sources rather than fabricated information.",
+      "optionExplanations": [
+        "Higher temperature typically increases randomness and could potentially increase rather than reduce hallucinations.",
+        "This is correct. Grounding in retrieved context and fact-checking helps ensure responses are based on actual information rather than generated fabrications.",
+        "Model size doesn't directly determine hallucination rates; proper grounding is more important.",
+        "Removing context would likely increase hallucinations as the model would have less factual information to rely on."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hallucinations",
+        "grounding",
+        "fact-checking"
+      ]
+    },
+    {
+      "id": "RAG_026",
+      "question": "What is sparse retrieval primarily based on?",
+      "options": [
+        "Semantic embeddings",
+        "Exact keyword matching and term frequency",
+        "Image recognition",
+        "Audio processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sparse retrieval methods like BM25 rely on exact keyword matches and statistical measures like term frequency and inverse document frequency.",
+      "optionExplanations": [
+        "Semantic embeddings are used in dense retrieval, not sparse retrieval methods.",
+        "This is correct. Sparse retrieval focuses on exact keyword matches and statistical measures of term importance.",
+        "Image recognition is not relevant to sparse text retrieval methods.",
+        "Audio processing is not part of sparse text retrieval approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sparse-retrieval",
+        "keyword-matching",
+        "bm25"
+      ]
+    },
+    {
+      "id": "RAG_027",
+      "question": "Which approach combines the benefits of both sparse and dense retrieval?",
+      "options": [
+        "Hybrid retrieval",
+        "Single-mode retrieval",
+        "Random retrieval",
+        "Manual retrieval"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hybrid retrieval combines sparse methods (good for exact matches) with dense methods (good for semantic similarity) to achieve better overall retrieval performance.",
+      "optionExplanations": [
+        "This is correct. Hybrid retrieval leverages both sparse and dense methods to combine their respective strengths.",
+        "Single-mode retrieval uses only one approach and doesn't combine benefits of multiple methods.",
+        "Random retrieval doesn't provide the systematic benefits of either sparse or dense methods.",
+        "Manual retrieval is not an automated approach and doesn't combine algorithmic benefits."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hybrid-retrieval",
+        "sparse-dense-combination",
+        "retrieval-strategies"
+      ]
+    },
+    {
+      "id": "RAG_028",
+      "question": "What is the purpose of document preprocessing in RAG systems?",
+      "options": [
+        "To make documents shorter",
+        "To clean, structure, and prepare documents for effective retrieval",
+        "To translate all documents",
+        "To encrypt sensitive information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Document preprocessing involves cleaning, structuring, and preparing documents to ensure they can be effectively chunked, embedded, and retrieved in the RAG system.",
+      "optionExplanations": [
+        "While preprocessing might involve length management, its purpose is broader than just making documents shorter.",
+        "This is correct. Preprocessing ensures documents are properly formatted and structured for optimal RAG performance.",
+        "Translation might be part of some systems, but preprocessing encompasses broader preparation activities.",
+        "Encryption is a security measure, not a standard part of RAG document preprocessing."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "preprocessing",
+        "document-preparation",
+        "data-pipeline"
+      ]
+    },
+    {
+      "id": "RAG_029",
+      "question": "Which factor most affects the context window utilization in RAG?",
+      "options": [
+        "Number of retrieved documents and their sizes",
+        "User interface design",
+        "Database color scheme",
+        "Server location"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The context window is limited, so the number and size of retrieved documents directly determines how much information can be included in the prompt for generation.",
+      "optionExplanations": [
+        "This is correct. The quantity and size of retrieved documents directly impact how much of the available context window is utilized.",
+        "User interface design doesn't affect the internal context window management of the language model.",
+        "Database appearance has no impact on context window utilization in RAG systems.",
+        "Server location affects latency but not context window usage patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-window",
+        "document-size",
+        "prompt-management"
+      ]
+    },
+    {
+      "id": "RAG_030",
+      "question": "What is iterative retrieval in RAG systems?",
+      "options": [
+        "Retrieving the same documents multiple times",
+        "Performing multiple retrieval steps to gather comprehensive information",
+        "Deleting and re-adding documents",
+        "Backing up the database repeatedly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Iterative retrieval involves performing multiple rounds of retrieval, potentially refining queries based on previous results to gather more comprehensive or specific information.",
+      "optionExplanations": [
+        "Iterative retrieval involves multiple retrieval steps, but not necessarily retrieving identical documents.",
+        "This is correct. Iterative retrieval performs multiple retrieval rounds to build comprehensive context for complex queries.",
+        "Iterative retrieval is about query processing, not database management operations like deletion and re-addition.",
+        "Database backup is a maintenance operation, not a retrieval strategy."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "iterative-retrieval",
+        "multi-step-retrieval",
+        "advanced-strategies"
+      ]
+    },
+    {
+      "id": "RAG_031",
+      "question": "Which embedding dimension consideration is important for RAG performance?",
+      "options": [
+        "Higher dimensions always perform better",
+        "Balancing expressiveness with computational efficiency",
+        "Only using prime numbers",
+        "Dimensions must be even numbers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Embedding dimensions must balance the ability to capture semantic nuance (higher dimensions) with computational and storage efficiency (lower dimensions).",
+      "optionExplanations": [
+        "Higher dimensions provide more expressiveness but at increased computational cost and potential overfitting.",
+        "This is correct. The optimal embedding dimension balances semantic expressiveness with practical computational constraints.",
+        "Mathematical properties like being prime don't determine embedding effectiveness.",
+        "Even/odd dimension constraints are not relevant to embedding performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "embeddings",
+        "dimensionality",
+        "performance-optimization"
+      ]
+    },
+    {
+      "id": "RAG_032",
+      "question": "What is the role of attention mechanisms in RAG systems?",
+      "options": [
+        "To focus on relevant parts of retrieved context during generation",
+        "To make the system more attentive to users",
+        "To reduce processing time",
+        "To increase database size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Attention mechanisms help the language model focus on the most relevant parts of the retrieved context when generating responses, improving relevance and coherence.",
+      "optionExplanations": [
+        "This is correct. Attention mechanisms allow the model to selectively focus on relevant retrieved information during generation.",
+        "Attention mechanisms are technical components, not user experience features.",
+        "While attention can improve efficiency by focusing computation, its primary role is improving relevance.",
+        "Attention mechanisms affect model processing, not database storage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-mechanisms",
+        "context-processing",
+        "relevance"
+      ]
+    },
+    {
+      "id": "RAG_033",
+      "question": "Which strategy helps handle conflicting information from multiple retrieved sources?",
+      "options": [
+        "Always use the first retrieved document",
+        "Implement source reliability scoring and conflict resolution",
+        "Ignore all conflicting sources",
+        "Use random selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Handling conflicting information requires sophisticated approaches that assess source reliability and implement strategies to resolve or acknowledge conflicts.",
+      "optionExplanations": [
+        "Using only the first document ignores potentially more reliable or recent information from other sources.",
+        "This is correct. Sophisticated RAG systems implement reliability scoring and conflict resolution to handle contradictory information.",
+        "Ignoring conflicting sources wastes potentially valuable information and doesn't resolve the underlying conflicts.",
+        "Random selection doesn't provide a principled approach to handling information conflicts."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "conflict-resolution",
+        "source-reliability",
+        "information-integration"
+      ]
+    },
+    {
+      "id": "RAG_034",
+      "question": "What is the purpose of metadata filtering in RAG retrieval?",
+      "options": [
+        "To add more data to documents",
+        "To restrict retrieval to documents matching specific criteria",
+        "To encrypt document metadata",
+        "To remove all document information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Metadata filtering allows RAG systems to constrain retrieval to documents that meet specific criteria like date ranges, document types, or source categories.",
+      "optionExplanations": [
+        "Metadata filtering restricts rather than adds data, focusing on specific subsets of the knowledge base.",
+        "This is correct. Metadata filtering enables targeted retrieval based on document properties and characteristics.",
+        "Metadata filtering is about selection criteria, not security or encryption measures.",
+        "Filtering selects specific information rather than removing all document data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "metadata-filtering",
+        "targeted-retrieval",
+        "document-criteria"
+      ]
+    },
+    {
+      "id": "RAG_035",
+      "question": "Which approach is effective for handling domain-specific terminology in RAG?",
+      "options": [
+        "Ignoring specialized terms",
+        "Using domain-adapted embeddings and custom vocabularies",
+        "Converting all terms to common words",
+        "Removing technical content"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Domain-specific RAG systems benefit from embeddings trained on domain-specific corpora and vocabularies that properly handle specialized terminology.",
+      "optionExplanations": [
+        "Ignoring specialized terms would lose important domain-specific information and reduce system effectiveness.",
+        "This is correct. Domain-adapted embeddings and vocabularies ensure proper handling of specialized terminology.",
+        "Converting specialized terms to common words would lose precise meaning and domain specificity.",
+        "Removing technical content would eliminate valuable domain-specific knowledge."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-adaptation",
+        "specialized-terminology",
+        "custom-embeddings"
+      ]
+    },
+    {
+      "id": "RAG_036",
+      "question": "What is cross-encoder re-ranking in RAG systems?",
+      "options": [
+        "Encoding documents in multiple formats",
+        "Using a model that jointly processes query and document for relevance scoring",
+        "Encrypting data across multiple servers",
+        "Converting between different embedding types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-encoder re-ranking uses models that process the query and candidate document together to produce more accurate relevance scores than simple similarity measures.",
+      "optionExplanations": [
+        "Cross-encoder re-ranking is about relevance scoring, not format conversion or encoding.",
+        "This is correct. Cross-encoders jointly process query-document pairs to produce more accurate relevance scores.",
+        "Cross-encoder re-ranking is a relevance assessment technique, not a security or encryption method.",
+        "Cross-encoders work with query-document pairs for scoring, not converting between embedding types."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cross-encoder",
+        "re-ranking",
+        "relevance-scoring"
+      ]
+    },
+    {
+      "id": "RAG_037",
+      "question": "Which technique helps preserve important relationships when chunking structured documents?",
+      "options": [
+        "Random splitting",
+        "Structure-aware chunking that respects document hierarchy",
+        "Equal-size chunks only",
+        "Single-sentence chunks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Structure-aware chunking considers document organization (headings, sections, paragraphs) to preserve logical relationships and maintain coherent information units.",
+      "optionExplanations": [
+        "Random splitting would likely break important structural relationships and logical organization.",
+        "This is correct. Structure-aware chunking preserves document hierarchy and logical relationships between content elements.",
+        "Equal-size chunks ignore document structure and may break important logical units.",
+        "Single-sentence chunks would lose broader context and relationships between related sentences."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "structure-aware-chunking",
+        "document-hierarchy",
+        "relationship-preservation"
+      ]
+    },
+    {
+      "id": "RAG_038",
+      "question": "What is the main advantage of using learned sparse retrieval methods?",
+      "options": [
+        "They require no training",
+        "They combine interpretability of sparse methods with learned representations",
+        "They work only with small datasets",
+        "They eliminate the need for embeddings"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learned sparse retrieval methods like SPLADE combine the interpretability and efficiency of sparse methods with the semantic understanding gained through machine learning.",
+      "optionExplanations": [
+        "Learned sparse methods require training to learn effective sparse representations.",
+        "This is correct. Learned sparse methods combine sparse method interpretability with learned semantic understanding.",
+        "These methods can work with datasets of various sizes, not just small ones.",
+        "Learned sparse methods create learned representations, which are a form of embeddings."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "learned-sparse-retrieval",
+        "splade",
+        "interpretability"
+      ]
+    },
+    {
+      "id": "RAG_039",
+      "question": "Which factor is crucial for effective prompt engineering in RAG systems?",
+      "options": [
+        "Making prompts as long as possible",
+        "Clearly structuring how retrieved context should be used",
+        "Using only simple vocabulary",
+        "Avoiding any specific instructions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Effective RAG prompts clearly specify how the model should use retrieved context, what format to follow, and how to handle cases where context doesn't contain sufficient information.",
+      "optionExplanations": [
+        "Prompt length should be optimized for effectiveness, not maximized regardless of benefit.",
+        "This is correct. Clear structure and instructions help the model effectively utilize retrieved context in generation.",
+        "Vocabulary complexity should match the task requirements, not be artificially simplified.",
+        "Specific instructions help guide the model to use retrieved context appropriately."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prompt-engineering",
+        "context-utilization",
+        "instruction-design"
+      ]
+    },
+    {
+      "id": "RAG_040",
+      "question": "What is the purpose of using ensemble methods in RAG retrieval?",
+      "options": [
+        "To make retrieval slower",
+        "To combine multiple retrieval approaches for better coverage and accuracy",
+        "To reduce the number of documents",
+        "To simplify the system"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble methods combine different retrieval approaches (e.g., sparse + dense, multiple embedding models) to achieve better overall retrieval performance than any single method.",
+      "optionExplanations": [
+        "Ensemble methods may be slower but aim to improve effectiveness, not to reduce speed.",
+        "This is correct. Ensemble approaches combine multiple retrieval methods to improve overall coverage and accuracy.",
+        "Ensemble methods typically increase rather than reduce the breadth of retrieved documents.",
+        "Ensemble methods add complexity but aim to improve performance through method combination."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-methods",
+        "retrieval-combination",
+        "performance-improvement"
+      ]
+    },
+    {
+      "id": "RAG_041",
+      "question": "Which approach helps handle queries that require information from multiple documents?",
+      "options": [
+        "Single document retrieval only",
+        "Multi-hop retrieval and information synthesis",
+        "Ignoring complex queries",
+        "Random document selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-hop retrieval can gather information from multiple related documents and synthesize it to answer complex queries that require diverse sources.",
+      "optionExplanations": [
+        "Single document retrieval would be insufficient for queries requiring information from multiple sources.",
+        "This is correct. Multi-hop retrieval and synthesis can handle complex queries requiring multiple information sources.",
+        "Ignoring complex queries would reduce system capability and user satisfaction.",
+        "Random selection doesn't provide the systematic approach needed for multi-document information gathering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-hop-retrieval",
+        "information-synthesis",
+        "complex-queries"
+      ]
+    },
+    {
+      "id": "RAG_042",
+      "question": "What is the role of knowledge graph integration in advanced RAG systems?",
+      "options": [
+        "To replace vector databases entirely",
+        "To provide structured relationship information to enhance retrieval and generation",
+        "To slow down the system",
+        "To make queries more complex"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Knowledge graphs provide structured relationship information that can enhance RAG systems by offering explicit connections between entities and concepts.",
+      "optionExplanations": [
+        "Knowledge graphs complement rather than replace vector databases, adding structured relationship information.",
+        "This is correct. Knowledge graphs provide structured relationships that can enhance both retrieval and generation in RAG systems.",
+        "While integration may add complexity, the goal is to improve effectiveness, not to slow down the system.",
+        "Knowledge graphs aim to improve query understanding and handling, not to unnecessarily complicate them."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "knowledge-graphs",
+        "structured-relationships",
+        "advanced-rag"
+      ]
+    },
+    {
+      "id": "RAG_043",
+      "question": "Which strategy is effective for handling queries with insufficient retrieved context?",
+      "options": [
+        "Generate random responses",
+        "Acknowledge limitations and request clarification or additional information",
+        "Always provide a response regardless of context quality",
+        "Ignore the query completely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When retrieved context is insufficient, effective RAG systems should acknowledge limitations and potentially request clarification rather than fabricating information.",
+      "optionExplanations": [
+        "Random responses would provide unreliable and potentially harmful information to users.",
+        "This is correct. Acknowledging limitations maintains system reliability and helps users understand when information is incomplete.",
+        "Providing responses without adequate context increases the risk of hallucinations and misinformation.",
+        "Ignoring queries provides no value to users and reduces system utility."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "insufficient-context",
+        "limitation-handling",
+        "reliability"
+      ]
+    },
+    {
+      "id": "RAG_044",
+      "question": "What is the benefit of using dense passage retrieval (DPR) in RAG systems?",
+      "options": [
+        "It works only with short documents",
+        "It enables semantic similarity matching without exact keyword overlap",
+        "It requires no training data",
+        "It only works with specific languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DPR uses learned dense representations that can identify semantically similar content even when there's no exact keyword match between query and documents.",
+      "optionExplanations": [
+        "DPR can work with documents of various lengths, not just short passages.",
+        "This is correct. DPR enables semantic matching beyond exact keyword overlap through learned dense representations.",
+        "DPR requires training data to learn effective dense representations for semantic similarity.",
+        "DPR can be trained for different languages, though it requires language-specific training data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dense-passage-retrieval",
+        "semantic-matching",
+        "dpr"
+      ]
+    },
+    {
+      "id": "RAG_045",
+      "question": "Which technique helps improve the diversity of retrieved documents in RAG?",
+      "options": [
+        "Always selecting the most similar documents",
+        "Maximal marginal relevance (MMR) or similar diversity-promoting algorithms",
+        "Random selection",
+        "Selecting only the shortest documents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "MMR and similar algorithms balance relevance with diversity, ensuring that retrieved documents cover different aspects of the topic rather than being redundant.",
+      "optionExplanations": [
+        "Selecting only the most similar documents can lead to redundant information and missed perspectives.",
+        "This is correct. MMR and similar algorithms promote diversity while maintaining relevance in retrieved document sets.",
+        "Random selection doesn't ensure either relevance or systematic diversity.",
+        "Selecting based on document length doesn't address diversity or relevance concerns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "diversity",
+        "mmr",
+        "document-selection"
+      ]
+    },
+    {
+      "id": "RAG_046",
+      "question": "What is the purpose of query understanding in RAG systems?",
+      "options": [
+        "To translate queries to different languages",
+        "To analyze query intent and extract key information for better retrieval",
+        "To make queries longer",
+        "To encrypt query content"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Query understanding involves analyzing the user's intent, extracting key entities and concepts, and potentially reformulating queries for more effective retrieval.",
+      "optionExplanations": [
+        "While translation might be part of some systems, query understanding encompasses broader intent and information extraction.",
+        "This is correct. Query understanding analyzes intent and extracts key information to improve retrieval effectiveness.",
+        "Query understanding focuses on comprehension and optimization, not artificially lengthening queries.",
+        "Query understanding is about comprehension and optimization, not security or encryption."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "query-understanding",
+        "intent-analysis",
+        "information-extraction"
+      ]
+    },
+    {
+      "id": "RAG_047",
+      "question": "Which approach is effective for handling real-time information updates in RAG systems?",
+      "options": [
+        "Never updating the knowledge base",
+        "Implementing incremental indexing and cache invalidation strategies",
+        "Rebuilding everything from scratch daily",
+        "Ignoring new information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Incremental indexing allows new information to be added efficiently, while cache invalidation ensures that outdated information is properly updated or removed.",
+      "optionExplanations": [
+        "Never updating would leave the system with increasingly outdated information over time.",
+        "This is correct. Incremental indexing and cache invalidation enable efficient real-time information updates.",
+        "Complete rebuilds are inefficient and unnecessary for incremental updates.",
+        "Ignoring new information would reduce system accuracy and relevance over time."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "real-time-updates",
+        "incremental-indexing",
+        "cache-invalidation"
+      ]
+    },
+    {
+      "id": "RAG_048",
+      "question": "What is the role of embedding fine-tuning in domain-specific RAG applications?",
+      "options": [
+        "To make embeddings smaller",
+        "To adapt embeddings to better capture domain-specific semantic relationships",
+        "To encrypt embeddings",
+        "To randomize embedding values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fine-tuning embeddings on domain-specific data helps them better capture the unique semantic relationships and terminology important in that domain.",
+      "optionExplanations": [
+        "Fine-tuning focuses on improving semantic representation quality, not reducing embedding size.",
+        "This is correct. Fine-tuning adapts embeddings to better represent domain-specific semantic relationships and terminology.",
+        "Fine-tuning is about improving representation quality, not implementing security measures.",
+        "Fine-tuning improves rather than randomizes embedding quality and semantic meaning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "embedding-fine-tuning",
+        "domain-adaptation",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "RAG_049",
+      "question": "Which metric is useful for evaluating retrieval quality in RAG systems?",
+      "options": [
+        "Model size",
+        "Recall@k and precision@k",
+        "Training time",
+        "Storage cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Recall@k measures how many relevant documents are found in the top-k results, while precision@k measures what fraction of the top-k results are relevant.",
+      "optionExplanations": [
+        "Model size is a system characteristic, not a measure of retrieval quality or effectiveness.",
+        "This is correct. Recall@k and precision@k directly measure how well the retrieval system finds relevant information.",
+        "Training time affects development efficiency but doesn't measure retrieval quality during operation.",
+        "Storage cost is an operational concern but doesn't indicate retrieval effectiveness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-metrics",
+        "recall",
+        "precision",
+        "retrieval-quality"
+      ]
+    },
+    {
+      "id": "RAG_050",
+      "question": "What is the advantage of using contrastive learning for training retrieval models?",
+      "options": [
+        "It reduces model size",
+        "It helps models learn to distinguish between relevant and irrelevant content",
+        "It speeds up inference",
+        "It eliminates the need for labeled data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Contrastive learning trains models by comparing positive and negative examples, helping them learn to distinguish between relevant and irrelevant documents for given queries.",
+      "optionExplanations": [
+        "Contrastive learning focuses on improving representation quality rather than reducing model size.",
+        "This is correct. Contrastive learning teaches models to distinguish between relevant and irrelevant content through positive/negative example comparison.",
+        "Contrastive learning affects training methodology, not necessarily inference speed.",
+        "Contrastive learning requires carefully constructed positive and negative examples, which is a form of labeling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "contrastive-learning",
+        "model-training",
+        "relevance-distinction"
+      ]
+    },
+    {
+      "id": "RAG_051",
+      "question": "Which approach helps handle long-tail queries in RAG systems?",
+      "options": [
+        "Ignoring uncommon queries",
+        "Query augmentation and expansion techniques",
+        "Using only popular documents",
+        "Simplifying all queries"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Long-tail queries are often specific or uncommon, and query augmentation techniques can help by expanding them with related terms or rephrasing them for better retrieval coverage.",
+      "optionExplanations": [
+        "Ignoring uncommon queries would reduce system utility and fail to serve diverse user needs.",
+        "This is correct. Query augmentation and expansion can help handle specific or uncommon queries by improving retrieval coverage.",
+        "Focusing only on popular documents would miss specialized information needed for long-tail queries.",
+        "Simplifying queries might lose important specificity needed for accurate long-tail query handling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "long-tail-queries",
+        "query-augmentation",
+        "coverage"
+      ]
+    },
+    {
+      "id": "RAG_052",
+      "question": "What is the purpose of using negative sampling in training dense retrievers?",
+      "options": [
+        "To reduce training data size",
+        "To teach the model to avoid retrieving irrelevant documents",
+        "To speed up training",
+        "To increase model complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Negative sampling provides examples of irrelevant documents that the model should learn to rank lower, improving its ability to distinguish relevant from irrelevant content.",
+      "optionExplanations": [
+        "Negative sampling adds training examples rather than reducing data size.",
+        "This is correct. Negative sampling teaches models to properly rank irrelevant documents lower than relevant ones.",
+        "While negative sampling affects training dynamics, its primary purpose is improving model discrimination, not speed.",
+        "Negative sampling improves training effectiveness rather than increasing architectural complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "negative-sampling",
+        "model-training",
+        "relevance-ranking"
+      ]
+    },
+    {
+      "id": "RAG_053",
+      "question": "Which technique is effective for handling multi-lingual content in RAG systems?",
+      "options": [
+        "Translating everything to English only",
+        "Using multilingual embeddings and cross-lingual retrieval",
+        "Ignoring non-English content",
+        "Creating separate systems for each language"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multilingual embeddings can represent content from different languages in a shared vector space, enabling cross-lingual retrieval and generation.",
+      "optionExplanations": [
+        "Translating everything to one language could lose nuances and introduce translation errors.",
+        "This is correct. Multilingual embeddings enable effective handling of diverse language content in a unified system.",
+        "Ignoring non-English content would significantly limit system coverage and utility.",
+        "Separate systems would be inefficient and miss opportunities for cross-lingual information sharing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multilingual",
+        "cross-lingual-retrieval",
+        "multilingual-embeddings"
+      ]
+    },
+    {
+      "id": "RAG_054",
+      "question": "What is the benefit of using hierarchical document representations in RAG?",
+      "options": [
+        "Reduced storage requirements only",
+        "Ability to retrieve at different granularity levels and preserve document structure",
+        "Faster processing only",
+        "Simplified implementation only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hierarchical representations allow retrieval at different levels (document, section, paragraph) and preserve the structural relationships within documents.",
+      "optionExplanations": [
+        "While storage efficiency might be a benefit, the main advantage is multi-level retrieval capability.",
+        "This is correct. Hierarchical representations enable retrieval at different granularities while preserving document structure.",
+        "Processing speed might improve, but the primary benefit is the flexibility of multi-level retrieval.",
+        "Hierarchical representations may actually increase implementation complexity while providing better functionality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hierarchical-representations",
+        "multi-level-retrieval",
+        "document-structure"
+      ]
+    },
+    {
+      "id": "RAG_055",
+      "question": "Which approach helps reduce computational costs in large-scale RAG deployments?",
+      "options": [
+        "Using larger models always",
+        "Implementing caching, approximate search, and efficient indexing",
+        "Storing all data in memory",
+        "Avoiding any optimizations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Caching frequent queries, using approximate nearest neighbor search, and efficient indexing strategies can significantly reduce computational costs in large-scale RAG systems.",
+      "optionExplanations": [
+        "Larger models typically increase rather than reduce computational costs.",
+        "This is correct. Caching, approximate search, and efficient indexing are key strategies for reducing computational costs at scale.",
+        "Storing all data in memory might improve speed but would dramatically increase costs and isn't practical for large datasets.",
+        "Avoiding optimizations would lead to higher costs and reduced system efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-efficiency",
+        "caching",
+        "optimization",
+        "scalability"
+      ]
+    },
+    {
+      "id": "RAG_056",
+      "question": "What is the role of query routing in advanced RAG systems?",
+      "options": [
+        "To encrypt queries",
+        "To direct different types of queries to specialized retrievers or knowledge bases",
+        "To make queries longer",
+        "To store queries permanently"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Query routing analyzes incoming queries and directs them to the most appropriate retriever or knowledge base based on query type, domain, or other characteristics.",
+      "optionExplanations": [
+        "Query routing is about directing queries to appropriate systems, not implementing security measures.",
+        "This is correct. Query routing directs different query types to specialized systems or knowledge bases for optimal handling.",
+        "Query routing focuses on directing queries appropriately, not modifying query length.",
+        "Query routing is about real-time direction, not long-term storage of queries."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "query-routing",
+        "specialized-retrievers",
+        "system-architecture"
+      ]
+    },
+    {
+      "id": "RAG_057",
+      "question": "Which technique helps handle ambiguous queries in RAG systems?",
+      "options": [
+        "Always providing the same response",
+        "Query clarification and context disambiguation",
+        "Ignoring ambiguous queries",
+        "Random response selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ambiguous queries can be handled through clarification requests, context analysis, or by providing multiple interpretations with explanations.",
+      "optionExplanations": [
+        "Providing the same response ignores the need to address different possible interpretations of ambiguous queries.",
+        "This is correct. Query clarification and context disambiguation help resolve ambiguity and provide appropriate responses.",
+        "Ignoring ambiguous queries would reduce system utility and user satisfaction.",
+        "Random responses don't address the underlying ambiguity and could provide inappropriate information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ambiguous-queries",
+        "clarification",
+        "disambiguation"
+      ]
+    },
+    {
+      "id": "RAG_058",
+      "question": "What is the advantage of using transformer-based cross-encoders for re-ranking?",
+      "options": [
+        "They are faster than all other methods",
+        "They provide more accurate relevance scores through joint query-document processing",
+        "They require no training",
+        "They work only with short texts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-encoders process query and document together, allowing for more sophisticated interaction modeling and typically more accurate relevance scoring than bi-encoders.",
+      "optionExplanations": [
+        "Cross-encoders are typically slower than bi-encoders due to their joint processing approach.",
+        "This is correct. Cross-encoders provide more accurate relevance scores by jointly processing query-document pairs.",
+        "Cross-encoders require training on relevance judgment data to learn effective scoring.",
+        "Cross-encoders can handle texts of various lengths, though very long texts may need special handling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cross-encoders",
+        "re-ranking",
+        "relevance-scoring",
+        "transformers"
+      ]
+    },
+    {
+      "id": "RAG_059",
+      "question": "Which approach is effective for handling streaming or real-time data in RAG systems?",
+      "options": [
+        "Batch processing only",
+        "Incremental updates with stream processing capabilities",
+        "Manual updates only",
+        "Ignoring new data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Streaming data requires systems that can incrementally update embeddings and indices as new information arrives, without requiring complete rebuilds.",
+      "optionExplanations": [
+        "Batch processing alone would introduce delays and miss the real-time nature of streaming data.",
+        "This is correct. Incremental updates and stream processing enable handling of real-time data without system delays.",
+        "Manual updates would be too slow and labor-intensive for real-time or high-volume streaming data.",
+        "Ignoring new data would make the system increasingly outdated and less useful over time."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "streaming-data",
+        "real-time-processing",
+        "incremental-updates"
+      ]
+    },
+    {
+      "id": "RAG_060",
+      "question": "What is the purpose of using attention pooling in document representation?",
+      "options": [
+        "To make documents shorter",
+        "To create weighted combinations of token representations based on importance",
+        "To encrypt document content",
+        "To translate documents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention pooling creates document representations by weighting different tokens or passages based on their importance, creating more informative overall document embeddings.",
+      "optionExplanations": [
+        "Attention pooling creates representations rather than physically shortening documents.",
+        "This is correct. Attention pooling weights different parts of documents by importance to create better overall representations.",
+        "Attention pooling is about representation creation, not security or encryption measures.",
+        "Attention pooling works within a language to create representations, not for translation between languages."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-pooling",
+        "document-representation",
+        "weighted-combinations"
+      ]
+    },
+    {
+      "id": "RAG_061",
+      "question": "Which strategy helps improve answer attribution in RAG systems?",
+      "options": [
+        "Hiding source information",
+        "Providing clear citations and source references with generated responses",
+        "Using only anonymous sources",
+        "Removing all source tracking"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Answer attribution involves clearly indicating which retrieved sources contributed to specific parts of the generated response, improving transparency and verifiability.",
+      "optionExplanations": [
+        "Hiding source information would reduce transparency and make it harder to verify response accuracy.",
+        "This is correct. Clear citations and source references improve transparency and allow users to verify information.",
+        "Anonymous sources make it difficult to assess credibility and verify information.",
+        "Removing source tracking would eliminate the ability to provide attribution and verification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "answer-attribution",
+        "citations",
+        "transparency",
+        "verifiability"
+      ]
+    },
+    {
+      "id": "RAG_062",
+      "question": "What is the benefit of using late interaction models like ColBERT in RAG?",
+      "options": [
+        "They are always the fastest option",
+        "They balance efficiency with fine-grained token-level interactions",
+        "They require no training data",
+        "They work only with small datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Late interaction models like ColBERT perform fine-grained token-level matching while maintaining computational efficiency through delayed interaction computation.",
+      "optionExplanations": [
+        "While ColBERT is efficient, speed depends on implementation and comparison context.",
+        "This is correct. Late interaction models provide detailed token-level matching while maintaining computational efficiency.",
+        "ColBERT and similar models require training data to learn effective representations.",
+        "Late interaction models can work with datasets of various sizes."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "late-interaction",
+        "colbert",
+        "token-level-matching",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "RAG_063",
+      "question": "Which approach helps handle temporal reasoning in RAG systems?",
+      "options": [
+        "Ignoring all dates",
+        "Incorporating temporal information in embeddings and retrieval logic",
+        "Using only current documents",
+        "Removing temporal references"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temporal reasoning requires systems that can understand time references, retrieve temporally relevant information, and reason about sequences and relationships over time.",
+      "optionExplanations": [
+        "Ignoring dates would eliminate important temporal context needed for accurate reasoning.",
+        "This is correct. Incorporating temporal information helps systems understand and reason about time-related queries and information.",
+        "Using only current documents would miss important historical context often needed for temporal reasoning.",
+        "Removing temporal references would eliminate crucial information for time-based reasoning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "temporal-reasoning",
+        "time-aware-retrieval",
+        "temporal-embeddings"
+      ]
+    },
+    {
+      "id": "RAG_064",
+      "question": "What is the role of document quality filtering in RAG preprocessing?",
+      "options": [
+        "To make all documents the same length",
+        "To remove low-quality or unreliable content that could degrade system performance",
+        "To encrypt high-quality documents",
+        "To translate all documents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Quality filtering removes documents with poor content, formatting issues, or reliability problems that could negatively impact retrieval and generation quality.",
+      "optionExplanations": [
+        "Quality filtering focuses on content quality, not standardizing document length.",
+        "This is correct. Quality filtering removes problematic content that could degrade system performance and reliability.",
+        "Quality filtering is about content curation, not implementing security measures.",
+        "Quality filtering focuses on content curation within languages, not translation between languages."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quality-filtering",
+        "content-curation",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "RAG_065",
+      "question": "Which technique is effective for handling conversational context in RAG systems?",
+      "options": [
+        "Treating each query independently",
+        "Maintaining conversation history and context-aware retrieval",
+        "Ignoring previous interactions",
+        "Using only the last message"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Conversational RAG systems need to maintain dialogue history and use context from previous exchanges to understand current queries and provide coherent responses.",
+      "optionExplanations": [
+        "Treating queries independently would miss important conversational context and reduce coherence.",
+        "This is correct. Maintaining conversation history enables context-aware retrieval and more coherent conversational responses.",
+        "Ignoring previous interactions would lose valuable context that informs current query understanding.",
+        "Using only the last message might miss important context from earlier in the conversation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "conversational-rag",
+        "context-maintenance",
+        "dialogue-history"
+      ]
+    },
+    {
+      "id": "RAG_066",
+      "question": "What is the advantage of using product quantization in vector databases for RAG?",
+      "options": [
+        "Perfect accuracy with no compression",
+        "Reduced memory usage while maintaining reasonable search quality",
+        "Slower search speeds",
+        "Increased storage requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Product quantization compresses vectors by quantizing sub-vectors separately, significantly reducing memory requirements while maintaining acceptable search accuracy.",
+      "optionExplanations": [
+        "Product quantization involves compression and approximation, so it doesn't provide perfect accuracy.",
+        "This is correct. Product quantization reduces memory usage while maintaining reasonable search quality through efficient compression.",
+        "Product quantization typically improves rather than degrades search speeds through reduced memory access.",
+        "Product quantization reduces rather than increases storage requirements through vector compression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "product-quantization",
+        "vector-compression",
+        "memory-optimization"
+      ]
+    },
+    {
+      "id": "RAG_067",
+      "question": "Which approach helps handle numerical and structured data in RAG systems?",
+      "options": [
+        "Converting everything to unstructured text",
+        "Using specialized embeddings and structured data retrieval methods",
+        "Ignoring all numerical data",
+        "Random numerical processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Structured data requires specialized handling with embeddings that understand numerical relationships and retrieval methods that can query structured information effectively.",
+      "optionExplanations": [
+        "Converting structured data to unstructured text would lose important structural and numerical relationships.",
+        "This is correct. Specialized embeddings and retrieval methods can better handle numerical and structured data characteristics.",
+        "Ignoring numerical data would eliminate valuable quantitative information from the system.",
+        "Random processing doesn't provide systematic handling of numerical data's unique properties."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "structured-data",
+        "numerical-data",
+        "specialized-embeddings"
+      ]
+    },
+    {
+      "id": "RAG_068",
+      "question": "What is the purpose of using fusion methods in hybrid RAG retrieval?",
+      "options": [
+        "To slow down retrieval",
+        "To combine results from different retrieval methods into a unified ranking",
+        "To separate different types of results",
+        "To encrypt retrieval results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fusion methods combine rankings from different retrieval approaches (like sparse and dense methods) to create a unified ranking that leverages the strengths of each method.",
+      "optionExplanations": [
+        "Fusion methods aim to improve effectiveness, not to slow down retrieval processes.",
+        "This is correct. Fusion methods combine results from multiple retrieval approaches to create better unified rankings.",
+        "Fusion methods integrate rather than separate different types of results.",
+        "Fusion methods focus on result combination, not security or encryption measures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fusion-methods",
+        "hybrid-retrieval",
+        "result-combination"
+      ]
+    },
+    {
+      "id": "RAG_069",
+      "question": "Which strategy is effective for handling domain adaptation in RAG systems?",
+      "options": [
+        "Using generic models without modification",
+        "Fine-tuning components on domain-specific data and terminology",
+        "Ignoring domain-specific requirements",
+        "Using random adaptations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Domain adaptation involves fine-tuning embeddings, adjusting retrieval strategies, and incorporating domain-specific knowledge to improve performance in specialized areas.",
+      "optionExplanations": [
+        "Generic models may not capture domain-specific nuances and terminology effectively.",
+        "This is correct. Fine-tuning on domain-specific data helps adapt RAG systems to specialized areas and terminology.",
+        "Ignoring domain requirements would result in suboptimal performance in specialized applications.",
+        "Random adaptations don't provide systematic improvement for domain-specific requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-adaptation",
+        "fine-tuning",
+        "specialized-applications"
+      ]
+    },
+    {
+      "id": "RAG_070",
+      "question": "What is the benefit of using learned dense representations over static embeddings?",
+      "options": [
+        "They never change",
+        "They can be optimized for specific retrieval tasks and data distributions",
+        "They require no computational resources",
+        "They work only with small vocabularies"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learned dense representations can be trained and optimized for specific tasks, domains, and data characteristics, leading to better performance than generic static embeddings.",
+      "optionExplanations": [
+        "Learned representations are designed to be adaptable and optimizable, not static.",
+        "This is correct. Learned representations can be optimized for specific tasks and data, improving performance over generic embeddings.",
+        "Learned representations require computational resources for training and optimization.",
+        "Learned representations can handle vocabularies of various sizes, not just small ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learned-representations",
+        "task-optimization",
+        "dense-embeddings"
+      ]
+    },
+    {
+      "id": "RAG_071",
+      "question": "Which technique helps reduce embedding dimensionality while preserving semantic information?",
+      "options": [
+        "Random dimension removal",
+        "Principal Component Analysis (PCA) or similar dimensionality reduction methods",
+        "Increasing all dimensions",
+        "Duplicating dimensions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PCA and similar techniques can reduce embedding dimensions while preserving the most important semantic information, improving storage and computational efficiency.",
+      "optionExplanations": [
+        "Random dimension removal would likely lose important semantic information without systematic preservation.",
+        "This is correct. PCA and similar methods systematically reduce dimensions while preserving important semantic information.",
+        "Increasing dimensions would worsen rather than solve dimensionality and efficiency issues.",
+        "Duplicating dimensions would increase rather than reduce dimensionality and wouldn't improve efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dimensionality-reduction",
+        "pca",
+        "embedding-compression"
+      ]
+    },
+    {
+      "id": "RAG_072",
+      "question": "What is the role of confidence scoring in RAG systems?",
+      "options": [
+        "To encrypt system outputs",
+        "To estimate the reliability and quality of retrieved information and generated responses",
+        "To slow down processing",
+        "To increase system complexity unnecessarily"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Confidence scoring helps assess how reliable retrieved documents and generated responses are, enabling better decision-making about information quality and response trustworthiness.",
+      "optionExplanations": [
+        "Confidence scoring is about quality assessment, not security or encryption measures.",
+        "This is correct. Confidence scoring estimates reliability and quality, helping users assess information trustworthiness.",
+        "While scoring adds computation, its purpose is to improve quality assessment, not to slow down processing.",
+        "Confidence scoring adds useful functionality rather than unnecessary complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "confidence-scoring",
+        "reliability-assessment",
+        "quality-estimation"
+      ]
+    },
+    {
+      "id": "RAG_073",
+      "question": "Which approach helps handle entity-centric queries in RAG systems?",
+      "options": [
+        "Ignoring all entities",
+        "Entity linking and entity-aware retrieval strategies",
+        "Converting entities to generic terms",
+        "Random entity processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Entity-centric queries benefit from entity recognition, linking to knowledge bases, and retrieval strategies that understand entity relationships and properties.",
+      "optionExplanations": [
+        "Ignoring entities would miss important structured information and relationships in entity-focused queries.",
+        "This is correct. Entity linking and entity-aware strategies improve handling of queries focused on specific entities.",
+        "Converting entities to generic terms would lose important specificity and entity-related information.",
+        "Random entity processing doesn't provide systematic handling of entity-specific information and relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "entity-centric",
+        "entity-linking",
+        "entity-aware-retrieval"
+      ]
+    },
+    {
+      "id": "RAG_074",
+      "question": "What is the advantage of using dense-sparse hybrid embeddings?",
+      "options": [
+        "They are always smaller",
+        "They combine semantic understanding with exact matching capabilities",
+        "They require no training",
+        "They work only with specific data types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hybrid embeddings combine the semantic understanding of dense representations with the exact matching and interpretability benefits of sparse representations.",
+      "optionExplanations": [
+        "Hybrid embeddings may actually be larger due to combining both dense and sparse components.",
+        "This is correct. Hybrid embeddings leverage both semantic understanding and exact matching capabilities.",
+        "Hybrid embeddings typically require training to learn effective dense and sparse representations.",
+        "Hybrid embeddings can be applied to various data types, not just specific ones."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hybrid-embeddings",
+        "dense-sparse-combination",
+        "semantic-exact-matching"
+      ]
+    },
+    {
+      "id": "RAG_075",
+      "question": "Which strategy helps improve retrieval coverage for rare or specialized topics?",
+      "options": [
+        "Using only common documents",
+        "Query expansion and specialized domain corpora inclusion",
+        "Ignoring specialized content",
+        "Random document selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rare topics benefit from query expansion techniques and ensuring that specialized domain corpora are included in the knowledge base to provide adequate coverage.",
+      "optionExplanations": [
+        "Using only common documents would worsen coverage for rare and specialized topics.",
+        "This is correct. Query expansion and specialized corpora inclusion improve coverage for rare and specialized topics.",
+        "Ignoring specialized content would directly reduce coverage for the topics that need it most.",
+        "Random selection doesn't systematically address the coverage needs of rare topics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "retrieval-coverage",
+        "rare-topics",
+        "specialized-corpora"
+      ]
+    },
+    {
+      "id": "RAG_076",
+      "question": "What is the purpose of using retrieval-augmented fine-tuning in RAG systems?",
+      "options": [
+        "To eliminate the need for retrieval",
+        "To train language models to better utilize retrieved context during generation",
+        "To make models smaller",
+        "To speed up inference only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Retrieval-augmented fine-tuning trains language models specifically on tasks that involve using retrieved context, improving their ability to integrate external information effectively.",
+      "optionExplanations": [
+        "Retrieval-augmented fine-tuning enhances rather than eliminates the use of retrieval in RAG systems.",
+        "This is correct. This fine-tuning approach trains models to better integrate and utilize retrieved context during generation.",
+        "This fine-tuning approach focuses on improving context utilization rather than reducing model size.",
+        "While inference improvements may occur, the primary goal is better context integration, not just speed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "retrieval-augmented-fine-tuning",
+        "context-integration",
+        "model-training"
+      ]
+    },
+    {
+      "id": "RAG_077",
+      "question": "Which approach is effective for handling multi-step reasoning in RAG systems?",
+      "options": [
+        "Single retrieval step only",
+        "Iterative retrieval with reasoning chain construction",
+        "Avoiding complex reasoning",
+        "Random step execution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-step reasoning often requires iterative retrieval where each step builds on previous information, constructing a reasoning chain that leads to the final answer.",
+      "optionExplanations": [
+        "Single retrieval steps are insufficient for complex reasoning that requires multiple information sources and logical steps.",
+        "This is correct. Iterative retrieval allows building reasoning chains step by step, gathering information as needed for complex multi-step problems.",
+        "Avoiding complex reasoning would limit system capability and reduce its utility for sophisticated queries.",
+        "Random execution doesn't provide the systematic approach needed for coherent multi-step reasoning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-step-reasoning",
+        "iterative-retrieval",
+        "reasoning-chains"
+      ]
+    },
+    {
+      "id": "RAG_078",
+      "question": "What is the benefit of using vector quantization techniques in large-scale RAG deployments?",
+      "options": [
+        "Perfect search accuracy",
+        "Reduced memory footprint and faster similarity computations",
+        "Increased storage requirements",
+        "Slower query processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Vector quantization techniques compress embeddings while maintaining acceptable search quality, significantly reducing memory usage and speeding up similarity computations in large-scale systems.",
+      "optionExplanations": [
+        "Vector quantization involves compression trade-offs and doesn't provide perfect accuracy.",
+        "This is correct. Vector quantization reduces memory usage and speeds up computations through efficient compression techniques.",
+        "Quantization techniques reduce rather than increase storage requirements through compression.",
+        "Quantization typically speeds up rather than slows down query processing through more efficient computations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "vector-quantization",
+        "compression",
+        "scalability",
+        "memory-optimization"
+      ]
+    },
+    {
+      "id": "RAG_079",
+      "question": "Which technique helps handle noisy or inconsistent data in RAG knowledge bases?",
+      "options": [
+        "Including all data without filtering",
+        "Data cleaning, deduplication, and quality scoring",
+        "Random data removal",
+        "Ignoring data quality issues"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Noisy data requires systematic cleaning approaches including deduplication, quality scoring, and filtering to ensure that only reliable information contributes to RAG responses.",
+      "optionExplanations": [
+        "Including all data without filtering would propagate noise and inconsistencies into system responses.",
+        "This is correct. Systematic data cleaning and quality assessment help maintain high-quality knowledge bases for RAG systems.",
+        "Random data removal doesn't systematically address quality issues and might remove good data.",
+        "Ignoring quality issues would degrade system performance and reliability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-cleaning",
+        "quality-control",
+        "deduplication",
+        "noise-handling"
+      ]
+    },
+    {
+      "id": "RAG_080",
+      "question": "What is the role of prompt templates in RAG systems?",
+      "options": [
+        "To encrypt prompts",
+        "To provide consistent structure for integrating retrieved context with queries",
+        "To make prompts longer",
+        "To randomize prompt content"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Prompt templates provide standardized formats for combining queries with retrieved context, ensuring consistent and effective information presentation to the language model.",
+      "optionExplanations": [
+        "Prompt templates focus on structure and consistency, not security or encryption measures.",
+        "This is correct. Templates ensure consistent and effective integration of queries and retrieved context in prompts.",
+        "Templates focus on structure and effectiveness rather than artificially lengthening prompts.",
+        "Templates provide consistency rather than randomization in prompt construction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prompt-templates",
+        "context-integration",
+        "consistency"
+      ]
+    },
+    {
+      "id": "RAG_081",
+      "question": "Which approach helps handle contradictory information from multiple sources in RAG?",
+      "options": [
+        "Always trust the first source",
+        "Implement source credibility weighting and conflict detection",
+        "Ignore all conflicting information",
+        "Use random selection among conflicting sources"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Handling contradictions requires sophisticated approaches that assess source credibility, detect conflicts, and either resolve them or present multiple perspectives with appropriate context.",
+      "optionExplanations": [
+        "Always trusting the first source ignores potentially more reliable or recent information from other sources.",
+        "This is correct. Credibility weighting and conflict detection help handle contradictory information systematically and reliably.",
+        "Ignoring conflicting information wastes valuable data and doesn't help users understand different perspectives.",
+        "Random selection doesn't provide principled approaches to handling information quality and conflicts."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "conflict-resolution",
+        "source-credibility",
+        "contradictory-information"
+      ]
+    },
+    {
+      "id": "RAG_082",
+      "question": "What is the advantage of using semantic chunking over fixed-size chunking?",
+      "options": [
+        "Faster processing only",
+        "Better preservation of semantic coherence and meaning",
+        "Smaller storage requirements only",
+        "Simpler implementation only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Semantic chunking respects natural boundaries like sentences, paragraphs, or topics, preserving meaning and context better than arbitrary fixed-size splits.",
+      "optionExplanations": [
+        "While semantic chunking might improve processing quality, its main advantage is semantic preservation, not speed.",
+        "This is correct. Semantic chunking preserves natural semantic boundaries and coherence better than fixed-size approaches.",
+        "Storage requirements depend on content structure, not necessarily the chunking strategy used.",
+        "Semantic chunking is typically more complex to implement than simple fixed-size approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "semantic-chunking",
+        "coherence-preservation",
+        "meaningful-boundaries"
+      ]
+    },
+    {
+      "id": "RAG_083",
+      "question": "Which metric is useful for measuring the faithfulness of RAG-generated responses?",
+      "options": [
+        "Response length only",
+        "Alignment between generated content and retrieved source material",
+        "Processing speed only",
+        "Storage usage only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Faithfulness measures how well the generated response aligns with and is supported by the retrieved source material, ensuring accuracy and preventing hallucinations.",
+      "optionExplanations": [
+        "Response length doesn't indicate whether the content is faithful to source material.",
+        "This is correct. Faithfulness measures alignment between generated responses and retrieved sources, ensuring accuracy.",
+        "Processing speed measures efficiency but not the accuracy or faithfulness of responses.",
+        "Storage usage is an operational metric but doesn't measure response quality or faithfulness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "faithfulness",
+        "accuracy-measurement",
+        "source-alignment"
+      ]
+    },
+    {
+      "id": "RAG_084",
+      "question": "What is the purpose of using document-level embeddings in addition to chunk-level embeddings?",
+      "options": [
+        "To waste storage space",
+        "To enable retrieval at different granularities and capture broader document context",
+        "To slow down retrieval",
+        "To make the system more complex unnecessarily"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Document-level embeddings capture overall themes and context, while chunk-level embeddings provide specificity, enabling flexible retrieval at different granularities.",
+      "optionExplanations": [
+        "Document-level embeddings serve important functional purposes rather than wasting storage space.",
+        "This is correct. Multiple embedding levels enable flexible retrieval and capture both broad context and specific details.",
+        "Multiple embedding levels improve retrieval capability rather than intentionally slowing it down.",
+        "This approach adds valuable functionality rather than unnecessary complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-level-embeddings",
+        "granularity-flexibility",
+        "context-capture"
+      ]
+    },
+    {
+      "id": "RAG_085",
+      "question": "Which technique helps improve retrieval for questions requiring numerical reasoning?",
+      "options": [
+        "Ignoring all numbers",
+        "Specialized numerical embeddings and mathematical reasoning capabilities",
+        "Converting numbers to text only",
+        "Random numerical processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Numerical reasoning requires embeddings that understand mathematical relationships and retrieval systems that can identify quantitatively relevant information.",
+      "optionExplanations": [
+        "Ignoring numbers would eliminate important quantitative information needed for numerical reasoning.",
+        "This is correct. Specialized numerical embeddings and reasoning capabilities improve handling of quantitative queries.",
+        "Converting numbers to text alone loses mathematical relationships and numerical meaning.",
+        "Random processing doesn't provide systematic handling of numerical information and relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "numerical-reasoning",
+        "mathematical-embeddings",
+        "quantitative-queries"
+      ]
+    },
+    {
+      "id": "RAG_086",
+      "question": "What is the benefit of using adaptive retrieval strategies in RAG systems?",
+      "options": [
+        "Fixed behavior in all situations",
+        "Adjusting retrieval approach based on query characteristics and context",
+        "Always using the same number of documents",
+        "Ignoring query differences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adaptive retrieval adjusts strategies based on query type, complexity, domain, and other factors to optimize retrieval effectiveness for different scenarios.",
+      "optionExplanations": [
+        "Adaptive strategies specifically avoid fixed behavior, instead adjusting to different situations.",
+        "This is correct. Adaptive retrieval optimizes strategies based on query characteristics and contextual factors.",
+        "Adaptive approaches adjust the number of retrieved documents based on need rather than using fixed amounts.",
+        "Adaptive strategies specifically consider and respond to query differences rather than ignoring them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adaptive-retrieval",
+        "query-aware-strategies",
+        "context-optimization"
+      ]
+    },
+    {
+      "id": "RAG_087",
+      "question": "Which approach helps handle privacy-sensitive information in RAG systems?",
+      "options": [
+        "Storing all data publicly",
+        "Implementing access controls, data anonymization, and privacy-preserving techniques",
+        "Ignoring privacy concerns",
+        "Sharing all information freely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Privacy-sensitive RAG systems require access controls, data anonymization, differential privacy, or other techniques to protect sensitive information while maintaining functionality.",
+      "optionExplanations": [
+        "Public storage of all data would violate privacy requirements and potentially expose sensitive information.",
+        "This is correct. Privacy-preserving techniques protect sensitive information while maintaining system functionality.",
+        "Ignoring privacy concerns could lead to data breaches and regulatory violations.",
+        "Free sharing of all information would compromise privacy and potentially violate data protection regulations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "privacy-preservation",
+        "access-controls",
+        "data-anonymization"
+      ]
+    },
+    {
+      "id": "RAG_088",
+      "question": "What is the role of embedding alignment in cross-lingual RAG systems?",
+      "options": [
+        "To make embeddings identical",
+        "To ensure embeddings from different languages map to similar vector spaces",
+        "To separate languages completely",
+        "To eliminate language differences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Embedding alignment ensures that semantically similar content in different languages produces similar vector representations, enabling cross-lingual retrieval and generation.",
+      "optionExplanations": [
+        "Alignment doesn't make embeddings identical but ensures semantic similarity is preserved across languages.",
+        "This is correct. Embedding alignment enables cross-lingual semantic similarity and retrieval by mapping languages to shared vector spaces.",
+        "Cross-lingual systems aim to bridge rather than separate languages through shared representations.",
+        "Alignment preserves semantic relationships across languages rather than eliminating language-specific characteristics."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "embedding-alignment",
+        "cross-lingual",
+        "multilingual-representations"
+      ]
+    },
+    {
+      "id": "RAG_089",
+      "question": "Which strategy is effective for handling very large document collections in RAG?",
+      "options": [
+        "Loading everything into memory",
+        "Hierarchical indexing and distributed retrieval architectures",
+        "Ignoring most documents",
+        "Processing documents sequentially only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Large collections require hierarchical indexing structures and distributed architectures that can efficiently search across massive document sets without loading everything into memory.",
+      "optionExplanations": [
+        "Loading large collections entirely into memory would be impractical and extremely expensive.",
+        "This is correct. Hierarchical indexing and distributed architectures enable efficient handling of large document collections.",
+        "Ignoring documents would reduce system coverage and utility significantly.",
+        "Sequential processing would be too slow for large collections and real-time query requirements."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "large-scale",
+        "hierarchical-indexing",
+        "distributed-architecture"
+      ]
+    },
+    {
+      "id": "RAG_090",
+      "question": "What is the purpose of using retrieval diversity techniques in RAG systems?",
+      "options": [
+        "To retrieve identical documents",
+        "To ensure retrieved documents cover different aspects of the topic",
+        "To make retrieval random",
+        "To reduce the number of retrieved documents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diversity techniques ensure that retrieved documents provide varied perspectives and cover different aspects of the query topic, avoiding redundant information.",
+      "optionExplanations": [
+        "Diversity techniques specifically aim to avoid identical or very similar documents.",
+        "This is correct. Diversity techniques ensure comprehensive coverage of different topic aspects rather than redundant information.",
+        "Diversity techniques use systematic approaches rather than random selection to ensure varied coverage.",
+        "Diversity focuses on variety within the retrieved set rather than reducing the total number of documents."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "retrieval-diversity",
+        "topic-coverage",
+        "redundancy-reduction"
+      ]
+    },
+    {
+      "id": "RAG_091",
+      "question": "Which approach helps optimize context window usage in RAG systems?",
+      "options": [
+        "Always using the maximum context length",
+        "Dynamic context management and intelligent truncation strategies",
+        "Using minimal context only",
+        "Random context selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dynamic context management optimally uses available context space by prioritizing the most relevant information and intelligently truncating or summarizing when necessary.",
+      "optionExplanations": [
+        "Always using maximum context might include irrelevant information and waste valuable context space.",
+        "This is correct. Dynamic management optimizes context usage by prioritizing relevant information and handling length constraints intelligently.",
+        "Using minimal context might miss important information needed for accurate responses.",
+        "Random context selection doesn't ensure that the most relevant information is included."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context-management",
+        "dynamic-truncation",
+        "window-optimization"
+      ]
+    },
+    {
+      "id": "RAG_092",
+      "question": "What is the benefit of using learned query representations in RAG systems?",
+      "options": [
+        "They never change during processing",
+        "They can be optimized to better match relevant documents in the embedding space",
+        "They require no computational resources",
+        "They work only with specific query types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learned query representations can be trained to produce embeddings that align better with relevant document embeddings, improving retrieval effectiveness.",
+      "optionExplanations": [
+        "Learned query representations are designed to be adaptable and optimizable, not static.",
+        "This is correct. Learned query representations can be optimized for better alignment with relevant documents in embedding space.",
+        "Learned representations require computational resources for training and processing.",
+        "Learned representations can be designed to handle various query types, not just specific ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learned-query-representations",
+        "embedding-optimization",
+        "retrieval-alignment"
+      ]
+    },
+    {
+      "id": "RAG_093",
+      "question": "Which technique helps handle ambiguity in entity references within RAG systems?",
+      "options": [
+        "Ignoring ambiguous entities",
+        "Entity disambiguation using context and knowledge bases",
+        "Using only common entity names",
+        "Random entity selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Entity disambiguation uses contextual information and knowledge bases to resolve which specific entity is being referenced when multiple entities share similar names or descriptions.",
+      "optionExplanations": [
+        "Ignoring ambiguous entities would miss important information and reduce system effectiveness.",
+        "This is correct. Entity disambiguation uses context and knowledge bases to resolve entity ambiguity and improve accuracy.",
+        "Restricting to common names would limit system coverage and miss important specialized entities.",
+        "Random entity selection doesn't provide principled resolution of ambiguity and could lead to incorrect information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "entity-disambiguation",
+        "ambiguity-resolution",
+        "context-analysis"
+      ]
+    },
+    {
+      "id": "RAG_094",
+      "question": "What is the role of feedback loops in improving RAG system performance?",
+      "options": [
+        "To create system instability",
+        "To continuously improve retrieval and generation quality based on user interactions",
+        "To slow down system responses",
+        "To make systems more complex unnecessarily"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feedback loops collect user interactions, relevance judgments, and performance data to continuously refine and improve RAG system components and overall effectiveness.",
+      "optionExplanations": [
+        "Well-designed feedback loops improve rather than destabilize system performance.",
+        "This is correct. Feedback loops enable continuous improvement based on user interactions and performance data.",
+        "Feedback loops improve quality rather than intentionally slowing down responses.",
+        "Feedback mechanisms add valuable functionality for system improvement rather than unnecessary complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feedback-loops",
+        "continuous-improvement",
+        "user-interactions"
+      ]
+    },
+    {
+      "id": "RAG_095",
+      "question": "Which approach is effective for handling specialized document formats in RAG systems?",
+      "options": [
+        "Converting everything to plain text only",
+        "Format-specific parsers and structure-aware processing",
+        "Ignoring document format information",
+        "Random format handling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Specialized formats (PDFs, spreadsheets, presentations) require specific parsers that can extract both content and structural information to maintain meaning and context.",
+      "optionExplanations": [
+        "Converting to plain text would lose important structural information and formatting that carries semantic meaning.",
+        "This is correct. Format-specific parsers preserve important structural and contextual information from different document types.",
+        "Ignoring format information would lose valuable structural context and metadata.",
+        "Random handling doesn't provide systematic approaches to preserve format-specific information and structure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "document-formats",
+        "format-parsing",
+        "structure-preservation"
+      ]
+    },
+    {
+      "id": "RAG_096",
+      "question": "What is the advantage of using model distillation in RAG system deployment?",
+      "options": [
+        "Increased model complexity",
+        "Reduced computational requirements while maintaining performance",
+        "Slower inference speeds",
+        "Higher memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model distillation creates smaller, more efficient models that retain most of the performance of larger teacher models while requiring fewer computational resources for deployment.",
+      "optionExplanations": [
+        "Distillation reduces rather than increases model complexity for more efficient deployment.",
+        "This is correct. Distillation reduces computational requirements while preserving most of the original model's performance.",
+        "Distilled models typically provide faster rather than slower inference due to their reduced complexity.",
+        "Distillation reduces rather than increases memory usage through model compression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-distillation",
+        "efficiency",
+        "deployment-optimization"
+      ]
+    },
+    {
+      "id": "RAG_097",
+      "question": "Which strategy helps handle temporal queries that require current information in RAG?",
+      "options": [
+        "Using only historical data",
+        "Real-time data integration and temporal-aware retrieval",
+        "Ignoring temporal requirements",
+        "Random temporal processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temporal queries requiring current information need real-time data integration capabilities and retrieval systems that understand temporal relevance and recency requirements.",
+      "optionExplanations": [
+        "Using only historical data would fail to address queries requiring current or recent information.",
+        "This is correct. Real-time integration and temporal-aware retrieval handle queries requiring current information effectively.",
+        "Ignoring temporal requirements would provide outdated or irrelevant information for time-sensitive queries.",
+        "Random temporal processing doesn't provide systematic handling of time-sensitive information needs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temporal-queries",
+        "real-time-integration",
+        "current-information"
+      ]
+    },
+    {
+      "id": "RAG_098",
+      "question": "What is the benefit of using vector database indexing strategies like HNSW or IVF?",
+      "options": [
+        "Perfect recall in all cases",
+        "Faster approximate nearest neighbor search with good recall-efficiency trade-offs",
+        "Increased storage requirements",
+        "Slower query processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Indexing strategies like HNSW (Hierarchical Navigable Small World) and IVF (Inverted File) enable fast approximate searches with configurable trade-offs between speed and recall.",
+      "optionExplanations": [
+        "These indexing strategies provide approximate search with configurable recall, not perfect recall in all cases.",
+        "This is correct. Advanced indexing strategies enable fast approximate search with good recall-efficiency trade-offs for large-scale systems.",
+        "These strategies are designed to improve efficiency, though they may have some indexing overhead.",
+        "These indexing strategies specifically aim to speed up rather than slow down query processing."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "vector-indexing",
+        "hnsw",
+        "ivf",
+        "approximate-search"
+      ]
+    },
+    {
+      "id": "RAG_099",
+      "question": "Which approach helps ensure consistent performance across different query types in RAG?",
+      "options": [
+        "Using the same strategy for all queries",
+        "Query classification and adaptive processing pipelines",
+        "Ignoring query differences",
+        "Random processing approaches"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Query classification enables systems to identify different query types and apply appropriate processing strategies, ensuring consistent high performance across diverse query patterns.",
+      "optionExplanations": [
+        "Using identical strategies for all queries ignores important differences in query types and requirements.",
+        "This is correct. Query classification and adaptive pipelines ensure appropriate handling of different query types for consistent performance.",
+        "Ignoring query differences would lead to suboptimal performance for queries requiring specialized handling.",
+        "Random approaches don't provide systematic optimization for different query characteristics and requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "query-classification",
+        "adaptive-processing",
+        "consistent-performance"
+      ]
+    },
+    {
+      "id": "RAG_100",
+      "question": "What is the role of explainability features in advanced RAG systems?",
+      "options": [
+        "To hide system decision-making processes",
+        "To provide transparency into how retrieval and generation decisions are made",
+        "To slow down system responses",
+        "To increase system complexity unnecessarily"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Explainability features help users understand why certain documents were retrieved, how information was processed, and what sources contributed to the final response, building trust and enabling verification.",
+      "optionExplanations": [
+        "Explainability specifically aims to reveal and clarify rather than hide system decision-making processes.",
+        "This is correct. Explainability provides transparency into retrieval and generation decisions, building user trust and enabling verification.",
+        "While explainability adds processing, its goal is to improve transparency and trust rather than to slow down responses.",
+        "Explainability adds valuable functionality for trust and verification rather than unnecessary complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "explainability",
+        "transparency",
+        "trust-building",
+        "verification"
+      ]
+    }
+  ]
+}

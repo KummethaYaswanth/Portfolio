@@ -1,0 +1,2473 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_DLG",
+  "topicName": "Deep Learning",
+  "subtopicId": "STC_RNN",
+  "subtopicName": "Recurrent Neural Networks",
+  "str": 0.300,
+  "description": "Comprehensive coverage of Recurrent Neural Networks including sequence processing, LSTM, GRU, bidirectional RNNs, and their applications in deep learning",
+  "questions": [
+    {
+      "id": "RNN_001",
+      "question": "What is the main advantage of RNNs over traditional feedforward neural networks?",
+      "options": [
+        "They can process sequences of variable length",
+        "They have fewer parameters",
+        "They train faster",
+        "They require less memory"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "RNNs can process sequences of variable length due to their recurrent connections that allow information to persist across time steps, making them ideal for sequential data like text, speech, and time series.",
+      "optionExplanations": [
+        "Correct. RNNs have recurrent connections that create a form of memory, allowing them to process sequences of any length by maintaining state information across time steps.",
+        "Incorrect. RNNs actually have additional parameters due to recurrent connections, making them more complex than feedforward networks of similar size.",
+        "Incorrect. RNNs typically train slower than feedforward networks due to sequential processing and backpropagation through time.",
+        "Incorrect. RNNs require more memory to store hidden states across time steps, especially for long sequences."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "rnn-basics",
+        "sequence-processing",
+        "architecture"
+      ]
+    },
+    {
+      "id": "RNN_002",
+      "question": "In a vanilla RNN, what function is typically used to compute the hidden state?",
+      "options": [
+        "Linear transformation only",
+        "tanh activation function",
+        "ReLU activation function",
+        "Sigmoid activation function"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The tanh activation function is most commonly used in vanilla RNNs because it outputs values between -1 and 1, which helps with gradient flow and provides better numerical stability than sigmoid.",
+      "optionExplanations": [
+        "Incorrect. A linear transformation alone would not provide the non-linearity needed for the network to learn complex patterns.",
+        "Correct. tanh is the standard activation function for vanilla RNNs as it outputs values in [-1,1] range, providing better gradient properties than sigmoid.",
+        "Incorrect. While ReLU can be used, it's not typical for vanilla RNNs as it can cause issues with gradient flow in recurrent connections.",
+        "Incorrect. Sigmoid was used in early RNNs but tanh is preferred due to better gradient properties and zero-centered output."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "vanilla-rnn",
+        "activation-functions",
+        "hidden-state"
+      ]
+    },
+    {
+      "id": "RNN_003",
+      "question": "What is the vanishing gradient problem in RNNs?",
+      "options": [
+        "Gradients become too large during backpropagation",
+        "Gradients become exponentially small over long sequences",
+        "The network forgets recent inputs",
+        "The learning rate decreases over time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The vanishing gradient problem occurs when gradients become exponentially smaller as they propagate back through time, making it difficult for the network to learn long-term dependencies.",
+      "optionExplanations": [
+        "Incorrect. This describes the exploding gradient problem, which is the opposite issue where gradients become too large.",
+        "Correct. As gradients backpropagate through many time steps, they get multiplied by small weight values repeatedly, causing them to vanish exponentially.",
+        "Incorrect. This describes a symptom of the vanishing gradient problem, but not the problem itself.",
+        "Incorrect. The learning rate is a hyperparameter that doesn't automatically decrease due to the vanishing gradient problem."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vanishing-gradient",
+        "backpropagation",
+        "long-term-dependencies"
+      ]
+    },
+    {
+      "id": "RNN_004",
+      "question": "Which component of an LSTM cell is responsible for deciding what information to throw away?",
+      "options": [
+        "Input gate",
+        "Forget gate",
+        "Output gate",
+        "Cell state"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The forget gate in an LSTM decides what information should be discarded from the cell state by outputting values between 0 (forget completely) and 1 (keep completely).",
+      "optionExplanations": [
+        "Incorrect. The input gate decides what new information should be stored in the cell state.",
+        "Correct. The forget gate determines what information should be thrown away from the cell state by producing values between 0 and 1.",
+        "Incorrect. The output gate controls what parts of the cell state should be output as the hidden state.",
+        "Incorrect. The cell state is the memory component that stores information, not a gate that makes decisions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "forget-gate",
+        "cell-components"
+      ]
+    },
+    {
+      "id": "RNN_005",
+      "question": "What is the key difference between GRU and LSTM?",
+      "options": [
+        "GRU has more gates than LSTM",
+        "GRU combines cell state and hidden state",
+        "GRU is slower to train",
+        "GRU cannot handle long sequences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GRU combines the cell state and hidden state into a single hidden state, and uses only two gates (reset and update) instead of LSTM's three gates, making it simpler while maintaining similar performance.",
+      "optionExplanations": [
+        "Incorrect. GRU has fewer gates (2) compared to LSTM (3 gates).",
+        "Correct. GRU merges the cell state and hidden state, using only a hidden state, and has two gates instead of three.",
+        "Incorrect. GRU is generally faster to train due to its simpler structure with fewer parameters.",
+        "Incorrect. GRU can handle long sequences effectively, similar to LSTM."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gru",
+        "lstm",
+        "comparison",
+        "gates"
+      ]
+    },
+    {
+      "id": "RNN_006",
+      "question": "In backpropagation through time (BPTT), gradients are calculated by:",
+      "options": [
+        "Moving forward through time steps",
+        "Processing all time steps simultaneously",
+        "Moving backward through time steps",
+        "Random sampling of time steps"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "BPTT calculates gradients by moving backward through time steps, similar to standard backpropagation but unrolled across the temporal dimension of the sequence.",
+      "optionExplanations": [
+        "Incorrect. Forward propagation moves forward through time, but gradient calculation moves backward.",
+        "Incorrect. While all time steps are considered, the gradient calculation proceeds sequentially backward through time.",
+        "Correct. BPTT computes gradients by moving backward through time steps, propagating errors from the final time step to the initial one.",
+        "Incorrect. BPTT processes time steps in a systematic backward order, not randomly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bptt",
+        "backpropagation",
+        "gradient-calculation"
+      ]
+    },
+    {
+      "id": "RNN_007",
+      "question": "What is a bidirectional RNN?",
+      "options": [
+        "An RNN that processes sequences in reverse order",
+        "An RNN with two hidden layers",
+        "An RNN that processes sequences in both forward and backward directions",
+        "An RNN that can handle two different types of input"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A bidirectional RNN processes the input sequence in both forward and backward directions, combining information from past and future contexts to make predictions.",
+      "optionExplanations": [
+        "Incorrect. This describes a reverse RNN, not a bidirectional one.",
+        "Incorrect. The number of hidden layers is not what defines bidirectional processing.",
+        "Correct. Bidirectional RNNs use two RNNs - one processing forward and one backward - then combine their outputs.",
+        "Incorrect. This refers to multi-modal input, not bidirectional processing."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bidirectional-rnn",
+        "forward-backward",
+        "context"
+      ]
+    },
+    {
+      "id": "RNN_008",
+      "question": "Which technique is commonly used to prevent exploding gradients in RNNs?",
+      "options": [
+        "Dropout",
+        "Gradient clipping",
+        "Batch normalization",
+        "Weight decay"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient clipping limits the magnitude of gradients during training by scaling them down when they exceed a threshold, preventing the exploding gradient problem.",
+      "optionExplanations": [
+        "Incorrect. Dropout helps with overfitting but doesn't directly address exploding gradients.",
+        "Correct. Gradient clipping caps the gradient magnitude at a threshold value, preventing gradients from becoming too large.",
+        "Incorrect. Batch normalization helps with training stability but is not the primary solution for exploding gradients in RNNs.",
+        "Incorrect. Weight decay helps with regularization but doesn't directly prevent exploding gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploding-gradient",
+        "gradient-clipping",
+        "training-techniques"
+      ]
+    },
+    {
+      "id": "RNN_009",
+      "question": "What is the purpose of the cell state in an LSTM?",
+      "options": [
+        "To compute the output at each time step",
+        "To store long-term memory information",
+        "To apply activation functions",
+        "To connect different layers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The cell state in LSTM acts as a 'conveyor belt' that carries long-term memory information across time steps with minimal interference from the gates.",
+      "optionExplanations": [
+        "Incorrect. The hidden state, not the cell state, is used to compute outputs at each time step.",
+        "Correct. The cell state maintains long-term information across time steps, flowing through the network with minimal modification.",
+        "Incorrect. Activation functions are applied by the gates, not by the cell state itself.",
+        "Incorrect. The cell state operates within a single LSTM layer, not between different layers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "cell-state",
+        "long-term-memory"
+      ]
+    },
+    {
+      "id": "RNN_010",
+      "question": "In an LSTM, what does the input gate control?",
+      "options": [
+        "What information to forget from the cell state",
+        "What new information to store in the cell state",
+        "What information to output from the cell",
+        "The learning rate of the network"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The input gate determines what new information should be stored in the cell state by deciding which values to update and what new candidate values to add.",
+      "optionExplanations": [
+        "Incorrect. This is the function of the forget gate, not the input gate.",
+        "Correct. The input gate decides what new information should be added to the cell state.",
+        "Incorrect. This is the function of the output gate.",
+        "Incorrect. Gates don't control the learning rate, which is a training hyperparameter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "input-gate",
+        "cell-state"
+      ]
+    },
+    {
+      "id": "RNN_011",
+      "question": "What problem do LSTM and GRU architectures primarily solve?",
+      "options": [
+        "Overfitting",
+        "Underfitting",
+        "Vanishing gradient problem",
+        "Computational complexity"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LSTM and GRU were specifically designed to address the vanishing gradient problem in traditional RNNs, allowing them to learn long-term dependencies effectively.",
+      "optionExplanations": [
+        "Incorrect. While they may help with overfitting through better learning, this isn't their primary purpose.",
+        "Incorrect. Underfitting is not the main problem they were designed to solve.",
+        "Correct. Both LSTM and GRU use gating mechanisms to maintain gradient flow over long sequences, solving the vanishing gradient problem.",
+        "Incorrect. These architectures actually increase computational complexity compared to vanilla RNNs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lstm",
+        "gru",
+        "vanishing-gradient",
+        "long-term-dependencies"
+      ]
+    },
+    {
+      "id": "RNN_012",
+      "question": "Which activation function is typically used in LSTM gates?",
+      "options": [
+        "tanh",
+        "ReLU",
+        "Sigmoid",
+        "Softmax"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sigmoid activation is used in LSTM gates because it outputs values between 0 and 1, which naturally represents how much information should pass through (0 = none, 1 = all).",
+      "optionExplanations": [
+        "Incorrect. tanh is used for candidate values and output, but not for the gates themselves.",
+        "Incorrect. ReLU is not typically used in LSTM gates as it doesn't provide the 0-1 range needed for gating.",
+        "Correct. Sigmoid outputs values between 0 and 1, making it perfect for gates that need to control information flow.",
+        "Incorrect. Softmax is used for multi-class classification outputs, not for internal gates."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "activation-functions",
+        "gates",
+        "sigmoid"
+      ]
+    },
+    {
+      "id": "RNN_013",
+      "question": "What is truncated backpropagation through time (TBPTT)?",
+      "options": [
+        "Training only part of the network",
+        "Limiting backpropagation to a fixed number of time steps",
+        "Using approximate gradients",
+        "Skipping certain layers during training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TBPTT limits backpropagation to a fixed number of time steps to make training computationally feasible and prevent vanishing gradients over very long sequences.",
+      "optionExplanations": [
+        "Incorrect. All network parameters are still trained, just over limited time horizons.",
+        "Correct. TBPTT restricts gradient propagation to a maximum number of time steps to manage computational cost and memory.",
+        "Incorrect. The gradients are exact within the truncated window, not approximated.",
+        "Incorrect. All layers participate in training, but the temporal extent is limited."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tbptt",
+        "backpropagation",
+        "training-optimization"
+      ]
+    },
+    {
+      "id": "RNN_014",
+      "question": "In a GRU, what does the reset gate do?",
+      "options": [
+        "Determines what information to forget",
+        "Controls how much past information to ignore when computing new candidate state",
+        "Decides what to output",
+        "Resets the entire network"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The reset gate in GRU controls how much of the previous hidden state should be ignored when computing the candidate activation, allowing the unit to forget irrelevant past information.",
+      "optionExplanations": [
+        "Incorrect. This is more similar to the forget gate in LSTM, not the reset gate in GRU.",
+        "Correct. The reset gate determines how much previous hidden state information to use when computing the new candidate state.",
+        "Incorrect. GRU doesn't have a separate output gate like LSTM.",
+        "Incorrect. The reset gate operates on hidden states, not the entire network."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gru",
+        "reset-gate",
+        "hidden-state"
+      ]
+    },
+    {
+      "id": "RNN_015",
+      "question": "What type of RNN architecture is best suited for machine translation?",
+      "options": [
+        "Vanilla RNN",
+        "Unidirectional LSTM",
+        "Bidirectional LSTM",
+        "Simple feedforward network"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Bidirectional LSTM is ideal for machine translation because it can access both past and future context in the source sentence, providing complete information for accurate translation.",
+      "optionExplanations": [
+        "Incorrect. Vanilla RNN suffers from vanishing gradient problems and can't capture long-term dependencies effectively.",
+        "Incorrect. While better than vanilla RNN, unidirectional LSTM can't access future context which is valuable for translation.",
+        "Correct. Bidirectional LSTM provides both past and future context, essential for understanding the complete meaning in translation tasks.",
+        "Incorrect. Feedforward networks can't handle variable-length sequences required for translation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "machine-translation",
+        "bidirectional-lstm",
+        "applications"
+      ]
+    },
+    {
+      "id": "RNN_016",
+      "question": "What is the main computational bottleneck in RNN training?",
+      "options": [
+        "Matrix multiplication",
+        "Sequential processing preventing parallelization",
+        "Memory allocation",
+        "Activation function computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RNN training is inherently sequential because each time step depends on the previous one, preventing parallelization across time steps and making training slower than parallelizable architectures.",
+      "optionExplanations": [
+        "Incorrect. Matrix multiplication is efficiently handled by modern GPUs and is not the main bottleneck.",
+        "Correct. The sequential dependency between time steps prevents parallel processing, making RNNs slower to train than feedforward networks.",
+        "Incorrect. Memory allocation is not typically the primary bottleneck in RNN training.",
+        "Incorrect. Activation functions are computationally lightweight compared to the sequential processing constraint."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-bottleneck",
+        "parallelization",
+        "training-efficiency"
+      ]
+    },
+    {
+      "id": "RNN_017",
+      "question": "How many gates does a standard LSTM cell have?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A standard LSTM cell has three gates: forget gate, input gate, and output gate. These gates control the flow of information into, out of, and within the cell state.",
+      "optionExplanations": [
+        "Incorrect. This is the number of gates in a GRU (reset and update gates).",
+        "Correct. LSTM has three gates: forget gate, input gate, and output gate.",
+        "Incorrect. Four would be too many for a standard LSTM architecture.",
+        "Incorrect. Five gates would be excessive and is not part of the standard LSTM design."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lstm",
+        "gates",
+        "architecture"
+      ]
+    },
+    {
+      "id": "RNN_018",
+      "question": "What is the purpose of the update gate in a GRU?",
+      "options": [
+        "To reset the hidden state",
+        "To determine how much of the new candidate state to accept",
+        "To apply activation functions",
+        "To connect to the next layer"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The update gate in GRU controls how much of the new candidate activation and how much of the previous hidden state should be combined to form the current hidden state.",
+      "optionExplanations": [
+        "Incorrect. This is the function of the reset gate, not the update gate.",
+        "Correct. The update gate determines the balance between keeping old information and accepting new candidate information.",
+        "Incorrect. Activation functions are applied during computations, but the update gate controls information flow.",
+        "Incorrect. Gates operate within the GRU cell, not between layers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gru",
+        "update-gate",
+        "hidden-state"
+      ]
+    },
+    {
+      "id": "RNN_019",
+      "question": "Which of the following is NOT a common application of RNNs?",
+      "options": [
+        "Language modeling",
+        "Time series prediction",
+        "Image classification",
+        "Speech recognition"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Image classification is typically handled by CNNs rather than RNNs, as images are spatial data rather than sequential data. RNNs excel at sequential tasks.",
+      "optionExplanations": [
+        "Incorrect. Language modeling is a classic RNN application as text is sequential data.",
+        "Incorrect. Time series prediction is ideal for RNNs due to the temporal nature of the data.",
+        "Correct. Image classification is better suited for CNNs as images are spatial rather than sequential data.",
+        "Incorrect. Speech recognition involves sequential audio data, making it a natural fit for RNNs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "applications",
+        "image-classification",
+        "cnn-vs-rnn"
+      ]
+    },
+    {
+      "id": "RNN_020",
+      "question": "What happens to the hidden state in a vanilla RNN at each time step?",
+      "options": [
+        "It remains unchanged",
+        "It gets reset to zero",
+        "It gets updated based on current input and previous hidden state",
+        "It gets copied to the next layer"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In a vanilla RNN, the hidden state is updated at each time step using both the current input and the previous hidden state, maintaining information flow across time.",
+      "optionExplanations": [
+        "Incorrect. The hidden state must change to process new information and learn temporal patterns.",
+        "Incorrect. Resetting to zero would lose all temporal information accumulated so far.",
+        "Correct. The hidden state is computed as a function of both the current input and the previous hidden state.",
+        "Incorrect. This describes layer-to-layer propagation, not time step updates within the same layer."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "vanilla-rnn",
+        "hidden-state",
+        "time-step"
+      ]
+    },
+    {
+      "id": "RNN_021",
+      "question": "What is teacher forcing in RNN training?",
+      "options": [
+        "Using a separate teacher network",
+        "Using ground truth outputs as inputs during training",
+        "Forcing the network to learn faster",
+        "Using additional supervision signals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Teacher forcing uses the ground truth target sequence as input during training instead of the model's own predictions, which helps stabilize training and speeds up convergence.",
+      "optionExplanations": [
+        "Incorrect. Teacher forcing doesn't involve a separate teacher network.",
+        "Correct. Teacher forcing feeds the actual target outputs as inputs during training rather than using the model's predictions.",
+        "Incorrect. It's about training stability, not forcing faster learning.",
+        "Incorrect. It's not about additional supervision but about how existing supervision is used."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "teacher-forcing",
+        "training-techniques",
+        "sequence-generation"
+      ]
+    },
+    {
+      "id": "RNN_022",
+      "question": "Which problem can occur when using teacher forcing during training?",
+      "options": [
+        "Overfitting",
+        "Exposure bias",
+        "Underfitting",
+        "Mode collapse"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Exposure bias occurs because the model is trained with ground truth inputs but at inference time it must use its own predictions, creating a distribution mismatch.",
+      "optionExplanations": [
+        "Incorrect. While overfitting is possible, it's not the specific problem associated with teacher forcing.",
+        "Correct. Exposure bias happens when there's a mismatch between training (using ground truth) and inference (using model predictions).",
+        "Incorrect. Teacher forcing typically helps with learning, not hinders it.",
+        "Incorrect. Mode collapse is typically associated with GANs, not RNN training with teacher forcing."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "teacher-forcing",
+        "exposure-bias",
+        "training-issues"
+      ]
+    },
+    {
+      "id": "RNN_023",
+      "question": "What is the key innovation of LSTM over vanilla RNN?",
+      "options": [
+        "More layers",
+        "Different activation function",
+        "Gating mechanisms",
+        "Bidirectional processing"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The key innovation of LSTM is the introduction of gating mechanisms (forget, input, and output gates) that control information flow and help solve the vanishing gradient problem.",
+      "optionExplanations": [
+        "Incorrect. The number of layers is not what distinguishes LSTM from vanilla RNN.",
+        "Incorrect. While activation functions may differ, the key innovation is the gating structure.",
+        "Correct. LSTM introduces gates that control information flow, enabling long-term memory retention.",
+        "Incorrect. Bidirectional processing is a separate architectural choice that can be applied to any RNN type."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lstm",
+        "innovation",
+        "gates",
+        "vanilla-rnn"
+      ]
+    },
+    {
+      "id": "RNN_024",
+      "question": "In sequence-to-sequence models, what is the purpose of the encoder?",
+      "options": [
+        "To generate the output sequence",
+        "To encode the input sequence into a fixed-size representation",
+        "To apply attention mechanisms",
+        "To decode the target sequence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The encoder in sequence-to-sequence models processes the input sequence and compresses it into a fixed-size representation (context vector) that captures the input's meaning.",
+      "optionExplanations": [
+        "Incorrect. This is the role of the decoder, not the encoder.",
+        "Correct. The encoder converts the variable-length input sequence into a fixed-size context vector.",
+        "Incorrect. Attention can be applied by either encoder or decoder, but it's not the encoder's primary purpose.",
+        "Incorrect. Decoding is performed by the decoder component."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sequence-to-sequence",
+        "encoder",
+        "context-vector"
+      ]
+    },
+    {
+      "id": "RNN_025",
+      "question": "What is the main limitation of the basic encoder-decoder architecture?",
+      "options": [
+        "It cannot handle variable-length sequences",
+        "Information bottleneck at the fixed-size context vector",
+        "It requires too much memory",
+        "It cannot be parallelized"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main limitation is that all input information must be compressed into a single fixed-size context vector, creating an information bottleneck especially for long sequences.",
+      "optionExplanations": [
+        "Incorrect. Encoder-decoder architectures can handle variable-length sequences.",
+        "Correct. The fixed-size context vector becomes a bottleneck, especially for long sequences where important information may be lost.",
+        "Incorrect. Memory usage is not the primary limitation of the basic architecture.",
+        "Incorrect. While RNNs have parallelization issues, this isn't the main limitation of encoder-decoder specifically."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoder-decoder",
+        "information-bottleneck",
+        "context-vector"
+      ]
+    },
+    {
+      "id": "RNN_026",
+      "question": "How does attention mechanism help in sequence-to-sequence models?",
+      "options": [
+        "It makes training faster",
+        "It allows the decoder to focus on relevant parts of the input sequence",
+        "It reduces memory usage",
+        "It eliminates the need for recurrent connections"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention allows the decoder to dynamically focus on different parts of the input sequence at each decoding step, rather than relying solely on a fixed context vector.",
+      "optionExplanations": [
+        "Incorrect. Attention actually adds computational overhead, though it improves quality.",
+        "Correct. Attention lets the decoder selectively focus on relevant input positions for each output step.",
+        "Incorrect. Attention typically increases memory usage due to storing attention weights.",
+        "Incorrect. Attention is often used alongside recurrent connections, not as a replacement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-mechanism",
+        "sequence-to-sequence",
+        "decoder"
+      ]
+    },
+    {
+      "id": "RNN_027",
+      "question": "What is the difference between many-to-one and one-to-many RNN architectures?",
+      "options": [
+        "Number of hidden layers",
+        "Type of activation function",
+        "Input/output sequence structure",
+        "Training algorithm used"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Many-to-one takes a sequence as input and produces a single output (like sentiment analysis), while one-to-many takes a single input and produces a sequence (like image captioning).",
+      "optionExplanations": [
+        "Incorrect. Both architectures can have the same number of hidden layers.",
+        "Incorrect. The activation functions used are not what distinguishes these architectures.",
+        "Correct. The difference lies in whether the input/output is a sequence or a single value.",
+        "Incorrect. Both can use the same training algorithms like backpropagation through time."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "rnn-architectures",
+        "many-to-one",
+        "one-to-many"
+      ]
+    },
+    {
+      "id": "RNN_028",
+      "question": "Which technique can help with the cold start problem in sequence generation?",
+      "options": [
+        "Dropout",
+        "Batch normalization",
+        "Warm-up strategies",
+        "Learning rate scheduling"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Warm-up strategies help with the cold start problem by providing initial context or using techniques like gradually reducing teacher forcing to ease the transition to self-generation.",
+      "optionExplanations": [
+        "Incorrect. Dropout is for regularization and doesn't address cold start issues.",
+        "Incorrect. Batch normalization helps with training stability but not specifically cold start problems.",
+        "Correct. Warm-up strategies provide initial context or gradual transition from teacher forcing to help with sequence generation startup.",
+        "Incorrect. Learning rate scheduling affects training dynamics but doesn't directly solve cold start issues."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "sequence-generation",
+        "cold-start",
+        "warm-up"
+      ]
+    },
+    {
+      "id": "RNN_029",
+      "question": "What is the purpose of masking in RNN training with batched sequences?",
+      "options": [
+        "To hide some weights from updating",
+        "To ignore padded positions in variable-length sequences",
+        "To prevent overfitting",
+        "To speed up computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Masking ensures that padded positions in batched variable-length sequences don't contribute to the loss calculation or gradient updates, maintaining training correctness.",
+      "optionExplanations": [
+        "Incorrect. Masking doesn't hide weights, it masks sequence positions.",
+        "Correct. Masking prevents padded positions from affecting loss computation and gradient updates in variable-length sequences.",
+        "Incorrect. Masking is for correctness, not regularization.",
+        "Incorrect. Masking adds computational overhead rather than speeding up computation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "masking",
+        "padding",
+        "variable-length",
+        "batching"
+      ]
+    },
+    {
+      "id": "RNN_030",
+      "question": "Which activation function is commonly used for the candidate values in LSTM?",
+      "options": [
+        "Sigmoid",
+        "ReLU",
+        "tanh",
+        "Softmax"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "tanh is used for candidate values in LSTM because it outputs values in the range [-1, 1], providing both positive and negative contributions to the cell state.",
+      "optionExplanations": [
+        "Incorrect. Sigmoid is used for gates, not candidate values.",
+        "Incorrect. ReLU is not typically used in LSTM candidate value computation.",
+        "Correct. tanh provides the [-1, 1] range needed for candidate values that can both add and subtract from the cell state.",
+        "Incorrect. Softmax is used for probability distributions, not internal LSTM computations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "candidate-values",
+        "tanh",
+        "activation-functions"
+      ]
+    },
+    {
+      "id": "RNN_031",
+      "question": "What is the main advantage of using bidirectional RNNs for named entity recognition?",
+      "options": [
+        "Faster training",
+        "Access to both past and future context",
+        "Lower memory usage",
+        "Better gradient flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bidirectional RNNs provide access to both past and future context, which is crucial for named entity recognition where future words can help determine if a current word is part of an entity.",
+      "optionExplanations": [
+        "Incorrect. Bidirectional RNNs actually require more computation, making training slower.",
+        "Correct. Having both directions of context helps identify entities more accurately, as future words provide important clues.",
+        "Incorrect. Bidirectional RNNs use more memory due to processing in both directions.",
+        "Incorrect. Gradient flow improvement is not the main advantage for NER tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bidirectional-rnn",
+        "named-entity-recognition",
+        "context"
+      ]
+    },
+    {
+      "id": "RNN_032",
+      "question": "In GRU, how is the final hidden state computed?",
+      "options": [
+        "Only from the candidate state",
+        "Only from the previous hidden state",
+        "As a weighted combination of candidate state and previous hidden state",
+        "By applying a separate output gate"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "GRU computes the final hidden state as a weighted combination of the candidate state and previous hidden state, controlled by the update gate.",
+      "optionExplanations": [
+        "Incorrect. The final state considers both new candidate information and previous state.",
+        "Incorrect. Using only previous state would prevent learning new information.",
+        "Correct. The update gate controls the interpolation between new candidate state and previous hidden state.",
+        "Incorrect. GRU doesn't have a separate output gate like LSTM."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gru",
+        "hidden-state",
+        "update-gate",
+        "interpolation"
+      ]
+    },
+    {
+      "id": "RNN_033",
+      "question": "What is the purpose of the peephole connections in some LSTM variants?",
+      "options": [
+        "To connect different LSTM layers",
+        "To allow gates to look at the cell state",
+        "To speed up training",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Peephole connections allow the gates to examine the cell state directly, giving them more information to make better decisions about information flow.",
+      "optionExplanations": [
+        "Incorrect. Peephole connections operate within a single LSTM cell, not between layers.",
+        "Correct. Peephole connections let gates access the cell state directly, improving their decision-making capability.",
+        "Incorrect. Peephole connections add computation and don't speed up training.",
+        "Incorrect. They actually add parameters and memory usage."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "lstm-variants",
+        "peephole-connections",
+        "cell-state",
+        "gates"
+      ]
+    },
+    {
+      "id": "RNN_034",
+      "question": "Which metric is commonly used to evaluate RNN performance on language modeling tasks?",
+      "options": [
+        "Accuracy",
+        "F1-score",
+        "Perplexity",
+        "ROC-AUC"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Perplexity measures how well a probability model predicts a sample and is the standard metric for language modeling, with lower perplexity indicating better performance.",
+      "optionExplanations": [
+        "Incorrect. Accuracy is used for classification tasks, not language modeling.",
+        "Incorrect. F1-score is for binary/multi-class classification problems.",
+        "Correct. Perplexity measures the uncertainty of the model's predictions, with lower values indicating better language modeling performance.",
+        "Incorrect. ROC-AUC is for binary classification problems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "language-modeling",
+        "perplexity",
+        "evaluation-metrics"
+      ]
+    },
+    {
+      "id": "RNN_035",
+      "question": "What is curriculum learning in the context of RNN training?",
+      "options": [
+        "Training multiple RNNs simultaneously",
+        "Starting with easier examples and gradually increasing difficulty",
+        "Using different learning rates for different parts",
+        "Training on multiple tasks at once"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Curriculum learning involves training the model on easier examples first and gradually increasing the difficulty, which can lead to better convergence and performance.",
+      "optionExplanations": [
+        "Incorrect. This describes ensemble training, not curriculum learning.",
+        "Correct. Curriculum learning starts with simpler examples and progressively introduces more complex ones during training.",
+        "Incorrect. This describes learning rate scheduling or layer-wise learning rates.",
+        "Incorrect. This describes multi-task learning, not curriculum learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curriculum-learning",
+        "training-strategies",
+        "difficulty"
+      ]
+    },
+    {
+      "id": "RNN_036",
+      "question": "What is the main computational advantage of GRU over LSTM?",
+      "options": [
+        "Better accuracy",
+        "Fewer parameters and faster computation",
+        "Better gradient flow",
+        "Lower memory usage during inference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GRU has fewer parameters than LSTM due to having only two gates instead of three, and combines cell and hidden states, making it computationally more efficient.",
+      "optionExplanations": [
+        "Incorrect. Accuracy depends on the task and data, not consistently better for GRU.",
+        "Correct. GRU has fewer gates and parameters, making it faster to compute than LSTM.",
+        "Incorrect. Both LSTM and GRU solve gradient flow problems similarly.",
+        "Incorrect. Memory usage difference is not the main computational advantage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gru",
+        "lstm",
+        "computational-efficiency",
+        "parameters"
+      ]
+    },
+    {
+      "id": "RNN_037",
+      "question": "In sequence labeling tasks, what is the typical output layer configuration?",
+      "options": [
+        "Single neuron with sigmoid",
+        "Softmax over all possible labels for each position",
+        "Linear layer with no activation",
+        "tanh activation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sequence labeling requires predicting a label for each position in the sequence, so a softmax layer over all possible labels is used at each time step.",
+      "optionExplanations": [
+        "Incorrect. Single neuron is for binary classification, not multi-class sequence labeling.",
+        "Correct. Softmax provides probability distribution over all possible labels for each sequence position.",
+        "Incorrect. Linear layers without activation don't provide proper probability distributions.",
+        "Incorrect. tanh is not suitable for generating probability distributions over classes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sequence-labeling",
+        "output-layer",
+        "softmax"
+      ]
+    },
+    {
+      "id": "RNN_038",
+      "question": "What is the purpose of layer normalization in RNNs?",
+      "options": [
+        "To prevent overfitting",
+        "To stabilize training and improve convergence",
+        "To reduce computational cost",
+        "To handle variable sequence lengths"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Layer normalization stabilizes the training process by normalizing inputs to each layer, reducing internal covariate shift and improving convergence speed.",
+      "optionExplanations": [
+        "Incorrect. While it may help with generalization, its primary purpose is training stabilization.",
+        "Correct. Layer normalization normalizes activations within each layer, stabilizing training and often improving convergence.",
+        "Incorrect. Layer normalization adds computational overhead rather than reducing it.",
+        "Incorrect. Handling variable lengths is done through padding and masking, not layer normalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "layer-normalization",
+        "training-stability",
+        "convergence"
+      ]
+    },
+    {
+      "id": "RNN_039",
+      "question": "Which technique is used to handle the problem of exposure bias in sequence generation?",
+      "options": [
+        "Dropout",
+        "Scheduled sampling",
+        "Gradient clipping",
+        "Early stopping"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Scheduled sampling gradually transitions from teacher forcing to using the model's own predictions during training, reducing exposure bias between training and inference.",
+      "optionExplanations": [
+        "Incorrect. Dropout is for regularization and doesn't address exposure bias.",
+        "Correct. Scheduled sampling mixes ground truth and model predictions during training to reduce the train-test mismatch.",
+        "Incorrect. Gradient clipping prevents exploding gradients but doesn't address exposure bias.",
+        "Incorrect. Early stopping prevents overfitting but doesn't solve exposure bias."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "exposure-bias",
+        "scheduled-sampling",
+        "sequence-generation"
+      ]
+    },
+    {
+      "id": "RNN_040",
+      "question": "What is the key difference between deep RNNs and stacked RNNs?",
+      "options": [
+        "Number of time steps",
+        "There is no difference",
+        "Deep RNNs have connections within time steps, stacked RNNs between time steps",
+        "Type of gates used"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deep RNNs and stacked RNNs refer to the same concept - multiple RNN layers stacked on top of each other, where the output of one layer becomes the input to the next layer.",
+      "optionExplanations": [
+        "Incorrect. The number of time steps is not what distinguishes these concepts.",
+        "Correct. Deep RNNs and stacked RNNs are different terms for the same architecture with multiple layers.",
+        "Incorrect. Both refer to the same layer-stacking approach.",
+        "Incorrect. The type of gates is determined by the RNN cell type (LSTM, GRU), not the stacking."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deep-rnn",
+        "stacked-rnn",
+        "architecture"
+      ]
+    },
+    {
+      "id": "RNN_041",
+      "question": "In an RNN language model, what does the softmax output represent?",
+      "options": [
+        "Hidden state values",
+        "Probability distribution over the vocabulary",
+        "Cell state values",
+        "Attention weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The softmax output in an RNN language model represents the probability distribution over all words in the vocabulary for the next word prediction.",
+      "optionExplanations": [
+        "Incorrect. Hidden states are internal representations, not the final output.",
+        "Correct. Softmax converts logits to probabilities over all possible next words in the vocabulary.",
+        "Incorrect. Cell states are internal to LSTM cells, not the model output.",
+        "Incorrect. Attention weights are used in attention mechanisms, not basic language modeling output."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "language-model",
+        "softmax",
+        "probability-distribution",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "RNN_042",
+      "question": "What is the purpose of beam search in RNN sequence generation?",
+      "options": [
+        "To speed up training",
+        "To find better sequences by keeping multiple hypotheses",
+        "To reduce memory usage",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Beam search maintains multiple candidate sequences (hypotheses) during generation and selects the most probable ones, often producing better results than greedy search.",
+      "optionExplanations": [
+        "Incorrect. Beam search is used during inference, not training.",
+        "Correct. Beam search explores multiple sequence possibilities simultaneously to find higher-quality outputs.",
+        "Incorrect. Beam search actually uses more memory to maintain multiple hypotheses.",
+        "Incorrect. Beam search is an inference technique, not a regularization method."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "beam-search",
+        "sequence-generation",
+        "inference",
+        "search-strategies"
+      ]
+    },
+    {
+      "id": "RNN_043",
+      "question": "Which problem does residual connections help solve in deep RNNs?",
+      "options": [
+        "Overfitting",
+        "Vanishing gradients across layers",
+        "Slow inference",
+        "Memory consumption"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Residual connections help gradients flow directly across layers in deep RNNs, mitigating the vanishing gradient problem that occurs when stacking many RNN layers.",
+      "optionExplanations": [
+        "Incorrect. Residual connections primarily address gradient flow, not overfitting.",
+        "Correct. Residual connections provide direct paths for gradients, helping with the vanishing gradient problem in deep networks.",
+        "Incorrect. Residual connections don't significantly impact inference speed.",
+        "Incorrect. They may slightly increase memory usage rather than reduce it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual-connections",
+        "deep-rnn",
+        "vanishing-gradients",
+        "gradient-flow"
+      ]
+    },
+    {
+      "id": "RNN_044",
+      "question": "What is the main challenge when applying RNNs to very long sequences?",
+      "options": [
+        "Increased accuracy",
+        "Memory requirements and vanishing gradients",
+        "Faster convergence",
+        "Reduced computational cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Very long sequences require storing many hidden states (memory) and gradients must propagate through many time steps, leading to vanishing gradient problems and high memory usage.",
+      "optionExplanations": [
+        "Incorrect. This would be a benefit, not a challenge.",
+        "Correct. Long sequences require more memory and exacerbate gradient propagation issues.",
+        "Incorrect. Long sequences typically make convergence slower, not faster.",
+        "Incorrect. Long sequences increase computational cost significantly."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "long-sequences",
+        "memory-requirements",
+        "vanishing-gradients"
+      ]
+    },
+    {
+      "id": "RNN_045",
+      "question": "What is the purpose of the context vector in encoder-decoder models?",
+      "options": [
+        "To store temporary calculations",
+        "To represent the entire input sequence in a fixed-size vector",
+        "To control the learning rate",
+        "To apply regularization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The context vector encodes all information from the input sequence into a single fixed-size representation that the decoder uses to generate the output sequence.",
+      "optionExplanations": [
+        "Incorrect. The context vector is not for temporary storage but for sequence representation.",
+        "Correct. The context vector is the encoder's compressed representation of the entire input sequence.",
+        "Incorrect. Learning rate control is not the function of the context vector.",
+        "Incorrect. The context vector is not a regularization technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoder-decoder",
+        "context-vector",
+        "sequence-representation"
+      ]
+    },
+    {
+      "id": "RNN_046",
+      "question": "In which scenario would you prefer GRU over LSTM?",
+      "options": [
+        "When you have unlimited computational resources",
+        "When you need faster training with comparable performance",
+        "When you need more complex gating",
+        "When working with very short sequences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GRU is preferred when computational efficiency is important and the performance difference with LSTM is minimal, as GRU has fewer parameters and trains faster.",
+      "optionExplanations": [
+        "Incorrect. Even with unlimited resources, efficiency is still valuable.",
+        "Correct. GRU offers computational efficiency with performance often comparable to LSTM.",
+        "Incorrect. LSTM has more complex gating, so this would favor LSTM.",
+        "Incorrect. For very short sequences, simpler models might be more appropriate than either GRU or LSTM."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gru",
+        "lstm",
+        "computational-efficiency",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "RNN_047",
+      "question": "What is the primary function of the output gate in LSTM?",
+      "options": [
+        "To determine what information to forget",
+        "To control what parts of the cell state are output",
+        "To decide what new information to store",
+        "To apply the final activation function"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The output gate controls which parts of the cell state should be output as the hidden state, determining what information from the cell's memory is revealed.",
+      "optionExplanations": [
+        "Incorrect. This is the function of the forget gate.",
+        "Correct. The output gate determines what parts of the cell state are output as the hidden state.",
+        "Incorrect. This is the function of the input gate.",
+        "Incorrect. Activation functions are applied during computation, but the gate controls information flow."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "output-gate",
+        "cell-state",
+        "hidden-state"
+      ]
+    },
+    {
+      "id": "RNN_048",
+      "question": "Which technique can help RNNs better handle long-term dependencies?",
+      "options": [
+        "Increasing learning rate",
+        "Using skip connections",
+        "Reducing the number of layers",
+        "Using smaller batch sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Skip connections (residual connections) help gradients flow directly across time steps or layers, improving the model's ability to capture long-term dependencies.",
+      "optionExplanations": [
+        "Incorrect. Higher learning rates don't specifically help with long-term dependencies and may hurt training.",
+        "Correct. Skip connections provide direct paths for information and gradients, helping with long-term dependency modeling.",
+        "Incorrect. Reducing layers might actually hurt the model's capacity to learn complex dependencies.",
+        "Incorrect. Batch size doesn't directly affect long-term dependency modeling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "long-term-dependencies",
+        "skip-connections",
+        "residual-connections"
+      ]
+    },
+    {
+      "id": "RNN_049",
+      "question": "What is the main difference between one-to-one and many-to-many RNN architectures?",
+      "options": [
+        "Number of parameters",
+        "Type of activation function",
+        "Input and output sequence lengths",
+        "Training algorithm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "One-to-one processes a single input to produce a single output, while many-to-many processes a sequence to produce another sequence, differing in their input/output structure.",
+      "optionExplanations": [
+        "Incorrect. The number of parameters depends on layer sizes, not the input/output structure.",
+        "Incorrect. Both can use the same activation functions.",
+        "Correct. The key difference is whether inputs and outputs are single values or sequences.",
+        "Incorrect. Both can use the same training algorithms like BPTT."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "rnn-architectures",
+        "one-to-one",
+        "many-to-many",
+        "sequence-structure"
+      ]
+    },
+    {
+      "id": "RNN_050",
+      "question": "Why is the tanh activation function preferred over sigmoid in RNN hidden states?",
+      "options": [
+        "tanh is faster to compute",
+        "tanh has zero-centered output",
+        "tanh uses less memory",
+        "tanh prevents overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "tanh produces zero-centered output (range [-1,1]) which helps with gradient flow and training stability compared to sigmoid's [0,1] range which can cause biased gradients.",
+      "optionExplanations": [
+        "Incorrect. Both tanh and sigmoid have similar computational complexity.",
+        "Correct. tanh's zero-centered output [-1,1] provides better gradient properties than sigmoid's [0,1] range.",
+        "Incorrect. Memory usage is not significantly different between tanh and sigmoid.",
+        "Incorrect. The choice between tanh and sigmoid is about gradient flow, not overfitting prevention."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tanh",
+        "sigmoid",
+        "activation-functions",
+        "gradient-flow"
+      ]
+    },
+    {
+      "id": "RNN_051",
+      "question": "What is the purpose of weight tying in RNN language models?",
+      "options": [
+        "To reduce the number of parameters",
+        "To speed up training",
+        "To improve generalization",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Weight tying (sharing weights between input embeddings and output layer) reduces parameters, speeds up training due to fewer weights to update, and often improves generalization.",
+      "optionExplanations": [
+        "Partially correct but incomplete. Weight tying does reduce parameters by sharing embedding and output weights.",
+        "Partially correct but incomplete. Fewer parameters do lead to faster training.",
+        "Partially correct but incomplete. Weight tying often improves generalization by reducing overfitting.",
+        "Correct. Weight tying provides all these benefits: fewer parameters, faster training, and better generalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-tying",
+        "language-models",
+        "parameter-sharing"
+      ]
+    },
+    {
+      "id": "RNN_052",
+      "question": "In attention-based models, what do attention weights represent?",
+      "options": [
+        "Model parameters to be learned",
+        "The importance of each input position for the current output",
+        "Hidden state values",
+        "Error gradients"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention weights indicate how much each input position should contribute to generating the current output, allowing the model to focus on relevant parts of the input.",
+      "optionExplanations": [
+        "Incorrect. Attention weights are computed dynamically, not learned parameters themselves.",
+        "Correct. Attention weights show the relative importance of each input position for producing the current output.",
+        "Incorrect. Hidden states are internal representations, while attention weights are alignment scores.",
+        "Incorrect. Attention weights are not gradients but importance scores."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention",
+        "attention-weights",
+        "importance",
+        "alignment"
+      ]
+    },
+    {
+      "id": "RNN_053",
+      "question": "What is the main advantage of using packed sequences in PyTorch for RNN training?",
+      "options": [
+        "Better accuracy",
+        "More efficient computation by avoiding padding",
+        "Easier debugging",
+        "Automatic hyperparameter tuning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Packed sequences eliminate the need for padding in variable-length sequences, making computation more efficient by processing only actual sequence elements, not padding tokens.",
+      "optionExplanations": [
+        "Incorrect. Packed sequences improve efficiency, not necessarily accuracy.",
+        "Correct. Packed sequences process only actual sequence elements, avoiding wasted computation on padding.",
+        "Incorrect. Debugging ease is not the main advantage of packed sequences.",
+        "Incorrect. Packed sequences don't affect hyperparameter tuning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "packed-sequences",
+        "pytorch",
+        "efficiency",
+        "padding"
+      ]
+    },
+    {
+      "id": "RNN_054",
+      "question": "Which initialization strategy is commonly recommended for RNN weights?",
+      "options": [
+        "Zero initialization",
+        "Random uniform initialization",
+        "Xavier/Glorot initialization",
+        "All weights set to 1"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Xavier/Glorot initialization is designed to maintain variance across layers and helps with gradient flow, making it suitable for RNN weight initialization.",
+      "optionExplanations": [
+        "Incorrect. Zero initialization would prevent learning as all gradients would be zero.",
+        "Incorrect. Random uniform without proper scaling can lead to vanishing or exploding gradients.",
+        "Correct. Xavier initialization maintains appropriate variance to help with gradient flow in deep networks including RNNs.",
+        "Incorrect. Setting all weights to 1 would cause symmetry problems and poor learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-initialization",
+        "xavier-initialization",
+        "gradient-flow"
+      ]
+    },
+    {
+      "id": "RNN_055",
+      "question": "What is the purpose of the candidate activation in LSTM?",
+      "options": [
+        "To replace the cell state",
+        "To provide new information that might be added to the cell state",
+        "To control the output gate",
+        "To reset the forget gate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The candidate activation (candidate values) represents new information that could potentially be added to the cell state, which the input gate then decides whether to include.",
+      "optionExplanations": [
+        "Incorrect. The candidate activation doesn't replace the cell state but provides new information for it.",
+        "Correct. Candidate activation computes new potential information that may be added to the cell state.",
+        "Incorrect. The candidate activation doesn't control gates; gates control whether to use the candidate activation.",
+        "Incorrect. The candidate activation is separate from gate control mechanisms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "candidate-activation",
+        "cell-state",
+        "input-gate"
+      ]
+    },
+    {
+      "id": "RNN_056",
+      "question": "What is the key challenge in training very deep RNNs?",
+      "options": [
+        "Increased accuracy",
+        "Gradient vanishing/exploding across both time and depth",
+        "Reduced memory usage",
+        "Faster convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deep RNNs face gradient problems in two dimensions: across time steps (temporal) and across layers (depth), making training significantly more challenging.",
+      "optionExplanations": [
+        "Incorrect. This would be a benefit, not a challenge.",
+        "Correct. Very deep RNNs suffer from gradient problems in both temporal and spatial dimensions.",
+        "Incorrect. Deep RNNs actually use more memory.",
+        "Incorrect. Deep RNNs typically converge slower due to optimization difficulties."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deep-rnn",
+        "gradient-problems",
+        "depth",
+        "training-challenges"
+      ]
+    },
+    {
+      "id": "RNN_057",
+      "question": "In sequence-to-sequence learning, what is the typical approach for handling different input and output vocabulary sizes?",
+      "options": [
+        "Pad the smaller vocabulary",
+        "Use separate embedding layers and output projections",
+        "Truncate the larger vocabulary",
+        "Use the same vocabulary for both"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different vocabularies are handled using separate embedding layers for input and separate output projection layers, allowing the model to work with different vocabulary sizes efficiently.",
+      "optionExplanations": [
+        "Incorrect. Padding vocabularies is not a standard approach and would be inefficient.",
+        "Correct. Separate embeddings and output layers handle different vocabulary sizes appropriately.",
+        "Incorrect. Truncating vocabulary would lose important information.",
+        "Incorrect. Different tasks often require different vocabularies (e.g., translation between languages)."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sequence-to-sequence",
+        "vocabulary",
+        "embeddings",
+        "output-projection"
+      ]
+    },
+    {
+      "id": "RNN_058",
+      "question": "What is the main purpose of dropout in RNNs?",
+      "options": [
+        "To increase model capacity",
+        "To prevent overfitting by randomly setting some activations to zero",
+        "To speed up training",
+        "To solve vanishing gradients"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dropout prevents overfitting by randomly setting some activations to zero during training, forcing the network to not rely too heavily on specific neurons.",
+      "optionExplanations": [
+        "Incorrect. Dropout actually reduces effective model capacity during training.",
+        "Correct. Dropout randomly zeros out activations to prevent overfitting and improve generalization.",
+        "Incorrect. Dropout doesn't significantly speed up training and may slow it down slightly.",
+        "Incorrect. Dropout is for regularization, not solving vanishing gradients."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "dropout",
+        "regularization",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "RNN_059",
+      "question": "Which type of RNN architecture is most suitable for sentiment analysis?",
+      "options": [
+        "One-to-many",
+        "Many-to-one",
+        "Many-to-many",
+        "One-to-one"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sentiment analysis takes a sequence of words (many inputs) and produces a single sentiment label (one output), making it a many-to-one problem.",
+      "optionExplanations": [
+        "Incorrect. One-to-many is for tasks like image captioning where you generate a sequence from a single input.",
+        "Correct. Sentiment analysis processes a sequence of words to produce a single sentiment classification.",
+        "Incorrect. Many-to-many is for tasks like machine translation where both input and output are sequences.",
+        "Incorrect. One-to-one is for simple classification without sequential input."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sentiment-analysis",
+        "many-to-one",
+        "rnn-architectures"
+      ]
+    },
+    {
+      "id": "RNN_060",
+      "question": "What is the purpose of the reset gate in GRU?",
+      "options": [
+        "To determine what information to output",
+        "To control how much past information is used when computing new candidate state",
+        "To update the cell state",
+        "To prevent gradient explosion"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The reset gate in GRU determines how much of the previous hidden state should be used when computing the new candidate hidden state, allowing the model to forget irrelevant past information.",
+      "optionExplanations": [
+        "Incorrect. GRU doesn't have a separate output gate like LSTM.",
+        "Correct. The reset gate controls the influence of previous hidden state on the candidate state computation.",
+        "Incorrect. GRU doesn't have a separate cell state like LSTM.",
+        "Incorrect. The reset gate is for information flow control, not gradient management."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gru",
+        "reset-gate",
+        "candidate-state",
+        "hidden-state"
+      ]
+    },
+    {
+      "id": "RNN_061",
+      "question": "Which technique helps address the exposure bias problem during inference in sequence generation?",
+      "options": [
+        "Using larger models",
+        "Increasing training data",
+        "Beam search or sampling strategies",
+        "Adding more layers"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Beam search and sampling strategies help during inference by exploring multiple sequence possibilities, partially mitigating the effects of exposure bias from training.",
+      "optionExplanations": [
+        "Incorrect. Model size doesn't directly address the train-test distribution mismatch.",
+        "Incorrect. More training data doesn't solve the fundamental exposure bias problem.",
+        "Correct. Better search strategies during inference can help overcome some effects of exposure bias.",
+        "Incorrect. More layers don't address the exposure bias issue."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "exposure-bias",
+        "beam-search",
+        "sampling-strategies",
+        "inference"
+      ]
+    },
+    {
+      "id": "RNN_062",
+      "question": "What is the main computational bottleneck when processing long sequences with RNNs?",
+      "options": [
+        "Matrix multiplications",
+        "Activation function calculations",
+        "Sequential nature preventing parallelization across time",
+        "Memory bandwidth"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The sequential dependency in RNNs means each time step must wait for the previous one, preventing parallelization across time steps and making long sequences slow to process.",
+      "optionExplanations": [
+        "Incorrect. Matrix multiplications are efficiently parallelized on modern hardware.",
+        "Incorrect. Activation functions are computationally lightweight.",
+        "Correct. The sequential dependency prevents parallel processing across time steps, creating a major bottleneck.",
+        "Incorrect. Memory bandwidth is typically not the limiting factor in RNN computation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-bottleneck",
+        "sequential-processing",
+        "parallelization"
+      ]
+    },
+    {
+      "id": "RNN_063",
+      "question": "In bidirectional RNNs, how are the forward and backward hidden states typically combined?",
+      "options": [
+        "Element-wise addition",
+        "Concatenation",
+        "Element-wise multiplication",
+        "Taking the maximum"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forward and backward hidden states are typically concatenated to preserve all information from both directions, doubling the hidden state size but maintaining all contextual information.",
+      "optionExplanations": [
+        "Incorrect. Addition would lose information by combining rather than preserving both directions.",
+        "Correct. Concatenation preserves information from both directions while allowing the model to use both contexts.",
+        "Incorrect. Multiplication could cause information loss and is not a standard combination method.",
+        "Incorrect. Taking maximum would lose significant information from one direction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bidirectional-rnn",
+        "concatenation",
+        "forward-backward",
+        "hidden-states"
+      ]
+    },
+    {
+      "id": "RNN_064",
+      "question": "What is the key difference between stateful and stateless RNNs?",
+      "options": [
+        "Number of parameters",
+        "Whether hidden states are reset between batches",
+        "Type of activation function",
+        "Learning rate used"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stateful RNNs maintain hidden states across batches, while stateless RNNs reset hidden states to zero at the beginning of each batch.",
+      "optionExplanations": [
+        "Incorrect. Both have the same number of parameters.",
+        "Correct. Stateful RNNs preserve hidden states between batches, while stateless RNNs reset them.",
+        "Incorrect. Both can use the same activation functions.",
+        "Incorrect. Learning rate is independent of the stateful/stateless property."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stateful-rnn",
+        "stateless-rnn",
+        "hidden-states",
+        "batches"
+      ]
+    },
+    {
+      "id": "RNN_065",
+      "question": "Which optimization algorithm is commonly preferred for training RNNs?",
+      "options": [
+        "SGD",
+        "Adam",
+        "Adagrad",
+        "RMSprop"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adam is commonly preferred for RNN training because it adapts learning rates per parameter and handles the sparse gradients and varying scales common in RNN training.",
+      "optionExplanations": [
+        "Incorrect. SGD can be effective but often requires more careful tuning for RNNs.",
+        "Correct. Adam's adaptive learning rates and momentum make it well-suited for RNN optimization challenges.",
+        "Incorrect. Adagrad can work but may have learning rate decay issues in long training.",
+        "Incorrect. RMSprop is good but Adam generally performs better for RNNs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "optimization",
+        "adam",
+        "rnn-training",
+        "adaptive-learning"
+      ]
+    },
+    {
+      "id": "RNN_066",
+      "question": "What is the primary advantage of using character-level RNNs over word-level RNNs?",
+      "options": [
+        "Faster training",
+        "Better handling of out-of-vocabulary words and morphology",
+        "Lower memory usage",
+        "Higher accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Character-level RNNs can handle any word, including misspellings and new words, and can learn morphological patterns better since they work with the basic building blocks of language.",
+      "optionExplanations": [
+        "Incorrect. Character-level RNNs typically train slower due to longer sequences.",
+        "Correct. Character-level models can handle any character sequence and learn morphological patterns.",
+        "Incorrect. Character-level models typically use more memory due to longer sequences.",
+        "Incorrect. Accuracy depends on the task; word-level models often perform better for many tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "character-level",
+        "word-level",
+        "out-of-vocabulary",
+        "morphology"
+      ]
+    },
+    {
+      "id": "RNN_067",
+      "question": "In neural machine translation, what is the purpose of the attention mechanism?",
+      "options": [
+        "To speed up training",
+        "To allow the decoder to focus on relevant parts of the source sentence",
+        "To reduce model size",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention allows the decoder to look at different parts of the source sentence when generating each target word, rather than relying only on a fixed context vector.",
+      "optionExplanations": [
+        "Incorrect. Attention adds computational overhead rather than speeding up training.",
+        "Correct. Attention lets the decoder dynamically focus on relevant source positions for each target word.",
+        "Incorrect. Attention increases model complexity and size.",
+        "Incorrect. Attention is primarily for improving translation quality, not regularization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "neural-machine-translation",
+        "attention",
+        "decoder",
+        "source-sentence"
+      ]
+    },
+    {
+      "id": "RNN_068",
+      "question": "What is the main challenge in applying RNNs to real-time applications?",
+      "options": [
+        "High accuracy requirements",
+        "Sequential processing causing latency",
+        "Memory limitations",
+        "Power consumption"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RNNs process sequences step-by-step, which introduces latency as each step must wait for the previous one to complete, making real-time processing challenging.",
+      "optionExplanations": [
+        "Incorrect. Accuracy requirements are application-specific, not inherently challenging for RNNs.",
+        "Correct. The sequential nature of RNNs creates processing delays that can be problematic for real-time applications.",
+        "Incorrect. While memory can be a concern, latency is the primary real-time challenge.",
+        "Incorrect. Power consumption, while important, is not the main real-time challenge."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "real-time",
+        "latency",
+        "sequential-processing",
+        "applications"
+      ]
+    },
+    {
+      "id": "RNN_069",
+      "question": "Which technique can help RNNs better capture hierarchical patterns in sequences?",
+      "options": [
+        "Using deeper networks",
+        "Increasing sequence length",
+        "Using hierarchical or clockwork RNNs",
+        "Adding more dropout"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hierarchical RNNs and clockwork RNNs are specifically designed to capture patterns at different time scales and hierarchical structures in sequential data.",
+      "optionExplanations": [
+        "Incorrect. Simply adding depth doesn't specifically address hierarchical temporal patterns.",
+        "Incorrect. Longer sequences don't automatically lead to better hierarchical pattern recognition.",
+        "Correct. Hierarchical and clockwork RNNs are designed to capture multi-scale temporal patterns.",
+        "Incorrect. Dropout is for regularization and doesn't help with hierarchical pattern recognition."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hierarchical-rnn",
+        "clockwork-rnn",
+        "temporal-patterns",
+        "multi-scale"
+      ]
+    },
+    {
+      "id": "RNN_070",
+      "question": "What is the main difference between encoder-decoder with attention and basic encoder-decoder?",
+      "options": [
+        "Number of layers",
+        "Decoder can access all encoder hidden states, not just the final one",
+        "Type of RNN cells used",
+        "Training algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With attention, the decoder can access and weight all encoder hidden states at each decoding step, not just the final encoder state, providing richer context.",
+      "optionExplanations": [
+        "Incorrect. The number of layers is not what distinguishes attention-based models.",
+        "Correct. Attention allows the decoder to access all encoder states, not just the final context vector.",
+        "Incorrect. Both can use the same types of RNN cells.",
+        "Incorrect. The training algorithm can be the same; attention adds to the architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoder-decoder",
+        "attention",
+        "encoder-states",
+        "context"
+      ]
+    },
+    {
+      "id": "RNN_071",
+      "question": "Why might vanilla RNNs struggle with tasks requiring long-term memory?",
+      "options": [
+        "Too many parameters",
+        "Vanishing gradient problem prevents learning long-term dependencies",
+        "Computational complexity",
+        "Overfitting issues"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Vanilla RNNs suffer from vanishing gradients when backpropagating through many time steps, making it difficult to learn dependencies between distant events in sequences.",
+      "optionExplanations": [
+        "Incorrect. Vanilla RNNs actually have relatively few parameters.",
+        "Correct. Vanishing gradients prevent the network from learning relationships between distant sequence elements.",
+        "Incorrect. Computational complexity is not the primary issue for long-term memory.",
+        "Incorrect. Overfitting is not specifically related to long-term memory capabilities."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "vanilla-rnn",
+        "long-term-memory",
+        "vanishing-gradients",
+        "dependencies"
+      ]
+    },
+    {
+      "id": "RNN_072",
+      "question": "What is the purpose of using multiple layers in deep RNNs?",
+      "options": [
+        "To increase computational speed",
+        "To learn hierarchical representations at different abstraction levels",
+        "To reduce memory usage",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multiple layers in deep RNNs allow the model to learn hierarchical representations, with lower layers capturing low-level patterns and higher layers capturing more abstract relationships.",
+      "optionExplanations": [
+        "Incorrect. Multiple layers increase computational requirements rather than speed.",
+        "Correct. Each layer can learn representations at different levels of abstraction and complexity.",
+        "Incorrect. More layers increase memory usage due to additional parameters and states.",
+        "Incorrect. More layers can actually increase overfitting risk if not properly regularized."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deep-rnn",
+        "hierarchical-representations",
+        "abstraction-levels",
+        "multiple-layers"
+      ]
+    },
+    {
+      "id": "RNN_073",
+      "question": "In LSTM, what mathematical operation is typically used to combine the forget gate output with the cell state?",
+      "options": [
+        "Addition",
+        "Element-wise multiplication",
+        "Matrix multiplication",
+        "Concatenation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The forget gate output is element-wise multiplied with the cell state to selectively retain or discard information at each position in the cell state vector.",
+      "optionExplanations": [
+        "Incorrect. Addition would not allow selective forgetting of individual elements.",
+        "Correct. Element-wise multiplication allows the forget gate to selectively retain or discard each element of the cell state.",
+        "Incorrect. Matrix multiplication would change the dimensionality inappropriately.",
+        "Incorrect. Concatenation would increase dimensionality rather than filtering information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "forget-gate",
+        "cell-state",
+        "element-wise-multiplication"
+      ]
+    },
+    {
+      "id": "RNN_074",
+      "question": "What is the main benefit of using pre-trained word embeddings in RNN language models?",
+      "options": [
+        "Faster training convergence",
+        "Better initialization and semantic understanding",
+        "Reduced memory usage",
+        "Elimination of overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-trained embeddings provide better initialization with semantic relationships already captured, giving the model a head start in understanding word meanings and relationships.",
+      "optionExplanations": [
+        "Incorrect. While training may be faster, the main benefit is better semantic initialization.",
+        "Correct. Pre-trained embeddings provide semantically meaningful word representations from the start.",
+        "Incorrect. Pre-trained embeddings don't necessarily reduce memory usage.",
+        "Incorrect. Pre-trained embeddings help with performance but don't eliminate overfitting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-trained-embeddings",
+        "word-embeddings",
+        "semantic-understanding",
+        "initialization"
+      ]
+    },
+    {
+      "id": "RNN_075",
+      "question": "Which type of sequence modeling task benefits most from bidirectional processing?",
+      "options": [
+        "Real-time speech recognition",
+        "Text classification",
+        "Online handwriting recognition",
+        "Live stock price prediction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text classification benefits from bidirectional processing because the entire text is available, and future context can help understand the meaning of current words for better classification.",
+      "optionExplanations": [
+        "Incorrect. Real-time applications can't use future context as it's not yet available.",
+        "Correct. Text classification has access to the complete text, so bidirectional context improves understanding.",
+        "Incorrect. Online handwriting recognition must work with partial input in real-time.",
+        "Incorrect. Live prediction can't use future data that hasn't occurred yet."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bidirectional-processing",
+        "text-classification",
+        "future-context",
+        "batch-processing"
+      ]
+    },
+    {
+      "id": "RNN_076",
+      "question": "What is the primary purpose of the cell state in LSTM compared to the hidden state?",
+      "options": [
+        "Cell state is for output, hidden state is for memory",
+        "Cell state maintains long-term memory, hidden state is for immediate output",
+        "Cell state is faster to compute",
+        "Cell state prevents overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The cell state acts as long-term memory that flows through the network with minimal interference, while the hidden state is filtered by the output gate for immediate use.",
+      "optionExplanations": [
+        "Incorrect. This reverses the actual roles of cell state and hidden state.",
+        "Correct. Cell state maintains long-term information while hidden state provides current output representation.",
+        "Incorrect. Computational speed is not the distinguishing factor between these states.",
+        "Incorrect. Neither state is specifically designed for overfitting prevention."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "cell-state",
+        "hidden-state",
+        "long-term-memory"
+      ]
+    },
+    {
+      "id": "RNN_077",
+      "question": "Which regularization technique is specifically adapted for the temporal nature of RNNs?",
+      "options": [
+        "Spatial dropout",
+        "Temporal dropout/DropConnect",
+        "Batch normalization",
+        "Weight decay"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temporal dropout techniques like variational dropout apply the same dropout mask across time steps, respecting the temporal structure of RNNs rather than applying different masks at each time step.",
+      "optionExplanations": [
+        "Incorrect. Spatial dropout is for CNNs, not specifically adapted for RNN temporal structure.",
+        "Correct. Temporal dropout techniques maintain consistent dropout patterns across time steps in RNNs.",
+        "Incorrect. Batch normalization is not specifically designed for temporal regularization.",
+        "Incorrect. Weight decay is a general regularization technique, not specifically temporal."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "temporal-dropout",
+        "regularization",
+        "variational-dropout",
+        "temporal-structure"
+      ]
+    },
+    {
+      "id": "RNN_078",
+      "question": "What is the main challenge when using RNNs for document-level tasks?",
+      "options": [
+        "Limited vocabulary size",
+        "Handling very long sequences and maintaining long-term dependencies",
+        "Lack of pre-trained models",
+        "Insufficient training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Document-level tasks involve very long sequences (hundreds or thousands of tokens), making it challenging for RNNs to maintain important information and dependencies across such distances.",
+      "optionExplanations": [
+        "Incorrect. Vocabulary size can be managed with standard techniques.",
+        "Correct. Documents create very long sequences that challenge RNNs' ability to maintain long-term dependencies.",
+        "Incorrect. Pre-trained models exist for many document-level tasks.",
+        "Incorrect. Training data availability is not the specific challenge for RNNs on documents."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "document-level",
+        "long-sequences",
+        "long-term-dependencies",
+        "sequence-length"
+      ]
+    },
+    {
+      "id": "RNN_079",
+      "question": "How does gradient clipping help prevent exploding gradients in RNN training?",
+      "options": [
+        "By setting gradients to zero when they exceed a threshold",
+        "By scaling down gradients when their norm exceeds a threshold",
+        "By using smaller learning rates",
+        "By adding noise to gradients"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient clipping scales down all gradients proportionally when their total norm exceeds a specified threshold, maintaining gradient direction while preventing explosion.",
+      "optionExplanations": [
+        "Incorrect. Setting gradients to zero would stop learning entirely when the threshold is exceeded.",
+        "Correct. Gradient clipping rescales the entire gradient vector to have a maximum norm, preserving direction while preventing explosion.",
+        "Incorrect. While smaller learning rates can help, gradient clipping is a more direct solution to exploding gradients.",
+        "Incorrect. Adding noise would not systematically prevent exploding gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "exploding-gradients",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "RNN_080",
+      "question": "What is the key advantage of using convolutional layers before RNN layers in some architectures?",
+      "options": [
+        "Reduced computational cost",
+        "Better capture of local patterns before sequential modeling",
+        "Elimination of vanishing gradients",
+        "Automatic feature selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Convolutional layers can efficiently capture local spatial or temporal patterns, which are then fed to RNN layers for sequential modeling, combining the strengths of both architectures.",
+      "optionExplanations": [
+        "Incorrect. Adding convolutional layers typically increases computational cost.",
+        "Correct. CNNs excel at capturing local patterns, which can then be processed sequentially by RNNs.",
+        "Incorrect. Convolutional layers don't eliminate vanishing gradients in the RNN portion.",
+        "Incorrect. Feature selection is not automatic and requires careful design."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cnn-rnn",
+        "local-patterns",
+        "hybrid-architecture",
+        "feature-extraction"
+      ]
+    },
+    {
+      "id": "RNN_081",
+      "question": "In sequence generation, what is the temperature parameter used for?",
+      "options": [
+        "Controlling the learning rate",
+        "Adjusting the randomness of output sampling",
+        "Setting the sequence length",
+        "Determining the number of hidden units"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature controls the randomness in sampling from the output probability distribution: high temperature increases randomness, low temperature makes outputs more deterministic.",
+      "optionExplanations": [
+        "Incorrect. Temperature is used during inference for sampling, not for controlling learning rate during training.",
+        "Correct. Temperature scales the logits before softmax, controlling the sharpness of the probability distribution for sampling.",
+        "Incorrect. Temperature doesn't determine sequence length.",
+        "Incorrect. The number of hidden units is an architectural choice, not controlled by temperature."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature-sampling",
+        "sequence-generation",
+        "probability-distribution",
+        "randomness"
+      ]
+    },
+    {
+      "id": "RNN_082",
+      "question": "What is the main limitation of using fixed-size context windows in language modeling?",
+      "options": [
+        "High computational cost",
+        "Inability to capture dependencies beyond the window size",
+        "Memory requirements",
+        "Training instability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fixed-size context windows can only consider a limited amount of previous context, missing important long-range dependencies that extend beyond the window boundary.",
+      "optionExplanations": [
+        "Incorrect. Fixed windows actually limit computational cost compared to unbounded context.",
+        "Correct. Dependencies beyond the window size are invisible to the model, limiting its understanding.",
+        "Incorrect. Fixed windows actually limit memory requirements.",
+        "Incorrect. Fixed windows don't inherently cause training instability."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "context-window",
+        "language-modeling",
+        "long-range-dependencies",
+        "limitations"
+      ]
+    },
+    {
+      "id": "RNN_083",
+      "question": "Which technique is commonly used to handle variable-length sequences in mini-batch training?",
+      "options": [
+        "Truncation only",
+        "Padding and masking",
+        "Dynamic batching",
+        "Sequence bucketing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Padding sequences to the same length and using masking to ignore padded positions is the most common approach for handling variable-length sequences in batches.",
+      "optionExplanations": [
+        "Incorrect. Truncation alone would lose information from longer sequences.",
+        "Correct. Padding creates uniform length for batching, while masking ensures padded positions don't affect training.",
+        "Incorrect. While dynamic batching exists, padding and masking is more commonly used.",
+        "Incorrect. Sequence bucketing is an optimization but padding/masking is still the fundamental technique."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "variable-length",
+        "padding",
+        "masking",
+        "mini-batch",
+        "sequence-processing"
+      ]
+    },
+    {
+      "id": "RNN_084",
+      "question": "What is the purpose of the softmax temperature in neural language generation?",
+      "options": [
+        "To prevent overfitting",
+        "To control the diversity of generated text",
+        "To speed up inference",
+        "To improve gradient flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature in softmax controls the entropy of the probability distribution: higher temperature increases diversity (more random), lower temperature decreases diversity (more focused).",
+      "optionExplanations": [
+        "Incorrect. Temperature is used during inference, not training, so it doesn't prevent overfitting.",
+        "Correct. Temperature adjusts the sharpness of the probability distribution, controlling generation diversity.",
+        "Incorrect. Temperature doesn't significantly affect inference speed.",
+        "Incorrect. Temperature is applied during inference, not training, so it doesn't affect gradient flow."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "softmax-temperature",
+        "text-generation",
+        "diversity",
+        "sampling"
+      ]
+    },
+    {
+      "id": "RNN_085",
+      "question": "Which problem does the use of residual connections in RNNs primarily address?",
+      "options": [
+        "Overfitting",
+        "Computational efficiency",
+        "Gradient flow in deep networks",
+        "Memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Residual connections provide direct paths for gradients, helping them flow through deep RNN architectures without vanishing, similar to their use in deep feedforward networks.",
+      "optionExplanations": [
+        "Incorrect. Residual connections primarily address gradient flow, not overfitting.",
+        "Incorrect. Residual connections don't significantly improve computational efficiency.",
+        "Correct. Residual connections help gradients flow through deep architectures by providing skip connections.",
+        "Incorrect. Residual connections may actually increase memory usage slightly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual-connections",
+        "gradient-flow",
+        "deep-networks",
+        "skip-connections"
+      ]
+    },
+    {
+      "id": "RNN_086",
+      "question": "What is the main advantage of using attention mechanisms over fixed context vectors?",
+      "options": [
+        "Lower computational cost",
+        "Dynamic access to all source information",
+        "Simpler implementation",
+        "Faster training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention allows dynamic access to all source sequence positions rather than compressing everything into a single fixed-size context vector, avoiding information bottlenecks.",
+      "optionExplanations": [
+        "Incorrect. Attention mechanisms typically increase computational cost.",
+        "Correct. Attention provides dynamic, weighted access to all source positions rather than a single context vector.",
+        "Incorrect. Attention mechanisms are generally more complex to implement than fixed context vectors.",
+        "Incorrect. Attention usually requires more computation, potentially slowing training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-mechanisms",
+        "dynamic-access",
+        "context-vectors",
+        "information-bottleneck"
+      ]
+    },
+    {
+      "id": "RNN_087",
+      "question": "In which scenario would you prefer LSTM over GRU?",
+      "options": [
+        "When computational resources are limited",
+        "When you need fine-grained control over information flow",
+        "When working with short sequences",
+        "When training time is critical"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LSTM's separate input, forget, and output gates provide more fine-grained control over information flow compared to GRU's simpler two-gate structure.",
+      "optionExplanations": [
+        "Incorrect. Limited resources would favor GRU due to its efficiency.",
+        "Correct. LSTM's three gates provide more detailed control over what information to keep, forget, and output.",
+        "Incorrect. For short sequences, simpler models might be more appropriate.",
+        "Incorrect. Critical training time would favor GRU's computational efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "gru",
+        "information-flow",
+        "gate-control",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "RNN_088",
+      "question": "What is the primary challenge when applying RNNs to speech recognition?",
+      "options": [
+        "Limited vocabulary",
+        "Handling variable-length audio sequences and temporal alignment",
+        "Lack of labeled data",
+        "High computational requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Speech recognition involves aligning variable-length audio sequences with text outputs of different lengths, requiring careful handling of temporal relationships and alignment.",
+      "optionExplanations": [
+        "Incorrect. Vocabulary size can be managed and is not the primary RNN-specific challenge.",
+        "Correct. Variable-length sequences and the alignment between audio and text present the main RNN challenges in speech recognition.",
+        "Incorrect. Labeled speech data exists, though it can be expensive to collect.",
+        "Incorrect. While computationally demanding, this is not the primary RNN-specific challenge."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "speech-recognition",
+        "temporal-alignment",
+        "variable-length",
+        "sequence-alignment"
+      ]
+    },
+    {
+      "id": "RNN_089",
+      "question": "Which technique helps RNNs handle very long sequences more effectively?",
+      "options": [
+        "Increasing learning rate",
+        "Using hierarchical attention or memory mechanisms",
+        "Reducing hidden state size",
+        "Adding more dropout"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hierarchical attention and external memory mechanisms help RNNs by providing structured ways to access and maintain information over very long sequences.",
+      "optionExplanations": [
+        "Incorrect. Higher learning rates don't specifically help with long sequences and may hurt training.",
+        "Correct. Hierarchical attention and memory mechanisms provide structured approaches to handling long-sequence information.",
+        "Incorrect. Smaller hidden states would reduce the model's capacity to handle complex long sequences.",
+        "Incorrect. More dropout doesn't specifically address long sequence challenges."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "long-sequences",
+        "hierarchical-attention",
+        "memory-mechanisms",
+        "sequence-modeling"
+      ]
+    },
+    {
+      "id": "RNN_090",
+      "question": "What is the main purpose of using layer normalization specifically in RNNs?",
+      "options": [
+        "Preventing overfitting",
+        "Stabilizing hidden state magnitudes across time steps",
+        "Reducing computational cost",
+        "Handling variable sequence lengths"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Layer normalization in RNNs helps stabilize the magnitudes of hidden states as they evolve over time steps, improving training stability and convergence.",
+      "optionExplanations": [
+        "Incorrect. While it may help with generalization, the primary purpose is training stabilization.",
+        "Correct. Layer normalization keeps hidden state activations in a stable range across time steps.",
+        "Incorrect. Layer normalization adds computational overhead rather than reducing cost.",
+        "Incorrect. Variable sequence lengths are handled by padding and masking, not layer normalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "layer-normalization",
+        "hidden-states",
+        "training-stability",
+        "time-steps"
+      ]
+    },
+    {
+      "id": "RNN_091",
+      "question": "Which approach is commonly used to initialize the hidden state of an RNN at the beginning of training?",
+      "options": [
+        "Random initialization from a normal distribution",
+        "Zero initialization",
+        "Copy from the previous batch",
+        "Use pre-trained values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RNN hidden states are typically initialized to zero at the beginning of each sequence, providing a clean starting point for processing each new sequence.",
+      "optionExplanations": [
+        "Incorrect. Random initialization could introduce unwanted bias at the start of sequences.",
+        "Correct. Zero initialization provides a neutral starting point for each new sequence.",
+        "Incorrect. Hidden states are typically reset between sequences unless using stateful RNNs.",
+        "Incorrect. Pre-trained hidden state values are not commonly available or used."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hidden-state-initialization",
+        "zero-initialization",
+        "sequence-start"
+      ]
+    },
+    {
+      "id": "RNN_092",
+      "question": "What is the key insight behind the LSTM forget gate design?",
+      "options": [
+        "To completely erase the cell state",
+        "To selectively retain relevant information while discarding irrelevant information",
+        "To prevent gradient explosion",
+        "To increase model capacity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The forget gate allows the LSTM to selectively retain important information from the cell state while forgetting irrelevant information, enabling effective long-term memory management.",
+      "optionExplanations": [
+        "Incorrect. The forget gate selectively forgets, not completely erases the cell state.",
+        "Correct. The forget gate enables selective retention of relevant information while discarding what's no longer needed.",
+        "Incorrect. While it may help with gradients, the primary purpose is selective memory management.",
+        "Incorrect. The forget gate is about information management, not increasing model capacity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "forget-gate",
+        "selective-memory",
+        "information-management"
+      ]
+    },
+    {
+      "id": "RNN_093",
+      "question": "Which metric is most appropriate for evaluating RNN performance on sequence-to-sequence translation tasks?",
+      "options": [
+        "Accuracy",
+        "BLEU score",
+        "Mean squared error",
+        "F1-score"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BLEU (Bilingual Evaluation Understudy) score measures the quality of machine translation by comparing n-gram overlap between generated and reference translations.",
+      "optionExplanations": [
+        "Incorrect. Accuracy is too strict for translation as multiple valid translations exist.",
+        "Correct. BLEU score is specifically designed to evaluate translation quality by measuring n-gram precision.",
+        "Incorrect. MSE is for regression tasks, not sequence translation evaluation.",
+        "Incorrect. F1-score is for classification tasks, not translation quality assessment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bleu-score",
+        "machine-translation",
+        "evaluation-metrics",
+        "sequence-to-sequence"
+      ]
+    },
+    {
+      "id": "RNN_094",
+      "question": "What is the main advantage of using packed sequences in RNN frameworks?",
+      "options": [
+        "Better gradient flow",
+        "Elimination of computation on padded elements",
+        "Automatic hyperparameter tuning",
+        "Reduced memory fragmentation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Packed sequences avoid wasted computation on padded elements by processing only the actual sequence content, improving computational efficiency.",
+      "optionExplanations": [
+        "Incorrect. Packed sequences don't specifically improve gradient flow compared to masked sequences.",
+        "Correct. Packed sequences process only real sequence elements, avoiding computation on padding tokens.",
+        "Incorrect. Packed sequences don't provide automatic hyperparameter tuning.",
+        "Incorrect. While they may help with memory usage, the main advantage is computational efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "packed-sequences",
+        "computational-efficiency",
+        "padding-elimination"
+      ]
+    },
+    {
+      "id": "RNN_095",
+      "question": "In continuous speech recognition, what is the main challenge that RNNs must address?",
+      "options": [
+        "Limited vocabulary size",
+        "Segmentation and alignment of continuous audio to discrete words",
+        "Background noise",
+        "Speaker variation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Continuous speech recognition requires determining where words begin and end in the continuous audio stream and aligning them with the output text sequence.",
+      "optionExplanations": [
+        "Incorrect. Vocabulary size can be managed and is not the primary RNN-specific challenge.",
+        "Correct. Segmenting continuous audio and aligning it with discrete text outputs is the main sequence modeling challenge.",
+        "Incorrect. Background noise is an audio processing challenge, not specifically an RNN challenge.",
+        "Incorrect. Speaker variation is handled through data diversity and adaptation, not RNN architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "speech-recognition",
+        "segmentation",
+        "alignment",
+        "continuous-audio"
+      ]
+    },
+    {
+      "id": "RNN_096",
+      "question": "What is the primary benefit of using multi-head attention over single attention in RNNs?",
+      "options": [
+        "Faster computation",
+        "Lower memory usage",
+        "Ability to attend to different aspects simultaneously",
+        "Simpler implementation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multi-head attention allows the model to attend to different types of information simultaneously (e.g., syntactic, semantic) by using multiple attention mechanisms in parallel.",
+      "optionExplanations": [
+        "Incorrect. Multi-head attention typically requires more computation than single attention.",
+        "Incorrect. Multi-head attention uses more memory due to multiple attention heads.",
+        "Correct. Different attention heads can focus on different aspects of the input simultaneously.",
+        "Incorrect. Multi-head attention is more complex to implement than single attention."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-head-attention",
+        "parallel-attention",
+        "multiple-aspects"
+      ]
+    },
+    {
+      "id": "RNN_097",
+      "question": "Which regularization technique is specifically designed for recurrent connections in RNNs?",
+      "options": [
+        "Standard dropout",
+        "Recurrent dropout",
+        "Batch normalization",
+        "Weight decay"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Recurrent dropout applies dropout specifically to the recurrent connections (hidden-to-hidden) while preserving the input connections, maintaining temporal consistency.",
+      "optionExplanations": [
+        "Incorrect. Standard dropout applied naively to RNNs can disrupt temporal patterns.",
+        "Correct. Recurrent dropout is specifically designed to regularize recurrent connections while preserving temporal structure.",
+        "Incorrect. Batch normalization is not specifically designed for recurrent connections.",
+        "Incorrect. Weight decay is a general regularization technique, not specific to recurrent connections."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "recurrent-dropout",
+        "regularization",
+        "recurrent-connections",
+        "temporal-consistency"
+      ]
+    },
+    {
+      "id": "RNN_098",
+      "question": "What is the main computational advantage of Transformer models over RNNs for sequence processing?",
+      "options": [
+        "Lower memory usage",
+        "Parallelization across sequence positions",
+        "Simpler architecture",
+        "Better gradient flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transformers can process all sequence positions in parallel using self-attention, unlike RNNs which must process sequences step-by-step sequentially.",
+      "optionExplanations": [
+        "Incorrect. Transformers often use more memory due to attention matrices.",
+        "Correct. Transformers allow parallel processing of all sequence positions, unlike sequential RNN processing.",
+        "Incorrect. Transformer architecture is generally more complex than basic RNNs.",
+        "Incorrect. While Transformers may have better gradient flow, parallelization is the main computational advantage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transformers",
+        "parallelization",
+        "sequential-processing",
+        "computational-advantage"
+      ]
+    },
+    {
+      "id": "RNN_099",
+      "question": "In what scenario would you still prefer RNNs over Transformers?",
+      "options": [
+        "When you have unlimited computational resources",
+        "For very long sequences with limited memory",
+        "When you need the highest possible accuracy",
+        "For batch processing applications"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RNNs have constant memory complexity with respect to sequence length, while Transformers have quadratic memory complexity due to attention matrices, making RNNs preferable for very long sequences with memory constraints.",
+      "optionExplanations": [
+        "Incorrect. With unlimited resources, Transformers would typically be preferred for their superior performance.",
+        "Correct. RNNs use constant memory regardless of sequence length, while Transformers' memory grows quadratically.",
+        "Incorrect. Transformers generally achieve higher accuracy on most sequence tasks.",
+        "Incorrect. Transformers are generally better for batch processing due to parallelization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "rnn-vs-transformer",
+        "memory-complexity",
+        "long-sequences",
+        "resource-constraints"
+      ]
+    },
+    {
+      "id": "RNN_100",
+      "question": "What is the key innovation that allows LSTM to solve the vanishing gradient problem?",
+      "options": [
+        "Using different activation functions",
+        "Adding more layers",
+        "Gated architecture with additive cell state updates",
+        "Increasing the learning rate"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LSTM's gated architecture with additive updates to the cell state (rather than multiplicative) allows gradients to flow more easily through time, solving the vanishing gradient problem.",
+      "optionExplanations": [
+        "Incorrect. While activation functions matter, the key innovation is the gated architecture.",
+        "Incorrect. More layers don't solve vanishing gradients and may worsen the problem.",
+        "Correct. The gated architecture with additive cell state updates preserves gradient flow through time.",
+        "Incorrect. Higher learning rates don't solve vanishing gradients and may cause other training issues."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lstm",
+        "vanishing-gradients",
+        "gated-architecture",
+        "additive-updates",
+        "gradient-flow"
+      ]
+    }
+  ]
+}

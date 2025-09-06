@@ -1,0 +1,2415 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_LOG",
+  "subtopicName": "Logistic Regression",
+  "str": 0.200,
+  "description": "Logistic regression is a statistical method used for binary classification problems. It uses the sigmoid function to model the probability of class membership and employs maximum likelihood estimation for parameter optimization.",
+  "questions": [
+    {
+      "id": "LOG_001",
+      "question": "What is the primary purpose of the sigmoid function in logistic regression?",
+      "options": [
+        "To map any real number to a value between 0 and 1",
+        "To calculate the mean of the dataset",
+        "To minimize the sum of squared errors",
+        "To normalize the input features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The sigmoid function maps any real-valued input to a value between 0 and 1, making it perfect for representing probabilities in binary classification.",
+      "optionExplanations": [
+        "Correct. The sigmoid function σ(z) = 1/(1+e^(-z)) transforms any real number into a probability value between 0 and 1.",
+        "Incorrect. The sigmoid function doesn't calculate means; it transforms linear combinations into probabilities.",
+        "Incorrect. Logistic regression uses maximum likelihood estimation, not least squares minimization.",
+        "Incorrect. Feature normalization is a preprocessing step, not the purpose of the sigmoid function."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sigmoid",
+        "probability",
+        "basics"
+      ]
+    },
+    {
+      "id": "LOG_002",
+      "question": "What is the mathematical expression for the sigmoid function?",
+      "options": [
+        "σ(z) = 1/(1 + e^(-z))",
+        "σ(z) = e^z/(1 + e^z)",
+        "σ(z) = z/(1 + z^2)",
+        "σ(z) = tanh(z)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The sigmoid function is defined as σ(z) = 1/(1 + e^(-z)), which produces an S-shaped curve mapping real numbers to (0,1).",
+      "optionExplanations": [
+        "Correct. This is the standard form of the sigmoid (logistic) function used in logistic regression.",
+        "Incorrect. While mathematically equivalent to option A, this is not the standard form typically used.",
+        "Incorrect. This is not the sigmoid function; it doesn't have the proper range or properties.",
+        "Incorrect. The hyperbolic tangent function maps to (-1,1) range, not (0,1) like sigmoid."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sigmoid",
+        "mathematical-formula",
+        "basics"
+      ]
+    },
+    {
+      "id": "LOG_003",
+      "question": "In logistic regression, what does the term 'log-odds' refer to?",
+      "options": [
+        "The natural logarithm of the odds ratio",
+        "The logarithm of the probability",
+        "The inverse of the sigmoid function",
+        "The derivative of the cost function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Log-odds (logit) is the natural logarithm of the odds ratio, which is the linear combination of features in logistic regression.",
+      "optionExplanations": [
+        "Correct. Log-odds = ln(p/(1-p)) where p is the probability, representing the linear part of logistic regression.",
+        "Incorrect. Log-odds is not simply the logarithm of probability, but the logarithm of the odds ratio.",
+        "Incorrect. The inverse of sigmoid is the logit function, which gives us the log-odds.",
+        "Incorrect. The derivative of the cost function is used for optimization, not the definition of log-odds."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "log-odds",
+        "logit",
+        "odds-ratio"
+      ]
+    },
+    {
+      "id": "LOG_004",
+      "question": "Which optimization method is commonly used to find the parameters in logistic regression?",
+      "options": [
+        "Maximum Likelihood Estimation (MLE)",
+        "Least Squares Method",
+        "Principal Component Analysis",
+        "K-means clustering"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Maximum Likelihood Estimation is used to find the parameters that maximize the likelihood of observing the given data.",
+      "optionExplanations": [
+        "Correct. MLE finds parameters that maximize the probability of observing the training data given the model.",
+        "Incorrect. Least squares is used in linear regression, not logistic regression.",
+        "Incorrect. PCA is a dimensionality reduction technique, not an optimization method for logistic regression.",
+        "Incorrect. K-means is an unsupervised clustering algorithm, not relevant to logistic regression parameter estimation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MLE",
+        "optimization",
+        "parameter-estimation"
+      ]
+    },
+    {
+      "id": "LOG_005",
+      "question": "What is the range of the sigmoid function?",
+      "options": [
+        "(0, 1)",
+        "(-1, 1)",
+        "(-∞, ∞)",
+        "[0, 1]"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The sigmoid function asymptotically approaches 0 and 1 but never actually reaches these values, so its range is (0, 1).",
+      "optionExplanations": [
+        "Correct. The sigmoid function approaches but never reaches 0 or 1, making the range the open interval (0, 1).",
+        "Incorrect. This is the range of the hyperbolic tangent function, not the sigmoid function.",
+        "Incorrect. This is the domain of the sigmoid function, not its range.",
+        "Incorrect. The sigmoid function never actually reaches 0 or 1, so the range excludes these endpoints."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sigmoid",
+        "range",
+        "mathematical-properties"
+      ]
+    },
+    {
+      "id": "LOG_006",
+      "question": "In binary logistic regression, what does a coefficient value of 0 indicate?",
+      "options": [
+        "The feature has no effect on the odds",
+        "The feature perfectly predicts the outcome",
+        "The feature is negatively correlated with the outcome",
+        "The feature should be removed from the model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A coefficient of 0 means e^0 = 1, indicating no change in odds when the feature value changes.",
+      "optionExplanations": [
+        "Correct. When β = 0, e^β = 1, meaning the odds ratio is 1 (no effect on odds).",
+        "Incorrect. Perfect prediction would result in coefficients approaching ±∞, not 0.",
+        "Incorrect. A coefficient of 0 indicates no correlation, not negative correlation.",
+        "Incorrect. A coefficient of 0 doesn't necessarily mean the feature should be removed; it might indicate no linear relationship."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "coefficients",
+        "odds-ratio",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "LOG_007",
+      "question": "What is the purpose of the confusion matrix in logistic regression evaluation?",
+      "options": [
+        "To display the performance of the classification model",
+        "To calculate the regression coefficients",
+        "To normalize the input features",
+        "To perform feature selection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A confusion matrix shows the counts of true positives, true negatives, false positives, and false negatives, providing a comprehensive view of classification performance.",
+      "optionExplanations": [
+        "Correct. The confusion matrix provides a detailed breakdown of correct and incorrect predictions for each class.",
+        "Incorrect. Regression coefficients are calculated using optimization algorithms like gradient descent or Newton-Raphson.",
+        "Incorrect. Feature normalization is a preprocessing step, not related to confusion matrices.",
+        "Incorrect. Feature selection involves choosing relevant features, not evaluating model performance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confusion-matrix",
+        "evaluation",
+        "classification-performance"
+      ]
+    },
+    {
+      "id": "LOG_008",
+      "question": "In a confusion matrix, what does the term 'False Positive' represent?",
+      "options": [
+        "Predicted positive but actually negative",
+        "Predicted negative but actually positive",
+        "Predicted positive and actually positive",
+        "Predicted negative and actually negative"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A false positive occurs when the model predicts the positive class, but the actual class is negative (Type I error).",
+      "optionExplanations": [
+        "Correct. False positive means the model incorrectly predicted positive when the true label was negative.",
+        "Incorrect. This describes a false negative, where the model missed a positive case.",
+        "Incorrect. This describes a true positive, where both prediction and actual are positive.",
+        "Incorrect. This describes a true negative, where both prediction and actual are negative."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confusion-matrix",
+        "false-positive",
+        "classification-errors"
+      ]
+    },
+    {
+      "id": "LOG_009",
+      "question": "What does ROC stand for in the context of logistic regression evaluation?",
+      "options": [
+        "Receiver Operating Characteristic",
+        "Rate of Correct Classification",
+        "Regression Output Curve",
+        "Random Outcome Calculation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ROC stands for Receiver Operating Characteristic, a curve that plots True Positive Rate vs False Positive Rate at various threshold settings.",
+      "optionExplanations": [
+        "Correct. ROC (Receiver Operating Characteristic) curve is a fundamental evaluation tool in binary classification.",
+        "Incorrect. This is not what ROC stands for, though it might seem intuitive.",
+        "Incorrect. ROC is not related to regression output curves in this context.",
+        "Incorrect. ROC has nothing to do with random outcome calculations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ROC",
+        "evaluation",
+        "terminology"
+      ]
+    },
+    {
+      "id": "LOG_010",
+      "question": "What does the Area Under the Curve (AUC) measure in ROC analysis?",
+      "options": [
+        "The model's ability to distinguish between classes",
+        "The total number of correct predictions",
+        "The computational complexity of the model",
+        "The variance in the prediction errors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "AUC measures the entire two-dimensional area underneath the ROC curve, indicating how well the model can distinguish between positive and negative classes.",
+      "optionExplanations": [
+        "Correct. AUC quantifies the model's discriminative ability across all classification thresholds.",
+        "Incorrect. AUC doesn't count correct predictions; it measures discriminative performance across thresholds.",
+        "Incorrect. AUC has no relation to computational complexity of the model.",
+        "Incorrect. AUC doesn't measure variance in prediction errors; it measures classification performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AUC",
+        "ROC",
+        "discriminative-ability"
+      ]
+    },
+    {
+      "id": "LOG_011",
+      "question": "What is the ideal AUC value for a perfect classifier?",
+      "options": [
+        "1.0",
+        "0.5",
+        "0.0",
+        "2.0"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An AUC of 1.0 indicates perfect classification, where the model can completely distinguish between positive and negative classes.",
+      "optionExplanations": [
+        "Correct. AUC = 1.0 represents perfect classification with 100% true positive rate and 0% false positive rate.",
+        "Incorrect. AUC = 0.5 indicates random guessing, equivalent to a diagonal line in ROC space.",
+        "Incorrect. AUC = 0.0 would indicate perfect but inverted classification (systematically wrong predictions).",
+        "Incorrect. AUC values are bounded between 0 and 1, so 2.0 is impossible."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "AUC",
+        "perfect-classifier",
+        "evaluation-metrics"
+      ]
+    },
+    {
+      "id": "LOG_012",
+      "question": "In logistic regression, what happens when the decision threshold is lowered?",
+      "options": [
+        "More instances are classified as positive",
+        "More instances are classified as negative",
+        "The model accuracy always improves",
+        "The model becomes linear"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Lowering the threshold means requiring lower probability to classify as positive, resulting in more positive predictions.",
+      "optionExplanations": [
+        "Correct. A lower threshold means instances with lower predicted probabilities will be classified as positive.",
+        "Incorrect. Lowering the threshold increases positive classifications, not negative ones.",
+        "Incorrect. Lowering the threshold may increase recall but could decrease precision, not necessarily improving overall accuracy.",
+        "Incorrect. The threshold doesn't affect the model's fundamental sigmoid nature."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decision-threshold",
+        "classification",
+        "threshold-tuning"
+      ]
+    },
+    {
+      "id": "LOG_013",
+      "question": "What is the logit function?",
+      "options": [
+        "The inverse of the sigmoid function",
+        "The derivative of the sigmoid function",
+        "The integral of the sigmoid function",
+        "The same as the sigmoid function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The logit function is the inverse of the sigmoid function, mapping probabilities from (0,1) to real numbers (-∞,∞).",
+      "optionExplanations": [
+        "Correct. The logit function logit(p) = ln(p/(1-p)) is the inverse of the sigmoid function.",
+        "Incorrect. The derivative of sigmoid is σ(z)(1-σ(z)), not the logit function.",
+        "Incorrect. The integral of sigmoid is not the logit function.",
+        "Incorrect. The logit and sigmoid functions are inverses of each other, not the same."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "logit",
+        "inverse-function",
+        "mathematical-relationship"
+      ]
+    },
+    {
+      "id": "LOG_014",
+      "question": "Why can't we use linear regression for binary classification problems?",
+      "options": [
+        "Linear regression can predict values outside the [0,1] range",
+        "Linear regression is too slow to compute",
+        "Linear regression requires more data",
+        "Linear regression cannot handle categorical variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Linear regression can predict any real value, but probabilities must be between 0 and 1. The sigmoid function in logistic regression ensures valid probability outputs.",
+      "optionExplanations": [
+        "Correct. Linear regression outputs can be any real number, making them unsuitable for representing probabilities.",
+        "Incorrect. Computational speed is not the primary reason; both methods have similar computational complexity.",
+        "Incorrect. Data requirements are not the main issue distinguishing these methods.",
+        "Incorrect. Both linear and logistic regression can handle categorical variables with proper encoding."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "linear-vs-logistic",
+        "probability-bounds",
+        "classification-fundamentals"
+      ]
+    },
+    {
+      "id": "LOG_015",
+      "question": "What is the cost function used in logistic regression?",
+      "options": [
+        "Log-likelihood (Cross-entropy)",
+        "Mean Squared Error",
+        "Mean Absolute Error",
+        "Hinge Loss"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Logistic regression uses the log-likelihood function (equivalent to cross-entropy loss) as its cost function for parameter optimization.",
+      "optionExplanations": [
+        "Correct. The log-likelihood function penalizes wrong predictions more heavily as confidence increases.",
+        "Incorrect. MSE is used in linear regression but not suitable for logistic regression as it's not convex.",
+        "Incorrect. MAE is also not appropriate for logistic regression's probabilistic nature.",
+        "Incorrect. Hinge loss is used in Support Vector Machines, not logistic regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cost-function",
+        "log-likelihood",
+        "cross-entropy"
+      ]
+    },
+    {
+      "id": "LOG_016",
+      "question": "What is the derivative of the sigmoid function σ(z)?",
+      "options": [
+        "σ(z)(1 - σ(z))",
+        "σ(z)²",
+        "1 - σ(z)",
+        "e^(-z)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The derivative of the sigmoid function has the elegant form σ(z)(1-σ(z)), which is computationally efficient for gradient descent.",
+      "optionExplanations": [
+        "Correct. This derivative form makes gradient computation efficient in logistic regression training.",
+        "Incorrect. This is not the correct derivative of the sigmoid function.",
+        "Incorrect. This is just the complement of sigmoid, not its derivative.",
+        "Incorrect. This is part of the sigmoid function's denominator, not its derivative."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "derivative",
+        "sigmoid",
+        "calculus",
+        "gradient-descent"
+      ]
+    },
+    {
+      "id": "LOG_017",
+      "question": "In multiclass logistic regression, which function is typically used?",
+      "options": [
+        "Softmax function",
+        "Sigmoid function",
+        "ReLU function",
+        "Tanh function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The softmax function generalizes the sigmoid function to multiple classes, ensuring all class probabilities sum to 1.",
+      "optionExplanations": [
+        "Correct. Softmax extends logistic regression to multiple classes while maintaining probability constraints.",
+        "Incorrect. Sigmoid is used for binary classification, not multiclass problems.",
+        "Incorrect. ReLU is an activation function used in neural networks, not for logistic regression.",
+        "Incorrect. Tanh maps to (-1,1) range and isn't suitable for probability representation in classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multiclass",
+        "softmax",
+        "generalization"
+      ]
+    },
+    {
+      "id": "LOG_018",
+      "question": "What does overfitting in logistic regression typically result in?",
+      "options": [
+        "High training accuracy but poor test accuracy",
+        "Low training accuracy but high test accuracy",
+        "High accuracy on both training and test sets",
+        "Low accuracy on both training and test sets"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Overfitting occurs when the model learns the training data too well, including noise, resulting in poor generalization to new data.",
+      "optionExplanations": [
+        "Correct. Overfitted models memorize training data patterns that don't generalize to test data.",
+        "Incorrect. This scenario is extremely rare and would indicate severe underfitting on training data.",
+        "Incorrect. This indicates good generalization without overfitting.",
+        "Incorrect. This suggests underfitting, where the model fails to learn from training data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "generalization",
+        "model-performance"
+      ]
+    },
+    {
+      "id": "LOG_019",
+      "question": "Which regularization technique adds the sum of absolute values of coefficients to the cost function?",
+      "options": [
+        "L1 regularization (Lasso)",
+        "L2 regularization (Ridge)",
+        "Elastic Net",
+        "Dropout"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "L1 regularization adds the sum of absolute values of coefficients as a penalty term, promoting sparsity in the model.",
+      "optionExplanations": [
+        "Correct. L1 regularization adds λ∑|βᵢ| to the cost function, often resulting in sparse solutions.",
+        "Incorrect. L2 regularization adds the sum of squared coefficients, not absolute values.",
+        "Incorrect. Elastic Net combines both L1 and L2 regularization.",
+        "Incorrect. Dropout is a neural network regularization technique, not applicable to traditional logistic regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "L1-regularization",
+        "lasso",
+        "sparsity"
+      ]
+    },
+    {
+      "id": "LOG_020",
+      "question": "What is the main advantage of L1 regularization over L2 regularization?",
+      "options": [
+        "It can perform automatic feature selection",
+        "It always gives better accuracy",
+        "It requires less computational time",
+        "It handles multicollinearity better"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "L1 regularization can drive some coefficients exactly to zero, effectively performing automatic feature selection.",
+      "optionExplanations": [
+        "Correct. L1 regularization's penalty structure can force coefficients to exactly zero, eliminating features.",
+        "Incorrect. Neither regularization method always gives better accuracy; it depends on the problem.",
+        "Incorrect. Computational time is similar for both methods in most implementations.",
+        "Incorrect. L2 regularization generally handles multicollinearity better than L1."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "L1-regularization",
+        "feature-selection",
+        "sparsity"
+      ]
+    },
+    {
+      "id": "LOG_021",
+      "question": "What is the purpose of the intercept term in logistic regression?",
+      "options": [
+        "To adjust the decision boundary when all features are zero",
+        "To normalize the input features",
+        "To prevent overfitting",
+        "To speed up convergence"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The intercept (bias) term shifts the decision boundary and represents the log-odds when all feature values are zero.",
+      "optionExplanations": [
+        "Correct. The intercept β₀ determines the baseline log-odds when all features equal zero.",
+        "Incorrect. Feature normalization is a preprocessing step, not the purpose of the intercept.",
+        "Incorrect. Regularization techniques, not the intercept, are used to prevent overfitting.",
+        "Incorrect. The intercept doesn't directly affect convergence speed in optimization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "intercept",
+        "bias-term",
+        "decision-boundary"
+      ]
+    },
+    {
+      "id": "LOG_022",
+      "question": "How do you interpret a coefficient of 0.5 in logistic regression?",
+      "options": [
+        "A one-unit increase in the feature multiplies the odds by e^0.5 ≈ 1.65",
+        "A one-unit increase in the feature increases probability by 0.5",
+        "A one-unit increase in the feature increases the outcome by 0.5",
+        "The feature has 50% importance in the model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In logistic regression, coefficients represent the change in log-odds, so exponentiating gives the odds ratio.",
+      "optionExplanations": [
+        "Correct. exp(0.5) ≈ 1.65 means the odds increase by a factor of 1.65 for each unit increase in the feature.",
+        "Incorrect. Coefficients don't directly translate to probability changes; the relationship is non-linear.",
+        "Incorrect. Logistic regression predicts probabilities, not direct outcome values.",
+        "Incorrect. Coefficient magnitude doesn't directly indicate feature importance percentage."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "coefficient-interpretation",
+        "odds-ratio",
+        "log-odds"
+      ]
+    },
+    {
+      "id": "LOG_023",
+      "question": "What is the assumption about the relationship between features and log-odds in logistic regression?",
+      "options": [
+        "Linear relationship",
+        "Quadratic relationship",
+        "Exponential relationship",
+        "No specific relationship"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Logistic regression assumes a linear relationship between the independent variables and the log-odds of the dependent variable.",
+      "optionExplanations": [
+        "Correct. The logit (log-odds) is assumed to be a linear combination of the features.",
+        "Incorrect. Quadratic relationships would require polynomial terms to be explicitly added.",
+        "Incorrect. An exponential relationship is not assumed in standard logistic regression.",
+        "Incorrect. Logistic regression specifically assumes linearity in the log-odds space."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "assumptions",
+        "linearity",
+        "log-odds"
+      ]
+    },
+    {
+      "id": "LOG_024",
+      "question": "Which of the following is NOT an assumption of logistic regression?",
+      "options": [
+        "Homoscedasticity (constant variance)",
+        "Independence of observations",
+        "Linear relationship between features and log-odds",
+        "No perfect multicollinearity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unlike linear regression, logistic regression does not require homoscedasticity since it doesn't assume constant error variance.",
+      "optionExplanations": [
+        "Correct. Logistic regression doesn't assume constant variance of errors like linear regression does.",
+        "Incorrect. Independence of observations is indeed required for valid statistical inference.",
+        "Incorrect. Linearity in the log-odds space is a key assumption of logistic regression.",
+        "Incorrect. Perfect multicollinearity causes problems in parameter estimation for logistic regression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "assumptions",
+        "homoscedasticity",
+        "model-requirements"
+      ]
+    },
+    {
+      "id": "LOG_025",
+      "question": "What does sensitivity (recall) measure in binary classification?",
+      "options": [
+        "True Positive Rate (TPR)",
+        "True Negative Rate (TNR)",
+        "False Positive Rate (FPR)",
+        "False Negative Rate (FNR)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sensitivity (recall) measures the proportion of actual positive cases that were correctly identified by the model.",
+      "optionExplanations": [
+        "Correct. Sensitivity = TP/(TP+FN), the proportion of actual positives correctly identified.",
+        "Incorrect. TNR is specificity, not sensitivity.",
+        "Incorrect. FPR is the complement of specificity, not sensitivity.",
+        "Incorrect. FNR is the complement of sensitivity, representing missed positive cases."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sensitivity",
+        "recall",
+        "TPR",
+        "evaluation-metrics"
+      ]
+    },
+    {
+      "id": "LOG_026",
+      "question": "What does specificity measure in binary classification?",
+      "options": [
+        "True Negative Rate (TNR)",
+        "True Positive Rate (TPR)",
+        "False Positive Rate (FPR)",
+        "False Negative Rate (FNR)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Specificity measures the proportion of actual negative cases that were correctly identified as negative by the model.",
+      "optionExplanations": [
+        "Correct. Specificity = TN/(TN+FP), the proportion of actual negatives correctly identified.",
+        "Incorrect. TPR is sensitivity/recall, not specificity.",
+        "Incorrect. FPR is the complement of specificity (1 - specificity).",
+        "Incorrect. FNR relates to sensitivity, not specificity."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "specificity",
+        "TNR",
+        "evaluation-metrics"
+      ]
+    },
+    {
+      "id": "LOG_027",
+      "question": "What is precision in the context of binary classification?",
+      "options": [
+        "TP/(TP + FP)",
+        "TP/(TP + FN)",
+        "TN/(TN + FP)",
+        "TN/(TN + FN)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Precision measures the proportion of predicted positive cases that were actually positive, focusing on the accuracy of positive predictions.",
+      "optionExplanations": [
+        "Correct. Precision = TP/(TP+FP) measures how many predicted positives were actually positive.",
+        "Incorrect. This formula represents recall (sensitivity), not precision.",
+        "Incorrect. This formula represents specificity, not precision.",
+        "Incorrect. This formula doesn't represent any standard classification metric."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "precision",
+        "positive-predictive-value",
+        "evaluation-metrics"
+      ]
+    },
+    {
+      "id": "LOG_028",
+      "question": "What is the F1-score?",
+      "options": [
+        "Harmonic mean of precision and recall",
+        "Arithmetic mean of precision and recall",
+        "Geometric mean of precision and recall",
+        "Maximum of precision and recall"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The F1-score is the harmonic mean of precision and recall, providing a single metric that balances both measures.",
+      "optionExplanations": [
+        "Correct. F1 = 2 × (precision × recall)/(precision + recall), the harmonic mean of precision and recall.",
+        "Incorrect. The arithmetic mean doesn't properly balance precision and recall like the harmonic mean does.",
+        "Incorrect. The geometric mean is not used for the F1-score calculation.",
+        "Incorrect. Taking the maximum would ignore the lower of the two metrics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "F1-score",
+        "harmonic-mean",
+        "precision-recall-balance"
+      ]
+    },
+    {
+      "id": "LOG_029",
+      "question": "When is the F1-score most useful?",
+      "options": [
+        "When you need to balance precision and recall",
+        "When you only care about accuracy",
+        "When the dataset is perfectly balanced",
+        "When you want to maximize true negatives"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "F1-score is particularly useful when you need a single metric that considers both precision and recall, especially with imbalanced datasets.",
+      "optionExplanations": [
+        "Correct. F1-score provides a balanced measure when both precision and recall are important.",
+        "Incorrect. If only accuracy matters, you wouldn't need F1-score; simple accuracy would suffice.",
+        "Incorrect. F1-score is especially valuable for imbalanced datasets, not perfectly balanced ones.",
+        "Incorrect. F1-score focuses on positive class performance, not true negatives."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "F1-score",
+        "precision-recall-tradeoff",
+        "imbalanced-data"
+      ]
+    },
+    {
+      "id": "LOG_030",
+      "question": "What happens to the ROC curve when you have a random classifier?",
+      "options": [
+        "It becomes a diagonal line from (0,0) to (1,1)",
+        "It becomes a horizontal line",
+        "It becomes a vertical line",
+        "It forms a perfect L-shape"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A random classifier has equal true positive and false positive rates at all thresholds, creating a diagonal line with AUC = 0.5.",
+      "optionExplanations": [
+        "Correct. Random classification results in TPR = FPR at all thresholds, creating a diagonal line.",
+        "Incorrect. A horizontal line would indicate constant TPR regardless of FPR, which isn't random behavior.",
+        "Incorrect. A vertical line would indicate perfect classification, opposite of random performance.",
+        "Incorrect. An L-shape indicates perfect classification with AUC = 1.0."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ROC",
+        "random-classifier",
+        "baseline-performance"
+      ]
+    },
+    {
+      "id": "LOG_031",
+      "question": "What does an AUC value of 0.5 indicate?",
+      "options": [
+        "Random performance (no discriminative ability)",
+        "Perfect classification",
+        "Good classification performance",
+        "Poor but better than random performance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An AUC of 0.5 indicates that the classifier performs no better than random guessing, with no ability to distinguish between classes.",
+      "optionExplanations": [
+        "Correct. AUC = 0.5 means the model has no discriminative power and performs like random guessing.",
+        "Incorrect. Perfect classification would have AUC = 1.0.",
+        "Incorrect. Good performance typically requires AUC > 0.7 or 0.8.",
+        "Incorrect. Any value above 0.5 would indicate better than random performance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "AUC",
+        "random-performance",
+        "discriminative-ability"
+      ]
+    },
+    {
+      "id": "LOG_032",
+      "question": "In gradient descent for logistic regression, what determines the step size?",
+      "options": [
+        "Learning rate (alpha)",
+        "Number of features",
+        "Sample size",
+        "Number of iterations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The learning rate (alpha) is a hyperparameter that controls how large steps the algorithm takes when updating parameters during gradient descent.",
+      "optionExplanations": [
+        "Correct. The learning rate α determines how much the parameters are updated in each iteration of gradient descent.",
+        "Incorrect. The number of features affects gradient computation but not the step size directly.",
+        "Incorrect. Sample size affects gradient estimation but the learning rate still determines step size.",
+        "Incorrect. The number of iterations determines how long training runs, not individual step sizes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-descent",
+        "learning-rate",
+        "optimization"
+      ]
+    },
+    {
+      "id": "LOG_033",
+      "question": "What problem can occur if the learning rate is too high in gradient descent?",
+      "options": [
+        "The algorithm may overshoot the minimum and fail to converge",
+        "The algorithm will converge too slowly",
+        "The algorithm will always find the global minimum",
+        "The algorithm will require more memory"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A learning rate that's too high can cause the algorithm to take steps that are too large, potentially missing the minimum or oscillating around it.",
+      "optionExplanations": [
+        "Correct. High learning rates can cause the optimization to overshoot the minimum and potentially diverge.",
+        "Incorrect. Slow convergence is typically associated with learning rates that are too low, not too high.",
+        "Incorrect. High learning rates make it harder to find any minimum, let alone guarantee the global minimum.",
+        "Incorrect. Learning rate doesn't directly affect memory requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "convergence",
+        "optimization-problems"
+      ]
+    },
+    {
+      "id": "LOG_034",
+      "question": "What is the main disadvantage of using a very small learning rate?",
+      "options": [
+        "Very slow convergence",
+        "Higher risk of overfitting",
+        "Increased memory usage",
+        "Poor final accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A very small learning rate means the algorithm takes tiny steps toward the minimum, requiring many more iterations to converge.",
+      "optionExplanations": [
+        "Correct. Small learning rates result in small parameter updates, leading to slow convergence to the minimum.",
+        "Incorrect. Learning rate affects convergence speed but doesn't directly cause overfitting.",
+        "Incorrect. Learning rate doesn't affect memory usage significantly.",
+        "Incorrect. A small learning rate may eventually reach the same accuracy, just much more slowly."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "learning-rate",
+        "convergence-speed",
+        "optimization"
+      ]
+    },
+    {
+      "id": "LOG_035",
+      "question": "What is the difference between batch gradient descent and stochastic gradient descent?",
+      "options": [
+        "Batch uses the entire dataset, stochastic uses one sample at a time",
+        "Batch is faster, stochastic is more accurate",
+        "Batch works only for linear regression, stochastic for logistic",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Batch gradient descent computes gradients using the entire training set, while stochastic gradient descent uses one sample at a time.",
+      "optionExplanations": [
+        "Correct. Batch GD uses all training samples per update, while SGD uses one sample per update.",
+        "Incorrect. SGD is typically faster per iteration but may be less stable than batch GD.",
+        "Incorrect. Both methods can be used for both linear and logistic regression.",
+        "Incorrect. The methods differ significantly in how they compute gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-gradient-descent",
+        "stochastic-gradient-descent",
+        "optimization-variants"
+      ]
+    },
+    {
+      "id": "LOG_036",
+      "question": "What is mini-batch gradient descent?",
+      "options": [
+        "Uses a small subset of the training data for each update",
+        "Uses only the minimum number of features",
+        "Uses the smallest possible learning rate",
+        "Uses the shortest training time"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mini-batch gradient descent combines advantages of both batch and stochastic methods by using small subsets of the training data.",
+      "optionExplanations": [
+        "Correct. Mini-batch GD uses subsets (e.g., 32, 64, 128 samples) for each gradient computation and parameter update.",
+        "Incorrect. Mini-batch refers to sample size per update, not the number of features used.",
+        "Incorrect. Mini-batch doesn't dictate the learning rate size.",
+        "Incorrect. Mini-batch refers to the sample size strategy, not training duration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mini-batch-gradient-descent",
+        "optimization",
+        "batch-size"
+      ]
+    },
+    {
+      "id": "LOG_037",
+      "question": "Why might you prefer logistic regression over more complex algorithms like neural networks?",
+      "options": [
+        "It's more interpretable and requires less data",
+        "It always has higher accuracy",
+        "It's the only method that works for classification",
+        "It can handle any type of relationship between variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Logistic regression provides clear coefficient interpretations and works well with smaller datasets, making it preferable when interpretability is important.",
+      "optionExplanations": [
+        "Correct. Logistic regression coefficients are easily interpretable and the model is less prone to overfitting with small datasets.",
+        "Incorrect. Complex algorithms like neural networks often achieve higher accuracy on complex problems.",
+        "Incorrect. Many algorithms can perform classification tasks.",
+        "Incorrect. Logistic regression assumes linear relationships in the log-odds space, limiting its flexibility."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interpretability",
+        "model-selection",
+        "simplicity-vs-complexity"
+      ]
+    },
+    {
+      "id": "LOG_038",
+      "question": "What is the null deviance in logistic regression?",
+      "options": [
+        "Deviance of a model with only the intercept term",
+        "Deviance when all coefficients are zero",
+        "Deviance of the perfect model",
+        "Deviance of the worst possible model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Null deviance measures how well the simplest model (with only intercept, no features) fits the data, serving as a baseline for comparison.",
+      "optionExplanations": [
+        "Correct. Null deviance is the deviance of the intercept-only model, used as a baseline to measure improvement.",
+        "Incorrect. If all coefficients including intercept are zero, predictions would be 0.5 for all cases.",
+        "Incorrect. A perfect model would have zero deviance, not null deviance.",
+        "Incorrect. Null deviance represents a baseline model, not the worst possible model."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "null-deviance",
+        "model-comparison",
+        "baseline-model"
+      ]
+    },
+    {
+      "id": "LOG_039",
+      "question": "What does residual deviance measure in logistic regression?",
+      "options": [
+        "How well the fitted model explains the data",
+        "The error in coefficient estimation",
+        "The difference between training and test accuracy",
+        "The computational time required"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Residual deviance measures the goodness of fit of the current model, with lower values indicating better fit to the data.",
+      "optionExplanations": [
+        "Correct. Residual deviance quantifies how much the fitted model deviates from perfect fit to the observed data.",
+        "Incorrect. Coefficient estimation error is measured by standard errors, not residual deviance.",
+        "Incorrect. The difference between training and test performance measures generalization, not residual deviance.",
+        "Incorrect. Residual deviance has no relation to computational efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "residual-deviance",
+        "goodness-of-fit",
+        "model-evaluation"
+      ]
+    },
+    {
+      "id": "LOG_040",
+      "question": "How do you test the overall significance of a logistic regression model?",
+      "options": [
+        "Likelihood ratio test comparing to null model",
+        "T-test on individual coefficients",
+        "F-test like in linear regression",
+        "Chi-square test on residuals"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The likelihood ratio test compares the fitted model to the null model (intercept-only) to test overall model significance.",
+      "optionExplanations": [
+        "Correct. The likelihood ratio test compares -2 log-likelihood of the fitted model vs. null model.",
+        "Incorrect. T-tests evaluate individual coefficients, not overall model significance.",
+        "Incorrect. F-tests are used in linear regression; logistic regression uses likelihood-based tests.",
+        "Incorrect. Chi-square tests on residuals assess goodness of fit, not overall significance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "likelihood-ratio-test",
+        "model-significance",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "id": "LOG_041",
+      "question": "What is the Wald test used for in logistic regression?",
+      "options": [
+        "Testing significance of individual coefficients",
+        "Testing overall model fit",
+        "Selecting the best features",
+        "Determining the optimal threshold"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Wald test evaluates whether individual regression coefficients are significantly different from zero.",
+      "optionExplanations": [
+        "Correct. The Wald test uses z = β̂/SE(β̂) to test if individual coefficients are significantly different from zero.",
+        "Incorrect. Overall model fit is tested using likelihood ratio tests, not Wald tests.",
+        "Incorrect. Feature selection uses various methods, but Wald test only tests coefficient significance.",
+        "Incorrect. Threshold determination involves ROC analysis or other performance metrics, not Wald tests."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Wald-test",
+        "coefficient-significance",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "id": "LOG_042",
+      "question": "What does multicollinearity affect in logistic regression?",
+      "options": [
+        "Stability and interpretability of coefficients",
+        "The shape of the sigmoid curve",
+        "The maximum possible accuracy",
+        "The number of iterations needed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multicollinearity makes coefficient estimates unstable and difficult to interpret, though it may not affect prediction accuracy much.",
+      "optionExplanations": [
+        "Correct. Multicollinearity causes large standard errors and unstable coefficient estimates that are hard to interpret.",
+        "Incorrect. Multicollinearity affects parameter estimation, not the fundamental sigmoid function shape.",
+        "Incorrect. Multicollinearity typically doesn't limit the maximum achievable accuracy significantly.",
+        "Incorrect. Convergence speed is more affected by data scaling and learning rate than multicollinearity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multicollinearity",
+        "coefficient-stability",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "LOG_043",
+      "question": "How can you detect multicollinearity in logistic regression?",
+      "options": [
+        "Calculate Variance Inflation Factor (VIF)",
+        "Check the ROC curve",
+        "Examine the confusion matrix",
+        "Look at the learning curve"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "VIF measures how much the variance of a coefficient increases due to collinearity, with values > 5 or 10 indicating potential problems.",
+      "optionExplanations": [
+        "Correct. VIF quantifies how much multicollinearity inflates the variance of coefficient estimates.",
+        "Incorrect. ROC curves evaluate classification performance, not multicollinearity.",
+        "Incorrect. Confusion matrices show classification results, not feature relationships.",
+        "Incorrect. Learning curves show training vs. validation performance, not multicollinearity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "VIF",
+        "multicollinearity-detection",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "LOG_044",
+      "question": "What is the purpose of feature scaling in logistic regression?",
+      "options": [
+        "To ensure fair comparison of coefficient magnitudes",
+        "To guarantee model convergence",
+        "To increase model accuracy",
+        "To reduce overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature scaling puts all variables on similar scales, making coefficient magnitudes more comparable and potentially improving optimization convergence.",
+      "optionExplanations": [
+        "Correct. Scaling ensures that coefficient magnitudes can be fairly compared across features with different scales.",
+        "Incorrect. While scaling can help convergence, it doesn't guarantee it in all cases.",
+        "Incorrect. Scaling may improve optimization but doesn't directly increase model accuracy.",
+        "Incorrect. Regularization techniques, not scaling, are primarily used to reduce overfitting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "preprocessing",
+        "coefficient-comparison"
+      ]
+    },
+    {
+      "id": "LOG_045",
+      "question": "Which method is commonly used for feature scaling in logistic regression?",
+      "options": [
+        "Standardization (z-score normalization)",
+        "One-hot encoding",
+        "Principal Component Analysis",
+        "Binning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Standardization transforms features to have mean 0 and standard deviation 1, making them comparable across different scales.",
+      "optionExplanations": [
+        "Correct. Standardization (x-μ)/σ transforms features to have zero mean and unit variance.",
+        "Incorrect. One-hot encoding handles categorical variables, not continuous feature scaling.",
+        "Incorrect. PCA is dimensionality reduction, not feature scaling.",
+        "Incorrect. Binning discretizes continuous variables but doesn't scale them."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "standardization",
+        "z-score",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "LOG_046",
+      "question": "What is the main purpose of cross-validation in logistic regression?",
+      "options": [
+        "To assess model generalization performance",
+        "To select the best features",
+        "To determine coefficient values",
+        "To choose the sigmoid function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-validation provides an unbiased estimate of how well the model will perform on unseen data by training and testing on different data subsets.",
+      "optionExplanations": [
+        "Correct. Cross-validation estimates generalization performance by repeatedly training on subsets and testing on holdout data.",
+        "Incorrect. While CV can be used in feature selection, its main purpose is performance assessment.",
+        "Incorrect. Optimization algorithms determine coefficients, not cross-validation.",
+        "Incorrect. The sigmoid function is fixed in logistic regression; CV doesn't choose it."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "cross-validation",
+        "generalization",
+        "model-evaluation"
+      ]
+    },
+    {
+      "id": "LOG_047",
+      "question": "What is k-fold cross-validation?",
+      "options": [
+        "Dividing data into k subsets, using k-1 for training and 1 for testing",
+        "Running the model k times with different random seeds",
+        "Using k different algorithms on the same data",
+        "Training k separate models with different features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "K-fold cross-validation partitions the data into k equal-sized folds, training on k-1 folds and testing on the remaining fold, repeated k times.",
+      "optionExplanations": [
+        "Correct. Each fold serves as the test set once while the remaining k-1 folds are used for training.",
+        "Incorrect. Different random seeds don't constitute cross-validation methodology.",
+        "Incorrect. Using different algorithms is ensemble methods, not cross-validation.",
+        "Incorrect. Different feature sets represent feature selection, not cross-validation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "k-fold-CV",
+        "data-partitioning",
+        "validation-strategy"
+      ]
+    },
+    {
+      "id": "LOG_048",
+      "question": "What happens to logistic regression when you have perfect separation in your data?",
+      "options": [
+        "Coefficients become infinite and model fails to converge",
+        "The model achieves 100% accuracy instantly",
+        "The sigmoid function becomes linear",
+        "Cross-validation becomes unnecessary"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Perfect separation means a hyperplane can completely separate classes, causing coefficients to grow toward infinity as the algorithm tries to maximize likelihood.",
+      "optionExplanations": [
+        "Correct. Perfect separation causes the maximum likelihood estimates to diverge toward infinity.",
+        "Incorrect. While accuracy might be high, the numerical optimization process fails due to infinite coefficients.",
+        "Incorrect. The sigmoid function shape doesn't change; the coefficients become extreme.",
+        "Incorrect. Cross-validation is still important to assess generalization, especially with perfect separation concerns."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "perfect-separation",
+        "convergence-problems",
+        "infinite-coefficients"
+      ]
+    },
+    {
+      "id": "LOG_049",
+      "question": "How can you handle perfect separation in logistic regression?",
+      "options": [
+        "Use regularization or collect more data",
+        "Increase the learning rate",
+        "Use a different sigmoid function",
+        "Remove all features from the model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Regularization prevents coefficients from becoming infinite, while more data might eliminate perfect separation by adding overlapping cases.",
+      "optionExplanations": [
+        "Correct. L1 or L2 regularization constrains coefficients, and more data may introduce overlap between classes.",
+        "Incorrect. Increasing learning rate would worsen convergence problems with perfect separation.",
+        "Incorrect. The sigmoid function isn't the issue; the data structure causes the problem.",
+        "Incorrect. Removing features might help but isn't the most principled solution."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "perfect-separation",
+        "regularization",
+        "data-collection"
+      ]
+    },
+    {
+      "id": "LOG_050",
+      "question": "What is the purpose of the confusion matrix's main diagonal?",
+      "options": [
+        "It shows correct predictions (true positives and true negatives)",
+        "It shows incorrect predictions",
+        "It shows the total number of samples",
+        "It shows the model's confidence scores"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The main diagonal of a confusion matrix contains the counts of correct predictions: true positives and true negatives.",
+      "optionExplanations": [
+        "Correct. The diagonal elements represent cases where predicted class matches actual class.",
+        "Incorrect. Incorrect predictions appear in the off-diagonal elements.",
+        "Incorrect. The total number of samples is the sum of all elements, not just the diagonal.",
+        "Incorrect. Confusion matrices show counts, not confidence scores."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confusion-matrix",
+        "diagonal",
+        "correct-predictions"
+      ]
+    },
+    {
+      "id": "LOG_051",
+      "question": "In a 2x2 confusion matrix, what do the off-diagonal elements represent?",
+      "options": [
+        "Classification errors (false positives and false negatives)",
+        "Correct predictions",
+        "Confidence intervals",
+        "Feature importance scores"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Off-diagonal elements show misclassifications: false positives (predicted positive, actually negative) and false negatives (predicted negative, actually positive).",
+      "optionExplanations": [
+        "Correct. Off-diagonal elements represent the two types of classification errors in binary classification.",
+        "Incorrect. Correct predictions are shown on the main diagonal.",
+        "Incorrect. Confusion matrices don't display confidence intervals.",
+        "Incorrect. Feature importance is not shown in confusion matrices."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confusion-matrix",
+        "classification-errors",
+        "false-positives-negatives"
+      ]
+    },
+    {
+      "id": "LOG_052",
+      "question": "What does it mean when the ROC curve is closer to the top-left corner?",
+      "options": [
+        "Better classification performance",
+        "Worse classification performance",
+        "Random performance",
+        "Overfitted model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The top-left corner represents perfect classification (TPR=1, FPR=0), so curves closer to this point indicate better performance.",
+      "optionExplanations": [
+        "Correct. The ideal point (0,1) represents 100% sensitivity with 0% false positive rate, indicating perfect classification.",
+        "Incorrect. Better performance is indicated by curves closer to the top-left, not farther away.",
+        "Incorrect. Random performance is represented by the diagonal line from (0,0) to (1,1).",
+        "Incorrect. ROC curve position doesn't directly indicate overfitting; that requires comparing training vs. test performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ROC",
+        "performance-interpretation",
+        "optimal-classifier"
+      ]
+    },
+    {
+      "id": "LOG_053",
+      "question": "What is the relationship between the ROC curve and different classification thresholds?",
+      "options": [
+        "Each point on the ROC curve represents a different threshold",
+        "The threshold is fixed at 0.5 for all points",
+        "Thresholds are irrelevant to ROC curves",
+        "Only the endpoints correspond to threshold values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Each point on the ROC curve corresponds to a different classification threshold, showing the trade-off between sensitivity and specificity.",
+      "optionExplanations": [
+        "Correct. Moving along the ROC curve represents changing the decision threshold from 0 to 1.",
+        "Incorrect. The ROC curve shows performance across all possible thresholds, not just 0.5.",
+        "Incorrect. Thresholds are fundamental to ROC curve construction.",
+        "Incorrect. Every point on the curve, not just endpoints, corresponds to a specific threshold."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ROC",
+        "thresholds",
+        "sensitivity-specificity-tradeoff"
+      ]
+    },
+    {
+      "id": "LOG_054",
+      "question": "What does an AUC value of 0.8 suggest about model performance?",
+      "options": [
+        "Good discriminative ability",
+        "Perfect classification",
+        "Random performance",
+        "Poor performance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An AUC of 0.8 indicates the model correctly ranks a randomly chosen positive instance higher than a randomly chosen negative instance 80% of the time.",
+      "optionExplanations": [
+        "Correct. AUC of 0.8 is generally considered good performance, significantly better than random (0.5).",
+        "Incorrect. Perfect classification would have AUC = 1.0.",
+        "Incorrect. Random performance corresponds to AUC = 0.5.",
+        "Incorrect. AUC of 0.8 indicates good, not poor, performance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "AUC",
+        "performance-interpretation",
+        "discriminative-ability"
+      ]
+    },
+    {
+      "id": "LOG_055",
+      "question": "When would you prefer precision over recall in model evaluation?",
+      "options": [
+        "When false positives are more costly than false negatives",
+        "When false negatives are more costly than false positives",
+        "When the dataset is balanced",
+        "When you want to maximize accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Precision focuses on minimizing false positives, making it important when incorrectly predicting positive has high costs.",
+      "optionExplanations": [
+        "Correct. High precision means fewer false positives, important when false alarms are costly (e.g., spam detection).",
+        "Incorrect. When false negatives are costly, you'd prioritize recall to minimize missed positive cases.",
+        "Incorrect. Dataset balance doesn't determine whether to prioritize precision or recall.",
+        "Incorrect. Accuracy considers both precision and recall; this question asks about prioritizing one over the other."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision",
+        "cost-sensitive",
+        "false-positives"
+      ]
+    },
+    {
+      "id": "LOG_056",
+      "question": "When would you prefer recall over precision in model evaluation?",
+      "options": [
+        "When false negatives are more costly than false positives",
+        "When false positives are more costly than false negatives",
+        "When you want to minimize training time",
+        "When the model is overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Recall focuses on minimizing false negatives, making it crucial when missing positive cases has severe consequences.",
+      "optionExplanations": [
+        "Correct. High recall minimizes false negatives, important in scenarios like medical diagnosis where missing cases is dangerous.",
+        "Incorrect. When false positives are costly, precision becomes more important than recall.",
+        "Incorrect. Training time optimization is unrelated to the precision-recall trade-off.",
+        "Incorrect. Overfitting is addressed through regularization, not by choosing precision or recall."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "recall",
+        "cost-sensitive",
+        "false-negatives"
+      ]
+    },
+    {
+      "id": "LOG_057",
+      "question": "What is the precision-recall trade-off?",
+      "options": [
+        "Increasing precision often decreases recall and vice versa",
+        "Precision and recall always increase together",
+        "Precision and recall are completely independent",
+        "The trade-off only exists in imbalanced datasets"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "As you make the model more selective (higher precision), you typically catch fewer positive cases (lower recall), and vice versa.",
+      "optionExplanations": [
+        "Correct. Making the model more conservative typically increases precision but decreases recall.",
+        "Incorrect. Precision and recall often move in opposite directions when adjusting decision thresholds.",
+        "Incorrect. Precision and recall are related through the decision threshold and model predictions.",
+        "Incorrect. The precision-recall trade-off exists in both balanced and imbalanced datasets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision-recall-tradeoff",
+        "threshold-tuning",
+        "model-optimization"
+      ]
+    },
+    {
+      "id": "LOG_058",
+      "question": "What is regularization parameter λ (lambda) used for in logistic regression?",
+      "options": [
+        "Controls the strength of regularization penalty",
+        "Sets the learning rate for optimization",
+        "Determines the number of iterations",
+        "Specifies the decision threshold"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Lambda controls how much penalty is applied to large coefficients, with higher λ values creating stronger regularization and simpler models.",
+      "optionExplanations": [
+        "Correct. λ multiplies the regularization term, controlling the trade-off between model fit and complexity.",
+        "Incorrect. Learning rate is typically denoted as α (alpha), not λ (lambda).",
+        "Incorrect. The number of iterations is usually a separate hyperparameter.",
+        "Incorrect. Decision threshold is typically 0.5 by default and adjusted based on performance metrics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "lambda",
+        "hyperparameter"
+      ]
+    },
+    {
+      "id": "LOG_059",
+      "question": "How do you choose the optimal regularization parameter λ?",
+      "options": [
+        "Cross-validation to find the value that minimizes validation error",
+        "Always use λ = 1",
+        "Set λ equal to the learning rate",
+        "Use the smallest λ that doesn't cause overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-validation helps find the λ value that provides the best balance between underfitting and overfitting on unseen data.",
+      "optionExplanations": [
+        "Correct. Cross-validation provides an unbiased estimate of performance for different λ values.",
+        "Incorrect. λ = 1 is arbitrary and may not be optimal for your specific dataset.",
+        "Incorrect. λ and learning rate serve different purposes and should be tuned independently.",
+        "Incorrect. This approach is vague and doesn't provide a systematic way to choose λ."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameter-tuning",
+        "cross-validation",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "LOG_060",
+      "question": "What happens when λ approaches infinity in regularized logistic regression?",
+      "options": [
+        "All coefficients approach zero (except intercept)",
+        "All coefficients become infinite",
+        "The model becomes perfectly accurate",
+        "The regularization has no effect"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "As λ increases, the regularization penalty dominates, forcing coefficients toward zero to minimize the overall cost function.",
+      "optionExplanations": [
+        "Correct. Very large λ makes the penalty term dominate, shrinking coefficients to nearly zero.",
+        "Incorrect. Large λ shrinks coefficients toward zero, not infinity.",
+        "Incorrect. Excessive regularization typically reduces accuracy due to underfitting.",
+        "Incorrect. Large λ values have strong regularization effects."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "coefficient-shrinkage",
+        "underfitting"
+      ]
+    },
+    {
+      "id": "LOG_061",
+      "question": "What is the main difference between L1 and L2 regularization in terms of solution characteristics?",
+      "options": [
+        "L1 produces sparse solutions, L2 produces dense solutions",
+        "L1 is always better than L2",
+        "L1 works only with small datasets, L2 with large datasets",
+        "L1 and L2 always produce identical results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "L1 regularization can drive coefficients exactly to zero (sparsity), while L2 shrinks coefficients toward zero but rarely makes them exactly zero.",
+      "optionExplanations": [
+        "Correct. L1's absolute value penalty can force coefficients to exactly zero, while L2's squared penalty only shrinks them.",
+        "Incorrect. Neither method is universally better; the choice depends on the problem and data characteristics.",
+        "Incorrect. Both methods can work with datasets of various sizes.",
+        "Incorrect. L1 and L2 regularization typically produce different coefficient patterns."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "L1-vs-L2",
+        "sparsity",
+        "regularization-comparison"
+      ]
+    },
+    {
+      "id": "LOG_062",
+      "question": "What is Elastic Net regularization?",
+      "options": [
+        "A combination of L1 and L2 regularization",
+        "A type of neural network regularization",
+        "The same as L1 regularization",
+        "A method for feature selection only"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Elastic Net combines both L1 and L2 penalties, getting benefits of both sparsity and handling correlated features.",
+      "optionExplanations": [
+        "Correct. Elastic Net penalty = α₁∑|βᵢ| + α₂∑βᵢ², combining L1 and L2 regularization.",
+        "Incorrect. Elastic Net is used in linear models, not specifically neural networks.",
+        "Incorrect. Elastic Net includes both L1 and L2 components, not just L1.",
+        "Incorrect. While Elastic Net can perform feature selection, it's a general regularization technique."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "elastic-net",
+        "combined-regularization",
+        "L1-L2-combination"
+      ]
+    },
+    {
+      "id": "LOG_063",
+      "question": "Why might Elastic Net be preferred over pure L1 regularization?",
+      "options": [
+        "It handles correlated features better",
+        "It's always faster to compute",
+        "It produces more sparse solutions",
+        "It requires less hyperparameter tuning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When features are correlated, L1 tends to arbitrarily select one feature from correlated groups, while Elastic Net's L2 component encourages keeping correlated features together.",
+      "optionExplanations": [
+        "Correct. The L2 component in Elastic Net helps maintain groups of correlated features rather than arbitrarily selecting one.",
+        "Incorrect. Elastic Net involves computing both L1 and L2 penalties, potentially making it slower, not faster.",
+        "Incorrect. Pure L1 typically produces sparser solutions than Elastic Net.",
+        "Incorrect. Elastic Net requires tuning two regularization parameters, not fewer."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "elastic-net",
+        "correlated-features",
+        "feature-groups"
+      ]
+    },
+    {
+      "id": "LOG_064",
+      "question": "What is one-hot encoding and why is it important for categorical variables in logistic regression?",
+      "options": [
+        "Converting categorical variables to binary dummy variables",
+        "Normalizing continuous variables to unit scale",
+        "Removing outliers from the dataset",
+        "Selecting the most important features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "One-hot encoding converts categorical variables into binary columns, allowing logistic regression to handle non-numeric categories properly.",
+      "optionExplanations": [
+        "Correct. One-hot encoding creates binary dummy variables for each category level, making them suitable for mathematical operations.",
+        "Incorrect. This describes standardization or normalization, not one-hot encoding.",
+        "Incorrect. Outlier removal is a different preprocessing step.",
+        "Incorrect. Feature selection involves choosing relevant variables, not encoding categorical ones."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "one-hot-encoding",
+        "categorical-variables",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "LOG_065",
+      "question": "What problem can arise from using too many one-hot encoded variables?",
+      "options": [
+        "Curse of dimensionality and overfitting",
+        "Improved model accuracy",
+        "Faster training time",
+        "Better feature interpretability"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Many categorical variables with many levels can create very high-dimensional sparse feature spaces, leading to overfitting and computational challenges.",
+      "optionExplanations": [
+        "Correct. High-dimensional sparse data from extensive one-hot encoding can cause overfitting and computational issues.",
+        "Incorrect. Too many features typically hurt accuracy due to overfitting, especially with limited data.",
+        "Incorrect. More features generally increase training time, not decrease it.",
+        "Incorrect. Many dummy variables can make interpretation more complex, not simpler."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse-of-dimensionality",
+        "overfitting",
+        "high-dimensional-data"
+      ]
+    },
+    {
+      "id": "LOG_066",
+      "question": "What is the dummy variable trap in logistic regression?",
+      "options": [
+        "Including all dummy variables causes perfect multicollinearity",
+        "Using too few dummy variables",
+        "Encoding continuous variables as categorical",
+        "Having imbalanced categorical levels"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Including dummy variables for all categories creates perfect linear dependence since they sum to 1, causing multicollinearity issues.",
+      "optionExplanations": [
+        "Correct. If you have k categories, you only need k-1 dummy variables to avoid perfect multicollinearity.",
+        "Incorrect. Using too few dummy variables would fail to capture all category information.",
+        "Incorrect. This describes incorrect preprocessing, not the dummy variable trap.",
+        "Incorrect. Imbalanced levels are a different issue from the dummy variable trap."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dummy-variable-trap",
+        "multicollinearity",
+        "categorical-encoding"
+      ]
+    },
+    {
+      "id": "LOG_067",
+      "question": "How do you typically handle the dummy variable trap?",
+      "options": [
+        "Drop one category level as the reference category",
+        "Use all dummy variables anyway",
+        "Convert to ordinal encoding instead",
+        "Remove all categorical variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dropping one category level makes it the reference category, and other categories' effects are interpreted relative to this baseline.",
+      "optionExplanations": [
+        "Correct. Using k-1 dummy variables for k categories avoids multicollinearity while preserving all information.",
+        "Incorrect. Using all dummy variables creates perfect multicollinearity problems.",
+        "Incorrect. Ordinal encoding imposes artificial ordering that may not exist in the data.",
+        "Incorrect. Removing categorical variables loses potentially important information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reference-category",
+        "multicollinearity-avoidance",
+        "categorical-encoding"
+      ]
+    },
+    {
+      "id": "LOG_068",
+      "question": "What does it mean when a logistic regression model has high bias?",
+      "options": [
+        "The model is too simple and underfits the data",
+        "The model is too complex and overfits the data",
+        "The model has perfect accuracy",
+        "The model is well-balanced"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "High bias indicates the model makes strong simplifying assumptions and cannot capture the underlying data patterns (underfitting).",
+      "optionExplanations": [
+        "Correct. High bias means the model is too rigid and cannot learn the true relationship in the data.",
+        "Incorrect. High complexity leading to overfitting is associated with high variance, not high bias.",
+        "Incorrect. High bias typically results in poor accuracy due to underfitting.",
+        "Incorrect. High bias indicates imbalance toward oversimplification, not good balance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "underfitting",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "LOG_069",
+      "question": "What does it mean when a logistic regression model has high variance?",
+      "options": [
+        "The model is sensitive to small changes in training data",
+        "The model is very stable across different datasets",
+        "The model has low complexity",
+        "The model generalizes well"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "High variance means the model changes significantly with small changes in training data, typically indicating overfitting to specific training examples.",
+      "optionExplanations": [
+        "Correct. High variance models are overly sensitive to training data variations and don't generalize well.",
+        "Incorrect. High variance indicates instability, not stability across datasets.",
+        "Incorrect. High variance is typically associated with high complexity models.",
+        "Incorrect. High variance models typically generalize poorly due to overfitting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "variance",
+        "overfitting",
+        "model-sensitivity"
+      ]
+    },
+    {
+      "id": "LOG_070",
+      "question": "What is the bias-variance trade-off in logistic regression?",
+      "options": [
+        "More complex models have lower bias but higher variance",
+        "Bias and variance always increase together",
+        "Bias and variance are completely independent",
+        "Simple models always have both high bias and high variance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Increasing model complexity typically reduces bias (better fit to training data) but increases variance (sensitivity to data changes).",
+      "optionExplanations": [
+        "Correct. Complex models can capture more patterns (low bias) but are more sensitive to data variations (high variance).",
+        "Incorrect. Bias and variance typically move in opposite directions as model complexity changes.",
+        "Incorrect. Bias and variance are fundamentally related through model complexity choices.",
+        "Incorrect. Simple models typically have high bias but low variance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias-variance-tradeoff",
+        "model-complexity",
+        "generalization"
+      ]
+    },
+    {
+      "id": "LOG_071",
+      "question": "How does regularization help with the bias-variance trade-off?",
+      "options": [
+        "It increases bias slightly but reduces variance significantly",
+        "It reduces both bias and variance simultaneously",
+        "It increases both bias and variance",
+        "It only affects bias, not variance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Regularization constrains the model complexity, slightly increasing bias but substantially reducing variance, often improving overall performance.",
+      "optionExplanations": [
+        "Correct. Regularization trades a small increase in bias for a larger decrease in variance, often improving generalization.",
+        "Incorrect. It's typically impossible to reduce both bias and variance simultaneously without changing the fundamental approach.",
+        "Incorrect. Regularization increases bias but decreases variance.",
+        "Incorrect. Regularization affects both bias and variance, with stronger effects on variance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "regularization",
+        "bias-variance-tradeoff",
+        "generalization-improvement"
+      ]
+    },
+    {
+      "id": "LOG_072",
+      "question": "What is stratified sampling and why is it important for logistic regression with imbalanced datasets?",
+      "options": [
+        "Ensuring each class is proportionally represented in train/test splits",
+        "Randomly selecting samples without considering class distribution",
+        "Using only the majority class for training",
+        "Removing samples from the minority class"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Stratified sampling maintains the original class distribution in both training and test sets, ensuring representative evaluation of model performance.",
+      "optionExplanations": [
+        "Correct. Stratified sampling preserves class proportions across data splits, crucial for imbalanced datasets.",
+        "Incorrect. Random sampling might create unrepresentative splits in imbalanced datasets.",
+        "Incorrect. Using only majority class would eliminate the classification problem entirely.",
+        "Incorrect. Removing minority samples would worsen the imbalance problem."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-sampling",
+        "imbalanced-data",
+        "data-splitting"
+      ]
+    },
+    {
+      "id": "LOG_073",
+      "question": "What is class imbalance and how does it affect logistic regression?",
+      "options": [
+        "Unequal distribution of classes leading to biased predictions toward majority class",
+        "Equal number of samples in each class",
+        "Having too many features relative to samples",
+        "Missing values in the target variable"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Class imbalance occurs when one class significantly outnumbers others, causing models to bias toward predicting the majority class.",
+      "optionExplanations": [
+        "Correct. Imbalanced datasets cause models to achieve high accuracy by simply predicting the majority class.",
+        "Incorrect. Equal class distribution represents balanced data, not imbalanced.",
+        "Incorrect. This describes the curse of dimensionality, not class imbalance.",
+        "Incorrect. This describes missing data problems, not class imbalance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "class-imbalance",
+        "majority-class-bias",
+        "prediction-bias"
+      ]
+    },
+    {
+      "id": "LOG_074",
+      "question": "Which technique can help address class imbalance in logistic regression?",
+      "options": [
+        "SMOTE (Synthetic Minority Oversampling Technique)",
+        "Principal Component Analysis",
+        "Feature scaling",
+        "Cross-validation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SMOTE generates synthetic examples of minority class instances, helping balance the dataset for better model training.",
+      "optionExplanations": [
+        "Correct. SMOTE creates synthetic minority class samples by interpolating between existing minority instances.",
+        "Incorrect. PCA reduces dimensionality but doesn't address class imbalance.",
+        "Incorrect. Feature scaling normalizes feature ranges but doesn't affect class distribution.",
+        "Incorrect. Cross-validation evaluates performance but doesn't solve class imbalance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SMOTE",
+        "oversampling",
+        "synthetic-data-generation"
+      ]
+    },
+    {
+      "id": "LOG_075",
+      "question": "What is the difference between oversampling and undersampling for imbalanced datasets?",
+      "options": [
+        "Oversampling increases minority class samples, undersampling reduces majority class samples",
+        "Oversampling reduces majority class, undersampling increases minority class",
+        "Both techniques increase the total dataset size",
+        "Both techniques reduce the total dataset size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Oversampling adds more instances of the minority class (increasing dataset size), while undersampling removes instances from the majority class (decreasing dataset size).",
+      "optionExplanations": [
+        "Correct. Oversampling duplicates or synthesizes minority samples; undersampling removes majority samples.",
+        "Incorrect. This reverses the definitions of oversampling and undersampling.",
+        "Incorrect. Undersampling reduces dataset size by removing majority class samples.",
+        "Incorrect. Oversampling increases dataset size by adding minority class samples."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "oversampling",
+        "undersampling",
+        "dataset-balancing"
+      ]
+    },
+    {
+      "id": "LOG_076",
+      "question": "What are class weights in logistic regression?",
+      "options": [
+        "Penalties applied to misclassification of different classes",
+        "The probability thresholds for each class",
+        "The number of samples in each class",
+        "The feature importance scores for each class"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Class weights assign different costs to misclassifying different classes, helping the model pay more attention to minority classes.",
+      "optionExplanations": [
+        "Correct. Class weights penalize errors on minority classes more heavily, encouraging the model to learn them better.",
+        "Incorrect. Class weights are penalties, not probability thresholds.",
+        "Incorrect. Sample counts are used to calculate class weights but aren't the weights themselves.",
+        "Incorrect. Class weights are cost penalties, not feature importance measures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "class-weights",
+        "cost-sensitive-learning",
+        "imbalanced-data"
+      ]
+    },
+    {
+      "id": "LOG_077",
+      "question": "How are class weights typically calculated for imbalanced datasets?",
+      "options": [
+        "Inversely proportional to class frequency",
+        "Directly proportional to class frequency",
+        "Equal weights for all classes",
+        "Based on feature importance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Class weights are often set inversely proportional to class frequency, giving higher weights to rarer classes to balance their influence.",
+      "optionExplanations": [
+        "Correct. Inverse weighting (e.g., n_samples/(n_classes × class_count)) gives minority classes higher influence.",
+        "Incorrect. Direct proportional weighting would further bias toward majority classes.",
+        "Incorrect. Equal weights don't address the imbalance problem.",
+        "Incorrect. Class weights are based on class frequency, not feature importance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "inverse-weighting",
+        "class-frequency",
+        "weight-calculation"
+      ]
+    },
+    {
+      "id": "LOG_078",
+      "question": "What is the Area Under the Precision-Recall Curve (AUC-PR)?",
+      "options": [
+        "A metric that focuses on positive class performance in imbalanced datasets",
+        "The same as AUC-ROC",
+        "A measure of feature importance",
+        "The optimal decision threshold"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "AUC-PR summarizes the precision-recall curve and is more informative than AUC-ROC for imbalanced datasets where positive class performance is crucial.",
+      "optionExplanations": [
+        "Correct. AUC-PR focuses on positive class performance and is less affected by large numbers of true negatives.",
+        "Incorrect. AUC-PR and AUC-ROC measure different aspects of performance and can give different insights.",
+        "Incorrect. AUC-PR measures classification performance, not feature importance.",
+        "Incorrect. AUC-PR is a performance metric, not a threshold value."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "AUC-PR",
+        "precision-recall-curve",
+        "imbalanced-evaluation"
+      ]
+    },
+    {
+      "id": "LOG_079",
+      "question": "Why might AUC-PR be preferred over AUC-ROC for highly imbalanced datasets?",
+      "options": [
+        "AUC-PR is more sensitive to performance on the minority class",
+        "AUC-PR is always higher than AUC-ROC",
+        "AUC-PR is easier to compute",
+        "AUC-PR works only with imbalanced data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "AUC-PR focuses on precision and recall, which are more affected by minority class performance, while AUC-ROC can be overly optimistic due to many true negatives.",
+      "optionExplanations": [
+        "Correct. AUC-PR emphasizes positive class performance and isn't inflated by abundant true negatives.",
+        "Incorrect. AUC-PR can be lower than AUC-ROC, especially in imbalanced scenarios.",
+        "Incorrect. Both metrics have similar computational complexity.",
+        "Incorrect. AUC-PR can be used with balanced data, though it's particularly valuable for imbalanced data."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "AUC-PR-vs-ROC",
+        "imbalanced-evaluation",
+        "minority-class-focus"
+      ]
+    },
+    {
+      "id": "LOG_080",
+      "question": "What is bootstrap sampling in the context of logistic regression?",
+      "options": [
+        "Resampling with replacement to create multiple training sets",
+        "Removing outliers from the dataset",
+        "Splitting data into train and test sets",
+        "Normalizing features to unit scale"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bootstrap sampling creates multiple datasets by sampling with replacement from the original data, useful for estimating model uncertainty and stability.",
+      "optionExplanations": [
+        "Correct. Bootstrap resampling creates multiple datasets of the same size by sampling with replacement.",
+        "Incorrect. Outlier removal is a different preprocessing technique.",
+        "Incorrect. Train-test splitting is a different data partitioning method.",
+        "Incorrect. Feature normalization is a scaling technique, not bootstrap sampling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bootstrap-sampling",
+        "resampling",
+        "model-uncertainty"
+      ]
+    },
+    {
+      "id": "LOG_081",
+      "question": "What is ensemble learning and how can it improve logistic regression?",
+      "options": [
+        "Combining multiple models to make better predictions",
+        "Using multiple features in a single model",
+        "Training for multiple epochs",
+        "Using multiple optimization algorithms"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Ensemble methods combine predictions from multiple logistic regression models, often improving accuracy and robustness compared to single models.",
+      "optionExplanations": [
+        "Correct. Ensembles aggregate predictions from multiple models, potentially capturing different aspects of the data.",
+        "Incorrect. Using multiple features is standard practice in single models, not ensemble learning.",
+        "Incorrect. Multiple epochs relate to iterative training, not ensemble methods.",
+        "Incorrect. Different optimization algorithms don't constitute ensemble learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-learning",
+        "model-combination",
+        "prediction-aggregation"
+      ]
+    },
+    {
+      "id": "LOG_082",
+      "question": "What is bagging in ensemble learning?",
+      "options": [
+        "Training multiple models on different bootstrap samples",
+        "Using different features for each model",
+        "Combining models trained on different algorithms",
+        "Sequentially training models to correct previous errors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bagging (Bootstrap Aggregating) trains multiple models on different bootstrap samples of the training data, then averages their predictions.",
+      "optionExplanations": [
+        "Correct. Bagging creates diverse models by training on different random subsets of the data.",
+        "Incorrect. Using different features describes random subspace methods, not pure bagging.",
+        "Incorrect. Combining different algorithms is a form of heterogeneous ensemble, not bagging.",
+        "Incorrect. Sequential error correction describes boosting, not bagging."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bagging",
+        "bootstrap-aggregating",
+        "ensemble-diversity"
+      ]
+    },
+    {
+      "id": "LOG_083",
+      "question": "What is the main advantage of using logistic regression in an ensemble?",
+      "options": [
+        "Its simplicity and fast training make it suitable for multiple models",
+        "It always provides the best individual performance",
+        "It requires no hyperparameter tuning",
+        "It can only work in ensemble settings"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Logistic regression's computational efficiency and interpretability make it practical to train many models for ensemble methods.",
+      "optionExplanations": [
+        "Correct. The speed and simplicity of logistic regression make it feasible to train many models for ensembles.",
+        "Incorrect. Individual logistic regression models may not be the best, but ensembles can improve performance.",
+        "Incorrect. Logistic regression still benefits from hyperparameter tuning (regularization, etc.).",
+        "Incorrect. Logistic regression works well both individually and in ensembles."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ensemble-advantages",
+        "computational-efficiency",
+        "model-simplicity"
+      ]
+    },
+    {
+      "id": "LOG_084",
+      "question": "What is feature engineering in the context of logistic regression?",
+      "options": [
+        "Creating new features from existing ones to improve model performance",
+        "Removing all features from the model",
+        "Using only numerical features",
+        "Automatically selecting the best features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature engineering involves creating new variables through transformations, combinations, or domain knowledge to help the model capture important patterns.",
+      "optionExplanations": [
+        "Correct. Feature engineering creates informative variables that better represent the underlying relationships.",
+        "Incorrect. Removing all features would eliminate the ability to make predictions.",
+        "Incorrect. Feature engineering can involve both numerical and categorical features.",
+        "Incorrect. Automatic feature selection is different from feature engineering, which involves creating new features."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-engineering",
+        "feature-creation",
+        "domain-knowledge"
+      ]
+    },
+    {
+      "id": "LOG_085",
+      "question": "Which is an example of feature engineering for logistic regression?",
+      "options": [
+        "Creating interaction terms between features",
+        "Removing correlated features",
+        "Standardizing feature values",
+        "Converting categorical to numerical labels"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Creating interaction terms (e.g., feature1 × feature2) allows the model to capture non-additive relationships between variables.",
+      "optionExplanations": [
+        "Correct. Interaction terms help capture how features work together to influence the outcome.",
+        "Incorrect. Removing correlated features is feature selection, not engineering.",
+        "Incorrect. Standardization is preprocessing, not feature engineering.",
+        "Incorrect. Label encoding is preprocessing for categorical variables, not feature engineering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interaction-terms",
+        "feature-combinations",
+        "non-additive-relationships"
+      ]
+    },
+    {
+      "id": "LOG_086",
+      "question": "What are polynomial features in logistic regression?",
+      "options": [
+        "Higher-order terms like x², x³, or x₁x₂ to capture non-linear relationships",
+        "Features with polynomial distribution",
+        "Features that follow polynomial time complexity",
+        "The same as interaction features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Polynomial features add higher-order terms to capture non-linear relationships while keeping the model linear in parameters.",
+      "optionExplanations": [
+        "Correct. Polynomial features allow logistic regression to model non-linear relationships in the original feature space.",
+        "Incorrect. Polynomial features refer to mathematical transformations, not statistical distributions.",
+        "Incorrect. Time complexity is unrelated to polynomial feature transformations.",
+        "Incorrect. While interaction terms are included in polynomial features, polynomial features also include higher powers of individual variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial-features",
+        "non-linear-relationships",
+        "feature-transformation"
+      ]
+    },
+    {
+      "id": "LOG_087",
+      "question": "What is the curse of dimensionality in logistic regression?",
+      "options": [
+        "Performance degradation when the number of features is very high relative to samples",
+        "The inability to handle categorical variables",
+        "The requirement for linear relationships",
+        "The need for balanced datasets"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "High-dimensional feature spaces can lead to overfitting, increased computational costs, and poor generalization when sample size is insufficient.",
+      "optionExplanations": [
+        "Correct. Many features relative to samples can cause overfitting and computational challenges.",
+        "Incorrect. Logistic regression can handle categorical variables with proper encoding.",
+        "Incorrect. The linearity assumption is separate from dimensionality issues.",
+        "Incorrect. Dataset balance is a different concern from high dimensionality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensional-data",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "LOG_088",
+      "question": "What is feature selection in logistic regression?",
+      "options": [
+        "Choosing the most relevant features for the model",
+        "Creating new features from existing ones",
+        "Scaling features to similar ranges",
+        "Encoding categorical variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature selection identifies and retains the most informative features while removing irrelevant or redundant ones to improve model performance and interpretability.",
+      "optionExplanations": [
+        "Correct. Feature selection aims to find the optimal subset of features that maximizes model performance.",
+        "Incorrect. Creating new features is feature engineering, not selection.",
+        "Incorrect. Scaling features is preprocessing, not selection.",
+        "Incorrect. Encoding categorical variables is preprocessing, not feature selection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-selection",
+        "relevant-features",
+        "model-optimization"
+      ]
+    },
+    {
+      "id": "LOG_089",
+      "question": "What is forward selection in feature selection?",
+      "options": [
+        "Starting with no features and iteratively adding the most beneficial ones",
+        "Starting with all features and removing the least important ones",
+        "Randomly selecting features",
+        "Using domain knowledge to select features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Forward selection is a greedy algorithm that starts with an empty model and adds features one by one based on performance improvement criteria.",
+      "optionExplanations": [
+        "Correct. Forward selection builds the model incrementally by adding the feature that most improves performance at each step.",
+        "Incorrect. Starting with all features and removing them describes backward elimination.",
+        "Incorrect. Random selection doesn't use performance criteria for feature addition.",
+        "Incorrect. Domain knowledge selection is manual, not the algorithmic forward selection process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "forward-selection",
+        "greedy-algorithm",
+        "incremental-building"
+      ]
+    },
+    {
+      "id": "LOG_090",
+      "question": "What is backward elimination in feature selection?",
+      "options": [
+        "Starting with all features and iteratively removing the least important ones",
+        "Starting with no features and adding beneficial ones",
+        "Selecting features based on correlation",
+        "Using regularization to shrink coefficients"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Backward elimination starts with the full model and removes features that contribute least to model performance, typically based on p-values or other criteria.",
+      "optionExplanations": [
+        "Correct. Backward elimination reduces model complexity by removing features that don't significantly contribute to performance.",
+        "Incorrect. Starting with no features describes forward selection, not backward elimination.",
+        "Incorrect. Correlation-based selection is a different feature selection approach.",
+        "Incorrect. Regularization shrinks coefficients but doesn't necessarily remove features completely."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "backward-elimination",
+        "feature-removal",
+        "model-simplification"
+      ]
+    },
+    {
+      "id": "LOG_091",
+      "question": "What is the difference between filter and wrapper methods for feature selection?",
+      "options": [
+        "Filter methods use statistical measures, wrapper methods use model performance",
+        "Filter methods are always better than wrapper methods",
+        "Filter methods are slower than wrapper methods",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Filter methods select features based on statistical properties independent of the model, while wrapper methods evaluate features based on actual model performance.",
+      "optionExplanations": [
+        "Correct. Filter methods use measures like correlation or mutual information; wrapper methods use cross-validation performance.",
+        "Incorrect. Neither method is universally better; the choice depends on the specific problem and computational constraints.",
+        "Incorrect. Filter methods are typically faster since they don't require training multiple models.",
+        "Incorrect. Filter and wrapper methods use fundamentally different approaches to feature evaluation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "filter-methods",
+        "wrapper-methods",
+        "feature-evaluation"
+      ]
+    },
+    {
+      "id": "LOG_092",
+      "question": "What is embedded feature selection in logistic regression?",
+      "options": [
+        "Feature selection performed automatically during model training",
+        "Manually selecting features before training",
+        "Feature selection after model training",
+        "Using external tools for feature selection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Embedded methods like L1 regularization perform feature selection as an integral part of the model training process.",
+      "optionExplanations": [
+        "Correct. Embedded methods like Lasso regression automatically perform feature selection during optimization.",
+        "Incorrect. Manual selection before training is a separate preprocessing step, not embedded selection.",
+        "Incorrect. Post-training selection is a wrapper approach, not embedded.",
+        "Incorrect. External tools represent separate selection processes, not embedded methods."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "embedded-selection",
+        "L1-regularization",
+        "automatic-selection"
+      ]
+    },
+    {
+      "id": "LOG_093",
+      "question": "What is the purpose of information criteria like AIC and BIC in logistic regression?",
+      "options": [
+        "To balance model fit and complexity for model selection",
+        "To measure prediction accuracy",
+        "To calculate feature importance",
+        "To determine optimal learning rate"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion) penalize model complexity while rewarding good fit, helping choose optimal models.",
+      "optionExplanations": [
+        "Correct. Information criteria provide a principled way to trade off model fit against complexity.",
+        "Incorrect. While related to fit, information criteria specifically balance fit with complexity, not just accuracy.",
+        "Incorrect. Information criteria evaluate overall models, not individual feature importance.",
+        "Incorrect. Learning rate is an optimization parameter, not determined by information criteria."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "AIC",
+        "BIC",
+        "model-selection",
+        "complexity-penalty"
+      ]
+    },
+    {
+      "id": "LOG_094",
+      "question": "How does BIC differ from AIC in model selection?",
+      "options": [
+        "BIC penalizes model complexity more heavily than AIC",
+        "BIC is always better than AIC",
+        "BIC can only be used with logistic regression",
+        "BIC and AIC always give identical results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BIC includes a stronger penalty for model complexity (log(n) vs 2), making it more conservative in selecting simpler models compared to AIC.",
+      "optionExplanations": [
+        "Correct. BIC's penalty term log(n)×k is typically larger than AIC's 2k, favoring simpler models.",
+        "Incorrect. Neither criterion is universally better; the choice depends on the specific goals and context.",
+        "Incorrect. Both AIC and BIC can be used with various types of models, not just logistic regression.",
+        "Incorrect. Due to different penalty terms, AIC and BIC often select different models."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "BIC-vs-AIC",
+        "complexity-penalty",
+        "model-selection-criteria"
+      ]
+    },
+    {
+      "id": "LOG_095",
+      "question": "What is early stopping in logistic regression training?",
+      "options": [
+        "Stopping training when validation performance stops improving",
+        "Stopping after a fixed number of iterations",
+        "Stopping when training accuracy reaches 100%",
+        "Stopping when coefficients become too large"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Early stopping monitors validation performance during training and stops when it begins to degrade, preventing overfitting.",
+      "optionExplanations": [
+        "Correct. Early stopping prevents overfitting by stopping training at the point of best generalization performance.",
+        "Incorrect. Fixed iteration stopping doesn't adapt to the learning progress or prevent overfitting.",
+        "Incorrect. 100% training accuracy often indicates overfitting, not an appropriate stopping criterion.",
+        "Incorrect. Large coefficients might indicate problems, but early stopping focuses on validation performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "early-stopping",
+        "overfitting-prevention",
+        "validation-monitoring"
+      ]
+    },
+    {
+      "id": "LOG_096",
+      "question": "What is the purpose of a validation set in logistic regression?",
+      "options": [
+        "To monitor model performance during training and tune hyperparameters",
+        "To train the model",
+        "To test final model performance",
+        "To store unused data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The validation set provides an unbiased estimate of model performance during development, helping with hyperparameter tuning and model selection.",
+      "optionExplanations": [
+        "Correct. The validation set helps make decisions during model development without contaminating the test set.",
+        "Incorrect. The training set is used to train the model, not the validation set.",
+        "Incorrect. The test set is reserved for final performance evaluation, not the validation set.",
+        "Incorrect. The validation set serves an active role in model development, not passive storage."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "validation-set",
+        "hyperparameter-tuning",
+        "model-development"
+      ]
+    },
+    {
+      "id": "LOG_097",
+      "question": "What is the typical data split ratio for train/validation/test sets?",
+      "options": [
+        "60%/20%/20% or 70%/15%/15%",
+        "33%/33%/34%",
+        "90%/5%/5%",
+        "50%/25%/25%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Common splits allocate most data to training while reserving sufficient data for validation and final testing, with exact ratios depending on dataset size.",
+      "optionExplanations": [
+        "Correct. These ratios provide enough training data while maintaining adequate validation and test set sizes.",
+        "Incorrect. Equal splits don't provide enough training data for most machine learning tasks.",
+        "Incorrect. Very small validation and test sets may not provide reliable performance estimates.",
+        "Incorrect. This split doesn't maximize training data usage while maintaining adequate validation/test sizes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "data-splitting",
+        "train-validation-test",
+        "dataset-ratios"
+      ]
+    },
+    {
+      "id": "LOG_098",
+      "question": "What is the purpose of holdout validation?",
+      "options": [
+        "To provide an unbiased estimate of model performance on unseen data",
+        "To increase the training dataset size",
+        "To speed up model training",
+        "To perform feature selection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Holdout validation reserves a portion of data that's never used during training or hyperparameter tuning, providing an honest assessment of model generalization.",
+      "optionExplanations": [
+        "Correct. Holdout validation simulates model performance on truly unseen data by keeping a portion completely separate.",
+        "Incorrect. Holdout validation reduces available training data by setting aside test data.",
+        "Incorrect. Holdout validation doesn't affect training speed; it's about evaluation methodology.",
+        "Incorrect. Feature selection is performed using training/validation data, not holdout test data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "holdout-validation",
+        "unbiased-evaluation",
+        "generalization-assessment"
+      ]
+    },
+    {
+      "id": "LOG_099",
+      "question": "What is data leakage in logistic regression and why is it problematic?",
+      "options": [
+        "Using future information or target-related data in features, leading to overly optimistic performance",
+        "Missing values in the dataset",
+        "Having too few samples for training",
+        "Using categorical variables without encoding"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data leakage occurs when information that wouldn't be available at prediction time is used during training, creating artificially high performance that doesn't generalize.",
+      "optionExplanations": [
+        "Correct. Data leakage gives the model access to information it shouldn't have, leading to unrealistic performance expectations.",
+        "Incorrect. Missing values are a data quality issue, not data leakage.",
+        "Incorrect. Small sample size affects model reliability but isn't data leakage.",
+        "Incorrect. Improper encoding is a preprocessing issue, not data leakage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-leakage",
+        "future-information",
+        "unrealistic-performance"
+      ]
+    },
+    {
+      "id": "LOG_100",
+      "question": "Which of the following is an example of data leakage in logistic regression?",
+      "options": [
+        "Including the target variable or highly correlated post-outcome variables as features",
+        "Using properly encoded categorical variables",
+        "Standardizing features before training",
+        "Using cross-validation for model evaluation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Including the target variable itself or variables that are only available after the outcome occurs creates data leakage that leads to unrealistically high performance.",
+      "optionExplanations": [
+        "Correct. Using target-related information that wouldn't be available at prediction time constitutes data leakage.",
+        "Incorrect. Proper categorical encoding is standard preprocessing and doesn't cause leakage.",
+        "Incorrect. Feature standardization is proper preprocessing that doesn't introduce leakage.",
+        "Incorrect. Cross-validation is a proper evaluation technique that helps detect, not cause, data leakage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-leakage-examples",
+        "target-leakage",
+        "post-outcome-variables"
+      ]
+    }
+  ]
+}

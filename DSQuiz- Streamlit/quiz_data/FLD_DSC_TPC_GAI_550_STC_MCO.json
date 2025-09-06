@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_MCO",
+  "subtopicName": "Model Compression & Optimization",
+  "str": 0.550,
+  "description": "Comprehensive coverage of model compression and optimization techniques including quantization, pruning, knowledge distillation, ONNX, TensorRT, and deployment strategies for mobile and edge computing environments.",
+  "questions": [
+    {
+      "id": "MCO_001",
+      "question": "What is the primary goal of model quantization?",
+      "options": [
+        "Reduce memory footprint and computational requirements",
+        "Increase model accuracy",
+        "Add more layers to the model",
+        "Improve training speed only"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Model quantization reduces the precision of weights and activations from 32-bit floating point to lower bit representations (like 8-bit integers), significantly reducing memory usage and computational requirements while maintaining acceptable accuracy.",
+      "optionExplanations": [
+        "This is correct. Quantization reduces memory footprint by using lower precision representations and reduces computational requirements through simpler arithmetic operations.",
+        "This is incorrect. Quantization typically involves a small trade-off in accuracy for significant gains in efficiency and speed.",
+        "This is incorrect. Quantization doesn't add layers; it changes the precision of existing weights and activations.",
+        "This is incorrect. Quantization primarily benefits inference speed and deployment efficiency, not training speed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "quantization",
+        "fundamentals",
+        "optimization"
+      ]
+    },
+    {
+      "id": "MCO_002",
+      "question": "Which type of quantization is performed after model training is complete?",
+      "options": [
+        "Dynamic quantization",
+        "Post-training quantization",
+        "Quantization-aware training",
+        "Mixed-precision quantization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Post-training quantization is applied to an already trained model without requiring retraining. It converts the model weights and potentially activations to lower precision after training is complete.",
+      "optionExplanations": [
+        "This is incorrect. Dynamic quantization adjusts precision during inference but is not specifically about timing relative to training completion.",
+        "This is correct. Post-training quantization is applied after training is finished, converting a trained model to lower precision.",
+        "This is incorrect. Quantization-aware training incorporates quantization during the training process, not after training completion.",
+        "This is incorrect. Mixed-precision quantization refers to using different precisions for different parts of the model, not timing relative to training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization",
+        "post-training",
+        "deployment"
+      ]
+    },
+    {
+      "id": "MCO_003",
+      "question": "What is the main advantage of quantization-aware training (QAT) over post-training quantization?",
+      "options": [
+        "Faster inference speed",
+        "Better accuracy preservation",
+        "Smaller model size",
+        "Easier implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Quantization-aware training allows the model to adapt to quantization effects during training, typically resulting in better accuracy preservation compared to post-training quantization, especially for aggressive quantization schemes.",
+      "optionExplanations": [
+        "This is incorrect. Both methods can achieve similar inference speeds; the main difference is in accuracy preservation.",
+        "This is correct. QAT allows the model to learn and adapt to quantization noise during training, leading to better accuracy retention.",
+        "This is incorrect. Both methods achieve similar model size reductions for the same quantization scheme.",
+        "This is incorrect. QAT is actually more complex to implement as it requires modifying the training process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization-aware-training",
+        "accuracy",
+        "training"
+      ]
+    },
+    {
+      "id": "MCO_004",
+      "question": "In INT8 quantization, what is the typical range of values that can be represented?",
+      "options": [
+        "0 to 255",
+        "-128 to 127",
+        "-256 to 255",
+        "0 to 127"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "INT8 (8-bit signed integer) can represent values from -128 to 127, providing 256 distinct values with both positive and negative ranges, which is important for representing both weights and activations in neural networks.",
+      "optionExplanations": [
+        "This is incorrect. This range (0-255) represents unsigned 8-bit integers (UINT8), not signed INT8.",
+        "This is correct. Signed 8-bit integers (INT8) range from -128 to 127, covering 256 possible values.",
+        "This is incorrect. This range would require more than 8 bits to represent.",
+        "This is incorrect. This range only covers positive values and half the possible range of 8-bit signed integers."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "quantization",
+        "INT8",
+        "data-types"
+      ]
+    },
+    {
+      "id": "MCO_005",
+      "question": "What is neural network pruning?",
+      "options": [
+        "Adding more neurons to increase accuracy",
+        "Removing unnecessary weights or neurons to reduce model size",
+        "Converting floating-point weights to integers",
+        "Splitting large models into smaller components"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Neural network pruning involves systematically removing weights, connections, or entire neurons/channels that contribute little to the model's performance, thereby reducing model size and computational requirements.",
+      "optionExplanations": [
+        "This is incorrect. Pruning removes components rather than adding them; adding neurons would increase model size.",
+        "This is correct. Pruning removes redundant or less important weights, connections, or neurons to create a smaller, more efficient model.",
+        "This is incorrect. This describes quantization, not pruning. Pruning deals with removing components, not changing their precision.",
+        "This is incorrect. This describes model partitioning or decomposition, not pruning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pruning",
+        "fundamentals",
+        "model-compression"
+      ]
+    },
+    {
+      "id": "MCO_006",
+      "question": "What is the difference between structured and unstructured pruning?",
+      "options": [
+        "Structured removes individual weights, unstructured removes entire channels",
+        "Structured removes entire channels/filters, unstructured removes individual weights",
+        "Structured is done during training, unstructured after training",
+        "No difference, they are the same technique"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Structured pruning removes entire structural units like channels, filters, or layers, maintaining regular tensor shapes. Unstructured pruning removes individual weights regardless of their position, creating sparse matrices.",
+      "optionExplanations": [
+        "This is incorrect. The definitions are reversed - structured pruning removes entire structural units, not individual weights.",
+        "This is correct. Structured pruning removes organized units (channels, filters) while unstructured pruning removes individual weights creating sparsity.",
+        "This is incorrect. Both methods can be applied during or after training; the difference is in what gets removed, not when.",
+        "This is incorrect. These are fundamentally different approaches with different hardware compatibility and performance characteristics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pruning",
+        "structured",
+        "unstructured"
+      ]
+    },
+    {
+      "id": "MCO_007",
+      "question": "Which pruning method is generally more hardware-friendly for deployment?",
+      "options": [
+        "Unstructured pruning",
+        "Structured pruning",
+        "Both are equally hardware-friendly",
+        "Neither is hardware-friendly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Structured pruning is more hardware-friendly because it maintains regular tensor shapes and doesn't require special sparse matrix operations, making it easier to accelerate on standard hardware like GPUs and CPUs.",
+      "optionExplanations": [
+        "This is incorrect. Unstructured pruning creates sparse matrices that require specialized sparse matrix operations, which are not well-supported on all hardware.",
+        "This is correct. Structured pruning maintains dense, regular tensor operations that map well to standard hardware accelerators.",
+        "This is incorrect. Structured pruning has clear hardware advantages due to maintaining regular computation patterns.",
+        "This is incorrect. Structured pruning is quite hardware-friendly, and even unstructured pruning can be supported with proper hardware/software optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pruning",
+        "hardware",
+        "deployment"
+      ]
+    },
+    {
+      "id": "MCO_008",
+      "question": "What is knowledge distillation in the context of model compression?",
+      "options": [
+        "Converting a large teacher model's knowledge to a smaller student model",
+        "Removing unnecessary layers from a model",
+        "Converting floating-point weights to lower precision",
+        "Splitting a model across multiple devices"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Knowledge distillation trains a smaller 'student' model to mimic the behavior of a larger, more accurate 'teacher' model by learning from the teacher's soft predictions rather than just the hard labels.",
+      "optionExplanations": [
+        "This is correct. Knowledge distillation transfers knowledge from a large teacher model to a smaller student model, achieving compression while preserving performance.",
+        "This is incorrect. This describes layer pruning or model architecture modification, not knowledge distillation.",
+        "This is incorrect. This describes quantization, not knowledge distillation.",
+        "This is incorrect. This describes model parallelism or distributed computing, not knowledge distillation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "knowledge-distillation",
+        "teacher-student",
+        "compression"
+      ]
+    },
+    {
+      "id": "MCO_009",
+      "question": "In knowledge distillation, what is the 'temperature' parameter used for?",
+      "options": [
+        "Controlling the training learning rate",
+        "Softening the probability distribution of the teacher model's outputs",
+        "Setting the batch size for training",
+        "Determining the student model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature scaling in knowledge distillation softens the teacher model's output probabilities by dividing logits by temperature before applying softmax, creating smoother probability distributions that provide richer learning signals.",
+      "optionExplanations": [
+        "This is incorrect. Temperature is not related to learning rate control in knowledge distillation.",
+        "This is correct. Temperature softens the probability distribution, making the teacher's 'soft targets' more informative for the student.",
+        "This is incorrect. Temperature has no relation to batch size in knowledge distillation.",
+        "This is incorrect. Temperature affects the teacher's output processing, not the student's architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "knowledge-distillation",
+        "temperature",
+        "softmax"
+      ]
+    },
+    {
+      "id": "MCO_010",
+      "question": "What does ONNX stand for in the context of model optimization?",
+      "options": [
+        "Optimized Neural Network eXchange",
+        "Open Neural Network eXchange",
+        "Organized Neural Network eXtension",
+        "Operational Neural Network eXecution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ONNX stands for Open Neural Network eXchange, which is an open standard format for representing machine learning models, enabling interoperability between different ML frameworks and optimization tools.",
+      "optionExplanations": [
+        "This is incorrect. While ONNX does enable optimization, the 'O' stands for 'Open', not 'Optimized'.",
+        "This is correct. ONNX is the Open Neural Network eXchange format for cross-framework model representation.",
+        "This is incorrect. The 'O' stands for 'Open' and there's no 'extension' aspect in the acronym.",
+        "This is incorrect. ONNX is about exchange and representation, not specifically operational execution."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ONNX",
+        "interoperability",
+        "standards"
+      ]
+    },
+    {
+      "id": "MCO_011",
+      "question": "What is a primary benefit of converting models to ONNX format?",
+      "options": [
+        "Automatic model compression",
+        "Cross-framework compatibility and deployment flexibility",
+        "Improved training speed",
+        "Automatic hyperparameter tuning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ONNX provides cross-framework compatibility, allowing models trained in one framework (like PyTorch) to be deployed in another environment (like ONNX Runtime), offering deployment flexibility and optimization opportunities.",
+      "optionExplanations": [
+        "This is incorrect. ONNX format itself doesn't automatically compress models; it's a representation format that enables optimization tools.",
+        "This is correct. ONNX enables models to be used across different frameworks and deployment environments, providing significant flexibility.",
+        "This is incorrect. ONNX is primarily for deployment and inference, not for improving training speed.",
+        "This is incorrect. ONNX doesn't provide automatic hyperparameter tuning capabilities."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ONNX",
+        "deployment",
+        "compatibility"
+      ]
+    },
+    {
+      "id": "MCO_012",
+      "question": "What is TensorRT primarily designed for?",
+      "options": [
+        "Model training acceleration",
+        "High-performance inference optimization on NVIDIA GPUs",
+        "Cross-platform model deployment",
+        "Automatic model architecture search"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TensorRT is NVIDIA's inference optimization library specifically designed to accelerate deep learning inference on NVIDIA GPUs through techniques like layer fusion, precision calibration, and kernel auto-tuning.",
+      "optionExplanations": [
+        "This is incorrect. TensorRT is focused on inference optimization, not training acceleration.",
+        "This is correct. TensorRT optimizes inference performance specifically for NVIDIA GPUs using various optimization techniques.",
+        "This is incorrect. While TensorRT can be part of cross-platform solutions, it's specifically designed for NVIDIA GPU optimization.",
+        "This is incorrect. TensorRT optimizes existing models rather than searching for new architectures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TensorRT",
+        "NVIDIA",
+        "inference-optimization"
+      ]
+    },
+    {
+      "id": "MCO_013",
+      "question": "Which optimization technique does TensorRT NOT typically perform?",
+      "options": [
+        "Layer fusion",
+        "Precision calibration",
+        "Kernel auto-tuning",
+        "Architecture pruning"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "TensorRT focuses on inference-time optimizations like layer fusion, precision calibration, and kernel optimization, but it doesn't perform structural changes like architecture pruning, which removes parts of the model.",
+      "optionExplanations": [
+        "This is incorrect. TensorRT performs layer fusion to combine multiple operations into single kernels for better performance.",
+        "This is incorrect. TensorRT performs precision calibration to determine optimal quantization parameters for different layers.",
+        "This is incorrect. TensorRT automatically selects the best kernels for different operations based on the specific hardware.",
+        "This is correct. TensorRT doesn't modify model architecture by pruning; it optimizes the given architecture for inference."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TensorRT",
+        "optimization-techniques",
+        "layer-fusion"
+      ]
+    },
+    {
+      "id": "MCO_014",
+      "question": "What is the main challenge when deploying large models on mobile devices?",
+      "options": [
+        "Limited computational power and memory constraints",
+        "Lack of programming language support",
+        "Insufficient network connectivity",
+        "Poor display resolution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mobile devices have limited computational resources (CPU/GPU power) and memory (RAM/storage) compared to servers, making it challenging to run large neural networks efficiently while maintaining acceptable performance and battery life.",
+      "optionExplanations": [
+        "This is correct. Mobile devices have constrained computational power, memory, and battery life, making large model deployment challenging.",
+        "This is incorrect. Modern mobile platforms support various programming languages and ML frameworks.",
+        "This is incorrect. While network connectivity can be a factor for cloud-based inference, the main challenge is local resource constraints.",
+        "This is incorrect. Display resolution is not a primary constraint for ML model deployment on mobile devices."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "mobile-deployment",
+        "constraints",
+        "resources"
+      ]
+    },
+    {
+      "id": "MCO_015",
+      "question": "Which mobile-specific optimization framework is developed by Google?",
+      "options": [
+        "Core ML",
+        "TensorFlow Lite",
+        "ONNX Mobile",
+        "PyTorch Mobile"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TensorFlow Lite is Google's lightweight machine learning framework specifically designed for mobile and embedded devices, offering optimized inference with reduced model size and computational requirements.",
+      "optionExplanations": [
+        "This is incorrect. Core ML is Apple's framework for integrating machine learning models into iOS, macOS, watchOS, and tvOS apps.",
+        "This is correct. TensorFlow Lite is Google's mobile-optimized ML framework designed for efficient on-device inference.",
+        "This is incorrect. ONNX Mobile is not a specific framework; ONNX can be used on mobile but isn't specifically mobile-focused.",
+        "This is incorrect. PyTorch Mobile is Facebook/Meta's mobile solution, not Google's."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "mobile-frameworks",
+        "TensorFlow-Lite",
+        "Google"
+      ]
+    },
+    {
+      "id": "MCO_016",
+      "question": "What is edge computing in the context of AI model deployment?",
+      "options": [
+        "Computing performed only on cloud servers",
+        "Computing performed on devices close to where data is generated",
+        "Computing performed only during model training",
+        "Computing performed using only CPU resources"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Edge computing involves processing data and running AI models on devices at or near the source of data generation (like IoT devices, smartphones, or local servers) rather than sending data to distant cloud servers.",
+      "optionExplanations": [
+        "This is incorrect. Edge computing specifically moves computation away from centralized cloud servers to local devices.",
+        "This is correct. Edge computing brings computation closer to data sources, reducing latency and enabling real-time processing.",
+        "This is incorrect. Edge computing refers to deployment and inference location, not the training phase of ML models.",
+        "This is incorrect. Edge computing can utilize various processing units including CPUs, GPUs, and specialized AI accelerators."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "edge-computing",
+        "deployment",
+        "latency"
+      ]
+    },
+    {
+      "id": "MCO_017",
+      "question": "What is a key advantage of edge AI deployment over cloud-based inference?",
+      "options": [
+        "Higher computational power",
+        "Reduced latency and improved privacy",
+        "Better model accuracy",
+        "Unlimited storage capacity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Edge AI deployment reduces latency by eliminating network round-trips to cloud servers and improves privacy by keeping sensitive data local to the device rather than transmitting it to external servers.",
+      "optionExplanations": [
+        "This is incorrect. Cloud servers typically have more computational power than edge devices.",
+        "This is correct. Edge deployment reduces network latency and keeps data local, improving privacy and enabling real-time responses.",
+        "This is incorrect. Model accuracy depends on the model itself, not the deployment location.",
+        "This is incorrect. Edge devices typically have limited storage compared to cloud infrastructure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-AI",
+        "latency",
+        "privacy"
+      ]
+    },
+    {
+      "id": "MCO_018",
+      "question": "Which compression technique is most suitable for very aggressive model size reduction?",
+      "options": [
+        "8-bit quantization only",
+        "Combining multiple techniques: pruning + quantization + distillation",
+        "Knowledge distillation only",
+        "Structured pruning only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Combining multiple compression techniques (pruning, quantization, and knowledge distillation) provides the most aggressive size reduction while maintaining reasonable accuracy, as each technique addresses different aspects of model efficiency.",
+      "optionExplanations": [
+        "This is incorrect. Single techniques provide limited compression; 8-bit quantization alone typically achieves only 4x reduction.",
+        "This is correct. Combining techniques leverages their complementary benefits for maximum compression while preserving performance.",
+        "This is incorrect. Knowledge distillation alone may not achieve very aggressive size reductions compared to combined approaches.",
+        "This is incorrect. Structured pruning alone provides moderate compression but not the most aggressive reductions possible."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "compression-techniques",
+        "aggressive-optimization",
+        "combined-methods"
+      ]
+    },
+    {
+      "id": "MCO_019",
+      "question": "What is dynamic quantization?",
+      "options": [
+        "Quantization that changes model architecture",
+        "Quantization applied only to weights, with activations quantized during inference",
+        "Quantization that requires retraining the model",
+        "Quantization that only works with specific hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dynamic quantization quantizes weights statically but quantizes activations dynamically during inference based on their actual value ranges, providing a balance between model size reduction and implementation simplicity.",
+      "optionExplanations": [
+        "This is incorrect. Dynamic quantization doesn't change model architecture; it changes the precision of operations.",
+        "This is correct. Dynamic quantization pre-quantizes weights but quantizes activations on-the-fly during inference.",
+        "This is incorrect. Dynamic quantization can be applied post-training without requiring model retraining.",
+        "This is incorrect. Dynamic quantization is a general technique that can be implemented on various hardware platforms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dynamic-quantization",
+        "inference",
+        "activations"
+      ]
+    },
+    {
+      "id": "MCO_020",
+      "question": "What is the typical accuracy loss when applying INT8 quantization to modern neural networks?",
+      "options": [
+        "10-20% accuracy loss",
+        "Less than 1% accuracy loss",
+        "5-10% accuracy loss",
+        "No accuracy loss"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Modern neural networks, especially when using proper quantization techniques like quantization-aware training or careful calibration, typically experience less than 1% accuracy loss with INT8 quantization.",
+      "optionExplanations": [
+        "This is incorrect. 10-20% accuracy loss would be unacceptable and indicates poor quantization implementation.",
+        "This is correct. Well-implemented INT8 quantization typically results in minimal accuracy loss (less than 1%) for most modern architectures.",
+        "This is incorrect. 5-10% accuracy loss suggests suboptimal quantization techniques or very aggressive quantization schemes.",
+        "This is incorrect. Some accuracy loss is typically expected, though it can be very minimal with proper techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization",
+        "accuracy-loss",
+        "INT8"
+      ]
+    },
+    {
+      "id": "MCO_021",
+      "question": "What is magnitude-based pruning?",
+      "options": [
+        "Pruning based on the absolute values of weights",
+        "Pruning based on gradient magnitudes",
+        "Pruning based on activation magnitudes",
+        "Pruning based on model size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Magnitude-based pruning removes weights with the smallest absolute values, based on the assumption that weights with smaller magnitudes contribute less to the model's output and can be safely removed.",
+      "optionExplanations": [
+        "This is correct. Magnitude-based pruning removes weights with the smallest absolute values, assuming they're least important.",
+        "This is incorrect. This would be gradient-based pruning, which uses gradient information rather than weight magnitudes.",
+        "This is incorrect. This would be activation-based pruning, which considers activation values rather than weight magnitudes.",
+        "This is incorrect. Model size is an outcome of pruning, not a criterion for deciding which weights to prune."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pruning",
+        "magnitude-based",
+        "weight-importance"
+      ]
+    },
+    {
+      "id": "MCO_022",
+      "question": "Which Apple framework is specifically designed for on-device machine learning?",
+      "options": [
+        "TensorFlow Lite",
+        "Core ML",
+        "ONNX Runtime",
+        "PyTorch Mobile"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Core ML is Apple's machine learning framework designed to integrate trained models into iOS, macOS, watchOS, and tvOS applications with optimized on-device performance.",
+      "optionExplanations": [
+        "This is incorrect. TensorFlow Lite is Google's mobile ML framework, not Apple's.",
+        "This is correct. Core ML is Apple's framework specifically designed for on-device machine learning across Apple platforms.",
+        "This is incorrect. ONNX Runtime is a cross-platform inference engine, not specifically an Apple framework.",
+        "This is incorrect. PyTorch Mobile is Facebook/Meta's mobile solution, not Apple's."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "Core-ML",
+        "Apple",
+        "mobile-frameworks"
+      ]
+    },
+    {
+      "id": "MCO_023",
+      "question": "What is the main difference between static and dynamic quantization?",
+      "options": [
+        "Static uses integer weights, dynamic uses floating-point weights",
+        "Static pre-computes activation scales, dynamic computes them during inference",
+        "Static works only on GPUs, dynamic works only on CPUs",
+        "Static requires training data, dynamic does not"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Static quantization pre-computes quantization parameters (scales and zero points) for activations using calibration data, while dynamic quantization computes activation quantization parameters on-the-fly during inference.",
+      "optionExplanations": [
+        "This is incorrect. Both methods can quantize weights to integers; the difference is in how activation quantization is handled.",
+        "This is correct. Static quantization uses pre-computed activation scales from calibration, while dynamic quantization computes them during inference.",
+        "This is incorrect. Both quantization methods can work on various hardware platforms including CPUs and GPUs.",
+        "This is incorrect. While static quantization benefits from calibration data, dynamic quantization also doesn't strictly require training data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization",
+        "static",
+        "dynamic"
+      ]
+    },
+    {
+      "id": "MCO_024",
+      "question": "What is channel pruning in convolutional neural networks?",
+      "options": [
+        "Removing individual weight connections",
+        "Removing entire feature map channels",
+        "Reducing the spatial dimensions of feature maps",
+        "Combining multiple channels into one"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Channel pruning removes entire feature map channels (and their corresponding filters) from convolutional layers, maintaining the regular structure of the network while reducing computational load and memory usage.",
+      "optionExplanations": [
+        "This is incorrect. This describes unstructured pruning of individual weights, not channel pruning.",
+        "This is correct. Channel pruning removes complete channels, including all weights in the corresponding filters.",
+        "This is incorrect. This describes spatial reduction or pooling operations, not channel pruning.",
+        "This is incorrect. This describes channel fusion or factorization techniques, not pruning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "channel-pruning",
+        "CNN",
+        "structured-pruning"
+      ]
+    },
+    {
+      "id": "MCO_025",
+      "question": "What is the primary advantage of using specialized AI accelerators for edge computing?",
+      "options": [
+        "Lower cost than general-purpose processors",
+        "Higher energy efficiency and performance for AI workloads",
+        "Better software compatibility",
+        "Easier programming model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Specialized AI accelerators are designed specifically for neural network operations, offering much higher energy efficiency and performance per watt compared to general-purpose processors, which is crucial for battery-powered edge devices.",
+      "optionExplanations": [
+        "This is incorrect. AI accelerators are often more expensive than general-purpose processors, though they provide better performance per watt.",
+        "This is correct. AI accelerators are optimized for neural network operations, providing superior energy efficiency and performance for ML workloads.",
+        "This is incorrect. AI accelerators often require specialized software stacks and may have more limited compatibility than general-purpose processors.",
+        "This is incorrect. Programming AI accelerators can be more complex and requires specialized knowledge compared to general-purpose processors."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AI-accelerators",
+        "edge-computing",
+        "energy-efficiency"
+      ]
+    },
+    {
+      "id": "MCO_026",
+      "question": "What is model distillation with multiple teachers?",
+      "options": [
+        "Training multiple student models from one teacher",
+        "Using multiple large models to train a single smaller student model",
+        "Sequential training of teachers and students",
+        "Averaging the weights of multiple teacher models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-teacher distillation uses knowledge from multiple pre-trained teacher models to train a single student model, potentially combining diverse knowledge and improving the student's performance beyond single-teacher distillation.",
+      "optionExplanations": [
+        "This is incorrect. This describes training multiple students, not using multiple teachers for one student.",
+        "This is correct. Multi-teacher distillation leverages knowledge from several teacher models to train one student model.",
+        "This is incorrect. This describes a sequential process rather than using multiple teachers simultaneously.",
+        "This is incorrect. This describes model ensemble averaging, not knowledge distillation with multiple teachers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "knowledge-distillation",
+        "multi-teacher",
+        "ensemble"
+      ]
+    },
+    {
+      "id": "MCO_027",
+      "question": "What is the role of calibration data in static quantization?",
+      "options": [
+        "To retrain the quantized model",
+        "To determine optimal quantization parameters for activations",
+        "To validate the model's accuracy",
+        "To generate synthetic training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Calibration data is used to analyze the distribution of activation values throughout the network, allowing the determination of optimal scale and zero-point parameters for quantizing activations in static quantization.",
+      "optionExplanations": [
+        "This is incorrect. Calibration data is not used for retraining; it's used to set quantization parameters without changing model weights.",
+        "This is correct. Calibration data helps determine the optimal scale and zero-point parameters for activation quantization.",
+        "This is incorrect. While accuracy can be measured using calibration data, its primary role is parameter determination.",
+        "This is incorrect. Calibration data is typically a subset of real data, not synthetic data generation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "static-quantization",
+        "calibration",
+        "activation-quantization"
+      ]
+    },
+    {
+      "id": "MCO_028",
+      "question": "Which of the following is NOT a common metric for evaluating compressed models?",
+      "options": [
+        "Model accuracy",
+        "Inference latency",
+        "Model size (memory footprint)",
+        "Training time reduction"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Training time reduction is not a primary metric for evaluating compressed models since compression techniques are mainly focused on improving inference performance, deployment efficiency, and model size rather than training speed.",
+      "optionExplanations": [
+        "This is incorrect. Model accuracy is a crucial metric to ensure compression doesn't significantly degrade performance.",
+        "This is incorrect. Inference latency is a key metric for evaluating the speed improvements from compression.",
+        "This is incorrect. Model size is a fundamental metric showing the memory savings achieved through compression.",
+        "This is correct. Training time is not a primary evaluation metric for compressed models, as compression focuses on inference efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation-metrics",
+        "model-compression",
+        "inference"
+      ]
+    },
+    {
+      "id": "MCO_029",
+      "question": "What is mixed-precision training?",
+      "options": [
+        "Training different layers with different learning rates",
+        "Using both 16-bit and 32-bit floating-point arithmetic during training",
+        "Training on mixed datasets",
+        "Using different optimizers for different parts of the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mixed-precision training uses a combination of 16-bit (half precision) and 32-bit (single precision) floating-point arithmetic to accelerate training while maintaining model accuracy, typically using 16-bit for forward/backward passes and 32-bit for parameter updates.",
+      "optionExplanations": [
+        "This is incorrect. This describes learning rate scheduling or adaptive learning rates, not mixed-precision training.",
+        "This is correct. Mixed-precision training combines 16-bit and 32-bit arithmetic to speed up training while preserving accuracy.",
+        "This is incorrect. This describes data mixing strategies, not precision mixing in arithmetic operations.",
+        "This is incorrect. This describes optimizer selection strategies, not precision mixing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mixed-precision",
+        "training",
+        "FP16"
+      ]
+    },
+    {
+      "id": "MCO_030",
+      "question": "What is the main challenge with unstructured pruning on modern hardware?",
+      "options": [
+        "Increased memory usage",
+        "Poor performance due to irregular memory access patterns",
+        "Incompatibility with GPU architectures",
+        "Increased model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Unstructured pruning creates sparse matrices with irregular patterns of zeros and non-zeros, leading to poor cache locality and inefficient memory access patterns that don't map well to the regular computation patterns expected by modern hardware accelerators.",
+      "optionExplanations": [
+        "This is incorrect. Unstructured pruning typically reduces memory usage by removing weights, though sparse storage overhead can be a concern.",
+        "This is correct. Irregular sparsity patterns lead to poor memory locality and cache performance on conventional hardware.",
+        "This is incorrect. Unstructured pruning can work on GPUs, but performance is suboptimal due to architectural mismatches with sparse operations.",
+        "This is incorrect. Increased accuracy would be a benefit, not a challenge, and pruning typically involves some accuracy trade-off."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "unstructured-pruning",
+        "hardware-efficiency",
+        "memory-access"
+      ]
+    },
+    {
+      "id": "MCO_031",
+      "question": "What is progressive pruning?",
+      "options": [
+        "Pruning that increases model size over time",
+        "Gradually increasing the pruning ratio during training",
+        "Pruning only the final layers of a network",
+        "Pruning that undoes previous pruning decisions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Progressive pruning gradually increases the sparsity level during training, starting with a low pruning ratio and incrementally removing more weights over time, allowing the model to adapt to increasing sparsity levels.",
+      "optionExplanations": [
+        "This is incorrect. Progressive pruning reduces model size by removing weights, not increasing it.",
+        "This is correct. Progressive pruning gradually increases sparsity during training, allowing the model to adapt to higher pruning levels.",
+        "This is incorrect. Progressive pruning can be applied throughout the network, not just to final layers.",
+        "This is incorrect. Progressive pruning typically maintains previous pruning decisions while adding new ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "progressive-pruning",
+        "gradual-sparsity",
+        "training"
+      ]
+    },
+    {
+      "id": "MCO_032",
+      "question": "What is the difference between symmetric and asymmetric quantization?",
+      "options": [
+        "Symmetric quantizes weights, asymmetric quantizes activations",
+        "Symmetric uses the same scale for positive and negative values, asymmetric uses different scales",
+        "Symmetric has zero point at zero, asymmetric can have any zero point",
+        "Symmetric works on CPUs, asymmetric works on GPUs"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Symmetric quantization constrains the zero point to be at zero, making the quantization range centered around zero. Asymmetric quantization allows the zero point to be anywhere, enabling better utilization of the quantization range for skewed distributions.",
+      "optionExplanations": [
+        "This is incorrect. Both symmetric and asymmetric quantization can be applied to weights and activations.",
+        "This is incorrect. Both use scales, but the difference is in how they handle the zero point and range centering.",
+        "This is correct. Symmetric quantization centers the range around zero (zero point = 0), while asymmetric allows flexible zero point placement.",
+        "This is incorrect. Both quantization types can be implemented on various hardware platforms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization",
+        "symmetric",
+        "asymmetric"
+      ]
+    },
+    {
+      "id": "MCO_033",
+      "question": "What is the primary purpose of ONNX Runtime?",
+      "options": [
+        "Model training acceleration",
+        "Cross-platform inference optimization",
+        "Automatic model architecture design",
+        "Dataset preprocessing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ONNX Runtime is an inference engine designed to optimize and execute ONNX models across different platforms and hardware, providing high-performance inference with various optimization techniques.",
+      "optionExplanations": [
+        "This is incorrect. ONNX Runtime is focused on inference optimization, not training acceleration.",
+        "This is correct. ONNX Runtime provides optimized inference execution for ONNX models across multiple platforms and hardware.",
+        "This is incorrect. ONNX Runtime executes existing models rather than designing new architectures.",
+        "This is incorrect. ONNX Runtime is for model inference, not data preprocessing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ONNX-Runtime",
+        "inference-optimization",
+        "cross-platform"
+      ]
+    },
+    {
+      "id": "MCO_034",
+      "question": "What is lottery ticket hypothesis in neural network pruning?",
+      "options": [
+        "Random pruning works better than structured pruning",
+        "Pruned networks can be retrained to original accuracy",
+        "A sparse subnetwork exists that can achieve comparable accuracy to the full network when trained in isolation",
+        "Pruning should be done randomly like a lottery"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The lottery ticket hypothesis states that dense neural networks contain sparse subnetworks (winning tickets) that, when trained in isolation from the same initialization, can achieve comparable accuracy to the original dense network.",
+      "optionExplanations": [
+        "This is incorrect. The hypothesis is not about random vs. structured pruning methods.",
+        "This is incorrect. While pruned networks can often be retrained, this doesn't capture the lottery ticket hypothesis specifically.",
+        "This is correct. The hypothesis proposes that sparse 'winning ticket' subnetworks can match the performance of the full network.",
+        "This is incorrect. The hypothesis is not about random pruning strategies but about the existence of high-performing sparse subnetworks."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "lottery-ticket-hypothesis",
+        "sparse-networks",
+        "pruning-theory"
+      ]
+    },
+    {
+      "id": "MCO_035",
+      "question": "What is neural architecture search (NAS) in the context of model optimization?",
+      "options": [
+        "Manually designing efficient network architectures",
+        "Automatically discovering optimal network architectures for specific constraints",
+        "Searching for optimal hyperparameters",
+        "Finding the best pruning strategies"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Neural Architecture Search (NAS) automates the process of discovering optimal neural network architectures for specific tasks and constraints (like accuracy, latency, or model size), reducing the need for manual architecture design.",
+      "optionExplanations": [
+        "This is incorrect. NAS automates architecture design rather than relying on manual design.",
+        "This is correct. NAS automatically searches for and discovers optimal network architectures based on specified objectives and constraints.",
+        "This is incorrect. Hyperparameter optimization is related but distinct from architecture search.",
+        "This is incorrect. While NAS might consider pruning-friendly architectures, it's primarily about discovering complete architectures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "neural-architecture-search",
+        "automated-design",
+        "optimization"
+      ]
+    },
+    {
+      "id": "MCO_036",
+      "question": "What is the main advantage of using INT4 quantization over INT8?",
+      "options": [
+        "Better accuracy preservation",
+        "Easier implementation",
+        "Further reduction in model size and memory bandwidth",
+        "Better hardware compatibility"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "INT4 quantization provides even greater model size reduction and memory bandwidth savings compared to INT8, potentially doubling the compression benefits, though it requires more careful implementation to maintain accuracy.",
+      "optionExplanations": [
+        "This is incorrect. INT4 typically has worse accuracy preservation than INT8 due to the more aggressive quantization.",
+        "This is incorrect. INT4 is generally more challenging to implement and requires more sophisticated techniques.",
+        "This is correct. INT4 provides additional compression benefits, reducing model size and memory requirements beyond what INT8 achieves.",
+        "This is incorrect. INT4 has less widespread hardware support compared to INT8."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "INT4-quantization",
+        "aggressive-compression",
+        "memory-bandwidth"
+      ]
+    },
+    {
+      "id": "MCO_037",
+      "question": "What is the purpose of fine-tuning after model compression?",
+      "options": [
+        "To increase model size",
+        "To recover accuracy lost during compression",
+        "To change the model architecture",
+        "To convert the model to a different format"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fine-tuning after compression helps recover some of the accuracy that may have been lost during the compression process by allowing the model to adapt its remaining parameters to compensate for the compression artifacts.",
+      "optionExplanations": [
+        "This is incorrect. Fine-tuning doesn't increase model size; the compressed structure is maintained.",
+        "This is correct. Fine-tuning helps the compressed model recover accuracy by optimizing the remaining parameters.",
+        "This is incorrect. Fine-tuning doesn't change the compressed architecture, only optimizes the existing parameters.",
+        "This is incorrect. Format conversion is separate from fine-tuning; fine-tuning optimizes model parameters."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "fine-tuning",
+        "accuracy-recovery",
+        "post-compression"
+      ]
+    },
+    {
+      "id": "MCO_038",
+      "question": "What is block-wise quantization?",
+      "options": [
+        "Quantizing entire layers uniformly",
+        "Quantizing small blocks of weights with different parameters",
+        "Quantizing only the first block of each layer",
+        "Quantizing weights and activations separately"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Block-wise quantization divides weights into small blocks and applies different quantization parameters (scales and zero points) to each block, allowing for better adaptation to local weight distributions and improved accuracy.",
+      "optionExplanations": [
+        "This is incorrect. Block-wise quantization uses different parameters for different blocks, not uniform quantization.",
+        "This is correct. Block-wise quantization applies different quantization parameters to small blocks of weights for better accuracy.",
+        "This is incorrect. Block-wise quantization divides weights into multiple blocks, not just the first block.",
+        "This is incorrect. The distinction is about spatial grouping of weights, not separating weights from activations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "block-wise-quantization",
+        "adaptive-quantization",
+        "weight-grouping"
+      ]
+    },
+    {
+      "id": "MCO_039",
+      "question": "What is the main challenge when deploying models to IoT devices?",
+      "options": [
+        "High computational power requirements",
+        "Extremely limited resources (memory, power, compute)",
+        "Fast network connectivity requirements",
+        "Large storage capacity needs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "IoT devices typically have very limited computational resources, memory, storage, and power budgets, making it challenging to deploy even moderately complex models without aggressive optimization.",
+      "optionExplanations": [
+        "This is incorrect. IoT devices have very limited computational power, not high requirements.",
+        "This is correct. IoT devices have severe constraints on memory, power consumption, and computational capabilities.",
+        "This is incorrect. IoT devices often have limited or intermittent network connectivity, not fast connectivity requirements.",
+        "This is incorrect. IoT devices typically have very limited storage capacity, not large storage needs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "IoT-deployment",
+        "resource-constraints",
+        "embedded-systems"
+      ]
+    },
+    {
+      "id": "MCO_040",
+      "question": "What is model paralleling in the context of edge deployment?",
+      "options": [
+        "Running the same model on multiple devices",
+        "Splitting a model across multiple devices or processing units",
+        "Training multiple models simultaneously",
+        "Using multiple algorithms for the same task"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model parallelism involves splitting a large model across multiple devices or processing units, with different parts of the model running on different hardware components to overcome individual device limitations.",
+      "optionExplanations": [
+        "This is incorrect. This describes model replication or ensemble deployment, not parallelism.",
+        "This is correct. Model parallelism distributes different parts of a model across multiple processing units or devices.",
+        "This is incorrect. This describes parallel training, not deployment-time model parallelism.",
+        "This is incorrect. This describes algorithmic diversity, not model parallelism."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-parallelism",
+        "distributed-inference",
+        "edge-deployment"
+      ]
+    },
+    {
+      "id": "MCO_041",
+      "question": "What is gradient-based pruning?",
+      "options": [
+        "Pruning weights with the largest gradients",
+        "Pruning weights with the smallest gradients",
+        "Using gradient information to identify important weights",
+        "Pruning based on gradient descent optimization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gradient-based pruning uses gradient information to assess weight importance, typically considering how much the loss would change if specific weights were removed, providing a more informed pruning strategy than magnitude-based approaches.",
+      "optionExplanations": [
+        "This is incorrect. Large gradients might indicate important weights that shouldn't be pruned.",
+        "This is incorrect. Small gradients don't necessarily indicate unimportant weights.",
+        "This is correct. Gradient-based pruning uses gradient information to determine which weights are most important for model performance.",
+        "This is incorrect. This describes the optimization process, not a pruning criterion based on gradients."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-based-pruning",
+        "weight-importance",
+        "informed-pruning"
+      ]
+    },
+    {
+      "id": "MCO_042",
+      "question": "What is the purpose of using different quantization schemes for different layers?",
+      "options": [
+        "To increase computational complexity",
+        "To optimize each layer based on its sensitivity to quantization",
+        "To make implementation more difficult",
+        "To increase model size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different layers in neural networks have varying sensitivities to quantization. Using layer-specific quantization schemes allows optimization of each layer individually, maximizing compression while minimizing accuracy loss.",
+      "optionExplanations": [
+        "This is incorrect. The goal is to optimize efficiency, not increase complexity.",
+        "This is correct. Layer-specific quantization adapts to each layer's sensitivity, optimizing the trade-off between compression and accuracy.",
+        "This is incorrect. While implementation may be more complex, the purpose is optimization, not increased difficulty.",
+        "This is incorrect. The goal is to reduce model size while maintaining accuracy, not increase size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "layer-wise-quantization",
+        "sensitivity-analysis",
+        "adaptive-compression"
+      ]
+    },
+    {
+      "id": "MCO_043",
+      "question": "What is self-distillation?",
+      "options": [
+        "A model teaching itself without external data",
+        "Using the same model as both teacher and student",
+        "Automatic model compression without human intervention",
+        "Using multiple identical models for ensemble learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Self-distillation uses the same model architecture as both teacher and student, where a trained model provides soft targets to train another instance of the same architecture, often improving generalization and robustness.",
+      "optionExplanations": [
+        "This is incorrect. Self-distillation still requires training data; it's about using the same architecture for teacher and student.",
+        "This is correct. Self-distillation uses the same model architecture for both teacher and student roles in knowledge distillation.",
+        "This is incorrect. Self-distillation is a specific distillation technique, not automatic compression.",
+        "This is incorrect. This describes model ensembling, not self-distillation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "self-distillation",
+        "knowledge-distillation",
+        "same-architecture"
+      ]
+    },
+    {
+      "id": "MCO_044",
+      "question": "What is the main benefit of using structured pruning for transformer models?",
+      "options": [
+        "Better attention mechanism performance",
+        "Maintaining regular matrix operations for efficient hardware utilization",
+        "Improved language understanding",
+        "Faster training convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Structured pruning in transformers maintains regular matrix operations (like removing entire attention heads or feed-forward dimensions) that map efficiently to hardware accelerators, avoiding the irregular sparsity patterns that hurt performance.",
+      "optionExplanations": [
+        "This is incorrect. Structured pruning aims for efficiency, not improving the attention mechanism itself.",
+        "This is correct. Structured pruning maintains regular operations that can be efficiently executed on standard hardware.",
+        "This is incorrect. The goal is efficiency and deployment optimization, not improving language understanding capabilities.",
+        "This is incorrect. Structured pruning is typically applied after training for inference optimization, not during training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "structured-pruning",
+        "transformers",
+        "hardware-efficiency"
+      ]
+    },
+    {
+      "id": "MCO_045",
+      "question": "What is quantization error and how can it be minimized?",
+      "options": [
+        "Error from using wrong algorithms; fixed by better algorithms",
+        "Difference between original and quantized values; minimized through careful calibration",
+        "Programming bugs in quantization code; fixed by debugging",
+        "Hardware-specific errors; fixed by using different hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Quantization error is the difference between original floating-point values and their quantized representations. It can be minimized through careful calibration, appropriate quantization schemes, and techniques like quantization-aware training.",
+      "optionExplanations": [
+        "This is incorrect. Quantization error is inherent to the precision reduction process, not algorithmic mistakes.",
+        "This is correct. Quantization error results from precision loss and can be minimized through proper calibration and quantization techniques.",
+        "This is incorrect. Quantization error is a mathematical consequence of precision reduction, not a programming bug.",
+        "This is incorrect. Quantization error exists regardless of hardware; it's about precision limitations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization-error",
+        "calibration",
+        "precision-loss"
+      ]
+    },
+    {
+      "id": "MCO_046",
+      "question": "What is the difference between weight sharing and quantization?",
+      "options": [
+        "Weight sharing reduces unique values, quantization reduces precision",
+        "Weight sharing works on activations, quantization works on weights",
+        "Weight sharing is for training, quantization is for inference",
+        "No difference, they are the same technique"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Weight sharing reduces the number of unique weight values by forcing multiple connections to share the same weight value, while quantization reduces the precision of individual weight values. Both can be combined for additional compression.",
+      "optionExplanations": [
+        "This is correct. Weight sharing reduces the vocabulary of unique values, while quantization reduces the precision of each value.",
+        "This is incorrect. Both techniques can be applied to weights and activations.",
+        "This is incorrect. Both techniques can be used during training or applied post-training.",
+        "This is incorrect. These are distinct compression techniques with different mechanisms and benefits."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-sharing",
+        "quantization",
+        "compression-comparison"
+      ]
+    },
+    {
+      "id": "MCO_047",
+      "question": "What is early exit in neural networks?",
+      "options": [
+        "Stopping training before convergence",
+        "Exiting the program when errors occur",
+        "Allowing inference to exit at intermediate layers for easier samples",
+        "Removing the final layers of the network"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Early exit allows neural networks to output predictions at intermediate layers for samples that can be classified with high confidence, reducing computational cost for easier samples while maintaining full network computation for harder cases.",
+      "optionExplanations": [
+        "This is incorrect. This describes early stopping in training, not early exit in inference.",
+        "This is incorrect. This describes error handling, not an optimization technique.",
+        "This is correct. Early exit enables adaptive computation by allowing confident predictions to exit early from intermediate layers.",
+        "This is incorrect. This describes layer pruning, not early exit mechanisms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "early-exit",
+        "adaptive-computation",
+        "conditional-inference"
+      ]
+    },
+    {
+      "id": "MCO_048",
+      "question": "What is the main advantage of using binary neural networks (BNNs)?",
+      "options": [
+        "Higher accuracy than full-precision networks",
+        "Extreme compression with 1-bit weights and activations",
+        "Easier training procedures",
+        "Better generalization capabilities"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Binary Neural Networks (BNNs) use 1-bit representations for weights and activations, providing extreme model compression and enabling very efficient inference through simple bitwise operations, though typically with significant accuracy trade-offs.",
+      "optionExplanations": [
+        "This is incorrect. BNNs typically have lower accuracy than full-precision networks due to extreme quantization.",
+        "This is correct. BNNs achieve extreme compression by using only 1-bit representations, enabling very efficient inference.",
+        "This is incorrect. BNN training is often more challenging due to non-differentiable binary operations.",
+        "This is incorrect. BNNs typically have reduced representational capacity compared to full-precision networks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binary-neural-networks",
+        "extreme-quantization",
+        "1-bit"
+      ]
+    },
+    {
+      "id": "MCO_049",
+      "question": "What is federated learning's relationship to edge AI deployment?",
+      "options": [
+        "No relationship exists",
+        "Federated learning enables training models on edge devices without centralizing data",
+        "Federated learning only works in cloud environments",
+        "Federated learning replaces edge deployment"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Federated learning enables training and updating models directly on edge devices while keeping data local, eliminating the need to send sensitive data to central servers and enabling continuous model improvement at the edge.",
+      "optionExplanations": [
+        "This is incorrect. Federated learning and edge AI are closely related concepts that complement each other.",
+        "This is correct. Federated learning allows model training on edge devices while preserving data privacy and locality.",
+        "This is incorrect. Federated learning is specifically designed to work across distributed edge devices.",
+        "This is incorrect. Federated learning enhances edge deployment by enabling distributed training, not replacing it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "federated-learning",
+        "edge-AI",
+        "distributed-training"
+      ]
+    },
+    {
+      "id": "MCO_050",
+      "question": "What is the purpose of attention pruning in transformer models?",
+      "options": [
+        "Improving attention accuracy",
+        "Removing less important attention heads or attention connections",
+        "Adding more attention mechanisms",
+        "Converting attention to convolutions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention pruning removes less important attention heads or specific attention connections in transformer models, reducing computational complexity while maintaining model performance by focusing on the most relevant attention patterns.",
+      "optionExplanations": [
+        "This is incorrect. Attention pruning aims for efficiency, not improving attention accuracy.",
+        "This is correct. Attention pruning removes less important attention components to reduce computational load.",
+        "This is incorrect. Pruning removes components rather than adding them.",
+        "This is incorrect. This describes architectural changes, not pruning within the attention mechanism."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-pruning",
+        "transformers",
+        "attention-heads"
+      ]
+    },
+    {
+      "id": "MCO_051",
+      "question": "What is the typical memory reduction achieved by INT8 quantization compared to FP32?",
+      "options": [
+        "2x reduction",
+        "4x reduction",
+        "8x reduction",
+        "16x reduction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "INT8 quantization reduces memory usage by approximately 4x compared to FP32, since INT8 uses 8 bits per parameter while FP32 uses 32 bits per parameter (32/8 = 4x reduction).",
+      "optionExplanations": [
+        "This is incorrect. 2x reduction would correspond to FP16 quantization, not INT8.",
+        "This is correct. INT8 (8 bits) provides a 4x memory reduction compared to FP32 (32 bits).",
+        "This is incorrect. 8x reduction would require 4-bit quantization, not INT8.",
+        "This is incorrect. 16x reduction would require 2-bit quantization, not INT8."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "memory-reduction",
+        "INT8",
+        "quantization-benefits"
+      ]
+    },
+    {
+      "id": "MCO_052",
+      "question": "What is progressive knowledge distillation?",
+      "options": [
+        "Using multiple teachers simultaneously",
+        "Gradually reducing teacher model complexity during distillation",
+        "Step-by-step transfer from large teacher to small student through intermediate models",
+        "Distilling knowledge only from the final layer"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Progressive knowledge distillation uses a sequence of intermediate teacher models of decreasing size to gradually transfer knowledge from a large teacher to a small student, often achieving better results than direct distillation.",
+      "optionExplanations": [
+        "This is incorrect. This describes multi-teacher distillation, not progressive distillation.",
+        "This is incorrect. The teacher complexity typically remains fixed; the progression is through intermediate models.",
+        "This is correct. Progressive distillation uses intermediate-sized models to bridge the gap between large teachers and small students.",
+        "This is incorrect. This describes layer-specific distillation, not progressive distillation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "progressive-distillation",
+        "intermediate-models",
+        "gradual-transfer"
+      ]
+    },
+    {
+      "id": "MCO_053",
+      "question": "What is channel shuffling in the context of efficient neural architectures?",
+      "options": [
+        "Randomly reordering input channels",
+        "Exchanging information between channel groups in grouped convolutions",
+        "Reducing the number of channels",
+        "Converting channels to different data types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Channel shuffling, used in architectures like ShuffleNet, rearranges channels between different groups in grouped convolutions to enable information exchange between groups while maintaining computational efficiency.",
+      "optionExplanations": [
+        "This is incorrect. Channel shuffling is a structured operation, not random reordering.",
+        "This is correct. Channel shuffling enables information flow between channel groups in grouped convolutions.",
+        "This is incorrect. This describes channel pruning, not channel shuffling.",
+        "This is incorrect. This describes data type conversion, not channel shuffling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "channel-shuffling",
+        "grouped-convolutions",
+        "efficient-architectures"
+      ]
+    },
+    {
+      "id": "MCO_054",
+      "question": "What is the main challenge when quantizing batch normalization layers?",
+      "options": [
+        "Batch norm has too many parameters",
+        "Fusion with adjacent layers and handling of running statistics",
+        "Batch norm cannot be quantized",
+        "Batch norm requires special hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch normalization layers are often fused with adjacent convolution layers for efficiency, and their running mean and variance statistics require careful handling during quantization to maintain numerical stability and accuracy.",
+      "optionExplanations": [
+        "This is incorrect. Batch norm has relatively few parameters compared to convolution layers.",
+        "This is correct. The main challenges are layer fusion optimization and proper handling of running statistics during quantization.",
+        "This is incorrect. Batch norm layers can be quantized, though they require special consideration.",
+        "This is incorrect. Batch norm doesn't require special hardware; the challenges are algorithmic."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-normalization",
+        "layer-fusion",
+        "running-statistics"
+      ]
+    },
+    {
+      "id": "MCO_055",
+      "question": "What is model deployment pipeline optimization?",
+      "options": [
+        "Optimizing the data preprocessing pipeline",
+        "End-to-end optimization of the entire inference pipeline including preprocessing and postprocessing",
+        "Optimizing only the model inference step",
+        "Optimizing the training pipeline"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model deployment pipeline optimization involves optimizing the entire inference workflow, including data preprocessing, model inference, and result postprocessing, to minimize end-to-end latency and resource usage.",
+      "optionExplanations": [
+        "This is incorrect. Pipeline optimization includes preprocessing but extends beyond it to the entire inference workflow.",
+        "This is correct. Pipeline optimization considers the complete end-to-end inference process for maximum efficiency.",
+        "This is incorrect. Focusing only on model inference ignores other bottlenecks in the complete pipeline.",
+        "This is incorrect. This refers to deployment inference optimization, not training pipeline optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pipeline-optimization",
+        "end-to-end",
+        "inference-workflow"
+      ]
+    },
+    {
+      "id": "MCO_056",
+      "question": "What is the purpose of using different compression ratios for different model components?",
+      "options": [
+        "To increase overall model complexity",
+        "To optimize compression based on component sensitivity and importance",
+        "To make the model harder to reverse-engineer",
+        "To improve training stability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different model components (layers, attention heads, channels) have varying sensitivity to compression. Using adaptive compression ratios allows maximizing compression while minimizing accuracy loss by applying lighter compression to sensitive components.",
+      "optionExplanations": [
+        "This is incorrect. The goal is optimization and efficiency, not increasing complexity.",
+        "This is correct. Adaptive compression ratios optimize the compression-accuracy trade-off by considering component-specific sensitivities.",
+        "This is incorrect. Compression is for efficiency, not security through obfuscation.",
+        "This is incorrect. This refers to inference optimization, not training stability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adaptive-compression",
+        "component-sensitivity",
+        "mixed-compression"
+      ]
+    },
+    {
+      "id": "MCO_057",
+      "question": "What is neural network factorization?",
+      "options": [
+        "Breaking down large matrices into smaller matrix products",
+        "Converting neural networks to mathematical formulas",
+        "Splitting networks across multiple devices",
+        "Finding prime factors of network weights"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Neural network factorization decomposes large weight matrices into products of smaller matrices (like low-rank factorization), reducing the number of parameters and computational requirements while approximating the original functionality.",
+      "optionExplanations": [
+        "This is correct. Network factorization decomposes large matrices into products of smaller matrices to reduce parameters.",
+        "This is incorrect. This describes symbolic computation, not matrix factorization for compression.",
+        "This is incorrect. This describes model parallelism, not matrix factorization.",
+        "This is incorrect. This describes mathematical factorization of numbers, not matrix decomposition."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "matrix-factorization",
+        "low-rank",
+        "parameter-reduction"
+      ]
+    },
+    {
+      "id": "MCO_058",
+      "question": "What is the advantage of using group convolutions for model efficiency?",
+      "options": [
+        "Higher accuracy than standard convolutions",
+        "Reduced computational cost by processing channels in groups",
+        "Better gradient flow during training",
+        "Improved memory locality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Group convolutions reduce computational cost by dividing input channels into groups and applying separate convolutions to each group, significantly reducing the number of parameters and operations compared to standard convolutions.",
+      "optionExplanations": [
+        "This is incorrect. Group convolutions trade some representational capacity for efficiency, potentially reducing accuracy.",
+        "This is correct. Group convolutions reduce computation by applying separate convolutions to channel groups rather than all channels.",
+        "This is incorrect. While group convolutions can affect gradient flow, the primary advantage is computational efficiency.",
+        "This is incorrect. Memory locality can be a benefit, but the main advantage is reduced computational cost."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "group-convolutions",
+        "computational-efficiency",
+        "parameter-reduction"
+      ]
+    },
+    {
+      "id": "MCO_059",
+      "question": "What is mixed-bit quantization?",
+      "options": [
+        "Using the same bit-width for all layers",
+        "Using different bit-widths for different layers or components",
+        "Converting between bit formats during inference",
+        "Using only specific bit-widths like 8 or 16"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mixed-bit quantization assigns different bit-widths to different layers or model components based on their sensitivity to quantization, allowing aggressive quantization for robust layers while preserving precision for sensitive components.",
+      "optionExplanations": [
+        "This is incorrect. Mixed-bit quantization specifically uses different bit-widths, not the same width.",
+        "This is correct. Mixed-bit quantization uses different bit-widths for different parts of the model based on sensitivity analysis.",
+        "This is incorrect. This describes dynamic format conversion, not mixed-bit assignment.",
+        "This is incorrect. Mixed-bit quantization can use various bit-widths, not just specific standard widths."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mixed-bit-quantization",
+        "adaptive-precision",
+        "sensitivity-aware"
+      ]
+    },
+    {
+      "id": "MCO_060",
+      "question": "What is the role of sparsity in neural network acceleration?",
+      "options": [
+        "Sparsity always slows down inference",
+        "Sparsity can accelerate inference when properly supported by hardware and software",
+        "Sparsity only affects memory usage, not speed",
+        "Sparsity has no impact on performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sparsity can significantly accelerate inference when the hardware and software stack properly supports sparse operations, allowing the skipping of zero-valued computations and reducing memory bandwidth requirements.",
+      "optionExplanations": [
+        "This is incorrect. Well-supported sparsity can provide significant acceleration benefits.",
+        "This is correct. Sparsity accelerates inference when properly supported through optimized sparse computation libraries and hardware.",
+        "This is incorrect. Sparsity affects both memory usage and computational speed when properly optimized.",
+        "This is incorrect. Sparsity can have significant performance benefits when properly leveraged."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sparsity",
+        "acceleration",
+        "sparse-computation"
+      ]
+    },
+    {
+      "id": "MCO_061",
+      "question": "What is neural ODE (Ordinary Differential Equation) in the context of efficient models?",
+      "options": [
+        "A mathematical optimization technique",
+        "A continuous-depth neural network that can be more parameter-efficient",
+        "A specific type of loss function",
+        "A hardware acceleration method"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Neural ODEs model neural networks as continuous dynamical systems, potentially allowing for more parameter-efficient representations and adaptive computation, though they introduce different computational trade-offs.",
+      "optionExplanations": [
+        "This is incorrect. While Neural ODEs involve mathematical concepts, they represent a different neural network paradigm.",
+        "This is correct. Neural ODEs provide a continuous-depth alternative that can be more parameter-efficient for certain tasks.",
+        "This is incorrect. Neural ODEs describe network architecture, not loss functions.",
+        "This is incorrect. Neural ODEs are an architectural approach, not a hardware acceleration method."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "neural-ODE",
+        "continuous-depth",
+        "parameter-efficiency"
+      ]
+    },
+    {
+      "id": "MCO_062",
+      "question": "What is importance-based pruning?",
+      "options": [
+        "Randomly selecting weights to prune",
+        "Pruning weights based on their contribution to model performance",
+        "Pruning only the largest weights",
+        "Pruning based on layer position"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Importance-based pruning evaluates the contribution of each weight or neuron to the model's performance using metrics like gradient information, Fisher information, or other importance scores, removing the least important components.",
+      "optionExplanations": [
+        "This is incorrect. Importance-based pruning uses calculated importance metrics, not random selection.",
+        "This is correct. Importance-based pruning removes components with the lowest calculated importance to model performance.",
+        "This is incorrect. Large weights might be important; magnitude alone doesn't determine importance.",
+        "This is incorrect. Layer position doesn't determine weight importance for performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "importance-based-pruning",
+        "weight-importance",
+        "performance-contribution"
+      ]
+    },
+    {
+      "id": "MCO_063",
+      "question": "What is the primary benefit of using depthwise separable convolutions?",
+      "options": [
+        "Higher accuracy than standard convolutions",
+        "Significant reduction in parameters and computations",
+        "Better gradient propagation",
+        "Improved numerical stability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Depthwise separable convolutions factorize standard convolutions into depthwise and pointwise operations, dramatically reducing the number of parameters and computational operations while maintaining similar representational capacity.",
+      "optionExplanations": [
+        "This is incorrect. Depthwise separable convolutions prioritize efficiency over accuracy, though they can maintain competitive performance.",
+        "This is correct. Depthwise separable convolutions significantly reduce computational cost and parameter count compared to standard convolutions.",
+        "This is incorrect. While gradient flow can be affected, the primary benefit is computational efficiency.",
+        "This is incorrect. Numerical stability is not the primary advantage of depthwise separable convolutions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "depthwise-separable",
+        "parameter-reduction",
+        "efficient-convolutions"
+      ]
+    },
+    {
+      "id": "MCO_064",
+      "question": "What is online distillation?",
+      "options": [
+        "Distillation performed over the internet",
+        "Distillation where teacher and student are trained simultaneously",
+        "Real-time distillation during inference",
+        "Distillation using online learning algorithms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Online distillation trains teacher and student models simultaneously, where they can learn from each other during training, as opposed to offline distillation where the teacher is pre-trained before training the student.",
+      "optionExplanations": [
+        "This is incorrect. 'Online' refers to the temporal relationship between teacher and student training, not internet connectivity.",
+        "This is correct. Online distillation involves simultaneous training of teacher and student, allowing mutual learning.",
+        "This is incorrect. This would describe inference-time distillation, which is not the standard meaning of online distillation.",
+        "This is incorrect. The 'online' refers to simultaneous training, not the use of online learning algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "online-distillation",
+        "simultaneous-training",
+        "mutual-learning"
+      ]
+    },
+    {
+      "id": "MCO_065",
+      "question": "What is the main consideration when choosing quantization bit-width?",
+      "options": [
+        "Hardware capabilities only",
+        "Balancing model size, speed, accuracy, and hardware support",
+        "Model architecture only",
+        "Training time only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Choosing quantization bit-width requires balancing multiple factors: model size reduction, inference speed improvement, accuracy preservation, and hardware support for the chosen precision level.",
+      "optionExplanations": [
+        "This is incorrect. While hardware support is important, it's not the only consideration.",
+        "This is correct. Bit-width selection requires balancing compression benefits, accuracy preservation, and practical deployment constraints.",
+        "This is incorrect. Model architecture influences quantization sensitivity but isn't the sole consideration.",
+        "This is incorrect. Training time is not a primary factor in bit-width selection for inference optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bit-width-selection",
+        "trade-offs",
+        "deployment-considerations"
+      ]
+    },
+    {
+      "id": "MCO_066",
+      "question": "What is model cascading in the context of efficient inference?",
+      "options": [
+        "Using multiple models of increasing complexity for different difficulty samples",
+        "Connecting models in series",
+        "Using the same model multiple times",
+        "Splitting models across multiple devices"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Model cascading uses a sequence of models with increasing complexity, where easier samples are handled by simpler, faster models, and only difficult samples proceed to more complex models, optimizing overall computational efficiency.",
+      "optionExplanations": [
+        "This is correct. Model cascading uses increasingly complex models for samples that require more sophisticated processing.",
+        "This is incorrect. While models are connected, the key aspect is adaptive complexity based on sample difficulty.",
+        "This is incorrect. Cascading uses different models of varying complexity, not the same model repeatedly.",
+        "This is incorrect. This describes model parallelism, not cascading based on sample complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-cascading",
+        "adaptive-inference",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "MCO_067",
+      "question": "What is the primary challenge with deploying quantized models on edge devices?",
+      "options": [
+        "Quantized models are too large",
+        "Limited hardware support for mixed-precision operations",
+        "Quantized models require more memory",
+        "Quantized models have higher accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Edge devices often have limited support for mixed-precision operations, making it challenging to efficiently execute quantized models that use different bit-widths or require specific quantization-optimized hardware instructions.",
+      "optionExplanations": [
+        "This is incorrect. Quantized models are typically smaller than their full-precision counterparts.",
+        "This is correct. Limited hardware support for quantized operations on edge devices is a major deployment challenge.",
+        "This is incorrect. Quantized models generally require less memory than full-precision models.",
+        "This is incorrect. Higher accuracy would be beneficial, not a challenge, and quantized models typically have slightly lower accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-deployment",
+        "hardware-support",
+        "mixed-precision"
+      ]
+    },
+    {
+      "id": "MCO_068",
+      "question": "What is weight clustering in neural network compression?",
+      "options": [
+        "Grouping weights by layer",
+        "Forcing multiple weights to share the same clustered values",
+        "Organizing weights by magnitude",
+        "Splitting weights across multiple processors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weight clustering reduces the number of unique weight values by grouping similar weights and forcing them to share cluster centroid values, enabling compression through reduced value vocabulary and efficient encoding.",
+      "optionExplanations": [
+        "This is incorrect. Weight clustering operates on weight values, not their organization by layers.",
+        "This is correct. Weight clustering forces groups of similar weights to share the same cluster centroid values.",
+        "This is incorrect. While magnitude might influence clustering, the technique is about value sharing, not organization.",
+        "This is incorrect. This describes distributed computing, not weight value clustering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-clustering",
+        "value-sharing",
+        "compression"
+      ]
+    },
+    {
+      "id": "MCO_069",
+      "question": "What is the main advantage of using ONNX for model deployment?",
+      "options": [
+        "Automatic model optimization",
+        "Framework interoperability and deployment flexibility",
+        "Built-in quantization support",
+        "Faster training capabilities"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ONNX's primary advantage is enabling interoperability between different machine learning frameworks and providing deployment flexibility across various platforms and runtime environments.",
+      "optionExplanations": [
+        "This is incorrect. ONNX is a format standard; optimization is performed by ONNX Runtime and other tools.",
+        "This is correct. ONNX enables models trained in one framework to be deployed in different environments and platforms.",
+        "This is incorrect. While ONNX supports quantized models, this is not its primary advantage.",
+        "This is incorrect. ONNX is primarily for deployment and inference, not training acceleration."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ONNX",
+        "interoperability",
+        "deployment"
+      ]
+    },
+    {
+      "id": "MCO_070",
+      "question": "What is lottery ticket pruning?",
+      "options": [
+        "Random pruning based on lottery numbers",
+        "Pruning that identifies sparse subnetworks that can achieve comparable accuracy",
+        "Pruning only winning layers",
+        "Probabilistic pruning methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lottery ticket pruning is based on the lottery ticket hypothesis, which identifies sparse 'winning ticket' subnetworks within dense networks that can achieve comparable accuracy to the original network when trained from the same initialization.",
+      "optionExplanations": [
+        "This is incorrect. The name comes from the lottery ticket hypothesis, not actual lottery numbers.",
+        "This is correct. Lottery ticket pruning identifies sparse subnetworks ('winning tickets') that maintain performance when trained properly.",
+        "This is incorrect. It's about identifying sparse subnetworks throughout the entire model, not specific layers.",
+        "This is incorrect. While it involves finding rare combinations, it's not about probabilistic pruning methods."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "lottery-ticket",
+        "sparse-subnetworks",
+        "pruning-theory"
+      ]
+    },
+    {
+      "id": "MCO_071",
+      "question": "What is the purpose of using temperature scaling in model deployment?",
+      "options": [
+        "Controlling hardware temperature",
+        "Calibrating model confidence and improving probability estimates",
+        "Adjusting training speed",
+        "Managing memory temperature"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature scaling calibrates model confidence by adjusting the softmax temperature to improve probability estimates, making the model's confidence scores more reliable and better calibrated for decision-making.",
+      "optionExplanations": [
+        "This is incorrect. Temperature scaling is a software technique for probability calibration, not hardware temperature control.",
+        "This is correct. Temperature scaling improves the calibration of model confidence and probability estimates.",
+        "This is incorrect. Temperature scaling is used during inference for calibration, not for controlling training speed.",
+        "This is incorrect. This refers to probability calibration, not physical memory temperature management."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature-scaling",
+        "calibration",
+        "confidence"
+      ]
+    },
+    {
+      "id": "MCO_072",
+      "question": "What is neural network slimming?",
+      "options": [
+        "Reducing input data size",
+        "Pruning channels based on batch normalization scaling factors",
+        "Making networks physically smaller",
+        "Reducing training time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Neural network slimming uses batch normalization scaling factors as importance indicators to identify and prune less important channels, providing a principled approach to structured pruning in networks with batch normalization layers.",
+      "optionExplanations": [
+        "This is incorrect. Network slimming operates on model parameters, not input data size.",
+        "This is correct. Network slimming uses BN scaling factors to identify important channels and prune less important ones.",
+        "This is incorrect. 'Slimming' refers to reducing model complexity, not physical size.",
+        "This is incorrect. Network slimming is about model compression, not training time reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "network-slimming",
+        "batch-normalization",
+        "channel-pruning"
+      ]
+    },
+    {
+      "id": "MCO_073",
+      "question": "What is the main benefit of using mobile-specific architectures like MobileNet?",
+      "options": [
+        "Higher accuracy than desktop models",
+        "Designed specifically for mobile hardware constraints",
+        "Better training stability",
+        "Improved interpretability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mobile-specific architectures like MobileNet are designed from the ground up to operate efficiently within mobile hardware constraints, using techniques like depthwise separable convolutions to achieve good accuracy with minimal computational requirements.",
+      "optionExplanations": [
+        "This is incorrect. Mobile architectures typically trade some accuracy for efficiency compared to larger desktop models.",
+        "This is correct. Mobile-specific architectures are optimized for the computational and memory constraints of mobile devices.",
+        "This is incorrect. Training stability is not the primary design goal of mobile architectures.",
+        "This is incorrect. Interpretability is not a primary focus of mobile-optimized architectures."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "mobile-architectures",
+        "MobileNet",
+        "hardware-constraints"
+      ]
+    },
+    {
+      "id": "MCO_074",
+      "question": "What is dynamic inference in neural networks?",
+      "options": [
+        "Changing the model architecture during inference",
+        "Adapting computational complexity based on input difficulty or resource constraints",
+        "Using dynamic memory allocation",
+        "Modifying weights during inference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dynamic inference adapts the computational path or complexity during inference based on input characteristics, available resources, or confidence thresholds, enabling efficient processing with variable computational budgets.",
+      "optionExplanations": [
+        "This is incorrect. Dynamic inference doesn't change architecture but adapts the computation path within the existing architecture.",
+        "This is correct. Dynamic inference adjusts computational complexity based on input difficulty or available resources.",
+        "This is incorrect. This describes memory management, not adaptive computation strategies.",
+        "This is incorrect. Dynamic inference adapts computation paths, not the learned weights."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dynamic-inference",
+        "adaptive-computation",
+        "resource-aware"
+      ]
+    },
+    {
+      "id": "MCO_075",
+      "question": "What is the role of entropy in pruning decisions?",
+      "options": [
+        "Measuring randomness in weight distributions",
+        "Calculating information content to identify important weights or features",
+        "Determining storage compression ratios",
+        "Measuring training loss"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Entropy measures the information content of weights, activations, or features, helping identify components that carry more information and should be preserved during pruning, while low-entropy components may be safely removed.",
+      "optionExplanations": [
+        "This is incorrect. While entropy measures randomness, in pruning it's used to assess information content and importance.",
+        "This is correct. Entropy helps quantify information content to make informed pruning decisions about which components to preserve.",
+        "This is incorrect. Entropy in pruning relates to information theory importance, not storage compression metrics.",
+        "This is incorrect. Entropy in pruning context measures information content, not training loss values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "entropy",
+        "information-content",
+        "pruning-criteria"
+      ]
+    },
+    {
+      "id": "MCO_076",
+      "question": "What is model-agnostic compression?",
+      "options": [
+        "Compression that works without knowing the model",
+        "Compression techniques that can be applied to any model architecture",
+        "Compression that ignores model accuracy",
+        "Compression using unknown algorithms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model-agnostic compression refers to techniques that can be applied across different model architectures without requiring architecture-specific modifications, such as general quantization or pruning methods that work on various network types.",
+      "optionExplanations": [
+        "This is incorrect. Model-agnostic compression still requires access to the model; it means the technique works across architectures.",
+        "This is correct. Model-agnostic techniques can be applied to different architectures without architecture-specific customization.",
+        "This is incorrect. Model-agnostic refers to architecture independence, not ignoring accuracy considerations.",
+        "This is incorrect. The algorithms are known; 'agnostic' refers to independence from specific model architectures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-agnostic",
+        "general-techniques",
+        "architecture-independent"
+      ]
+    },
+    {
+      "id": "MCO_077",
+      "question": "What is the primary advantage of structured sparsity over unstructured sparsity?",
+      "options": [
+        "Better accuracy preservation",
+        "Hardware-friendly regular patterns enabling efficient acceleration",
+        "Easier implementation in software",
+        "Lower memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Structured sparsity creates regular patterns (like removing entire channels or blocks) that map efficiently to hardware accelerators, enabling actual speedup benefits compared to unstructured sparsity which creates irregular patterns difficult to accelerate.",
+      "optionExplanations": [
+        "This is incorrect. Accuracy preservation depends on the pruning quality and amount, not necessarily the structure type.",
+        "This is correct. Structured sparsity creates regular computation patterns that can be efficiently accelerated on standard hardware.",
+        "This is incorrect. Software implementation complexity depends on the specific method, not the sparsity structure type.",
+        "This is incorrect. Memory usage depends on the sparsity level and storage format, not necessarily the structure type."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "structured-sparsity",
+        "hardware-acceleration",
+        "regular-patterns"
+      ]
+    },
+    {
+      "id": "MCO_078",
+      "question": "What is knowledge amalgamation?",
+      "options": [
+        "Combining multiple teacher models into a single student model",
+        "Merging student and teacher models",
+        "Combining different compression techniques",
+        "Mixing different datasets for training"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Knowledge amalgamation trains a single student model to capture the collective knowledge of multiple teacher models, each potentially specialized in different tasks or domains, creating a unified model with broader capabilities.",
+      "optionExplanations": [
+        "This is correct. Knowledge amalgamation combines knowledge from multiple teacher models into a single student model.",
+        "This is incorrect. Amalgamation typically involves multiple teachers and one student, not merging student with teacher.",
+        "This is incorrect. This describes combining compression methods, not knowledge amalgamation from multiple teachers.",
+        "This is incorrect. This describes data mixing, not knowledge amalgamation from multiple models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "knowledge-amalgamation",
+        "multi-teacher",
+        "knowledge-transfer"
+      ]
+    },
+    {
+      "id": "MCO_079",
+      "question": "What is the main challenge with INT4 quantization compared to INT8?",
+      "options": [
+        "Larger model size",
+        "More severe accuracy degradation due to extreme precision reduction",
+        "Slower inference speed",
+        "Better hardware support"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "INT4 quantization uses only 4 bits per value compared to INT8's 8 bits, providing more aggressive compression but with significantly more severe accuracy degradation that requires careful implementation and often specialized techniques to maintain acceptable performance.",
+      "optionExplanations": [
+        "This is incorrect. INT4 provides even smaller model sizes than INT8, not larger.",
+        "This is correct. INT4's extreme precision reduction (only 16 possible values) causes more severe accuracy degradation than INT8.",
+        "This is incorrect. INT4 typically provides faster inference due to reduced precision, not slower speed.",
+        "This is incorrect. INT4 generally has less hardware support than INT8, making this a challenge rather than a benefit."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "INT4-quantization",
+        "accuracy-degradation",
+        "extreme-precision"
+      ]
+    },
+    {
+      "id": "MCO_080",
+      "question": "What is the purpose of using skip connections in compressed models?",
+      "options": [
+        "To increase model size",
+        "To preserve information flow and gradient propagation in compressed architectures",
+        "To slow down inference",
+        "To make models more complex"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Skip connections in compressed models help preserve information flow and maintain gradient propagation, which becomes especially important when model capacity is reduced through compression, helping maintain performance despite the reduced parameters.",
+      "optionExplanations": [
+        "This is incorrect. Skip connections don't significantly increase model size and help maintain performance in compressed models.",
+        "This is correct. Skip connections preserve information flow and help maintain performance in capacity-reduced compressed models.",
+        "This is incorrect. Skip connections typically don't significantly impact inference speed and can sometimes improve it.",
+        "This is incorrect. Skip connections help maintain functionality rather than adding unnecessary complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "skip-connections",
+        "information-flow",
+        "compressed-architectures"
+      ]
+    },
+    {
+      "id": "MCO_081",
+      "question": "What is neural architecture distillation?",
+      "options": [
+        "Distilling knowledge about optimal architectures from larger search spaces",
+        "Converting one architecture to another",
+        "Distilling architectural patterns from existing models",
+        "Compressing the architecture description"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Neural architecture distillation involves distilling knowledge about optimal architectures from larger, more complex search spaces or teacher architectures to guide the design of smaller, more efficient student architectures.",
+      "optionExplanations": [
+        "This is correct. Architecture distillation transfers knowledge about optimal architectural choices from complex spaces to simpler designs.",
+        "This is incorrect. This describes architecture transformation, not knowledge distillation about architecture design.",
+        "This is incorrect. While related, architecture distillation specifically involves teacher-student relationships in architecture design.",
+        "This is incorrect. This describes data compression of architecture representations, not knowledge distillation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "architecture-distillation",
+        "architecture-search",
+        "design-knowledge"
+      ]
+    },
+    {
+      "id": "MCO_082",
+      "question": "What is the main benefit of using tensor decomposition for model compression?",
+      "options": [
+        "Improved training speed",
+        "Reducing tensor dimensionality while approximating original functionality",
+        "Better gradient computation",
+        "Enhanced interpretability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Tensor decomposition breaks down high-dimensional tensors (like weight tensors) into products of lower-dimensional tensors, reducing the total number of parameters while approximating the original tensor's functionality through mathematical decomposition techniques.",
+      "optionExplanations": [
+        "This is incorrect. Tensor decomposition is primarily for reducing model size and inference efficiency, not training speed improvement.",
+        "This is correct. Tensor decomposition reduces dimensionality and parameter count while approximating the original tensor operations.",
+        "This is incorrect. While decomposition can affect gradients, the primary benefit is parameter reduction and compression.",
+        "This is incorrect. Interpretability is not the main goal of tensor decomposition; it's focused on compression efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tensor-decomposition",
+        "dimensionality-reduction",
+        "approximation"
+      ]
+    },
+    {
+      "id": "MCO_083",
+      "question": "What is collaborative pruning?",
+      "options": [
+        "Pruning multiple models together",
+        "Pruning where different parts of the model collaborate to determine importance",
+        "Pruning performed by multiple people",
+        "Pruning that considers inter-layer dependencies and global model behavior"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Collaborative pruning considers the dependencies and interactions between different layers and components of the model, making pruning decisions based on global model behavior rather than local layer-wise decisions.",
+      "optionExplanations": [
+        "This is incorrect. While multiple models could be involved, collaborative pruning primarily refers to considering model component interactions.",
+        "This is incorrect. This describes a mechanism within collaborative pruning but doesn't capture the full concept of considering global dependencies.",
+        "This is incorrect. Collaborative refers to model components working together, not multiple human collaborators.",
+        "This is correct. Collaborative pruning considers inter-layer dependencies and global model behavior for better pruning decisions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "collaborative-pruning",
+        "inter-layer-dependencies",
+        "global-optimization"
+      ]
+    },
+    {
+      "id": "MCO_084",
+      "question": "What is the primary challenge in deploying large language models on edge devices?",
+      "options": [
+        "Limited vocabulary support",
+        "Massive memory requirements and computational demands",
+        "Poor text processing capabilities",
+        "Inadequate display resolution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Large language models have billions of parameters requiring significant memory and computational resources that far exceed typical edge device capabilities, making deployment extremely challenging without aggressive compression techniques.",
+      "optionExplanations": [
+        "This is incorrect. Vocabulary support is a software implementation issue, not the primary hardware constraint.",
+        "This is correct. LLMs require enormous memory and computation resources that exceed edge device capabilities.",
+        "This is incorrect. Edge devices can handle text processing; the challenge is the model size and computational requirements.",
+        "This is incorrect. Display resolution is irrelevant to the computational challenges of running large language models."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "large-language-models",
+        "edge-deployment",
+        "resource-constraints"
+      ]
+    },
+    {
+      "id": "MCO_085",
+      "question": "What is magnitude-aware quantization?",
+      "options": [
+        "Quantization that ignores weight magnitudes",
+        "Quantization that adapts precision based on weight magnitude distributions",
+        "Quantization using only large weights",
+        "Quantization with fixed magnitude scaling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Magnitude-aware quantization adapts the quantization precision and parameters based on the distribution and range of weight magnitudes, potentially using different quantization schemes for different magnitude ranges to optimize accuracy preservation.",
+      "optionExplanations": [
+        "This is incorrect. Magnitude-aware quantization specifically considers and adapts to weight magnitudes.",
+        "This is correct. This quantization approach adapts precision and parameters based on weight magnitude characteristics.",
+        "This is incorrect. Magnitude-aware quantization considers the full distribution, not just large weights.",
+        "This is incorrect. The approach adapts scaling based on magnitude distributions rather than using fixed scaling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "magnitude-aware",
+        "adaptive-quantization",
+        "weight-distributions"
+      ]
+    },
+    {
+      "id": "MCO_086",
+      "question": "What is the role of activation functions in quantized neural networks?",
+      "options": [
+        "They are removed in quantized networks",
+        "They must be carefully chosen to work well with quantized operations",
+        "They are converted to linear functions",
+        "They only work with floating-point operations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Activation functions in quantized networks must be chosen and implemented carefully to work effectively with integer arithmetic and quantized value ranges, often requiring specialized quantized implementations or approximations.",
+      "optionExplanations": [
+        "This is incorrect. Activation functions are still needed in quantized networks for non-linearity.",
+        "This is correct. Activation functions must be adapted to work efficiently and accurately with quantized operations.",
+        "This is incorrect. Linear functions would eliminate the non-linearity that activation functions provide.",
+        "This is incorrect. Activation functions can be implemented with quantized operations using appropriate techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "activation-functions",
+        "quantized-operations",
+        "integer-arithmetic"
+      ]
+    },
+    {
+      "id": "MCO_087",
+      "question": "What is neural network quantization calibration?",
+      "options": [
+        "Training the network with quantized weights",
+        "Determining optimal quantization parameters using representative data",
+        "Converting floating-point to integer operations",
+        "Adjusting network architecture for quantization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Quantization calibration uses representative data to analyze activation and weight distributions, determining optimal scale factors and zero points for quantization that minimize accuracy loss while maximizing compression benefits.",
+      "optionExplanations": [
+        "This is incorrect. This describes quantization-aware training, not calibration of quantization parameters.",
+        "This is correct. Calibration determines optimal quantization parameters by analyzing data distributions.",
+        "This is incorrect. This describes the quantization process itself, not the calibration of parameters.",
+        "This is incorrect. This describes architectural modifications, not parameter calibration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "quantization-calibration",
+        "parameter-optimization",
+        "data-analysis"
+      ]
+    },
+    {
+      "id": "MCO_088",
+      "question": "What is the main advantage of using specialized AI chips for edge inference?",
+      "options": [
+        "Lower cost than general-purpose processors",
+        "Optimized performance per watt for AI workloads",
+        "Better compatibility with all software",
+        "Easier programming interfaces"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Specialized AI chips are designed specifically for neural network operations, offering much better performance per watt compared to general-purpose processors, which is crucial for battery-powered edge devices with strict power budgets.",
+      "optionExplanations": [
+        "This is incorrect. AI chips can be more expensive than general-purpose processors, though they offer better efficiency.",
+        "This is correct. AI chips provide optimized performance per watt specifically for neural network computations.",
+        "This is incorrect. Specialized chips often have more limited software compatibility compared to general-purpose processors.",
+        "This is incorrect. AI chips often require specialized programming knowledge and tools."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AI-chips",
+        "performance-per-watt",
+        "specialized-hardware"
+      ]
+    },
+    {
+      "id": "MCO_089",
+      "question": "What is progressive quantization?",
+      "options": [
+        "Quantizing different layers progressively during training",
+        "Gradually reducing bit precision over multiple stages",
+        "Quantizing activations before weights",
+        "Using different quantization methods sequentially"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Progressive quantization gradually reduces bit precision over multiple stages or training phases, allowing the model to adapt to increasingly aggressive quantization levels while maintaining better accuracy than direct extreme quantization.",
+      "optionExplanations": [
+        "This is incorrect. While layer-wise quantization exists, progressive quantization specifically refers to gradually reducing precision over time.",
+        "This is correct. Progressive quantization gradually reduces precision over stages, allowing model adaptation to increasing quantization levels.",
+        "This is incorrect. This describes a specific order of quantization application, not progressive precision reduction.",
+        "This is incorrect. This describes using different methods sequentially, not progressively reducing precision."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "progressive-quantization",
+        "gradual-precision",
+        "staged-compression"
+      ]
+    },
+    {
+      "id": "MCO_090",
+      "question": "What is the primary benefit of using block-sparse patterns in neural networks?",
+      "options": [
+        "Better accuracy than dense networks",
+        "Balancing compression benefits with hardware acceleration potential",
+        "Easier implementation than other sparsity patterns",
+        "Lower memory bandwidth requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Block-sparse patterns group zeros into regular blocks, providing a compromise between the compression benefits of sparsity and the hardware acceleration potential of structured patterns, making them more practical for real-world deployment.",
+      "optionExplanations": [
+        "This is incorrect. Block-sparse patterns are about efficiency, not improving accuracy over dense networks.",
+        "This is correct. Block sparsity balances compression benefits with practical hardware acceleration capabilities.",
+        "This is incorrect. Block-sparse implementation can be more complex than simple dense operations.",
+        "This is incorrect. While memory bandwidth can be reduced, the primary benefit is the balance of compression and hardware efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "block-sparsity",
+        "hardware-acceleration",
+        "structured-patterns"
+      ]
+    },
+    {
+      "id": "MCO_091",
+      "question": "What is attention distillation in transformer models?",
+      "options": [
+        "Compressing attention mechanisms",
+        "Transferring attention patterns from teacher to student transformers",
+        "Removing attention heads",
+        "Converting attention to convolutions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention distillation transfers the learned attention patterns and relationships from a large teacher transformer to a smaller student transformer, helping the student learn similar attention behaviors for better performance.",
+      "optionExplanations": [
+        "This is incorrect. While compression can be involved, attention distillation specifically refers to transferring attention patterns.",
+        "This is correct. Attention distillation transfers attention patterns from teacher to student transformers.",
+        "This is incorrect. This describes attention pruning, not attention distillation.",
+        "This is incorrect. This describes architectural transformation, not knowledge distillation of attention patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-distillation",
+        "transformers",
+        "pattern-transfer"
+      ]
+    },
+    {
+      "id": "MCO_092",
+      "question": "What is the main challenge with dynamic quantization during inference?",
+      "options": [
+        "Higher memory usage",
+        "Computational overhead of calculating quantization parameters at runtime",
+        "Incompatibility with GPUs",
+        "Poor accuracy compared to static quantization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dynamic quantization calculates activation quantization parameters during inference based on actual data ranges, which introduces computational overhead compared to static quantization where parameters are pre-computed.",
+      "optionExplanations": [
+        "This is incorrect. Dynamic quantization doesn't necessarily use more memory than static quantization.",
+        "This is correct. Dynamic quantization has runtime overhead for computing activation quantization parameters on-the-fly.",
+        "This is incorrect. Dynamic quantization can be implemented on GPUs, though efficiency may vary.",
+        "This is incorrect. Dynamic quantization can achieve competitive accuracy; the main challenge is computational overhead."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dynamic-quantization",
+        "runtime-overhead",
+        "parameter-calculation"
+      ]
+    },
+    {
+      "id": "MCO_093",
+      "question": "What is model soup in the context of model optimization?",
+      "options": [
+        "Mixing different model architectures",
+        "Averaging weights from multiple fine-tuned versions of the same model",
+        "Combining multiple compression techniques",
+        "Using ensemble methods for inference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model soup refers to averaging the weights of multiple fine-tuned versions of the same model (trained with different hyperparameters, data ordering, or random seeds) to create a single model that often performs better than individual models.",
+      "optionExplanations": [
+        "This is incorrect. Model soup uses the same base architecture, not mixing different architectures.",
+        "This is correct. Model soup averages weights from multiple fine-tuned versions of the same base model.",
+        "This is incorrect. This describes combining compression methods, not the model soup technique.",
+        "This is incorrect. Model soup creates a single averaged model, not an ensemble of separate models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-soup",
+        "weight-averaging",
+        "fine-tuning"
+      ]
+    },
+    {
+      "id": "MCO_094",
+      "question": "What is the primary consideration when choosing between pruning and quantization?",
+      "options": [
+        "Pruning is always better than quantization",
+        "The trade-offs between structural changes vs precision reduction based on model and hardware constraints",
+        "Quantization is always more effective",
+        "They cannot be used together"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The choice between pruning and quantization depends on various factors including model architecture sensitivity, target hardware capabilities, accuracy requirements, and deployment constraints, with each technique offering different trade-offs.",
+      "optionExplanations": [
+        "This is incorrect. Neither technique is universally better; effectiveness depends on specific circumstances and constraints.",
+        "This is correct. The choice depends on analyzing trade-offs between different compression approaches based on specific requirements.",
+        "This is incorrect. Quantization is not always more effective; it depends on the specific use case and constraints.",
+        "This is incorrect. Pruning and quantization can be effectively combined for additional compression benefits."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "compression-selection",
+        "trade-offs",
+        "deployment-constraints"
+      ]
+    },
+    {
+      "id": "MCO_095",
+      "question": "What is neural network binarization?",
+      "options": [
+        "Converting networks to binary classification",
+        "Using only binary operations in networks",
+        "Constraining weights and activations to +1 and -1 values",
+        "Converting networks to binary file formats"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Neural network binarization constrains weights and/or activations to binary values (typically +1 and -1), representing an extreme form of quantization that enables very efficient inference through simple sign operations and bit manipulations.",
+      "optionExplanations": [
+        "This is incorrect. Binarization refers to parameter precision, not the type of classification problem.",
+        "This is incorrect. While binary networks use simpler operations, binarization specifically refers to parameter values.",
+        "This is correct. Binarization constrains network parameters to binary values like +1 and -1 for extreme efficiency.",
+        "This is incorrect. This describes file format conversion, not parameter binarization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binarization",
+        "extreme-quantization",
+        "binary-values"
+      ]
+    },
+    {
+      "id": "MCO_096",
+      "question": "What is the main advantage of using gradient checkpointing with model compression?",
+      "options": [
+        "Faster inference speed",
+        "Reduced memory usage during training of compressed models",
+        "Better compression ratios",
+        "Improved model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient checkpointing reduces memory usage during training by storing only selected intermediate activations and recomputing others during backpropagation, which is particularly valuable when training compressed models that still require significant memory.",
+      "optionExplanations": [
+        "This is incorrect. Gradient checkpointing affects training memory usage, not inference speed.",
+        "This is correct. Gradient checkpointing reduces memory requirements during training by strategically recomputing activations.",
+        "This is incorrect. Gradient checkpointing is about memory management, not improving compression ratios.",
+        "This is incorrect. While it enables training larger models in limited memory, it doesn't directly improve accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-checkpointing",
+        "memory-optimization",
+        "training-efficiency"
+      ]
+    },
+    {
+      "id": "MCO_097",
+      "question": "What is cross-layer equalization in quantization?",
+      "options": [
+        "Making all layers the same size",
+        "Balancing activation ranges across adjacent layers to improve quantization",
+        "Using the same quantization parameters for all layers",
+        "Equalizing the number of parameters across layers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-layer equalization redistributes the dynamic ranges of activations across adjacent layers to create more balanced ranges that are easier to quantize effectively, improving overall quantization quality.",
+      "optionExplanations": [
+        "This is incorrect. Cross-layer equalization deals with activation ranges, not layer sizes.",
+        "This is correct. Cross-layer equalization balances activation ranges across layers for better quantization effectiveness.",
+        "This is incorrect. Using the same parameters for all layers would be uniform quantization, not cross-layer equalization.",
+        "This is incorrect. This describes architectural changes, not the range balancing performed in cross-layer equalization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cross-layer-equalization",
+        "activation-ranges",
+        "quantization-quality"
+      ]
+    },
+    {
+      "id": "MCO_098",
+      "question": "What is the primary benefit of using mixed-precision inference?",
+      "options": [
+        "Reduced model accuracy",
+        "Balancing performance and accuracy by using different precisions for different operations",
+        "Increased memory usage",
+        "Slower inference speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mixed-precision inference uses different numerical precisions for different operations or layers, allowing performance-critical parts to use lower precision for speed while accuracy-critical parts maintain higher precision.",
+      "optionExplanations": [
+        "This is incorrect. Reduced accuracy would be a disadvantage, not a benefit of mixed-precision inference.",
+        "This is correct. Mixed-precision optimally balances performance and accuracy by using appropriate precision levels for different operations.",
+        "This is incorrect. Mixed-precision typically reduces memory usage compared to full-precision inference.",
+        "This is incorrect. Mixed-precision generally improves inference speed compared to full-precision inference."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mixed-precision",
+        "performance-accuracy-balance",
+        "precision-optimization"
+      ]
+    },
+    {
+      "id": "MCO_099",
+      "question": "What is continual compression in the context of model optimization?",
+      "options": [
+        "Compressing models continuously during deployment",
+        "Iteratively applying compression techniques while maintaining or improving performance",
+        "Compressing data inputs continuously",
+        "Non-stop model training with compression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Continual compression involves iteratively applying compression techniques over multiple rounds, often with retraining or fine-tuning between rounds, to achieve higher compression ratios while maintaining acceptable performance levels.",
+      "optionExplanations": [
+        "This is incorrect. Continual compression typically occurs during development/optimization, not continuously during deployment.",
+        "This is correct. Continual compression iteratively applies compression techniques with intermediate optimization steps.",
+        "This is incorrect. This describes data compression, not model compression techniques.",
+        "This is incorrect. While training may be involved, continual compression focuses on iterative compression application."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "continual-compression",
+        "iterative-optimization",
+        "multi-round-compression"
+      ]
+    },
+    {
+      "id": "MCO_100",
+      "question": "What is the ultimate goal of model compression and optimization techniques?",
+      "options": [
+        "Making models as small as possible regardless of performance",
+        "Achieving optimal trade-offs between model size, speed, accuracy, and deployment constraints",
+        "Converting all models to the same format",
+        "Eliminating the need for specialized hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The ultimate goal of model compression and optimization is to find optimal trade-offs between competing objectives: model size, inference speed, accuracy preservation, and practical deployment constraints, enabling efficient deployment while meeting application requirements.",
+      "optionExplanations": [
+        "This is incorrect. Compression without considering performance would render models useless for practical applications.",
+        "This is correct. Model optimization seeks optimal balance between size, speed, accuracy, and deployment requirements.",
+        "This is incorrect. Format standardization is a separate concern from compression optimization goals.",
+        "This is incorrect. Specialized hardware often enables better optimization; the goal is efficient deployment, not hardware elimination."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "optimization-goals",
+        "trade-offs",
+        "deployment-efficiency"
+      ]
+    }
+  ]
+}

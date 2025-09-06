@@ -1,0 +1,2416 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_KNN",
+  "subtopicName": "K-Nearest Neighbors",
+  "str": 0.300,
+  "description": "K-Nearest Neighbors (KNN) is a simple, non-parametric machine learning algorithm used for both classification and regression tasks. It makes predictions based on the K nearest data points in the feature space.",
+  "questions": [
+    {
+      "id": "KNN_001",
+      "question": "What does the 'K' in K-Nearest Neighbors represent?",
+      "options": [
+        "The number of nearest neighbors to consider",
+        "The number of features in the dataset",
+        "The number of classes in the target variable",
+        "The number of training samples"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The 'K' in K-Nearest Neighbors represents the number of nearest neighbors to consider when making a prediction. This is a hyperparameter that needs to be chosen carefully.",
+      "optionExplanations": [
+        "Correct. K represents the number of nearest neighbors that the algorithm considers when making predictions for a new data point.",
+        "Incorrect. The number of features is typically denoted as 'd' or 'p' in machine learning, not K in the context of KNN.",
+        "Incorrect. The number of classes is usually denoted as 'C' or the size of the label set, not K in KNN.",
+        "Incorrect. The number of training samples is typically denoted as 'n' or 'm', not K in the context of KNN."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "basics",
+        "hyperparameter",
+        "definition"
+      ]
+    },
+    {
+      "id": "KNN_002",
+      "question": "KNN is classified as which type of machine learning algorithm?",
+      "options": [
+        "Parametric and eager learning",
+        "Non-parametric and lazy learning",
+        "Parametric and lazy learning",
+        "Non-parametric and eager learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN is non-parametric because it doesn't make assumptions about the underlying data distribution, and it's lazy because it defers computation until prediction time.",
+      "optionExplanations": [
+        "Incorrect. KNN is non-parametric (doesn't assume data distribution) and lazy (doesn't build a model during training).",
+        "Correct. KNN is non-parametric as it makes no assumptions about data distribution, and lazy as it stores training data and computes during prediction.",
+        "Incorrect. While KNN is lazy, it's non-parametric, not parametric.",
+        "Incorrect. KNN is lazy learning, not eager learning, as it doesn't build a model during training phase."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "algorithm-type",
+        "lazy-learning",
+        "non-parametric"
+      ]
+    },
+    {
+      "id": "KNN_003",
+      "question": "Which distance metric is most commonly used in KNN?",
+      "options": [
+        "Manhattan distance",
+        "Euclidean distance",
+        "Cosine distance",
+        "Hamming distance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Euclidean distance is the most commonly used distance metric in KNN as it represents the straight-line distance between two points in space.",
+      "optionExplanations": [
+        "Incorrect. While Manhattan distance is used in KNN, Euclidean distance is more commonly used as the default metric.",
+        "Correct. Euclidean distance is the most common distance metric used in KNN, representing the straight-line distance between points.",
+        "Incorrect. Cosine distance is used for specific applications like text analysis, but Euclidean distance is more common overall.",
+        "Incorrect. Hamming distance is used for categorical data, but Euclidean distance is the most common for continuous data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "distance-metrics",
+        "euclidean",
+        "basics"
+      ]
+    },
+    {
+      "id": "KNN_004",
+      "question": "What happens when K=1 in KNN?",
+      "options": [
+        "The algorithm becomes very stable and less prone to noise",
+        "The algorithm becomes highly sensitive to noise and outliers",
+        "The algorithm cannot make any predictions",
+        "The algorithm automatically selects the best K value"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When K=1, KNN only considers the single nearest neighbor, making it highly sensitive to noise and outliers in the training data.",
+      "optionExplanations": [
+        "Incorrect. K=1 actually makes the algorithm very unstable and highly sensitive to noise, as it relies on just one neighbor.",
+        "Correct. With K=1, the algorithm only looks at the closest point, making it very sensitive to noise and outliers in the data.",
+        "Incorrect. The algorithm can still make predictions with K=1; it just uses the single nearest neighbor.",
+        "Incorrect. K=1 is a fixed value; the algorithm doesn't automatically select different K values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "k-selection",
+        "noise-sensitivity",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "KNN_005",
+      "question": "In KNN classification, how is the final prediction made?",
+      "options": [
+        "By averaging the values of K nearest neighbors",
+        "By taking the majority vote among K nearest neighbors",
+        "By selecting the nearest neighbor's class",
+        "By using weighted average based on inverse distance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In KNN classification, the final prediction is made by majority voting among the K nearest neighbors' class labels.",
+      "optionExplanations": [
+        "Incorrect. Averaging values is used in KNN regression, not classification. Classification uses majority voting.",
+        "Correct. In KNN classification, the algorithm takes a majority vote among the K nearest neighbors to determine the class label.",
+        "Incorrect. This would be the case only when K=1. For K>1, majority voting is used among all K neighbors.",
+        "Incorrect. While weighted voting is possible, the standard KNN classification uses simple majority voting, not weighted averaging."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "classification",
+        "voting",
+        "prediction"
+      ]
+    },
+    {
+      "id": "KNN_006",
+      "question": "What is the main disadvantage of using a very large K value?",
+      "options": [
+        "Increased computational complexity",
+        "Higher sensitivity to noise",
+        "Over-smoothing and loss of local patterns",
+        "Inability to handle categorical features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A very large K value can lead to over-smoothing where local patterns are lost and the decision boundary becomes too simple.",
+      "optionExplanations": [
+        "Incorrect. While larger K increases computation slightly, the main issue is over-smoothing, not computational complexity.",
+        "Incorrect. Larger K values actually reduce sensitivity to noise by considering more neighbors, but can over-smooth.",
+        "Correct. Very large K values can cause over-smoothing, where local patterns are lost and the model becomes too simple (underfitting).",
+        "Incorrect. K value doesn't affect the algorithm's ability to handle categorical features; this depends on the distance metric used."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "k-selection",
+        "underfitting",
+        "smoothing"
+      ]
+    },
+    {
+      "id": "KNN_007",
+      "question": "Which of the following best describes the curse of dimensionality in KNN?",
+      "options": [
+        "KNN cannot work with more than 3 dimensions",
+        "Distance becomes less meaningful in high-dimensional spaces",
+        "KNN requires exponentially more memory in high dimensions",
+        "High dimensions always improve KNN performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The curse of dimensionality in KNN refers to the phenomenon where distances become less meaningful as dimensionality increases, making nearest neighbors less informative.",
+      "optionExplanations": [
+        "Incorrect. KNN can work with any number of dimensions; the issue is that performance degrades with very high dimensions.",
+        "Correct. In high-dimensional spaces, all points tend to be equidistant, making the concept of 'nearest' neighbors less meaningful.",
+        "Incorrect. While memory usage increases with dimensions, the main issue is the degradation of distance-based similarity measures.",
+        "Incorrect. High dimensions generally hurt KNN performance due to the curse of dimensionality, not improve it."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensions",
+        "distance"
+      ]
+    },
+    {
+      "id": "KNN_008",
+      "question": "In weighted KNN, how are the contributions of neighbors typically weighted?",
+      "options": [
+        "All neighbors have equal weight",
+        "Weights are inversely proportional to distance",
+        "Weights are directly proportional to distance",
+        "Weights are assigned randomly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In weighted KNN, closer neighbors are given higher weights, typically using inverse distance weighting so nearer points have more influence.",
+      "optionExplanations": [
+        "Incorrect. This describes standard KNN, not weighted KNN. In weighted KNN, neighbors have different weights based on distance.",
+        "Correct. Weighted KNN typically uses inverse distance weighting, where closer neighbors have higher weights (1/distance or similar).",
+        "Incorrect. This would give more weight to farther neighbors, which is counterintuitive and not commonly used.",
+        "Incorrect. Weights in weighted KNN are systematically assigned based on distance, not randomly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weighted-knn",
+        "distance-weighting",
+        "neighbors"
+      ]
+    },
+    {
+      "id": "KNN_009",
+      "question": "Which preprocessing step is most important for KNN?",
+      "options": [
+        "One-hot encoding categorical variables",
+        "Feature scaling/normalization",
+        "Principal Component Analysis (PCA)",
+        "Removing duplicate records"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling is crucial for KNN because the algorithm relies on distance calculations, and features with different scales can dominate the distance metric.",
+      "optionExplanations": [
+        "Incorrect. While encoding categorical variables is important, feature scaling is more critical for KNN's distance-based calculations.",
+        "Correct. Feature scaling is essential because KNN uses distance calculations, and features with larger scales will dominate without normalization.",
+        "Incorrect. While PCA can help with dimensionality, feature scaling is more fundamental and commonly needed for KNN.",
+        "Incorrect. Removing duplicates is good practice but not as critical as feature scaling for KNN's performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "feature-scaling",
+        "normalization"
+      ]
+    },
+    {
+      "id": "KNN_010",
+      "question": "What is the time complexity of KNN prediction for one query point?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n²)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN prediction requires computing distances to all training points and finding K nearest neighbors, resulting in O(n) time complexity where n is the number of training samples.",
+      "optionExplanations": [
+        "Incorrect. O(1) would mean constant time regardless of training set size, which is not possible for KNN without preprocessing.",
+        "Incorrect. O(log n) complexity would require a tree-based structure, but basic KNN computes all distances, resulting in O(n).",
+        "Correct. KNN needs to compute distance to all n training points and then find K smallest, resulting in O(n) complexity.",
+        "Incorrect. O(n²) would be the complexity if we computed distances between all pairs of points, not for single query prediction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "time-complexity",
+        "computational-complexity",
+        "performance"
+      ]
+    },
+    {
+      "id": "KNN_011",
+      "question": "Manhattan distance is calculated as:",
+      "options": [
+        "√(∑|xi - yi|²)",
+        "∑|xi - yi|",
+        "∑(xi - yi)²",
+        "max|xi - yi|"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Manhattan distance is the sum of absolute differences between coordinates, also known as L1 distance or taxicab distance.",
+      "optionExplanations": [
+        "Incorrect. This formula represents Euclidean distance (L2 norm), not Manhattan distance.",
+        "Correct. Manhattan distance is the sum of absolute differences between corresponding coordinates (L1 norm).",
+        "Incorrect. This is the sum of squared differences, which is part of Euclidean distance calculation without the square root.",
+        "Incorrect. This represents Chebyshev distance (L∞ norm), which is the maximum absolute difference."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distance-metrics",
+        "manhattan",
+        "L1-norm"
+      ]
+    },
+    {
+      "id": "KNN_012",
+      "question": "In KNN regression, the predicted value is typically:",
+      "options": [
+        "The mode of K nearest neighbors",
+        "The median of K nearest neighbors",
+        "The mean of K nearest neighbors",
+        "The maximum value among K nearest neighbors"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In KNN regression, the predicted value is usually the mean (average) of the target values of the K nearest neighbors.",
+      "optionExplanations": [
+        "Incorrect. Mode is used for categorical data in classification, not for continuous values in regression.",
+        "Incorrect. While median could be used, the mean is the most common approach in KNN regression.",
+        "Correct. KNN regression typically predicts the mean (average) of the target values of the K nearest neighbors.",
+        "Incorrect. Using the maximum value would not provide a good central tendency estimate for regression."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "regression",
+        "prediction",
+        "averaging"
+      ]
+    },
+    {
+      "id": "KNN_013",
+      "question": "What happens to KNN's decision boundary as K increases?",
+      "options": [
+        "It becomes more complex and jagged",
+        "It becomes smoother and less complex",
+        "It remains unchanged",
+        "It becomes completely random"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As K increases, more neighbors are considered for each decision, leading to smoother, less complex decision boundaries.",
+      "optionExplanations": [
+        "Incorrect. Larger K values actually smooth out the decision boundary by considering more neighbors.",
+        "Correct. Increasing K leads to smoother decision boundaries as more neighbors are averaged, reducing the impact of individual outliers.",
+        "Incorrect. The decision boundary definitely changes as K changes, becoming smoother with larger K values.",
+        "Incorrect. The decision boundary follows a systematic pattern based on the data and K value, not random."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decision-boundary",
+        "k-selection",
+        "smoothness"
+      ]
+    },
+    {
+      "id": "KNN_014",
+      "question": "Which distance metric is most suitable for binary/categorical features?",
+      "options": [
+        "Euclidean distance",
+        "Manhattan distance",
+        "Hamming distance",
+        "Minkowski distance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hamming distance is specifically designed for binary or categorical data, measuring the number of positions where symbols differ.",
+      "optionExplanations": [
+        "Incorrect. Euclidean distance is designed for continuous numerical data, not categorical features.",
+        "Incorrect. Manhattan distance works with numerical data; while it can work with binary data, Hamming distance is more appropriate.",
+        "Correct. Hamming distance is specifically designed for categorical/binary data, counting the number of differing positions.",
+        "Incorrect. Minkowski distance is a generalization for numerical data, not specifically for categorical features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distance-metrics",
+        "hamming",
+        "categorical-data"
+      ]
+    },
+    {
+      "id": "KNN_015",
+      "question": "Cross-validation is commonly used in KNN to:",
+      "options": [
+        "Reduce the training time",
+        "Select the optimal value of K",
+        "Increase the number of features",
+        "Handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation is used to find the optimal K value by testing different K values and selecting the one that gives the best validation performance.",
+      "optionExplanations": [
+        "Incorrect. Cross-validation actually increases computation time as it involves multiple training/testing cycles.",
+        "Correct. Cross-validation helps select the optimal K value by evaluating model performance across different K values.",
+        "Incorrect. Cross-validation doesn't change the number of features; that would be feature selection or dimensionality reduction.",
+        "Incorrect. Cross-validation is for model evaluation and hyperparameter tuning, not for handling missing values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "k-selection",
+        "hyperparameter-tuning"
+      ]
+    },
+    {
+      "id": "KNN_016",
+      "question": "What is a major limitation of KNN in high-dimensional spaces?",
+      "options": [
+        "It becomes too fast to be useful",
+        "All points become equidistant",
+        "It can only work with 2D data",
+        "Memory usage decreases significantly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In high-dimensional spaces, the curse of dimensionality causes all points to become approximately equidistant, making nearest neighbors less meaningful.",
+      "optionExplanations": [
+        "Incorrect. Speed is not the issue; in fact, KNN becomes slower with more dimensions due to distance calculations.",
+        "Correct. The curse of dimensionality causes all points to have similar distances, making the concept of 'nearest' neighbors meaningless.",
+        "Incorrect. KNN can work with any number of dimensions; the problem is performance degradation, not inability to function.",
+        "Incorrect. Memory usage actually increases with dimensions as more data needs to be stored."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensions",
+        "limitations"
+      ]
+    },
+    {
+      "id": "KNN_017",
+      "question": "In distance-weighted KNN, what weight is typically assigned to the nearest neighbor?",
+      "options": [
+        "0 (lowest weight)",
+        "1 (moderate weight)",
+        "Highest weight",
+        "Negative weight"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In distance-weighted KNN, the nearest neighbor receives the highest weight since it's closest to the query point and should have the most influence.",
+      "optionExplanations": [
+        "Incorrect. The nearest neighbor should have the highest influence, not the lowest weight.",
+        "Incorrect. While the weight might numerically be 1 in some schemes, it's the highest relative weight that matters.",
+        "Correct. The nearest neighbor gets the highest weight in distance-weighted KNN as it's most similar to the query point.",
+        "Incorrect. Negative weights would indicate inverse correlation, which doesn't make sense for nearest neighbors."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "weighted-knn",
+        "distance-weighting",
+        "nearest-neighbor"
+      ]
+    },
+    {
+      "id": "KNN_018",
+      "question": "Which of the following is NOT a hyperparameter of KNN?",
+      "options": [
+        "K (number of neighbors)",
+        "Distance metric",
+        "Weight function",
+        "Learning rate"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Learning rate is a hyperparameter for gradient-based algorithms like neural networks, not for KNN which doesn't involve iterative learning.",
+      "optionExplanations": [
+        "Incorrect. K is the primary hyperparameter of KNN, determining how many neighbors to consider.",
+        "Incorrect. Distance metric (Euclidean, Manhattan, etc.) is indeed a hyperparameter that needs to be chosen.",
+        "Incorrect. Weight function (uniform, distance-based, etc.) is a hyperparameter in KNN implementations.",
+        "Correct. Learning rate is used in gradient-based optimization algorithms, not in KNN which doesn't have iterative learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "learning-rate",
+        "algorithm-components"
+      ]
+    },
+    {
+      "id": "KNN_019",
+      "question": "What is the effect of noise on KNN with small K values?",
+      "options": [
+        "Noise has no effect on KNN",
+        "Small K makes KNN more robust to noise",
+        "Small K makes KNN more sensitive to noise",
+        "Noise only affects KNN with large K values"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Small K values make KNN more sensitive to noise because predictions are based on very few neighbors, so noisy points can significantly impact results.",
+      "optionExplanations": [
+        "Incorrect. Noise definitely affects KNN performance, especially with small K values.",
+        "Incorrect. Small K values actually make KNN less robust to noise, not more robust.",
+        "Correct. With small K, each neighbor has high influence, so noisy data points can significantly affect predictions.",
+        "Incorrect. Noise affects KNN with both small and large K values, but the impact is different."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise-sensitivity",
+        "k-selection",
+        "robustness"
+      ]
+    },
+    {
+      "id": "KNN_020",
+      "question": "In which scenario would KNN perform poorly?",
+      "options": [
+        "When data has clear local patterns",
+        "When features are properly scaled",
+        "When data is uniformly distributed in space",
+        "When K is optimally chosen"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN performs poorly when data is uniformly distributed because there are no meaningful local patterns for the nearest neighbors to capture.",
+      "optionExplanations": [
+        "Incorrect. Clear local patterns are exactly what KNN excels at capturing through nearby similar points.",
+        "Incorrect. Proper feature scaling improves KNN performance by ensuring fair distance calculations.",
+        "Correct. Uniform distribution means no local structure exists, making nearest neighbors random and uninformative.",
+        "Incorrect. Optimal K selection improves KNN performance rather than hurting it."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "performance",
+        "data-distribution",
+        "limitations"
+      ]
+    },
+    {
+      "id": "KNN_021",
+      "question": "What is the Minkowski distance with p=1 equivalent to?",
+      "options": [
+        "Euclidean distance",
+        "Manhattan distance",
+        "Chebyshev distance",
+        "Cosine distance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Minkowski distance with p=1 is mathematically equivalent to Manhattan distance (L1 norm).",
+      "optionExplanations": [
+        "Incorrect. Euclidean distance corresponds to Minkowski distance with p=2, not p=1.",
+        "Correct. Minkowski distance with p=1 gives the Manhattan distance formula: sum of absolute differences.",
+        "Incorrect. Chebyshev distance corresponds to Minkowski distance as p approaches infinity (L∞ norm).",
+        "Incorrect. Cosine distance is not related to Minkowski distance; it measures angular similarity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distance-metrics",
+        "minkowski",
+        "manhattan"
+      ]
+    },
+    {
+      "id": "KNN_022",
+      "question": "How does KNN handle multi-class classification?",
+      "options": [
+        "It can only handle binary classification",
+        "It requires one-vs-rest approach",
+        "It naturally handles multi-class through majority voting",
+        "It needs separate models for each class"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN naturally handles multi-class classification by taking the majority vote among the K nearest neighbors' class labels, regardless of the number of classes.",
+      "optionExplanations": [
+        "Incorrect. KNN can handle any number of classes, not just binary classification.",
+        "Incorrect. KNN doesn't need one-vs-rest; it naturally handles multiple classes simultaneously.",
+        "Correct. KNN handles multi-class classification naturally by majority voting among K neighbors across all classes.",
+        "Incorrect. KNN uses a single model that works across all classes through majority voting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multi-class",
+        "classification",
+        "majority-voting"
+      ]
+    },
+    {
+      "id": "KNN_023",
+      "question": "What is the space complexity of storing a KNN model?",
+      "options": [
+        "O(1)",
+        "O(K)",
+        "O(n)",
+        "O(n²)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN is a lazy learning algorithm that stores the entire training dataset, so space complexity is O(n) where n is the number of training samples.",
+      "optionExplanations": [
+        "Incorrect. KNN stores all training data, so space complexity cannot be constant.",
+        "Incorrect. K is the number of neighbors considered for prediction, not related to storage space of training data.",
+        "Correct. KNN stores all n training samples, resulting in O(n) space complexity.",
+        "Incorrect. O(n²) would be needed if storing distances between all pairs, but KNN only stores training data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "space-complexity",
+        "memory",
+        "lazy-learning"
+      ]
+    },
+    {
+      "id": "KNN_024",
+      "question": "Which statement about KNN's training phase is correct?",
+      "options": [
+        "KNN builds a complex model during training",
+        "KNN performs gradient descent during training",
+        "KNN simply stores the training data",
+        "KNN computes decision boundaries during training"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN is a lazy learning algorithm that simply stores the training data during the training phase and defers all computation to prediction time.",
+      "optionExplanations": [
+        "Incorrect. KNN doesn't build a model during training; it's a lazy learning algorithm.",
+        "Incorrect. KNN doesn't use gradient descent or any optimization algorithm during training.",
+        "Correct. KNN's training phase consists only of storing the training dataset in memory.",
+        "Incorrect. Decision boundaries are implicitly determined at prediction time, not computed during training."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "training-phase",
+        "lazy-learning",
+        "model-building"
+      ]
+    },
+    {
+      "id": "KNN_025",
+      "question": "What is the main advantage of using odd K values in KNN classification?",
+      "options": [
+        "Faster computation",
+        "Better accuracy",
+        "Avoids ties in voting",
+        "Reduces memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Using odd K values in binary classification helps avoid ties in majority voting, ensuring a clear decision can always be made.",
+      "optionExplanations": [
+        "Incorrect. The computational complexity is the same regardless of whether K is odd or even.",
+        "Incorrect. Whether K is odd or even doesn't inherently affect accuracy; the optimal K depends on the data.",
+        "Correct. Odd K values prevent ties in binary classification majority voting, ensuring a clear decision.",
+        "Incorrect. Memory usage depends on the training set size, not whether K is odd or even."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "k-selection",
+        "ties",
+        "voting",
+        "odd-k"
+      ]
+    },
+    {
+      "id": "KNN_026",
+      "question": "In KNN, what does 'local' in 'local method' refer to?",
+      "options": [
+        "The algorithm only works on local computers",
+        "Decisions are based on nearby points in feature space",
+        "The algorithm processes data one locality at a time",
+        "Training data must be from the same geographic location"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN is called a local method because predictions are based on the local neighborhood around the query point in the feature space.",
+      "optionExplanations": [
+        "Incorrect. 'Local' doesn't refer to computer location; it's about the algorithm's decision-making process.",
+        "Correct. KNN is local because it makes decisions based on points that are nearby in the feature space.",
+        "Incorrect. KNN doesn't process data by geographic or administrative localities.",
+        "Incorrect. Geographic location is irrelevant; 'local' refers to proximity in feature space, not physical space."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "local-method",
+        "feature-space",
+        "neighborhood"
+      ]
+    },
+    {
+      "id": "KNN_027",
+      "question": "How does increasing the number of training samples typically affect KNN performance?",
+      "options": [
+        "Always decreases performance",
+        "Has no effect on performance",
+        "Generally improves performance up to a point",
+        "Only affects computational time, not accuracy"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "More training samples generally improve KNN performance by providing better coverage of the feature space, though returns diminish and computational cost increases.",
+      "optionExplanations": [
+        "Incorrect. More training data typically improves KNN performance by providing better representation of the data distribution.",
+        "Incorrect. The amount of training data significantly affects KNN performance and decision boundaries.",
+        "Correct. More training samples improve performance by better covering the feature space, though with diminishing returns.",
+        "Incorrect. More training data affects both accuracy (generally improving it) and computational time (increasing it)."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "training-data",
+        "sample-size",
+        "performance"
+      ]
+    },
+    {
+      "id": "KNN_028",
+      "question": "What is the primary reason for feature scaling in KNN?",
+      "options": [
+        "To speed up the algorithm",
+        "To reduce memory usage",
+        "To prevent features with larger scales from dominating distances",
+        "To handle categorical variables"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Feature scaling ensures that all features contribute equally to distance calculations, preventing features with larger scales from dominating the distance metric.",
+      "optionExplanations": [
+        "Incorrect. Feature scaling doesn't significantly affect computational speed of KNN.",
+        "Incorrect. Scaling doesn't reduce memory usage; it's a preprocessing step that maintains the same data size.",
+        "Correct. Without scaling, features with larger numeric ranges will dominate distance calculations, biasing the algorithm.",
+        "Incorrect. Feature scaling is for numerical features; categorical variables need different preprocessing techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "distance-domination",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "KNN_029",
+      "question": "In weighted KNN, what happens when a neighbor is at zero distance from the query point?",
+      "options": [
+        "The neighbor is ignored",
+        "The weight becomes infinity",
+        "The weight is set to zero",
+        "An error occurs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When using inverse distance weighting (1/distance), a zero distance results in infinite weight, typically handled by assigning maximum weight or using the point directly.",
+      "optionExplanations": [
+        "Incorrect. A neighbor at zero distance is the most important and shouldn't be ignored.",
+        "Correct. With inverse distance weighting (1/distance), zero distance gives infinite weight, usually handled as maximum influence.",
+        "Incorrect. Zero weight would mean no influence, which is opposite to what a zero-distance neighbor should have.",
+        "Incorrect. Well-implemented systems handle zero distance gracefully, often by assigning maximum weight or returning the point's value directly."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "weighted-knn",
+        "zero-distance",
+        "infinite-weight"
+      ]
+    },
+    {
+      "id": "KNN_030",
+      "question": "What type of decision boundary does KNN typically create?",
+      "options": [
+        "Linear boundaries only",
+        "Circular boundaries only",
+        "Non-linear, complex boundaries",
+        "No decision boundaries"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN creates non-linear, complex decision boundaries that can take irregular shapes based on the distribution of training data points.",
+      "optionExplanations": [
+        "Incorrect. KNN is not limited to linear boundaries; it can create complex, non-linear shapes.",
+        "Incorrect. While boundaries might be curved, they're not constrained to be circular.",
+        "Correct. KNN creates complex, non-linear decision boundaries that adapt to the local structure of the training data.",
+        "Incorrect. KNN implicitly creates decision boundaries, even though they're not explicitly computed during training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decision-boundary",
+        "non-linear",
+        "complexity"
+      ]
+    },
+    {
+      "id": "KNN_031",
+      "question": "Which normalization technique is commonly used before applying KNN?",
+      "options": [
+        "Z-score normalization",
+        "Log transformation",
+        "Min-max scaling",
+        "Both Z-score and Min-max scaling"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Both Z-score normalization and min-max scaling are commonly used with KNN to ensure all features contribute equally to distance calculations.",
+      "optionExplanations": [
+        "Partially correct. Z-score normalization is used, but min-max scaling is also commonly applied.",
+        "Incorrect. Log transformation addresses skewness, not the scale differences that are crucial for KNN.",
+        "Partially correct. Min-max scaling is used, but Z-score normalization is also a common choice.",
+        "Correct. Both Z-score (standardization) and min-max scaling are popular choices for normalizing features before KNN."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "z-score",
+        "min-max-scaling"
+      ]
+    },
+    {
+      "id": "KNN_032",
+      "question": "How does KNN perform with irrelevant features?",
+      "options": [
+        "Irrelevant features have no impact",
+        "Performance degrades due to noise in distance calculations",
+        "KNN automatically ignores irrelevant features",
+        "Irrelevant features improve generalization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Irrelevant features add noise to distance calculations, potentially making truly similar points appear distant and degrading KNN performance.",
+      "optionExplanations": [
+        "Incorrect. Irrelevant features participate in distance calculations and can significantly impact KNN performance.",
+        "Correct. Irrelevant features add noise to distance computations, making it harder to identify truly similar points.",
+        "Incorrect. KNN considers all features equally in distance calculations; it doesn't automatically filter irrelevant ones.",
+        "Incorrect. Irrelevant features generally hurt performance by adding noise, not improving generalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "irrelevant-features",
+        "feature-selection",
+        "noise"
+      ]
+    },
+    {
+      "id": "KNN_033",
+      "question": "What is the relationship between K and bias-variance tradeoff in KNN?",
+      "options": [
+        "Small K increases bias, decreases variance",
+        "Small K decreases bias, increases variance",
+        "K has no effect on bias-variance tradeoff",
+        "Large K always gives better results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Small K values decrease bias (model can fit complex patterns) but increase variance (sensitive to noise), while large K increases bias but decreases variance.",
+      "optionExplanations": [
+        "Incorrect. Small K actually decreases bias by allowing complex decision boundaries, but increases variance due to noise sensitivity.",
+        "Correct. Small K creates flexible models (low bias) but are sensitive to training data variations (high variance).",
+        "Incorrect. K is the primary factor controlling the bias-variance tradeoff in KNN.",
+        "Incorrect. The optimal K balances bias and variance; very large K can lead to underfitting (high bias)."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias-variance",
+        "k-selection",
+        "overfitting-underfitting"
+      ]
+    },
+    {
+      "id": "KNN_034",
+      "question": "In KNN regression with K=5, if the target values of neighbors are [2, 4, 6, 8, 10], what is the predicted value?",
+      "options": [
+        "6 (median)",
+        "10 (maximum)",
+        "6 (mean)",
+        "2 (minimum)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In KNN regression, the predicted value is typically the mean of the neighbor target values: (2+4+6+8+10)/5 = 6.",
+      "optionExplanations": [
+        "Correct answer but wrong reasoning. The median happens to be 6, but KNN regression uses mean, not median.",
+        "Incorrect. KNN regression doesn't use the maximum value; it averages the neighbor values.",
+        "Correct. KNN regression predicts the mean (average) of the K nearest neighbors' target values: 30/5 = 6.",
+        "Incorrect. KNN regression doesn't use the minimum value; it averages all neighbor values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "regression",
+        "calculation",
+        "mean"
+      ]
+    },
+    {
+      "id": "KNN_035",
+      "question": "What is a major computational bottleneck in KNN?",
+      "options": [
+        "Training the model",
+        "Computing distances to all training points",
+        "Storing the model parameters",
+        "Feature scaling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The major computational bottleneck in KNN is computing distances from the query point to all training points during prediction.",
+      "optionExplanations": [
+        "Incorrect. KNN has no training phase computation; it simply stores the data.",
+        "Correct. For each prediction, KNN must compute distances to all training points, which is computationally expensive.",
+        "Incorrect. KNN has no model parameters to store; it stores the raw training data.",
+        "Incorrect. Feature scaling is a preprocessing step done once, not a runtime bottleneck."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-bottleneck",
+        "distance-computation",
+        "performance"
+      ]
+    },
+    {
+      "id": "KNN_036",
+      "question": "How can you speed up KNN predictions?",
+      "options": [
+        "Use more training data",
+        "Increase the value of K",
+        "Use data structures like KD-trees or Ball trees",
+        "Use more features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data structures like KD-trees, Ball trees, or LSH can speed up nearest neighbor search by avoiding exhaustive distance calculations.",
+      "optionExplanations": [
+        "Incorrect. More training data increases computation time as more distances need to be calculated.",
+        "Incorrect. Larger K doesn't speed up distance calculations; it might even slow down the neighbor selection process.",
+        "Correct. Tree-based data structures and approximate methods can significantly speed up nearest neighbor search.",
+        "Incorrect. More features increase the dimensionality and computation time for each distance calculation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "optimization",
+        "kd-tree",
+        "ball-tree",
+        "speedup"
+      ]
+    },
+    {
+      "id": "KNN_037",
+      "question": "What is the effect of class imbalance on KNN?",
+      "options": [
+        "No effect on KNN performance",
+        "May bias predictions toward majority class",
+        "Automatically balances the classes",
+        "Only affects binary classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Class imbalance can bias KNN predictions toward the majority class because the majority class is more likely to appear among the K nearest neighbors.",
+      "optionExplanations": [
+        "Incorrect. Class imbalance can significantly affect KNN by biasing neighbor selection toward majority classes.",
+        "Correct. In imbalanced datasets, majority class instances are more likely to be among K nearest neighbors, biasing predictions.",
+        "Incorrect. KNN doesn't automatically handle class imbalance; it may actually amplify the bias.",
+        "Incorrect. Class imbalance affects both binary and multi-class KNN classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "class-imbalance",
+        "bias",
+        "majority-class"
+      ]
+    },
+    {
+      "id": "KNN_038",
+      "question": "Which statement about KNN and outliers is correct?",
+      "options": [
+        "KNN is completely robust to outliers",
+        "Outliers have no effect on KNN",
+        "KNN is sensitive to outliers, especially with small K",
+        "Outliers only affect KNN regression, not classification"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN is sensitive to outliers because they can become nearest neighbors and influence predictions, especially problematic with small K values.",
+      "optionExplanations": [
+        "Incorrect. KNN is not robust to outliers; outliers can significantly affect predictions if they become nearest neighbors.",
+        "Incorrect. Outliers can definitely impact KNN by being selected as nearest neighbors and influencing predictions.",
+        "Correct. Outliers can become nearest neighbors and skew predictions, particularly when K is small and outliers have high influence.",
+        "Incorrect. Outliers affect both KNN classification (through voting) and regression (through averaging)."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "outliers",
+        "robustness",
+        "sensitivity"
+      ]
+    },
+    {
+      "id": "KNN_039",
+      "question": "What is the Chebyshev distance also known as?",
+      "options": [
+        "L1 norm",
+        "L2 norm",
+        "L∞ norm",
+        "Cosine distance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Chebyshev distance is also known as L∞ norm (L-infinity norm), which is the maximum absolute difference between coordinates.",
+      "optionExplanations": [
+        "Incorrect. L1 norm refers to Manhattan distance (sum of absolute differences).",
+        "Incorrect. L2 norm refers to Euclidean distance (square root of sum of squared differences).",
+        "Correct. Chebyshev distance is the L∞ norm, defined as the maximum absolute difference between coordinates.",
+        "Incorrect. Cosine distance measures angular similarity and is not related to Lp norms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distance-metrics",
+        "chebyshev",
+        "L-infinity"
+      ]
+    },
+    {
+      "id": "KNN_040",
+      "question": "In high-dimensional spaces, what typically happens to the ratio of nearest to farthest distance?",
+      "options": [
+        "Ratio increases significantly",
+        "Ratio approaches 1 (distances become similar)",
+        "Ratio approaches 0",
+        "Ratio remains constant"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In high dimensions, the ratio of nearest to farthest distance approaches 1, meaning all points become approximately equidistant (curse of dimensionality).",
+      "optionExplanations": [
+        "Incorrect. In high dimensions, distances become more similar, so the ratio doesn't increase significantly.",
+        "Correct. The curse of dimensionality causes nearest and farthest distances to become similar, making the ratio approach 1.",
+        "Incorrect. A ratio approaching 0 would mean distances become very different, which is opposite to what happens.",
+        "Incorrect. The ratio changes dramatically in high dimensions due to the curse of dimensionality."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "distance-ratio",
+        "high-dimensions"
+      ]
+    },
+    {
+      "id": "KNN_041",
+      "question": "What is the typical approach for handling categorical features in KNN?",
+      "options": [
+        "Use them directly without any encoding",
+        "Apply one-hot encoding and use appropriate distance metrics",
+        "Remove all categorical features",
+        "Convert to numerical by arbitrary assignment"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Categorical features are typically one-hot encoded and combined with appropriate distance metrics to handle the mixed data types properly.",
+      "optionExplanations": [
+        "Incorrect. Categorical features need proper encoding for distance calculation; raw categories don't have meaningful distances.",
+        "Correct. One-hot encoding converts categories to binary vectors, allowing distance calculations with appropriate metrics.",
+        "Incorrect. Removing categorical features discards potentially valuable information.",
+        "Incorrect. Arbitrary numerical assignment introduces false ordinal relationships between categories."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical-features",
+        "one-hot-encoding",
+        "mixed-data"
+      ]
+    },
+    {
+      "id": "KNN_042",
+      "question": "In KNN, what does the term 'lazy learning' specifically mean?",
+      "options": [
+        "The algorithm is slow",
+        "No computation during training phase",
+        "The algorithm avoids complex calculations",
+        "Training data is ignored"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lazy learning means the algorithm defers all computation until prediction time, simply storing training data without building a model during training.",
+      "optionExplanations": [
+        "Incorrect. 'Lazy' doesn't refer to speed; it refers to when computation occurs.",
+        "Correct. Lazy learning means no model is built during training; all computation is deferred until prediction time.",
+        "Incorrect. KNN still performs complex distance calculations, just not during the training phase.",
+        "Incorrect. Training data is stored and used during prediction; it's not ignored."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lazy-learning",
+        "training-phase",
+        "computation"
+      ]
+    },
+    {
+      "id": "KNN_043",
+      "question": "How does the choice of distance metric affect KNN performance?",
+      "options": [
+        "Distance metric has no impact on performance",
+        "Different metrics can lead to significantly different results",
+        "Only Euclidean distance works well",
+        "All distance metrics give identical results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different distance metrics can produce significantly different results because they define different notions of similarity between points.",
+      "optionExplanations": [
+        "Incorrect. Distance metric choice is crucial as it defines how similarity is measured between data points.",
+        "Correct. Different distance metrics capture different aspects of similarity, leading to potentially very different neighbor selections.",
+        "Incorrect. While Euclidean is common, other metrics like Manhattan or cosine can be better for specific data types.",
+        "Incorrect. Different distance metrics define different similarity measures and will generally produce different results."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distance-metrics",
+        "performance",
+        "similarity"
+      ]
+    },
+    {
+      "id": "KNN_044",
+      "question": "What happens in KNN when there's a tie in classification voting?",
+      "options": [
+        "The algorithm always fails",
+        "The first class encountered is chosen",
+        "Various tie-breaking strategies can be used",
+        "The prediction is automatically correct"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When there's a tie in voting, different tie-breaking strategies can be employed, such as choosing the class of the nearest neighbor or using distance-weighted voting.",
+      "optionExplanations": [
+        "Incorrect. Ties don't cause algorithm failure; various strategies exist to handle them.",
+        "Incorrect. While some implementations might default to first encountered, this isn't the only or best approach.",
+        "Correct. Tie-breaking can be done by nearest neighbor priority, distance weighting, random selection, or other strategies.",
+        "Incorrect. Tie situations require resolution strategies; there's no automatic correctness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ties",
+        "voting",
+        "tie-breaking"
+      ]
+    },
+    {
+      "id": "KNN_045",
+      "question": "Which of the following best describes KNN's model complexity?",
+      "options": [
+        "Fixed complexity regardless of data",
+        "Complexity increases with training data size",
+        "Complexity decreases with more data",
+        "Zero complexity (no model)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN's effective model complexity increases with training data size because more data points create more complex decision boundaries.",
+      "optionExplanations": [
+        "Incorrect. KNN's complexity is directly related to the amount of training data available.",
+        "Correct. More training data allows KNN to create more complex decision boundaries, increasing model complexity.",
+        "Incorrect. Additional training data generally increases the complexity of the decision boundaries KNN can represent.",
+        "Incorrect. While KNN doesn't build an explicit model, it has implicit complexity that varies with data size."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-complexity",
+        "training-data",
+        "decision-boundaries"
+      ]
+    },
+    {
+      "id": "KNN_046",
+      "question": "What is the main advantage of using KD-trees with KNN?",
+      "options": [
+        "Reduces memory usage",
+        "Improves accuracy",
+        "Speeds up nearest neighbor search",
+        "Handles categorical data better"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KD-trees provide a spatial data structure that can significantly speed up nearest neighbor search by avoiding exhaustive distance calculations.",
+      "optionExplanations": [
+        "Incorrect. KD-trees require additional memory for the tree structure, though they may reduce the number of distance calculations.",
+        "Incorrect. KD-trees don't improve accuracy; they provide the same results more efficiently.",
+        "Correct. KD-trees partition space hierarchically, allowing faster nearest neighbor search without exhaustive distance calculations.",
+        "Incorrect. KD-trees are designed for numerical data; they don't specifically help with categorical data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kd-tree",
+        "optimization",
+        "search-speedup"
+      ]
+    },
+    {
+      "id": "KNN_047",
+      "question": "In weighted KNN, what's a common way to handle the weight of identical points (distance = 0)?",
+      "options": [
+        "Assign weight = 0",
+        "Skip these points entirely",
+        "Assign maximum weight or use the point's value directly",
+        "Assign negative weight"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When distance is zero (identical points), common approaches include assigning maximum weight or directly using that point's target value since it's identical to the query.",
+      "optionExplanations": [
+        "Incorrect. Zero weight would ignore the most relevant point (identical to query), which doesn't make sense.",
+        "Incorrect. Identical points are the most informative neighbors and should have maximum influence, not be skipped.",
+        "Correct. Zero distance means identical points, which should have maximum influence or their value used directly.",
+        "Incorrect. Negative weights would indicate dissimilarity, which is inappropriate for identical points."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weighted-knn",
+        "identical-points",
+        "zero-distance"
+      ]
+    },
+    {
+      "id": "KNN_048",
+      "question": "What is the effect of using K = N (total number of training samples) in KNN classification?",
+      "options": [
+        "Maximum accuracy is achieved",
+        "The prediction becomes the global majority class",
+        "The algorithm becomes undefined",
+        "Overfitting occurs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When K equals the total number of training samples, every prediction becomes the global majority class since all training samples are considered for every query.",
+      "optionExplanations": [
+        "Incorrect. Using all training samples typically leads to underfitting and poor accuracy, not maximum accuracy.",
+        "Correct. With K=N, every query considers all training samples, so the prediction is always the global majority class.",
+        "Incorrect. The algorithm is still well-defined; it just uses all training samples for every prediction.",
+        "Incorrect. K=N leads to underfitting (high bias), not overfitting, as the model becomes too simple."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "k-selection",
+        "underfitting",
+        "majority-class"
+      ]
+    },
+    {
+      "id": "KNN_049",
+      "question": "Which scenario would favor using Manhattan distance over Euclidean distance in KNN?",
+      "options": [
+        "When features have different units",
+        "When data has many outliers",
+        "When working in high-dimensional spaces",
+        "When features are highly correlated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Manhattan distance is more robust to outliers than Euclidean distance because it doesn't square the differences, making it less sensitive to extreme values.",
+      "optionExplanations": [
+        "Incorrect. Feature scaling should address different units regardless of distance metric choice.",
+        "Correct. Manhattan distance is more robust to outliers since it doesn't square differences like Euclidean distance.",
+        "Incorrect. Both Manhattan and Euclidean distance suffer from curse of dimensionality in high-dimensional spaces.",
+        "Incorrect. Feature correlation affects both distance metrics similarly; it's not a deciding factor between them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "manhattan-distance",
+        "outliers",
+        "robustness"
+      ]
+    },
+    {
+      "id": "KNN_050",
+      "question": "What is the primary difference between KNN classification and KNN regression?",
+      "options": [
+        "Different distance metrics are used",
+        "Different values of K are required",
+        "Different aggregation methods for neighbor outputs",
+        "Classification uses weighted neighbors, regression doesn't"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The primary difference is in aggregation: classification uses majority voting among neighbor classes, while regression uses averaging of neighbor values.",
+      "optionExplanations": [
+        "Incorrect. Both classification and regression can use the same distance metrics.",
+        "Incorrect. The optimal K value depends on the specific dataset and problem, not whether it's classification or regression.",
+        "Correct. Classification uses majority voting among classes, while regression uses averaging (or other aggregation) of continuous values.",
+        "Incorrect. Both classification and regression can use weighted or unweighted neighbors."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "classification-vs-regression",
+        "aggregation",
+        "voting-vs-averaging"
+      ]
+    },
+    {
+      "id": "KNN_051",
+      "question": "How does cosine distance differ from Euclidean distance in KNN?",
+      "options": [
+        "Cosine distance considers magnitude, Euclidean doesn't",
+        "Cosine distance ignores magnitude, focuses on direction",
+        "They are mathematically identical",
+        "Cosine distance only works with binary data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cosine distance measures the angle between vectors (direction/orientation) while ignoring magnitude, whereas Euclidean distance considers both direction and magnitude.",
+      "optionExplanations": [
+        "Incorrect. This is backwards - cosine distance ignores magnitude while Euclidean distance considers it.",
+        "Correct. Cosine distance measures angular similarity (direction) between vectors, ignoring their magnitudes.",
+        "Incorrect. These are fundamentally different metrics with different geometric interpretations.",
+        "Incorrect. Cosine distance works with continuous data and is commonly used in text analysis and high-dimensional spaces."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cosine-distance",
+        "magnitude",
+        "direction",
+        "angular-similarity"
+      ]
+    },
+    {
+      "id": "KNN_052",
+      "question": "What is a potential issue with KNN in real-time prediction systems?",
+      "options": [
+        "Requires frequent model retraining",
+        "High prediction latency due to distance calculations",
+        "Cannot handle new data points",
+        "Memory usage decreases over time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN requires computing distances to all training points for each prediction, which can cause high latency in real-time systems with large datasets.",
+      "optionExplanations": [
+        "Incorrect. KNN doesn't require retraining; new data can be added simply by including it in the training set.",
+        "Correct. Computing distances to all training points for each prediction can create latency issues in real-time systems.",
+        "Incorrect. KNN can easily handle new data points by adding them to the training set.",
+        "Incorrect. Memory usage typically stays constant or increases as more training data is stored."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "real-time",
+        "latency",
+        "prediction-time"
+      ]
+    },
+    {
+      "id": "KNN_053",
+      "question": "In KNN with mixed categorical and numerical features, which approach is recommended?",
+      "options": [
+        "Use only numerical features",
+        "Use separate distance metrics for each feature type and combine them",
+        "Convert all features to the same type",
+        "Apply KNN separately to each feature type"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For mixed data types, using appropriate distance metrics for each feature type (e.g., Euclidean for numerical, Hamming for categorical) and combining them is the recommended approach.",
+      "optionExplanations": [
+        "Incorrect. Discarding categorical features loses potentially valuable information.",
+        "Correct. Using appropriate distance metrics for each feature type and combining them preserves the nature of all features.",
+        "Incorrect. Converting features to a single type can introduce false relationships or lose important information.",
+        "Incorrect. Applying KNN separately to different feature types doesn't leverage the combined information effectively."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mixed-data",
+        "distance-metrics",
+        "feature-types"
+      ]
+    },
+    {
+      "id": "KNN_054",
+      "question": "What is the effect of feature redundancy on KNN performance?",
+      "options": [
+        "Redundant features improve performance",
+        "Redundant features have no effect",
+        "Redundant features can hurt performance by amplifying certain dimensions",
+        "Redundant features only affect memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Redundant features can degrade KNN performance by giving excessive weight to certain dimensions in distance calculations, potentially drowning out other important features.",
+      "optionExplanations": [
+        "Incorrect. Redundant features generally don't improve performance and can actually hurt it by biasing distance calculations.",
+        "Incorrect. Redundant features participate in distance calculations and can significantly impact which points are considered nearest neighbors.",
+        "Correct. Redundant features effectively amplify certain dimensions in distance calculations, potentially overshadowing other important features.",
+        "Incorrect. While redundant features do increase memory usage, their main impact is on algorithm performance through biased distance calculations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-redundancy",
+        "dimension-amplification",
+        "distance-bias"
+      ]
+    },
+    {
+      "id": "KNN_055",
+      "question": "How can you determine the optimal K value in KNN?",
+      "options": [
+        "Always use K = sqrt(n) where n is training size",
+        "Use cross-validation to test different K values",
+        "K should always be odd",
+        "Use the number of classes in the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation is the best approach to determine optimal K by evaluating model performance across different K values and selecting the one with best validation performance.",
+      "optionExplanations": [
+        "Incorrect. While K = sqrt(n) is a common heuristic starting point, it's not always optimal for all datasets.",
+        "Correct. Cross-validation allows systematic evaluation of different K values to find the one that gives best performance.",
+        "Incorrect. While odd K values help avoid ties in binary classification, the optimal K depends on the data, not just being odd.",
+        "Incorrect. The number of classes is unrelated to the optimal K value, which depends on data structure and noise levels."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "k-optimization",
+        "cross-validation",
+        "hyperparameter-tuning"
+      ]
+    },
+    {
+      "id": "KNN_056",
+      "question": "What is the typical behavior of KNN decision boundaries with very small training datasets?",
+      "options": [
+        "Very smooth and simple boundaries",
+        "Highly irregular and complex boundaries",
+        "No decision boundaries are formed",
+        "Perfectly linear boundaries"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With small training datasets, KNN tends to create highly irregular decision boundaries because each training point has significant influence on the local decision regions.",
+      "optionExplanations": [
+        "Incorrect. Small datasets lead to irregular boundaries, not smooth ones, because each data point has high influence.",
+        "Correct. Small training sets cause each point to have significant influence, creating irregular, complex decision boundaries.",
+        "Incorrect. KNN always forms implicit decision boundaries based on the nearest neighbor regions.",
+        "Incorrect. KNN creates non-linear boundaries; linear boundaries would require linear classifiers, not KNN."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "small-datasets",
+        "decision-boundaries",
+        "irregularity"
+      ]
+    },
+    {
+      "id": "KNN_057",
+      "question": "In which situation would KNN likely outperform linear classifiers?",
+      "options": [
+        "When data is linearly separable",
+        "When data has complex, non-linear patterns",
+        "When features are independent",
+        "When training data is very small"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN excels with complex, non-linear patterns because it can adapt to local data structure, while linear classifiers are limited to linear decision boundaries.",
+      "optionExplanations": [
+        "Incorrect. Linear classifiers are specifically designed for linearly separable data and would perform better in this case.",
+        "Correct. KNN can capture complex, non-linear relationships that linear classifiers cannot represent.",
+        "Incorrect. Feature independence doesn't particularly favor KNN over linear classifiers.",
+        "Incorrect. Very small training data typically hurts KNN more than linear classifiers due to insufficient local structure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "non-linear-patterns",
+        "vs-linear-classifiers",
+        "complex-boundaries"
+      ]
+    },
+    {
+      "id": "KNN_058",
+      "question": "What is the main challenge when using KNN for large-scale datasets?",
+      "options": [
+        "Algorithm becomes inaccurate",
+        "Cannot handle large feature spaces",
+        "Computational and memory requirements scale poorly",
+        "Requires complex hyperparameter tuning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN's main scalability challenge is that both memory (storing all training data) and computation (distance calculations) scale linearly with dataset size.",
+      "optionExplanations": [
+        "Incorrect. KNN can maintain or improve accuracy with more data, though it may become computationally prohibitive.",
+        "Incorrect. While high dimensions cause issues, the main problem is the scaling of computation and memory with dataset size.",
+        "Correct. KNN requires storing all training data and computing distances to all points, making it computationally and memory intensive for large datasets.",
+        "Incorrect. KNN has relatively few hyperparameters (mainly K and distance metric), so tuning complexity isn't the main issue."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scalability",
+        "large-datasets",
+        "computational-complexity"
+      ]
+    },
+    {
+      "id": "KNN_059",
+      "question": "How does the presence of noise affect the choice of K in KNN?",
+      "options": [
+        "Noise requires smaller K values",
+        "Noise requires larger K values to smooth out its effects",
+        "Noise has no impact on K selection",
+        "Noise makes K selection impossible"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Noisy data typically requires larger K values to average out the noise effects, as small K would make the model too sensitive to individual noisy points.",
+      "optionExplanations": [
+        "Incorrect. Smaller K values make KNN more sensitive to individual noisy points, which is undesirable with noise.",
+        "Correct. Larger K values help smooth out noise by averaging over more neighbors, reducing the impact of individual noisy points.",
+        "Incorrect. Noise level is one of the key factors in determining optimal K value.",
+        "Incorrect. While noise complicates K selection, it doesn't make it impossible; it just shifts the optimal K toward larger values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise",
+        "k-selection",
+        "smoothing"
+      ]
+    },
+    {
+      "id": "KNN_060",
+      "question": "What is locality-sensitive hashing (LSH) used for in the context of KNN?",
+      "options": [
+        "To improve prediction accuracy",
+        "To handle categorical features",
+        "To approximate nearest neighbor search quickly",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LSH is used to speed up approximate nearest neighbor search by grouping similar points into the same hash buckets, avoiding exhaustive distance calculations.",
+      "optionExplanations": [
+        "Incorrect. LSH is about computational efficiency, not accuracy improvement; it may actually introduce small approximation errors.",
+        "Incorrect. LSH is a search optimization technique, not a method for handling different data types.",
+        "Correct. LSH speeds up nearest neighbor search by hashing similar points to the same buckets, enabling approximate but fast search.",
+        "Incorrect. While LSH can reduce computation, its primary purpose is speed, not memory reduction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LSH",
+        "approximate-search",
+        "optimization"
+      ]
+    },
+    {
+      "id": "KNN_061",
+      "question": "In KNN, what does it mean for the algorithm to have 'infinite VC dimension'?",
+      "options": [
+        "It can memorize any training set perfectly",
+        "It requires infinite memory",
+        "It only works with infinite data",
+        "It has unlimited accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Infinite VC dimension means KNN can perfectly memorize any finite training set by using K=1, essentially creating a lookup table for training data.",
+      "optionExplanations": [
+        "Correct. With K=1, KNN can perfectly classify any training set by memorizing each point's label, giving it infinite VC dimension.",
+        "Incorrect. While memory grows with training size, 'infinite VC dimension' refers to the model's ability to fit any training set.",
+        "Incorrect. VC dimension relates to the model's capacity to fit training data, not requirements for infinite data.",
+        "Incorrect. Infinite VC dimension relates to overfitting capacity, not guaranteed accuracy on new data."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "VC-dimension",
+        "memorization",
+        "overfitting-capacity"
+      ]
+    },
+    {
+      "id": "KNN_062",
+      "question": "How does KNN handle missing values in the dataset?",
+      "options": [
+        "KNN automatically ignores missing values",
+        "Missing values must be handled before applying KNN",
+        "KNN uses special distance metrics for missing values",
+        "Missing values improve KNN performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN requires complete data for distance calculations, so missing values must be handled through imputation, removal, or other preprocessing techniques before applying KNN.",
+      "optionExplanations": [
+        "Incorrect. KNN cannot compute distances with missing values; they must be addressed in preprocessing.",
+        "Correct. Distance calculation requires complete feature vectors, so missing values must be imputed or handled before applying KNN.",
+        "Incorrect. While specialized distance metrics exist for missing data, standard KNN implementations require complete data.",
+        "Incorrect. Missing values create problems for distance calculations and generally hurt performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-values",
+        "preprocessing",
+        "imputation"
+      ]
+    },
+    {
+      "id": "KNN_063",
+      "question": "What is the relationship between KNN and the bias-variance decomposition?",
+      "options": [
+        "KNN always has high bias and low variance",
+        "KNN always has low bias and high variance",
+        "Bias and variance both depend on K and training data size",
+        "KNN is unrelated to bias-variance tradeoff"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Both bias and variance in KNN depend on K (small K→low bias, high variance; large K→high bias, low variance) and training data size affects the overall capacity.",
+      "optionExplanations": [
+        "Incorrect. KNN's bias and variance depend on K; it can have different combinations based on parameter settings.",
+        "Incorrect. While small K gives low bias and high variance, large K can give high bias and low variance.",
+        "Correct. Bias decreases with smaller K and more data, while variance increases with smaller K and decreases with more data.",
+        "Incorrect. KNN's K parameter directly controls the bias-variance tradeoff, making it very relevant to this decomposition."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias-variance",
+        "k-parameter",
+        "tradeoff"
+      ]
+    },
+    {
+      "id": "KNN_064",
+      "question": "Which statement about KNN's interpretability is most accurate?",
+      "options": [
+        "KNN is completely interpretable because it's simple",
+        "KNN is uninterpretable like neural networks",
+        "KNN predictions can be explained by showing the nearest neighbors",
+        "Interpretability doesn't apply to KNN"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN offers good interpretability because predictions can be explained by showing which nearest neighbors influenced the decision and why.",
+      "optionExplanations": [
+        "Incorrect. While KNN is conceptually simple, interpreting why specific neighbors were chosen requires understanding the feature space.",
+        "Incorrect. KNN is more interpretable than neural networks because the decision process can be traced to specific training examples.",
+        "Correct. KNN predictions can be explained by showing the K nearest neighbors that influenced the decision, making it relatively interpretable.",
+        "Incorrect. Interpretability is very relevant to KNN and is one of its advantages over more complex models."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interpretability",
+        "explainability",
+        "nearest-neighbors"
+      ]
+    },
+    {
+      "id": "KNN_065",
+      "question": "What happens to KNN performance as the intrinsic dimensionality of data increases?",
+      "options": [
+        "Performance always improves",
+        "Performance typically degrades due to curse of dimensionality",
+        "Performance remains constant",
+        "Only computational time is affected"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As intrinsic dimensionality increases, KNN performance typically degrades due to the curse of dimensionality, where distances become less meaningful in high-dimensional spaces.",
+      "optionExplanations": [
+        "Incorrect. High dimensionality generally hurts KNN performance due to the curse of dimensionality.",
+        "Correct. Higher intrinsic dimensionality makes distance-based similarity less meaningful, degrading KNN performance.",
+        "Incorrect. Dimensionality has a significant impact on KNN performance, generally negative as dimensions increase.",
+        "Incorrect. While computational time increases, the main issue is the degradation of algorithm effectiveness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "intrinsic-dimensionality",
+        "curse-of-dimensionality",
+        "performance-degradation"
+      ]
+    },
+    {
+      "id": "KNN_066",
+      "question": "How does KNN behave when all features are binary (0/1)?",
+      "options": [
+        "KNN cannot work with binary features",
+        "Only Hamming distance should be used",
+        "Euclidean distance becomes equivalent to Hamming distance",
+        "Special algorithms are needed"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "With binary features, Euclidean distance becomes equivalent to Hamming distance (after appropriate scaling), as both measure the number of differing positions.",
+      "optionExplanations": [
+        "Incorrect. KNN works fine with binary features using appropriate distance metrics.",
+        "Incorrect. While Hamming distance is natural for binary data, other metrics like Euclidean also work and give equivalent results.",
+        "Correct. For binary features, squared Euclidean distance counts differing positions just like Hamming distance.",
+        "Incorrect. Standard KNN works with binary features; no special algorithms are required."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binary-features",
+        "hamming-euclidean",
+        "distance-equivalence"
+      ]
+    },
+    {
+      "id": "KNN_067",
+      "question": "What is the effect of data standardization on different distance metrics in KNN?",
+      "options": [
+        "Standardization has no effect on any distance metric",
+        "Only affects Euclidean distance, not Manhattan",
+        "Affects all Lp-norm distances similarly",
+        "Only affects weighted distance metrics"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data standardization affects all Lp-norm distances (Euclidean, Manhattan, Minkowski) by ensuring each feature contributes equally to the distance calculation.",
+      "optionExplanations": [
+        "Incorrect. Standardization significantly affects distance-based algorithms by changing the scale of each dimension.",
+        "Incorrect. Manhattan distance is also affected by standardization, as it involves absolute differences between coordinates.",
+        "Correct. All Lp-norm distances (including Euclidean and Manhattan) are affected by standardization as they all involve coordinate differences.",
+        "Incorrect. Both weighted and unweighted distance metrics are affected by the scale of features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standardization",
+        "Lp-norms",
+        "feature-scaling"
+      ]
+    },
+    {
+      "id": "KNN_068",
+      "question": "In KNN regression, how can you implement prediction intervals or uncertainty estimates?",
+      "options": [
+        "KNN cannot provide uncertainty estimates",
+        "Use the variance among K nearest neighbor values",
+        "Apply bootstrap sampling to the neighbors",
+        "Both variance of neighbors and bootstrap methods"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Uncertainty in KNN regression can be estimated using the variance among K nearest neighbors and/or bootstrap sampling to get confidence intervals around predictions.",
+      "optionExplanations": [
+        "Incorrect. KNN can provide uncertainty estimates through various methods involving the spread of neighbor values.",
+        "Partially correct. Variance among neighbors gives uncertainty estimates, but other methods like bootstrap also work.",
+        "Partially correct. Bootstrap sampling can provide confidence intervals, but variance among neighbors is also commonly used.",
+        "Correct. Both approaches - using variance among K neighbors and bootstrap sampling - can provide uncertainty estimates in KNN regression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "uncertainty-estimation",
+        "prediction-intervals",
+        "variance",
+        "bootstrap"
+      ]
+    },
+    {
+      "id": "KNN_069",
+      "question": "What is the primary reason KNN is called a 'memory-based' algorithm?",
+      "options": [
+        "It requires a lot of memory to run",
+        "It stores and uses all training examples during prediction",
+        "It has a good memory of past predictions",
+        "It memorizes the optimal K value"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN is memory-based because it stores all training examples and uses them during prediction, rather than building a parametric model that summarizes the data.",
+      "optionExplanations": [
+        "Incorrect. While KNN does use memory, 'memory-based' refers to storing training examples, not just high memory usage.",
+        "Correct. KNN is memory-based because it stores all training examples and references them during each prediction.",
+        "Incorrect. The term doesn't refer to remembering past predictions, but to storing training data.",
+        "Incorrect. The K value is a hyperparameter, not something the algorithm memorizes from the data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "memory-based",
+        "instance-based",
+        "training-storage"
+      ]
+    },
+    {
+      "id": "KNN_070",
+      "question": "How does the effective number of parameters in KNN scale with training data size?",
+      "options": [
+        "Remains constant regardless of data size",
+        "Scales linearly with training data size",
+        "Scales quadratically with training data size",
+        "Decreases as data size increases"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN's effective number of parameters scales linearly with training data size because each training point can be considered as contributing to the model's parameters.",
+      "optionExplanations": [
+        "Incorrect. KNN's complexity and effective parameters increase with more training data.",
+        "Correct. Each training point effectively acts as a parameter in KNN, so the number scales linearly with dataset size.",
+        "Incorrect. The relationship is linear, not quadratic - each new training point adds one effective parameter.",
+        "Incorrect. More training data increases the effective model complexity, not decreases it."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "effective-parameters",
+        "model-complexity",
+        "scaling"
+      ]
+    },
+    {
+      "id": "KNN_071",
+      "question": "What is the impact of correlated features on KNN performance?",
+      "options": [
+        "Correlated features always improve performance",
+        "Correlation has no effect on KNN",
+        "Correlated features can bias distance calculations toward those dimensions",
+        "Only negative correlation affects KNN"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Correlated features can bias distance calculations by giving excessive weight to the correlated dimensions, potentially making irrelevant features appear more important.",
+      "optionExplanations": [
+        "Incorrect. Correlated features can actually hurt performance by biasing distance calculations.",
+        "Incorrect. Feature correlation affects how distances are computed and which points are considered nearest neighbors.",
+        "Correct. Correlated features effectively increase the weight of certain dimensions in distance calculations, potentially biasing neighbor selection.",
+        "Incorrect. Both positive and negative correlation can affect distance calculations and neighbor selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-correlation",
+        "distance-bias",
+        "dimension-weighting"
+      ]
+    },
+    {
+      "id": "KNN_072",
+      "question": "In the context of KNN, what does 'locally adaptive' mean?",
+      "options": [
+        "The algorithm adapts to local hardware",
+        "K value changes based on local data density",
+        "The algorithm adapts its behavior to local patterns in the data",
+        "Features are selected locally for each prediction"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Locally adaptive means KNN adapts its decision-making to local patterns in the data, making different decisions in different regions based on nearby training examples.",
+      "optionExplanations": [
+        "Incorrect. 'Local' in this context refers to data space, not hardware or system configuration.",
+        "Incorrect. Standard KNN uses a fixed K value, though some variations do adapt K based on density.",
+        "Correct. KNN is locally adaptive because it makes decisions based on local neighborhoods, adapting to different patterns in different regions.",
+        "Incorrect. Standard KNN uses all features for each prediction, not locally selected subsets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "locally-adaptive",
+        "local-patterns",
+        "neighborhood"
+      ]
+    },
+    {
+      "id": "KNN_073",
+      "question": "How does KNN performance change with increasing noise levels in the data?",
+      "options": [
+        "Performance improves with more noise",
+        "Noise has no effect on KNN",
+        "Performance degrades, especially with small K values",
+        "Only classification is affected, not regression"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Increasing noise levels degrade KNN performance because noisy points can become nearest neighbors and influence predictions, especially problematic with small K values.",
+      "optionExplanations": [
+        "Incorrect. Noise generally hurts KNN performance by introducing misleading nearest neighbors.",
+        "Incorrect. Noise significantly affects KNN since noisy points can be selected as nearest neighbors.",
+        "Correct. Noise degrades performance, particularly with small K where individual noisy points have high influence.",
+        "Incorrect. Both KNN classification and regression are affected by noise in the training data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise-impact",
+        "performance-degradation",
+        "k-sensitivity"
+      ]
+    },
+    {
+      "id": "KNN_074",
+      "question": "What is the computational complexity of building a Ball tree for KNN?",
+      "options": [
+        "O(n log n)",
+        "O(n²)",
+        "O(n log n) in low dimensions, O(n²) in high dimensions",
+        "O(1)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Building a Ball tree typically requires O(n log n) time complexity for sorting and recursive partitioning of the data points.",
+      "optionExplanations": [
+        "Correct. Ball tree construction involves recursive partitioning with sorting operations, resulting in O(n log n) complexity.",
+        "Incorrect. O(n²) would be much more expensive and is not typical for Ball tree construction.",
+        "Incorrect. While high dimensions can affect Ball tree effectiveness, the construction complexity is generally O(n log n).",
+        "Incorrect. O(1) would mean constant time regardless of data size, which is impossible for building a tree structure."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ball-tree",
+        "construction-complexity",
+        "tree-building"
+      ]
+    },
+    {
+      "id": "KNN_075",
+      "question": "How does the concept of 'margin' apply to KNN?",
+      "options": [
+        "KNN doesn't have a margin concept",
+        "Margin is the distance to the nearest neighbor",
+        "Margin is the confidence in prediction based on neighbor agreement",
+        "Margin is always zero in KNN"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In KNN, margin can be interpreted as the confidence in prediction based on how much the majority class dominates among the K nearest neighbors.",
+      "optionExplanations": [
+        "Incorrect. While KNN doesn't have explicit margins like SVMs, the concept can be adapted to measure prediction confidence.",
+        "Incorrect. Distance to nearest neighbor doesn't capture the margin concept, which is about decision confidence.",
+        "Correct. Margin in KNN reflects prediction confidence - higher agreement among neighbors indicates larger margin.",
+        "Incorrect. Margin varies based on the agreement among neighbors; it's not always zero."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "margin",
+        "prediction-confidence",
+        "neighbor-agreement"
+      ]
+    },
+    {
+      "id": "KNN_076",
+      "question": "What is the effect of using different p-values in Minkowski distance for KNN?",
+      "options": [
+        "No effect on the results",
+        "Changes which points are considered nearest neighbors",
+        "Only affects computational time",
+        "p-value must always be 2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different p-values in Minkowski distance create different geometric interpretations of distance, leading to different nearest neighbor selections and potentially different predictions.",
+      "optionExplanations": [
+        "Incorrect. Different p-values fundamentally change how distance is calculated, significantly affecting which points are nearest.",
+        "Correct. Different p-values (p=1 for Manhattan, p=2 for Euclidean, p=∞ for Chebyshev) change the distance geometry and neighbor selection.",
+        "Incorrect. While computational time may vary, the main effect is on which neighbors are selected, not just computation speed.",
+        "Incorrect. p can be any positive value, with p=1, p=2, and p=∞ being common choices with different geometric meanings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "minkowski-distance",
+        "p-values",
+        "neighbor-selection"
+      ]
+    },
+    {
+      "id": "KNN_077",
+      "question": "How does KNN handle the problem of concept drift in streaming data?",
+      "options": [
+        "KNN automatically adapts to concept drift",
+        "Concept drift doesn't affect KNN",
+        "KNN needs mechanisms like sliding windows or forgetting factors",
+        "KNN becomes more accurate with concept drift"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN needs special mechanisms to handle concept drift, such as maintaining sliding windows of recent data or using forgetting factors to weight recent examples more heavily.",
+      "optionExplanations": [
+        "Incorrect. Standard KNN doesn't automatically adapt to concept drift; it treats all training data equally regardless of age.",
+        "Incorrect. Concept drift significantly affects KNN as old data may no longer be representative of current patterns.",
+        "Correct. KNN requires additional mechanisms like sliding windows or weighted sampling to handle changing data distributions over time.",
+        "Incorrect. Concept drift generally hurts KNN performance by including outdated, irrelevant training examples in predictions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "concept-drift",
+        "streaming-data",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "KNN_078",
+      "question": "What is the primary advantage of using approximate nearest neighbor algorithms with KNN?",
+      "options": [
+        "Improved accuracy",
+        "Reduced memory usage",
+        "Faster query time with slight accuracy trade-off",
+        "Better handling of categorical features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Approximate nearest neighbor algorithms trade a small amount of accuracy for significantly faster query times, making KNN practical for large-scale applications.",
+      "optionExplanations": [
+        "Incorrect. Approximate methods typically reduce accuracy slightly in exchange for speed improvements.",
+        "Incorrect. Memory usage may not significantly decrease; the main benefit is computational speed.",
+        "Correct. Approximate NN algorithms provide much faster queries by finding 'good enough' neighbors instead of exact nearest neighbors.",
+        "Incorrect. Approximate NN methods are about computational efficiency, not improving categorical feature handling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "approximate-nn",
+        "speed-accuracy-tradeoff",
+        "scalability"
+      ]
+    },
+    {
+      "id": "KNN_079",
+      "question": "In KNN, what is the effect of having duplicate training examples?",
+      "options": [
+        "Duplicates are automatically removed",
+        "Duplicates can bias predictions toward their class/value",
+        "Duplicates have no effect on predictions",
+        "Duplicates always improve accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Duplicate training examples can bias KNN predictions because they increase the likelihood of that particular class or value appearing among the K nearest neighbors.",
+      "optionExplanations": [
+        "Incorrect. KNN typically doesn't automatically remove duplicates; they remain in the training set and affect predictions.",
+        "Correct. Duplicates increase the representation of certain points in the training set, potentially biasing neighbor selection.",
+        "Incorrect. Duplicates affect the probability of being selected as neighbors and can significantly impact predictions.",
+        "Incorrect. Duplicates can actually hurt generalization by over-representing certain examples in the training set."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "duplicate-examples",
+        "bias",
+        "representation"
+      ]
+    },
+    {
+      "id": "KNN_080",
+      "question": "How does the choice of K affect the computational complexity of KNN prediction?",
+      "options": [
+        "Larger K significantly increases computation time",
+        "K has minimal effect on computation time",
+        "Smaller K takes more time than larger K",
+        "Computation time is independent of K"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "K has minimal effect on computation time because the main cost is computing distances to all training points, while selecting the K smallest distances is relatively fast.",
+      "optionExplanations": [
+        "Incorrect. The dominant cost is distance computation, not selecting K neighbors, so K doesn't significantly affect total time.",
+        "Correct. Computing distances to all n training points dominates the time complexity; selecting K of them is relatively fast.",
+        "Incorrect. The selection process is typically O(n) or O(n log K) regardless of K size, with distance computation dominating.",
+        "Incorrect. While K has some effect on the neighbor selection phase, the main computation (distances) is independent of K."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-complexity",
+        "k-parameter",
+        "prediction-time"
+      ]
+    },
+    {
+      "id": "KNN_081",
+      "question": "What is the relationship between KNN and kernel density estimation?",
+      "options": [
+        "They are completely unrelated",
+        "KNN can be viewed as a non-parametric density estimation method",
+        "KNN is always better than kernel density estimation",
+        "They use the same mathematical formulation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN can be viewed as a form of non-parametric density estimation where the local density around a point is estimated by counting neighbors within a certain distance.",
+      "optionExplanations": [
+        "Incorrect. Both KNN and kernel density estimation are non-parametric methods that use local neighborhoods for estimation.",
+        "Correct. KNN estimates local density by counting neighbors, similar to how kernel methods estimate density using local kernels.",
+        "Incorrect. Neither method is universally better; their effectiveness depends on the specific problem and data characteristics.",
+        "Incorrect. While related in concept, they use different mathematical approaches - KNN uses neighbor counting while KDE uses kernel functions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "density-estimation",
+        "non-parametric",
+        "kernel-methods"
+      ]
+    },
+    {
+      "id": "KNN_082",
+      "question": "How does feature selection affect KNN performance?",
+      "options": [
+        "Feature selection always hurts KNN performance",
+        "Feature selection has no impact on KNN",
+        "Good feature selection can significantly improve KNN performance",
+        "KNN automatically performs feature selection"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Good feature selection can significantly improve KNN by removing irrelevant features that add noise to distance calculations and focusing on discriminative features.",
+      "optionExplanations": [
+        "Incorrect. Removing irrelevant or noisy features typically improves KNN performance by reducing noise in distance calculations.",
+        "Incorrect. Feature selection has a major impact on KNN since it directly affects distance calculations and neighbor identification.",
+        "Correct. Selecting relevant features improves KNN by reducing noise and curse of dimensionality effects.",
+        "Incorrect. Standard KNN uses all provided features equally; it doesn't perform automatic feature selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-selection",
+        "performance-improvement",
+        "dimensionality"
+      ]
+    },
+    {
+      "id": "KNN_083",
+      "question": "What is the typical behavior of KNN with very high-dimensional sparse data (like text)?",
+      "options": [
+        "KNN performs exceptionally well",
+        "Performance degrades due to curse of dimensionality",
+        "Sparsity helps KNN performance",
+        "Only classification works, not regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In very high-dimensional sparse data like text, KNN often suffers from curse of dimensionality, where distances become less meaningful and most points appear equidistant.",
+      "optionExplanations": [
+        "Incorrect. High-dimensional sparse data typically challenges KNN due to the curse of dimensionality.",
+        "Correct. High dimensionality makes distance-based similarity less meaningful, even with sparse data.",
+        "Incorrect. While sparsity can help computationally, the high dimensionality still poses challenges for distance-based methods.",
+        "Incorrect. Both classification and regression are affected by the curse of dimensionality in high-dimensional spaces."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "high-dimensionality",
+        "sparse-data",
+        "text-analysis"
+      ]
+    },
+    {
+      "id": "KNN_084",
+      "question": "How can you implement multi-label classification using KNN?",
+      "options": [
+        "KNN cannot handle multi-label problems",
+        "Use separate KNN models for each label",
+        "Aggregate label sets from K nearest neighbors",
+        "Convert to multi-class problem first"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multi-label KNN can be implemented by aggregating the label sets from K nearest neighbors, often using voting or probability thresholds for each label.",
+      "optionExplanations": [
+        "Incorrect. KNN can be adapted for multi-label classification through appropriate aggregation strategies.",
+        "Incorrect. While possible, this approach doesn't leverage label correlations that might exist in multi-label problems.",
+        "Correct. Multi-label KNN aggregates label sets from neighbors, often using majority voting or probability thresholds for each label.",
+        "Incorrect. Multi-label is different from multi-class; converting loses the ability to predict multiple labels simultaneously."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-label",
+        "label-aggregation",
+        "voting"
+      ]
+    },
+    {
+      "id": "KNN_085",
+      "question": "What is the impact of data preprocessing order on KNN?",
+      "options": [
+        "Preprocessing order doesn't matter",
+        "Scaling should be done before feature selection",
+        "Feature selection should be done before scaling",
+        "The order can significantly impact results"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The order of preprocessing steps can significantly impact KNN results. For example, scaling before feature selection vs. after can lead to different selected features and performance.",
+      "optionExplanations": [
+        "Incorrect. The order of preprocessing steps can significantly affect the final results in KNN.",
+        "Partially correct but incomplete. The optimal order depends on the specific preprocessing steps and data characteristics.",
+        "Partially correct but incomplete. Different orders can be appropriate depending on the feature selection method and data.",
+        "Correct. Preprocessing order matters because each step affects the data distribution and can influence subsequent preprocessing decisions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "preprocessing-order",
+        "feature-selection",
+        "scaling"
+      ]
+    },
+    {
+      "id": "KNN_086",
+      "question": "How does KNN handle time series prediction?",
+      "options": [
+        "KNN cannot be used for time series",
+        "Use lagged features and apply standard KNN",
+        "Time order is ignored in KNN",
+        "Special temporal distance metrics are required"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN can be adapted for time series by creating lagged features (previous time steps) and applying standard KNN to predict future values based on similar historical patterns.",
+      "optionExplanations": [
+        "Incorrect. KNN can be adapted for time series prediction through appropriate feature engineering.",
+        "Correct. Time series KNN typically uses lagged features to create a feature vector representing recent history for similarity comparison.",
+        "Incorrect. While standard KNN doesn't consider time order, time series applications create features that capture temporal patterns.",
+        "Incorrect. Standard distance metrics can work with properly constructed lagged features, though temporal metrics can also be beneficial."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "time-series",
+        "lagged-features",
+        "temporal-prediction"
+      ]
+    },
+    {
+      "id": "KNN_087",
+      "question": "What is the effect of sample size on the optimal K value in KNN?",
+      "options": [
+        "Larger sample sizes require smaller K values",
+        "Larger sample sizes generally allow for larger optimal K values",
+        "Sample size doesn't affect optimal K",
+        "K should always equal sample size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Larger sample sizes generally allow for larger optimal K values because there are more data points to average over, reducing the risk of underfitting from too much smoothing.",
+      "optionExplanations": [
+        "Incorrect. With more data, you can generally use larger K values without losing important local structure.",
+        "Correct. More training data allows using larger K values while still maintaining sufficient local resolution.",
+        "Incorrect. Sample size is one of the key factors in determining the optimal K value.",
+        "Incorrect. Setting K equal to sample size would result in global averaging and poor performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sample-size",
+        "k-optimization",
+        "bias-variance"
+      ]
+    },
+    {
+      "id": "KNN_088",
+      "question": "How does KNN performance compare to parametric methods when training data is limited?",
+      "options": [
+        "KNN always outperforms parametric methods",
+        "Parametric methods often perform better with limited data",
+        "Performance is always identical",
+        "Only the number of features matters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With limited training data, parametric methods often perform better because they can make assumptions about data distribution and generalize from fewer examples, while KNN needs sufficient local data density.",
+      "optionExplanations": [
+        "Incorrect. KNN typically needs more data to perform well due to its reliance on local neighborhoods.",
+        "Correct. Parametric methods can leverage assumptions about data distribution to generalize better from limited training data.",
+        "Incorrect. Performance differs significantly between parametric and non-parametric methods, especially with limited data.",
+        "Incorrect. While feature count matters, the key issue is KNN's need for sufficient local data density versus parametric methods' ability to generalize."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "limited-data",
+        "parametric-vs-nonparametric",
+        "generalization"
+      ]
+    },
+    {
+      "id": "KNN_089",
+      "question": "What is the relationship between KNN and the local smoothness assumption?",
+      "options": [
+        "KNN doesn't make any smoothness assumptions",
+        "KNN assumes the target function is locally smooth",
+        "KNN requires global smoothness",
+        "Smoothness assumptions only apply to regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN implicitly assumes that the target function is locally smooth, meaning that nearby points in feature space should have similar target values or class labels.",
+      "optionExplanations": [
+        "Incorrect. KNN's effectiveness relies on the assumption that nearby points have similar outputs.",
+        "Correct. KNN assumes local smoothness - that points close in feature space have similar target values.",
+        "Incorrect. KNN only requires local smoothness, not global smoothness across the entire feature space.",
+        "Incorrect. The local smoothness assumption applies to both classification (similar classes) and regression (similar values)."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "smoothness-assumption",
+        "local-structure",
+        "similarity"
+      ]
+    },
+    {
+      "id": "KNN_090",
+      "question": "How can ensemble methods be applied to KNN?",
+      "options": [
+        "Ensemble methods cannot be used with KNN",
+        "Use different K values and average predictions",
+        "Use different distance metrics and combine results",
+        "Both different K values and distance metrics can be ensembled"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "KNN ensembles can be created by varying hyperparameters like K values, distance metrics, feature subsets, or data subsamples, then combining the predictions.",
+      "optionExplanations": [
+        "Incorrect. Ensemble methods can be effectively applied to KNN by varying different aspects of the algorithm.",
+        "Partially correct. Using different K values is one way to create KNN ensembles, but other variations are also possible.",
+        "Partially correct. Different distance metrics can be ensembled, but K values can also be varied.",
+        "Correct. KNN ensembles can vary multiple aspects: K values, distance metrics, feature subsets, or training data samples."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-methods",
+        "hyperparameter-variation",
+        "model-combination"
+      ]
+    },
+    {
+      "id": "KNN_091",
+      "question": "What is the effect of label noise on KNN classification?",
+      "options": [
+        "Label noise doesn't affect KNN",
+        "KNN is completely robust to label noise",
+        "Label noise can degrade performance, especially with small K",
+        "Label noise only affects training time"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Label noise can significantly degrade KNN performance because mislabeled points can be selected as neighbors and influence predictions, especially problematic with small K values.",
+      "optionExplanations": [
+        "Incorrect. Label noise directly affects KNN predictions when mislabeled points become nearest neighbors.",
+        "Incorrect. KNN is sensitive to label noise, particularly when mislabeled points are selected as neighbors.",
+        "Correct. Mislabeled neighbors can corrupt predictions, with higher impact when K is small and each neighbor has more influence.",
+        "Incorrect. Label noise affects prediction accuracy, not training time, since KNN has no training phase."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "label-noise",
+        "robustness",
+        "prediction-quality"
+      ]
+    },
+    {
+      "id": "KNN_092",
+      "question": "How does KNN handle extrapolation outside the training data range?",
+      "options": [
+        "KNN extrapolates well beyond training data",
+        "KNN cannot make predictions outside training range",
+        "KNN uses nearest boundary points for extrapolation",
+        "Extrapolation accuracy is always perfect"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN handles extrapolation by using the nearest available training points, typically those at the boundary of the training data range, which may not provide good extrapolation.",
+      "optionExplanations": [
+        "Incorrect. KNN is generally poor at extrapolation because it relies on existing training points and cannot model trends beyond the data.",
+        "Incorrect. KNN can make predictions, but it uses the nearest available training points.",
+        "Correct. For extrapolation, KNN uses the nearest training points, which are typically at the boundary of training data range.",
+        "Incorrect. Extrapolation accuracy is often poor because KNN cannot model trends beyond existing training data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "extrapolation",
+        "boundary-points",
+        "prediction-limits"
+      ]
+    },
+    {
+      "id": "KNN_093",
+      "question": "What is the computational complexity of exact KNN search in d dimensions?",
+      "options": [
+        "O(d)",
+        "O(n)",
+        "O(nd)",
+        "O(n²d)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Exact KNN search requires computing distances to all n training points, with each distance calculation taking O(d) time for d-dimensional data, resulting in O(nd) complexity.",
+      "optionExplanations": [
+        "Incorrect. This would only account for one distance calculation, not distances to all training points.",
+        "Incorrect. This ignores the dimensionality factor in distance calculations.",
+        "Correct. Computing distance to n points in d dimensions requires O(nd) time.",
+        "Incorrect. This would be the complexity of computing all pairwise distances, not just query-to-training distances."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-complexity",
+        "distance-calculation",
+        "dimensionality"
+      ]
+    },
+    {
+      "id": "KNN_094",
+      "question": "How does the presence of redundant features affect the curse of dimensionality in KNN?",
+      "options": [
+        "Redundant features reduce the curse of dimensionality",
+        "Redundant features have no effect",
+        "Redundant features worsen the curse of dimensionality",
+        "Only correlated features affect the curse"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Redundant features worsen the curse of dimensionality by adding unnecessary dimensions that don't provide new information but still participate in distance calculations, making distances less meaningful.",
+      "optionExplanations": [
+        "Incorrect. Redundant features add noise to distance calculations without providing useful information.",
+        "Incorrect. Redundant features increase the effective dimensionality and participate in distance calculations.",
+        "Correct. Redundant features increase dimensionality without adding informative content, worsening the curse of dimensionality.",
+        "Incorrect. Both redundant and correlated features can worsen the curse of dimensionality by inflating the feature space."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "redundant-features",
+        "curse-of-dimensionality",
+        "feature-quality"
+      ]
+    },
+    {
+      "id": "KNN_095",
+      "question": "What is the relationship between KNN and Voronoi diagrams?",
+      "options": [
+        "They are completely unrelated",
+        "KNN decision boundaries correspond to Voronoi cell boundaries",
+        "Voronoi diagrams are only used for visualization",
+        "KNN always creates circular Voronoi cells"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With K=1, KNN decision boundaries correspond exactly to Voronoi cell boundaries, where each cell contains points closest to a particular training example.",
+      "optionExplanations": [
+        "Incorrect. KNN with K=1 creates decision regions that are exactly Voronoi cells of the training points.",
+        "Correct. KNN with K=1 partitions space into Voronoi cells, where each region is closest to one training point.",
+        "Incorrect. Voronoi diagrams represent the fundamental geometric structure underlying KNN decision regions.",
+        "Incorrect. Voronoi cells have complex, polygonal shapes determined by the relative positions of training points."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "voronoi-diagrams",
+        "decision-boundaries",
+        "geometric-interpretation"
+      ]
+    },
+    {
+      "id": "KNN_096",
+      "question": "How can KNN be made more robust to outliers?",
+      "options": [
+        "Always use K=1",
+        "Use larger K values and robust distance metrics",
+        "Remove all distant points",
+        "Outliers cannot be handled in KNN"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "KNN can be made more robust to outliers by using larger K values (reducing individual point influence) and robust distance metrics like Manhattan distance or trimmed means.",
+      "optionExplanations": [
+        "Incorrect. K=1 makes KNN most sensitive to outliers, as single outlier points can dominate predictions.",
+        "Correct. Larger K values reduce outlier influence, and robust metrics like Manhattan distance are less sensitive to extreme values.",
+        "Incorrect. Simply removing distant points might remove legitimate data and doesn't address the fundamental sensitivity issue.",
+        "Incorrect. Various strategies can improve KNN's robustness to outliers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "outlier-robustness",
+        "large-k",
+        "robust-metrics"
+      ]
+    },
+    {
+      "id": "KNN_097",
+      "question": "What is the main limitation of using KNN for real-time recommendation systems?",
+      "options": [
+        "Poor recommendation quality",
+        "Cannot handle user preferences",
+        "High computational cost for similarity calculations",
+        "Limited to binary ratings"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The main limitation is computational cost - KNN requires calculating similarities between users/items for each recommendation request, which can be expensive with large user/item databases.",
+      "optionExplanations": [
+        "Incorrect. KNN can provide good recommendation quality when properly implemented.",
+        "Incorrect. KNN-based collaborative filtering effectively handles user preferences through similarity measures.",
+        "Correct. Computing similarities to all users/items for each recommendation request is computationally expensive in real-time systems.",
+        "Incorrect. KNN can handle various rating scales, not just binary ratings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "recommendation-systems",
+        "computational-cost",
+        "real-time"
+      ]
+    },
+    {
+      "id": "KNN_098",
+      "question": "How does the effectiveness of different distance metrics in KNN relate to data distribution?",
+      "options": [
+        "All distance metrics work equally well regardless of distribution",
+        "Distance metric choice should match data characteristics",
+        "Only Euclidean distance adapts to data distribution",
+        "Data distribution doesn't affect distance metric performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The choice of distance metric should match data characteristics - for example, Manhattan distance for data with outliers, cosine distance for sparse high-dimensional data, or Hamming for categorical data.",
+      "optionExplanations": [
+        "Incorrect. Different distance metrics have different strengths and are better suited to different types of data distributions.",
+        "Correct. Metric choice should consider data properties: outliers favor Manhattan, sparse data favors cosine, categorical data favors Hamming.",
+        "Incorrect. All distance metrics have their own assumptions and work better with certain data characteristics.",
+        "Incorrect. Data distribution significantly affects which distance metric will be most effective."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "distance-metrics",
+        "data-distribution",
+        "metric-selection"
+      ]
+    },
+    {
+      "id": "KNN_099",
+      "question": "What is the impact of imbalanced features (different scales) on KNN performance?",
+      "options": [
+        "No impact on performance",
+        "Features with larger scales dominate distance calculations",
+        "Smaller scale features become more important",
+        "Only categorical features are affected"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Features with larger scales dominate distance calculations in KNN because they contribute more to the overall distance, potentially making smaller-scale but important features irrelevant.",
+      "optionExplanations": [
+        "Incorrect. Scale differences significantly impact KNN by biasing distance calculations toward large-scale features.",
+        "Correct. Large-scale features dominate distance calculations, potentially rendering small-scale features irrelevant.",
+        "Incorrect. Larger scale features dominate, not smaller scale features.",
+        "Incorrect. The scale imbalance problem primarily affects numerical features, though all features participate in distance calculations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-scaling",
+        "distance-domination",
+        "scale-imbalance"
+      ]
+    },
+    {
+      "id": "KNN_100",
+      "question": "What is the theoretical foundation for KNN's effectiveness?",
+      "options": [
+        "Central Limit Theorem",
+        "Bayes' Theorem",
+        "Stone's Theorem and universal consistency",
+        "Law of Large Numbers only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KNN's theoretical foundation lies in Stone's Theorem, which proves that KNN is universally consistent - it converges to the optimal Bayes classifier as training data approaches infinity under certain conditions.",
+      "optionExplanations": [
+        "Incorrect. While CLT relates to statistical behavior, Stone's Theorem specifically addresses KNN's consistency properties.",
+        "Incorrect. Though Bayes' theorem relates to optimal classification, Stone's Theorem specifically proves KNN's convergence properties.",
+        "Correct. Stone's Theorem proves KNN's universal consistency, showing it converges to optimal performance with sufficient data.",
+        "Incorrect. Law of Large Numbers is relevant but Stone's Theorem provides the specific theoretical foundation for KNN's effectiveness."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "theoretical-foundation",
+        "stone-theorem",
+        "universal-consistency"
+      ]
+    }
+  ]
+}

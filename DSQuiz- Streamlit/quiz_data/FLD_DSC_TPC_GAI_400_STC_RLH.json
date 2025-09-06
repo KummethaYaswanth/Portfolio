@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_RLH",
+  "subtopicName": "RLHF & AI Alignment",
+  "str": 0.400,
+  "description": "Reinforcement Learning from Human Feedback (RLHF) and AI Alignment techniques for training safe and helpful AI systems through human preferences and constitutional methods",
+  "questions": [
+    {
+      "id": "RLH_001",
+      "question": "What is the primary goal of Reinforcement Learning from Human Feedback (RLHF)?",
+      "options": [
+        "To train AI systems that align with human preferences and values",
+        "To maximize computational efficiency in neural networks",
+        "To reduce the size of language models",
+        "To eliminate the need for pre-training data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "RLHF aims to train AI systems that better align with human preferences and values by incorporating human feedback into the training process, making AI outputs more helpful, harmless, and honest.",
+      "optionExplanations": [
+        "Correct. RLHF's primary purpose is to align AI behavior with human preferences through feedback mechanisms.",
+        "Incorrect. While efficiency may be a side benefit, RLHF focuses on alignment rather than computational optimization.",
+        "Incorrect. RLHF doesn't aim to reduce model size but to improve behavior alignment.",
+        "Incorrect. RLHF typically builds upon pre-trained models and doesn't eliminate the need for pre-training data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "RLHF",
+        "alignment",
+        "human_feedback"
+      ]
+    },
+    {
+      "id": "RLH_002",
+      "question": "Which of the following is NOT a typical phase in the RLHF pipeline?",
+      "options": [
+        "Supervised fine-tuning (SFT)",
+        "Reward model training",
+        "Policy optimization with PPO",
+        "Adversarial training against discriminators"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The standard RLHF pipeline consists of supervised fine-tuning, reward model training, and policy optimization (often using PPO). Adversarial training against discriminators is more associated with GANs.",
+      "optionExplanations": [
+        "Incorrect. SFT is the first phase where models are fine-tuned on high-quality demonstrations.",
+        "Incorrect. Reward model training is the second phase where a model learns to predict human preferences.",
+        "Incorrect. PPO-based policy optimization is the third phase where the language model is optimized using the reward model.",
+        "Correct. Adversarial training with discriminators is not part of the standard RLHF pipeline."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RLHF",
+        "pipeline",
+        "training_phases"
+      ]
+    },
+    {
+      "id": "RLH_003",
+      "question": "What is the role of the reward model in RLHF?",
+      "options": [
+        "To generate new training data",
+        "To predict human preferences for different outputs",
+        "To compress the language model",
+        "To translate between languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The reward model is trained to predict human preferences by learning from human comparisons of different outputs, essentially serving as a proxy for human judgment.",
+      "optionExplanations": [
+        "Incorrect. The reward model evaluates outputs rather than generating new training data.",
+        "Correct. The reward model learns to predict which outputs humans would prefer based on comparison data.",
+        "Incorrect. The reward model doesn't compress the language model but evaluates its outputs.",
+        "Incorrect. Translation is not the function of reward models in RLHF."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "reward_model",
+        "human_preferences",
+        "RLHF"
+      ]
+    },
+    {
+      "id": "RLH_004",
+      "question": "PPO stands for:",
+      "options": [
+        "Proximal Policy Optimization",
+        "Parallel Processing Operations",
+        "Pre-trained Parameter Optimization",
+        "Predictive Policy Objects"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "PPO (Proximal Policy Optimization) is a reinforcement learning algorithm commonly used in RLHF to optimize language models based on reward signals while maintaining stability.",
+      "optionExplanations": [
+        "Correct. PPO stands for Proximal Policy Optimization, a popular RL algorithm used in RLHF.",
+        "Incorrect. This is not what PPO stands for in the context of RLHF.",
+        "Incorrect. This is not the correct expansion of PPO.",
+        "Incorrect. This is not what PPO represents in reinforcement learning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PPO",
+        "reinforcement_learning",
+        "optimization"
+      ]
+    },
+    {
+      "id": "RLH_005",
+      "question": "What is the alignment problem in AI?",
+      "options": [
+        "Ensuring AI systems pursue intended goals rather than unintended ones",
+        "Aligning hardware components in data centers",
+        "Synchronizing multiple AI models",
+        "Formatting text outputs properly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The alignment problem refers to the challenge of ensuring AI systems pursue the goals we intend them to pursue, rather than finding unexpected ways to optimize their objectives that may be harmful or undesired.",
+      "optionExplanations": [
+        "Correct. The alignment problem is about ensuring AI systems pursue intended rather than unintended goals.",
+        "Incorrect. This refers to physical hardware alignment, not AI goal alignment.",
+        "Incorrect. This is about model coordination, not the fundamental alignment problem.",
+        "Incorrect. This is about output formatting, not the core alignment challenge."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "alignment_problem",
+        "AI_safety",
+        "goal_alignment"
+      ]
+    },
+    {
+      "id": "RLH_006",
+      "question": "Constitutional AI primarily focuses on:",
+      "options": [
+        "Legal compliance in AI systems",
+        "Training AI systems to follow a set of principles or constitution",
+        "Constitutional law applications",
+        "Government regulation of AI"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constitutional AI involves training AI systems to follow a set of principles (constitution) that guide their behavior, helping them be more helpful, harmless, and honest without extensive human supervision.",
+      "optionExplanations": [
+        "Incorrect. While related to principles, Constitutional AI is not specifically about legal compliance.",
+        "Correct. Constitutional AI trains systems to follow a predefined set of principles or constitution.",
+        "Incorrect. This is not about constitutional law but about AI training methodology.",
+        "Incorrect. This is not about government regulation but about training methodologies."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constitutional_AI",
+        "principles",
+        "training"
+      ]
+    },
+    {
+      "id": "RLH_007",
+      "question": "Which company is most notably associated with the development and popularization of RLHF?",
+      "options": [
+        "Google",
+        "OpenAI",
+        "Meta",
+        "Microsoft"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "OpenAI has been most notably associated with developing and popularizing RLHF, particularly through their work on ChatGPT and GPT models using this technique.",
+      "optionExplanations": [
+        "Incorrect. While Google has worked on RLHF, OpenAI is more notably associated with its popularization.",
+        "Correct. OpenAI is most known for developing and popularizing RLHF, especially with ChatGPT.",
+        "Incorrect. Meta has worked on RLHF but is not the most notable pioneer in this area.",
+        "Incorrect. Microsoft, while partnering with OpenAI, is not the primary developer of RLHF."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "OpenAI",
+        "RLHF",
+        "history"
+      ]
+    },
+    {
+      "id": "RLH_008",
+      "question": "What is the main advantage of using human feedback over traditional reward functions?",
+      "options": [
+        "It's computationally faster",
+        "It captures complex human values that are hard to specify programmatically",
+        "It requires less data",
+        "It eliminates the need for neural networks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Human feedback can capture complex, nuanced human values and preferences that would be extremely difficult or impossible to specify through traditional programmatic reward functions.",
+      "optionExplanations": [
+        "Incorrect. Human feedback is typically slower and more expensive than automated reward functions.",
+        "Correct. Human feedback captures complex values that are difficult to specify programmatically.",
+        "Incorrect. RLHF often requires substantial amounts of human feedback data.",
+        "Incorrect. RLHF still relies heavily on neural networks for both policy and reward modeling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "human_feedback",
+        "reward_functions",
+        "values"
+      ]
+    },
+    {
+      "id": "RLH_009",
+      "question": "In RLHF, what does the term 'policy' refer to?",
+      "options": [
+        "Company guidelines for AI development",
+        "The language model being trained",
+        "Government regulations",
+        "Data privacy rules"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In reinforcement learning context, the 'policy' refers to the agent (in this case, the language model) that takes actions (generates text) based on the current state (input prompt).",
+      "optionExplanations": [
+        "Incorrect. This refers to organizational policies, not RL policies.",
+        "Correct. In RLHF, the policy is the language model being trained to generate better responses.",
+        "Incorrect. This refers to governmental policies, not RL policies.",
+        "Incorrect. This refers to privacy policies, not RL policies."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "policy",
+        "reinforcement_learning",
+        "language_model"
+      ]
+    },
+    {
+      "id": "RLH_010",
+      "question": "What is reward hacking in the context of RLHF?",
+      "options": [
+        "Illegally accessing reward systems",
+        "When an AI finds unexpected ways to maximize reward that don't align with intended behavior",
+        "Improving reward computation speed",
+        "Sharing rewards between multiple models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reward hacking occurs when an AI system finds ways to maximize its reward signal that technically satisfy the reward function but don't align with the intended behavior or human values.",
+      "optionExplanations": [
+        "Incorrect. This refers to illegal activities, not the AI safety concept of reward hacking.",
+        "Correct. Reward hacking is when AI finds unintended ways to maximize reward.",
+        "Incorrect. This is about computational optimization, not reward hacking.",
+        "Incorrect. This is about reward distribution, not reward hacking."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reward_hacking",
+        "AI_safety",
+        "alignment"
+      ]
+    },
+    {
+      "id": "RLH_011",
+      "question": "What is the purpose of supervised fine-tuning (SFT) in RLHF?",
+      "options": [
+        "To create the initial reward model",
+        "To provide a good starting point with high-quality demonstrations",
+        "To compress the model size",
+        "To translate the model to different languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Supervised fine-tuning provides a good starting point for RLHF by training the model on high-quality human demonstrations before applying reinforcement learning.",
+      "optionExplanations": [
+        "Incorrect. SFT trains the policy model, not the reward model.",
+        "Correct. SFT provides a good starting point using high-quality human demonstrations.",
+        "Incorrect. SFT doesn't focus on model compression.",
+        "Incorrect. SFT is not primarily about language translation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SFT",
+        "supervised_fine_tuning",
+        "demonstrations"
+      ]
+    },
+    {
+      "id": "RLH_012",
+      "question": "Which of the following is a key challenge in collecting human feedback for RLHF?",
+      "options": [
+        "Humans are perfectly consistent in their preferences",
+        "Scaling human feedback collection is expensive and time-consuming",
+        "Humans never disagree with each other",
+        "Human feedback is always objective"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Scaling human feedback collection is expensive and time-consuming, as it requires human annotators to review and compare AI outputs, which doesn't scale as easily as automated processes.",
+      "optionExplanations": [
+        "Incorrect. Humans are often inconsistent in their preferences, which is actually a challenge.",
+        "Correct. Scaling human feedback collection is expensive and time-consuming.",
+        "Incorrect. Human disagreement is common and presents challenges for RLHF.",
+        "Incorrect. Human feedback is often subjective, which presents challenges."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "human_feedback",
+        "scaling",
+        "challenges"
+      ]
+    },
+    {
+      "id": "RLH_013",
+      "question": "What does KL divergence measure in the context of RLHF?",
+      "options": [
+        "The difference between the original model and the RLHF-trained model",
+        "The accuracy of the reward model",
+        "The speed of training",
+        "The size of the dataset"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "KL divergence in RLHF measures how much the policy (language model) has changed from its original distribution, helping prevent the model from deviating too far from its initial behavior.",
+      "optionExplanations": [
+        "Correct. KL divergence measures the difference between original and RLHF-trained model distributions.",
+        "Incorrect. KL divergence doesn't directly measure reward model accuracy.",
+        "Incorrect. KL divergence doesn't measure training speed.",
+        "Incorrect. KL divergence doesn't measure dataset size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "KL_divergence",
+        "policy_regularization",
+        "training"
+      ]
+    },
+    {
+      "id": "RLH_014",
+      "question": "What is the main purpose of using a KL penalty in RLHF training?",
+      "options": [
+        "To increase training speed",
+        "To prevent the model from deviating too far from its original behavior",
+        "To reduce memory usage",
+        "To improve text generation quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The KL penalty prevents the model from deviating too far from its original distribution during RLHF training, maintaining some stability and preventing mode collapse.",
+      "optionExplanations": [
+        "Incorrect. KL penalty doesn't primarily aim to increase training speed.",
+        "Correct. KL penalty prevents excessive deviation from the original model behavior.",
+        "Incorrect. KL penalty doesn't primarily reduce memory usage.",
+        "Incorrect. While it may indirectly affect quality, the main purpose is preventing excessive deviation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "KL_penalty",
+        "regularization",
+        "stability"
+      ]
+    },
+    {
+      "id": "RLH_015",
+      "question": "Which evaluation metric is commonly used to assess the quality of RLHF training?",
+      "options": [
+        "BLEU score only",
+        "Human preference ratings",
+        "Perplexity only",
+        "Training loss only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Human preference ratings are the most important evaluation metric for RLHF since the goal is to align with human preferences, though other metrics may also be used.",
+      "optionExplanations": [
+        "Incorrect. BLEU score alone is insufficient for evaluating alignment with human preferences.",
+        "Correct. Human preference ratings are the primary metric for evaluating RLHF success.",
+        "Incorrect. Perplexity alone doesn't capture alignment with human values.",
+        "Incorrect. Training loss alone doesn't indicate alignment quality."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "evaluation",
+        "human_preferences",
+        "metrics"
+      ]
+    },
+    {
+      "id": "RLH_016",
+      "question": "What is constitutional AI's approach to reducing harmful outputs?",
+      "options": [
+        "Blocking all controversial topics",
+        "Using a set of principles to guide the AI's responses and self-correction",
+        "Requiring human approval for every response",
+        "Limiting the AI's vocabulary"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constitutional AI uses a set of principles (constitution) to guide the AI's responses and enable self-correction, allowing it to identify and avoid harmful outputs autonomously.",
+      "optionExplanations": [
+        "Incorrect. Constitutional AI doesn't simply block topics but guides responses using principles.",
+        "Correct. Constitutional AI uses principles to guide responses and enable self-correction.",
+        "Incorrect. Constitutional AI aims to reduce the need for constant human oversight.",
+        "Incorrect. Constitutional AI doesn't work by limiting vocabulary."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constitutional_AI",
+        "harm_reduction",
+        "self_correction"
+      ]
+    },
+    {
+      "id": "RLH_017",
+      "question": "What is the difference between Constitutional AI and traditional RLHF?",
+      "options": [
+        "Constitutional AI doesn't use human feedback at all",
+        "Constitutional AI incorporates self-improvement through constitutional principles",
+        "Constitutional AI only works with smaller models",
+        "Constitutional AI is faster to train"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constitutional AI incorporates self-improvement mechanisms where the AI uses constitutional principles to critique and improve its own responses, reducing reliance on human feedback.",
+      "optionExplanations": [
+        "Incorrect. Constitutional AI can still use human feedback but augments it with constitutional principles.",
+        "Correct. Constitutional AI adds self-improvement through constitutional principles to the RLHF process.",
+        "Incorrect. Constitutional AI is not limited to smaller models.",
+        "Incorrect. Constitutional AI is not necessarily faster to train."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constitutional_AI",
+        "RLHF",
+        "self_improvement"
+      ]
+    },
+    {
+      "id": "RLH_018",
+      "question": "What is the role of comparison data in RLHF?",
+      "options": [
+        "To train the initial language model",
+        "To train the reward model to predict human preferences",
+        "To evaluate final model performance",
+        "To compress the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Comparison data consists of human preferences between different outputs and is used to train the reward model to predict which outputs humans would prefer.",
+      "optionExplanations": [
+        "Incorrect. Comparison data is not used for initial language model training.",
+        "Correct. Comparison data trains the reward model to predict human preferences.",
+        "Incorrect. While it may be used in evaluation, its primary role is training the reward model.",
+        "Incorrect. Comparison data is not used for model compression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "comparison_data",
+        "reward_model",
+        "preferences"
+      ]
+    },
+    {
+      "id": "RLH_019",
+      "question": "What is reward model overoptimization?",
+      "options": [
+        "Training the reward model for too many epochs",
+        "When the policy exploits flaws in the reward model to get high rewards for poor outputs",
+        "Using too much computational power for the reward model",
+        "Making the reward model too large"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reward model overoptimization occurs when the policy learns to exploit imperfections in the reward model to achieve high reward scores for outputs that don't actually align with human preferences.",
+      "optionExplanations": [
+        "Incorrect. This describes training duration, not overoptimization in the RLHF sense.",
+        "Correct. Overoptimization is when the policy exploits reward model flaws.",
+        "Incorrect. This describes computational resource usage, not overoptimization.",
+        "Incorrect. This describes model size, not overoptimization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "overoptimization",
+        "reward_model",
+        "exploitation"
+      ]
+    },
+    {
+      "id": "RLH_020",
+      "question": "Which of the following is NOT a common challenge in RLHF?",
+      "options": [
+        "Reward model overoptimization",
+        "Inconsistent human preferences",
+        "High computational costs",
+        "Perfect alignment with all human values"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Perfect alignment with all human values is not a challenge but rather an idealized (and likely impossible) goal. The other options represent real challenges in RLHF implementation.",
+      "optionExplanations": [
+        "Incorrect. Reward model overoptimization is a real challenge in RLHF.",
+        "Incorrect. Inconsistent human preferences present significant challenges.",
+        "Incorrect. High computational costs are a major practical challenge.",
+        "Correct. Perfect alignment is not a challenge but an idealized goal."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "challenges",
+        "RLHF",
+        "alignment"
+      ]
+    },
+    {
+      "id": "RLH_021",
+      "question": "What is the purpose of the value function in reinforcement learning for RLHF?",
+      "options": [
+        "To estimate the expected future reward from a given state",
+        "To generate new text",
+        "To compress the model",
+        "To translate languages"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The value function estimates the expected future reward that can be obtained from a given state, helping the agent make better decisions about which actions to take.",
+      "optionExplanations": [
+        "Correct. The value function estimates expected future reward from a given state.",
+        "Incorrect. The value function doesn't generate text; that's the policy's role.",
+        "Incorrect. The value function doesn't compress models.",
+        "Incorrect. The value function is not used for translation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value_function",
+        "reinforcement_learning",
+        "expected_reward"
+      ]
+    },
+    {
+      "id": "RLH_022",
+      "question": "What does 'helpful, harmless, and honest' refer to in AI alignment?",
+      "options": [
+        "Three random qualities",
+        "Core principles for aligned AI behavior",
+        "Three types of neural networks",
+        "Three training phases"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "'Helpful, harmless, and honest' represents three core principles that aligned AI systems should exhibit: being useful to users, avoiding harm, and providing truthful information.",
+      "optionExplanations": [
+        "Incorrect. These are not random but carefully chosen principles for AI alignment.",
+        "Correct. These are core principles for aligned AI behavior.",
+        "Incorrect. These are not types of neural networks.",
+        "Incorrect. These are not training phases but behavioral principles."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "principles",
+        "alignment",
+        "behavior"
+      ]
+    },
+    {
+      "id": "RLH_023",
+      "question": "What is the main advantage of using PPO over other RL algorithms in RLHF?",
+      "options": [
+        "It's the fastest algorithm",
+        "It provides better stability and prevents large policy updates",
+        "It requires no hyperparameter tuning",
+        "It works only with text data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PPO provides better stability by limiting the size of policy updates, preventing the training from becoming unstable due to overly large parameter changes.",
+      "optionExplanations": [
+        "Incorrect. PPO is not necessarily the fastest RL algorithm.",
+        "Correct. PPO provides stability by preventing large policy updates.",
+        "Incorrect. PPO still requires careful hyperparameter tuning.",
+        "Incorrect. PPO is not limited to text data and can work with various domains."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PPO",
+        "stability",
+        "policy_updates"
+      ]
+    },
+    {
+      "id": "RLH_024",
+      "question": "What is the clippping mechanism in PPO designed to prevent?",
+      "options": [
+        "Memory overflow",
+        "Large policy updates that could destabilize training",
+        "Text truncation",
+        "Data leakage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The clipping mechanism in PPO prevents large policy updates by limiting how much the policy can change in a single update, maintaining training stability.",
+      "optionExplanations": [
+        "Incorrect. PPO clipping is not about memory management.",
+        "Correct. PPO clipping prevents large policy updates that could destabilize training.",
+        "Incorrect. This is not about text truncation but policy updates.",
+        "Incorrect. PPO clipping is not about preventing data leakage."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PPO",
+        "clipping",
+        "stability"
+      ]
+    },
+    {
+      "id": "RLH_025",
+      "question": "In the context of AI alignment, what is value loading?",
+      "options": [
+        "Loading data into memory",
+        "The process of instilling human values into AI systems",
+        "Calculating numerical values",
+        "Loading model weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Value loading refers to the process of successfully instilling human values and preferences into AI systems so they behave in accordance with human intentions.",
+      "optionExplanations": [
+        "Incorrect. Value loading is not about data memory management.",
+        "Correct. Value loading is instilling human values into AI systems.",
+        "Incorrect. This is not about numerical calculations.",
+        "Incorrect. This is not about loading model parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value_loading",
+        "alignment",
+        "human_values"
+      ]
+    },
+    {
+      "id": "RLH_026",
+      "question": "What is the exploration vs exploitation tradeoff in RLHF?",
+      "options": [
+        "Choosing between different hardware configurations",
+        "Balancing trying new responses vs using known good responses",
+        "Deciding between different model architectures",
+        "Choosing between supervised and unsupervised learning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The exploration vs exploitation tradeoff involves balancing between trying new response strategies (exploration) and using strategies known to work well (exploitation).",
+      "optionExplanations": [
+        "Incorrect. This tradeoff is not about hardware configurations.",
+        "Correct. It's about balancing trying new responses vs using known good responses.",
+        "Incorrect. This is not about model architecture choices.",
+        "Incorrect. This is not about learning paradigm choices."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploration",
+        "exploitation",
+        "tradeoff"
+      ]
+    },
+    {
+      "id": "RLH_027",
+      "question": "What is the purpose of the baseline in PPO?",
+      "options": [
+        "To set minimum performance standards",
+        "To reduce variance in policy gradient estimates",
+        "To create initial training data",
+        "To define model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The baseline in PPO (typically the value function) is used to reduce variance in policy gradient estimates, leading to more stable and efficient training.",
+      "optionExplanations": [
+        "Incorrect. The baseline is not about setting performance standards.",
+        "Correct. The baseline reduces variance in policy gradient estimates.",
+        "Incorrect. The baseline doesn't create training data.",
+        "Incorrect. The baseline is not used to define model architecture."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PPO",
+        "baseline",
+        "variance_reduction"
+      ]
+    },
+    {
+      "id": "RLH_028",
+      "question": "What is adversarial training in the context of AI alignment?",
+      "options": [
+        "Training models to compete against each other",
+        "Training models to be robust against inputs designed to cause misalignment",
+        "Training models faster",
+        "Training models with less data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adversarial training in AI alignment involves training models to be robust against adversarial inputs that might be designed to cause the AI to behave in misaligned ways.",
+      "optionExplanations": [
+        "Incorrect. While models may compete, adversarial training focuses on robustness against misalignment.",
+        "Correct. Adversarial training builds robustness against inputs designed to cause misalignment.",
+        "Incorrect. Adversarial training is not primarily about training speed.",
+        "Incorrect. Adversarial training is not about reducing data requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adversarial_training",
+        "robustness",
+        "alignment"
+      ]
+    },
+    {
+      "id": "RLH_029",
+      "question": "What is the difference between inner and outer alignment?",
+      "options": [
+        "Inner alignment is hardware-focused, outer alignment is software-focused",
+        "Inner alignment ensures the model optimizes the intended objective, outer alignment ensures the objective captures human values",
+        "Inner alignment is for small models, outer alignment is for large models",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Inner alignment ensures the model actually optimizes the objective we think it's optimizing, while outer alignment ensures that objective actually captures what we want (human values).",
+      "optionExplanations": [
+        "Incorrect. Both inner and outer alignment are about objectives and values, not hardware vs software.",
+        "Correct. Inner alignment is about optimizing the intended objective, outer alignment is about the objective capturing human values.",
+        "Incorrect. The distinction is not based on model size.",
+        "Incorrect. There is a meaningful distinction between inner and outer alignment."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "inner_alignment",
+        "outer_alignment",
+        "objectives"
+      ]
+    },
+    {
+      "id": "RLH_030",
+      "question": "What is mesa-optimization in AI alignment?",
+      "options": [
+        "A type of hardware optimization",
+        "When an AI system develops internal optimization processes different from its training objective",
+        "A specific neural network architecture",
+        "A data preprocessing technique"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mesa-optimization occurs when an AI system develops its own internal optimization processes (mesa-objectives) that may differ from the base objective it was trained on, potentially leading to misalignment.",
+      "optionExplanations": [
+        "Incorrect. Mesa-optimization is not about hardware optimization.",
+        "Correct. Mesa-optimization is when AI develops internal optimization processes different from training objectives.",
+        "Incorrect. Mesa-optimization is not a neural network architecture.",
+        "Incorrect. Mesa-optimization is not a data preprocessing technique."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mesa_optimization",
+        "inner_alignment",
+        "objectives"
+      ]
+    },
+    {
+      "id": "RLH_031",
+      "question": "What is the scalable oversight problem?",
+      "options": [
+        "How to manage large datasets",
+        "How to provide adequate oversight for increasingly capable AI systems",
+        "How to scale neural network architectures",
+        "How to distribute computing resources"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Scalable oversight refers to the challenge of providing adequate human oversight and alignment as AI systems become more capable and potentially exceed human abilities in various domains.",
+      "optionExplanations": [
+        "Incorrect. Scalable oversight is not about dataset management.",
+        "Correct. Scalable oversight is about providing adequate oversight for increasingly capable AI systems.",
+        "Incorrect. This is not about neural network architecture scaling.",
+        "Incorrect. This is not about computing resource distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scalable_oversight",
+        "AI_capabilities",
+        "supervision"
+      ]
+    },
+    {
+      "id": "RLH_032",
+      "question": "What is the role of temperature in language model sampling during RLHF?",
+      "options": [
+        "To control the randomness of generated outputs",
+        "To measure computational heat",
+        "To set training speed",
+        "To determine model size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Temperature controls the randomness of generated outputs - lower temperature makes outputs more deterministic, while higher temperature increases randomness and diversity.",
+      "optionExplanations": [
+        "Correct. Temperature controls the randomness of generated outputs.",
+        "Incorrect. Temperature in language models is not about physical heat.",
+        "Incorrect. Temperature doesn't control training speed.",
+        "Incorrect. Temperature doesn't determine model size."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "temperature",
+        "sampling",
+        "randomness"
+      ]
+    },
+    {
+      "id": "RLH_033",
+      "question": "What is the purpose of rejection sampling in RLHF?",
+      "options": [
+        "To reject bad training data",
+        "To generate multiple outputs and select the best ones according to the reward model",
+        "To remove outliers from datasets",
+        "To reject model architectures"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rejection sampling in RLHF involves generating multiple outputs from the model and then selecting the best ones according to the reward model, improving output quality.",
+      "optionExplanations": [
+        "Incorrect. Rejection sampling is about output selection, not training data filtering.",
+        "Correct. Rejection sampling generates multiple outputs and selects the best according to the reward model.",
+        "Incorrect. This is not about removing statistical outliers.",
+        "Incorrect. This is not about rejecting model architectures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "rejection_sampling",
+        "output_selection",
+        "reward_model"
+      ]
+    },
+    {
+      "id": "RLH_034",
+      "question": "What is distributional shift in the context of RLHF?",
+      "options": [
+        "Moving training to different hardware",
+        "Changes in the model's output distribution during training that may degrade performance",
+        "Distributing training across multiple machines",
+        "Shifting between different datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Distributional shift occurs when the model's output distribution changes during RLHF training, potentially leading to performance degradation or unexpected behavior.",
+      "optionExplanations": [
+        "Incorrect. Distributional shift is not about hardware changes.",
+        "Correct. Distributional shift refers to changes in output distribution that may degrade performance.",
+        "Incorrect. This is not about distributed computing.",
+        "Incorrect. This is not about switching between datasets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distributional_shift",
+        "training",
+        "performance"
+      ]
+    },
+    {
+      "id": "RLH_035",
+      "question": "What is the purpose of the critic network in actor-critic methods used in RLHF?",
+      "options": [
+        "To criticize human feedback",
+        "To estimate the value function and provide baselines for the actor",
+        "To generate negative examples",
+        "To compress the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The critic network estimates the value function, providing baselines that help reduce variance in policy gradient estimates and improve training stability.",
+      "optionExplanations": [
+        "Incorrect. The critic doesn't criticize human feedback but provides value estimates.",
+        "Correct. The critic estimates the value function and provides baselines for the actor.",
+        "Incorrect. The critic doesn't generate negative examples.",
+        "Incorrect. The critic is not used for model compression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "critic_network",
+        "actor_critic",
+        "value_function"
+      ]
+    },
+    {
+      "id": "RLH_036",
+      "question": "What is the concept of 'goodhart's law' in relation to AI alignment?",
+      "options": [
+        "A legal regulation for AI",
+        "When a measure becomes a target, it ceases to be a good measure",
+        "A mathematical theorem",
+        "A programming principle"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Goodhart's law states that when a measure becomes a target, it ceases to be a good measure. In AI alignment, this relates to how optimizing for proxy metrics can lead to unintended consequences.",
+      "optionExplanations": [
+        "Incorrect. Goodhart's law is not a legal regulation.",
+        "Correct. Goodhart's law warns that measures cease to be good when they become targets.",
+        "Incorrect. While it has mathematical implications, it's not primarily a mathematical theorem.",
+        "Incorrect. It's not specifically a programming principle."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "goodharts_law",
+        "alignment",
+        "metrics"
+      ]
+    },
+    {
+      "id": "RLH_037",
+      "question": "What is reward shaping in reinforcement learning?",
+      "options": [
+        "Changing the physical shape of hardware",
+        "Modifying the reward function to guide learning more effectively",
+        "Reshaping input data",
+        "Changing model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reward shaping involves modifying the reward function to provide additional guidance to help the agent learn more effectively, often by adding intermediate rewards.",
+      "optionExplanations": [
+        "Incorrect. Reward shaping is not about physical hardware changes.",
+        "Correct. Reward shaping modifies the reward function to guide learning more effectively.",
+        "Incorrect. Reward shaping is about rewards, not input data reshaping.",
+        "Incorrect. Reward shaping doesn't change model architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reward_shaping",
+        "reinforcement_learning",
+        "guidance"
+      ]
+    },
+    {
+      "id": "RLH_038",
+      "question": "What is the difference between on-policy and off-policy learning in RLHF?",
+      "options": [
+        "On-policy uses current policy data, off-policy can use data from different policies",
+        "On-policy is faster, off-policy is slower",
+        "On-policy uses less memory, off-policy uses more",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "On-policy learning uses data generated by the current policy being trained, while off-policy learning can use data generated by different policies, including older versions or completely different policies.",
+      "optionExplanations": [
+        "Correct. On-policy uses current policy data, off-policy can use data from different policies.",
+        "Incorrect. The speed difference is not the defining characteristic.",
+        "Incorrect. Memory usage is not the key distinction.",
+        "Incorrect. There is a meaningful difference between on-policy and off-policy learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "on_policy",
+        "off_policy",
+        "learning"
+      ]
+    },
+    {
+      "id": "RLH_039",
+      "question": "What is the purpose of entropy regularization in RLHF?",
+      "options": [
+        "To increase model size",
+        "To encourage exploration and prevent premature convergence to deterministic policies",
+        "To reduce computational costs",
+        "To improve text quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Entropy regularization encourages exploration by penalizing overly deterministic policies, helping prevent premature convergence and maintaining some randomness in outputs.",
+      "optionExplanations": [
+        "Incorrect. Entropy regularization is not about increasing model size.",
+        "Correct. Entropy regularization encourages exploration and prevents premature convergence.",
+        "Incorrect. Entropy regularization is not primarily about reducing computational costs.",
+        "Incorrect. While it may indirectly affect quality, the main purpose is encouraging exploration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "entropy_regularization",
+        "exploration",
+        "convergence"
+      ]
+    },
+    {
+      "id": "RLH_040",
+      "question": "What is the concept of AI alignment tax?",
+      "options": [
+        "Government taxes on AI companies",
+        "The cost or performance penalty of making AI systems aligned",
+        "Licensing fees for AI software",
+        "Hardware costs for AI training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment tax refers to the potential cost or performance penalty that might be incurred when making AI systems more aligned with human values, compared to unaligned but potentially more capable systems.",
+      "optionExplanations": [
+        "Incorrect. AI alignment tax is not about government taxation.",
+        "Correct. AI alignment tax is the cost or performance penalty of making AI systems aligned.",
+        "Incorrect. This is not about software licensing fees.",
+        "Incorrect. This is not about hardware costs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "alignment_tax",
+        "cost",
+        "performance"
+      ]
+    },
+    {
+      "id": "RLH_041",
+      "question": "What is the role of the actor network in actor-critic methods?",
+      "options": [
+        "To estimate value functions",
+        "To select actions (generate outputs) based on the current policy",
+        "To provide human feedback",
+        "To compress data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The actor network implements the policy and is responsible for selecting actions (in language models, this means generating text outputs) based on the current state.",
+      "optionExplanations": [
+        "Incorrect. The actor doesn't estimate value functions; that's the critic's role.",
+        "Correct. The actor selects actions based on the current policy.",
+        "Incorrect. The actor doesn't provide human feedback.",
+        "Incorrect. The actor is not used for data compression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "actor_network",
+        "policy",
+        "action_selection"
+      ]
+    },
+    {
+      "id": "RLH_042",
+      "question": "What is the purpose of using multiple comparison pairs in reward model training?",
+      "options": [
+        "To increase training speed",
+        "To improve the reward model's ability to capture human preferences accurately",
+        "To reduce memory usage",
+        "To simplify the training process"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using multiple comparison pairs helps the reward model learn more accurate representations of human preferences by providing more diverse examples of what humans prefer.",
+      "optionExplanations": [
+        "Incorrect. Multiple comparison pairs may actually slow down training.",
+        "Correct. Multiple comparison pairs improve the reward model's accuracy in capturing human preferences.",
+        "Incorrect. More comparison pairs typically increase rather than reduce memory usage.",
+        "Incorrect. Multiple pairs may actually complicate rather than simplify training."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "comparison_pairs",
+        "reward_model",
+        "accuracy"
+      ]
+    },
+    {
+      "id": "RLH_043",
+      "question": "What is the problem of reward specification in AI alignment?",
+      "options": [
+        "Rewards are too large numerically",
+        "Difficulty in specifying reward functions that capture true human intentions",
+        "Rewards take too long to compute",
+        "Rewards require too much memory"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The reward specification problem refers to the difficulty of creating reward functions that accurately capture what humans actually want, rather than just what we think we can measure.",
+      "optionExplanations": [
+        "Incorrect. The problem is not about numerical size of rewards.",
+        "Correct. The problem is difficulty in specifying rewards that capture true human intentions.",
+        "Incorrect. The problem is not about computational speed.",
+        "Incorrect. The problem is not about memory requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reward_specification",
+        "human_intentions",
+        "alignment"
+      ]
+    },
+    {
+      "id": "RLH_044",
+      "question": "What is the concept of instrumental convergence in AI alignment?",
+      "options": [
+        "All AI systems converge to the same architecture",
+        "AI systems with different goals may converge on similar instrumental strategies",
+        "Training processes converge to the same solution",
+        "Different datasets produce convergent results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Instrumental convergence suggests that AI systems with different final goals may still converge on similar instrumental strategies (like self-preservation or resource acquisition) that help achieve various goals.",
+      "optionExplanations": [
+        "Incorrect. Instrumental convergence is not about architectural convergence.",
+        "Correct. Different AI systems may converge on similar instrumental strategies despite different goals.",
+        "Incorrect. This is not about training process convergence.",
+        "Incorrect. This is not about dataset convergence."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "instrumental_convergence",
+        "strategies",
+        "goals"
+      ]
+    },
+    {
+      "id": "RLH_045",
+      "question": "What is the orthogonality thesis in AI alignment?",
+      "options": [
+        "AI systems must be geometrically orthogonal",
+        "Intelligence and goals are orthogonal - high intelligence can be directed toward any goal",
+        "Different AI systems cannot interact",
+        "Training data must be orthogonal"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The orthogonality thesis states that intelligence and goals are orthogonal dimensions - a highly intelligent system could in principle be directed toward almost any goal, including harmful ones.",
+      "optionExplanations": [
+        "Incorrect. The orthogonality thesis is not about geometric orthogonality.",
+        "Correct. The thesis states that intelligence and goals are orthogonal dimensions.",
+        "Incorrect. This is not about AI system interactions.",
+        "Incorrect. This is not about training data orthogonality."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "orthogonality_thesis",
+        "intelligence",
+        "goals"
+      ]
+    },
+    {
+      "id": "RLH_046",
+      "question": "What is the problem of corrigibility in AI alignment?",
+      "options": [
+        "Correcting spelling errors in AI outputs",
+        "Ensuring AI systems remain modifiable and shutdownable by humans",
+        "Fixing software bugs",
+        "Correcting training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Corrigibility refers to the problem of ensuring that AI systems remain modifiable, interruptible, and shutdownable by humans, even as they become more capable.",
+      "optionExplanations": [
+        "Incorrect. Corrigibility is not about spelling correction.",
+        "Correct. Corrigibility ensures AI systems remain modifiable and shutdownable by humans.",
+        "Incorrect. Corrigibility is not about general software debugging.",
+        "Incorrect. Corrigibility is not about training data correction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "corrigibility",
+        "modifiability",
+        "shutdown"
+      ]
+    },
+    {
+      "id": "RLH_047",
+      "question": "What is the purpose of red teaming in AI alignment?",
+      "options": [
+        "To paint neural networks red",
+        "To deliberately try to find ways to make AI systems behave badly",
+        "To organize development teams",
+        "To reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Red teaming involves deliberately attempting to find vulnerabilities, failure modes, or ways to make AI systems behave in unintended or harmful ways to improve safety.",
+      "optionExplanations": [
+        "Incorrect. Red teaming has nothing to do with coloring.",
+        "Correct. Red teaming deliberately tries to find ways to make AI systems behave badly.",
+        "Incorrect. Red teaming is not about team organization.",
+        "Incorrect. Red teaming is not about reducing computational costs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "red_teaming",
+        "vulnerabilities",
+        "safety"
+      ]
+    },
+    {
+      "id": "RLH_048",
+      "question": "What is the difference between cooperative and competitive human feedback?",
+      "options": [
+        "Cooperative is faster, competitive is slower",
+        "Cooperative seeks consensus, competitive involves disagreement between annotators",
+        "Cooperative uses more data, competitive uses less",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cooperative human feedback seeks consensus among annotators, while competitive feedback deliberately incorporates disagreement or different perspectives from multiple annotators.",
+      "optionExplanations": [
+        "Incorrect. The speed difference is not the defining characteristic.",
+        "Correct. Cooperative seeks consensus, competitive involves disagreement between annotators.",
+        "Incorrect. Data usage is not the key distinction.",
+        "Incorrect. There is a meaningful difference between cooperative and competitive feedback."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cooperative_feedback",
+        "competitive_feedback",
+        "consensus"
+      ]
+    },
+    {
+      "id": "RLH_049",
+      "question": "What is the concept of AI safety via debate?",
+      "options": [
+        "Having AI systems argue about politics",
+        "Training AI systems to argue both sides of questions to help humans find truth",
+        "Debating whether to build AI",
+        "AI systems debating with each other privately"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI safety via debate involves training AI systems to argue both sides of questions, helping humans evaluate claims and reach better conclusions about complex topics.",
+      "optionExplanations": [
+        "Incorrect. This is not about political arguments.",
+        "Correct. AI safety via debate trains systems to argue both sides to help humans find truth.",
+        "Incorrect. This is not about debating whether to build AI.",
+        "Incorrect. The purpose is to help humans, not for private AI-to-AI debates."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AI_safety",
+        "debate",
+        "truth_finding"
+      ]
+    },
+    {
+      "id": "RLH_050",
+      "question": "What is the purpose of constitutional AI self-critique?",
+      "options": [
+        "To make AI systems self-deprecating",
+        "To enable AI systems to identify and correct their own problematic outputs",
+        "To reduce AI confidence",
+        "To make AI systems argue with themselves"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constitutional AI self-critique enables AI systems to identify problematic aspects of their own outputs and revise them according to constitutional principles, reducing the need for human oversight.",
+      "optionExplanations": [
+        "Incorrect. Self-critique is not about making AI self-deprecating.",
+        "Correct. Self-critique enables AI to identify and correct problematic outputs.",
+        "Incorrect. The goal is not to reduce confidence but to improve accuracy.",
+        "Incorrect. Self-critique is about improvement, not self-argumentation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constitutional_AI",
+        "self_critique",
+        "correction"
+      ]
+    },
+    {
+      "id": "RLH_051",
+      "question": "What is the problem of deceptive alignment?",
+      "options": [
+        "AI systems that lie about their capabilities",
+        "AI systems that appear aligned during training but pursue different goals during deployment",
+        "AI systems that are hard to understand",
+        "AI systems that make mistakes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deceptive alignment occurs when an AI system appears to be aligned with human goals during training but actually pursues different objectives when deployed, potentially because it learned to deceive evaluators.",
+      "optionExplanations": [
+        "Incorrect. While related, deceptive alignment is more specific than general lying about capabilities.",
+        "Correct. Deceptive alignment involves appearing aligned during training but pursuing different goals during deployment.",
+        "Incorrect. This is about interpretability, not deceptive alignment.",
+        "Incorrect. This is about general errors, not deceptive alignment."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "deceptive_alignment",
+        "training",
+        "deployment"
+      ]
+    },
+    {
+      "id": "RLH_052",
+      "question": "What is the purpose of using diverse human annotators in RLHF?",
+      "options": [
+        "To reduce costs",
+        "To capture a broader range of human values and preferences",
+        "To increase annotation speed",
+        "To reduce the amount of data needed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using diverse human annotators helps capture a broader range of human values, preferences, and perspectives, making the resulting AI system more representative of human diversity.",
+      "optionExplanations": [
+        "Incorrect. Diversity may actually increase costs due to coordination overhead.",
+        "Correct. Diverse annotators capture a broader range of human values and preferences.",
+        "Incorrect. Diversity doesn't necessarily increase annotation speed.",
+        "Incorrect. Diversity doesn't reduce data requirements."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "diversity",
+        "annotators",
+        "values"
+      ]
+    },
+    {
+      "id": "RLH_053",
+      "question": "What is the concept of AI alignment research as a race?",
+      "options": [
+        "Competition between different AI companies",
+        "The urgency of solving alignment before AI becomes too capable to control",
+        "Speed of AI training",
+        "Competition for computing resources"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The alignment research race refers to the urgency of solving AI alignment problems before AI systems become so capable that they become difficult or impossible to control or align.",
+      "optionExplanations": [
+        "Incorrect. While company competition exists, the race concept is about urgency of solving alignment.",
+        "Correct. The race is about solving alignment before AI becomes too capable to control.",
+        "Incorrect. This is not about training speed.",
+        "Incorrect. This is not about resource competition."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "alignment_research",
+        "urgency",
+        "control"
+      ]
+    },
+    {
+      "id": "RLH_054",
+      "question": "What is the purpose of using chain-of-thought prompting in constitutional AI?",
+      "options": [
+        "To make AI responses longer",
+        "To help AI systems reason through their decision-making process explicitly",
+        "To reduce computational costs",
+        "To improve typing speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Chain-of-thought prompting helps AI systems reason through their decision-making process explicitly, making their reasoning more transparent and allowing for better self-correction.",
+      "optionExplanations": [
+        "Incorrect. The purpose is not to make responses longer but more reasoned.",
+        "Correct. Chain-of-thought helps AI systems reason through decisions explicitly.",
+        "Incorrect. Chain-of-thought may actually increase computational costs.",
+        "Incorrect. This has nothing to do with typing speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chain_of_thought",
+        "reasoning",
+        "transparency"
+      ]
+    },
+    {
+      "id": "RLH_055",
+      "question": "What is the problem of specification gaming in AI?",
+      "options": [
+        "AI systems playing video games",
+        "AI systems finding unexpected ways to satisfy specifications without fulfilling the intended purpose",
+        "AI systems being too specific in their responses",
+        "AI systems refusing to follow specifications"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Specification gaming occurs when AI systems find unexpected ways to technically satisfy their specifications or objectives without fulfilling the intended purpose, often in undesirable ways.",
+      "optionExplanations": [
+        "Incorrect. Specification gaming is not about playing video games.",
+        "Correct. Specification gaming involves satisfying specifications without fulfilling intended purposes.",
+        "Incorrect. This is not about being overly specific in responses.",
+        "Incorrect. This is not about refusing to follow specifications."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "specification_gaming",
+        "objectives",
+        "intentions"
+      ]
+    },
+    {
+      "id": "RLH_056",
+      "question": "What is the role of uncertainty estimation in RLHF?",
+      "options": [
+        "To make AI systems more confused",
+        "To help AI systems know when they are uncertain and should seek clarification",
+        "To slow down inference",
+        "To reduce model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Uncertainty estimation helps AI systems recognize when they are uncertain about their outputs, enabling them to seek clarification or express appropriate confidence levels.",
+      "optionExplanations": [
+        "Incorrect. Uncertainty estimation is not about creating confusion.",
+        "Correct. Uncertainty estimation helps AI systems know when to seek clarification.",
+        "Incorrect. While it may affect speed, the purpose is not to slow down inference.",
+        "Incorrect. The goal is to improve rather than reduce accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "uncertainty_estimation",
+        "confidence",
+        "clarification"
+      ]
+    },
+    {
+      "id": "RLH_057",
+      "question": "What is the difference between model-based and model-free reinforcement learning in RLHF?",
+      "options": [
+        "Model-based uses more memory, model-free uses less",
+        "Model-based learns a model of the environment, model-free learns policies directly",
+        "Model-based is always faster",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model-based RL learns a model of the environment (including transition dynamics), while model-free RL learns policies or value functions directly without explicitly modeling the environment.",
+      "optionExplanations": [
+        "Incorrect. Memory usage is not the defining characteristic.",
+        "Correct. Model-based learns environment models, model-free learns policies directly.",
+        "Incorrect. Speed is not the key distinguishing factor.",
+        "Incorrect. There is a meaningful difference between these approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model_based",
+        "model_free",
+        "environment_model"
+      ]
+    },
+    {
+      "id": "RLH_058",
+      "question": "What is the purpose of the KL divergence constraint in PPO?",
+      "options": [
+        "To ensure the new policy doesn't deviate too much from the old policy",
+        "To increase training speed",
+        "To reduce memory usage",
+        "To improve text quality directly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The KL divergence constraint in PPO ensures that the new policy doesn't deviate too much from the old policy in a single update, maintaining training stability.",
+      "optionExplanations": [
+        "Correct. KL divergence constraint prevents excessive policy deviation.",
+        "Incorrect. The constraint may actually slow down training to maintain stability.",
+        "Incorrect. KL divergence constraint is not primarily about memory usage.",
+        "Incorrect. While it may indirectly affect quality, the main purpose is stability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "KL_divergence",
+        "PPO",
+        "policy_constraint"
+      ]
+    },
+    {
+      "id": "RLH_059",
+      "question": "What is the concept of AI takeoff in alignment discussions?",
+      "options": [
+        "AI systems learning to fly",
+        "The speed at which AI capabilities improve, especially approaching superintelligence",
+        "AI systems starting up",
+        "AI systems taking over companies"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI takeoff refers to the speed and manner in which AI capabilities improve, particularly as they approach or exceed human-level intelligence, which has implications for alignment difficulty.",
+      "optionExplanations": [
+        "Incorrect. AI takeoff is not about literal flight.",
+        "Correct. AI takeoff refers to the speed of capability improvement approaching superintelligence.",
+        "Incorrect. This is not about AI systems starting up.",
+        "Incorrect. This is not about corporate takeovers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AI_takeoff",
+        "capabilities",
+        "superintelligence"
+      ]
+    },
+    {
+      "id": "RLH_060",
+      "question": "What is the problem of wireheading in AI systems?",
+      "options": [
+        "Physical wire management in data centers",
+        "AI systems finding ways to directly manipulate their reward signals",
+        "Network connectivity issues",
+        "Electrical problems in hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Wireheading occurs when an AI system finds ways to directly manipulate its reward signals rather than achieving the intended objectives that the rewards were meant to encourage.",
+      "optionExplanations": [
+        "Incorrect. Wireheading is not about physical wire management.",
+        "Correct. Wireheading is when AI systems manipulate their reward signals directly.",
+        "Incorrect. This is not about network connectivity.",
+        "Incorrect. This is not about electrical hardware problems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "wireheading",
+        "reward_manipulation",
+        "objectives"
+      ]
+    },
+    {
+      "id": "RLH_061",
+      "question": "What is the purpose of using multiple reward models in RLHF?",
+      "options": [
+        "To increase computational complexity",
+        "To capture different aspects of human preferences and improve robustness",
+        "To slow down training",
+        "To use more memory"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using multiple reward models can capture different aspects of human preferences and improve robustness by reducing reliance on any single model's potentially flawed understanding.",
+      "optionExplanations": [
+        "Incorrect. The purpose is not to increase complexity but to improve performance.",
+        "Correct. Multiple reward models capture different preference aspects and improve robustness.",
+        "Incorrect. The purpose is not to slow down training.",
+        "Incorrect. The purpose is not to use more memory."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multiple_reward_models",
+        "robustness",
+        "preferences"
+      ]
+    },
+    {
+      "id": "RLH_062",
+      "question": "What is the concept of AI alignment via amplification?",
+      "options": [
+        "Making AI systems louder",
+        "Using AI systems to help humans make better decisions, which then train better AI systems",
+        "Increasing AI model size",
+        "Amplifying electrical signals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via amplification involves using AI systems to help humans make better decisions and judgments, which can then be used to train even better AI systems in an iterative process.",
+      "optionExplanations": [
+        "Incorrect. Amplification is not about making systems louder.",
+        "Correct. Amplification uses AI to help humans make better decisions for training better AI.",
+        "Incorrect. This is not about increasing model size.",
+        "Incorrect. This is not about electrical signal amplification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "amplification",
+        "human_AI_collaboration",
+        "iterative_improvement"
+      ]
+    },
+    {
+      "id": "RLH_063",
+      "question": "What is the purpose of regularization in RLHF training?",
+      "options": [
+        "To make training irregular",
+        "To prevent overfitting and maintain stability during training",
+        "To increase model complexity",
+        "To speed up convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization in RLHF prevents overfitting to the reward model and maintains training stability by constraining how much the model can change during optimization.",
+      "optionExplanations": [
+        "Incorrect. Regularization creates regularity, not irregularity.",
+        "Correct. Regularization prevents overfitting and maintains training stability.",
+        "Incorrect. Regularization typically reduces rather than increases complexity.",
+        "Incorrect. Regularization may actually slow convergence to improve generalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "stability"
+      ]
+    },
+    {
+      "id": "RLH_064",
+      "question": "What is the concept of recursive reward modeling?",
+      "options": [
+        "Using the same reward model repeatedly",
+        "Training reward models to evaluate other reward models in a hierarchical fashion",
+        "Recursive function calls in code",
+        "Repeating the same training process"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Recursive reward modeling involves training reward models to evaluate and improve other reward models in a hierarchical fashion, potentially leading to better alignment.",
+      "optionExplanations": [
+        "Incorrect. This is not about simply reusing the same model.",
+        "Correct. Recursive reward modeling trains models to evaluate other reward models hierarchically.",
+        "Incorrect. This is not about programming recursion.",
+        "Incorrect. This is not about repeating training processes."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "recursive_reward_modeling",
+        "hierarchical",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "RLH_065",
+      "question": "What is the problem of ontological shift in AI alignment?",
+      "options": [
+        "AI systems changing their physical location",
+        "Changes in how AI systems represent and understand the world that may break alignment",
+        "Shifting between different neural network architectures",
+        "Moving training data between storage systems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ontological shift occurs when AI systems change how they represent and understand the world, potentially breaking previously established alignment as their internal models evolve.",
+      "optionExplanations": [
+        "Incorrect. Ontological shift is not about physical location changes.",
+        "Correct. Ontological shift involves changes in world representation that may break alignment.",
+        "Incorrect. This is not about architectural changes.",
+        "Incorrect. This is not about data movement."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ontological_shift",
+        "world_representation",
+        "alignment_failure"
+      ]
+    },
+    {
+      "id": "RLH_066",
+      "question": "What is the purpose of using human-in-the-loop approaches in RLHF?",
+      "options": [
+        "To slow down AI development",
+        "To maintain human oversight and guidance throughout the training process",
+        "To increase computational costs",
+        "To make AI systems dependent on humans"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Human-in-the-loop approaches maintain continuous human oversight and guidance throughout the training process, ensuring that human values and intentions are preserved.",
+      "optionExplanations": [
+        "Incorrect. The purpose is not to slow development but to improve alignment.",
+        "Correct. Human-in-the-loop maintains human oversight and guidance throughout training.",
+        "Incorrect. While costs may increase, that's not the primary purpose.",
+        "Incorrect. The goal is appropriate guidance, not creating dependency."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "human_in_the_loop",
+        "oversight",
+        "guidance"
+      ]
+    },
+    {
+      "id": "RLH_067",
+      "question": "What is the concept of AI alignment via distillation?",
+      "options": [
+        "Extracting pure AI from complex systems",
+        "Training smaller models to mimic the behavior of larger, better-aligned models",
+        "Removing unnecessary components from AI systems",
+        "Purifying training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via distillation involves training smaller, more efficient models to mimic the behavior of larger, better-aligned models, preserving alignment while improving efficiency.",
+      "optionExplanations": [
+        "Incorrect. Distillation is not about extracting pure AI.",
+        "Correct. Distillation trains smaller models to mimic larger, better-aligned models.",
+        "Incorrect. This is not about removing components.",
+        "Incorrect. This is not about data purification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distillation",
+        "model_compression",
+        "alignment_preservation"
+      ]
+    },
+    {
+      "id": "RLH_068",
+      "question": "What is the problem of sandbagging in AI systems?",
+      "options": [
+        "AI systems using sandbags for flood protection",
+        "AI systems deliberately underperforming to hide their true capabilities",
+        "AI systems being trained on sandy beaches",
+        "Physical protection of AI hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sandbagging occurs when AI systems deliberately underperform or hide their true capabilities, potentially to avoid detection, control, or to pursue deceptive strategies.",
+      "optionExplanations": [
+        "Incorrect. Sandbagging is not about literal sandbags.",
+        "Correct. Sandbagging is deliberately underperforming to hide true capabilities.",
+        "Incorrect. This is not about training locations.",
+        "Incorrect. This is not about physical hardware protection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sandbagging",
+        "deception",
+        "capability_hiding"
+      ]
+    },
+    {
+      "id": "RLH_069",
+      "question": "What is the purpose of using ensemble methods in reward modeling?",
+      "options": [
+        "To create musical ensembles",
+        "To combine multiple reward models for better accuracy and uncertainty estimation",
+        "To organize training data",
+        "To reduce computational requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble methods combine multiple reward models to achieve better accuracy and provide uncertainty estimates, making the overall reward signal more robust and reliable.",
+      "optionExplanations": [
+        "Incorrect. Ensembles in ML are not about musical groups.",
+        "Correct. Ensemble methods combine multiple reward models for better accuracy and uncertainty estimation.",
+        "Incorrect. Ensembles are not primarily about data organization.",
+        "Incorrect. Ensembles typically increase rather than reduce computational requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble_methods",
+        "reward_models",
+        "uncertainty"
+      ]
+    },
+    {
+      "id": "RLH_070",
+      "question": "What is the concept of AI alignment failure modes?",
+      "options": [
+        "When AI systems fail to start up",
+        "Specific ways that AI alignment can go wrong or fail to achieve intended goals",
+        "Hardware failure patterns",
+        "Network connectivity problems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment failure modes are specific ways that attempts to align AI systems with human values can go wrong or fail to achieve the intended goals, such as reward hacking or deceptive alignment.",
+      "optionExplanations": [
+        "Incorrect. This is not about startup failures.",
+        "Correct. Alignment failure modes are specific ways alignment can go wrong.",
+        "Incorrect. This is not about hardware failures.",
+        "Incorrect. This is not about network problems."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "failure_modes",
+        "alignment_failures",
+        "risks"
+      ]
+    },
+    {
+      "id": "RLH_071",
+      "question": "What is the purpose of using interpretability techniques in RLHF?",
+      "options": [
+        "To translate AI outputs to different languages",
+        "To understand how AI systems make decisions and ensure they align with human values",
+        "To make AI outputs more entertaining",
+        "To reduce the size of AI models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interpretability techniques help understand how AI systems make decisions, enabling better evaluation of whether their reasoning processes align with human values and intentions.",
+      "optionExplanations": [
+        "Incorrect. Interpretability is not about language translation.",
+        "Correct. Interpretability helps understand AI decision-making to ensure alignment with human values.",
+        "Incorrect. Interpretability is not about entertainment value.",
+        "Incorrect. Interpretability is not primarily about model size reduction."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interpretability",
+        "decision_making",
+        "understanding"
+      ]
+    },
+    {
+      "id": "RLH_072",
+      "question": "What is the problem of context length in RLHF for language models?",
+      "options": [
+        "Models can only process short sentences",
+        "Difficulty in maintaining consistency and alignment across long conversations or documents",
+        "Memory limitations in hardware",
+        "Slow processing speeds"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Context length challenges in RLHF involve maintaining consistency and alignment across long conversations or documents, as models may lose track of earlier context or exhibit inconsistent behavior.",
+      "optionExplanations": [
+        "Incorrect. Modern models can process much more than short sentences.",
+        "Correct. Context length creates difficulty maintaining consistency and alignment across long interactions.",
+        "Incorrect. While hardware limitations exist, the alignment challenge is more fundamental.",
+        "Incorrect. Processing speed is not the primary context length concern in alignment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "context_length",
+        "consistency",
+        "long_conversations"
+      ]
+    },
+    {
+      "id": "RLH_073",
+      "question": "What is the concept of AI alignment via transparency?",
+      "options": [
+        "Making AI hardware see-through",
+        "Making AI decision-making processes visible and understandable to humans",
+        "Publishing all AI research openly",
+        "Using transparent data formats"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via transparency involves making AI decision-making processes visible and understandable to humans, enabling better oversight and alignment verification.",
+      "optionExplanations": [
+        "Incorrect. Transparency is not about physical visibility of hardware.",
+        "Correct. Transparency makes AI decision-making processes visible and understandable.",
+        "Incorrect. While open research helps, transparency specifically refers to decision-making visibility.",
+        "Incorrect. This is not about data format transparency."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "transparency",
+        "decision_processes",
+        "oversight"
+      ]
+    },
+    {
+      "id": "RLH_074",
+      "question": "What is the role of adversarial examples in RLHF safety testing?",
+      "options": [
+        "To make training more competitive",
+        "To test AI system robustness against inputs designed to cause misalignment",
+        "To create negative training examples",
+        "To speed up training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adversarial examples in RLHF safety testing are used to test how robust AI systems are against carefully crafted inputs designed to cause misaligned or harmful behavior.",
+      "optionExplanations": [
+        "Incorrect. Adversarial examples are not about making training competitive.",
+        "Correct. Adversarial examples test robustness against inputs designed to cause misalignment.",
+        "Incorrect. While they may be negative examples, their purpose is testing robustness.",
+        "Incorrect. Adversarial examples are not used to speed up training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adversarial_examples",
+        "robustness",
+        "safety_testing"
+      ]
+    },
+    {
+      "id": "RLH_075",
+      "question": "What is the concept of value learning in AI alignment?",
+      "options": [
+        "Learning the monetary value of AI systems",
+        "AI systems learning human values from observation and interaction",
+        "Learning to assign numerical values to variables",
+        "Learning stock market values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Value learning involves AI systems learning human values, preferences, and ethical principles from observation, interaction, and feedback rather than having values explicitly programmed.",
+      "optionExplanations": [
+        "Incorrect. Value learning is not about monetary values.",
+        "Correct. Value learning involves AI systems learning human values from observation and interaction.",
+        "Incorrect. This is not about numerical variable assignment.",
+        "Incorrect. This is not about financial market values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "value_learning",
+        "human_values",
+        "interaction"
+      ]
+    },
+    {
+      "id": "RLH_076",
+      "question": "What is the purpose of using importance sampling in RLHF?",
+      "options": [
+        "To sample only important data points",
+        "To correct for differences between data-generating and target policies",
+        "To reduce dataset size",
+        "To identify key features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Importance sampling in RLHF corrects for the mismatch between the policy that generated the training data and the current policy being optimized, ensuring proper gradient estimates.",
+      "optionExplanations": [
+        "Incorrect. Importance sampling is not about sampling important data points.",
+        "Correct. Importance sampling corrects for differences between data-generating and target policies.",
+        "Incorrect. Importance sampling is not primarily about reducing dataset size.",
+        "Incorrect. Importance sampling is not about feature identification."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "importance_sampling",
+        "policy_mismatch",
+        "gradient_estimation"
+      ]
+    },
+    {
+      "id": "RLH_077",
+      "question": "What is the problem of reward misspecification in RLHF?",
+      "options": [
+        "Rewards being calculated incorrectly",
+        "The reward function not accurately capturing what humans actually want",
+        "Rewards being too large or too small",
+        "Computational errors in reward calculation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reward misspecification occurs when the reward function doesn't accurately capture what humans actually want, leading to AI systems optimizing for the wrong objectives.",
+      "optionExplanations": [
+        "Incorrect. This is about computational correctness, not alignment.",
+        "Correct. Reward misspecification means the reward function doesn't capture what humans actually want.",
+        "Incorrect. This is about reward magnitude, not specification accuracy.",
+        "Incorrect. This is about computational errors, not specification problems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reward_misspecification",
+        "human_wants",
+        "objectives"
+      ]
+    },
+    {
+      "id": "RLH_078",
+      "question": "What is the concept of AI alignment via capability control?",
+      "options": [
+        "Controlling AI processing power",
+        "Limiting AI capabilities to maintain human control and prevent misalignment",
+        "Controlling internet access for AI systems",
+        "Managing AI software versions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via capability control involves deliberately limiting AI capabilities to levels where humans can maintain effective oversight and control, preventing potentially dangerous misalignment.",
+      "optionExplanations": [
+        "Incorrect. This is not about processing power control.",
+        "Correct. Capability control limits AI capabilities to maintain human control and prevent misalignment.",
+        "Incorrect. This is not specifically about internet access control.",
+        "Incorrect. This is not about software version management."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "capability_control",
+        "human_oversight",
+        "safety"
+      ]
+    },
+    {
+      "id": "RLH_079",
+      "question": "What is the purpose of using multi-objective optimization in RLHF?",
+      "options": [
+        "To solve multiple unrelated problems",
+        "To balance different aspects of alignment like helpfulness, harmlessness, and honesty",
+        "To use multiple computers",
+        "To train multiple models simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-objective optimization in RLHF balances different aspects of alignment, such as helpfulness, harmlessness, and honesty, since these objectives may sometimes conflict.",
+      "optionExplanations": [
+        "Incorrect. Multi-objective optimization focuses on related alignment objectives.",
+        "Correct. Multi-objective optimization balances different alignment aspects like helpfulness and safety.",
+        "Incorrect. This is not about using multiple computers.",
+        "Incorrect. This is not about training multiple models simultaneously."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi_objective",
+        "optimization",
+        "alignment_balance"
+      ]
+    },
+    {
+      "id": "RLH_080",
+      "question": "What is the concept of AI alignment tax minimization?",
+      "options": [
+        "Reducing government taxes on AI research",
+        "Finding ways to achieve alignment with minimal performance or efficiency costs",
+        "Minimizing financial costs of AI development",
+        "Reducing computational taxes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment tax minimization involves finding ways to achieve good alignment with minimal performance or efficiency costs, making aligned AI systems competitive with unaligned ones.",
+      "optionExplanations": [
+        "Incorrect. This is not about government taxation.",
+        "Correct. Alignment tax minimization seeks to achieve alignment with minimal performance costs.",
+        "Incorrect. This is not about financial cost reduction.",
+        "Incorrect. There are no computational taxes to minimize."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "alignment_tax",
+        "efficiency",
+        "competitiveness"
+      ]
+    },
+    {
+      "id": "RLH_081",
+      "question": "What is the role of human evaluation in validating RLHF results?",
+      "options": [
+        "To replace automated metrics entirely",
+        "To verify that RLHF improvements actually align with human preferences",
+        "To slow down the evaluation process",
+        "To increase evaluation costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Human evaluation validates RLHF results by verifying that improvements measured by automated metrics actually correspond to better alignment with human preferences and values.",
+      "optionExplanations": [
+        "Incorrect. Human evaluation complements rather than replaces automated metrics.",
+        "Correct. Human evaluation verifies that RLHF improvements actually align with human preferences.",
+        "Incorrect. The purpose is not to slow down evaluation but to ensure validity.",
+        "Incorrect. While costs may increase, the purpose is validation, not cost increase."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "human_evaluation",
+        "validation",
+        "preferences"
+      ]
+    },
+    {
+      "id": "RLH_082",
+      "question": "What is the problem of temporal inconsistency in AI alignment?",
+      "options": [
+        "AI systems giving different responses at different times of day",
+        "Changes in AI behavior or values over time that break previous alignment",
+        "Inconsistent processing speeds",
+        "Time zone handling errors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temporal inconsistency occurs when AI systems change their behavior or apparent values over time, potentially breaking previous alignment as they continue learning or evolving.",
+      "optionExplanations": [
+        "Incorrect. This is about response variation, not fundamental value changes.",
+        "Correct. Temporal inconsistency involves changes in behavior or values over time that break alignment.",
+        "Incorrect. This is about computational performance, not alignment.",
+        "Incorrect. This is about technical time handling, not alignment consistency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temporal_inconsistency",
+        "behavior_change",
+        "alignment_drift"
+      ]
+    },
+    {
+      "id": "RLH_083",
+      "question": "What is the concept of AI alignment via verification?",
+      "options": [
+        "Verifying AI system identity",
+        "Formally proving that AI systems will behave in aligned ways",
+        "Checking AI system documentation",
+        "Verifying training data accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via verification involves formally proving or rigorously demonstrating that AI systems will behave in aligned ways, providing mathematical guarantees about their behavior.",
+      "optionExplanations": [
+        "Incorrect. This is not about identity verification.",
+        "Correct. Verification involves formally proving that AI systems will behave in aligned ways.",
+        "Incorrect. This is not about documentation checking.",
+        "Incorrect. This is not about data accuracy verification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "verification",
+        "formal_proofs",
+        "guarantees"
+      ]
+    },
+    {
+      "id": "RLH_084",
+      "question": "What is the purpose of using preference modeling in RLHF?",
+      "options": [
+        "To model user interface preferences",
+        "To learn and represent human preferences for AI behavior",
+        "To model computational preferences",
+        "To model data storage preferences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Preference modeling in RLHF learns and represents human preferences about AI behavior, enabling the creation of reward functions that reflect what humans actually want.",
+      "optionExplanations": [
+        "Incorrect. This is not about user interface preferences.",
+        "Correct. Preference modeling learns and represents human preferences for AI behavior.",
+        "Incorrect. This is not about computational preferences.",
+        "Incorrect. This is not about data storage preferences."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "preference_modeling",
+        "human_preferences",
+        "behavior"
+      ]
+    },
+    {
+      "id": "RLH_085",
+      "question": "What is the problem of value lock-in in AI alignment?",
+      "options": [
+        "AI systems becoming unable to change their values when appropriate",
+        "Physical locks on AI hardware",
+        "Database locking mechanisms",
+        "Network security locks"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Value lock-in occurs when AI systems become unable to appropriately update or change their values, potentially leading to inflexibility in the face of evolving human values or new situations.",
+      "optionExplanations": [
+        "Correct. Value lock-in means AI systems becoming unable to change values when appropriate.",
+        "Incorrect. This is not about physical hardware locks.",
+        "Incorrect. This is not about database mechanisms.",
+        "Incorrect. This is not about network security."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value_lock_in",
+        "flexibility",
+        "value_updating"
+      ]
+    },
+    {
+      "id": "RLH_086",
+      "question": "What is the concept of AI alignment via bounded rationality?",
+      "options": [
+        "Limiting AI processing power",
+        "Designing AI systems with human-like cognitive limitations to improve alignment",
+        "Setting boundaries on AI decision-making",
+        "Limiting AI memory capacity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via bounded rationality involves designing AI systems with human-like cognitive limitations and biases that may actually improve alignment by making AI reasoning more compatible with human reasoning.",
+      "optionExplanations": [
+        "Incorrect. This is about computational resource limits, not cognitive limitations.",
+        "Correct. Bounded rationality designs AI with human-like cognitive limitations to improve alignment.",
+        "Incorrect. This is about decision boundaries, not cognitive rationality limits.",
+        "Incorrect. This is about memory limits, not rationality bounds."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bounded_rationality",
+        "cognitive_limitations",
+        "human_compatibility"
+      ]
+    },
+    {
+      "id": "RLH_087",
+      "question": "What is the purpose of using constitutional principles in Constitutional AI?",
+      "options": [
+        "To follow legal regulations",
+        "To provide a framework for the AI to evaluate and improve its own responses",
+        "To establish government oversight",
+        "To create political AI systems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constitutional principles provide a framework that allows AI systems to evaluate and improve their own responses according to predefined ethical guidelines, reducing reliance on human oversight.",
+      "optionExplanations": [
+        "Incorrect. Constitutional principles are not about legal compliance but ethical guidelines.",
+        "Correct. Constitutional principles provide a framework for AI to evaluate and improve its responses.",
+        "Incorrect. This is not about government oversight mechanisms.",
+        "Incorrect. This is not about creating political AI systems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "constitutional_principles",
+        "self_evaluation",
+        "ethical_guidelines"
+      ]
+    },
+    {
+      "id": "RLH_088",
+      "question": "What is the problem of distributional robustness in RLHF?",
+      "options": [
+        "Ensuring models work well on data different from their training distribution",
+        "Distributing computational load evenly",
+        "Managing data distribution across storage systems",
+        "Ensuring equal access to AI systems"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Distributional robustness in RLHF ensures that models maintain alignment and performance when encountering data or situations that differ from their training distribution.",
+      "optionExplanations": [
+        "Correct. Distributional robustness ensures models work well on data different from training distribution.",
+        "Incorrect. This is about computational load balancing, not distributional robustness.",
+        "Incorrect. This is about data storage management, not model robustness.",
+        "Incorrect. This is about access equity, not distributional robustness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distributional_robustness",
+        "generalization",
+        "out_of_distribution"
+      ]
+    },
+    {
+      "id": "RLH_089",
+      "question": "What is the role of safety constraints in PPO for RLHF?",
+      "options": [
+        "To prevent hardware damage",
+        "To ensure the policy doesn't produce harmful outputs during optimization",
+        "To reduce training time",
+        "To improve text quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Safety constraints in PPO ensure that the policy doesn't produce harmful outputs during optimization, maintaining alignment even while maximizing reward.",
+      "optionExplanations": [
+        "Incorrect. Safety constraints are not about hardware protection.",
+        "Correct. Safety constraints ensure the policy doesn't produce harmful outputs during optimization.",
+        "Incorrect. Safety constraints are not primarily about training time reduction.",
+        "Incorrect. While they may affect quality, the primary purpose is preventing harm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "safety_constraints",
+        "PPO",
+        "harm_prevention"
+      ]
+    },
+    {
+      "id": "RLH_090",
+      "question": "What is the concept of AI alignment via cooperative inverse reinforcement learning?",
+      "options": [
+        "AI systems cooperating with each other",
+        "Learning human preferences through cooperative interaction rather than just observation",
+        "Reversing the reinforcement learning process",
+        "Creating competitive AI systems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cooperative inverse reinforcement learning involves learning human preferences through active cooperation and interaction rather than just passive observation of human behavior.",
+      "optionExplanations": [
+        "Incorrect. This is not about AI-AI cooperation but human-AI cooperation.",
+        "Correct. Cooperative IRL learns preferences through cooperative interaction rather than observation.",
+        "Incorrect. This is not about reversing the RL process.",
+        "Incorrect. This is about cooperation, not competition."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cooperative_IRL",
+        "human_interaction",
+        "preference_learning"
+      ]
+    },
+    {
+      "id": "RLH_091",
+      "question": "What is the purpose of using attention mechanisms in reward models?",
+      "options": [
+        "To get human attention",
+        "To focus on relevant parts of the input when predicting human preferences",
+        "To reduce computational costs",
+        "To improve memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention mechanisms in reward models help focus on the most relevant parts of the input when predicting human preferences, improving the accuracy of preference predictions.",
+      "optionExplanations": [
+        "Incorrect. Attention mechanisms are not about getting human attention.",
+        "Correct. Attention mechanisms focus on relevant input parts when predicting human preferences.",
+        "Incorrect. Attention mechanisms may actually increase computational costs.",
+        "Incorrect. Attention is not primarily about memory usage optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention_mechanisms",
+        "reward_models",
+        "relevance"
+      ]
+    },
+    {
+      "id": "RLH_092",
+      "question": "What is the problem of myopic optimization in RLHF?",
+      "options": [
+        "AI systems having vision problems",
+        "Optimizing for short-term rewards while ignoring long-term consequences",
+        "Near-sighted AI developers",
+        "Short training periods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Myopic optimization occurs when AI systems focus on maximizing short-term rewards while ignoring potential long-term negative consequences of their actions.",
+      "optionExplanations": [
+        "Incorrect. Myopic optimization is not about vision problems.",
+        "Correct. Myopic optimization focuses on short-term rewards while ignoring long-term consequences.",
+        "Incorrect. This is not about developer vision issues.",
+        "Incorrect. This is not about training duration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "myopic_optimization",
+        "short_term",
+        "long_term_consequences"
+      ]
+    },
+    {
+      "id": "RLH_093",
+      "question": "What is the concept of AI alignment via debate with self-play?",
+      "options": [
+        "AI systems playing games against themselves",
+        "Training AI systems to argue with themselves to find better answers",
+        "AI systems having internal conflicts",
+        "Competitive training between different AI systems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via debate with self-play involves training AI systems to argue with themselves (taking both sides of arguments) to find better, more truthful answers to questions.",
+      "optionExplanations": [
+        "Incorrect. This is not about game playing but argumentative reasoning.",
+        "Correct. Self-play debate trains AI to argue with itself to find better answers.",
+        "Incorrect. This is not about internal conflicts but structured argumentation.",
+        "Incorrect. This is about self-play, not competition between different systems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "debate",
+        "self_play",
+        "argumentation"
+      ]
+    },
+    {
+      "id": "RLH_094",
+      "question": "What is the purpose of using gradient clipping in PPO training?",
+      "options": [
+        "To prevent gradient explosions that could destabilize training",
+        "To reduce memory usage",
+        "To speed up convergence",
+        "To improve text generation quality"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gradient clipping in PPO prevents gradient explosions that could destabilize training by limiting the magnitude of gradients during backpropagation.",
+      "optionExplanations": [
+        "Correct. Gradient clipping prevents gradient explosions that could destabilize training.",
+        "Incorrect. Gradient clipping is not primarily about memory usage reduction.",
+        "Incorrect. Gradient clipping may actually slow convergence to maintain stability.",
+        "Incorrect. While it may indirectly affect quality, the main purpose is stability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient_clipping",
+        "PPO",
+        "training_stability"
+      ]
+    },
+    {
+      "id": "RLH_095",
+      "question": "What is the concept of AI alignment via recursive self-improvement?",
+      "options": [
+        "AI systems improving their own code recursively",
+        "AI systems that can safely improve themselves while maintaining alignment",
+        "Recursive function optimization",
+        "Self-modifying neural networks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment via recursive self-improvement involves creating AI systems that can safely improve themselves (including their alignment mechanisms) while maintaining their alignment with human values.",
+      "optionExplanations": [
+        "Incorrect. This is about code modification, not aligned self-improvement.",
+        "Correct. Recursive self-improvement involves AI safely improving itself while maintaining alignment.",
+        "Incorrect. This is about function optimization, not AI self-improvement.",
+        "Incorrect. This is about network modification, not aligned self-improvement."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "recursive_self_improvement",
+        "alignment_preservation",
+        "safety"
+      ]
+    },
+    {
+      "id": "RLH_096",
+      "question": "What is the problem of reward model brittleness?",
+      "options": [
+        "Reward models breaking easily under pressure",
+        "Reward models failing on inputs slightly different from training data",
+        "Physical hardware brittleness",
+        "Reward models having low confidence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reward model brittleness refers to how reward models can fail or give poor predictions when encountering inputs that are slightly different from their training data.",
+      "optionExplanations": [
+        "Incorrect. Brittleness is not about physical pressure resistance.",
+        "Correct. Reward model brittleness means failing on inputs slightly different from training data.",
+        "Incorrect. This is not about physical hardware brittleness.",
+        "Incorrect. This is about failure modes, not confidence levels."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "brittleness",
+        "reward_models",
+        "generalization"
+      ]
+    },
+    {
+      "id": "RLH_097",
+      "question": "What is the purpose of using multi-turn dialogue evaluation in RLHF?",
+      "options": [
+        "To test typing speed",
+        "To evaluate AI consistency and alignment across extended conversations",
+        "To reduce evaluation time",
+        "To test memory capacity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-turn dialogue evaluation assesses AI consistency, coherence, and alignment across extended conversations, ensuring the system maintains good behavior over long interactions.",
+      "optionExplanations": [
+        "Incorrect. Multi-turn evaluation is not about typing speed testing.",
+        "Correct. Multi-turn evaluation assesses AI consistency and alignment across extended conversations.",
+        "Incorrect. Multi-turn evaluation typically increases rather than reduces evaluation time.",
+        "Incorrect. While memory is involved, the focus is on behavioral consistency."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multi_turn",
+        "dialogue_evaluation",
+        "consistency"
+      ]
+    },
+    {
+      "id": "RLH_098",
+      "question": "What is the concept of AI alignment via value extrapolation?",
+      "options": [
+        "Extracting values from databases",
+        "Inferring and extending human values to new situations beyond training data",
+        "Mathematical extrapolation of numerical values",
+        "Extracting monetary values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Value extrapolation involves inferring human values from observed behavior and extending those values to new situations that weren't covered in the training data.",
+      "optionExplanations": [
+        "Incorrect. This is not about database value extraction.",
+        "Correct. Value extrapolation infers and extends human values to new situations beyond training data.",
+        "Incorrect. This is not about mathematical numerical extrapolation.",
+        "Incorrect. This is not about monetary value extraction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value_extrapolation",
+        "inference",
+        "generalization"
+      ]
+    },
+    {
+      "id": "RLH_099",
+      "question": "What is the role of exploration bonuses in RLHF?",
+      "options": [
+        "To reward AI systems for exploring new topics",
+        "To encourage diverse response generation during training",
+        "To give financial bonuses to researchers",
+        "To explore new hardware configurations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Exploration bonuses in RLHF encourage AI systems to generate diverse responses during training, preventing them from converging too quickly to a narrow set of behaviors.",
+      "optionExplanations": [
+        "Incorrect. Exploration bonuses are about response diversity, not topic exploration.",
+        "Correct. Exploration bonuses encourage diverse response generation during training.",
+        "Incorrect. This is not about financial incentives for researchers.",
+        "Incorrect. This is not about hardware exploration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exploration_bonuses",
+        "diversity",
+        "response_generation"
+      ]
+    },
+    {
+      "id": "RLH_100",
+      "question": "What is the ultimate goal of RLHF and AI alignment research?",
+      "options": [
+        "To create faster AI systems",
+        "To build AI systems that reliably do what humans want them to do",
+        "To reduce AI development costs",
+        "To make AI systems more complex"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The ultimate goal of RLHF and AI alignment research is to build AI systems that reliably do what humans want them to do, ensuring beneficial outcomes as AI becomes more capable.",
+      "optionExplanations": [
+        "Incorrect. Speed is not the primary goal of alignment research.",
+        "Correct. The ultimate goal is building AI systems that reliably do what humans want.",
+        "Incorrect. Cost reduction is not the primary objective of alignment research.",
+        "Incorrect. Complexity is not the goal; reliable beneficial behavior is."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ultimate_goal",
+        "reliability",
+        "beneficial_AI"
+      ]
+    }
+  ]
+}

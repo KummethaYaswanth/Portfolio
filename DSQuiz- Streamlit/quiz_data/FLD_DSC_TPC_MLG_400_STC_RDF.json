@@ -1,0 +1,2420 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_RDF",
+  "subtopicName": "Random Forest",
+  "str": 0.400,
+  "description": "Random Forest is an ensemble learning algorithm that combines multiple decision trees using bagging and feature randomness to improve prediction accuracy and reduce overfitting",
+  "questions": [
+    {
+      "id": "RDF_001",
+      "question": "What type of learning algorithm is Random Forest?",
+      "options": [
+        "Ensemble learning algorithm",
+        "Single decision tree algorithm",
+        "Neural network algorithm",
+        "Clustering algorithm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Random Forest is an ensemble learning algorithm that combines multiple decision trees to make predictions, leveraging the wisdom of crowds principle to improve accuracy and robustness.",
+      "optionExplanations": [
+        "Correct. Random Forest is indeed an ensemble learning algorithm that combines multiple decision trees.",
+        "Incorrect. While Random Forest uses decision trees, it uses multiple trees, not a single one.",
+        "Incorrect. Random Forest is not based on neural networks but on decision trees.",
+        "Incorrect. Random Forest is a supervised learning algorithm for classification and regression, not clustering."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ensemble-learning",
+        "basic-concepts",
+        "algorithm-type"
+      ]
+    },
+    {
+      "id": "RDF_002",
+      "question": "What is the main technique Random Forest uses to create diverse decision trees?",
+      "options": [
+        "Gradient boosting",
+        "Bootstrap aggregating (bagging)",
+        "K-means clustering",
+        "Principal component analysis"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest uses bootstrap aggregating (bagging) to create diverse decision trees by training each tree on a different bootstrap sample of the training data.",
+      "optionExplanations": [
+        "Incorrect. Gradient boosting is used in algorithms like XGBoost, not Random Forest.",
+        "Correct. Bootstrap aggregating (bagging) is the core technique that creates diversity by sampling data with replacement.",
+        "Incorrect. K-means clustering is an unsupervised learning algorithm, not used in Random Forest.",
+        "Incorrect. PCA is a dimensionality reduction technique, not used for creating diverse trees in Random Forest."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bagging",
+        "bootstrap",
+        "diversity"
+      ]
+    },
+    {
+      "id": "RDF_003",
+      "question": "How does Random Forest achieve feature randomness?",
+      "options": [
+        "By using all features at every split",
+        "By selecting a random subset of features at each split",
+        "By removing features with missing values",
+        "By using only the most correlated features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest achieves feature randomness by selecting only a random subset of features to consider at each split, typically √p features where p is the total number of features.",
+      "optionExplanations": [
+        "Incorrect. Using all features would reduce diversity and increase correlation between trees.",
+        "Correct. Random Forest considers only a subset of features at each split, creating diversity and reducing overfitting.",
+        "Incorrect. Missing values are handled differently and don't contribute to feature randomness.",
+        "Incorrect. Using only correlated features would reduce the effectiveness of the ensemble."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-randomness",
+        "feature-selection",
+        "diversity"
+      ]
+    },
+    {
+      "id": "RDF_004",
+      "question": "What is bootstrap sampling in the context of Random Forest?",
+      "options": [
+        "Sampling without replacement from the training data",
+        "Sampling with replacement from the training data",
+        "Selecting the best features for each tree",
+        "Removing outliers from the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bootstrap sampling involves sampling with replacement from the training data, creating datasets of the same size as the original but with some repeated and some missing instances.",
+      "optionExplanations": [
+        "Incorrect. Bootstrap sampling uses replacement, not sampling without replacement.",
+        "Correct. Bootstrap sampling with replacement creates diverse training sets for each tree.",
+        "Incorrect. This describes feature selection, not bootstrap sampling.",
+        "Incorrect. Bootstrap sampling doesn't specifically target outliers for removal."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bootstrap",
+        "sampling",
+        "bagging"
+      ]
+    },
+    {
+      "id": "RDF_005",
+      "question": "What percentage of the original training data is typically left out in each bootstrap sample?",
+      "options": [
+        "About 63%",
+        "About 37%",
+        "About 50%",
+        "About 25%"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Due to the mathematical properties of sampling with replacement, approximately 37% of the original training instances are left out of each bootstrap sample, forming the out-of-bag (OOB) set.",
+      "optionExplanations": [
+        "Incorrect. About 63% of instances are typically included in each bootstrap sample.",
+        "Correct. Approximately 37% of instances are left out due to the nature of bootstrap sampling with replacement.",
+        "Incorrect. The percentage is not 50% due to the replacement nature of bootstrap sampling.",
+        "Incorrect. The percentage is higher than 25% due to sampling with replacement mechanics."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bootstrap",
+        "out-of-bag",
+        "sampling-theory"
+      ]
+    },
+    {
+      "id": "RDF_006",
+      "question": "What is out-of-bag (OOB) error?",
+      "options": [
+        "Error calculated on the training data",
+        "Error calculated on a separate test set",
+        "Error calculated on instances not used in training each tree",
+        "Error in the bootstrap sampling process"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Out-of-bag error is calculated using instances that were not included in the bootstrap sample for each tree, providing an unbiased estimate of the model's performance without needing a separate validation set.",
+      "optionExplanations": [
+        "Incorrect. OOB error is not calculated on the training data used to build the trees.",
+        "Incorrect. OOB error doesn't require a separate test set; it uses left-out training instances.",
+        "Correct. OOB error uses the instances left out of each bootstrap sample for validation.",
+        "Incorrect. OOB error is a performance metric, not an error in the sampling process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "out-of-bag",
+        "error-estimation",
+        "validation"
+      ]
+    },
+    {
+      "id": "RDF_007",
+      "question": "How is the final prediction made in Random Forest for classification?",
+      "options": [
+        "By averaging all tree predictions",
+        "By taking the majority vote from all trees",
+        "By using the prediction from the best tree",
+        "By weighted averaging based on tree performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For classification tasks, Random Forest uses majority voting where each tree votes for a class, and the class with the most votes becomes the final prediction.",
+      "optionExplanations": [
+        "Incorrect. Averaging is used for regression, not classification.",
+        "Correct. Classification uses majority voting where each tree contributes one vote for its predicted class.",
+        "Incorrect. Random Forest doesn't select a single best tree but combines all trees.",
+        "Incorrect. Standard Random Forest uses simple majority voting, not weighted averaging."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "prediction",
+        "classification",
+        "voting"
+      ]
+    },
+    {
+      "id": "RDF_008",
+      "question": "How is the final prediction made in Random Forest for regression?",
+      "options": [
+        "By taking the majority vote from all trees",
+        "By averaging all tree predictions",
+        "By using the median of all predictions",
+        "By selecting the maximum prediction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For regression tasks, Random Forest averages the predictions from all trees to produce the final continuous output value.",
+      "optionExplanations": [
+        "Incorrect. Majority voting is used for classification, not regression.",
+        "Correct. Regression uses averaging of all tree predictions to get the final continuous output.",
+        "Incorrect. Random Forest uses mean (average), not median for combining predictions.",
+        "Incorrect. Taking the maximum would not be robust and is not used in Random Forest."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "prediction",
+        "regression",
+        "averaging"
+      ]
+    },
+    {
+      "id": "RDF_009",
+      "question": "What is the main advantage of using ensemble learning in Random Forest?",
+      "options": [
+        "Faster training time",
+        "Reduced overfitting and improved generalization",
+        "Lower memory usage",
+        "Simpler model interpretation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main advantage of ensemble learning in Random Forest is reduced overfitting and improved generalization by combining multiple diverse models that compensate for each other's weaknesses.",
+      "optionExplanations": [
+        "Incorrect. Training multiple trees actually increases training time compared to a single tree.",
+        "Correct. Ensemble learning reduces overfitting by averaging out individual tree errors and biases.",
+        "Incorrect. Multiple trees require more memory than a single tree.",
+        "Incorrect. Ensemble models are generally less interpretable than single trees."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-learning",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "RDF_010",
+      "question": "What is the typical default value for max_features in Random Forest for classification?",
+      "options": [
+        "All features",
+        "Square root of total features",
+        "Log base 2 of total features",
+        "Half of total features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For classification tasks, the typical default value for max_features is the square root of the total number of features, which provides a good balance between diversity and performance.",
+      "optionExplanations": [
+        "Incorrect. Using all features would reduce diversity between trees.",
+        "Correct. √p (where p is total features) is the standard default for classification tasks.",
+        "Incorrect. Log2(p) is sometimes used but sqrt(p) is more common for classification.",
+        "Incorrect. Half of features is not the standard default setting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "max-features",
+        "classification"
+      ]
+    },
+    {
+      "id": "RDF_011",
+      "question": "What happens when you increase the number of trees (n_estimators) in Random Forest?",
+      "options": [
+        "Training time decreases",
+        "Model performance generally improves up to a point",
+        "Memory usage decreases",
+        "Model becomes less accurate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increasing the number of trees generally improves model performance up to a point where additional trees provide diminishing returns, while increasing computational cost.",
+      "optionExplanations": [
+        "Incorrect. More trees increase training time as more models need to be trained.",
+        "Correct. Performance typically improves with more trees but plateaus after a certain point.",
+        "Incorrect. More trees require more memory to store additional models.",
+        "Incorrect. More trees generally improve accuracy rather than decrease it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "n-estimators",
+        "performance"
+      ]
+    },
+    {
+      "id": "RDF_012",
+      "question": "What is feature importance in Random Forest?",
+      "options": [
+        "The order in which features appear in the dataset",
+        "A measure of how much each feature contributes to decreasing node impurity",
+        "The correlation between features",
+        "The number of times a feature is used in splits"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature importance in Random Forest measures how much each feature contributes to decreasing node impurity across all trees, calculated by the mean decrease in impurity.",
+      "optionExplanations": [
+        "Incorrect. Feature importance is not related to the order of features in the dataset.",
+        "Correct. Feature importance is based on the average decrease in impurity when a feature is used for splitting.",
+        "Incorrect. Feature importance is not simply correlation but based on impurity reduction.",
+        "Incorrect. While usage frequency matters, importance is weighted by the impurity decrease achieved."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-importance",
+        "impurity",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "RDF_013",
+      "question": "What impurity measures can be used in Random Forest for classification?",
+      "options": [
+        "Only Gini impurity",
+        "Only entropy",
+        "Both Gini impurity and entropy",
+        "Only mean squared error"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest for classification can use both Gini impurity and entropy as impurity measures, with Gini being the default in many implementations.",
+      "optionExplanations": [
+        "Incorrect. While Gini is common, entropy is also available for classification.",
+        "Incorrect. Gini impurity is also available and often used as default.",
+        "Correct. Both Gini impurity and entropy can be used for classification tasks in Random Forest.",
+        "Incorrect. Mean squared error is used for regression, not classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "impurity-measures",
+        "gini",
+        "entropy",
+        "classification"
+      ]
+    },
+    {
+      "id": "RDF_014",
+      "question": "What impurity measure is typically used in Random Forest for regression?",
+      "options": [
+        "Gini impurity",
+        "Entropy",
+        "Mean squared error",
+        "Cross-entropy"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For regression tasks, Random Forest typically uses mean squared error (MSE) as the impurity measure to determine the best splits.",
+      "optionExplanations": [
+        "Incorrect. Gini impurity is used for classification, not regression.",
+        "Incorrect. Entropy is used for classification, not regression.",
+        "Correct. Mean squared error is the standard impurity measure for regression in Random Forest.",
+        "Incorrect. Cross-entropy is used in neural networks and classification, not Random Forest regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "impurity-measures",
+        "mse",
+        "regression"
+      ]
+    },
+    {
+      "id": "RDF_015",
+      "question": "What is the bootstrap parameter in Random Forest?",
+      "options": [
+        "The number of trees to build",
+        "Whether to use bootstrap sampling when building trees",
+        "The maximum depth of each tree",
+        "The number of features to consider at each split"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The bootstrap parameter is a boolean that determines whether to use bootstrap sampling when building trees. When set to False, the entire dataset is used for each tree.",
+      "optionExplanations": [
+        "Incorrect. The number of trees is controlled by the n_estimators parameter.",
+        "Correct. The bootstrap parameter controls whether bootstrap sampling is used for tree training.",
+        "Incorrect. Maximum depth is controlled by the max_depth parameter.",
+        "Incorrect. Number of features is controlled by the max_features parameter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "bootstrap",
+        "sampling"
+      ]
+    },
+    {
+      "id": "RDF_016",
+      "question": "What happens when bootstrap=False in Random Forest?",
+      "options": [
+        "No trees are built",
+        "Each tree is trained on the entire dataset",
+        "Only one tree is built",
+        "Trees are built using cross-validation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When bootstrap=False, each tree is trained on the entire original dataset rather than on bootstrap samples, reducing diversity but ensuring all data is used.",
+      "optionExplanations": [
+        "Incorrect. Trees are still built, just using the full dataset instead of bootstrap samples.",
+        "Correct. With bootstrap=False, each tree uses the complete original training dataset.",
+        "Incorrect. The number of trees is still controlled by n_estimators, not the bootstrap parameter.",
+        "Incorrect. Cross-validation is a separate technique not controlled by the bootstrap parameter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "bootstrap",
+        "sampling"
+      ]
+    },
+    {
+      "id": "RDF_017",
+      "question": "What is the max_depth hyperparameter in Random Forest?",
+      "options": [
+        "The maximum number of features to use",
+        "The maximum number of trees to build",
+        "The maximum depth of individual trees",
+        "The maximum number of samples per leaf"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The max_depth hyperparameter controls the maximum depth that individual trees in the forest can grow, helping to control overfitting.",
+      "optionExplanations": [
+        "Incorrect. Maximum features is controlled by the max_features parameter.",
+        "Incorrect. Number of trees is controlled by the n_estimators parameter.",
+        "Correct. max_depth limits how deep each individual tree can grow in the forest.",
+        "Incorrect. Samples per leaf is controlled by the min_samples_leaf parameter."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hyperparameters",
+        "max-depth",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "RDF_018",
+      "question": "What is the min_samples_split hyperparameter?",
+      "options": [
+        "Minimum number of samples required to be at a leaf node",
+        "Minimum number of samples required to split an internal node",
+        "Minimum number of trees in the forest",
+        "Minimum number of features to consider"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The min_samples_split hyperparameter specifies the minimum number of samples required to split an internal node, helping to control tree growth and overfitting.",
+      "optionExplanations": [
+        "Incorrect. This describes min_samples_leaf, not min_samples_split.",
+        "Correct. min_samples_split controls the minimum samples needed to create a split in a node.",
+        "Incorrect. This would be related to n_estimators, not min_samples_split.",
+        "Incorrect. Minimum features would be related to max_features, not min_samples_split."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "min-samples-split",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "RDF_019",
+      "question": "What is the min_samples_leaf hyperparameter?",
+      "options": [
+        "Minimum number of samples required to split an internal node",
+        "Minimum number of samples required to be at a leaf node",
+        "Minimum number of leaf nodes per tree",
+        "Minimum number of features per leaf"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The min_samples_leaf hyperparameter specifies the minimum number of samples that must be present at a leaf node, preventing the creation of leaves with very few samples.",
+      "optionExplanations": [
+        "Incorrect. This describes min_samples_split, not min_samples_leaf.",
+        "Correct. min_samples_leaf ensures each leaf has at least this many samples.",
+        "Incorrect. This parameter doesn't control the number of leaf nodes but samples per leaf.",
+        "Incorrect. This parameter is about samples, not features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "min-samples-leaf",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "RDF_020",
+      "question": "How does Random Forest handle missing values?",
+      "options": [
+        "It automatically removes rows with missing values",
+        "It can use surrogate splits and proximity measures",
+        "It always fails when encountering missing values",
+        "It replaces missing values with zeros"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest can handle missing values through surrogate splits (alternative splits when the primary feature is missing) and proximity measures to impute missing values.",
+      "optionExplanations": [
+        "Incorrect. Random Forest doesn't automatically remove rows; it has mechanisms to handle missing values.",
+        "Correct. Random Forest uses surrogate splits and proximity-based imputation for missing values.",
+        "Incorrect. Random Forest has built-in mechanisms to handle missing values gracefully.",
+        "Incorrect. Random Forest doesn't simply replace missing values with zeros."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "missing-values",
+        "surrogate-splits",
+        "imputation"
+      ]
+    },
+    {
+      "id": "RDF_021",
+      "question": "What is the relationship between bias and variance in Random Forest?",
+      "options": [
+        "High bias, high variance",
+        "Low bias, low variance",
+        "High bias, low variance",
+        "Low bias, high variance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest achieves low bias through the use of decision trees (which can fit complex patterns) and low variance through ensemble averaging, resulting in good overall performance.",
+      "optionExplanations": [
+        "Incorrect. Random Forest reduces both bias and variance compared to single trees.",
+        "Correct. Random Forest achieves low bias (flexible trees) and low variance (ensemble averaging).",
+        "Incorrect. The decision trees in Random Forest have low bias due to their flexibility.",
+        "Incorrect. While individual trees have high variance, the ensemble reduces overall variance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias-variance",
+        "ensemble-theory",
+        "performance"
+      ]
+    },
+    {
+      "id": "RDF_022",
+      "question": "What is the computational complexity of Random Forest training?",
+      "options": [
+        "O(n log n)",
+        "O(n²)",
+        "O(k × n × m × log n)",
+        "O(n³)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The training complexity is O(k × n × m × log n) where k is the number of trees, n is the number of samples, m is the number of features considered at each split, and log n comes from tree depth.",
+      "optionExplanations": [
+        "Incorrect. This doesn't account for multiple trees and feature selection.",
+        "Incorrect. This is too high and doesn't reflect the actual complexity structure.",
+        "Correct. This represents k trees, each processing n samples with m features and log n depth.",
+        "Incorrect. Random Forest is more efficient than cubic complexity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "complexity",
+        "computational-cost",
+        "algorithm-analysis"
+      ]
+    },
+    {
+      "id": "RDF_023",
+      "question": "What is the prediction complexity of Random Forest?",
+      "options": [
+        "O(k × log n)",
+        "O(n²)",
+        "O(k × n)",
+        "O(log n)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The prediction complexity is O(k × log n) where k is the number of trees and log n is the average depth of trees, as each tree makes predictions in logarithmic time.",
+      "optionExplanations": [
+        "Correct. Each of the k trees makes predictions in O(log n) time, giving O(k × log n) total.",
+        "Incorrect. Prediction doesn't require quadratic time in the number of samples.",
+        "Incorrect. Prediction doesn't depend linearly on the number of training samples.",
+        "Incorrect. This ignores the fact that multiple trees need to be evaluated."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "complexity",
+        "prediction-time",
+        "algorithm-analysis"
+      ]
+    },
+    {
+      "id": "RDF_024",
+      "question": "What is the main difference between Random Forest and Extra Trees (Extremely Randomized Trees)?",
+      "options": [
+        "Extra Trees use fewer trees",
+        "Extra Trees use random thresholds for splits instead of optimal ones",
+        "Extra Trees only work for classification",
+        "Extra Trees don't use bootstrap sampling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Extra Trees use random thresholds for splits instead of finding optimal split points, adding more randomness and potentially reducing overfitting further.",
+      "optionExplanations": [
+        "Incorrect. The number of trees is configurable in both algorithms.",
+        "Correct. Extra Trees randomly select split thresholds, while Random Forest finds optimal splits.",
+        "Incorrect. Extra Trees can be used for both classification and regression.",
+        "Incorrect. Both can use bootstrap sampling, though Extra Trees often use the full dataset."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "extra-trees",
+        "randomness",
+        "algorithm-comparison"
+      ]
+    },
+    {
+      "id": "RDF_025",
+      "question": "What is the role of randomness in Random Forest?",
+      "options": [
+        "Only bootstrap sampling",
+        "Only feature selection",
+        "Both bootstrap sampling and feature selection",
+        "Random initialization of tree weights"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest uses two sources of randomness: bootstrap sampling (random selection of training instances) and feature randomness (random selection of features at each split).",
+      "optionExplanations": [
+        "Incorrect. Random Forest uses multiple sources of randomness, not just bootstrap sampling.",
+        "Incorrect. While feature selection is important, bootstrap sampling also contributes to randomness.",
+        "Correct. Both bootstrap sampling and random feature selection contribute to diversity in Random Forest.",
+        "Incorrect. Random Forest doesn't use weight initialization like neural networks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "randomness",
+        "diversity",
+        "bootstrap",
+        "feature-selection"
+      ]
+    },
+    {
+      "id": "RDF_026",
+      "question": "How does Random Forest prevent overfitting?",
+      "options": [
+        "By using only one tree",
+        "By averaging predictions from multiple diverse trees",
+        "By using all features at every split",
+        "By increasing tree depth"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest prevents overfitting by averaging predictions from multiple diverse trees, where individual tree errors tend to cancel out in the ensemble.",
+      "optionExplanations": [
+        "Incorrect. Using one tree would be prone to overfitting; Random Forest uses multiple trees.",
+        "Correct. Ensemble averaging of diverse trees reduces overfitting by smoothing out individual errors.",
+        "Incorrect. Using all features would reduce diversity and increase overfitting risk.",
+        "Incorrect. Increasing tree depth would increase overfitting, not prevent it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "overfitting",
+        "ensemble",
+        "averaging",
+        "diversity"
+      ]
+    },
+    {
+      "id": "RDF_027",
+      "question": "What is the advantage of out-of-bag error estimation?",
+      "options": [
+        "It requires a separate validation set",
+        "It provides unbiased performance estimation without additional data",
+        "It only works for classification problems",
+        "It increases training time significantly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Out-of-bag error provides an unbiased estimate of model performance using data that wasn't used to train each tree, eliminating the need for a separate validation set.",
+      "optionExplanations": [
+        "Incorrect. OOB error estimation doesn't require a separate validation set.",
+        "Correct. OOB error provides unbiased performance estimation using left-out training data.",
+        "Incorrect. OOB error works for both classification and regression problems.",
+        "Incorrect. OOB error estimation doesn't significantly increase training time."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "out-of-bag",
+        "validation",
+        "performance-estimation"
+      ]
+    },
+    {
+      "id": "RDF_028",
+      "question": "What happens to Random Forest performance as the correlation between trees increases?",
+      "options": [
+        "Performance improves significantly",
+        "Performance remains unchanged",
+        "Performance degrades",
+        "Training time decreases"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "As correlation between trees increases, the benefit of ensemble averaging decreases, leading to performance degradation because trees make similar errors.",
+      "optionExplanations": [
+        "Incorrect. Higher correlation reduces the benefit of ensemble learning.",
+        "Incorrect. Correlation between trees significantly affects ensemble performance.",
+        "Correct. Higher correlation means trees make similar errors, reducing ensemble benefits.",
+        "Incorrect. Tree correlation doesn't directly affect training time."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "correlation",
+        "ensemble-theory",
+        "performance"
+      ]
+    },
+    {
+      "id": "RDF_029",
+      "question": "What is the typical range for the max_features parameter in Random Forest?",
+      "options": [
+        "Always equal to total features",
+        "Between 1 and total number of features",
+        "Always equal to log₂(features)",
+        "Must be greater than total features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The max_features parameter can range from 1 to the total number of features, with common values being √p, log₂(p), or p/3 where p is the total features.",
+      "optionExplanations": [
+        "Incorrect. Using all features reduces diversity; max_features is typically less than total.",
+        "Correct. max_features can be any value from 1 up to the total number of features.",
+        "Incorrect. While log₂(features) is one option, it's not the only valid range.",
+        "Incorrect. max_features cannot exceed the total number of available features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "max-features",
+        "range"
+      ]
+    },
+    {
+      "id": "RDF_030",
+      "question": "How does Random Forest handle categorical features?",
+      "options": [
+        "It cannot handle categorical features",
+        "It automatically converts them to numerical",
+        "It can handle them natively through splits",
+        "It requires manual preprocessing only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest can handle categorical features natively by creating splits that test whether a categorical value belongs to a subset of categories.",
+      "optionExplanations": [
+        "Incorrect. Random Forest can handle categorical features effectively.",
+        "Incorrect. While conversion is possible, Random Forest can work with categorical data directly.",
+        "Correct. Random Forest handles categorical features through subset-based splits naturally.",
+        "Incorrect. While preprocessing can help, Random Forest can handle categorical features natively."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical-features",
+        "data-types",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "RDF_031",
+      "question": "What is the main advantage of Random Forest over a single Decision Tree?",
+      "options": [
+        "Faster training time",
+        "Better interpretability",
+        "Reduced overfitting and improved generalization",
+        "Lower memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The main advantage of Random Forest over a single Decision Tree is reduced overfitting and improved generalization through ensemble averaging.",
+      "optionExplanations": [
+        "Incorrect. Multiple trees take more time to train than a single tree.",
+        "Incorrect. A single tree is more interpretable than an ensemble of trees.",
+        "Correct. Ensemble averaging reduces overfitting and improves generalization performance.",
+        "Incorrect. Multiple trees require more memory than a single tree."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "comparison",
+        "decision-trees",
+        "overfitting",
+        "advantages"
+      ]
+    },
+    {
+      "id": "RDF_032",
+      "question": "What is variable importance permutation in Random Forest?",
+      "options": [
+        "Reordering features in the dataset",
+        "Measuring performance drop when feature values are randomly shuffled",
+        "Selecting the best features for each tree",
+        "Calculating correlation between features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Variable importance permutation measures how much the model performance drops when the values of a specific feature are randomly shuffled, indicating that feature's importance.",
+      "optionExplanations": [
+        "Incorrect. This describes data reorganization, not importance measurement.",
+        "Correct. Permutation importance measures performance drop when feature values are randomly shuffled.",
+        "Incorrect. This describes feature selection, not importance measurement.",
+        "Incorrect. This describes correlation analysis, not permutation importance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "feature-importance",
+        "permutation",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "RDF_033",
+      "question": "What is the effect of increasing min_samples_split in Random Forest?",
+      "options": [
+        "Trees become deeper",
+        "Trees become shallower and less prone to overfitting",
+        "Training time decreases significantly",
+        "Feature importance changes dramatically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increasing min_samples_split requires more samples to create a split, resulting in shallower trees that are less likely to overfit to small data subsets.",
+      "optionExplanations": [
+        "Incorrect. Higher min_samples_split leads to shallower trees, not deeper ones.",
+        "Correct. More samples required for splits create shallower, less overfitted trees.",
+        "Incorrect. While there may be some time savings, it's not the primary effect.",
+        "Incorrect. Feature importance may change slightly but not dramatically from this parameter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "min-samples-split",
+        "overfitting",
+        "tree-depth"
+      ]
+    },
+    {
+      "id": "RDF_034",
+      "question": "What is the warm_start parameter in Random Forest?",
+      "options": [
+        "It preheats the CPU for faster computation",
+        "It allows adding more trees to an existing fitted model",
+        "It initializes trees with random weights",
+        "It starts training from a checkpoint"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The warm_start parameter allows adding more trees to an already fitted Random Forest model without retraining the existing trees, enabling incremental learning.",
+      "optionExplanations": [
+        "Incorrect. warm_start is not related to CPU temperature or preheating.",
+        "Correct. warm_start enables adding more trees to an existing model incrementally.",
+        "Incorrect. Trees don't have weights to initialize; this describes neural networks.",
+        "Incorrect. warm_start doesn't involve checkpoints but incremental tree addition."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hyperparameters",
+        "warm-start",
+        "incremental-learning"
+      ]
+    },
+    {
+      "id": "RDF_035",
+      "question": "How does Random Forest handle imbalanced datasets?",
+      "options": [
+        "It automatically balances classes",
+        "It works poorly with imbalanced data",
+        "It can use class_weight parameter for balancing",
+        "It requires external preprocessing only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest can handle imbalanced datasets using the class_weight parameter, which adjusts the importance of different classes during training.",
+      "optionExplanations": [
+        "Incorrect. Random Forest doesn't automatically balance classes without parameter settings.",
+        "Incorrect. While challenging, Random Forest can handle imbalanced data with proper configuration.",
+        "Correct. The class_weight parameter helps handle imbalanced datasets by adjusting class importance.",
+        "Incorrect. While preprocessing helps, Random Forest has built-in mechanisms for imbalanced data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "imbalanced-data",
+        "class-weight",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "RDF_036",
+      "question": "What is the class_weight parameter in Random Forest?",
+      "options": [
+        "Weight of each tree in the ensemble",
+        "Weights assigned to different classes to handle imbalance",
+        "Weight of each feature in importance calculation",
+        "Weight of each sample in training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The class_weight parameter assigns different weights to classes to handle class imbalance, giving more importance to minority classes during training.",
+      "optionExplanations": [
+        "Incorrect. All trees typically have equal weight in standard Random Forest.",
+        "Correct. class_weight helps balance classes by assigning different weights to handle imbalance.",
+        "Incorrect. Feature weights are determined by importance calculations, not this parameter.",
+        "Incorrect. Sample weights are handled by a different parameter (sample_weight)."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "class-weight",
+        "imbalanced-data",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "RDF_037",
+      "question": "What is the random_state parameter used for in Random Forest?",
+      "options": [
+        "To control the number of random features",
+        "To ensure reproducible results across runs",
+        "To set the random forest size",
+        "To determine random tree depth"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The random_state parameter sets the seed for random number generation, ensuring that the same random choices are made across different runs for reproducible results.",
+      "optionExplanations": [
+        "Incorrect. The number of random features is controlled by max_features.",
+        "Correct. random_state ensures reproducibility by fixing the random seed.",
+        "Incorrect. Forest size is controlled by n_estimators, not random_state.",
+        "Incorrect. Tree depth is controlled by max_depth and related parameters."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "random-state",
+        "reproducibility",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "RDF_038",
+      "question": "What happens when max_features is set to 'auto' in Random Forest?",
+      "options": [
+        "All features are used",
+        "Square root of total features is used",
+        "Log base 2 of total features is used",
+        "Half of total features is used"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When max_features is set to 'auto', it uses the square root of the total number of features, which is the same as setting it to 'sqrt'.",
+      "optionExplanations": [
+        "Incorrect. 'auto' doesn't use all features; that would reduce diversity.",
+        "Correct. 'auto' is equivalent to 'sqrt', using the square root of total features.",
+        "Incorrect. Log base 2 would be specified as 'log2', not 'auto'.",
+        "Incorrect. Half of features is not what 'auto' represents."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "max-features",
+        "auto-setting"
+      ]
+    },
+    {
+      "id": "RDF_039",
+      "question": "What is the difference between bagging and boosting in ensemble methods?",
+      "options": [
+        "Bagging trains models sequentially, boosting trains in parallel",
+        "Bagging trains models in parallel, boosting trains sequentially",
+        "There is no difference between them",
+        "Bagging only works for classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bagging (like Random Forest) trains models in parallel on different data subsets, while boosting trains models sequentially where each model learns from previous model errors.",
+      "optionExplanations": [
+        "Incorrect. This reverses the correct relationship between bagging and boosting.",
+        "Correct. Bagging uses parallel training while boosting uses sequential training with error correction.",
+        "Incorrect. Bagging and boosting are fundamentally different ensemble approaches.",
+        "Incorrect. Both bagging and boosting work for classification and regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bagging",
+        "boosting",
+        "ensemble-comparison"
+      ]
+    },
+    {
+      "id": "RDF_040",
+      "question": "What is the bootstrap aggregating principle?",
+      "options": [
+        "Using one model on the entire dataset",
+        "Training multiple models on bootstrap samples and aggregating predictions",
+        "Using cross-validation for model selection",
+        "Selecting the best single model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bootstrap aggregating (bagging) involves training multiple models on different bootstrap samples of the data and then aggregating their predictions for the final output.",
+      "optionExplanations": [
+        "Incorrect. Bagging uses multiple models, not a single model.",
+        "Correct. Bagging trains multiple models on bootstrap samples and aggregates their predictions.",
+        "Incorrect. Cross-validation is for model evaluation, not the bagging principle.",
+        "Incorrect. Bagging combines multiple models rather than selecting one best model."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bagging",
+        "bootstrap",
+        "aggregation",
+        "ensemble-principle"
+      ]
+    },
+    {
+      "id": "RDF_041",
+      "question": "How does Random Forest estimate feature importance using Gini importance?",
+      "options": [
+        "By counting how often each feature is used",
+        "By measuring the total decrease in Gini impurity across all trees",
+        "By calculating feature correlations",
+        "By measuring prediction accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gini importance is calculated by measuring the total decrease in Gini impurity that each feature achieves across all splits in all trees of the forest.",
+      "optionExplanations": [
+        "Incorrect. Simply counting usage doesn't account for the quality of splits.",
+        "Correct. Gini importance measures the weighted average of impurity decreases for each feature.",
+        "Incorrect. Feature correlations are different from Gini importance calculations.",
+        "Incorrect. While related to performance, Gini importance specifically measures impurity reduction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "feature-importance",
+        "gini-importance",
+        "impurity"
+      ]
+    },
+    {
+      "id": "RDF_042",
+      "question": "What is the purpose of the n_jobs parameter in Random Forest?",
+      "options": [
+        "To set the number of trees",
+        "To control parallel processing and use multiple CPU cores",
+        "To limit memory usage",
+        "To set the random seed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The n_jobs parameter controls parallel processing, allowing Random Forest to use multiple CPU cores for faster training and prediction.",
+      "optionExplanations": [
+        "Incorrect. Number of trees is controlled by n_estimators, not n_jobs.",
+        "Correct. n_jobs enables parallel processing across multiple CPU cores for efficiency.",
+        "Incorrect. n_jobs affects CPU usage, not memory limitations.",
+        "Incorrect. Random seed is controlled by random_state, not n_jobs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "parallel-processing",
+        "n-jobs"
+      ]
+    },
+    {
+      "id": "RDF_043",
+      "question": "What value should n_jobs be set to for maximum parallelization?",
+      "options": [
+        "1",
+        "Number of trees",
+        "-1",
+        "Number of features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Setting n_jobs to -1 tells the algorithm to use all available CPU cores for maximum parallelization during training and prediction.",
+      "optionExplanations": [
+        "Incorrect. Setting n_jobs=1 means no parallelization, using only one core.",
+        "Incorrect. n_jobs doesn't correspond to the number of trees.",
+        "Correct. n_jobs=-1 uses all available CPU cores for maximum parallelization.",
+        "Incorrect. n_jobs is not related to the number of features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parallel-processing",
+        "n-jobs",
+        "optimization"
+      ]
+    },
+    {
+      "id": "RDF_044",
+      "question": "What is the relationship between Random Forest and Decision Trees?",
+      "options": [
+        "Random Forest is a single improved Decision Tree",
+        "Random Forest is an ensemble of Decision Trees",
+        "They are completely different algorithms",
+        "Random Forest replaces Decision Trees entirely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest is an ensemble learning method that combines multiple Decision Trees to create a more robust and accurate prediction model.",
+      "optionExplanations": [
+        "Incorrect. Random Forest uses multiple trees, not a single improved tree.",
+        "Correct. Random Forest combines multiple Decision Trees in an ensemble approach.",
+        "Incorrect. Random Forest is built upon Decision Trees as its base learners.",
+        "Incorrect. Decision Trees are the building blocks of Random Forest, not replaced by it."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "relationship",
+        "decision-trees",
+        "ensemble"
+      ]
+    },
+    {
+      "id": "RDF_045",
+      "question": "What is the curse of dimensionality's effect on Random Forest?",
+      "options": [
+        "Random Forest is immune to curse of dimensionality",
+        "Performance degrades significantly with high dimensions",
+        "Random Forest performs better with more dimensions",
+        "Feature randomness helps mitigate curse of dimensionality"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Feature randomness in Random Forest helps mitigate the curse of dimensionality by considering only a subset of features at each split, reducing the impact of irrelevant features.",
+      "optionExplanations": [
+        "Incorrect. No algorithm is completely immune to the curse of dimensionality.",
+        "Incorrect. While high dimensions can be challenging, Random Forest handles them relatively well.",
+        "Incorrect. More dimensions don't automatically improve Random Forest performance.",
+        "Correct. Feature randomness helps by focusing on relevant feature subsets at each split."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "feature-randomness",
+        "high-dimensions"
+      ]
+    },
+    {
+      "id": "RDF_046",
+      "question": "How does Random Forest handle continuous features?",
+      "options": [
+        "It discretizes all continuous features",
+        "It cannot handle continuous features",
+        "It finds optimal split points for continuous features",
+        "It converts them to categorical features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest handles continuous features by finding optimal split points that minimize impurity, similar to how individual Decision Trees handle continuous variables.",
+      "optionExplanations": [
+        "Incorrect. Random Forest can work with continuous features without discretization.",
+        "Incorrect. Random Forest handles continuous features very well.",
+        "Correct. Random Forest finds optimal threshold values for splitting continuous features.",
+        "Incorrect. Continuous features are kept as continuous and split using thresholds."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "continuous-features",
+        "splitting",
+        "data-types"
+      ]
+    },
+    {
+      "id": "RDF_047",
+      "question": "What is the advantage of using Random Forest for feature selection?",
+      "options": [
+        "It automatically removes all irrelevant features",
+        "It provides feature importance scores for ranking",
+        "It only works with numerical features",
+        "It requires no computational overhead"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest provides feature importance scores that can be used to rank features, helping in feature selection by identifying the most informative variables.",
+      "optionExplanations": [
+        "Incorrect. Random Forest provides importance scores but doesn't automatically remove features.",
+        "Correct. Feature importance scores help rank and select the most relevant features.",
+        "Incorrect. Random Forest works with both numerical and categorical features.",
+        "Incorrect. Calculating feature importance does involve computational overhead."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-selection",
+        "feature-importance",
+        "ranking"
+      ]
+    },
+    {
+      "id": "RDF_048",
+      "question": "What is proximity in Random Forest?",
+      "options": [
+        "Distance between trees in the forest",
+        "Measure of similarity between data points based on tree paths",
+        "Distance between features",
+        "Correlation between predictions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Proximity in Random Forest measures similarity between data points based on how often they end up in the same leaf nodes across all trees in the forest.",
+      "optionExplanations": [
+        "Incorrect. Proximity doesn't measure distance between trees.",
+        "Correct. Proximity measures how often two samples end up in the same leaf nodes across trees.",
+        "Incorrect. Proximity is about data point similarity, not feature distances.",
+        "Incorrect. Proximity is about sample similarity, not prediction correlations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "proximity",
+        "similarity",
+        "leaf-nodes"
+      ]
+    },
+    {
+      "id": "RDF_049",
+      "question": "How can proximity matrix be used in Random Forest?",
+      "options": [
+        "For clustering and outlier detection",
+        "For feature selection only",
+        "For hyperparameter tuning",
+        "For model validation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The proximity matrix can be used for clustering similar data points and detecting outliers based on how similar or dissimilar samples are according to the forest structure.",
+      "optionExplanations": [
+        "Correct. Proximity matrix enables clustering and outlier detection based on sample similarities.",
+        "Incorrect. While useful for understanding data, proximity isn't primarily for feature selection.",
+        "Incorrect. Proximity matrix isn't typically used for hyperparameter tuning.",
+        "Incorrect. Model validation uses different metrics, not the proximity matrix."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "proximity-matrix",
+        "clustering",
+        "outlier-detection"
+      ]
+    },
+    {
+      "id": "RDF_050",
+      "question": "What is the effect of setting max_depth=None in Random Forest?",
+      "options": [
+        "Trees are not built",
+        "Trees are grown until leaves are pure or contain min_samples_split",
+        "Only root nodes are created",
+        "Maximum depth is set to 1"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Setting max_depth=None allows trees to grow until leaves are pure (contain only one class) or contain fewer than min_samples_split samples.",
+      "optionExplanations": [
+        "Incorrect. Trees are still built when max_depth=None.",
+        "Correct. Trees grow until natural stopping criteria are met (purity or sample limits).",
+        "Incorrect. Trees grow beyond just root nodes when max_depth=None.",
+        "Incorrect. max_depth=None doesn't limit depth to 1."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "max-depth",
+        "tree-growth"
+      ]
+    },
+    {
+      "id": "RDF_051",
+      "question": "What is the typical behavior of Random Forest with very small datasets?",
+      "options": [
+        "It performs better than with large datasets",
+        "It may overfit due to limited diversity in bootstrap samples",
+        "It cannot train at all",
+        "It automatically increases the number of trees"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With very small datasets, Random Forest may overfit because bootstrap samples will be very similar, reducing the diversity that makes ensemble methods effective.",
+      "optionExplanations": [
+        "Incorrect. Random Forest typically performs better with larger datasets that provide more diversity.",
+        "Correct. Small datasets lead to similar bootstrap samples, reducing ensemble diversity and increasing overfitting risk.",
+        "Incorrect. Random Forest can train on small datasets, though performance may suffer.",
+        "Incorrect. The number of trees is set by the user, not automatically adjusted for dataset size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "small-datasets",
+        "overfitting",
+        "bootstrap-diversity"
+      ]
+    },
+    {
+      "id": "RDF_052",
+      "question": "What is the min_weight_fraction_leaf parameter?",
+      "options": [
+        "Minimum fraction of the total dataset weight required at a leaf",
+        "Weight assigned to each leaf",
+        "Fraction of trees that must agree on a prediction",
+        "Minimum number of features per leaf"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The min_weight_fraction_leaf parameter specifies the minimum weighted fraction of the total sum of weights required to be at a leaf node.",
+      "optionExplanations": [
+        "Correct. This parameter ensures leaves contain a minimum fraction of the total sample weight.",
+        "Incorrect. This parameter doesn't assign weights to leaves but controls their minimum weight requirement.",
+        "Incorrect. This parameter is about sample weights, not tree agreement.",
+        "Incorrect. This parameter is about sample weights, not the number of features."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hyperparameters",
+        "min-weight-fraction-leaf",
+        "sample-weights"
+      ]
+    },
+    {
+      "id": "RDF_053",
+      "question": "How does Random Forest handle noise in the data?",
+      "options": [
+        "It amplifies noise significantly",
+        "It is sensitive to noise and performs poorly",
+        "It is relatively robust to noise due to ensemble averaging",
+        "It requires noise preprocessing"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest is relatively robust to noise because ensemble averaging tends to cancel out the effects of noise across multiple trees, leading to more stable predictions.",
+      "optionExplanations": [
+        "Incorrect. Random Forest reduces rather than amplifies noise through averaging.",
+        "Incorrect. Random Forest is generally robust to noise compared to single models.",
+        "Correct. Ensemble averaging helps cancel out noise effects across multiple trees.",
+        "Incorrect. While preprocessing can help, Random Forest has inherent noise robustness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise-robustness",
+        "ensemble-averaging",
+        "stability"
+      ]
+    },
+    {
+      "id": "RDF_054",
+      "question": "What is the max_leaf_nodes parameter?",
+      "options": [
+        "Maximum number of leaves across all trees",
+        "Maximum number of leaf nodes in each tree",
+        "Maximum samples per leaf",
+        "Maximum features per leaf"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The max_leaf_nodes parameter limits the maximum number of leaf nodes that each individual tree in the forest can have.",
+      "optionExplanations": [
+        "Incorrect. This parameter applies to individual trees, not the entire forest.",
+        "Correct. max_leaf_nodes controls the maximum number of leaves in each tree.",
+        "Incorrect. Sample limits are controlled by min_samples_leaf, not max_leaf_nodes.",
+        "Incorrect. This parameter is about the number of leaves, not features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "max-leaf-nodes",
+        "tree-structure"
+      ]
+    },
+    {
+      "id": "RDF_055",
+      "question": "What is the relationship between max_leaf_nodes and max_depth?",
+      "options": [
+        "They are identical parameters",
+        "They both control tree complexity through different mechanisms",
+        "max_leaf_nodes is always preferred over max_depth",
+        "They cannot be used together"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Both max_leaf_nodes and max_depth control tree complexity but through different mechanisms - one limits the number of leaves while the other limits tree depth.",
+      "optionExplanations": [
+        "Incorrect. These are different parameters with different effects.",
+        "Correct. Both control complexity: max_depth limits depth, max_leaf_nodes limits leaf count.",
+        "Incorrect. Neither is universally preferred; choice depends on the specific use case.",
+        "Incorrect. These parameters can be used together, though usually one is sufficient."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tree-complexity",
+        "max-depth",
+        "max-leaf-nodes"
+      ]
+    },
+    {
+      "id": "RDF_056",
+      "question": "What happens to out-of-bag error as the number of trees increases?",
+      "options": [
+        "It always increases",
+        "It decreases and then stabilizes",
+        "It remains constant",
+        "It oscillates randomly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Out-of-bag error typically decreases as more trees are added and then stabilizes once enough trees are included, showing the point of diminishing returns.",
+      "optionExplanations": [
+        "Incorrect. OOB error generally decreases with more trees, not increases.",
+        "Correct. OOB error decreases with more trees and then plateaus at optimal performance.",
+        "Incorrect. OOB error changes as the number of trees changes.",
+        "Incorrect. OOB error follows a predictable pattern, not random oscillations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "out-of-bag",
+        "n-estimators",
+        "performance-curve"
+      ]
+    },
+    {
+      "id": "RDF_057",
+      "question": "What is the ccp_alpha parameter in Random Forest?",
+      "options": [
+        "Learning rate for tree updates",
+        "Complexity parameter for minimal cost-complexity pruning",
+        "Alpha level for statistical significance",
+        "Convergence threshold"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The ccp_alpha parameter controls minimal cost-complexity pruning, helping to reduce overfitting by removing subtrees that don't significantly improve performance.",
+      "optionExplanations": [
+        "Incorrect. Random Forest doesn't use learning rates like gradient boosting.",
+        "Correct. ccp_alpha controls cost-complexity pruning to reduce overfitting.",
+        "Incorrect. This parameter is not related to statistical significance testing.",
+        "Incorrect. Random Forest doesn't use convergence thresholds."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hyperparameters",
+        "ccp-alpha",
+        "pruning"
+      ]
+    },
+    {
+      "id": "RDF_058",
+      "question": "How does pruning work in Random Forest?",
+      "options": [
+        "It removes entire trees from the forest",
+        "It removes subtrees that don't improve cost-complexity trade-off",
+        "It removes features from consideration",
+        "It removes samples from training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pruning in Random Forest removes subtrees that don't provide sufficient improvement in the cost-complexity trade-off, helping to reduce overfitting.",
+      "optionExplanations": [
+        "Incorrect. Pruning works on individual tree structure, not removing entire trees.",
+        "Correct. Pruning removes subtrees based on cost-complexity analysis to prevent overfitting.",
+        "Incorrect. Pruning affects tree structure, not feature selection.",
+        "Incorrect. Pruning modifies tree structure, not the training data."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pruning",
+        "cost-complexity",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "RDF_059",
+      "question": "What is the monotonic_cst parameter used for?",
+      "options": [
+        "To ensure predictions increase monotonically with training time",
+        "To enforce monotonic relationships between features and target",
+        "To maintain constant prediction variance",
+        "To ensure tree depth increases monotonically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The monotonic_cst parameter enforces monotonic constraints, ensuring that the relationship between specified features and the target variable is monotonically increasing or decreasing.",
+      "optionExplanations": [
+        "Incorrect. This parameter is about feature-target relationships, not training time.",
+        "Correct. monotonic_cst enforces monotonic constraints between features and target values.",
+        "Incorrect. This parameter doesn't control prediction variance.",
+        "Incorrect. This parameter is about feature relationships, not tree depth."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "monotonic-constraints",
+        "feature-relationships",
+        "constraints"
+      ]
+    },
+    {
+      "id": "RDF_060",
+      "question": "When would you use monotonic constraints in Random Forest?",
+      "options": [
+        "When you want faster training",
+        "When domain knowledge suggests certain feature relationships should be monotonic",
+        "When dealing with categorical features",
+        "When you have missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Monotonic constraints are used when domain knowledge indicates that certain features should have monotonic relationships with the target (e.g., price should increase with quality).",
+      "optionExplanations": [
+        "Incorrect. Monotonic constraints are about relationship enforcement, not training speed.",
+        "Correct. Use monotonic constraints when domain knowledge suggests features should have monotonic relationships.",
+        "Incorrect. Monotonic constraints are typically used with numerical features, not categorical.",
+        "Incorrect. Monotonic constraints are not specifically for handling missing values."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "monotonic-constraints",
+        "domain-knowledge",
+        "feature-relationships"
+      ]
+    },
+    {
+      "id": "RDF_061",
+      "question": "What is the max_samples parameter in Random Forest?",
+      "options": [
+        "Maximum number of samples in the dataset",
+        "Maximum number of samples to draw for training each tree",
+        "Maximum number of samples per leaf",
+        "Maximum number of samples for validation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The max_samples parameter controls the maximum number of samples to draw from the training set for training each individual tree in the forest.",
+      "optionExplanations": [
+        "Incorrect. This parameter doesn't limit the original dataset size.",
+        "Correct. max_samples controls how many samples each tree is trained on.",
+        "Incorrect. Samples per leaf are controlled by min_samples_leaf.",
+        "Incorrect. This parameter is for training samples, not validation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "max-samples",
+        "bootstrap-size"
+      ]
+    },
+    {
+      "id": "RDF_062",
+      "question": "How does the max_samples parameter affect Random Forest performance?",
+      "options": [
+        "Lower values increase diversity but may reduce individual tree performance",
+        "Higher values always improve performance",
+        "It has no effect on performance",
+        "Lower values always improve performance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Lower max_samples values increase diversity between trees (as each sees less data) but may reduce individual tree performance due to less training data per tree.",
+      "optionExplanations": [
+        "Correct. Lower max_samples increases diversity but may hurt individual tree performance due to less data.",
+        "Incorrect. Higher values don't always improve performance; there's a trade-off with diversity.",
+        "Incorrect. max_samples significantly affects the bias-variance trade-off.",
+        "Incorrect. The relationship is not simply that lower values always improve performance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "max-samples",
+        "diversity",
+        "bias-variance-tradeoff"
+      ]
+    },
+    {
+      "id": "RDF_063",
+      "question": "What is the primary difference between Random Forest and Rotation Forest?",
+      "options": [
+        "Number of trees used",
+        "Rotation Forest uses PCA for feature transformation",
+        "Random Forest is faster",
+        "Rotation Forest only works for classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rotation Forest uses Principal Component Analysis (PCA) to transform features before training each tree, while Random Forest uses random feature subsets without transformation.",
+      "optionExplanations": [
+        "Incorrect. Both can use similar numbers of trees.",
+        "Correct. Rotation Forest applies PCA transformation to feature subsets before training trees.",
+        "Incorrect. Speed differences depend on implementation and dataset characteristics.",
+        "Incorrect. Rotation Forest can work for both classification and regression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "rotation-forest",
+        "pca",
+        "feature-transformation",
+        "algorithm-comparison"
+      ]
+    },
+    {
+      "id": "RDF_064",
+      "question": "What is the typical memory complexity of Random Forest?",
+      "options": [
+        "O(n)",
+        "O(k × tree_size)",
+        "O(n²)",
+        "O(n × log n)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest memory complexity is O(k × tree_size) where k is the number of trees and tree_size depends on the tree structure and stopping criteria.",
+      "optionExplanations": [
+        "Incorrect. Memory usage depends on both number and size of trees, not just linear in samples.",
+        "Correct. Memory is proportional to the number of trees multiplied by the size of each tree.",
+        "Incorrect. Random Forest doesn't require quadratic memory in the number of samples.",
+        "Incorrect. While tree depth affects memory, the primary factor is number and size of trees."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "memory-complexity",
+        "space-complexity",
+        "algorithm-analysis"
+      ]
+    },
+    {
+      "id": "RDF_065",
+      "question": "How does Random Forest handle ordinal features?",
+      "options": [
+        "It converts them to binary features",
+        "It treats them as continuous variables",
+        "It requires special preprocessing",
+        "It cannot handle ordinal features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest typically treats ordinal features as continuous variables, using threshold-based splits that respect the natural ordering of the categories.",
+      "optionExplanations": [
+        "Incorrect. Random Forest doesn't automatically convert ordinal to binary features.",
+        "Correct. Ordinal features are treated as continuous, allowing threshold-based splits.",
+        "Incorrect. While preprocessing can help, Random Forest can handle ordinal features naturally.",
+        "Incorrect. Random Forest can handle ordinal features effectively."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ordinal-features",
+        "data-types",
+        "feature-handling"
+      ]
+    },
+    {
+      "id": "RDF_066",
+      "question": "What is the effect of feature scaling on Random Forest?",
+      "options": [
+        "Feature scaling is critical for Random Forest performance",
+        "Random Forest is generally robust to feature scaling",
+        "Feature scaling always improves Random Forest",
+        "Feature scaling breaks Random Forest"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest is generally robust to feature scaling because tree-based splits are based on thresholds and rankings rather than absolute magnitudes.",
+      "optionExplanations": [
+        "Incorrect. Unlike neural networks or SVM, Random Forest doesn't critically depend on feature scaling.",
+        "Correct. Tree-based algorithms are robust to scaling because splits are based on relative thresholds.",
+        "Incorrect. Scaling may not improve and sometimes may even slightly hurt performance.",
+        "Incorrect. Feature scaling doesn't break Random Forest; it just usually isn't necessary."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "preprocessing",
+        "robustness"
+      ]
+    },
+    {
+      "id": "RDF_067",
+      "question": "What is the computational bottleneck in Random Forest training?",
+      "options": [
+        "Finding optimal splits across features and samples",
+        "Memory allocation for trees",
+        "Random number generation",
+        "Final prediction aggregation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The main computational bottleneck in Random Forest training is finding optimal splits by evaluating different thresholds across features and samples for each node.",
+      "optionExplanations": [
+        "Correct. Finding optimal splits requires evaluating many feature-threshold combinations.",
+        "Incorrect. While memory is important, the split-finding process is more computationally intensive.",
+        "Incorrect. Random number generation is relatively fast compared to split evaluation.",
+        "Incorrect. Prediction aggregation is fast; training is where the computational cost lies."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "computational-bottleneck",
+        "split-finding",
+        "training-complexity"
+      ]
+    },
+    {
+      "id": "RDF_068",
+      "question": "How does Random Forest handle multi-class classification?",
+      "options": [
+        "It requires one-vs-rest decomposition",
+        "It handles multi-class naturally through tree splits",
+        "It only works for binary classification",
+        "It requires special encoding"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest handles multi-class classification naturally because decision trees can split on multiple classes directly without requiring decomposition strategies.",
+      "optionExplanations": [
+        "Incorrect. Random Forest doesn't need one-vs-rest; it handles multi-class directly.",
+        "Correct. Decision trees naturally handle multiple classes through splits based on class impurity.",
+        "Incorrect. Random Forest works well for multi-class problems.",
+        "Incorrect. No special encoding is required for multi-class problems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-class",
+        "classification",
+        "tree-splits"
+      ]
+    },
+    {
+      "id": "RDF_069",
+      "question": "What is the advantage of Random Forest over Gradient Boosting?",
+      "options": [
+        "Random Forest is always more accurate",
+        "Random Forest is more resistant to overfitting and faster to train",
+        "Random Forest uses less memory",
+        "Random Forest has better interpretability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest is generally more resistant to overfitting due to its parallel ensemble approach and is often faster to train because trees can be built in parallel.",
+      "optionExplanations": [
+        "Incorrect. Accuracy depends on the dataset; gradient boosting can sometimes be more accurate.",
+        "Correct. Random Forest's parallel approach makes it more resistant to overfitting and enables faster training.",
+        "Incorrect. Memory usage depends on implementation and dataset characteristics.",
+        "Incorrect. Both methods have limited interpretability compared to single trees."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-boosting",
+        "comparison",
+        "overfitting",
+        "training-speed"
+      ]
+    },
+    {
+      "id": "RDF_070",
+      "question": "What is variable selection using Random Forest?",
+      "options": [
+        "Randomly selecting variables for each tree",
+        "Using feature importance scores to select relevant variables",
+        "Removing variables with missing values",
+        "Selecting variables based on correlation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Variable selection using Random Forest involves using the feature importance scores computed by the algorithm to identify and select the most relevant variables for modeling.",
+      "optionExplanations": [
+        "Incorrect. This describes the random feature selection within the algorithm, not variable selection for modeling.",
+        "Correct. Feature importance scores help identify the most relevant variables for selection.",
+        "Incorrect. This is data preprocessing, not variable selection based on importance.",
+        "Incorrect. Random Forest variable selection uses importance scores, not just correlation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "variable-selection",
+        "feature-importance",
+        "feature-selection"
+      ]
+    },
+    {
+      "id": "RDF_071",
+      "question": "What is the bias of Random Forest compared to individual trees?",
+      "options": [
+        "Higher bias than individual trees",
+        "Same bias as individual trees",
+        "Lower bias than individual trees",
+        "Bias is not relevant for Random Forest"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest has approximately the same bias as individual trees because averaging unbiased estimators (trees) produces an unbiased estimator.",
+      "optionExplanations": [
+        "Incorrect. Averaging doesn't increase bias when the individual estimators are unbiased.",
+        "Correct. The bias of Random Forest is approximately equal to the bias of individual trees.",
+        "Incorrect. Averaging unbiased estimators doesn't reduce bias below the individual estimator level.",
+        "Incorrect. Bias is a relevant concept for understanding Random Forest's behavior."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias",
+        "ensemble-theory",
+        "statistical-properties"
+      ]
+    },
+    {
+      "id": "RDF_072",
+      "question": "What is the variance of Random Forest compared to individual trees?",
+      "options": [
+        "Higher variance than individual trees",
+        "Same variance as individual trees",
+        "Lower variance than individual trees",
+        "Variance increases with more trees"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest has lower variance than individual trees because averaging multiple independent estimators reduces the overall variance of the ensemble.",
+      "optionExplanations": [
+        "Incorrect. Ensemble averaging reduces variance, not increases it.",
+        "Incorrect. Averaging multiple estimators reduces variance below individual tree variance.",
+        "Correct. Ensemble averaging significantly reduces variance compared to individual trees.",
+        "Incorrect. Variance decreases (or stays constant) as more trees are added, not increases."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "variance",
+        "ensemble-theory",
+        "statistical-properties"
+      ]
+    },
+    {
+      "id": "RDF_073",
+      "question": "What is the concept of margin in Random Forest?",
+      "options": [
+        "Distance between decision boundaries",
+        "Difference between votes for correct class and highest incorrect class",
+        "Memory usage margin",
+        "Error tolerance margin"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In Random Forest, margin refers to the difference between the number of votes for the correct class and the number of votes for the most voted incorrect class.",
+      "optionExplanations": [
+        "Incorrect. While related to classification confidence, margin in Random Forest is specifically about vote differences.",
+        "Correct. Margin measures the difference between correct class votes and the highest incorrect class votes.",
+        "Incorrect. Margin in this context is not about memory usage.",
+        "Incorrect. Margin is not about error tolerance but about classification confidence."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "margin",
+        "classification-confidence",
+        "voting"
+      ]
+    },
+    {
+      "id": "RDF_074",
+      "question": "How does Random Forest generalization bound relate to margin?",
+      "options": [
+        "Larger margins lead to worse generalization",
+        "Larger margins lead to better generalization bounds",
+        "Margin has no effect on generalization",
+        "Generalization bound is independent of margin"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Larger margins in Random Forest lead to better generalization bounds because they indicate higher confidence in predictions and more robust decision boundaries.",
+      "optionExplanations": [
+        "Incorrect. Larger margins indicate more confident predictions, which typically improve generalization.",
+        "Correct. Larger margins provide better generalization bounds due to increased prediction confidence.",
+        "Incorrect. Margin is directly related to generalization performance in ensemble methods.",
+        "Incorrect. Theoretical analysis shows generalization bounds depend on the margin distribution."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "generalization-bound",
+        "margin",
+        "theoretical-analysis"
+      ]
+    },
+    {
+      "id": "RDF_075",
+      "question": "What is the strength of individual trees in Random Forest?",
+      "options": [
+        "Physical robustness of tree structure",
+        "Individual tree accuracy on the training data",
+        "Expected accuracy of individual trees on new data",
+        "Computational efficiency of trees"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The strength of individual trees refers to their expected accuracy on new, unseen data, which is a key component in Random Forest's theoretical analysis.",
+      "optionExplanations": [
+        "Incorrect. Strength is not about physical or structural robustness.",
+        "Incorrect. Strength specifically refers to performance on new data, not training data.",
+        "Correct. Strength measures the expected accuracy of individual trees on unseen data.",
+        "Incorrect. Strength is about prediction accuracy, not computational efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "tree-strength",
+        "generalization",
+        "theoretical-analysis"
+      ]
+    },
+    {
+      "id": "RDF_076",
+      "question": "What is the relationship between tree correlation and Random Forest performance?",
+      "options": [
+        "Higher correlation improves performance",
+        "Lower correlation improves performance",
+        "Correlation has no effect on performance",
+        "Moderate correlation is optimal"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lower correlation between trees improves Random Forest performance because it increases diversity, allowing trees to make different errors that cancel out in the ensemble.",
+      "optionExplanations": [
+        "Incorrect. Higher correlation reduces diversity and ensemble benefits.",
+        "Correct. Lower correlation increases diversity, improving ensemble performance through error cancellation.",
+        "Incorrect. Tree correlation significantly affects ensemble performance.",
+        "Incorrect. Generally, lower correlation is better, though extremely low correlation might indicate weak individual trees."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "tree-correlation",
+        "diversity",
+        "ensemble-performance"
+      ]
+    },
+    {
+      "id": "RDF_077",
+      "question": "How does Random Forest handle extrapolation?",
+      "options": [
+        "It extrapolates very well beyond training data",
+        "It has limited extrapolation ability due to tree-based structure",
+        "It uses linear extrapolation methods",
+        "It cannot make predictions outside training range"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest has limited extrapolation ability because tree-based models make predictions by averaging training samples in leaf nodes, limiting predictions to the range of training data.",
+      "optionExplanations": [
+        "Incorrect. Tree-based models are generally poor at extrapolation beyond the training data range.",
+        "Correct. Tree-based structure limits extrapolation as predictions are based on training sample averages.",
+        "Incorrect. Random Forest doesn't use linear extrapolation; it's based on tree structures.",
+        "Incorrect. Random Forest can make predictions outside training range, but they may not be reliable."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "extrapolation",
+        "tree-limitations",
+        "prediction-range"
+      ]
+    },
+    {
+      "id": "RDF_078",
+      "question": "What is the effect of increasing bootstrap sample size in Random Forest?",
+      "options": [
+        "Always improves performance",
+        "Reduces diversity between trees",
+        "Increases training time significantly",
+        "Has no effect on the model"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Increasing bootstrap sample size reduces diversity between trees because larger samples will be more similar to each other and to the original dataset.",
+      "optionExplanations": [
+        "Incorrect. While individual trees may be stronger, reduced diversity can hurt ensemble performance.",
+        "Correct. Larger bootstrap samples are more similar, reducing diversity between trees.",
+        "Incorrect. Training time increase is usually proportional, not significantly different.",
+        "Incorrect. Bootstrap sample size affects both individual tree performance and ensemble diversity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bootstrap-sample-size",
+        "diversity",
+        "ensemble-trade-offs"
+      ]
+    },
+    {
+      "id": "RDF_079",
+      "question": "What is the infinite tree ensemble theorem for Random Forest?",
+      "options": [
+        "Random Forest accuracy approaches 100% with infinite trees",
+        "Random Forest error converges to a limit as trees approach infinity",
+        "Infinite trees require infinite computational resources",
+        "Random Forest becomes a single tree with infinite estimators"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The infinite tree ensemble theorem states that as the number of trees approaches infinity, Random Forest error converges to a limit determined by tree strength and correlation.",
+      "optionExplanations": [
+        "Incorrect. Error converges to a limit greater than zero, not perfect accuracy.",
+        "Correct. The theorem shows error converges to a specific limit based on tree properties.",
+        "Incorrect. While true practically, this doesn't describe the mathematical theorem.",
+        "Incorrect. The ensemble remains multiple trees; it doesn't become a single tree."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "infinite-tree-theorem",
+        "convergence",
+        "theoretical-analysis"
+      ]
+    },
+    {
+      "id": "RDF_080",
+      "question": "What is unsupervised Random Forest used for?",
+      "options": [
+        "Classification without labels",
+        "Creating proximity matrices and detecting outliers",
+        "Regression without target values",
+        "Feature generation only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Unsupervised Random Forest is used for creating proximity matrices between samples and detecting outliers by measuring how often samples end up in the same leaf nodes.",
+      "optionExplanations": [
+        "Incorrect. Classification requires labels; unsupervised Random Forest doesn't do classification.",
+        "Correct. Unsupervised Random Forest creates proximity measures and helps with outlier detection.",
+        "Incorrect. Regression requires target values; unsupervised methods don't predict continuous values.",
+        "Incorrect. While it can help with feature understanding, its main uses are proximity and outlier detection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "unsupervised-random-forest",
+        "proximity",
+        "outlier-detection"
+      ]
+    },
+    {
+      "id": "RDF_081",
+      "question": "How does Random Forest perform with high-dimensional sparse data?",
+      "options": [
+        "It performs very poorly",
+        "It performs similarly to dense data",
+        "It performs better than with dense data",
+        "Feature randomness helps handle sparsity effectively"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Random Forest's feature randomness helps handle high-dimensional sparse data effectively by focusing on subsets of features, reducing the impact of irrelevant sparse features.",
+      "optionExplanations": [
+        "Incorrect. While challenging, Random Forest can handle sparse data reasonably well.",
+        "Incorrect. Sparse data presents unique challenges that affect performance differently.",
+        "Incorrect. Sparse data generally doesn't improve performance over dense data.",
+        "Correct. Feature randomness helps by selecting relevant feature subsets, mitigating sparsity issues."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "sparse-data",
+        "high-dimensional",
+        "feature-randomness"
+      ]
+    },
+    {
+      "id": "RDF_082",
+      "question": "What is the role of min_impurity_decrease parameter?",
+      "options": [
+        "Minimum improvement in accuracy required for splits",
+        "Minimum decrease in impurity required to make a split",
+        "Minimum number of samples with decreased impurity",
+        "Minimum impurity value allowed in nodes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The min_impurity_decrease parameter specifies the minimum decrease in impurity required to justify making a split, helping to prevent overfitting by avoiding insignificant splits.",
+      "optionExplanations": [
+        "Incorrect. This parameter is about impurity decrease, not accuracy improvement.",
+        "Correct. min_impurity_decrease sets the threshold for minimum impurity reduction needed for splits.",
+        "Incorrect. This parameter is about impurity values, not sample counts.",
+        "Incorrect. This parameter is about impurity decrease, not absolute impurity values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "min-impurity-decrease",
+        "overfitting-prevention",
+        "splitting-criteria"
+      ]
+    },
+    {
+      "id": "RDF_083",
+      "question": "How does Random Forest handle time series data?",
+      "options": [
+        "It's ideal for time series forecasting",
+        "It requires special temporal preprocessing",
+        "It can be used but may not capture temporal dependencies well",
+        "It automatically detects temporal patterns"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest can be used for time series data but may not capture temporal dependencies well since trees don't inherently model sequential relationships.",
+      "optionExplanations": [
+        "Incorrect. Random Forest is not specifically designed for time series and may miss temporal patterns.",
+        "Incorrect. While preprocessing can help, it's not always required for Random Forest to work with time series.",
+        "Correct. Random Forest can work with time series but doesn't naturally capture temporal dependencies.",
+        "Incorrect. Random Forest doesn't automatically detect temporal patterns without proper feature engineering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "time-series",
+        "temporal-dependencies",
+        "forecasting"
+      ]
+    },
+    {
+      "id": "RDF_084",
+      "question": "What is the impact of class imbalance on Random Forest feature importance?",
+      "options": [
+        "No impact on feature importance",
+        "May bias importance toward majority class features",
+        "Always improves feature importance accuracy",
+        "Only affects categorical features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Class imbalance can bias feature importance calculations toward features that help predict the majority class, potentially undervaluing features important for minority classes.",
+      "optionExplanations": [
+        "Incorrect. Class imbalance significantly affects how feature importance is calculated.",
+        "Correct. Imbalanced data can bias importance toward majority class, affecting feature ranking.",
+        "Incorrect. Class imbalance generally doesn't improve importance accuracy.",
+        "Incorrect. Class imbalance affects importance for both categorical and numerical features."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "class-imbalance",
+        "feature-importance",
+        "bias"
+      ]
+    },
+    {
+      "id": "RDF_085",
+      "question": "What is the difference between feature importance and feature selection in Random Forest?",
+      "options": [
+        "They are the same concept",
+        "Feature importance ranks features, feature selection chooses subset",
+        "Feature selection is always based on importance",
+        "Feature importance is only for categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature importance provides rankings of feature relevance, while feature selection involves choosing a subset of features, which may or may not be based on importance scores.",
+      "optionExplanations": [
+        "Incorrect. Feature importance and selection are related but distinct concepts.",
+        "Correct. Importance provides rankings while selection involves choosing specific feature subsets.",
+        "Incorrect. Feature selection can use various criteria beyond just importance scores.",
+        "Incorrect. Feature importance works for both categorical and numerical features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-importance",
+        "feature-selection",
+        "ranking"
+      ]
+    },
+    {
+      "id": "RDF_086",
+      "question": "What happens to Random Forest performance with perfectly correlated features?",
+      "options": [
+        "Performance improves significantly",
+        "Performance remains unchanged",
+        "One feature may dominate importance calculations",
+        "Model fails to train"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "With perfectly correlated features, one feature may dominate importance calculations while others appear less important, even though they contain the same information.",
+      "optionExplanations": [
+        "Incorrect. Perfectly correlated features don't improve performance since they're redundant.",
+        "Incorrect. While prediction performance might be similar, feature importance is affected.",
+        "Correct. Random selection means one correlated feature may consistently appear more important.",
+        "Incorrect. Random Forest can train with correlated features, though it may be inefficient."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "feature-correlation",
+        "feature-importance",
+        "redundancy"
+      ]
+    },
+    {
+      "id": "RDF_087",
+      "question": "What is the concept of partial dependence in Random Forest?",
+      "options": [
+        "Dependence between different trees",
+        "How predictions change with variation in specific features",
+        "Correlation between features",
+        "Dependence on training data size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Partial dependence shows how Random Forest predictions change when specific features are varied while keeping other features at their average values.",
+      "optionExplanations": [
+        "Incorrect. Partial dependence is about feature effects, not tree relationships.",
+        "Correct. Partial dependence plots show prediction changes as specific features vary.",
+        "Incorrect. This describes feature correlation, not partial dependence.",
+        "Incorrect. Partial dependence is about feature effects, not data size effects."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "partial-dependence",
+        "feature-effects",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "RDF_088",
+      "question": "How does Random Forest handle interaction effects between features?",
+      "options": [
+        "It explicitly models all interactions",
+        "It can capture interactions through tree splits",
+        "It ignores interaction effects completely",
+        "It requires manual interaction specification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest can capture interaction effects through its tree structure, where different paths through trees represent different feature combinations and interactions.",
+      "optionExplanations": [
+        "Incorrect. Random Forest doesn't explicitly model all possible interactions.",
+        "Correct. Tree structure naturally captures interactions through different splitting paths.",
+        "Incorrect. Random Forest can capture interactions, though not as explicitly as some methods.",
+        "Incorrect. Random Forest discovers interactions automatically through tree construction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "interaction-effects",
+        "tree-structure",
+        "feature-combinations"
+      ]
+    },
+    {
+      "id": "RDF_089",
+      "question": "What is the relationship between Random Forest and CART (Classification and Regression Trees)?",
+      "options": [
+        "They are identical algorithms",
+        "Random Forest uses CART as base learners",
+        "CART is an ensemble of Random Forests",
+        "They solve different types of problems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest uses CART (Classification and Regression Trees) or similar decision tree algorithms as its base learners in the ensemble.",
+      "optionExplanations": [
+        "Incorrect. Random Forest is an ensemble method while CART is a single tree algorithm.",
+        "Correct. Random Forest builds an ensemble using CART or similar tree algorithms as base learners.",
+        "Incorrect. This reverses the relationship; Random Forest contains multiple trees, not the other way around.",
+        "Incorrect. Both can solve classification and regression problems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cart",
+        "base-learners",
+        "algorithm-relationship"
+      ]
+    },
+    {
+      "id": "RDF_090",
+      "question": "What is the effect of using very small max_features values in Random Forest?",
+      "options": [
+        "Increases diversity but may hurt individual tree performance",
+        "Always improves performance",
+        "Reduces training time significantly",
+        "Has no effect on the model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Very small max_features values increase diversity between trees but may hurt individual tree performance since each tree has access to fewer features for making optimal splits.",
+      "optionExplanations": [
+        "Correct. Small max_features increases diversity but may weaken individual trees due to limited feature access.",
+        "Incorrect. Very small values can hurt performance if trees become too weak.",
+        "Incorrect. While there may be some speed improvement, the main effect is on diversity and tree quality.",
+        "Incorrect. max_features significantly affects both diversity and tree performance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "max-features",
+        "diversity-performance-tradeoff",
+        "tree-quality"
+      ]
+    },
+    {
+      "id": "RDF_091",
+      "question": "How does Random Forest perform with datasets having many irrelevant features?",
+      "options": [
+        "Performance degrades significantly",
+        "Feature randomness helps mitigate the impact of irrelevant features",
+        "It cannot handle irrelevant features",
+        "Performance improves with more irrelevant features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest's feature randomness helps mitigate the impact of irrelevant features by ensuring that relevant features are likely to be selected in at least some trees.",
+      "optionExplanations": [
+        "Incorrect. While irrelevant features can hurt performance, Random Forest has some robustness.",
+        "Correct. Feature randomness ensures relevant features get selected, reducing impact of irrelevant ones.",
+        "Incorrect. Random Forest can handle irrelevant features better than many other algorithms.",
+        "Incorrect. Irrelevant features generally don't improve performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "irrelevant-features",
+        "feature-randomness",
+        "robustness"
+      ]
+    },
+    {
+      "id": "RDF_092",
+      "question": "What is the purpose of the verbose parameter in Random Forest?",
+      "options": [
+        "To control model complexity",
+        "To display training progress and information",
+        "To enable detailed feature importance",
+        "To save memory during training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The verbose parameter controls the amount of information displayed during training, helping users monitor progress and debug issues.",
+      "optionExplanations": [
+        "Incorrect. Model complexity is controlled by other parameters like max_depth.",
+        "Correct. verbose controls the display of training progress and diagnostic information.",
+        "Incorrect. Feature importance detail is controlled by the algorithm itself, not verbose.",
+        "Incorrect. verbose affects output display, not memory usage."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "verbose",
+        "training-progress",
+        "debugging"
+      ]
+    },
+    {
+      "id": "RDF_093",
+      "question": "What is the concept of consensus in Random Forest predictions?",
+      "options": [
+        "All trees must agree on prediction",
+        "Majority of trees determine the final prediction",
+        "Weighted agreement based on tree performance",
+        "Average confidence across all trees"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Consensus in Random Forest refers to how the majority of trees determine the final prediction through voting (classification) or averaging (regression).",
+      "optionExplanations": [
+        "Incorrect. Not all trees need to agree; majority voting determines the outcome.",
+        "Correct. Consensus is achieved through majority voting in classification or averaging in regression.",
+        "Incorrect. Standard Random Forest uses equal weights for all trees, not performance-based weights.",
+        "Incorrect. While confidence can be measured, consensus specifically refers to prediction aggregation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "consensus",
+        "voting",
+        "prediction-aggregation"
+      ]
+    },
+    {
+      "id": "RDF_094",
+      "question": "How does Random Forest handle numerical stability issues?",
+      "options": [
+        "It's prone to numerical instability",
+        "Tree-based splits are generally numerically stable",
+        "It requires special numerical preprocessing",
+        "It fails with extreme numerical values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest is generally numerically stable because tree-based splits use simple threshold comparisons rather than complex mathematical operations.",
+      "optionExplanations": [
+        "Incorrect. Random Forest is generally more numerically stable than many other algorithms.",
+        "Correct. Tree splits use simple threshold comparisons, making them numerically stable.",
+        "Incorrect. While preprocessing can help, Random Forest doesn't require special numerical handling.",
+        "Incorrect. Random Forest can handle extreme values better than many algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "numerical-stability",
+        "threshold-comparisons",
+        "robustness"
+      ]
+    },
+    {
+      "id": "RDF_095",
+      "question": "What is the effect of Random Forest ensemble size on prediction confidence?",
+      "options": [
+        "Larger ensembles always increase confidence",
+        "Ensemble size doesn't affect confidence",
+        "Larger ensembles can provide more stable confidence estimates",
+        "Smaller ensembles are more confident"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Larger Random Forest ensembles can provide more stable confidence estimates because they reduce the variance in vote proportions, leading to more reliable confidence measures.",
+      "optionExplanations": [
+        "Incorrect. Larger ensembles stabilize confidence but don't always increase it.",
+        "Incorrect. Ensemble size affects the stability and reliability of confidence estimates.",
+        "Correct. More trees provide more stable confidence estimates through reduced variance.",
+        "Incorrect. Smaller ensembles tend to have less stable confidence estimates."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ensemble-size",
+        "prediction-confidence",
+        "stability"
+      ]
+    },
+    {
+      "id": "RDF_096",
+      "question": "What is the scalability limitation of Random Forest?",
+      "options": [
+        "Cannot handle large numbers of features",
+        "Memory requirements grow with ensemble size",
+        "Cannot be parallelized",
+        "Fails with large datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest's main scalability limitation is that memory requirements grow linearly with the number of trees in the ensemble, which can become significant for very large forests.",
+      "optionExplanations": [
+        "Incorrect. Random Forest handles large numbers of features reasonably well.",
+        "Correct. Memory usage increases with the number and size of trees in the ensemble.",
+        "Incorrect. Random Forest can be effectively parallelized during training and prediction.",
+        "Incorrect. Random Forest scales well to large datasets through sampling and parallelization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "scalability",
+        "memory-requirements",
+        "ensemble-size"
+      ]
+    },
+    {
+      "id": "RDF_097",
+      "question": "How does Random Forest compare to Support Vector Machines in terms of interpretability?",
+      "options": [
+        "Random Forest is more interpretable",
+        "SVM is more interpretable",
+        "Both have similar interpretability",
+        "Neither is interpretable"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Random Forest is generally more interpretable than SVM because it provides feature importance scores and tree structures can be analyzed, while SVM decisions are based on complex kernel functions.",
+      "optionExplanations": [
+        "Correct. Random Forest provides feature importance and tree-based explanations, making it more interpretable.",
+        "Incorrect. SVM with kernel functions is generally less interpretable than Random Forest.",
+        "Incorrect. Random Forest offers more interpretability tools than SVM.",
+        "Incorrect. While neither is as interpretable as simple models, Random Forest offers more interpretability than SVM."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interpretability",
+        "svm-comparison",
+        "feature-importance"
+      ]
+    },
+    {
+      "id": "RDF_098",
+      "question": "What is the role of randomness in preventing overfitting in Random Forest?",
+      "options": [
+        "Randomness has no effect on overfitting",
+        "Randomness creates diversity that reduces overfitting through averaging",
+        "Randomness increases overfitting",
+        "Only bootstrap randomness prevents overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Randomness in Random Forest (both bootstrap sampling and feature selection) creates diversity among trees, and averaging diverse models reduces overfitting by canceling out individual model errors.",
+      "optionExplanations": [
+        "Incorrect. Randomness is crucial for Random Forest's overfitting prevention.",
+        "Correct. Randomness creates diverse trees whose errors cancel out through averaging, reducing overfitting.",
+        "Incorrect. Randomness reduces overfitting in Random Forest through diversity.",
+        "Incorrect. Both bootstrap and feature randomness contribute to overfitting prevention."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "randomness",
+        "overfitting-prevention",
+        "diversity"
+      ]
+    },
+    {
+      "id": "RDF_099",
+      "question": "What is the computational complexity of Random Forest feature importance calculation?",
+      "options": [
+        "O(n log n)",
+        "O(k × tree_complexity)",
+        "O(n²)",
+        "O(1)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature importance calculation complexity is O(k × tree_complexity) where k is the number of trees and tree_complexity depends on the tree structure and number of nodes.",
+      "optionExplanations": [
+        "Incorrect. Importance calculation depends on the number of trees and their complexity.",
+        "Correct. Complexity is proportional to the number of trees times the complexity of traversing each tree.",
+        "Incorrect. Feature importance doesn't require quadratic operations in the number of samples.",
+        "Incorrect. Feature importance calculation requires traversing all trees, so it's not constant time."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "computational-complexity",
+        "feature-importance",
+        "algorithm-analysis"
+      ]
+    },
+    {
+      "id": "RDF_100",
+      "question": "What is the theoretical foundation that explains why Random Forest works?",
+      "options": [
+        "Central limit theorem",
+        "Bias-variance decomposition and ensemble theory",
+        "Bayes' theorem",
+        "Law of large numbers only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest's effectiveness is explained by bias-variance decomposition and ensemble theory, which show how combining diverse weak learners reduces variance while maintaining low bias.",
+      "optionExplanations": [
+        "Incorrect. While CLT is relevant to some aspects, bias-variance decomposition is more fundamental.",
+        "Correct. Bias-variance decomposition and ensemble theory provide the theoretical foundation for Random Forest.",
+        "Incorrect. Bayes' theorem is not the primary theoretical foundation for Random Forest.",
+        "Incorrect. Law of large numbers is relevant but bias-variance decomposition is more comprehensive."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "theoretical-foundation",
+        "bias-variance-decomposition",
+        "ensemble-theory"
+      ]
+    }
+  ]
+}

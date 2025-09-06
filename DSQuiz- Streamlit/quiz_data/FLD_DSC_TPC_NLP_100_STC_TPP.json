@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_NLP",
+  "topicName": "Natural Language Processing",
+  "subtopicId": "STC_TPP",
+  "subtopicName": "Text Preprocessing",
+  "str": 0.100,
+  "description": "Text preprocessing is a crucial step in NLP that involves cleaning, transforming, and preparing raw text data for analysis. This includes tokenization, stemming, lemmatization, stop word removal, n-gram generation, and creating bag of words representations.",
+  "questions": [
+    {
+      "id": "TPP_001",
+      "question": "What is tokenization in text preprocessing?",
+      "options": [
+        "The process of breaking text into individual words or tokens",
+        "Converting text to lowercase",
+        "Removing punctuation from text",
+        "Translating text to another language"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Tokenization is the fundamental process of splitting text into smaller units called tokens, which are typically words, but can also be sentences, phrases, or characters depending on the application.",
+      "optionExplanations": [
+        "Correct. Tokenization involves breaking down text into individual units (tokens) such as words, which forms the basis for further text processing.",
+        "Incorrect. Converting text to lowercase is called case normalization or lowercasing, not tokenization.",
+        "Incorrect. Removing punctuation is a separate preprocessing step, though it may be done during or after tokenization.",
+        "Incorrect. Translating text to another language is called machine translation, not tokenization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "tokenization",
+        "basics",
+        "text-processing"
+      ]
+    },
+    {
+      "id": "TPP_002",
+      "question": "Which Python library is most commonly used for basic tokenization?",
+      "options": [
+        "NumPy",
+        "NLTK",
+        "Matplotlib",
+        "Scikit-learn"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NLTK (Natural Language Toolkit) is one of the most popular Python libraries for natural language processing tasks, including tokenization.",
+      "optionExplanations": [
+        "Incorrect. NumPy is primarily used for numerical computing, not text processing.",
+        "Correct. NLTK provides comprehensive tools for tokenization including word_tokenize() and sent_tokenize() functions.",
+        "Incorrect. Matplotlib is a plotting library used for data visualization, not text processing.",
+        "Incorrect. While Scikit-learn has some text processing capabilities, NLTK is more specialized for basic tokenization tasks."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "nltk",
+        "python",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "TPP_003",
+      "question": "What is the difference between stemming and lemmatization?",
+      "options": [
+        "Stemming is more accurate than lemmatization",
+        "Lemmatization considers context while stemming uses simple rules",
+        "They are exactly the same process",
+        "Stemming is only for English while lemmatization works for all languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lemmatization uses morphological analysis and considers the context to reduce words to their base form, while stemming uses simple heuristic rules to chop off word endings.",
+      "optionExplanations": [
+        "Incorrect. Lemmatization is generally more accurate than stemming because it considers linguistic rules and context.",
+        "Correct. Lemmatization uses dictionary lookups and morphological analysis to find the correct root form, while stemming applies algorithmic rules without considering meaning.",
+        "Incorrect. Stemming and lemmatization are different approaches with different levels of accuracy and computational complexity.",
+        "Incorrect. Both stemming and lemmatization can work with multiple languages, though availability varies by language."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stemming",
+        "lemmatization",
+        "morphology"
+      ]
+    },
+    {
+      "id": "TPP_004",
+      "question": "Which of the following is an example of a stemmed word from 'running'?",
+      "options": [
+        "run",
+        "runn",
+        "running",
+        "runs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stemming algorithms like Porter Stemmer often produce stems that may not be actual words. 'runn' is a typical stem for 'running' using such algorithms.",
+      "optionExplanations": [
+        "Incorrect. While 'run' is the lemmatized form, stemming often produces 'runn' as it removes suffixes algorithmically.",
+        "Correct. Stemming algorithms often produce non-word stems like 'runn' by mechanically removing suffixes.",
+        "Incorrect. 'running' is the original word, not a stemmed version.",
+        "Incorrect. 'runs' is another inflected form of the word, not a stem of 'running'."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stemming",
+        "porter-stemmer",
+        "examples"
+      ]
+    },
+    {
+      "id": "TPP_005",
+      "question": "What are stop words in NLP?",
+      "options": [
+        "Words that make the program stop",
+        "Commonly used words that carry little semantic meaning",
+        "Words with spelling errors",
+        "Words that appear only once in a document"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stop words are frequently occurring words like 'the', 'is', 'at', 'which', 'on' that are often filtered out because they carry little meaningful information for analysis.",
+      "optionExplanations": [
+        "Incorrect. Stop words don't make programs stop; they are simply filtered out during preprocessing.",
+        "Correct. Stop words are common words like articles, prepositions, and pronouns that don't contribute much to the meaning of text.",
+        "Incorrect. Words with spelling errors are called misspelled words, not stop words.",
+        "Incorrect. Words appearing once are called hapax legomena or rare words, not stop words."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "stop-words",
+        "filtering",
+        "semantics"
+      ]
+    },
+    {
+      "id": "TPP_006",
+      "question": "Which of the following is typically considered a stop word?",
+      "options": [
+        "machine",
+        "learning",
+        "the",
+        "algorithm"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "'The' is a definite article that appears very frequently in English text but carries little semantic meaning, making it a classic example of a stop word.",
+      "optionExplanations": [
+        "Incorrect. 'machine' is a content word that carries semantic meaning and would not typically be considered a stop word.",
+        "Incorrect. 'learning' is a content word with semantic value and is not a stop word.",
+        "Correct. 'the' is a definite article that appears frequently but carries little semantic information, making it a typical stop word.",
+        "Incorrect. 'algorithm' is a technical term with specific meaning and would not be considered a stop word."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "stop-words",
+        "examples",
+        "articles"
+      ]
+    },
+    {
+      "id": "TPP_007",
+      "question": "What is an n-gram in text processing?",
+      "options": [
+        "A sequence of n consecutive words or tokens",
+        "A word that appears n times in a document",
+        "A document with n words",
+        "A gram unit of measurement for text"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An n-gram is a contiguous sequence of n items from a given sample of text or speech. For example, a bigram (2-gram) consists of two consecutive words.",
+      "optionExplanations": [
+        "Correct. An n-gram is a sequence of n consecutive items (usually words or characters) from text.",
+        "Incorrect. Word frequency is different from n-grams, which are about sequences of consecutive items.",
+        "Incorrect. Document length is not related to the concept of n-grams.",
+        "Incorrect. N-grams have nothing to do with weight measurements; the term comes from the Greek letter 'n' representing a variable number."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "n-grams",
+        "sequences",
+        "basics"
+      ]
+    },
+    {
+      "id": "TPP_008",
+      "question": "What is a bigram?",
+      "options": [
+        "A 2-gram or sequence of two consecutive words",
+        "A large gram unit",
+        "A word that appears twice",
+        "A binary representation of text"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A bigram is specifically a 2-gram, meaning a sequence of exactly two consecutive words or tokens in text.",
+      "optionExplanations": [
+        "Correct. A bigram is a 2-gram, consisting of two consecutive words or tokens in sequence.",
+        "Incorrect. 'Bigram' doesn't refer to size or weight; it's about the sequence length being 2.",
+        "Incorrect. Word frequency is different from bigrams, which are about consecutive word pairs.",
+        "Incorrect. Bigrams are not binary representations; they are sequences of two consecutive words."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bigrams",
+        "n-grams",
+        "sequences"
+      ]
+    },
+    {
+      "id": "TPP_009",
+      "question": "In the sentence 'I love machine learning', what are the bigrams?",
+      "options": [
+        "['I love', 'love machine', 'machine learning']",
+        "['I', 'love', 'machine', 'learning']",
+        "['I love machine', 'love machine learning']",
+        "['machine', 'learning']"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bigrams are formed by taking every consecutive pair of words in the sentence, resulting in three bigrams from four words.",
+      "optionExplanations": [
+        "Correct. These are all the consecutive pairs of words in the sentence: 'I love', 'love machine', and 'machine learning'.",
+        "Incorrect. These are individual words (unigrams), not bigrams which are pairs of consecutive words.",
+        "Incorrect. These are trigrams (3-grams), not bigrams which consist of exactly two consecutive words.",
+        "Incorrect. This is only one of the three bigrams present in the sentence."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bigrams",
+        "examples",
+        "extraction"
+      ]
+    },
+    {
+      "id": "TPP_010",
+      "question": "What is the Bag of Words (BoW) model?",
+      "options": [
+        "A way to physically store words in bags",
+        "A text representation that ignores word order and grammar",
+        "A method to count bags in sentences",
+        "A technique to translate words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bag of Words is a text representation model that treats documents as unordered collections of words, focusing only on word frequency while ignoring grammar and word order.",
+      "optionExplanations": [
+        "Incorrect. BoW is not about physical storage; it's a mathematical representation of text.",
+        "Correct. BoW represents text as a collection of words without considering order, position, or grammar structure.",
+        "Incorrect. BoW has nothing to do with counting physical bags; it's about word frequency in text.",
+        "Incorrect. BoW is not a translation technique; it's a text representation method."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bag-of-words",
+        "representation",
+        "model"
+      ]
+    },
+    {
+      "id": "TPP_011",
+      "question": "In BoW representation, what information is lost?",
+      "options": [
+        "Word frequency",
+        "Word order and context",
+        "Vocabulary size",
+        "Document length"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Bag of Words model loses word order and contextual relationships between words, treating text as an unordered collection.",
+      "optionExplanations": [
+        "Incorrect. BoW preserves word frequency information, which is actually its main feature.",
+        "Correct. BoW ignores the order of words and their contextual relationships, treating documents as unordered word collections.",
+        "Incorrect. Vocabulary size is maintained in BoW as it includes all unique words from the corpus.",
+        "Incorrect. Document length information can be preserved through word counts in BoW representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bag-of-words",
+        "limitations",
+        "context"
+      ]
+    },
+    {
+      "id": "TPP_012",
+      "question": "Which preprocessing step is typically performed first?",
+      "options": [
+        "Stemming",
+        "Stop word removal",
+        "Tokenization",
+        "Lemmatization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Tokenization is usually the first step as it breaks text into individual units that can then be processed by other techniques.",
+      "optionExplanations": [
+        "Incorrect. Stemming requires tokens to work on, so tokenization must come first.",
+        "Incorrect. Stop word removal requires individual words, which are obtained through tokenization.",
+        "Correct. Tokenization is typically the first step as it creates the basic units (tokens) that other preprocessing steps operate on.",
+        "Incorrect. Lemmatization works on individual words, which are first obtained through tokenization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "pipeline",
+        "order"
+      ]
+    },
+    {
+      "id": "TPP_013",
+      "question": "What is case normalization in text preprocessing?",
+      "options": [
+        "Converting all text to the same case (usually lowercase)",
+        "Correcting spelling errors",
+        "Removing punctuation",
+        "Splitting sentences"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Case normalization involves converting all text to a consistent case format, typically lowercase, to ensure words like 'Word' and 'word' are treated as the same.",
+      "optionExplanations": [
+        "Correct. Case normalization converts text to a uniform case (usually lowercase) to treat words consistently regardless of capitalization.",
+        "Incorrect. Correcting spelling errors is called spell checking or correction, not case normalization.",
+        "Incorrect. Removing punctuation is a separate preprocessing step called punctuation removal.",
+        "Incorrect. Splitting sentences is called sentence segmentation or sentence tokenization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "case-normalization",
+        "lowercasing",
+        "standardization"
+      ]
+    },
+    {
+      "id": "TPP_014",
+      "question": "Why is case normalization important in text preprocessing?",
+      "options": [
+        "It makes text easier to read",
+        "It reduces vocabulary size and treats similar words as identical",
+        "It removes spelling errors",
+        "It improves grammar"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Case normalization ensures that words differing only in capitalization are treated as the same word, reducing vocabulary size and improving consistency.",
+      "optionExplanations": [
+        "Incorrect. While it might make text uniform, readability is not the primary purpose of case normalization in NLP.",
+        "Correct. Case normalization reduces vocabulary size by treating 'Word', 'WORD', and 'word' as the same token.",
+        "Incorrect. Case normalization doesn't fix spelling errors; it only standardizes capitalization.",
+        "Incorrect. Case normalization doesn't improve grammar; it only standardizes letter case."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "case-normalization",
+        "vocabulary",
+        "consistency"
+      ]
+    },
+    {
+      "id": "TPP_015",
+      "question": "What is punctuation removal in text preprocessing?",
+      "options": [
+        "Adding punctuation to text",
+        "Correcting punctuation errors",
+        "Eliminating punctuation marks from text",
+        "Converting punctuation to words"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Punctuation removal involves eliminating punctuation marks like periods, commas, and exclamation points from text to focus on words.",
+      "optionExplanations": [
+        "Incorrect. Punctuation removal involves eliminating punctuation, not adding it.",
+        "Incorrect. Correcting punctuation errors would be punctuation correction, not removal.",
+        "Correct. Punctuation removal eliminates marks like '.', ',', '!', '?' to focus on word content.",
+        "Incorrect. Converting punctuation to words would be expansion, not removal."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "punctuation",
+        "removal",
+        "cleaning"
+      ]
+    },
+    {
+      "id": "TPP_016",
+      "question": "When might you NOT want to remove punctuation?",
+      "options": [
+        "When processing emails",
+        "When analyzing sentiment in social media",
+        "When working with mathematical expressions",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "There are many scenarios where punctuation carries important meaning and should be preserved during preprocessing.",
+      "optionExplanations": [
+        "Partially correct. Email addresses contain important punctuation like '@' and '.' that carry meaning.",
+        "Partially correct. In sentiment analysis, punctuation like '!' or '?' can indicate emotion or emphasis.",
+        "Partially correct. Mathematical expressions rely heavily on punctuation for meaning (e.g., decimal points, operators).",
+        "Correct. All these scenarios involve cases where punctuation carries semantic meaning and should be preserved."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "punctuation",
+        "preservation",
+        "context"
+      ]
+    },
+    {
+      "id": "TPP_017",
+      "question": "What is the Porter Stemmer?",
+      "options": [
+        "A person who invented tokenization",
+        "A popular stemming algorithm",
+        "A type of lemmatizer",
+        "A stop word list"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Porter Stemmer is a widely-used algorithm for stemming that applies a series of rules to remove common suffixes from words.",
+      "optionExplanations": [
+        "Incorrect. While Martin Porter created the algorithm, the Porter Stemmer refers to the algorithm itself, not the person.",
+        "Correct. The Porter Stemmer is one of the most popular and widely-used stemming algorithms in NLP.",
+        "Incorrect. The Porter Stemmer is specifically a stemming algorithm, not a lemmatization tool.",
+        "Incorrect. The Porter Stemmer is an algorithm for stemming, not a collection of stop words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "porter-stemmer",
+        "algorithm",
+        "stemming"
+      ]
+    },
+    {
+      "id": "TPP_018",
+      "question": "What is WordNet in the context of lemmatization?",
+      "options": [
+        "A social network for words",
+        "A lexical database used for finding word lemmas",
+        "A neural network for text processing",
+        "A web crawler for text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "WordNet is a large lexical database of English that groups words into synsets and is commonly used by lemmatizers to find correct word forms.",
+      "optionExplanations": [
+        "Incorrect. WordNet is not a social network; it's a linguistic database.",
+        "Correct. WordNet is a lexical database that provides relationships between words and is used by lemmatizers like NLTK's WordNetLemmatizer.",
+        "Incorrect. WordNet is a database, not a neural network model.",
+        "Incorrect. WordNet is not a web crawler; it's a pre-built lexical resource."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "wordnet",
+        "lemmatization",
+        "database"
+      ]
+    },
+    {
+      "id": "TPP_019",
+      "question": "What is a unigram?",
+      "options": [
+        "A single word or token",
+        "A unique word",
+        "A word that appears once",
+        "A word with one syllable"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A unigram is a 1-gram, which means a sequence of length 1, essentially a single word or token.",
+      "optionExplanations": [
+        "Correct. A unigram is a 1-gram, representing a single word or token in the n-gram framework.",
+        "Incorrect. Uniqueness is not what defines a unigram; it's about sequence length.",
+        "Incorrect. Frequency of occurrence doesn't determine if something is a unigram.",
+        "Incorrect. The number of syllables is unrelated to the concept of unigrams."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "unigrams",
+        "n-grams",
+        "tokens"
+      ]
+    },
+    {
+      "id": "TPP_020",
+      "question": "What is a trigram?",
+      "options": [
+        "Three words that mean the same thing",
+        "A sequence of three consecutive words",
+        "A word that appears three times",
+        "A triangle-shaped gram"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A trigram is a 3-gram, consisting of three consecutive words or tokens in sequence.",
+      "optionExplanations": [
+        "Incorrect. Synonyms are not trigrams; trigrams are about word sequences, not meaning.",
+        "Correct. A trigram is a 3-gram, consisting of exactly three consecutive words or tokens.",
+        "Incorrect. Word frequency is different from trigrams, which are about consecutive sequences.",
+        "Incorrect. Trigrams have nothing to do with geometric shapes; they're sequences of three consecutive items."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "trigrams",
+        "n-grams",
+        "sequences"
+      ]
+    },
+    {
+      "id": "TPP_021",
+      "question": "In TF-IDF, what does TF stand for?",
+      "options": [
+        "Text Frequency",
+        "Term Frequency",
+        "Total Frequency",
+        "Token Frequency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In TF-IDF (Term Frequency-Inverse Document Frequency), TF stands for Term Frequency, which measures how often a term appears in a document.",
+      "optionExplanations": [
+        "Incorrect. While related, the correct term is 'Term Frequency', not 'Text Frequency'.",
+        "Correct. TF stands for Term Frequency, which measures how frequently a term appears in a document.",
+        "Incorrect. TF specifically refers to 'Term Frequency', not 'Total Frequency'.",
+        "Incorrect. While tokens and terms are related, the standard terminology uses 'Term Frequency'."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "tf-idf",
+        "term-frequency",
+        "basics"
+      ]
+    },
+    {
+      "id": "TPP_022",
+      "question": "What does IDF stand for in TF-IDF?",
+      "options": [
+        "Inverse Document Frequency",
+        "Internal Document Format",
+        "Inverted Document File",
+        "Index Document Function"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "IDF stands for Inverse Document Frequency, which measures how much information a term provides across the entire document collection.",
+      "optionExplanations": [
+        "Correct. IDF stands for Inverse Document Frequency, which helps identify terms that are rare across the corpus.",
+        "Incorrect. IDF is not about document format; it's a frequency measure.",
+        "Incorrect. IDF is not about file storage; it's a statistical measure.",
+        "Incorrect. IDF is not a function for indexing; it's a measure of term importance across documents."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "tf-idf",
+        "inverse-document-frequency",
+        "basics"
+      ]
+    },
+    {
+      "id": "TPP_023",
+      "question": "Why is text normalization important?",
+      "options": [
+        "It makes all texts the same length",
+        "It standardizes text format for consistent processing",
+        "It translates text to English",
+        "It removes all words from text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text normalization standardizes text format by applying consistent rules for case, punctuation, spacing, etc., ensuring uniform processing.",
+      "optionExplanations": [
+        "Incorrect. Text normalization doesn't change document length; it standardizes format.",
+        "Correct. Text normalization applies consistent formatting rules to ensure uniform text processing across documents.",
+        "Incorrect. Translation is a separate process; normalization works within the same language.",
+        "Incorrect. Text normalization cleans and standardizes text; it doesn't remove all content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "standardization",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "TPP_024",
+      "question": "What is word segmentation?",
+      "options": [
+        "Dividing words into syllables",
+        "Separating concatenated words in languages without spaces",
+        "Grouping words by meaning",
+        "Arranging words alphabetically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word segmentation is the process of separating concatenated words, especially important in languages like Chinese or compound words in German.",
+      "optionExplanations": [
+        "Incorrect. Dividing words into syllables is syllabification, not word segmentation.",
+        "Correct. Word segmentation separates concatenated words, particularly important in languages that don't use spaces between words.",
+        "Incorrect. Grouping words by meaning is semantic clustering, not word segmentation.",
+        "Incorrect. Alphabetical arrangement is sorting, not word segmentation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word-segmentation",
+        "languages",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "TPP_025",
+      "question": "What is sentence segmentation?",
+      "options": [
+        "Breaking paragraphs into sentences",
+        "Dividing sentences by meaning",
+        "Counting words in sentences",
+        "Translating sentences"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sentence segmentation is the process of dividing text into individual sentences, typically using punctuation and other linguistic cues.",
+      "optionExplanations": [
+        "Correct. Sentence segmentation breaks text into individual sentences using punctuation marks and other boundary indicators.",
+        "Incorrect. Dividing by meaning would be semantic segmentation, not sentence segmentation.",
+        "Incorrect. Counting words is word counting, not sentence segmentation.",
+        "Incorrect. Translation is converting between languages, not segmentation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sentence-segmentation",
+        "boundaries",
+        "punctuation"
+      ]
+    },
+    {
+      "id": "TPP_026",
+      "question": "Which character is commonly used for word boundaries in English?",
+      "options": [
+        "Comma",
+        "Space",
+        "Period",
+        "Hyphen"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Space characters are the primary word boundary markers in English and most Western languages.",
+      "optionExplanations": [
+        "Incorrect. Commas separate clauses or items in lists, but don't primarily mark word boundaries.",
+        "Correct. Spaces are the primary word boundary markers in English, separating individual words.",
+        "Incorrect. Periods mark sentence boundaries, not individual word boundaries.",
+        "Incorrect. Hyphens connect compound words or split words across lines, but don't mark typical word boundaries."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "word-boundaries",
+        "spaces",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "TPP_027",
+      "question": "What is the purpose of removing HTML tags from text?",
+      "options": [
+        "To make text shorter",
+        "To remove markup and focus on content",
+        "To improve grammar",
+        "To translate the text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "HTML tag removal eliminates markup elements to extract clean text content for analysis, removing formatting information that isn't relevant for NLP tasks.",
+      "optionExplanations": [
+        "Incorrect. While removing tags might make text shorter, the primary purpose is content extraction, not length reduction.",
+        "Correct. HTML tag removal eliminates markup elements like , ,  to extract clean text content for analysis.",
+        "Incorrect. Removing HTML tags doesn't improve grammar; it removes formatting markup.",
+        "Incorrect. HTML tag removal doesn't translate text; it extracts content from markup."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "html",
+        "cleaning",
+        "markup"
+      ]
+    },
+    {
+      "id": "TPP_028",
+      "question": "What is text cleaning in preprocessing?",
+      "options": [
+        "Washing text with soap",
+        "Removing unwanted characters, formatting, and noise from text",
+        "Making text grammatically correct",
+        "Translating text to clean language"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text cleaning involves removing or standardizing unwanted elements like special characters, extra whitespace, formatting, and other noise from text data.",
+      "optionExplanations": [
+        "Incorrect. Text cleaning is a computational process, not physical cleaning.",
+        "Correct. Text cleaning removes unwanted characters, extra spaces, special symbols, and formatting to prepare clean text for analysis.",
+        "Incorrect. Grammar correction is a separate task; text cleaning focuses on removing noise and unwanted characters.",
+        "Incorrect. Translation is converting between languages; cleaning removes noise within the same language."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "text-cleaning",
+        "noise-removal",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "TPP_029",
+      "question": "What are contractions in text preprocessing?",
+      "options": [
+        "Words getting shorter over time",
+        "Shortened forms like \"don't\" for \"do not\"",
+        "Words that contradict each other",
+        "Compressed text files"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Contractions are shortened forms of words or phrases where letters are omitted and replaced with an apostrophe, like \"don't\" for \"do not\".",
+      "optionExplanations": [
+        "Incorrect. Contractions are specific grammatical forms, not words changing over time.",
+        "Correct. Contractions are shortened forms like \"don't\", \"won't\", \"it's\" that combine words using apostrophes.",
+        "Incorrect. Contradictions are about opposing meanings, not shortened word forms.",
+        "Incorrect. Contractions are grammatical forms, not file compression."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "contractions",
+        "apostrophes",
+        "expansion"
+      ]
+    },
+    {
+      "id": "TPP_030",
+      "question": "Why might you expand contractions during preprocessing?",
+      "options": [
+        "To make text longer",
+        "To standardize word forms and improve analysis",
+        "To add more apostrophes",
+        "To create rhymes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Expanding contractions helps standardize text by converting shortened forms to their full equivalents, improving consistency for NLP analysis.",
+      "optionExplanations": [
+        "Incorrect. While expansion makes text longer, the purpose is standardization, not length increase.",
+        "Correct. Expanding contractions like \"don't\" → \"do not\" standardizes text and can improve tokenization and analysis.",
+        "Incorrect. Expansion removes apostrophes from contractions, not adds them.",
+        "Incorrect. Contraction expansion is for text standardization, not poetry creation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "contractions",
+        "expansion",
+        "standardization"
+      ]
+    },
+    {
+      "id": "TPP_031",
+      "question": "What is the difference between a corpus and a document?",
+      "options": [
+        "They are the same thing",
+        "A corpus is a collection of documents",
+        "A document is larger than a corpus",
+        "A corpus only contains one document"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A corpus is a collection of documents or texts used for linguistic analysis, while a document is an individual text unit within that collection.",
+      "optionExplanations": [
+        "Incorrect. A corpus and document are different concepts - corpus contains multiple documents.",
+        "Correct. A corpus is a collection of documents/texts, while a document is an individual text unit.",
+        "Incorrect. A corpus typically contains multiple documents, so it's usually larger than any single document.",
+        "Incorrect. A corpus typically contains many documents, not just one."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "corpus",
+        "document",
+        "collection"
+      ]
+    },
+    {
+      "id": "TPP_032",
+      "question": "What is vocabulary in the context of text preprocessing?",
+      "options": [
+        "A dictionary book",
+        "The set of unique words in a corpus",
+        "Words that are difficult to understand",
+        "Foreign words in text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In NLP, vocabulary refers to the set of all unique words or tokens that appear in a corpus or dataset.",
+      "optionExplanations": [
+        "Incorrect. While related to dictionaries, vocabulary in NLP specifically refers to the unique words in a dataset.",
+        "Correct. Vocabulary is the set of all unique words/tokens found in a corpus, forming the basis for vectorization.",
+        "Incorrect. Vocabulary includes all words regardless of difficulty level.",
+        "Incorrect. Vocabulary includes all words in the corpus, not just foreign words."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "vocabulary",
+        "unique-words",
+        "corpus"
+      ]
+    },
+    {
+      "id": "TPP_033",
+      "question": "What is out-of-vocabulary (OOV) in NLP?",
+      "options": [
+        "Words that are not in the training vocabulary",
+        "Words that are too long",
+        "Words that are misspelled",
+        "Words in foreign languages"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Out-of-vocabulary (OOV) words are words that appear in test data but were not seen in the training vocabulary, creating a challenge for NLP models.",
+      "optionExplanations": [
+        "Correct. OOV words are those that appear in new text but weren't present in the training vocabulary.",
+        "Incorrect. Word length doesn't determine OOV status; it's about presence in training vocabulary.",
+        "Incorrect. While misspelled words might be OOV, the term specifically refers to unseen words regardless of spelling correctness.",
+        "Incorrect. Foreign words might be OOV, but the term applies to any unseen word regardless of language."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "oov",
+        "vocabulary",
+        "unseen-words"
+      ]
+    },
+    {
+      "id": "TPP_034",
+      "question": "What is text tokenization by regular expressions?",
+      "options": [
+        "Using pattern matching to split text",
+        "Making text more regular",
+        "Expressing emotions in text",
+        "Creating mathematical expressions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Regular expression tokenization uses pattern matching rules to identify and extract tokens from text based on specific character patterns.",
+      "optionExplanations": [
+        "Correct. Regular expression tokenization uses pattern matching to define rules for splitting text into tokens.",
+        "Incorrect. Regular expressions are pattern matching tools, not text regularization methods.",
+        "Incorrect. Regular expressions are for pattern matching, not emotion expression.",
+        "Incorrect. While regex can match mathematical patterns, tokenization uses them for splitting text into units."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regex",
+        "tokenization",
+        "patterns"
+      ]
+    },
+    {
+      "id": "TPP_035",
+      "question": "What is whitespace tokenization?",
+      "options": [
+        "Removing all spaces from text",
+        "Splitting text at whitespace characters",
+        "Adding spaces between words",
+        "Making text white in color"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Whitespace tokenization is a simple method that splits text into tokens wherever whitespace characters (spaces, tabs, newlines) occur.",
+      "optionExplanations": [
+        "Incorrect. Whitespace tokenization uses spaces as delimiters, not removes them.",
+        "Correct. Whitespace tokenization splits text at spaces, tabs, and newlines to create tokens.",
+        "Incorrect. This tokenization method uses existing spaces as split points, not adds new ones.",
+        "Incorrect. Tokenization is about text processing, not visual color changes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "whitespace",
+        "tokenization",
+        "splitting"
+      ]
+    },
+    {
+      "id": "TPP_036",
+      "question": "What is subword tokenization?",
+      "options": [
+        "Tokenizing only part of a document",
+        "Breaking words into smaller meaningful units",
+        "Using subordinate words only",
+        "Tokenizing underwater words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Subword tokenization breaks words into smaller units like prefixes, suffixes, or character sequences, helping handle OOV words and morphologically rich languages.",
+      "optionExplanations": [
+        "Incorrect. Subword tokenization refers to breaking words themselves, not parts of documents.",
+        "Correct. Subword tokenization breaks words into smaller meaningful units like morphemes or character sequences.",
+        "Incorrect. 'Subword' refers to parts of words, not subordinate/secondary words.",
+        "Incorrect. This is a play on words; subword tokenization is about word parts, not underwater contexts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "subword",
+        "tokenization",
+        "morphemes"
+      ]
+    },
+    {
+      "id": "TPP_037",
+      "question": "What is Byte Pair Encoding (BPE)?",
+      "options": [
+        "A compression algorithm for text",
+        "A subword tokenization method",
+        "A way to encode bytes in pairs",
+        "A encryption technique"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BPE is a subword tokenization algorithm that iteratively merges the most frequent character pairs to create a vocabulary of subword units.",
+      "optionExplanations": [
+        "Incorrect. While BPE originated as compression, in NLP it's used for subword tokenization, not file compression.",
+        "Correct. BPE is a popular subword tokenization method that creates vocabulary by merging frequent character pairs.",
+        "Incorrect. While BPE works with character pairs, it's specifically a tokenization method, not general byte encoding.",
+        "Incorrect. BPE is for tokenization, not data encryption or security."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bpe",
+        "subword",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "TPP_038",
+      "question": "What is the main advantage of subword tokenization?",
+      "options": [
+        "It makes text shorter",
+        "It handles out-of-vocabulary words better",
+        "It improves grammar",
+        "It translates text automatically"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Subword tokenization helps handle OOV words by breaking them into known subword units, reducing the vocabulary size needed and improving model generalization.",
+      "optionExplanations": [
+        "Incorrect. Subword tokenization might make representation longer by splitting words into multiple subwords.",
+        "Correct. Subword tokenization handles OOV words by decomposing them into known subword units.",
+        "Incorrect. Subword tokenization doesn't improve grammar; it's a representation method.",
+        "Incorrect. Subword tokenization is for representation, not automatic translation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "subword",
+        "oov",
+        "advantages"
+      ]
+    },
+    {
+      "id": "TPP_039",
+      "question": "What is character-level tokenization?",
+      "options": [
+        "Tokenizing based on character personality",
+        "Splitting text into individual characters",
+        "Using characters from books",
+        "Tokenizing fictional characters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Character-level tokenization treats each individual character as a token, providing the finest granularity of text representation.",
+      "optionExplanations": [
+        "Incorrect. Character-level tokenization refers to individual letters/symbols, not personality traits.",
+        "Correct. Character-level tokenization splits text into individual characters, treating each as a separate token.",
+        "Incorrect. This refers to individual letters/symbols, not literary characters.",
+        "Incorrect. This is about individual letters/symbols, not fictional character entities."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "character-level",
+        "tokenization",
+        "granularity"
+      ]
+    },
+    {
+      "id": "TPP_040",
+      "question": "What is word normalization?",
+      "options": [
+        "Making all words the same length",
+        "Converting words to a standard form",
+        "Making words sound normal",
+        "Arranging words in normal order"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word normalization converts words to a standard form through techniques like stemming, lemmatization, or standardizing spelling variations.",
+      "optionExplanations": [
+        "Incorrect. Word normalization is about standardizing form, not equalizing length.",
+        "Correct. Word normalization converts words to standard forms through stemming, lemmatization, or other standardization techniques.",
+        "Incorrect. Normalization is about text processing, not phonetic properties.",
+        "Incorrect. Word normalization standardizes individual words, not their arrangement in sentences."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "standardization",
+        "word-forms"
+      ]
+    },
+    {
+      "id": "TPP_041",
+      "question": "What is spell checking in text preprocessing?",
+      "options": [
+        "Checking if words are spelled correctly",
+        "Casting magic spells on text",
+        "Checking word length",
+        "Verifying word meaning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Spell checking identifies and potentially corrects misspelled words in text, improving data quality for NLP tasks.",
+      "optionExplanations": [
+        "Correct. Spell checking identifies misspelled words and often suggests or applies corrections.",
+        "Incorrect. This is a humorous interpretation; spell checking is about orthographic correctness.",
+        "Incorrect. Spell checking verifies correct spelling, not word length.",
+        "Incorrect. Spell checking focuses on correct spelling, not semantic meaning verification."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "spell-checking",
+        "correction",
+        "quality"
+      ]
+    },
+    {
+      "id": "TPP_042",
+      "question": "What is text augmentation?",
+      "options": [
+        "Making text larger in font size",
+        "Artificially expanding datasets by creating text variations",
+        "Adding more text to documents",
+        "Increasing text volume"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text augmentation creates additional training data by generating variations of existing text through techniques like synonym replacement, paraphrasing, or back-translation.",
+      "optionExplanations": [
+        "Incorrect. Text augmentation is about data generation, not visual font sizing.",
+        "Correct. Text augmentation generates additional training examples by creating variations of existing text.",
+        "Incorrect. Augmentation creates variations, not just adds more of the same text.",
+        "Incorrect. Augmentation is about creating meaningful variations, not just increasing quantity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "augmentation",
+        "data-generation",
+        "variations"
+      ]
+    },
+    {
+      "id": "TPP_043",
+      "question": "What is the purpose of removing numbers from text?",
+      "options": [
+        "Numbers are always irrelevant",
+        "To focus on linguistic content when numbers aren't meaningful",
+        "Numbers are too difficult to process",
+        "To save memory space"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Number removal is context-dependent; it's done when numerical values don't carry semantic meaning for the specific NLP task at hand.",
+      "optionExplanations": [
+        "Incorrect. Numbers can be highly relevant in many contexts like financial analysis or scientific texts.",
+        "Correct. Numbers are removed when they don't contribute to the analysis goal, such as in sentiment analysis where specific quantities might not matter.",
+        "Incorrect. Numbers are not inherently difficult to process; removal depends on task relevance.",
+        "Incorrect. Memory saving is not the primary reason for number removal in preprocessing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "numbers",
+        "removal",
+        "context"
+      ]
+    },
+    {
+      "id": "TPP_044",
+      "question": "What is text feature extraction?",
+      "options": [
+        "Extracting text from images",
+        "Converting text into numerical features for machine learning",
+        "Pulling out important sentences",
+        "Extracting metadata from text files"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text feature extraction converts text into numerical representations that machine learning algorithms can process, such as BoW, TF-IDF, or embeddings.",
+      "optionExplanations": [
+        "Incorrect. That would be optical character recognition (OCR), not text feature extraction.",
+        "Correct. Feature extraction converts text into numerical representations like vectors that ML algorithms can use.",
+        "Incorrect. Extracting important sentences is summarization, not feature extraction.",
+        "Incorrect. Extracting metadata is about file information, not converting text to numerical features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-extraction",
+        "numerical",
+        "vectors"
+      ]
+    },
+    {
+      "id": "TPP_045",
+      "question": "What is count vectorization?",
+      "options": [
+        "Counting the number of vectors",
+        "Converting text to vectors based on word frequency",
+        "Vectorizing only count nouns",
+        "Creating vectors with count numbers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Count vectorization creates feature vectors where each dimension represents a word in the vocabulary and values represent word frequencies in documents.",
+      "optionExplanations": [
+        "Incorrect. Count vectorization creates vectors based on word frequencies, not counts vectors themselves.",
+        "Correct. Count vectorization creates vectors where each element represents the frequency of a word in the document.",
+        "Incorrect. Count vectorization works with all words, not just count nouns grammatically.",
+        "Incorrect. The vectors contain frequency counts, but it's not about creating vectors with number words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "count-vectorization",
+        "frequency",
+        "vectors"
+      ]
+    },
+    {
+      "id": "TPP_046",
+      "question": "What is the vocabulary size problem in count vectorization?",
+      "options": [
+        "Vocabulary is too small",
+        "Large vocabulary creates high-dimensional sparse vectors",
+        "Vocabulary words are too long",
+        "Vocabulary contains foreign words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Large vocabularies in count vectorization create high-dimensional feature vectors that are mostly sparse (filled with zeros), leading to computational and storage challenges.",
+      "optionExplanations": [
+        "Incorrect. The problem is typically that vocabulary is too large, not too small.",
+        "Correct. Large vocabularies create high-dimensional sparse vectors, leading to computational inefficiency and storage issues.",
+        "Incorrect. Individual word length doesn't affect the dimensionality problem.",
+        "Incorrect. Foreign words contribute to the size problem, but the issue is about total vocabulary size, not word origin."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vocabulary-size",
+        "sparsity",
+        "dimensionality"
+      ]
+    },
+    {
+      "id": "TPP_047",
+      "question": "What is sparsity in text vectors?",
+      "options": [
+        "Vectors with few elements",
+        "Vectors with many zero values",
+        "Vectors that are spread out",
+        "Vectors with sparse documentation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sparsity in text vectors refers to the fact that most elements are zero because any given document contains only a small fraction of the total vocabulary.",
+      "optionExplanations": [
+        "Incorrect. Sparsity is about the values within vectors, not the number of elements.",
+        "Correct. Sparse vectors have many zero values because documents typically use only a small subset of the total vocabulary.",
+        "Incorrect. 'Spread out' refers to distribution, not the presence of zero values.",
+        "Incorrect. Sparsity is a mathematical property, not about documentation quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sparsity",
+        "zero-values",
+        "vectors"
+      ]
+    },
+    {
+      "id": "TPP_048",
+      "question": "What is the difference between bag of words and n-grams?",
+      "options": [
+        "They are exactly the same",
+        "BoW uses individual words, n-grams use sequences of words",
+        "BoW is for English, n-grams for other languages",
+        "BoW is newer than n-grams"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bag of Words typically uses individual words (unigrams) while n-grams capture sequences of consecutive words, preserving some local context.",
+      "optionExplanations": [
+        "Incorrect. BoW and n-grams are different approaches with different capabilities.",
+        "Correct. BoW traditionally uses individual words while n-grams capture sequences of consecutive words.",
+        "Incorrect. Both approaches can be used with any language.",
+        "Incorrect. The timeline of development is not the key difference between these approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bow",
+        "n-grams",
+        "sequences"
+      ]
+    },
+    {
+      "id": "TPP_049",
+      "question": "When would you use character n-grams instead of word n-grams?",
+      "options": [
+        "Never, word n-grams are always better",
+        "For languages without clear word boundaries or handling misspellings",
+        "Only for short texts",
+        "When processing numbers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Character n-grams are useful for languages without spaces, handling misspellings, or when morphological variations are important.",
+      "optionExplanations": [
+        "Incorrect. Character n-grams have specific advantages in certain scenarios.",
+        "Correct. Character n-grams help with languages like Chinese that lack word boundaries and can handle spelling variations.",
+        "Incorrect. Text length doesn't determine when to use character vs word n-grams.",
+        "Incorrect. Number processing doesn't specifically require character n-grams over word n-grams."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "character-ngrams",
+        "word-boundaries",
+        "misspellings"
+      ]
+    },
+    {
+      "id": "TPP_050",
+      "question": "What is minimum document frequency in feature extraction?",
+      "options": [
+        "The lowest frequency a word can have",
+        "The minimum number of documents a term must appear in to be included",
+        "The smallest document in the corpus",
+        "The minimum frequency per document"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Minimum document frequency is a threshold that excludes rare terms appearing in fewer than a specified number of documents, reducing vocabulary size.",
+      "optionExplanations": [
+        "Incorrect. This refers to filtering by document count, not within-document frequency.",
+        "Correct. Minimum document frequency filters out terms that appear in fewer than a specified number of documents.",
+        "Incorrect. This is about term filtering, not document size.",
+        "Incorrect. This parameter concerns cross-document term frequency, not within-document frequency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "min-df",
+        "filtering",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "TPP_051",
+      "question": "What is maximum document frequency in feature extraction?",
+      "options": [
+        "The highest frequency a word can have",
+        "The maximum number of documents a term can appear in to be included",
+        "The largest document in the corpus",
+        "The maximum frequency per document"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Maximum document frequency excludes very common terms that appear in too many documents, often removing terms that are too general to be informative.",
+      "optionExplanations": [
+        "Incorrect. This parameter is about document count thresholds, not word frequency limits.",
+        "Correct. Maximum document frequency filters out terms that appear in too many documents, removing very common but uninformative words.",
+        "Incorrect. This is about term filtering based on document count, not document size.",
+        "Incorrect. This parameter concerns cross-document presence, not within-document frequency limits."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "max-df",
+        "filtering",
+        "common-words"
+      ]
+    },
+    {
+      "id": "TPP_052",
+      "question": "What happens if you set minimum document frequency too high?",
+      "options": [
+        "The model becomes more accurate",
+        "You lose potentially important but rare terms",
+        "Processing becomes faster",
+        "You get more features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Setting minimum document frequency too high can remove rare but meaningful terms, potentially losing important information for the task.",
+      "optionExplanations": [
+        "Incorrect. Removing too many terms can hurt model accuracy by losing important information.",
+        "Correct. High minimum document frequency can filter out rare but meaningful terms that might be important for classification.",
+        "Incorrect. While processing might be faster due to fewer features, this isn't the primary concern.",
+        "Incorrect. Higher minimum document frequency reduces the number of features, not increases them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "min-df",
+        "information-loss",
+        "filtering"
+      ]
+    },
+    {
+      "id": "TPP_053",
+      "question": "What is the purpose of lowercasing in text preprocessing?",
+      "options": [
+        "To make text look better",
+        "To reduce vocabulary size by treating 'Word' and 'word' as the same",
+        "To follow grammar rules",
+        "To compress the text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lowercasing ensures that words differing only in capitalization are treated identically, reducing vocabulary size and improving consistency.",
+      "optionExplanations": [
+        "Incorrect. Lowercasing is for processing consistency, not visual appearance.",
+        "Correct. Lowercasing treats 'Word', 'WORD', and 'word' as the same token, reducing vocabulary size.",
+        "Incorrect. Lowercasing is for NLP processing, not grammatical correctness.",
+        "Incorrect. Lowercasing doesn't compress text; it standardizes case for consistent processing."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lowercasing",
+        "vocabulary-reduction",
+        "consistency"
+      ]
+    },
+    {
+      "id": "TPP_054",
+      "question": "When might you NOT want to lowercase text?",
+      "options": [
+        "When processing tweets",
+        "When capitalization carries meaning (like proper nouns or acronyms)",
+        "When processing emails",
+        "When text is already clean"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Capitalization can carry important semantic information, such as distinguishing proper nouns, acronyms, or sentence beginnings.",
+      "optionExplanations": [
+        "Incorrect. Tweets can benefit from lowercasing unless specific capitalization patterns are important.",
+        "Correct. Capitalization can indicate proper nouns (Paris vs paris), acronyms (WHO vs who), or other meaningful distinctions.",
+        "Incorrect. Emails generally benefit from lowercasing unless specific capitalization is semantically important.",
+        "Incorrect. Text cleanliness doesn't determine whether lowercasing is appropriate."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lowercasing",
+        "proper-nouns",
+        "semantics"
+      ]
+    },
+    {
+      "id": "TPP_055",
+      "question": "What is regex (regular expressions) commonly used for in text preprocessing?",
+      "options": [
+        "Making text more regular",
+        "Pattern matching and text cleaning",
+        "Regular grammar checking",
+        "Expressing regular opinions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regular expressions are powerful pattern matching tools used for finding, extracting, or replacing specific text patterns during preprocessing.",
+      "optionExplanations": [
+        "Incorrect. 'Regular' in regex refers to formal language theory, not making text uniform.",
+        "Correct. Regex is used for pattern matching, finding specific text patterns, and cleaning/transforming text.",
+        "Incorrect. Regex is for pattern matching, not grammar checking which requires linguistic analysis.",
+        "Incorrect. This is a play on the word 'regular'; regex is about pattern matching, not opinions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regex",
+        "pattern-matching",
+        "cleaning"
+      ]
+    },
+    {
+      "id": "TPP_056",
+      "question": "What is the Snowball stemmer?",
+      "options": [
+        "A stemmer that works only in winter",
+        "An improved version of the Porter stemmer",
+        "A stemmer for snow-related words",
+        "A very slow stemmer"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Snowball stemmer is an improved and more systematic version of the Porter stemmer, supporting multiple languages with better accuracy.",
+      "optionExplanations": [
+        "Incorrect. Snowball stemmer is not related to seasons; it's named after the Snowball programming language.",
+        "Correct. Snowball stemmer is an enhanced version of Porter stemmer with better accuracy and multi-language support.",
+        "Incorrect. The name doesn't relate to snow-themed vocabulary; it works on all types of words.",
+        "Incorrect. Snowball stemmer is generally efficient; the name doesn't imply speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "snowball-stemmer",
+        "porter-stemmer",
+        "improvement"
+      ]
+    },
+    {
+      "id": "TPP_057",
+      "question": "What is the difference between aggressive and conservative stemming?",
+      "options": [
+        "Aggressive stemming removes more characters",
+        "Conservative stemming is slower",
+        "They produce the same results",
+        "Aggressive stemming is newer"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Aggressive stemming removes more suffixes and characters, potentially over-stemming, while conservative stemming is more cautious about what it removes.",
+      "optionExplanations": [
+        "Correct. Aggressive stemming removes more characters/suffixes, potentially creating shorter stems, while conservative stemming is more cautious.",
+        "Incorrect. The speed difference is not the defining characteristic; it's about how much they remove.",
+        "Incorrect. Aggressive and conservative approaches produce different results with different trade-offs.",
+        "Incorrect. The age of the approach doesn't define the aggressive vs conservative distinction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stemming",
+        "aggressive",
+        "conservative"
+      ]
+    },
+    {
+      "id": "TPP_058",
+      "question": "What is over-stemming?",
+      "options": [
+        "Stemming too many documents",
+        "Removing too much from words, losing meaning",
+        "Stemming for too long",
+        "Using too many stemmers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Over-stemming occurs when the stemming algorithm removes too much from words, potentially conflating words with different meanings.",
+      "optionExplanations": [
+        "Incorrect. Over-stemming refers to excessive reduction of individual words, not document quantity.",
+        "Correct. Over-stemming removes too much from words, potentially making different words appear identical when they shouldn't.",
+        "Incorrect. Over-stemming is about the extent of character removal, not processing duration.",
+        "Incorrect. Over-stemming is about excessive reduction by a single algorithm, not using multiple stemmers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "over-stemming",
+        "meaning-loss",
+        "conflation"
+      ]
+    },
+    {
+      "id": "TPP_059",
+      "question": "What is under-stemming?",
+      "options": [
+        "Not stemming enough documents",
+        "Not reducing words enough, keeping distinct forms that should be merged",
+        "Stemming too quickly",
+        "Using weak stemmers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Under-stemming occurs when the algorithm doesn't reduce words enough, leaving different inflected forms as separate tokens when they should be merged.",
+      "optionExplanations": [
+        "Incorrect. Under-stemming refers to insufficient reduction of individual words, not document coverage.",
+        "Correct. Under-stemming doesn't reduce words enough, keeping separate forms like 'running' and 'runs' when they should be merged.",
+        "Incorrect. Under-stemming is about the extent of reduction, not the speed of processing.",
+        "Incorrect. Under-stemming is about insufficient reduction, not stemmer strength or quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "under-stemming",
+        "insufficient-reduction",
+        "variants"
+      ]
+    },
+    {
+      "id": "TPP_060",
+      "question": "What is part-of-speech (POS) tagging in relation to lemmatization?",
+      "options": [
+        "It's not related to lemmatization",
+        "It helps lemmatizers choose the correct word form",
+        "It replaces lemmatization",
+        "It comes after lemmatization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "POS tagging provides grammatical context that helps lemmatizers choose the correct root form, as words can have different lemmas depending on their part of speech.",
+      "optionExplanations": [
+        "Incorrect. POS tagging is closely related to lemmatization and often used together.",
+        "Correct. POS tags help lemmatizers disambiguate word forms; 'better' as adjective lemmatizes to 'good', as adverb to 'well'.",
+        "Incorrect. POS tagging complements lemmatization rather than replacing it.",
+        "Incorrect. POS tagging typically comes before lemmatization to provide necessary grammatical context."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pos-tagging",
+        "lemmatization",
+        "context"
+      ]
+    },
+    {
+      "id": "TPP_061",
+      "question": "What is the difference between stemming and truncation?",
+      "options": [
+        "They are the same process",
+        "Stemming uses linguistic rules, truncation simply cuts characters",
+        "Truncation is more accurate",
+        "Stemming is faster"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stemming applies linguistic or algorithmic rules to find word roots, while truncation simply cuts words at a fixed length without considering morphology.",
+      "optionExplanations": [
+        "Incorrect. Stemming and truncation are different approaches with different methodologies.",
+        "Correct. Stemming uses rules to find morphological roots, while truncation mechanically cuts words at a specified length.",
+        "Incorrect. Stemming is generally more accurate than simple truncation because it considers word structure.",
+        "Incorrect. Speed differences exist but aren't the defining characteristic; the methodology differs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stemming",
+        "truncation",
+        "methodology"
+      ]
+    },
+    {
+      "id": "TPP_062",
+      "question": "What is morphological analysis in text preprocessing?",
+      "options": [
+        "Analyzing text shape and form",
+        "Studying word structure and formation",
+        "Analyzing text morality",
+        "Studying text transformation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Morphological analysis studies the structure of words, including roots, prefixes, suffixes, and how they combine to form meaning.",
+      "optionExplanations": [
+        "Incorrect. Morphological analysis is about word structure, not visual text appearance.",
+        "Correct. Morphological analysis examines word structure, including roots, affixes, and how they combine to create meaning.",
+        "Incorrect. This is a play on words; morphological analysis is linguistic, not ethical.",
+        "Incorrect. While transformation might be involved, morphological analysis specifically studies word structure and formation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "morphology",
+        "word-structure",
+        "linguistics"
+      ]
+    },
+    {
+      "id": "TPP_063",
+      "question": "What are affixes in morphology?",
+      "options": [
+        "Words that are attached to documents",
+        "Prefixes and suffixes attached to root words",
+        "Fixed words that don't change",
+        "Words that affect other words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Affixes are morphological units (prefixes, suffixes, infixes) that attach to root words to modify their meaning or grammatical function.",
+      "optionExplanations": [
+        "Incorrect. Affixes are word parts, not entire words attached to documents.",
+        "Correct. Affixes include prefixes (un-, re-), suffixes (-ing, -ed), and other morphemes that attach to root words.",
+        "Incorrect. Affixes are the parts that change when attached to roots; roots are more stable.",
+        "Incorrect. While affixes affect meaning, they are specific morphological units, not just influential words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "affixes",
+        "prefixes",
+        "suffixes"
+      ]
+    },
+    {
+      "id": "TPP_064",
+      "question": "What is a morpheme?",
+      "options": [
+        "A type of text file",
+        "The smallest meaningful unit of language",
+        "A transformation of text",
+        "A measure of text quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A morpheme is the smallest grammatical unit that carries meaning, such as root words, prefixes, and suffixes.",
+      "optionExplanations": [
+        "Incorrect. Morphemes are linguistic units, not file types.",
+        "Correct. Morphemes are the smallest units of language that carry meaning, including roots, prefixes, and suffixes.",
+        "Incorrect. Morphemes are basic linguistic units, not transformation processes.",
+        "Incorrect. Morphemes are linguistic components, not quality measures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "morpheme",
+        "meaning",
+        "linguistics"
+      ]
+    },
+    {
+      "id": "TPP_065",
+      "question": "What is skip-gram in the context of n-grams?",
+      "options": [
+        "Skipping every other word in n-grams",
+        "N-grams with gaps between words",
+        "Avoiding n-gram processing",
+        "Fast n-gram computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Skip-grams are n-grams where there can be gaps between the words, allowing capture of non-contiguous word relationships.",
+      "optionExplanations": [
+        "Incorrect. Skip-grams allow gaps but not necessarily alternating patterns.",
+        "Correct. Skip-grams are n-grams that allow gaps between words, capturing non-adjacent word relationships.",
+        "Incorrect. Skip-grams are a type of n-gram processing, not avoidance of it.",
+        "Incorrect. The name refers to skipping positions, not processing speed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "skip-grams",
+        "gaps",
+        "non-contiguous"
+      ]
+    },
+    {
+      "id": "TPP_066",
+      "question": "What is text segmentation?",
+      "options": [
+        "Dividing text into meaningful units",
+        "Separating text by color",
+        "Organizing text by segments",
+        "Cutting text into equal parts"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Text segmentation involves dividing text into meaningful units such as sentences, words, or other linguistic boundaries.",
+      "optionExplanations": [
+        "Correct. Text segmentation divides text into meaningful units like sentences, words, or topics.",
+        "Incorrect. Text segmentation is about linguistic boundaries, not visual properties.",
+        "Incorrect. While organization might result, segmentation specifically focuses on identifying boundaries.",
+        "Incorrect. Segmentation creates meaningful units, not necessarily equal-sized parts."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "segmentation",
+        "boundaries",
+        "units"
+      ]
+    },
+    {
+      "id": "TPP_067",
+      "question": "What is language detection in text preprocessing?",
+      "options": [
+        "Detecting programming languages in code",
+        "Identifying the natural language of text",
+        "Finding language errors in text",
+        "Detecting foreign accents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Language detection automatically identifies which natural language (English, Spanish, French, etc.) a piece of text is written in.",
+      "optionExplanations": [
+        "Incorrect. Language detection in NLP refers to natural languages, not programming languages.",
+        "Correct. Language detection identifies the natural language (English, Spanish, etc.) of text content.",
+        "Incorrect. Finding errors would be error detection or proofreading, not language detection.",
+        "Incorrect. Language detection works with written text, not spoken accents."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "language-detection",
+        "identification",
+        "multilingual"
+      ]
+    },
+    {
+      "id": "TPP_068",
+      "question": "Why is language detection important in preprocessing?",
+      "options": [
+        "To translate all text to English",
+        "To apply language-specific preprocessing rules",
+        "To count different languages",
+        "To remove foreign text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Language detection enables applying appropriate language-specific preprocessing rules, as different languages have different tokenization, stemming, and stop word requirements.",
+      "optionExplanations": [
+        "Incorrect. Language detection helps apply appropriate processing, not necessarily translation.",
+        "Correct. Different languages require different preprocessing approaches for tokenization, stemming, and stop word removal.",
+        "Incorrect. While counting might be possible, the main purpose is to enable appropriate processing.",
+        "Incorrect. The goal is typically to process text appropriately for each language, not remove it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "language-detection",
+        "preprocessing",
+        "language-specific"
+      ]
+    },
+    {
+      "id": "TPP_069",
+      "question": "What is text encoding in preprocessing?",
+      "options": [
+        "Encrypting text for security",
+        "Converting text to numerical representation",
+        "Character encoding like UTF-8",
+        "Hiding text meaning"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Text encoding in preprocessing typically refers to character encoding systems like UTF-8, ASCII, or Latin-1 that determine how characters are represented digitally.",
+      "optionExplanations": [
+        "Incorrect. Encoding in preprocessing context usually refers to character representation, not encryption.",
+        "Incorrect. While text becomes numerical eventually, encoding here refers to character representation standards.",
+        "Correct. Text encoding refers to character encoding systems like UTF-8 that define how characters are digitally represented.",
+        "Incorrect. Text encoding is about character representation, not concealing meaning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoding",
+        "utf-8",
+        "characters"
+      ]
+    },
+    {
+      "id": "TPP_070",
+      "question": "What problems can incorrect character encoding cause?",
+      "options": [
+        "Text becomes too long",
+        "Garbled characters and incorrect text display",
+        "Text becomes encrypted",
+        "Processing becomes slower"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Incorrect character encoding can cause garbled text, missing characters, or incorrect display of special characters and non-ASCII symbols.",
+      "optionExplanations": [
+        "Incorrect. Encoding issues affect character display, not necessarily text length.",
+        "Correct. Wrong encoding can cause garbled text, missing characters, and incorrect display of special symbols.",
+        "Incorrect. Encoding issues cause display problems, not encryption.",
+        "Incorrect. While processing might be affected, the primary issue is character display corruption."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoding",
+        "garbled-text",
+        "display"
+      ]
+    },
+    {
+      "id": "TPP_071",
+      "question": "What is Unicode normalization?",
+      "options": [
+        "Making all text use Unicode",
+        "Standardizing equivalent Unicode representations",
+        "Normalizing Unicode file sizes",
+        "Converting Unicode to ASCII"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Unicode normalization standardizes different Unicode representations of the same character to ensure consistent text processing.",
+      "optionExplanations": [
+        "Incorrect. Unicode normalization works with already Unicode text, not conversion to Unicode.",
+        "Correct. Unicode normalization standardizes equivalent character representations (like composed vs decomposed forms).",
+        "Incorrect. Unicode normalization is about character representation, not file size.",
+        "Incorrect. Unicode normalization standardizes within Unicode, not converts to ASCII."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "unicode",
+        "normalization",
+        "standardization"
+      ]
+    },
+    {
+      "id": "TPP_072",
+      "question": "What are diacritics in text preprocessing?",
+      "options": [
+        "Diagnostic marks in text",
+        "Accent marks and similar character modifiers",
+        "Critical text sections",
+        "Text criticism marks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diacritics are accent marks and similar symbols that modify characters, like á, é, ñ, ü, which may need special handling in preprocessing.",
+      "optionExplanations": [
+        "Incorrect. While similar-sounding, diacritics are accent marks, not diagnostic indicators.",
+        "Correct. Diacritics are accent marks and modifiers like á, é, ñ that appear with base characters.",
+        "Incorrect. Diacritics are character modifiers, not content importance indicators.",
+        "Incorrect. Diacritics are linguistic marks, not editorial criticism symbols."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "diacritics",
+        "accents",
+        "characters"
+      ]
+    },
+    {
+      "id": "TPP_073",
+      "question": "What is diacritic removal (accent folding)?",
+      "options": [
+        "Folding accented text",
+        "Converting accented characters to their base forms",
+        "Removing critical text parts",
+        "Hiding accent marks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diacritic removal converts accented characters to their base forms (á→a, é→e) to standardize text and reduce vocabulary size.",
+      "optionExplanations": [
+        "Incorrect. Diacritic removal is about character conversion, not physical text folding.",
+        "Correct. Diacritic removal converts accented characters like á, é, ñ to their base forms a, e, n.",
+        "Incorrect. This removes accent marks, not critical content sections.",
+        "Incorrect. Diacritic removal converts characters, not hides them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "diacritic-removal",
+        "accent-folding",
+        "standardization"
+      ]
+    },
+    {
+      "id": "TPP_074",
+      "question": "When might you NOT want to remove diacritics?",
+      "options": [
+        "When processing English text",
+        "When diacritics change word meaning",
+        "When text is already clean",
+        "When processing social media"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diacritics can change word meaning (like Spanish 'año' vs 'ano'), so removal might lose important semantic distinctions.",
+      "optionExplanations": [
+        "Incorrect. English text rarely has diacritics, so removal wouldn't affect much.",
+        "Correct. Diacritics can distinguish meaning (Spanish año/ano, French où/ou), so removal might lose important information.",
+        "Incorrect. Text cleanliness doesn't determine whether diacritics should be preserved.",
+        "Incorrect. Social media text treatment depends on the specific analysis goals, not the medium itself."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "diacritics",
+        "meaning",
+        "preservation"
+      ]
+    },
+    {
+      "id": "TPP_075",
+      "question": "What is whitespace normalization?",
+      "options": [
+        "Making all spaces white in color",
+        "Standardizing spacing and removing extra whitespace",
+        "Normalizing white text",
+        "Adding more spaces to text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Whitespace normalization standardizes spacing by removing extra spaces, tabs, and newlines, and ensuring consistent spacing patterns.",
+      "optionExplanations": [
+        "Incorrect. Whitespace normalization is about spacing standardization, not visual color.",
+        "Correct. Whitespace normalization removes extra spaces, standardizes tabs/newlines, and ensures consistent spacing.",
+        "Incorrect. This is about spacing characters, not white-colored text.",
+        "Incorrect. Normalization typically removes excess whitespace, not adds more."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "whitespace",
+        "normalization",
+        "spacing"
+      ]
+    },
+    {
+      "id": "TPP_076",
+      "question": "What is the difference between soft and hard word boundaries?",
+      "options": [
+        "Soft boundaries are quieter than hard boundaries",
+        "Soft boundaries are ambiguous, hard boundaries are clear",
+        "Hard boundaries are more difficult to process",
+        "They are the same thing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard boundaries are clear word separators like spaces, while soft boundaries are ambiguous cases like hyphens in compound words or contractions.",
+      "optionExplanations": [
+        "Incorrect. The terms refer to clarity of boundary definition, not sound properties.",
+        "Correct. Hard boundaries like spaces clearly separate words, while soft boundaries like hyphens are ambiguous.",
+        "Incorrect. Processing difficulty isn't what defines hard vs soft boundaries.",
+        "Incorrect. Hard and soft boundaries represent different types of word separation challenges."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "word-boundaries",
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "id": "TPP_077",
+      "question": "What is compound word splitting?",
+      "options": [
+        "Splitting words that are complex",
+        "Separating compound words into constituent parts",
+        "Dividing chemical compound names",
+        "Breaking words into compounds"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Compound word splitting separates words like 'basketball' into 'basket' and 'ball', or German compounds into their constituent parts.",
+      "optionExplanations": [
+        "Incorrect. Compound word splitting targets specific word types, not complex vocabulary generally.",
+        "Correct. Compound word splitting separates words like 'basketball' → 'basket' + 'ball'.",
+        "Incorrect. While chemical names might be compounds, this refers to linguistic compounds in any domain.",
+        "Incorrect. This splits existing compounds into parts, not creates compounds from words."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "compound-words",
+        "splitting",
+        "constituents"
+      ]
+    },
+    {
+      "id": "TPP_078",
+      "question": "Why is compound word splitting important in some languages?",
+      "options": [
+        "All languages have the same compound patterns",
+        "Languages like German create many long compound words",
+        "It makes text shorter",
+        "It improves translation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Languages like German frequently create long compound words that need to be split into components for better analysis and to avoid having too many unique vocabulary items.",
+      "optionExplanations": [
+        "Incorrect. Languages differ significantly in their compound word formation patterns.",
+        "Correct. German and similar languages frequently create long compounds that should be split for better NLP processing.",
+        "Incorrect. While splitting might make individual words shorter, the purpose is better analysis, not length reduction.",
+        "Incorrect. While it might help translation, the primary purpose is better morphological analysis."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "compound-words",
+        "german",
+        "languages"
+      ]
+    },
+    {
+      "id": "TPP_079",
+      "question": "What is named entity recognition (NER) in preprocessing?",
+      "options": [
+        "Recognizing people's names only",
+        "Identifying and classifying named entities like people, places, organizations",
+        "Naming text entities",
+        "Recognizing entity relationships"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NER identifies and classifies named entities in text such as person names, locations, organizations, dates, and other proper nouns.",
+      "optionExplanations": [
+        "Incorrect. NER identifies various types of named entities, not just personal names.",
+        "Correct. NER identifies and classifies entities like PERSON (John Smith), LOCATION (Paris), ORGANIZATION (Google).",
+        "Incorrect. NER identifies existing named entities, not creates names for entities.",
+        "Incorrect. NER identifies entities themselves; relationship recognition is a separate task."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ner",
+        "named-entities",
+        "classification"
+      ]
+    },
+    {
+      "id": "TPP_080",
+      "question": "What is coreference resolution in text preprocessing?",
+      "options": [
+        "Resolving conflicts between texts",
+        "Identifying when different words refer to the same entity",
+        "Creating references for text",
+        "Resolving core text issues"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Coreference resolution identifies when different expressions in text refer to the same entity, like linking pronouns to their antecedents.",
+      "optionExplanations": [
+        "Incorrect. Coreference resolution is about entity reference, not conflict resolution between texts.",
+        "Correct. Coreference resolution links expressions like 'John', 'he', 'the man' when they refer to the same person.",
+        "Incorrect. This identifies existing references, not creates new ones.",
+        "Incorrect. This is about entity reference relationships, not general text issue resolution."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "coreference",
+        "resolution",
+        "pronouns"
+      ]
+    },
+    {
+      "id": "TPP_081",
+      "question": "What is text deduplication?",
+      "options": [
+        "Creating duplicate texts",
+        "Removing duplicate or near-duplicate texts",
+        "Duplicating important texts",
+        "Adding duplicate information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text deduplication removes duplicate or near-duplicate documents/sentences from a corpus to improve data quality and reduce redundancy.",
+      "optionExplanations": [
+        "Incorrect. Deduplication removes duplicates, not creates them.",
+        "Correct. Deduplication identifies and removes duplicate or highly similar text content to improve data quality.",
+        "Incorrect. Deduplication removes duplicates; duplicating important texts would be a different process.",
+        "Incorrect. Deduplication removes redundant information, not adds it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deduplication",
+        "duplicates",
+        "data-quality"
+      ]
+    },
+    {
+      "id": "TPP_082",
+      "question": "What is text similarity measurement used for in preprocessing?",
+      "options": [
+        "Making texts more similar",
+        "Identifying duplicate or related content",
+        "Measuring text length similarity",
+        "Creating similar texts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text similarity measurement helps identify duplicate content, group related documents, or find near-duplicate texts for deduplication.",
+      "optionExplanations": [
+        "Incorrect. Similarity measurement identifies existing similarity, not creates it.",
+        "Correct. Similarity measurement helps identify duplicates, group related content, and support deduplication efforts.",
+        "Incorrect. Similarity typically measures content similarity, not just length.",
+        "Incorrect. Similarity measurement is for identification, not text generation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "similarity",
+        "measurement",
+        "content"
+      ]
+    },
+    {
+      "id": "TPP_083",
+      "question": "What is the Jaccard similarity coefficient?",
+      "options": [
+        "A measure of set similarity based on intersection over union",
+        "A person who invented similarity measures",
+        "A type of text preprocessing tool",
+        "A mathematical constant"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Jaccard similarity measures the similarity between sets by dividing the size of intersection by the size of union, commonly used for text similarity.",
+      "optionExplanations": [
+        "Correct. Jaccard similarity = |A ∩ B| / |A ∪ B|, measuring overlap between sets.",
+        "Incorrect. While named after Paul Jaccard, the term refers to the similarity measure itself.",
+        "Incorrect. Jaccard similarity is a mathematical measure, not a preprocessing tool.",
+        "Incorrect. Jaccard similarity is a calculated ratio, not a fixed mathematical constant."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "jaccard",
+        "similarity",
+        "sets"
+      ]
+    },
+    {
+      "id": "TPP_084",
+      "question": "What is cosine similarity in text analysis?",
+      "options": [
+        "Similarity based on the cosine of angle between vectors",
+        "Similarity that follows a cosine wave pattern",
+        "Mathematical cosine applied to text",
+        "Similarity measured in cosine units"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cosine similarity measures the cosine of the angle between two feature vectors, indicating how similar their orientations are regardless of magnitude.",
+      "optionExplanations": [
+        "Correct. Cosine similarity measures the cosine of the angle between two vectors, indicating directional similarity.",
+        "Incorrect. Cosine similarity doesn't follow wave patterns; it's based on vector angles.",
+        "Incorrect. While it uses cosine function, it's specifically about vector angle measurement.",
+        "Incorrect. Cosine similarity is unitless, ranging from -1 to 1."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cosine-similarity",
+        "vectors",
+        "angle"
+      ]
+    },
+    {
+      "id": "TPP_085",
+      "question": "What is edit distance (Levenshtein distance)?",
+      "options": [
+        "Distance between text editors",
+        "Minimum number of edits to transform one string to another",
+        "Distance between edited versions",
+        "Physical distance in text editing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Edit distance measures the minimum number of single-character edits (insertions, deletions, substitutions) needed to transform one string into another.",
+      "optionExplanations": [
+        "Incorrect. Edit distance is a string similarity measure, not about software tools.",
+        "Correct. Edit distance counts minimum character-level edits (insert, delete, substitute) to transform one string to another.",
+        "Incorrect. This measures string transformation cost, not version differences.",
+        "Incorrect. Edit distance is a computational measure, not physical distance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "edit-distance",
+        "levenshtein",
+        "string-similarity"
+      ]
+    },
+    {
+      "id": "TPP_086",
+      "question": "What is shingling in text preprocessing?",
+      "options": [
+        "Overlapping roof-like text arrangement",
+        "Creating overlapping character or word sequences",
+        "Removing text shine or gloss",
+        "Arranging text in shingle patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Shingling creates overlapping sequences (usually of characters) that slide across text, commonly used for detecting near-duplicate documents.",
+      "optionExplanations": [
+        "Incorrect. Shingling is about sequence generation, not visual arrangement.",
+        "Correct. Shingling creates overlapping k-length sequences that 'slide' across text, useful for similarity detection.",
+        "Incorrect. Shingling is a technical process, not about visual text properties.",
+        "Incorrect. While named after roof shingles (overlapping), it's about sequence generation, not visual patterns."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "shingling",
+        "sequences",
+        "near-duplicates"
+      ]
+    },
+    {
+      "id": "TPP_087",
+      "question": "What is hashing in the context of text preprocessing?",
+      "options": [
+        "Chopping text into small pieces",
+        "Converting text features to fixed-size numerical representations",
+        "Adding hash symbols to text",
+        "Creating hashtags from text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hashing in text preprocessing converts variable-length text features into fixed-size numerical representations, often used for efficient storage and comparison.",
+      "optionExplanations": [
+        "Incorrect. While 'hashing' sounds like chopping, it's about numerical conversion, not physical cutting.",
+        "Correct. Hashing converts text features into fixed-size numerical representations for efficient processing.",
+        "Incorrect. Hashing is about numerical conversion, not adding '#' symbols.",
+        "Incorrect. This is about feature representation, not social media hashtag creation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hashing",
+        "numerical",
+        "representation"
+      ]
+    },
+    {
+      "id": "TPP_088",
+      "question": "What is the hashing trick (feature hashing)?",
+      "options": [
+        "A magic trick with hash functions",
+        "Using hash functions to map features to fixed-size vectors",
+        "Tricking the hashing algorithm",
+        "A shortcut for hash computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The hashing trick uses hash functions to map high-dimensional features directly to a fixed-size vector space, avoiding the need to maintain explicit vocabulary.",
+      "optionExplanations": [
+        "Incorrect. The 'trick' refers to the technique's cleverness, not magic tricks.",
+        "Correct. The hashing trick maps features to fixed-size vectors using hash functions, avoiding explicit vocabulary storage.",
+        "Incorrect. It's not about deceiving algorithms; it's a legitimate dimensionality reduction technique.",
+        "Incorrect. It's called a 'trick' because it's clever, not because it's a computational shortcut."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hashing-trick",
+        "feature-hashing",
+        "dimensionality"
+      ]
+    },
+    {
+      "id": "TPP_089",
+      "question": "What is text chunking?",
+      "options": [
+        "Breaking text into meaningful phrases or chunks",
+        "Making text chunky in appearance",
+        "Removing chunks from text",
+        "Adding chunks to text"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Text chunking identifies meaningful phrases or syntactic units within sentences, such as noun phrases, verb phrases, or other grammatical constituents.",
+      "optionExplanations": [
+        "Correct. Text chunking identifies meaningful phrases like noun phrases (NP) or verb phrases (VP) within sentences.",
+        "Incorrect. Chunking is about identifying linguistic units, not visual appearance.",
+        "Incorrect. Chunking identifies existing chunks, not removes them.",
+        "Incorrect. Chunking identifies existing linguistic units, not adds new content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chunking",
+        "phrases",
+        "syntactic"
+      ]
+    },
+    {
+      "id": "TPP_090",
+      "question": "What is noise reduction in text preprocessing?",
+      "options": [
+        "Reducing audio noise in text",
+        "Removing irrelevant or unwanted elements from text",
+        "Making text quieter",
+        "Reducing text volume"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Noise reduction removes irrelevant elements like HTML tags, special characters, formatting artifacts, or other unwanted content that doesn't contribute to analysis.",
+      "optionExplanations": [
+        "Incorrect. Text noise refers to unwanted textual elements, not audio interference.",
+        "Correct. Noise reduction removes irrelevant elements like HTML tags, special characters, and formatting artifacts.",
+        "Incorrect. Text processing doesn't involve audio properties like sound level.",
+        "Incorrect. Volume in text context would be quantity, but noise reduction is about removing irrelevant content."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "noise-reduction",
+        "cleaning",
+        "irrelevant"
+      ]
+    },
+    {
+      "id": "TPP_091",
+      "question": "What are emoticons and emojis in text preprocessing?",
+      "options": [
+        "Emotional text content",
+        "Visual symbols expressing emotions or concepts",
+        "Text about emotions",
+        "Iconic text formatting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Emoticons (:), :D) and emojis (😀, 🎉) are visual symbols that express emotions, concepts, or objects and may need special handling in text preprocessing.",
+      "optionExplanations": [
+        "Incorrect. While related to emotions, emoticons/emojis are specific visual symbols, not general emotional content.",
+        "Correct. Emoticons and emojis are visual symbols (like :), 😀, 🎉) that express emotions, concepts, or objects.",
+        "Incorrect. These are symbolic representations, not text discussing emotions.",
+        "Incorrect. These are specific symbols, not general text formatting techniques."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "emoticons",
+        "emojis",
+        "symbols"
+      ]
+    },
+    {
+      "id": "TPP_092",
+      "question": "How should emoticons and emojis typically be handled in text preprocessing?",
+      "options": [
+        "Always remove them",
+        "Convert to text descriptions or keep based on task requirements",
+        "Always keep them as-is",
+        "Ignore them completely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Emoticon and emoji handling depends on the task - they can be removed, converted to text descriptions, or preserved based on whether they're relevant to the analysis.",
+      "optionExplanations": [
+        "Incorrect. Emoticons/emojis might carry important sentiment information that should be preserved.",
+        "Correct. Handling depends on task - convert '😀' to 'happy' for sentiment analysis, or remove for formal text analysis.",
+        "Incorrect. Raw emoticons/emojis might not be processed well by all algorithms.",
+        "Incorrect. Ignoring them completely might lose important emotional or contextual information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "emoticons",
+        "emojis",
+        "handling"
+      ]
+    },
+    {
+      "id": "TPP_093",
+      "question": "What is text standardization?",
+      "options": [
+        "Making all texts follow the same standard format",
+        "Applying consistent rules to normalize text variations",
+        "Converting text to standard language",
+        "Standardizing text length"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text standardization applies consistent rules to normalize variations in text format, spelling, abbreviations, and other inconsistencies.",
+      "optionExplanations": [
+        "Incorrect. While standardization creates consistency, it's more about normalizing variations than enforcing identical formats.",
+        "Correct. Text standardization applies consistent rules to handle variations like abbreviations, spellings, and format inconsistencies.",
+        "Incorrect. This is about format consistency, not language translation.",
+        "Incorrect. Standardization focuses on content consistency, not equalizing text length."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standardization",
+        "normalization",
+        "consistency"
+      ]
+    },
+    {
+      "id": "TPP_094",
+      "question": "What is abbreviation expansion in text preprocessing?",
+      "options": [
+        "Making abbreviations longer",
+        "Converting abbreviations to their full forms",
+        "Expanding the use of abbreviations",
+        "Creating abbreviations from full words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Abbreviation expansion converts shortened forms like 'Dr.' to 'Doctor', 'USA' to 'United States of America' to standardize text.",
+      "optionExplanations": [
+        "Incorrect. While expansion makes text longer, the purpose is converting to full forms, not just lengthening.",
+        "Correct. Abbreviation expansion converts shortened forms like 'Dr.' → 'Doctor', 'NYC' → 'New York City'.",
+        "Incorrect. This converts abbreviations to full forms, not increases their usage.",
+        "Incorrect. This expands existing abbreviations, not creates new ones from full words."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "abbreviations",
+        "expansion",
+        "full-forms"
+      ]
+    },
+    {
+      "id": "TPP_095",
+      "question": "What is slang normalization?",
+      "options": [
+        "Making slang words normal",
+        "Converting informal/slang expressions to standard forms",
+        "Normalizing the use of slang",
+        "Creating slang from normal words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Slang normalization converts informal or slang expressions to their standard equivalents, like 'u' to 'you', 'ur' to 'your'.",
+      "optionExplanations": [
+        "Incorrect. While it makes slang more standard, it specifically converts to formal equivalents.",
+        "Correct. Slang normalization converts informal expressions like 'u' → 'you', 'gonna' → 'going to'.",
+        "Incorrect. This converts slang to standard forms, not regulates slang usage.",
+        "Incorrect. This converts existing slang to standard forms, not creates slang."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "slang",
+        "normalization",
+        "informal"
+      ]
+    },
+    {
+      "id": "TPP_096",
+      "question": "What is domain-specific preprocessing?",
+      "options": [
+        "Preprocessing for domain names",
+        "Tailoring preprocessing steps to specific domains or fields",
+        "Preprocessing dominant text",
+        "Preprocessing text domains"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Domain-specific preprocessing adapts preprocessing steps to the specific requirements of different fields like medical, legal, or social media text.",
+      "optionExplanations": [
+        "Incorrect. This is about field-specific processing, not internet domain names.",
+        "Correct. Domain-specific preprocessing tailors steps for specific fields - medical text needs different handling than social media.",
+        "Incorrect. This is about field specialization, not processing dominant/primary text.",
+        "Incorrect. While 'domain' might suggest areas, this specifically means field-specific adaptation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-specific",
+        "field",
+        "customization"
+      ]
+    },
+    {
+      "id": "TPP_097",
+      "question": "What special considerations apply to social media text preprocessing?",
+      "options": [
+        "No special considerations needed",
+        "Handle hashtags, mentions, URLs, informal language, and emoticons",
+        "Only remove URLs",
+        "Same as formal text processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Social media text requires special handling for hashtags, @mentions, URLs, informal spelling, abbreviations, emoticons, and repeated characters.",
+      "optionExplanations": [
+        "Incorrect. Social media text has unique characteristics requiring special preprocessing approaches.",
+        "Correct. Social media needs special handling for #hashtags, @mentions, URLs, slang, emoticons, and informal language patterns.",
+        "Incorrect. URLs are just one of many special elements in social media text.",
+        "Incorrect. Social media text differs significantly from formal text in vocabulary, style, and special elements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "social-media",
+        "hashtags",
+        "mentions"
+      ]
+    },
+    {
+      "id": "TPP_098",
+      "question": "What is the purpose of text preprocessing pipelines?",
+      "options": [
+        "Creating pipes for text",
+        "Organizing preprocessing steps in a systematic sequence",
+        "Pipeline text transportation",
+        "Creating text flow systems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text preprocessing pipelines organize multiple preprocessing steps in a systematic, reproducible sequence to transform raw text into clean, analysis-ready data.",
+      "optionExplanations": [
+        "Incorrect. Pipelines in NLP are processing sequences, not physical pipe construction.",
+        "Correct. Preprocessing pipelines organize steps like tokenization → lowercasing → stop word removal in systematic sequences.",
+        "Incorrect. This is about processing workflows, not physical text transportation.",
+        "Incorrect. While there's a 'flow' concept, pipelines are specifically about sequential processing steps."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pipelines",
+        "sequence",
+        "systematic"
+      ]
+    },
+    {
+      "id": "TPP_099",
+      "question": "What factors should be considered when designing a preprocessing pipeline?",
+      "options": [
+        "Only processing speed",
+        "Task requirements, data characteristics, and computational resources",
+        "Only data size",
+        "Only available tools"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pipeline design should consider the specific NLP task, data characteristics, computational resources, and the trade-offs between different preprocessing choices.",
+      "optionExplanations": [
+        "Incorrect. Speed is important but not the only consideration; accuracy and task suitability matter too.",
+        "Correct. Consider task needs (sentiment analysis vs search), data type (social media vs formal), and computational constraints.",
+        "Incorrect. Data size affects performance but doesn't determine which preprocessing steps are needed.",
+        "Incorrect. Available tools are a constraint but shouldn't be the primary factor in pipeline design."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pipeline-design",
+        "considerations",
+        "trade-offs"
+      ]
+    },
+    {
+      "id": "TPP_100",
+      "question": "What is the most important principle in text preprocessing?",
+      "options": [
+        "Always apply all possible preprocessing steps",
+        "Tailor preprocessing to the specific task and evaluate its impact",
+        "Use the fastest preprocessing methods",
+        "Follow the same pipeline for all tasks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The most important principle is to tailor preprocessing to the specific task requirements and evaluate the impact of each step on the final model performance.",
+      "optionExplanations": [
+        "Incorrect. Not all preprocessing steps are beneficial for every task; some might even hurt performance.",
+        "Correct. Preprocessing should be task-specific and its impact should be measured - what helps sentiment analysis might hurt topic modeling.",
+        "Incorrect. Speed is important but shouldn't compromise the quality needed for the specific task.",
+        "Incorrect. Different tasks have different requirements; one-size-fits-all approaches are typically suboptimal."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "principles",
+        "task-specific",
+        "evaluation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_DTC",
+  "subtopicName": "Decision Trees",
+  "str": 0.300,
+  "description": "Tree-based learning algorithm for classification and regression tasks",
+  "questions": [
+    {
+      "id": "DTC_001",
+      "question": "What is the root node in a decision tree?",
+      "options": [
+        "The final prediction",
+        "The top node that represents the entire dataset",
+        "A leaf node with the highest accuracy",
+        "The node with the most features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The root node is the topmost node in a decision tree that represents the entire dataset before any splits are made. It contains all the training data initially.",
+      "optionExplanations": [
+        "Final predictions are made at leaf nodes, not the root node.",
+        "Correct! The root node is the starting point containing all data before splitting.",
+        "Leaf nodes are terminal nodes; the root node is at the top of the tree structure.",
+        "The root node is chosen based on information gain, not the number of features."
+      ],
+      "difficulty": "EASY",
+      "tags": ["tree structure", "root node", "fundamentals"]
+    },
+    {
+      "id": "DTC_002",
+      "question": "Which measure is commonly used to determine the best split in a decision tree?",
+      "options": [
+        "Mean Squared Error only",
+        "Information Gain (Entropy) or Gini Impurity",
+        "Standard Deviation",
+        "Correlation Coefficient"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Information Gain (based on entropy) and Gini Impurity are the most common measures used to determine the best feature and threshold for splitting data in decision trees.",
+      "optionExplanations": [
+        "MSE is used for regression trees, but entropy and Gini are more common overall.",
+        "Correct! These measures quantify the 'impurity' or randomness in the data splits.",
+        "Standard deviation measures spread but isn't the primary splitting criterion.",
+        "Correlation measures linear relationships but not the best splitting criterion."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": ["information gain", "Gini impurity", "splitting criteria"]
+    },
+    {
+      "id": "DTC_003",
+      "question": "What is pruning in decision trees?",
+      "options": [
+        "Adding more branches to improve accuracy",
+        "Removing branches to prevent overfitting",
+        "Changing the root node",
+        "Sorting the data before training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pruning is the process of removing branches from a decision tree to prevent overfitting and improve generalization to new, unseen data.",
+      "optionExplanations": [
+        "Adding branches typically increases overfitting rather than preventing it.",
+        "Correct! Pruning removes unnecessary complexity to improve model generalization.",
+        "The root node is determined by the splitting algorithm, not changed during pruning.",
+        "Data sorting is a preprocessing step, not related to pruning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": ["pruning", "overfitting", "generalization"]
+    },
+    {
+      "id": "DTC_004",
+      "question": "What is the main advantage of decision trees over other ML algorithms?",
+      "options": [
+        "Always highest accuracy",
+        "Interpretability and ease of understanding",
+        "Fastest training time",
+        "Works only with numerical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Decision trees are highly interpretable - you can easily follow the decision path and understand why a particular prediction was made, making them excellent for explainable AI.",
+      "optionExplanations": [
+        "Decision trees don't always achieve the highest accuracy compared to other algorithms.",
+        "Correct! The tree structure makes it easy to understand the decision-making process.",
+        "Training time varies; other algorithms like linear regression can be faster.",
+        "Decision trees work well with both numerical and categorical data."
+      ],
+      "difficulty": "EASY",
+      "tags": ["interpretability", "advantages", "explainability"]
+    },
+    {
+      "id": "DTC_005",
+      "question": "What is a major disadvantage of decision trees?",
+      "options": [
+        "Cannot handle categorical data",
+        "Always underfits the data",
+        "Prone to overfitting with deep trees",
+        "Cannot be used for classification"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Decision trees, especially deep ones, are prone to overfitting. They can create very complex models that memorize the training data but don't generalize well to new data.",
+      "optionExplanations": [
+        "Decision trees handle categorical data very well, better than many other algorithms.",
+        "Decision trees typically overfit rather than underfit, especially when deep.",
+        "Correct! Deep trees can become overly complex and memorize training data patterns.",
+        "Decision trees are actually excellent for classification tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": ["overfitting", "disadvantages", "model complexity"]
+    }
+  ]
+} 

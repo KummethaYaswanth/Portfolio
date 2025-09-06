@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_DLG",
+  "topicName": "Deep Learning",
+  "subtopicId": "STC_NNB",
+  "subtopicName": "Neural Networks Basics",
+  "str": 0.100,
+  "description": "Fundamental concepts of neural networks including perceptron, activation functions, forward propagation, backpropagation, and gradient descent optimization",
+  "questions": [
+    {
+      "id": "NNB_001",
+      "question": "What is a perceptron in neural networks?",
+      "options": [
+        "A single layer neural network with linear activation",
+        "A multi-layer network with hidden layers",
+        "A type of convolutional layer",
+        "A recurrent neural network unit"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A perceptron is the simplest form of a neural network, consisting of a single layer with linear activation function, used for binary classification problems.",
+      "optionExplanations": [
+        "Correct. A perceptron is indeed a single layer neural network that uses a linear activation function to make binary classifications.",
+        "Incorrect. Multi-layer networks with hidden layers are called multi-layer perceptrons (MLPs), not simple perceptrons.",
+        "Incorrect. Convolutional layers are used in CNNs and are different from perceptrons.",
+        "Incorrect. Recurrent neural network units like LSTM or GRU are different architectures from perceptrons."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "perceptron",
+        "basic-concepts",
+        "single-layer"
+      ]
+    },
+    {
+      "id": "NNB_002",
+      "question": "Which activation function is commonly used in the output layer for binary classification?",
+      "options": [
+        "ReLU",
+        "Sigmoid",
+        "Tanh",
+        "Softmax"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sigmoid function is ideal for binary classification as it outputs values between 0 and 1, which can be interpreted as probabilities.",
+      "optionExplanations": [
+        "Incorrect. ReLU is commonly used in hidden layers but not suitable for binary classification output as it doesn't bound outputs between 0 and 1.",
+        "Correct. Sigmoid function maps any real number to a value between 0 and 1, making it perfect for binary classification probabilities.",
+        "Incorrect. Tanh outputs values between -1 and 1, which is not ideal for probability interpretation in binary classification.",
+        "Incorrect. Softmax is used for multi-class classification, not binary classification."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "activation-functions",
+        "sigmoid",
+        "binary-classification"
+      ]
+    },
+    {
+      "id": "NNB_003",
+      "question": "What is the primary purpose of forward propagation in neural networks?",
+      "options": [
+        "To update weights and biases",
+        "To compute the output prediction",
+        "To calculate gradients",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Forward propagation is the process of passing input data through the network layers to compute the final output prediction.",
+      "optionExplanations": [
+        "Incorrect. Updating weights and biases is done during backpropagation, not forward propagation.",
+        "Correct. Forward propagation computes the output by passing inputs through each layer sequentially.",
+        "Incorrect. Gradient calculation is part of backpropagation, not forward propagation.",
+        "Incorrect. Preventing overfitting is achieved through regularization techniques, not forward propagation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "forward-propagation",
+        "prediction",
+        "basic-concepts"
+      ]
+    },
+    {
+      "id": "NNB_004",
+      "question": "In backpropagation, what is being propagated backwards through the network?",
+      "options": [
+        "Input values",
+        "Output predictions",
+        "Error gradients",
+        "Activation functions"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Backpropagation propagates error gradients backwards from the output layer to update weights and minimize the loss function.",
+      "optionExplanations": [
+        "Incorrect. Input values are propagated forward, not backward.",
+        "Incorrect. Output predictions are the result of forward propagation, not what's propagated backward.",
+        "Correct. Error gradients are computed and propagated backward to update network parameters.",
+        "Incorrect. Activation functions are applied during forward propagation, not propagated backward."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "backpropagation",
+        "gradients",
+        "error-propagation"
+      ]
+    },
+    {
+      "id": "NNB_005",
+      "question": "What is the main objective of gradient descent in neural networks?",
+      "options": [
+        "To increase the learning rate",
+        "To minimize the loss function",
+        "To add more hidden layers",
+        "To activate neurons"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient descent is an optimization algorithm used to minimize the loss function by iteratively updating network parameters.",
+      "optionExplanations": [
+        "Incorrect. Gradient descent doesn't aim to increase learning rate; learning rate is a hyperparameter set by the user.",
+        "Correct. The primary goal of gradient descent is to find the minimum of the loss function by following the negative gradient.",
+        "Incorrect. Adding hidden layers is an architectural decision, not the objective of gradient descent.",
+        "Incorrect. Neuron activation is handled by activation functions, not gradient descent."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-descent",
+        "optimization",
+        "loss-minimization"
+      ]
+    },
+    {
+      "id": "NNB_006",
+      "question": "Which of the following best describes a neuron in an artificial neural network?",
+      "options": [
+        "A biological brain cell",
+        "A computational unit that processes inputs",
+        "A type of activation function",
+        "A layer in the network"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An artificial neuron is a computational unit that takes inputs, applies weights, adds bias, and passes the result through an activation function.",
+      "optionExplanations": [
+        "Incorrect. While inspired by biological neurons, artificial neurons are mathematical computational units, not biological cells.",
+        "Correct. An artificial neuron is a computational unit that processes weighted inputs, adds bias, and applies an activation function.",
+        "Incorrect. Activation functions are applied by neurons, but neurons themselves are not activation functions.",
+        "Incorrect. A layer consists of multiple neurons, but a neuron is not a layer itself."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "neuron",
+        "computational-unit",
+        "basic-concepts"
+      ]
+    },
+    {
+      "id": "NNB_007",
+      "question": "What happens when the ReLU activation function receives a negative input?",
+      "options": [
+        "It outputs the input value unchanged",
+        "It outputs zero",
+        "It outputs -1",
+        "It outputs the absolute value"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ReLU (Rectified Linear Unit) outputs zero for any negative input and the input value itself for positive inputs.",
+      "optionExplanations": [
+        "Incorrect. ReLU doesn't output negative values unchanged; it clips them to zero.",
+        "Correct. ReLU function is defined as max(0, x), so it outputs zero for any negative input.",
+        "Incorrect. ReLU doesn't output -1; it outputs zero for negative inputs.",
+        "Incorrect. ReLU doesn't take the absolute value; it simply clips negative values to zero."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "relu",
+        "activation-functions",
+        "negative-input"
+      ]
+    },
+    {
+      "id": "NNB_008",
+      "question": "In a feedforward neural network, information flows in which direction?",
+      "options": [
+        "From output to input only",
+        "From input to output only",
+        "Bidirectionally between layers",
+        "Randomly between neurons"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In feedforward networks, information flows unidirectionally from input layer through hidden layers to output layer.",
+      "optionExplanations": [
+        "Incorrect. Information flows from input to output, not the reverse in feedforward networks.",
+        "Correct. Feedforward networks have unidirectional flow from input layer to output layer.",
+        "Incorrect. Bidirectional flow exists in recurrent networks, not feedforward networks.",
+        "Incorrect. Information flow is structured and sequential, not random."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feedforward",
+        "information-flow",
+        "network-architecture"
+      ]
+    },
+    {
+      "id": "NNB_009",
+      "question": "What is the purpose of bias in a neural network neuron?",
+      "options": [
+        "To add computational complexity",
+        "To shift the activation function",
+        "To increase the number of parameters",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bias allows the activation function to shift, providing the model with more flexibility to fit the data by adjusting the threshold.",
+      "optionExplanations": [
+        "Incorrect. Bias doesn't add complexity for its own sake; it serves a specific mathematical purpose.",
+        "Correct. Bias shifts the activation function horizontally, allowing the neuron to activate at different thresholds.",
+        "Incorrect. While bias does add parameters, this is not its primary purpose.",
+        "Incorrect. Bias doesn't prevent overfitting; regularization techniques serve that purpose."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "activation-threshold",
+        "model-flexibility"
+      ]
+    },
+    {
+      "id": "NNB_010",
+      "question": "Which gradient descent variant uses the entire dataset for each parameter update?",
+      "options": [
+        "Stochastic Gradient Descent (SGD)",
+        "Mini-batch Gradient Descent",
+        "Batch Gradient Descent",
+        "Adam Optimizer"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Batch Gradient Descent computes gradients using the entire training dataset before making a single parameter update.",
+      "optionExplanations": [
+        "Incorrect. SGD uses only one sample at a time for parameter updates.",
+        "Incorrect. Mini-batch uses a small subset of the dataset, not the entire dataset.",
+        "Correct. Batch Gradient Descent computes gradients over the entire dataset before updating parameters.",
+        "Incorrect. Adam is an adaptive optimization algorithm, not a gradient descent variant based on batch size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-gradient-descent",
+        "optimization",
+        "dataset-usage"
+      ]
+    },
+    {
+      "id": "NNB_011",
+      "question": "What problem does the vanishing gradient problem address in deep neural networks?",
+      "options": [
+        "Overfitting in the output layer",
+        "Slow learning in early layers",
+        "Too many parameters",
+        "High computational cost"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The vanishing gradient problem occurs when gradients become very small in early layers, making them learn very slowly or not at all.",
+      "optionExplanations": [
+        "Incorrect. Vanishing gradients affect learning in early layers, not overfitting in the output layer.",
+        "Correct. Vanishing gradients cause early layers to receive very small gradient updates, leading to slow or no learning.",
+        "Incorrect. The number of parameters is not directly related to the vanishing gradient problem.",
+        "Incorrect. While deep networks are computationally expensive, vanishing gradients specifically refer to the gradient magnitude issue."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vanishing-gradients",
+        "deep-networks",
+        "learning-problems"
+      ]
+    },
+    {
+      "id": "NNB_012",
+      "question": "Which activation function helps mitigate the vanishing gradient problem?",
+      "options": [
+        "Sigmoid",
+        "Tanh",
+        "ReLU",
+        "Linear"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ReLU helps mitigate vanishing gradients because its gradient is either 0 or 1, preventing the gradient from becoming progressively smaller.",
+      "optionExplanations": [
+        "Incorrect. Sigmoid has gradients that can become very small (close to 0), contributing to vanishing gradients.",
+        "Incorrect. Tanh also suffers from vanishing gradients as its gradients can become very small in saturation regions.",
+        "Correct. ReLU has a gradient of 1 for positive inputs, which helps maintain gradient magnitude through layers.",
+        "Incorrect. Linear activation doesn't provide non-linearity needed for complex function approximation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "relu",
+        "vanishing-gradients",
+        "gradient-preservation"
+      ]
+    },
+    {
+      "id": "NNB_013",
+      "question": "What is the mathematical operation performed by a neuron before applying the activation function?",
+      "options": [
+        "Multiplication only",
+        "Addition only",
+        "Weighted sum plus bias",
+        "Matrix inversion"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A neuron computes the weighted sum of its inputs, adds the bias term, then applies the activation function to this result.",
+      "optionExplanations": [
+        "Incorrect. Neurons don't just multiply; they compute weighted sums.",
+        "Incorrect. Simple addition without weights wouldn't provide the learning capability needed.",
+        "Correct. The neuron computes ∑(wi × xi) + b before applying the activation function.",
+        "Incorrect. Matrix inversion is not a standard operation performed by individual neurons."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "weighted-sum",
+        "bias",
+        "neuron-computation"
+      ]
+    },
+    {
+      "id": "NNB_014",
+      "question": "In the context of neural networks, what does 'epoch' refer to?",
+      "options": [
+        "One forward pass through the network",
+        "One complete pass through the entire training dataset",
+        "One weight update",
+        "One neuron activation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An epoch is one complete pass through the entire training dataset, including both forward and backward propagation.",
+      "optionExplanations": [
+        "Incorrect. One forward pass is just part of training, not a complete epoch.",
+        "Correct. An epoch involves processing every sample in the training dataset once.",
+        "Incorrect. Many weight updates can occur within a single epoch.",
+        "Incorrect. Neuron activations happen continuously during training, not defining epochs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "epoch",
+        "training",
+        "dataset-pass"
+      ]
+    },
+    {
+      "id": "NNB_015",
+      "question": "What is the primary advantage of using mini-batch gradient descent over batch gradient descent?",
+      "options": [
+        "Higher accuracy",
+        "Faster convergence with less memory usage",
+        "Simpler implementation",
+        "Better generalization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mini-batch gradient descent provides faster convergence than batch GD while using less memory than full batch processing.",
+      "optionExplanations": [
+        "Incorrect. Accuracy depends on many factors, not necessarily the batch size.",
+        "Correct. Mini-batch provides more frequent updates than batch GD while being more memory efficient.",
+        "Incorrect. Implementation complexity is similar between batch and mini-batch methods.",
+        "Incorrect. Generalization is more related to model architecture and regularization than batch size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mini-batch",
+        "gradient-descent",
+        "memory-efficiency"
+      ]
+    },
+    {
+      "id": "NNB_016",
+      "question": "Which of the following is NOT typically a hyperparameter in neural networks?",
+      "options": [
+        "Learning rate",
+        "Number of hidden layers",
+        "Weights",
+        "Batch size"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Weights are learned parameters that are updated during training, not hyperparameters that are set before training.",
+      "optionExplanations": [
+        "Incorrect. Learning rate is a hyperparameter that controls the step size in gradient descent.",
+        "Incorrect. The number of hidden layers is an architectural hyperparameter set before training.",
+        "Correct. Weights are learned parameters updated during training, not hyperparameters set beforehand.",
+        "Incorrect. Batch size is a hyperparameter that determines how many samples are processed together."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "weights",
+        "learning-parameters"
+      ]
+    },
+    {
+      "id": "NNB_017",
+      "question": "What happens to the gradient of a ReLU function when the input is exactly zero?",
+      "options": [
+        "It is undefined",
+        "It equals 1",
+        "It equals 0",
+        "It equals 0.5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Technically, the gradient of ReLU at zero is undefined because the function is not differentiable at that point, though in practice it's often taken as 0 or 1.",
+      "optionExplanations": [
+        "Correct. Mathematically, ReLU is not differentiable at x=0, making the gradient undefined at this point.",
+        "Incorrect. While some implementations use 1, this is not mathematically correct at the point of non-differentiability.",
+        "Incorrect. Some implementations use 0, but the true mathematical gradient is undefined.",
+        "Incorrect. 0.5 is not a standard value used for the ReLU gradient at zero."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "relu",
+        "gradient",
+        "differentiability"
+      ]
+    },
+    {
+      "id": "NNB_018",
+      "question": "Which statement best describes the universal approximation theorem?",
+      "options": [
+        "Neural networks can solve any problem",
+        "A neural network with sufficient hidden units can approximate any continuous function",
+        "All neural networks have the same approximation capability",
+        "Only deep networks can approximate complex functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The universal approximation theorem states that a feedforward network with a single hidden layer can approximate any continuous function given sufficient hidden units.",
+      "optionExplanations": [
+        "Incorrect. The theorem doesn't claim neural networks can solve any problem, only approximate continuous functions.",
+        "Correct. The theorem guarantees that single hidden layer networks can approximate any continuous function with enough neurons.",
+        "Incorrect. Different architectures have different approximation capabilities.",
+        "Incorrect. The theorem actually applies to single hidden layer networks, not just deep networks."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "universal-approximation",
+        "function-approximation",
+        "theory"
+      ]
+    },
+    {
+      "id": "NNB_019",
+      "question": "What is the main characteristic of the sigmoid activation function?",
+      "options": [
+        "It outputs values between -1 and 1",
+        "It outputs values between 0 and 1",
+        "It outputs only positive values",
+        "It outputs binary values only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The sigmoid function maps any real input to a value between 0 and 1, making it useful for probability interpretations.",
+      "optionExplanations": [
+        "Incorrect. Values between -1 and 1 describe the tanh function, not sigmoid.",
+        "Correct. Sigmoid function σ(x) = 1/(1+e^(-x)) always outputs values in the range (0,1).",
+        "Incorrect. While sigmoid outputs are positive, this doesn't distinguish it from other activation functions.",
+        "Incorrect. Sigmoid outputs continuous values between 0 and 1, not just binary values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sigmoid",
+        "activation-functions",
+        "output-range"
+      ]
+    },
+    {
+      "id": "NNB_020",
+      "question": "In backpropagation, what is the chain rule used for?",
+      "options": [
+        "Computing the forward pass",
+        "Computing gradients of composite functions",
+        "Updating learning rates",
+        "Selecting activation functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The chain rule is fundamental to backpropagation as it allows computing gradients of composite functions by breaking them down into simpler derivatives.",
+      "optionExplanations": [
+        "Incorrect. The forward pass doesn't require the chain rule; it's a direct computation.",
+        "Correct. Chain rule enables computing derivatives of nested functions, essential for backpropagation through network layers.",
+        "Incorrect. Learning rate updates don't typically use the chain rule.",
+        "Incorrect. Activation function selection is an architectural choice, not related to the chain rule."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chain-rule",
+        "backpropagation",
+        "derivatives"
+      ]
+    },
+    {
+      "id": "NNB_021",
+      "question": "What is the dying ReLU problem?",
+      "options": [
+        "ReLU becomes too slow to compute",
+        "ReLU neurons get stuck outputting zero",
+        "ReLU causes overfitting",
+        "ReLU increases computational complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The dying ReLU problem occurs when neurons get stuck in a state where they always output zero, effectively becoming inactive.",
+      "optionExplanations": [
+        "Incorrect. ReLU is computationally efficient; speed is not the issue.",
+        "Correct. When ReLU neurons receive only negative inputs, they output zero and their gradients become zero, stopping learning.",
+        "Incorrect. Dying ReLU is about neurons becoming inactive, not overfitting.",
+        "Incorrect. ReLU actually reduces computational complexity compared to sigmoid or tanh."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dying-relu",
+        "inactive-neurons",
+        "learning-problems"
+      ]
+    },
+    {
+      "id": "NNB_022",
+      "question": "Which optimization algorithm adapts the learning rate for each parameter individually?",
+      "options": [
+        "Standard Gradient Descent",
+        "Momentum",
+        "AdaGrad",
+        "Mini-batch Gradient Descent"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "AdaGrad adapts the learning rate for each parameter based on the historical gradients, giving frequently updated parameters smaller learning rates.",
+      "optionExplanations": [
+        "Incorrect. Standard gradient descent uses a fixed learning rate for all parameters.",
+        "Incorrect. Momentum adds a velocity term but doesn't adapt learning rates individually.",
+        "Correct. AdaGrad maintains a running sum of squared gradients for each parameter to adapt learning rates.",
+        "Incorrect. Mini-batch gradient descent refers to batch size, not adaptive learning rates."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adagrad",
+        "adaptive-learning",
+        "optimization"
+      ]
+    },
+    {
+      "id": "NNB_023",
+      "question": "What is the primary function of an activation function in neural networks?",
+      "options": [
+        "To speed up computation",
+        "To introduce non-linearity",
+        "To reduce overfitting",
+        "To normalize inputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Activation functions introduce non-linearity into neural networks, enabling them to learn complex patterns and approximate non-linear functions.",
+      "optionExplanations": [
+        "Incorrect. Activation functions are not primarily for speeding up computation; some actually slow it down.",
+        "Correct. Non-linearity is essential for neural networks to approximate complex, non-linear functions.",
+        "Incorrect. Regularization techniques, not activation functions, are primarily used to reduce overfitting.",
+        "Incorrect. Normalization layers, not activation functions, are used for input normalization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "activation-functions",
+        "non-linearity",
+        "function-approximation"
+      ]
+    },
+    {
+      "id": "NNB_024",
+      "question": "In a neural network, what determines the capacity or complexity of the model?",
+      "options": [
+        "Only the number of layers",
+        "Only the number of neurons",
+        "The architecture including layers, neurons, and connections",
+        "Only the activation functions used"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Model capacity is determined by the overall architecture, including the number of layers, neurons per layer, and how they're connected.",
+      "optionExplanations": [
+        "Incorrect. Layers alone don't determine capacity; wide shallow networks can have high capacity too.",
+        "Incorrect. The number of neurons matters, but their organization in layers is equally important.",
+        "Correct. The complete architecture - layers, neurons, connections, and even activation functions - determines model capacity.",
+        "Incorrect. Activation functions contribute to capacity but don't solely determine it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-capacity",
+        "architecture",
+        "complexity"
+      ]
+    },
+    {
+      "id": "NNB_025",
+      "question": "What is the main advantage of using tanh over sigmoid activation function?",
+      "options": [
+        "Tanh is faster to compute",
+        "Tanh outputs are zero-centered",
+        "Tanh prevents overfitting",
+        "Tanh works better for classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Tanh outputs are zero-centered (range -1 to 1), which can lead to faster convergence compared to sigmoid's 0-1 range.",
+      "optionExplanations": [
+        "Incorrect. Both tanh and sigmoid have similar computational complexity.",
+        "Correct. Zero-centered outputs can help with gradient flow and convergence speed.",
+        "Incorrect. Neither tanh nor sigmoid inherently prevents overfitting.",
+        "Incorrect. Both can be used for classification; the choice depends on the specific problem and layer position."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tanh",
+        "sigmoid",
+        "zero-centered"
+      ]
+    },
+    {
+      "id": "NNB_026",
+      "question": "What happens during the forward pass of a neural network?",
+      "options": [
+        "Weights are updated",
+        "Gradients are computed",
+        "Input is transformed to output",
+        "Error is minimized"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "During forward pass, input data flows through the network layers, being transformed at each layer until reaching the final output.",
+      "optionExplanations": [
+        "Incorrect. Weight updates happen during backpropagation, not forward pass.",
+        "Incorrect. Gradient computation is part of backpropagation, not forward pass.",
+        "Correct. Forward pass transforms input data through network layers to produce output predictions.",
+        "Incorrect. Error minimization happens through the entire training process, not just forward pass."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "forward-pass",
+        "data-transformation",
+        "prediction"
+      ]
+    },
+    {
+      "id": "NNB_027",
+      "question": "Which statement about gradient descent is correct?",
+      "options": [
+        "It always finds the global minimum",
+        "It moves in the direction of steepest ascent",
+        "It moves in the direction of steepest descent",
+        "It requires second-order derivatives"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gradient descent moves in the direction of steepest descent (negative gradient) to minimize the loss function.",
+      "optionExplanations": [
+        "Incorrect. Gradient descent can get stuck in local minima and doesn't guarantee finding the global minimum.",
+        "Incorrect. Gradient descent moves in the direction of steepest descent, not ascent.",
+        "Correct. The algorithm follows the negative gradient, which points in the direction of steepest decrease.",
+        "Incorrect. Gradient descent uses first-order derivatives (gradients), not second-order derivatives."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gradient-descent",
+        "optimization",
+        "steepest-descent"
+      ]
+    },
+    {
+      "id": "NNB_028",
+      "question": "What is the purpose of the learning rate in gradient descent?",
+      "options": [
+        "To determine the direction of movement",
+        "To control the step size",
+        "To calculate the gradient",
+        "To select the activation function"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning rate controls how large steps the algorithm takes when moving towards the minimum of the loss function.",
+      "optionExplanations": [
+        "Incorrect. The gradient determines the direction; learning rate controls step size.",
+        "Correct. Learning rate multiplies the gradient to determine how far to move in each iteration.",
+        "Incorrect. Gradients are calculated using calculus, not controlled by learning rate.",
+        "Incorrect. Activation function selection is an architectural choice, independent of learning rate."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "learning-rate",
+        "step-size",
+        "optimization"
+      ]
+    },
+    {
+      "id": "NNB_029",
+      "question": "What problem can occur if the learning rate is too high?",
+      "options": [
+        "The model will underfit",
+        "Training will be too slow",
+        "The optimization might overshoot the minimum",
+        "The gradients will vanish"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A high learning rate can cause the optimization to overshoot the minimum, potentially causing the loss to oscillate or diverge.",
+      "optionExplanations": [
+        "Incorrect. Underfitting is more related to model capacity than learning rate.",
+        "Incorrect. High learning rate actually makes training faster, not slower.",
+        "Correct. Large steps can overshoot the minimum, causing instability in training.",
+        "Incorrect. Vanishing gradients are typically caused by network architecture, not learning rate."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "overshoot",
+        "training-instability"
+      ]
+    },
+    {
+      "id": "NNB_030",
+      "question": "What is the main difference between a perceptron and a multi-layer perceptron (MLP)?",
+      "options": [
+        "MLPs use different activation functions",
+        "MLPs have hidden layers",
+        "MLPs use different loss functions",
+        "MLPs require more data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The key difference is that MLPs have one or more hidden layers between input and output, while perceptrons have only input and output layers.",
+      "optionExplanations": [
+        "Incorrect. Both can use various activation functions; this is not the defining difference.",
+        "Correct. MLPs have hidden layers that allow them to learn non-linear relationships.",
+        "Incorrect. Both can use similar loss functions depending on the problem type.",
+        "Incorrect. Data requirements depend on problem complexity, not necessarily the architecture type."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "perceptron",
+        "mlp",
+        "hidden-layers"
+      ]
+    },
+    {
+      "id": "NNB_031",
+      "question": "Which activation function can output negative values?",
+      "options": [
+        "ReLU",
+        "Sigmoid",
+        "Tanh",
+        "Softmax"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Tanh (hyperbolic tangent) outputs values in the range [-1, 1], making it the only option that can produce negative values.",
+      "optionExplanations": [
+        "Incorrect. ReLU outputs zero for negative inputs and positive values for positive inputs, never negative.",
+        "Incorrect. Sigmoid outputs values between 0 and 1, always positive.",
+        "Correct. Tanh outputs values between -1 and 1, including negative values.",
+        "Incorrect. Softmax outputs probability distributions, so all values are between 0 and 1."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "tanh",
+        "activation-functions",
+        "negative-outputs"
+      ]
+    },
+    {
+      "id": "NNB_032",
+      "question": "What is the derivative of the ReLU function for positive inputs?",
+      "options": [
+        "0",
+        "1",
+        "The input value",
+        "Infinity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For positive inputs, ReLU(x) = x, so its derivative is 1, which helps prevent vanishing gradient problems.",
+      "optionExplanations": [
+        "Incorrect. The derivative is 0 for negative inputs, not positive inputs.",
+        "Correct. For x > 0, ReLU(x) = x, so d/dx ReLU(x) = 1.",
+        "Incorrect. The derivative is constant (1), not equal to the input value.",
+        "Incorrect. The derivative is a finite constant value of 1."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "relu",
+        "derivative",
+        "positive-inputs"
+      ]
+    },
+    {
+      "id": "NNB_033",
+      "question": "In neural networks, what does the term 'weight initialization' refer to?",
+      "options": [
+        "Setting final weights after training",
+        "Setting initial weights before training",
+        "Updating weights during training",
+        "Removing weights from the network"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weight initialization refers to setting the initial values of network weights before training begins, which can significantly affect convergence.",
+      "optionExplanations": [
+        "Incorrect. Final weights are the result of training, not initialization.",
+        "Correct. Weight initialization sets starting values for weights before the training process begins.",
+        "Incorrect. Weight updates happen during training through backpropagation, not initialization.",
+        "Incorrect. Weights are essential network parameters and are not removed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "weight-initialization",
+        "training-setup",
+        "initial-values"
+      ]
+    },
+    {
+      "id": "NNB_034",
+      "question": "What can happen if all weights in a neural network are initialized to the same value?",
+      "options": [
+        "Faster convergence",
+        "Better accuracy",
+        "Symmetry problem where neurons learn identically",
+        "Reduced computational cost"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "If all weights are identical, neurons in the same layer will compute identical outputs and receive identical gradients, preventing them from learning different features.",
+      "optionExplanations": [
+        "Incorrect. Identical initialization actually slows down or prevents proper learning.",
+        "Incorrect. This leads to poor performance as neurons can't specialize.",
+        "Correct. Symmetric weights cause neurons to remain identical throughout training, limiting learning capacity.",
+        "Incorrect. While initialization is fast, the resulting poor performance doesn't justify any computational savings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-initialization",
+        "symmetry-problem",
+        "identical-weights"
+      ]
+    },
+    {
+      "id": "NNB_035",
+      "question": "Which loss function is commonly used for binary classification problems?",
+      "options": [
+        "Mean Squared Error",
+        "Binary Cross-Entropy",
+        "Categorical Cross-Entropy",
+        "Hinge Loss"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Binary Cross-Entropy (also called logistic loss) is specifically designed for binary classification problems with probabilistic outputs.",
+      "optionExplanations": [
+        "Incorrect. MSE is typically used for regression problems, not binary classification.",
+        "Correct. Binary Cross-Entropy is the standard loss function for binary classification with sigmoid output.",
+        "Incorrect. Categorical Cross-Entropy is used for multi-class classification, not binary.",
+        "Incorrect. Hinge loss is used in SVMs and some other classifiers, but not commonly in neural networks for binary classification."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "binary-cross-entropy",
+        "loss-functions",
+        "binary-classification"
+      ]
+    },
+    {
+      "id": "NNB_036",
+      "question": "What is the main purpose of the softmax activation function?",
+      "options": [
+        "To speed up computation",
+        "To convert outputs to probability distribution",
+        "To prevent overfitting",
+        "To introduce non-linearity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Softmax converts a vector of real numbers into a probability distribution where all values sum to 1, ideal for multi-class classification.",
+      "optionExplanations": [
+        "Incorrect. Softmax involves exponential computations, which are not particularly fast.",
+        "Correct. Softmax normalizes outputs to create a valid probability distribution for multi-class problems.",
+        "Incorrect. Softmax doesn't prevent overfitting; regularization techniques do that.",
+        "Incorrect. While softmax is non-linear, its main purpose is probability distribution creation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "softmax",
+        "probability-distribution",
+        "multi-class"
+      ]
+    },
+    {
+      "id": "NNB_037",
+      "question": "In gradient descent, what does the term 'convergence' mean?",
+      "options": [
+        "The algorithm stops running",
+        "The loss function reaches a minimum",
+        "The weights become zero",
+        "The learning rate increases"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Convergence occurs when the algorithm reaches a point where the loss function is minimized and further iterations don't significantly improve the loss.",
+      "optionExplanations": [
+        "Incorrect. The algorithm might stop, but convergence specifically refers to reaching an optimal point.",
+        "Correct. Convergence means finding a minimum of the loss function where gradients are near zero.",
+        "Incorrect. Weights don't necessarily become zero; they reach optimal values for the problem.",
+        "Incorrect. Learning rate typically stays constant or decreases, and doesn't define convergence."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "convergence",
+        "optimization",
+        "minimum"
+      ]
+    },
+    {
+      "id": "NNB_038",
+      "question": "What is the main advantage of using momentum in gradient descent?",
+      "options": [
+        "It reduces memory usage",
+        "It helps escape local minima and speeds up convergence",
+        "It eliminates the need for activation functions",
+        "It reduces the number of parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Momentum helps the optimizer build velocity in consistent directions, helping it escape local minima and accelerate convergence.",
+      "optionExplanations": [
+        "Incorrect. Momentum actually uses additional memory to store velocity terms.",
+        "Correct. Momentum accumulates gradients to build velocity, helping overcome local minima and flat regions.",
+        "Incorrect. Momentum is an optimization technique and doesn't affect the need for activation functions.",
+        "Incorrect. Momentum doesn't change the number of model parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "momentum",
+        "optimization",
+        "local-minima"
+      ]
+    },
+    {
+      "id": "NNB_039",
+      "question": "Which statement about neural network depth is most accurate?",
+      "options": [
+        "Deeper networks are always better",
+        "Shallow networks cannot learn complex functions",
+        "Optimal depth depends on the problem and data",
+        "Depth doesn't affect model performance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The optimal network depth depends on the complexity of the problem, available data, and computational constraints. There's no universal rule.",
+      "optionExplanations": [
+        "Incorrect. Deeper networks can overfit and are harder to train; they're not always better.",
+        "Incorrect. The universal approximation theorem shows that even single hidden layer networks can approximate complex functions.",
+        "Correct. Optimal depth is problem-dependent and requires experimentation and validation.",
+        "Incorrect. Network depth significantly affects both capacity and performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "network-depth",
+        "model-selection",
+        "problem-dependent"
+      ]
+    },
+    {
+      "id": "NNB_040",
+      "question": "What is the purpose of a bias term in neural network equations?",
+      "options": [
+        "To increase model complexity",
+        "To provide an offset or threshold adjustment",
+        "To prevent overfitting",
+        "To speed up computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bias provides an offset that allows the activation function to shift, giving the model more flexibility to fit data by adjusting activation thresholds.",
+      "optionExplanations": [
+        "Incorrect. While bias adds parameters, its purpose is not to arbitrarily increase complexity.",
+        "Correct. Bias allows shifting the activation function, providing more flexibility in decision boundaries.",
+        "Incorrect. Bias doesn't prevent overfitting; regularization techniques serve that purpose.",
+        "Incorrect. Bias adds a small computational step and doesn't significantly affect speed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bias",
+        "threshold",
+        "activation-shift"
+      ]
+    },
+    {
+      "id": "NNB_041",
+      "question": "What characterizes the 'dead neuron' problem in ReLU networks?",
+      "options": [
+        "Neurons output very large values",
+        "Neurons always output zero and stop learning",
+        "Neurons become too slow to compute",
+        "Neurons output random values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dead neurons occur when ReLU neurons get stuck outputting zero due to negative inputs, making their gradients zero and stopping all learning.",
+      "optionExplanations": [
+        "Incorrect. Dead neurons output zero, not large values.",
+        "Correct. When ReLU neurons receive only negative inputs, they output zero and their gradients become zero, halting learning.",
+        "Incorrect. The problem is not computational speed but lack of learning.",
+        "Incorrect. Dead neurons consistently output zero, not random values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dead-neurons",
+        "relu",
+        "zero-gradients"
+      ]
+    },
+    {
+      "id": "NNB_042",
+      "question": "In the context of neural networks, what does 'backpropagation' literally mean?",
+      "options": [
+        "Moving data forward through layers",
+        "Propagating errors backward through the network",
+        "Reducing the number of layers",
+        "Increasing network width"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Backpropagation literally means propagating the error (loss) backward from the output layer to input layer to compute gradients for weight updates.",
+      "optionExplanations": [
+        "Incorrect. Forward movement of data is called forward propagation, not backpropagation.",
+        "Correct. Backpropagation computes and propagates error gradients backward through network layers.",
+        "Incorrect. Backpropagation is an algorithm, not an architectural change.",
+        "Incorrect. Network width changes are architectural decisions, not part of backpropagation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "backpropagation",
+        "error-propagation",
+        "gradient-computation"
+      ]
+    },
+    {
+      "id": "NNB_043",
+      "question": "Which factor most directly affects the capacity of a neural network to overfit?",
+      "options": [
+        "Learning rate",
+        "Number of training epochs",
+        "Number of parameters relative to training data",
+        "Choice of optimizer"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Overfitting capacity is most directly related to model complexity (number of parameters) relative to the amount of training data available.",
+      "optionExplanations": [
+        "Incorrect. Learning rate affects training dynamics but doesn't directly determine overfitting capacity.",
+        "Incorrect. While more epochs can lead to overfitting, the underlying capacity is determined by model complexity.",
+        "Correct. More parameters relative to data points increases the model's ability to memorize rather than generalize.",
+        "Incorrect. Optimizer choice affects training efficiency but not the fundamental capacity to overfit."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "overfitting",
+        "model-capacity",
+        "parameters-vs-data"
+      ]
+    },
+    {
+      "id": "NNB_044",
+      "question": "What is the primary reason for using non-linear activation functions in neural networks?",
+      "options": [
+        "To make computation faster",
+        "To enable learning of complex, non-linear patterns",
+        "To reduce memory usage",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Non-linear activation functions allow neural networks to learn and represent complex, non-linear relationships in data, which linear functions cannot capture.",
+      "optionExplanations": [
+        "Incorrect. Non-linear functions are often more computationally expensive than linear ones.",
+        "Correct. Without non-linearity, neural networks would be equivalent to linear models regardless of depth.",
+        "Incorrect. Activation functions don't significantly affect memory usage.",
+        "Incorrect. Activation functions don't directly prevent overfitting; that's the role of regularization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "non-linearity",
+        "activation-functions",
+        "pattern-learning"
+      ]
+    },
+    {
+      "id": "NNB_045",
+      "question": "What happens to a neural network's expressive power if only linear activation functions are used?",
+      "options": [
+        "It increases exponentially with depth",
+        "It remains equivalent to a single linear layer",
+        "It becomes infinite",
+        "It depends on the number of neurons"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With only linear activations, any deep network can be reduced to a single linear transformation, regardless of the number of layers.",
+      "optionExplanations": [
+        "Incorrect. Linear functions composed together remain linear, so depth doesn't increase expressiveness.",
+        "Correct. Composition of linear functions is still linear, making deep linear networks equivalent to single linear layers.",
+        "Incorrect. Linear networks have limited expressive power, not infinite.",
+        "Incorrect. Even with many neurons, linear networks are limited to linear transformations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "linear-activation",
+        "expressive-power",
+        "function-composition"
+      ]
+    },
+    {
+      "id": "NNB_046",
+      "question": "In neural network training, what does 'overfitting' refer to?",
+      "options": [
+        "Using too many training epochs",
+        "The model memorizes training data but performs poorly on new data",
+        "Using too high a learning rate",
+        "The model is too simple for the problem"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overfitting occurs when a model learns the training data so well that it memorizes noise and details, leading to poor generalization on unseen data.",
+      "optionExplanations": [
+        "Incorrect. While many epochs can contribute to overfitting, this doesn't define what overfitting is.",
+        "Correct. Overfitting means excellent training performance but poor generalization to new, unseen data.",
+        "Incorrect. High learning rates can cause instability but don't define overfitting.",
+        "Incorrect. This describes underfitting, not overfitting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "generalization",
+        "memorization"
+      ]
+    },
+    {
+      "id": "NNB_047",
+      "question": "Which statement about the learning rate is most accurate?",
+      "options": [
+        "Higher is always better for faster training",
+        "It should be tuned based on the specific problem and network",
+        "It has no effect on final model performance",
+        "It should always be set to 0.01"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning rate is a crucial hyperparameter that needs to be tuned for each specific problem, network architecture, and dataset for optimal performance.",
+      "optionExplanations": [
+        "Incorrect. Too high learning rates can cause instability and prevent convergence.",
+        "Correct. Optimal learning rate depends on many factors and requires experimentation or adaptive methods.",
+        "Incorrect. Learning rate significantly affects both training dynamics and final performance.",
+        "Incorrect. There's no universal optimal learning rate; 0.01 is just a common starting point."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "hyperparameter-tuning",
+        "optimization"
+      ]
+    },
+    {
+      "id": "NNB_048",
+      "question": "What is the main computational advantage of ReLU over sigmoid and tanh?",
+      "options": [
+        "ReLU requires less memory",
+        "ReLU is faster to compute",
+        "ReLU produces better accuracy",
+        "ReLU prevents overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ReLU involves simple thresholding (max(0,x)) which is computationally much faster than the exponential operations required by sigmoid and tanh.",
+      "optionExplanations": [
+        "Incorrect. Memory usage is similar across these activation functions.",
+        "Correct. ReLU computation is just max(0,x), much faster than exponential calculations in sigmoid/tanh.",
+        "Incorrect. Accuracy depends on many factors; ReLU's advantage is computational, not necessarily accuracy.",
+        "Incorrect. ReLU doesn't inherently prevent overfitting."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "relu",
+        "computational-efficiency",
+        "activation-speed"
+      ]
+    },
+    {
+      "id": "NNB_049",
+      "question": "In a multi-class classification problem with 5 classes, how many output neurons should the final layer have?",
+      "options": [
+        "1",
+        "4",
+        "5",
+        "10"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For multi-class classification, the output layer should have one neuron for each class, so 5 classes require 5 output neurons.",
+      "optionExplanations": [
+        "Incorrect. One output neuron is used for binary classification, not multi-class.",
+        "Incorrect. Using n-1 outputs for n classes is possible but not the standard approach.",
+        "Correct. One-hot encoding requires one output neuron per class for clear probability interpretation.",
+        "Incorrect. This would be more outputs than needed, leading to unnecessary complexity."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multi-class",
+        "output-layer",
+        "classification"
+      ]
+    },
+    {
+      "id": "NNB_050",
+      "question": "What is the typical range of values for initial weights in neural networks?",
+      "options": [
+        "Large positive values (>10)",
+        "Small random values around zero",
+        "Always exactly zero",
+        "Always exactly one"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weights are typically initialized to small random values around zero to break symmetry while avoiding saturation of activation functions.",
+      "optionExplanations": [
+        "Incorrect. Large weights can cause activation saturation and gradient problems.",
+        "Correct. Small random values prevent symmetry while maintaining reasonable gradient magnitudes.",
+        "Incorrect. Zero initialization would cause the symmetry problem.",
+        "Incorrect. Initializing all weights to one would also cause symmetry issues."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "weight-initialization",
+        "random-values",
+        "small-weights"
+      ]
+    },
+    {
+      "id": "NNB_051",
+      "question": "What does the term 'gradient explosion' refer to in neural network training?",
+      "options": [
+        "Gradients becoming very large and causing unstable training",
+        "Gradients becoming very small",
+        "Gradients becoming zero",
+        "Gradients changing direction frequently"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gradient explosion occurs when gradients become excessively large during backpropagation, leading to unstable training and divergence.",
+      "optionExplanations": [
+        "Correct. Exploding gradients cause large weight updates that can destabilize training and cause divergence.",
+        "Incorrect. Very small gradients describe the vanishing gradient problem, not explosion.",
+        "Incorrect. Zero gradients would stop learning entirely, which is different from explosion.",
+        "Incorrect. Frequent direction changes don't characterize gradient explosion."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-explosion",
+        "training-instability",
+        "large-gradients"
+      ]
+    },
+    {
+      "id": "NNB_052",
+      "question": "Which technique is commonly used to address the gradient explosion problem?",
+      "options": [
+        "Increasing learning rate",
+        "Gradient clipping",
+        "Adding more layers",
+        "Using linear activation functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient clipping limits the magnitude of gradients during backpropagation, preventing them from becoming too large and destabilizing training.",
+      "optionExplanations": [
+        "Incorrect. Increasing learning rate would worsen gradient explosion by making large updates even larger.",
+        "Correct. Gradient clipping caps gradient magnitude at a threshold, preventing explosion while maintaining direction.",
+        "Incorrect. More layers could actually worsen gradient explosion.",
+        "Incorrect. Linear activations don't address gradient explosion and remove non-linearity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "gradient-explosion",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "NNB_053",
+      "question": "What is the primary purpose of regularization in neural networks?",
+      "options": [
+        "To speed up training",
+        "To prevent overfitting",
+        "To increase model capacity",
+        "To improve gradient flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization techniques add constraints or penalties to prevent the model from overfitting to the training data.",
+      "optionExplanations": [
+        "Incorrect. Regularization often slows down training slightly but improves generalization.",
+        "Correct. Regularization methods like L1/L2 penalties, dropout, etc., are designed to prevent overfitting.",
+        "Incorrect. Regularization typically reduces effective model capacity to improve generalization.",
+        "Incorrect. While some regularization methods might affect gradients, this isn't their primary purpose."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "regularization",
+        "overfitting-prevention",
+        "generalization"
+      ]
+    },
+    {
+      "id": "NNB_054",
+      "question": "In the context of neural networks, what does 'batch size' refer to?",
+      "options": [
+        "The total number of training examples",
+        "The number of examples processed before updating weights",
+        "The number of epochs in training",
+        "The number of layers in the network"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch size determines how many training examples are processed together before the model weights are updated via backpropagation.",
+      "optionExplanations": [
+        "Incorrect. The total number of training examples is the dataset size, not batch size.",
+        "Correct. Batch size controls how many samples are used to compute gradients before each weight update.",
+        "Incorrect. Epochs refer to complete passes through the dataset, not batch size.",
+        "Incorrect. The number of layers is an architectural parameter, not related to batch size."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "batch-size",
+        "training",
+        "weight-updates"
+      ]
+    },
+    {
+      "id": "NNB_055",
+      "question": "What advantage does stochastic gradient descent (SGD) have over batch gradient descent?",
+      "options": [
+        "Always finds better solutions",
+        "Requires less memory and can escape local minima",
+        "Is more stable",
+        "Converges faster to the exact minimum"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SGD uses less memory (processes one example at a time) and the noise in gradient estimates can help escape local minima.",
+      "optionExplanations": [
+        "Incorrect. SGD doesn't always find better solutions; it's more about efficiency and exploration.",
+        "Correct. SGD has lower memory requirements and the stochastic nature helps escape poor local minima.",
+        "Incorrect. SGD is actually less stable due to noisy gradient estimates.",
+        "Incorrect. SGD typically has more erratic convergence, though it often finds good solutions faster."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sgd",
+        "memory-efficiency",
+        "local-minima"
+      ]
+    },
+    {
+      "id": "NNB_056",
+      "question": "What is the key characteristic of the leaky ReLU activation function?",
+      "options": [
+        "It outputs zero for all negative inputs",
+        "It allows small positive slope for negative inputs",
+        "It's identical to standard ReLU",
+        "It only works with positive inputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Leaky ReLU allows a small positive slope (usually 0.01) for negative inputs instead of outputting zero, helping address the dying ReLU problem.",
+      "optionExplanations": [
+        "Incorrect. This describes standard ReLU, not leaky ReLU.",
+        "Correct. Leaky ReLU uses f(x) = max(αx, x) where α is a small positive value like 0.01.",
+        "Incorrect. Leaky ReLU differs from standard ReLU in handling negative inputs.",
+        "Incorrect. Leaky ReLU works with both positive and negative inputs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "leaky-relu",
+        "negative-inputs",
+        "dying-relu"
+      ]
+    },
+    {
+      "id": "NNB_057",
+      "question": "In neural network terminology, what is a 'hidden layer'?",
+      "options": [
+        "A layer that's not visible during training",
+        "A layer between input and output layers",
+        "A layer that uses hidden activation functions",
+        "A layer that's removed during inference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hidden layers are intermediate layers between the input and output layers, called 'hidden' because their outputs are not directly observable.",
+      "optionExplanations": [
+        "Incorrect. Hidden layers are visible during training; 'hidden' refers to their intermediate position.",
+        "Correct. Hidden layers are any layers that are neither input nor output layers.",
+        "Incorrect. The term 'hidden' doesn't refer to the activation functions used.",
+        "Incorrect. Hidden layers remain in the network during inference."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hidden-layers",
+        "network-architecture",
+        "intermediate-layers"
+      ]
+    },
+    {
+      "id": "NNB_058",
+      "question": "What is the main purpose of the chain rule in backpropagation?",
+      "options": [
+        "To compute forward pass outputs",
+        "To decompose complex derivatives into simpler parts",
+        "To initialize weights",
+        "To select optimal batch sizes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The chain rule enables computing derivatives of composite functions by breaking them down into derivatives of simpler constituent functions.",
+      "optionExplanations": [
+        "Incorrect. Forward pass doesn't require the chain rule; it's direct function application.",
+        "Correct. Chain rule allows computing gradients through multiple composed functions in neural networks.",
+        "Incorrect. Weight initialization doesn't involve the chain rule.",
+        "Incorrect. Batch size selection is a practical consideration, not related to the chain rule."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chain-rule",
+        "derivatives",
+        "composite-functions"
+      ]
+    },
+    {
+      "id": "NNB_059",
+      "question": "Which statement about the universal approximation theorem is correct?",
+      "options": [
+        "It guarantees optimal solutions",
+        "It states that networks can approximate any continuous function given enough neurons",
+        "It only applies to deep networks",
+        "It guarantees fast convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The universal approximation theorem states that a neural network with a single hidden layer can approximate any continuous function to arbitrary accuracy given sufficient neurons.",
+      "optionExplanations": [
+        "Incorrect. The theorem is about approximation capability, not finding optimal solutions.",
+        "Correct. The theorem guarantees approximation capability for continuous functions with sufficient width.",
+        "Incorrect. The theorem specifically applies to single hidden layer networks, not just deep ones.",
+        "Incorrect. The theorem says nothing about convergence speed or training efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "universal-approximation",
+        "function-approximation",
+        "theoretical-foundations"
+      ]
+    },
+    {
+      "id": "NNB_060",
+      "question": "What is the primary difference between online learning and batch learning in neural networks?",
+      "options": [
+        "Online learning uses the internet",
+        "Online learning updates weights after each example, batch learning after multiple examples",
+        "Online learning is faster",
+        "Online learning uses different activation functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Online learning updates weights after each training example (like SGD), while batch learning processes multiple examples before updating.",
+      "optionExplanations": [
+        "Incorrect. 'Online' doesn't refer to internet connectivity but to the update frequency.",
+        "Correct. Online learning means immediate updates after each sample, batch learning accumulates updates.",
+        "Incorrect. Speed depends on implementation and problem size, not necessarily the learning type.",
+        "Incorrect. Both can use the same activation functions; the difference is in update frequency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "online-learning",
+        "batch-learning",
+        "update-frequency"
+      ]
+    },
+    {
+      "id": "NNB_061",
+      "question": "What happens to the sigmoid function's gradient as the input becomes very large or very small?",
+      "options": [
+        "It becomes very large",
+        "It approaches zero",
+        "It becomes negative",
+        "It becomes undefined"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The sigmoid function saturates at extreme values, causing its gradient to approach zero, which contributes to the vanishing gradient problem.",
+      "optionExplanations": [
+        "Incorrect. Sigmoid gradients become very small, not large, at extreme inputs.",
+        "Correct. At extreme values, sigmoid output approaches 0 or 1, and its gradient σ(x)(1-σ(x)) approaches zero.",
+        "Incorrect. Sigmoid gradients are always non-negative since σ(x)(1-σ(x)) ≥ 0.",
+        "Incorrect. The gradient is well-defined everywhere for sigmoid; it just becomes very small."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sigmoid",
+        "gradient-saturation",
+        "vanishing-gradients"
+      ]
+    },
+    {
+      "id": "NNB_062",
+      "question": "In neural networks, what does 'parameter sharing' typically refer to?",
+      "options": [
+        "Using the same weights across different parts of the network",
+        "Sharing parameters between different models",
+        "Distributing computation across multiple GPUs",
+        "Reducing the number of parameters"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Parameter sharing means using the same weight values in different locations within the network, commonly seen in convolutional neural networks.",
+      "optionExplanations": [
+        "Correct. Parameter sharing uses identical weights across different spatial locations or time steps in the network.",
+        "Incorrect. This would be model ensemble or transfer learning, not parameter sharing within a network.",
+        "Incorrect. This describes parallel computation, not parameter sharing.",
+        "Incorrect. While parameter sharing does reduce total parameters, the concept is about reusing weights."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parameter-sharing",
+        "weight-reuse",
+        "network-efficiency"
+      ]
+    },
+    {
+      "id": "NNB_063",
+      "question": "What is the main computational complexity concern with fully connected layers in large networks?",
+      "options": [
+        "Too few parameters",
+        "Slow activation functions",
+        "Large number of parameters leading to memory and computation issues",
+        "Gradient computation errors"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fully connected layers have quadratic growth in parameters (input_size × output_size), leading to significant memory and computational requirements.",
+      "optionExplanations": [
+        "Incorrect. Fully connected layers typically have many parameters, not too few.",
+        "Incorrect. Activation function speed is generally not the main concern.",
+        "Correct. With n inputs and m outputs, a fully connected layer has n×m weights plus m biases, growing quickly.",
+        "Incorrect. Gradient computation is generally stable in fully connected layers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fully-connected",
+        "computational-complexity",
+        "parameter-growth"
+      ]
+    },
+    {
+      "id": "NNB_064",
+      "question": "Which optimization algorithm adapts learning rates based on the frequency of parameter updates?",
+      "options": [
+        "Standard SGD",
+        "Momentum",
+        "AdaGrad",
+        "RMSprop"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "AdaGrad accumulates squared gradients and uses this to adapt learning rates, giving lower rates to frequently updated parameters.",
+      "optionExplanations": [
+        "Incorrect. Standard SGD uses a fixed learning rate for all parameters.",
+        "Incorrect. Momentum adds velocity but doesn't adapt learning rates based on update frequency.",
+        "Correct. AdaGrad divides learning rate by the square root of accumulated squared gradients.",
+        "Incorrect. While RMSprop is related to AdaGrad, the question specifically asks about frequency-based adaptation, which is AdaGrad's key feature."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "adagrad",
+        "adaptive-learning",
+        "parameter-frequency"
+      ]
+    },
+    {
+      "id": "NNB_065",
+      "question": "What is the main limitation of the standard perceptron?",
+      "options": [
+        "It's too slow to train",
+        "It can only solve linearly separable problems",
+        "It requires too much memory",
+        "It only works with binary inputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The standard perceptron can only classify linearly separable data; it cannot solve problems like XOR where classes are not linearly separable.",
+      "optionExplanations": [
+        "Incorrect. Perceptrons are actually quite fast to train due to their simplicity.",
+        "Correct. Perceptrons can only learn linear decision boundaries, limiting them to linearly separable problems.",
+        "Incorrect. Perceptrons have minimal memory requirements.",
+        "Incorrect. Perceptrons can work with continuous inputs, not just binary."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "perceptron",
+        "linear-separability",
+        "limitations"
+      ]
+    },
+    {
+      "id": "NNB_066",
+      "question": "In the context of gradient descent, what does 'local minimum' mean?",
+      "options": [
+        "The global optimal solution",
+        "A point where the loss is lower than nearby points but not necessarily the global minimum",
+        "The starting point of optimization",
+        "A point where gradients explode"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A local minimum is a point where the loss function value is lower than all nearby points, but there might exist other points with even lower loss values.",
+      "optionExplanations": [
+        "Incorrect. Global minimum is the absolute lowest point; local minimum might not be global.",
+        "Correct. Local minima are points that are lowest in their neighborhood but not necessarily globally optimal.",
+        "Incorrect. The starting point is initialization, not a local minimum.",
+        "Incorrect. Gradient explosion is a different issue related to gradient magnitude."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "local-minimum",
+        "optimization",
+        "loss-landscape"
+      ]
+    },
+    {
+      "id": "NNB_067",
+      "question": "What is the key advantage of RMSprop over AdaGrad?",
+      "options": [
+        "Faster computation",
+        "Uses exponential moving average to prevent learning rate decay",
+        "Requires less memory",
+        "Works only with ReLU activations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RMSprop uses exponential moving average of squared gradients instead of cumulative sum, preventing the learning rate from decreasing too aggressively.",
+      "optionExplanations": [
+        "Incorrect. Both have similar computational complexity.",
+        "Correct. RMSprop's exponential moving average prevents the indefinite shrinking of learning rates seen in AdaGrad.",
+        "Incorrect. Memory usage is similar between RMSprop and AdaGrad.",
+        "Incorrect. RMSprop works with any activation function, not just ReLU."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "rmsprop",
+        "adagrad",
+        "exponential-moving-average"
+      ]
+    },
+    {
+      "id": "NNB_068",
+      "question": "What is the purpose of normalizing inputs to neural networks?",
+      "options": [
+        "To reduce computational cost",
+        "To improve training stability and convergence",
+        "To increase model complexity",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Input normalization ensures all features have similar scales, leading to more stable gradients and faster, more reliable convergence during training.",
+      "optionExplanations": [
+        "Incorrect. Normalization has minimal impact on computational cost.",
+        "Correct. Normalization prevents features with large scales from dominating gradients, improving training stability.",
+        "Incorrect. Normalization doesn't increase model complexity.",
+        "Incorrect. While normalization can help generalization, its primary purpose is training stability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "input-normalization",
+        "training-stability",
+        "feature-scaling"
+      ]
+    },
+    {
+      "id": "NNB_069",
+      "question": "Which statement about neural network expressivity is most accurate?",
+      "options": [
+        "Wider networks are always more expressive than deeper networks",
+        "Deeper networks are always more expressive than wider networks",
+        "Both depth and width contribute to expressivity in different ways",
+        "Only the total number of parameters matters"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Both depth and width contribute to neural network expressivity: depth enables hierarchical feature learning while width increases capacity at each level.",
+      "optionExplanations": [
+        "Incorrect. Depth enables hierarchical representations that pure width cannot always achieve efficiently.",
+        "Incorrect. Width is also important for expressivity, especially for certain types of functions.",
+        "Correct. Depth and width serve complementary roles in neural network expressivity and function approximation.",
+        "Incorrect. The organization of parameters (architecture) matters as much as their total number."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "expressivity",
+        "depth-vs-width",
+        "network-capacity"
+      ]
+    },
+    {
+      "id": "NNB_070",
+      "question": "What is the primary purpose of the softmax temperature parameter?",
+      "options": [
+        "To speed up computation",
+        "To control the sharpness of the probability distribution",
+        "To prevent overfitting",
+        "To initialize weights"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temperature in softmax controls how sharp or smooth the output probability distribution is: lower temperature makes it sharper, higher temperature makes it smoother.",
+      "optionExplanations": [
+        "Incorrect. Temperature doesn't significantly affect computation speed.",
+        "Correct. Temperature τ in softmax(x/τ) controls distribution sharpness: low τ creates peaked distributions, high τ creates uniform distributions.",
+        "Incorrect. Temperature is not primarily a regularization technique.",
+        "Incorrect. Temperature is not related to weight initialization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "softmax",
+        "temperature",
+        "probability-sharpness"
+      ]
+    },
+    {
+      "id": "NNB_071",
+      "question": "In neural networks, what does 'catastrophic forgetting' refer to?",
+      "options": [
+        "Forgetting to save model weights",
+        "Complete loss of previously learned information when learning new tasks",
+        "Memory overflow during training",
+        "Gradients becoming zero"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Catastrophic forgetting occurs when a neural network completely loses previously learned knowledge upon learning new tasks, a major challenge in continual learning.",
+      "optionExplanations": [
+        "Incorrect. This is a practical mistake, not a fundamental neural network phenomenon.",
+        "Correct. Catastrophic forgetting is the tendency to completely overwrite old knowledge when learning new information.",
+        "Incorrect. This refers to computational memory issues, not learning and memory.",
+        "Incorrect. Zero gradients relate to vanishing gradient problems, not catastrophic forgetting."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "catastrophic-forgetting",
+        "continual-learning",
+        "knowledge-retention"
+      ]
+    },
+    {
+      "id": "NNB_072",
+      "question": "What is the main advantage of using Xavier/Glorot initialization?",
+      "options": [
+        "It guarantees convergence",
+        "It maintains similar variance of activations across layers",
+        "It prevents overfitting",
+        "It works only with sigmoid activations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Xavier initialization sets weight variance to maintain similar activation variance across layers, preventing vanishing or exploding gradients at initialization.",
+      "optionExplanations": [
+        "Incorrect. No initialization method can guarantee convergence.",
+        "Correct. Xavier initialization aims to keep activation and gradient variances stable across layers.",
+        "Incorrect. Initialization affects training dynamics, not overfitting directly.",
+        "Incorrect. Xavier initialization is designed for sigmoid-like activations but isn't limited to them."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "xavier-initialization",
+        "variance-preservation",
+        "gradient-stability"
+      ]
+    },
+    {
+      "id": "NNB_073",
+      "question": "What distinguishes He initialization from Xavier initialization?",
+      "options": [
+        "He initialization uses larger variance",
+        "He initialization is designed for ReLU activations",
+        "He initialization prevents overfitting",
+        "He initialization requires less computation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "He initialization is specifically designed for ReLU-type activations, accounting for the fact that ReLU kills half the neurons on average.",
+      "optionExplanations": [
+        "Incorrect. While He initialization often results in larger variance, this is not the distinguishing factor.",
+        "Correct. He initialization accounts for ReLU's characteristics by using variance 2/n instead of Xavier's 1/n.",
+        "Incorrect. Both initializations affect training dynamics, not overfitting directly.",
+        "Incorrect. Both have similar computational requirements."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "he-initialization",
+        "relu",
+        "activation-specific"
+      ]
+    },
+    {
+      "id": "NNB_074",
+      "question": "What is the main characteristic of the ELU (Exponential Linear Unit) activation function?",
+      "options": [
+        "It's identical to ReLU",
+        "It has smooth negative part and can output negative values",
+        "It only works with positive inputs",
+        "It's computationally faster than ReLU"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ELU has a smooth exponential curve for negative inputs (instead of zero like ReLU) and linear behavior for positive inputs, helping with gradient flow.",
+      "optionExplanations": [
+        "Incorrect. ELU differs significantly from ReLU in its handling of negative inputs.",
+        "Correct. ELU(x) = x if x > 0, else α(e^x - 1), providing smooth negative outputs.",
+        "Incorrect. ELU handles both positive and negative inputs.",
+        "Incorrect. ELU is computationally more expensive than ReLU due to exponential calculations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "elu",
+        "activation-functions",
+        "negative-values"
+      ]
+    },
+    {
+      "id": "NNB_075",
+      "question": "In the context of neural networks, what is 'weight decay'?",
+      "options": [
+        "Gradual reduction of weights during training",
+        "A regularization technique that adds penalty for large weights",
+        "Automatic weight deletion",
+        "Weight corruption due to numerical errors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weight decay is a regularization technique that adds a penalty term (usually L2) to the loss function to discourage large weight values.",
+      "optionExplanations": [
+        "Incorrect. While weights may decrease, weight decay refers to the regularization mechanism, not the result.",
+        "Correct. Weight decay adds λ||w||² to the loss function, penalizing large weights to improve generalization.",
+        "Incorrect. Weight decay doesn't delete weights; it penalizes their magnitude.",
+        "Incorrect. Weight decay is an intentional regularization technique, not an error."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "weight-decay",
+        "regularization",
+        "l2-penalty"
+      ]
+    },
+    {
+      "id": "NNB_076",
+      "question": "What is the key insight behind skip connections in neural networks?",
+      "options": [
+        "They reduce computational cost",
+        "They allow information to bypass layers and ease gradient flow",
+        "They prevent overfitting",
+        "They increase the number of parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Skip connections allow gradients and information to flow directly across layers, helping address vanishing gradient problems in deep networks.",
+      "optionExplanations": [
+        "Incorrect. Skip connections add computational overhead, though minimal.",
+        "Correct. Skip connections create direct paths for gradients, improving training of deep networks.",
+        "Incorrect. While skip connections may affect generalization, this isn't their primary purpose.",
+        "Incorrect. Skip connections don't add learnable parameters; they just create alternate pathways."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "skip-connections",
+        "gradient-flow",
+        "deep-networks"
+      ]
+    },
+    {
+      "id": "NNB_077",
+      "question": "What problem does batch normalization primarily address?",
+      "options": [
+        "Overfitting",
+        "Internal covariate shift",
+        "Computational speed",
+        "Memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch normalization was designed to address internal covariate shift - the change in distribution of layer inputs during training.",
+      "optionExplanations": [
+        "Incorrect. While batch normalization may help generalization, it's not its primary purpose.",
+        "Correct. Batch normalization normalizes layer inputs to reduce internal covariate shift.",
+        "Incorrect. Batch normalization adds computational overhead, though it may enable faster training.",
+        "Incorrect. Batch normalization actually increases memory usage slightly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-normalization",
+        "internal-covariate-shift",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "NNB_078",
+      "question": "Which statement about the Swish activation function is correct?",
+      "options": [
+        "It's identical to ReLU",
+        "It's defined as x * sigmoid(x)",
+        "It only outputs positive values",
+        "It's computationally simpler than ReLU"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Swish activation function is defined as f(x) = x * σ(x) where σ is the sigmoid function, combining linear and sigmoid characteristics.",
+      "optionExplanations": [
+        "Incorrect. Swish has smooth curves and can output negative values, unlike ReLU.",
+        "Correct. Swish(x) = x * sigmoid(x), creating a smooth, non-monotonic activation function.",
+        "Incorrect. Swish can output negative values for negative inputs.",
+        "Incorrect. Swish requires sigmoid computation, making it more expensive than ReLU."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "swish",
+        "activation-functions",
+        "smooth-activation"
+      ]
+    },
+    {
+      "id": "NNB_079",
+      "question": "What is the main advantage of using pre-trained weights in neural networks?",
+      "options": [
+        "Reduced computational cost during inference",
+        "Faster convergence and better performance on limited data",
+        "Guaranteed optimal solutions",
+        "Simplified network architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-trained weights provide a good starting point, leading to faster convergence and often better performance, especially when training data is limited.",
+      "optionExplanations": [
+        "Incorrect. Pre-trained weights don't change inference computational cost.",
+        "Correct. Pre-trained weights encode useful features, accelerating training and improving performance on small datasets.",
+        "Incorrect. Pre-training doesn't guarantee optimal solutions.",
+        "Incorrect. Pre-training doesn't change the network architecture."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pre-trained-weights",
+        "transfer-learning",
+        "faster-convergence"
+      ]
+    },
+    {
+      "id": "NNB_080",
+      "question": "In neural networks, what does 'early stopping' refer to?",
+      "options": [
+        "Stopping training when gradients become zero",
+        "Stopping training when validation performance stops improving",
+        "Stopping training after a fixed number of epochs",
+        "Stopping training when loss becomes negative"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Early stopping is a regularization technique that halts training when validation performance plateaus or starts degrading, preventing overfitting.",
+      "optionExplanations": [
+        "Incorrect. Zero gradients indicate convergence, but early stopping is based on validation performance.",
+        "Correct. Early stopping monitors validation metrics and stops training to prevent overfitting.",
+        "Incorrect. Fixed epochs don't adapt to model performance.",
+        "Incorrect. Loss values can be negative in some cases; this doesn't define early stopping."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "early-stopping",
+        "regularization",
+        "validation-monitoring"
+      ]
+    },
+    {
+      "id": "NNB_081",
+      "question": "What is the primary purpose of dropout in neural networks?",
+      "options": [
+        "To speed up training",
+        "To prevent overfitting by randomly setting neurons to zero",
+        "To reduce memory usage",
+        "To improve gradient flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dropout randomly sets a fraction of neurons to zero during training, forcing the network to not rely on specific neurons and reducing overfitting.",
+      "optionExplanations": [
+        "Incorrect. Dropout doesn't speed up training; it's a regularization technique.",
+        "Correct. Dropout randomly deactivates neurons during training to prevent over-reliance on specific features.",
+        "Incorrect. Dropout doesn't significantly reduce memory usage.",
+        "Incorrect. Dropout is for regularization, not improving gradient flow."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "dropout",
+        "regularization",
+        "overfitting-prevention"
+      ]
+    },
+    {
+      "id": "NNB_082",
+      "question": "What happens to dropout during model inference/testing?",
+      "options": [
+        "Dropout rate is increased",
+        "Dropout is turned off completely",
+        "Only half the neurons use dropout",
+        "Dropout rate is set to 50%"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "During inference, dropout is disabled completely to use the full network capacity for making predictions.",
+      "optionExplanations": [
+        "Incorrect. Increasing dropout during inference would harm model performance.",
+        "Correct. Dropout is only used during training; during inference, all neurons are active.",
+        "Incorrect. During inference, all neurons are used, not just half.",
+        "Incorrect. No dropout is applied during inference, regardless of the training dropout rate."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "dropout",
+        "inference",
+        "testing-phase"
+      ]
+    },
+    {
+      "id": "NNB_083",
+      "question": "Which statement about the GELU (Gaussian Error Linear Unit) activation function is correct?",
+      "options": [
+        "It's identical to ReLU",
+        "It approximates x * Φ(x) where Φ is the CDF of standard normal distribution",
+        "It only outputs positive values",
+        "It's computationally simpler than ReLU"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GELU approximates x * Φ(x) where Φ is the cumulative distribution function of the standard normal distribution, providing smooth probabilistic gating.",
+      "optionExplanations": [
+        "Incorrect. GELU is smooth and probabilistic, unlike the hard threshold of ReLU.",
+        "Correct. GELU(x) ≈ x * Φ(x) provides smooth, probabilistic activation based on input value.",
+        "Incorrect. GELU can output negative values for negative inputs, though with reduced magnitude.",
+        "Incorrect. GELU requires more computation than ReLU due to the normal CDF approximation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gelu",
+        "activation-functions",
+        "probabilistic-gating"
+      ]
+    },
+    {
+      "id": "NNB_084",
+      "question": "What is the main advantage of using residual connections in deep networks?",
+      "options": [
+        "Reduced parameter count",
+        "Faster inference",
+        "Easier training of very deep networks by addressing gradient flow",
+        "Automatic feature selection"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Residual connections allow gradients to flow directly through shortcuts, making it possible to train much deeper networks effectively.",
+      "optionExplanations": [
+        "Incorrect. Residual connections don't reduce parameters; they add computational paths.",
+        "Incorrect. Residual connections add slight computational overhead during inference.",
+        "Correct. Residual connections solve the degradation problem in deep networks by providing gradient shortcuts.",
+        "Incorrect. Residual connections don't perform automatic feature selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual-connections",
+        "deep-networks",
+        "gradient-flow"
+      ]
+    },
+    {
+      "id": "NNB_085",
+      "question": "In neural networks, what does 'teacher forcing' typically refer to?",
+      "options": [
+        "Using a pre-trained teacher model",
+        "Forcing neurons to have specific activations",
+        "Using ground truth inputs during training instead of model predictions",
+        "Applying strong regularization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Teacher forcing uses ground truth previous outputs as inputs during training, commonly used in sequence-to-sequence models.",
+      "optionExplanations": [
+        "Incorrect. Teacher forcing doesn't involve a separate teacher model.",
+        "Incorrect. Teacher forcing doesn't constrain neuron activations directly.",
+        "Correct. Teacher forcing feeds true previous outputs instead of model predictions during training.",
+        "Incorrect. Teacher forcing is about training methodology, not regularization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "teacher-forcing",
+        "sequence-models",
+        "training-methodology"
+      ]
+    },
+    {
+      "id": "NNB_086",
+      "question": "What is the key characteristic of the Mish activation function?",
+      "options": [
+        "It's identical to ReLU",
+        "It's defined as x * tanh(softplus(x))",
+        "It only works with CNN architectures",
+        "It prevents all gradient problems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mish is defined as x * tanh(softplus(x)), providing smooth, non-monotonic activation that can help with gradient flow.",
+      "optionExplanations": [
+        "Incorrect. Mish is smooth and can output negative values, unlike ReLU's hard threshold.",
+        "Correct. Mish(x) = x * tanh(ln(1 + e^x)) combines multiple smooth functions for better gradient properties.",
+        "Incorrect. Mish can be used in any neural network architecture, not just CNNs.",
+        "Incorrect. No activation function can prevent all gradient problems; Mish just helps with gradient flow."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mish",
+        "activation-functions",
+        "smooth-activation"
+      ]
+    },
+    {
+      "id": "NNB_087",
+      "question": "What is the main purpose of learning rate scheduling in neural network training?",
+      "options": [
+        "To keep learning rate constant",
+        "To adaptively adjust learning rate during training for better convergence",
+        "To increase learning rate continuously",
+        "To randomize learning rate values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Learning rate scheduling adjusts the learning rate during training, typically decreasing it over time to achieve better convergence and fine-tuning.",
+      "optionExplanations": [
+        "Incorrect. Scheduling specifically means changing the learning rate, not keeping it constant.",
+        "Correct. Learning rate schedules help balance exploration early in training with fine-tuning later.",
+        "Incorrect. Most schedules decrease learning rate over time, not increase it continuously.",
+        "Incorrect. Learning rate scheduling follows systematic patterns, not random changes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate-scheduling",
+        "adaptive-training",
+        "convergence-optimization"
+      ]
+    },
+    {
+      "id": "NNB_088",
+      "question": "Which statement about the Adam optimizer is most accurate?",
+      "options": [
+        "It only uses momentum",
+        "It combines momentum with adaptive learning rates",
+        "It's identical to standard SGD",
+        "It only works with ReLU activations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adam combines momentum (first moment) with adaptive learning rates based on second moments, providing both acceleration and per-parameter adaptation.",
+      "optionExplanations": [
+        "Incorrect. Adam uses both momentum and adaptive learning rates.",
+        "Correct. Adam maintains both first moments (momentum) and second moments (adaptive learning rates) for each parameter.",
+        "Incorrect. Adam is significantly different from SGD, incorporating momentum and adaptation.",
+        "Incorrect. Adam works with any activation function, not just ReLU."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adam",
+        "optimization",
+        "momentum-adaptation"
+      ]
+    },
+    {
+      "id": "NNB_089",
+      "question": "What is the main difference between L1 and L2 regularization in neural networks?",
+      "options": [
+        "L1 uses squared weights, L2 uses absolute weights",
+        "L1 uses absolute weights, L2 uses squared weights",
+        "They are identical techniques",
+        "L1 only works with linear layers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "L1 regularization adds the sum of absolute weight values to the loss, while L2 adds the sum of squared weight values.",
+      "optionExplanations": [
+        "Incorrect. This reverses the definitions of L1 and L2 regularization.",
+        "Correct. L1 penalty is λ∑|w|, L2 penalty is λ∑w², leading to different sparsity properties.",
+        "Incorrect. L1 and L2 have different mathematical forms and effects.",
+        "Incorrect. Both L1 and L2 can be applied to any layer with learnable parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "l1-regularization",
+        "l2-regularization",
+        "weight-penalties"
+      ]
+    },
+    {
+      "id": "NNB_090",
+      "question": "What effect does L1 regularization typically have on neural network weights?",
+      "options": [
+        "Makes all weights equal",
+        "Promotes sparsity by driving some weights to exactly zero",
+        "Makes all weights very large",
+        "Has no effect on weight values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "L1 regularization's absolute value penalty tends to drive some weights to exactly zero, creating sparse networks.",
+      "optionExplanations": [
+        "Incorrect. L1 doesn't make weights equal; it creates sparsity.",
+        "Correct. The absolute value penalty in L1 regularization encourages exact zeros, creating sparse weight matrices.",
+        "Incorrect. L1 regularization penalizes large weights, not promoting them.",
+        "Incorrect. L1 regularization significantly affects weight distributions by promoting sparsity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "l1-regularization",
+        "sparsity",
+        "weight-pruning"
+      ]
+    },
+    {
+      "id": "NNB_091",
+      "question": "What is the primary challenge with training very deep neural networks?",
+      "options": [
+        "Too few parameters",
+        "Vanishing/exploding gradients and degradation problems",
+        "Too fast convergence",
+        "Inability to represent complex functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deep networks suffer from gradient flow problems where gradients become too small (vanishing) or too large (exploding), and degradation where adding layers hurts performance.",
+      "optionExplanations": [
+        "Incorrect. Deep networks typically have many parameters, not too few.",
+        "Correct. Gradient flow issues and degradation (performance getting worse with more layers) are key challenges.",
+        "Incorrect. Deep networks often have convergence difficulties, not overly fast convergence.",
+        "Incorrect. Deeper networks generally have greater representational capacity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "deep-networks",
+        "training-challenges",
+        "gradient-problems"
+      ]
+    },
+    {
+      "id": "NNB_092",
+      "question": "What is the purpose of the bias-variance tradeoff in neural network model selection?",
+      "options": [
+        "To maximize both bias and variance",
+        "To find optimal balance between underfitting and overfitting",
+        "To eliminate all bias from the model",
+        "To only focus on reducing variance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The bias-variance tradeoff seeks to balance model complexity: too simple models have high bias (underfitting), too complex models have high variance (overfitting).",
+      "optionExplanations": [
+        "Incorrect. The goal is to minimize total error, which requires balancing, not maximizing both.",
+        "Correct. Optimal models balance bias (underfitting) and variance (overfitting) to minimize total error.",
+        "Incorrect. Completely eliminating bias usually leads to overfitting and high variance.",
+        "Incorrect. Focusing only on variance reduction can lead to high bias and underfitting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias-variance",
+        "model-selection",
+        "underfitting-overfitting"
+      ]
+    },
+    {
+      "id": "NNB_093",
+      "question": "In neural networks, what does 'feature learning' refer to?",
+      "options": [
+        "Manually designing features",
+        "The network automatically learning useful representations from data",
+        "Selecting the best input features",
+        "Reducing the number of features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature learning (representation learning) is the ability of neural networks to automatically discover useful features and representations from raw data.",
+      "optionExplanations": [
+        "Incorrect. Manual feature design is traditional feature engineering, not feature learning.",
+        "Correct. Neural networks can automatically learn hierarchical representations and features from data.",
+        "Incorrect. Feature selection chooses among existing features, while feature learning creates new ones.",
+        "Incorrect. Feature reduction is dimensionality reduction, not the same as feature learning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-learning",
+        "representation-learning",
+        "automatic-features"
+      ]
+    },
+    {
+      "id": "NNB_094",
+      "question": "What is the main advantage of using mini-batch training over single-sample training?",
+      "options": [
+        "Requires more memory",
+        "More stable gradients and better computational efficiency",
+        "Always converges faster",
+        "Prevents all overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Mini-batch training provides more stable gradient estimates than single samples while being more computationally efficient than full-batch training.",
+      "optionExplanations": [
+        "Incorrect. While mini-batches use more memory than single samples, this isn't the main advantage.",
+        "Correct. Mini-batches balance gradient stability with computational efficiency and memory usage.",
+        "Incorrect. Convergence speed depends on many factors; mini-batches don't always guarantee faster convergence.",
+        "Incorrect. Mini-batch size doesn't prevent overfitting; that requires regularization techniques."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "mini-batch",
+        "gradient-stability",
+        "computational-efficiency"
+      ]
+    },
+    {
+      "id": "NNB_095",
+      "question": "What is the primary function of the loss function in neural network training?",
+      "options": [
+        "To store model parameters",
+        "To measure the difference between predictions and true values",
+        "To activate neurons",
+        "To control learning rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The loss function quantifies how far the model's predictions are from the true target values, providing the objective to minimize during training.",
+      "optionExplanations": [
+        "Incorrect. Parameters are stored in weight matrices and bias vectors, not in the loss function.",
+        "Correct. Loss functions measure prediction error, providing the optimization objective for training.",
+        "Incorrect. Activation functions activate neurons, not the loss function.",
+        "Incorrect. Learning rate is a hyperparameter, not controlled by the loss function."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "loss-function",
+        "prediction-error",
+        "optimization-objective"
+      ]
+    },
+    {
+      "id": "NNB_096",
+      "question": "Which statement about neural network capacity is most accurate?",
+      "options": [
+        "Capacity only depends on the number of layers",
+        "Capacity only depends on the number of neurons",
+        "Capacity depends on architecture, parameters, and connectivity patterns",
+        "All neural networks have the same capacity"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Neural network capacity (ability to fit complex functions) depends on multiple factors including depth, width, connectivity patterns, and total parameters.",
+      "optionExplanations": [
+        "Incorrect. Width (neurons per layer) also significantly affects capacity.",
+        "Incorrect. The organization of neurons into layers also matters for capacity.",
+        "Correct. Capacity is determined by the complete architecture including all structural elements.",
+        "Incorrect. Different architectures have vastly different capacities."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "network-capacity",
+        "architecture",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "NNB_097",
+      "question": "What is the main purpose of data augmentation in neural network training?",
+      "options": [
+        "To reduce training time",
+        "To increase the effective size and diversity of training data",
+        "To reduce model parameters",
+        "To eliminate the need for validation data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data augmentation creates modified versions of training examples to increase dataset size and diversity, improving generalization and reducing overfitting.",
+      "optionExplanations": [
+        "Incorrect. Data augmentation typically increases training time due to more data processing.",
+        "Correct. Augmentation techniques like rotation, scaling, and noise addition create more diverse training examples.",
+        "Incorrect. Data augmentation doesn't affect the number of model parameters.",
+        "Incorrect. Validation data is still necessary for model evaluation regardless of augmentation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "data-augmentation",
+        "generalization",
+        "dataset-expansion"
+      ]
+    },
+    {
+      "id": "NNB_098",
+      "question": "In neural networks, what does 'catastrophic interference' refer to?",
+      "options": [
+        "Hardware failures during training",
+        "Complete loss of old knowledge when learning new tasks",
+        "Interference between different activation functions",
+        "Network connections getting corrupted"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Catastrophic interference (also called catastrophic forgetting) occurs when learning new tasks completely overwrites previously learned information.",
+      "optionExplanations": [
+        "Incorrect. This refers to physical hardware issues, not a learning phenomenon.",
+        "Correct. Catastrophic interference is the tendency for new learning to completely erase old knowledge.",
+        "Incorrect. Different activation functions don't typically interfere with each other.",
+        "Incorrect. This would be a technical implementation issue, not a fundamental learning problem."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "catastrophic-interference",
+        "continual-learning",
+        "knowledge-preservation"
+      ]
+    },
+    {
+      "id": "NNB_099",
+      "question": "What is the primary benefit of using ensemble methods with neural networks?",
+      "options": [
+        "Reduced computational cost",
+        "Improved generalization through model diversity",
+        "Simpler model architecture",
+        "Faster training time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble methods combine multiple models to reduce overfitting and improve generalization by leveraging the wisdom of diverse models.",
+      "optionExplanations": [
+        "Incorrect. Ensembles increase computational cost since multiple models must be trained and used.",
+        "Correct. Different models make different errors, so combining them often yields better overall performance.",
+        "Incorrect. Ensembles involve multiple models, making the overall system more complex.",
+        "Incorrect. Training multiple models takes longer than training a single model."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-methods",
+        "model-diversity",
+        "improved-generalization"
+      ]
+    },
+    {
+      "id": "NNB_100",
+      "question": "What is the fundamental principle behind backpropagation algorithm?",
+      "options": [
+        "Forward pass computation only",
+        "Using chain rule to compute gradients of loss with respect to parameters",
+        "Random weight updates",
+        "Linear transformation of inputs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Backpropagation applies the chain rule of calculus to efficiently compute gradients of the loss function with respect to all network parameters.",
+      "optionExplanations": [
+        "Incorrect. Backpropagation specifically refers to the backward pass, not forward pass.",
+        "Correct. Backpropagation systematically applies the chain rule to compute all parameter gradients efficiently.",
+        "Incorrect. Backpropagation computes specific gradients based on the loss, not random updates.",
+        "Incorrect. Linear transformation describes forward pass operations, not the backpropagation algorithm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "backpropagation",
+        "chain-rule",
+        "gradient-computation"
+      ]
+    }
+  ]
+}

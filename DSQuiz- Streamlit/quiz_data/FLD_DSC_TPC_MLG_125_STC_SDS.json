@@ -1,0 +1,2319 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_SDS",
+  "subtopicName": "Statistics for Data Science",
+  "str": 0.125,
+  "description": "Comprehensive coverage of statistical concepts essential for data science including hypothesis testing, statistical tests, p-values, population analysis, probability distributions, and inferential statistics.",
+  "questions": [
+    {
+      "id": "SDS_001",
+      "question": "What is the p-value in hypothesis testing?",
+      "options": [
+        "The probability of observing the test statistic or more extreme values given that the null hypothesis is true",
+        "The probability that the null hypothesis is true",
+        "The probability that the alternative hypothesis is false",
+        "The confidence level of the test"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The p-value represents the probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true. It measures the strength of evidence against the null hypothesis.",
+      "optionExplanations": [
+        "Correct: The p-value is the probability of observing the test statistic or more extreme values under the assumption that the null hypothesis is true.",
+        "Incorrect: The p-value does not give the probability that the null hypothesis is true. This is a common misconception.",
+        "Incorrect: The p-value is not related to the probability of the alternative hypothesis being false.",
+        "Incorrect: The confidence level is predetermined (e.g., 95%) and is different from the p-value."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hypothesis-testing",
+        "p-value",
+        "statistical-inference"
+      ]
+    },
+    {
+      "id": "SDS_002",
+      "question": "In a two-tailed test with α = 0.05, what is the critical value for a standard normal distribution?",
+      "options": [
+        "±1.96",
+        "±1.64",
+        "±2.58",
+        "±1.28"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For a two-tailed test with α = 0.05, we split the significance level equally between both tails (0.025 each). The critical value that leaves 0.025 in each tail of the standard normal distribution is ±1.96.",
+      "optionExplanations": [
+        "Correct: ±1.96 are the critical values for a two-tailed test at α = 0.05 significance level.",
+        "Incorrect: ±1.64 are the critical values for a one-tailed test at α = 0.05 or a two-tailed test at α = 0.10.",
+        "Incorrect: ±2.58 are the critical values for a two-tailed test at α = 0.01 significance level.",
+        "Incorrect: ±1.28 are the critical values for a one-tailed test at α = 0.10."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hypothesis-testing",
+        "critical-values",
+        "normal-distribution"
+      ]
+    },
+    {
+      "id": "SDS_003",
+      "question": "What does Type I error represent in hypothesis testing?",
+      "options": [
+        "Rejecting a true null hypothesis",
+        "Accepting a false null hypothesis",
+        "Rejecting a false null hypothesis",
+        "Accepting a true null hypothesis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Type I error occurs when we reject the null hypothesis when it is actually true. The probability of Type I error is denoted by α (alpha) and represents the significance level of the test.",
+      "optionExplanations": [
+        "Correct: Type I error is rejecting the null hypothesis when it is actually true, also known as a 'false positive'.",
+        "Incorrect: This describes Type II error, which is failing to reject (accepting) a false null hypothesis.",
+        "Incorrect: This is the correct decision - rejecting a false null hypothesis is what we want to do.",
+        "Incorrect: This is also a correct decision - accepting (failing to reject) a true null hypothesis is desirable."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hypothesis-testing",
+        "type-I-error",
+        "statistical-errors"
+      ]
+    },
+    {
+      "id": "SDS_004",
+      "question": "What is the Central Limit Theorem?",
+      "options": [
+        "The sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the population distribution",
+        "All populations are normally distributed",
+        "The sample mean equals the population mean",
+        "Large samples always have normal distributions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Central Limit Theorem states that the sampling distribution of the sample mean will approximate a normal distribution as the sample size becomes large, regardless of the shape of the original population distribution.",
+      "optionExplanations": [
+        "Correct: The CLT describes how the sampling distribution of sample means becomes approximately normal for large sample sizes.",
+        "Incorrect: The CLT doesn't require the population to be normally distributed; it works for any population distribution.",
+        "Incorrect: The sample mean is an estimator of the population mean but they are not always equal due to sampling variation.",
+        "Incorrect: Individual samples don't necessarily have normal distributions; the CLT refers to the distribution of sample means."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "central-limit-theorem",
+        "sampling-distribution",
+        "normal-distribution"
+      ]
+    },
+    {
+      "id": "SDS_005",
+      "question": "What is the difference between population standard deviation and sample standard deviation?",
+      "options": [
+        "Sample standard deviation uses (n-1) in the denominator while population uses n",
+        "Population standard deviation uses (n-1) in the denominator while sample uses n",
+        "There is no difference",
+        "Sample standard deviation is always larger"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sample standard deviation uses (n-1) in the denominator (Bessel's correction) to provide an unbiased estimate of the population standard deviation, while population standard deviation uses n.",
+      "optionExplanations": [
+        "Correct: The sample standard deviation uses (n-1) to correct for bias, making it an unbiased estimator of population standard deviation.",
+        "Incorrect: This is backwards - sample standard deviation uses (n-1), not the population standard deviation.",
+        "Incorrect: There is a significant difference in the denominators used for calculation.",
+        "Incorrect: While sample standard deviation is often larger due to the smaller denominator, this isn't always true and isn't the key difference."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standard-deviation",
+        "sample-statistics",
+        "population-parameters"
+      ]
+    },
+    {
+      "id": "SDS_006",
+      "question": "In a normal distribution, what percentage of data falls within one standard deviation of the mean?",
+      "options": [
+        "68%",
+        "95%",
+        "99.7%",
+        "50%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "According to the empirical rule (68-95-99.7 rule), approximately 68% of data in a normal distribution falls within one standard deviation of the mean.",
+      "optionExplanations": [
+        "Correct: The empirical rule states that 68% of data falls within one standard deviation (μ ± σ) in a normal distribution.",
+        "Incorrect: 95% of data falls within two standard deviations (μ ± 2σ) of the mean.",
+        "Incorrect: 99.7% of data falls within three standard deviations (μ ± 3σ) of the mean.",
+        "Incorrect: 50% of data falls below (or above) the mean, not within one standard deviation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "normal-distribution",
+        "empirical-rule",
+        "standard-deviation"
+      ]
+    },
+    {
+      "id": "SDS_007",
+      "question": "What is the appropriate statistical test to compare means of two independent groups?",
+      "options": [
+        "Independent samples t-test",
+        "Paired t-test",
+        "Chi-square test",
+        "ANOVA"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The independent samples t-test (also called two-sample t-test) is used to compare the means of two independent groups to determine if there is statistical evidence of a difference.",
+      "optionExplanations": [
+        "Correct: The independent samples t-test is specifically designed to compare means of two independent groups.",
+        "Incorrect: A paired t-test is used when the two samples are related or matched, not independent.",
+        "Incorrect: Chi-square tests are used for categorical data, not for comparing means.",
+        "Incorrect: ANOVA is used to compare means of three or more groups, though it can be used for two groups."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "t-test",
+        "independent-samples",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "id": "SDS_008",
+      "question": "What does statistical power represent?",
+      "options": [
+        "The probability of correctly rejecting a false null hypothesis",
+        "The probability of making a Type I error",
+        "The probability of making a Type II error",
+        "The significance level of the test"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Statistical power is the probability of correctly rejecting a false null hypothesis, which is equivalent to 1 - β (where β is the probability of Type II error).",
+      "optionExplanations": [
+        "Correct: Power = 1 - β, representing the probability of detecting an effect when it truly exists.",
+        "Incorrect: This describes α (alpha), the significance level, which is the probability of Type I error.",
+        "Incorrect: This describes β (beta), the probability of Type II error, which is the complement of power.",
+        "Incorrect: The significance level (α) is predetermined and different from power."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "statistical-power",
+        "type-II-error",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "id": "SDS_009",
+      "question": "What is the purpose of the chi-square test of independence?",
+      "options": [
+        "To test if two categorical variables are independent",
+        "To compare means of two groups",
+        "To test normality of a distribution",
+        "To compare variances of two groups"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The chi-square test of independence determines whether there is a significant association between two categorical variables, testing the null hypothesis that the variables are independent.",
+      "optionExplanations": [
+        "Correct: The chi-square test of independence tests whether two categorical variables are statistically independent.",
+        "Incorrect: Comparing means requires tests like t-tests, not chi-square tests.",
+        "Incorrect: Tests like Shapiro-Wilk or Kolmogorov-Smirnov are used to test normality, not chi-square.",
+        "Incorrect: F-tests or Levene's test are used to compare variances, not chi-square tests."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chi-square",
+        "categorical-data",
+        "independence"
+      ]
+    },
+    {
+      "id": "SDS_010",
+      "question": "What is a confidence interval?",
+      "options": [
+        "A range of values that likely contains the true population parameter",
+        "The probability that the null hypothesis is true",
+        "A single point estimate of a parameter",
+        "The range of all possible sample values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A confidence interval provides a range of plausible values for a population parameter based on sample data, with a specified level of confidence (e.g., 95%).",
+      "optionExplanations": [
+        "Correct: A confidence interval gives a range estimate with a specified confidence level that likely contains the true parameter.",
+        "Incorrect: Confidence intervals don't provide probabilities about hypotheses; they estimate parameter ranges.",
+        "Incorrect: A point estimate is a single value, while confidence intervals provide ranges.",
+        "Incorrect: Confidence intervals are about parameter estimates, not the range of sample values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "confidence-interval",
+        "parameter-estimation",
+        "inferential-statistics"
+      ]
+    },
+    {
+      "id": "SDS_011",
+      "question": "What assumption is violated if we use a t-test on data that is heavily skewed?",
+      "options": [
+        "Normality assumption",
+        "Independence assumption",
+        "Equal variances assumption",
+        "Random sampling assumption"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The t-test assumes that the data follows a normal distribution. Heavily skewed data violates this normality assumption, which can affect the validity of the test results.",
+      "optionExplanations": [
+        "Correct: Heavy skewness indicates deviation from normality, violating a key assumption of the t-test.",
+        "Incorrect: Independence refers to observations not affecting each other, which isn't directly related to skewness.",
+        "Incorrect: Equal variances (homoscedasticity) is about variance equality between groups, not about skewness.",
+        "Incorrect: Random sampling is about how data is collected, not about the distribution shape."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-test",
+        "assumptions",
+        "normality",
+        "skewness"
+      ]
+    },
+    {
+      "id": "SDS_012",
+      "question": "What is the null hypothesis in ANOVA?",
+      "options": [
+        "All group means are equal",
+        "At least one group mean is different",
+        "All group variances are equal",
+        "The groups are independent"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In ANOVA (Analysis of Variance), the null hypothesis states that all group means are equal (μ₁ = μ₂ = μ₃ = ... = μₖ), while the alternative hypothesis is that at least one mean is different.",
+      "optionExplanations": [
+        "Correct: ANOVA's null hypothesis is H₀: μ₁ = μ₂ = μ₃ = ... = μₖ (all population means are equal).",
+        "Incorrect: This describes the alternative hypothesis (Hₐ) in ANOVA, not the null hypothesis.",
+        "Incorrect: Equal variances (homoscedasticity) is an assumption of ANOVA, not the hypothesis being tested.",
+        "Incorrect: Independence is an assumption that must be met, not the hypothesis being tested."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ANOVA",
+        "null-hypothesis",
+        "group-comparison"
+      ]
+    },
+    {
+      "id": "SDS_013",
+      "question": "What does a correlation coefficient of -0.85 indicate?",
+      "options": [
+        "Strong negative linear relationship",
+        "Weak negative linear relationship",
+        "Strong positive linear relationship",
+        "No linear relationship"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A correlation coefficient of -0.85 indicates a strong negative linear relationship because its absolute value (0.85) is close to 1, and the negative sign shows the relationship is inverse.",
+      "optionExplanations": [
+        "Correct: -0.85 indicates a strong negative correlation as |r| > 0.7 and the negative sign shows inverse relationship.",
+        "Incorrect: The magnitude (0.85) indicates a strong relationship, not weak (weak would be |r|  α, the result would not be statistically significant.",
+        "Incorrect: While related, the 95% confidence level corresponds to α = 0.05, but significance specifically means p < α.",
+        "Incorrect: Statistical significance doesn't necessarily imply practical significance or large effect size."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "statistical-significance",
+        "p-value",
+        "alpha-level"
+      ]
+    },
+    {
+      "id": "SDS_018",
+      "question": "What is the purpose of a paired t-test?",
+      "options": [
+        "To compare means of two related samples",
+        "To compare means of two independent samples",
+        "To test for normality",
+        "To compare variances"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A paired t-test compares the means of two related samples, such as before-and-after measurements on the same subjects or matched pairs of subjects.",
+      "optionExplanations": [
+        "Correct: Paired t-tests analyze the differences between paired observations from related samples.",
+        "Incorrect: Independent samples t-test is used for comparing means of unrelated groups.",
+        "Incorrect: Normality tests like Shapiro-Wilk are used to test for normal distribution.",
+        "Incorrect: F-tests or Levene's test are used to compare variances between groups."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "paired-t-test",
+        "related-samples",
+        "before-after"
+      ]
+    },
+    {
+      "id": "SDS_019",
+      "question": "What is a Type II error?",
+      "options": [
+        "Failing to reject a false null hypothesis",
+        "Rejecting a true null hypothesis",
+        "Rejecting a false null hypothesis",
+        "Accepting a true null hypothesis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Type II error (β) occurs when we fail to reject the null hypothesis when it is actually false. This is also known as a 'false negative' - missing a real effect.",
+      "optionExplanations": [
+        "Correct: Type II error is failing to reject (accepting) a false null hypothesis, represented by β (beta).",
+        "Incorrect: This describes Type I error (α), which is rejecting a true null hypothesis.",
+        "Incorrect: This is the correct decision - we want to reject false null hypotheses.",
+        "Incorrect: This is also a correct decision - we want to accept (fail to reject) true null hypotheses."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "type-II-error",
+        "false-negative",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "id": "SDS_020",
+      "question": "What is the relationship between confidence level and significance level?",
+      "options": [
+        "Confidence level = 1 - α (significance level)",
+        "Confidence level = α (significance level)",
+        "Confidence level = 2α",
+        "They are unrelated"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The confidence level is the complement of the significance level: if α = 0.05 (5% significance level), then the confidence level is 1 - 0.05 = 0.95 (95%).",
+      "optionExplanations": [
+        "Correct: Confidence level = 1 - α. For example, α = 0.05 corresponds to 95% confidence level.",
+        "Incorrect: The confidence level is not equal to the significance level; they are complementary.",
+        "Incorrect: There's no factor of 2 in this relationship.",
+        "Incorrect: They are directly related as complements of each other in hypothesis testing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "confidence-level",
+        "significance-level",
+        "alpha"
+      ]
+    },
+    {
+      "id": "SDS_021",
+      "question": "What does the F-statistic test in ANOVA?",
+      "options": [
+        "Whether the variance between groups is significantly larger than the variance within groups",
+        "Whether all variances are equal",
+        "Whether the means are normally distributed",
+        "Whether the samples are independent"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The F-statistic in ANOVA compares the ratio of between-group variance to within-group variance. If this ratio is significantly large, it suggests the group means are different.",
+      "optionExplanations": [
+        "Correct: F = (between-group variance)/(within-group variance). Large F suggests group means differ significantly.",
+        "Incorrect: Equal variances (homoscedasticity) is an assumption tested by other methods, not what F-statistic tests.",
+        "Incorrect: Normality of means is an assumption, not what the F-statistic directly tests.",
+        "Incorrect: Independence is an assumption that must be met, not what the F-statistic tests."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "F-statistic",
+        "ANOVA",
+        "between-within-variance"
+      ]
+    },
+    {
+      "id": "SDS_022",
+      "question": "What is the standard error of the mean?",
+      "options": [
+        "The standard deviation of the sampling distribution of sample means",
+        "The standard deviation of the population",
+        "The standard deviation of the sample",
+        "The variance of the sample"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The standard error of the mean (SEM) is the standard deviation of the sampling distribution of sample means, calculated as σ/√n or s/√n.",
+      "optionExplanations": [
+        "Correct: SEM = σ/√n represents the standard deviation of the distribution of all possible sample means.",
+        "Incorrect: This is the population standard deviation (σ), not the standard error of the mean.",
+        "Incorrect: This is the sample standard deviation (s), which is different from the standard error.",
+        "Incorrect: Sample variance is s², not the standard error of the mean."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standard-error",
+        "sampling-distribution",
+        "standard-deviation"
+      ]
+    },
+    {
+      "id": "SDS_023",
+      "question": "What is the purpose of Bonferroni correction?",
+      "options": [
+        "To adjust significance levels when performing multiple comparisons",
+        "To test for normality",
+        "To calculate confidence intervals",
+        "To increase statistical power"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bonferroni correction adjusts the significance level (α) when performing multiple statistical tests to control the family-wise error rate and reduce the chance of Type I errors.",
+      "optionExplanations": [
+        "Correct: Bonferroni correction divides α by the number of tests (α/k) to control for multiple comparisons.",
+        "Incorrect: Bonferroni correction doesn't test for normality; it's used for multiple testing corrections.",
+        "Incorrect: While it affects confidence intervals indirectly, its primary purpose is multiple comparison correction.",
+        "Incorrect: Bonferroni correction actually decreases power by making the significance level more stringent."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bonferroni",
+        "multiple-comparisons",
+        "type-I-error"
+      ]
+    },
+    {
+      "id": "SDS_024",
+      "question": "What does a box plot primarily display?",
+      "options": [
+        "The five-number summary and outliers",
+        "The frequency distribution",
+        "The correlation between variables",
+        "The regression line"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A box plot displays the five-number summary (minimum, Q1, median, Q3, maximum) and identifies outliers, providing a visual representation of data distribution and spread.",
+      "optionExplanations": [
+        "Correct: Box plots show the five-number summary (min, Q1, median, Q3, max) and mark outliers as individual points.",
+        "Incorrect: Histograms or bar charts display frequency distributions, not box plots.",
+        "Incorrect: Scatter plots show correlations between variables, not box plots.",
+        "Incorrect: Scatter plots with fitted lines show regression relationships, not box plots."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "box-plot",
+        "five-number-summary",
+        "outliers"
+      ]
+    },
+    {
+      "id": "SDS_025",
+      "question": "What is the interquartile range (IQR)?",
+      "options": [
+        "Q3 - Q1",
+        "Q2 - Q1",
+        "Q3 - Q2",
+        "Maximum - Minimum"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The interquartile range (IQR) is the difference between the third quartile (Q3) and the first quartile (Q1), representing the range of the middle 50% of the data.",
+      "optionExplanations": [
+        "Correct: IQR = Q3 - Q1, measuring the spread of the middle 50% of the data.",
+        "Incorrect: Q2 - Q1 is the range from the first quartile to the median, not the full IQR.",
+        "Incorrect: Q3 - Q2 is the range from the median to the third quartile, only half of the IQR.",
+        "Incorrect: Maximum - Minimum is the total range, not the interquartile range."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "IQR",
+        "quartiles",
+        "data-spread"
+      ]
+    },
+    {
+      "id": "SDS_026",
+      "question": "When should you use a Mann-Whitney U test instead of a t-test?",
+      "options": [
+        "When the data is not normally distributed or ordinal",
+        "When the data is perfectly normal",
+        "When comparing more than two groups",
+        "When testing for correlation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Mann-Whitney U test is a non-parametric alternative to the independent samples t-test, used when data doesn't meet normality assumptions or when dealing with ordinal data.",
+      "optionExplanations": [
+        "Correct: Mann-Whitney U is used when normality assumptions are violated or with ordinal data, as it doesn't require normal distribution.",
+        "Incorrect: If data is normally distributed, a t-test would be more appropriate and powerful.",
+        "Incorrect: For more than two groups, you'd use Kruskal-Wallis test (non-parametric) or ANOVA (parametric).",
+        "Incorrect: Spearman's correlation would be used for non-parametric correlation testing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mann-whitney",
+        "non-parametric",
+        "normality-assumptions"
+      ]
+    },
+    {
+      "id": "SDS_027",
+      "question": "What is the purpose of a Q-Q plot?",
+      "options": [
+        "To assess if data follows a particular distribution",
+        "To show correlation between two variables",
+        "To display frequency distribution",
+        "To compare group means"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Q-Q (quantile-quantile) plot compares the quantiles of sample data against the quantiles of a theoretical distribution to assess if the data follows that distribution.",
+      "optionExplanations": [
+        "Correct: Q-Q plots compare sample quantiles with theoretical distribution quantiles to check distributional assumptions.",
+        "Incorrect: Scatter plots show correlations between two variables, not Q-Q plots.",
+        "Incorrect: Histograms display frequency distributions, while Q-Q plots assess distributional fit.",
+        "Incorrect: Box plots or bar charts are better for comparing group means."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Q-Q-plot",
+        "normality-assessment",
+        "distribution-testing"
+      ]
+    },
+    {
+      "id": "SDS_028",
+      "question": "What is heteroscedasticity?",
+      "options": [
+        "Unequal variances across different levels of a variable",
+        "Equal variances across different levels of a variable",
+        "Non-normal distribution of residuals",
+        "Independence of observations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Heteroscedasticity refers to the condition where the variance of the dependent variable is unequal across the range of values of the independent variable, violating the assumption of equal variances (homoscedasticity).",
+      "optionExplanations": [
+        "Correct: Heteroscedasticity means unequal variances, often seen as a funnel pattern in residual plots.",
+        "Incorrect: Equal variances across levels describes homoscedasticity, the opposite of heteroscedasticity.",
+        "Incorrect: Non-normal residuals relate to normality assumptions, not variance equality.",
+        "Incorrect: Independence of observations is a separate assumption from variance equality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "heteroscedasticity",
+        "variance",
+        "regression-assumptions"
+      ]
+    },
+    {
+      "id": "SDS_029",
+      "question": "What is the purpose of cross-validation in statistics?",
+      "options": [
+        "To assess how well a model will generalize to new data",
+        "To increase the sample size",
+        "To test for normality",
+        "To calculate confidence intervals"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-validation is used to evaluate a model's ability to generalize to unseen data by partitioning the data and testing the model on different subsets.",
+      "optionExplanations": [
+        "Correct: Cross-validation tests model performance on unseen data to estimate generalization ability and prevent overfitting.",
+        "Incorrect: Cross-validation doesn't increase sample size; it uses existing data more effectively for validation.",
+        "Incorrect: Tests like Shapiro-Wilk are used for normality testing, not cross-validation.",
+        "Incorrect: Confidence intervals are calculated using different statistical methods, not cross-validation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "model-validation",
+        "generalization"
+      ]
+    },
+    {
+      "id": "SDS_030",
+      "question": "What is a sampling distribution?",
+      "options": [
+        "The probability distribution of a statistic calculated from multiple samples",
+        "The distribution of a single sample",
+        "The population distribution",
+        "The distribution of errors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A sampling distribution is the probability distribution of a sample statistic (like sample mean) obtained from many samples drawn from the same population.",
+      "optionExplanations": [
+        "Correct: The sampling distribution shows how a statistic varies across different samples from the same population.",
+        "Incorrect: This describes the sample distribution, not the sampling distribution.",
+        "Incorrect: The population distribution describes the entire population, not the distribution of statistics.",
+        "Incorrect: Error distributions relate to residuals in regression, not sampling distributions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sampling-distribution",
+        "sample-statistics",
+        "probability-distribution"
+      ]
+    },
+    {
+      "id": "SDS_031",
+      "question": "What is the difference between correlation and causation?",
+      "options": [
+        "Correlation shows association, causation shows one variable causes another",
+        "Correlation and causation are the same thing",
+        "Correlation is stronger than causation",
+        "Causation only applies to negative relationships"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correlation indicates that two variables are statistically associated, while causation means that changes in one variable directly cause changes in another. Correlation does not imply causation.",
+      "optionExplanations": [
+        "Correct: Correlation measures statistical association; causation requires establishing that one variable directly influences another.",
+        "Incorrect: Correlation and causation are fundamentally different concepts in statistical analysis.",
+        "Incorrect: Neither is 'stronger'; they measure different types of relationships between variables.",
+        "Incorrect: Causation can occur in both positive and negative relationships."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "correlation",
+        "causation",
+        "association"
+      ]
+    },
+    {
+      "id": "SDS_032",
+      "question": "What is the purpose of stratified sampling?",
+      "options": [
+        "To ensure representation from different subgroups in the population",
+        "To reduce the sample size",
+        "To eliminate bias completely",
+        "To increase correlation between variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Stratified sampling divides the population into homogeneous subgroups (strata) and samples from each stratum to ensure adequate representation of all subgroups.",
+      "optionExplanations": [
+        "Correct: Stratified sampling ensures each subgroup is represented proportionally in the sample.",
+        "Incorrect: Stratified sampling doesn't necessarily reduce sample size; it improves representativeness.",
+        "Incorrect: While it reduces certain types of bias, no sampling method eliminates all bias completely.",
+        "Incorrect: Stratified sampling focuses on representativeness, not correlation between variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stratified-sampling",
+        "sampling-methods",
+        "representation"
+      ]
+    },
+    {
+      "id": "SDS_033",
+      "question": "What does a p-value of 0.03 mean in hypothesis testing?",
+      "options": [
+        "There's a 3% chance of observing this result or more extreme if the null hypothesis is true",
+        "There's a 3% chance the null hypothesis is true",
+        "There's a 97% chance the alternative hypothesis is true",
+        "The effect size is 3%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A p-value of 0.03 means there's a 3% probability of observing the test statistic or a more extreme value, assuming the null hypothesis is true.",
+      "optionExplanations": [
+        "Correct: p-value represents the probability of obtaining the observed result or more extreme under the null hypothesis.",
+        "Incorrect: p-value doesn't give the probability that the null hypothesis is true.",
+        "Incorrect: p-value doesn't provide the probability that the alternative hypothesis is true.",
+        "Incorrect: p-value is not a measure of effect size; effect size is measured separately."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "p-value",
+        "hypothesis-testing",
+        "probability"
+      ]
+    },
+    {
+      "id": "SDS_034",
+      "question": "What is the appropriate measure of central tendency for highly skewed data?",
+      "options": [
+        "Median",
+        "Mean",
+        "Mode",
+        "Range"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The median is the best measure of central tendency for highly skewed data because it's not affected by extreme values, unlike the mean which can be pulled toward the tail.",
+      "optionExplanations": [
+        "Correct: The median is robust to outliers and skewness, providing a better representation of the center in skewed distributions.",
+        "Incorrect: The mean is sensitive to extreme values and can be misleading in highly skewed distributions.",
+        "Incorrect: The mode identifies the most frequent value but may not represent the center well in skewed data.",
+        "Incorrect: Range measures spread, not central tendency."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "central-tendency",
+        "median",
+        "skewed-data"
+      ]
+    },
+    {
+      "id": "SDS_035",
+      "question": "What is multicollinearity in regression analysis?",
+      "options": [
+        "High correlation between independent variables",
+        "High correlation between dependent and independent variables",
+        "Low correlation between all variables",
+        "Non-linear relationships between variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multicollinearity occurs when independent variables in a regression model are highly correlated with each other, making it difficult to determine the individual effect of each variable.",
+      "optionExplanations": [
+        "Correct: Multicollinearity refers to high correlation among predictor variables, causing instability in coefficient estimates.",
+        "Incorrect: High correlation between dependent and independent variables is desirable for prediction, not multicollinearity.",
+        "Incorrect: Low correlation between variables would indicate no multicollinearity problem.",
+        "Incorrect: Non-linear relationships are a different issue from multicollinearity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multicollinearity",
+        "regression",
+        "correlation"
+      ]
+    },
+    {
+      "id": "SDS_036",
+      "question": "What is the difference between one-tailed and two-tailed tests?",
+      "options": [
+        "One-tailed tests check for difference in one direction, two-tailed tests check for any difference",
+        "One-tailed tests use one sample, two-tailed tests use two samples",
+        "One-tailed tests are more powerful in all situations",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "One-tailed tests examine if there's a difference in a specific direction (greater than or less than), while two-tailed tests check for any difference in either direction.",
+      "optionExplanations": [
+        "Correct: One-tailed tests have directional alternative hypotheses; two-tailed tests test for difference in either direction.",
+        "Incorrect: The number of tails refers to the alternative hypothesis direction, not the number of samples.",
+        "Incorrect: One-tailed tests are only more powerful when the direction is correctly specified; they have no power in the wrong direction.",
+        "Incorrect: There are significant differences in hypothesis formulation and critical values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "one-tailed",
+        "two-tailed",
+        "hypothesis-testing"
+      ]
+    },
+    {
+      "id": "SDS_037",
+      "question": "What is the law of large numbers?",
+      "options": [
+        "As sample size increases, sample statistics approach population parameters",
+        "Large samples always follow normal distributions",
+        "Large populations have larger standard deviations",
+        "Sample size doesn't affect statistical accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The law of large numbers states that as the sample size increases, sample statistics (like the sample mean) will converge to the true population parameters.",
+      "optionExplanations": [
+        "Correct: LLN ensures that larger samples provide better estimates of population parameters.",
+        "Incorrect: The Central Limit Theorem relates to normality of sampling distributions, not the law of large numbers directly.",
+        "Incorrect: Population size doesn't determine standard deviation; the law of large numbers is about sample accuracy.",
+        "Incorrect: Larger sample sizes generally provide more accurate estimates of population parameters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "law-of-large-numbers",
+        "sample-size",
+        "convergence"
+      ]
+    },
+    {
+      "id": "SDS_038",
+      "question": "What is a residual in regression analysis?",
+      "options": [
+        "The difference between observed and predicted values",
+        "The slope of the regression line",
+        "The correlation coefficient",
+        "The standard deviation of the dependent variable"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A residual is the difference between the observed value and the predicted value from the regression model (residual = observed - predicted).",
+      "optionExplanations": [
+        "Correct: Residuals = Yi - Ŷi, representing the prediction errors of the regression model.",
+        "Incorrect: The slope is the regression coefficient (β), not the residual.",
+        "Incorrect: The correlation coefficient measures linear association strength, not prediction error.",
+        "Incorrect: Standard deviation measures variability, while residuals are specific prediction errors."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "residuals",
+        "regression",
+        "prediction-error"
+      ]
+    },
+    {
+      "id": "SDS_039",
+      "question": "What is the purpose of the Levene's test?",
+      "options": [
+        "To test for equal variances across groups",
+        "To test for normality",
+        "To compare means",
+        "To test for independence"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Levene's test examines the null hypothesis that variances are equal across groups (homoscedasticity), which is an important assumption for many statistical tests.",
+      "optionExplanations": [
+        "Correct: Levene's test checks the assumption of equal variances (homoscedasticity) across groups.",
+        "Incorrect: Tests like Shapiro-Wilk or Kolmogorov-Smirnov are used to test normality, not Levene's test.",
+        "Incorrect: t-tests or ANOVA are used to compare means, not Levene's test.",
+        "Incorrect: Chi-square tests examine independence, not Levene's test."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "levenes-test",
+        "equal-variances",
+        "homoscedasticity"
+      ]
+    },
+    {
+      "id": "SDS_040",
+      "question": "What is effect size?",
+      "options": [
+        "A measure of the practical significance of a statistical result",
+        "The same as statistical significance",
+        "The sample size needed for a study",
+        "The power of a statistical test"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Effect size quantifies the magnitude of a difference or relationship, providing information about practical significance beyond just statistical significance.",
+      "optionExplanations": [
+        "Correct: Effect size measures how large or meaningful a difference is, independent of sample size and statistical significance.",
+        "Incorrect: Effect size and statistical significance are different; you can have statistical significance with trivial effect sizes.",
+        "Incorrect: Sample size determination is related to power analysis, not effect size itself.",
+        "Incorrect: Power is the probability of detecting an effect; effect size is the magnitude of the effect."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "effect-size",
+        "practical-significance",
+        "magnitude"
+      ]
+    },
+    {
+      "id": "SDS_041",
+      "question": "What is the purpose of bootstrapping in statistics?",
+      "options": [
+        "To estimate sampling distributions and confidence intervals from sample data",
+        "To increase sample size",
+        "To test for normality",
+        "To eliminate outliers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bootstrapping is a resampling method that estimates the sampling distribution of a statistic by repeatedly sampling with replacement from the original sample.",
+      "optionExplanations": [
+        "Correct: Bootstrapping creates many resamples to estimate sampling distributions and construct confidence intervals.",
+        "Incorrect: Bootstrapping doesn't increase actual sample size; it resamples from existing data.",
+        "Incorrect: Bootstrapping is not primarily used for normality testing.",
+        "Incorrect: Bootstrapping doesn't eliminate outliers; it may help understand their impact on statistics."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bootstrapping",
+        "resampling",
+        "confidence-intervals"
+      ]
+    },
+    {
+      "id": "SDS_042",
+      "question": "What does it mean if a confidence interval for a mean difference includes zero?",
+      "options": [
+        "There may be no significant difference between the groups",
+        "The difference is definitely zero",
+        "The test is invalid",
+        "The sample size is too small"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "If a confidence interval for a mean difference includes zero, it suggests that zero difference is a plausible value, indicating no significant difference between groups.",
+      "optionExplanations": [
+        "Correct: Including zero means we cannot rule out no difference between groups at the given confidence level.",
+        "Incorrect: Including zero doesn't mean the difference IS zero, just that zero is a plausible value.",
+        "Incorrect: A confidence interval including zero doesn't invalidate the test methodology.",
+        "Incorrect: While larger samples give narrower intervals, including zero doesn't necessarily indicate inadequate sample size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "confidence-interval",
+        "mean-difference",
+        "statistical-significance"
+      ]
+    },
+    {
+      "id": "SDS_043",
+      "question": "What is the difference between descriptive and inferential statistics?",
+      "options": [
+        "Descriptive statistics summarize data, inferential statistics make generalizations about populations",
+        "Descriptive statistics use samples, inferential statistics use populations",
+        "Descriptive statistics are more accurate",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Descriptive statistics summarize and describe sample data, while inferential statistics use sample data to make inferences and generalizations about the larger population.",
+      "optionExplanations": [
+        "Correct: Descriptive statistics describe what we observe; inferential statistics help us generalize beyond our sample.",
+        "Incorrect: Both can use sample data; the difference is in purpose (description vs. inference).",
+        "Incorrect: Neither is inherently more accurate; they serve different purposes in statistical analysis.",
+        "Incorrect: These are fundamentally different branches of statistics with distinct purposes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "descriptive-statistics",
+        "inferential-statistics",
+        "population-inference"
+      ]
+    },
+    {
+      "id": "SDS_044",
+      "question": "What is a confounding variable?",
+      "options": [
+        "A variable that influences both the independent and dependent variables",
+        "A variable that is perfectly correlated with the independent variable",
+        "A variable that has no effect on the outcome",
+        "The same as an independent variable"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A confounding variable is an extraneous variable that correlates with both the independent and dependent variables, potentially creating a spurious relationship.",
+      "optionExplanations": [
+        "Correct: Confounding variables affect both the predictor and outcome, potentially leading to false conclusions about causality.",
+        "Incorrect: Perfect correlation would be multicollinearity, not necessarily confounding.",
+        "Incorrect: Confounding variables do affect the outcome; variables with no effect wouldn't confound results.",
+        "Incorrect: Confounding variables are external to the main relationship being studied."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "confounding-variable",
+        "causality",
+        "experimental-design"
+      ]
+    },
+    {
+      "id": "SDS_045",
+      "question": "What is the purpose of randomization in experimental design?",
+      "options": [
+        "To control for unknown confounding variables",
+        "To increase sample size",
+        "To ensure normal distribution",
+        "To reduce measurement error"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Randomization helps control for both known and unknown confounding variables by randomly distributing these variables across treatment groups.",
+      "optionExplanations": [
+        "Correct: Randomization balances both known and unknown confounders across groups, strengthening causal inference.",
+        "Incorrect: Randomization doesn't change sample size; it affects how subjects are assigned to groups.",
+        "Incorrect: Randomization doesn't guarantee normal distribution; it helps with internal validity.",
+        "Incorrect: Randomization primarily addresses confounding, not measurement precision."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "randomization",
+        "experimental-design",
+        "confounding-control"
+      ]
+    },
+    {
+      "id": "SDS_046",
+      "question": "What is statistical inference?",
+      "options": [
+        "Drawing conclusions about populations based on sample data",
+        "Calculating descriptive statistics",
+        "Creating graphs and charts",
+        "Collecting data from populations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Statistical inference involves using sample data to make educated guesses, estimates, or decisions about population parameters or relationships.",
+      "optionExplanations": [
+        "Correct: Statistical inference uses sample statistics to make conclusions about population parameters.",
+        "Incorrect: Calculating descriptive statistics is descriptive analysis, not inference.",
+        "Incorrect: Creating visualizations is descriptive analysis, not statistical inference.",
+        "Incorrect: Data collection is a prerequisite for inference, not inference itself."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "statistical-inference",
+        "population-parameters",
+        "sample-statistics"
+      ]
+    },
+    {
+      "id": "SDS_047",
+      "question": "What is the difference between precision and accuracy in statistics?",
+      "options": [
+        "Precision refers to consistency of measurements, accuracy refers to how close measurements are to the true value",
+        "Precision and accuracy are the same thing",
+        "Precision is more important than accuracy",
+        "Accuracy refers to sample size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Precision refers to the consistency or repeatability of measurements, while accuracy refers to how close measurements are to the true or target value.",
+      "optionExplanations": [
+        "Correct: Precision is about reproducibility; accuracy is about correctness relative to the true value.",
+        "Incorrect: Precision and accuracy are distinct concepts that can vary independently.",
+        "Incorrect: Both precision and accuracy are important; ideal measurements are both precise and accurate.",
+        "Incorrect: Accuracy relates to closeness to truth, not to sample size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision",
+        "accuracy",
+        "measurement-quality"
+      ]
+    },
+    {
+      "id": "SDS_048",
+      "question": "What is the purpose of a control group in an experiment?",
+      "options": [
+        "To provide a baseline for comparison with the treatment group",
+        "To increase the sample size",
+        "To ensure random sampling",
+        "To eliminate all bias"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A control group provides a comparison baseline that helps isolate the effect of the treatment by showing what happens without the experimental intervention.",
+      "optionExplanations": [
+        "Correct: Control groups allow researchers to compare outcomes and attribute differences to the treatment.",
+        "Incorrect: Control groups don't increase sample size; they're part of the experimental design structure.",
+        "Incorrect: Random sampling is a separate consideration from having control groups.",
+        "Incorrect: Control groups help reduce some biases but don't eliminate all types of bias."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "control-group",
+        "experimental-design",
+        "comparison"
+      ]
+    },
+    {
+      "id": "SDS_049",
+      "question": "What is the margin of error in a confidence interval?",
+      "options": [
+        "Half the width of the confidence interval",
+        "The full width of the confidence interval",
+        "The standard error",
+        "The sample standard deviation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The margin of error is the distance from the point estimate to either end of the confidence interval, representing half the total width of the interval.",
+      "optionExplanations": [
+        "Correct: Margin of error = (upper limit - lower limit)/2, representing the precision of the estimate.",
+        "Incorrect: The full width would be twice the margin of error.",
+        "Incorrect: Standard error is used to calculate the margin of error but they're not the same thing.",
+        "Incorrect: Sample standard deviation is used in calculations but isn't the margin of error itself."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "margin-of-error",
+        "confidence-interval",
+        "precision"
+      ]
+    },
+    {
+      "id": "SDS_050",
+      "question": "What is a lurking variable?",
+      "options": [
+        "A variable that is not measured but affects the relationship between measured variables",
+        "A variable that is perfectly measured",
+        "An independent variable in the study",
+        "A variable with missing data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A lurking variable is an unmeasured variable that influences the relationship between the variables being studied, potentially leading to incorrect conclusions.",
+      "optionExplanations": [
+        "Correct: Lurking variables are hidden factors that can create spurious correlations or mask true relationships.",
+        "Incorrect: Perfect measurement doesn't define lurking variables; they're characterized by being unmeasured.",
+        "Incorrect: Independent variables are explicitly included in the study, unlike lurking variables.",
+        "Incorrect: Missing data is different from unmeasured variables that influence relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lurking-variable",
+        "hidden-factors",
+        "spurious-correlation"
+      ]
+    },
+    {
+      "id": "SDS_051",
+      "question": "What is the difference between probability and statistics?",
+      "options": [
+        "Probability predicts outcomes from known parameters, statistics infers parameters from observed data",
+        "Probability and statistics are the same field",
+        "Probability uses larger samples than statistics",
+        "Statistics is more accurate than probability"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Probability starts with known population parameters to predict sample outcomes, while statistics starts with sample data to infer unknown population parameters.",
+      "optionExplanations": [
+        "Correct: Probability is deductive (population → sample), statistics is inductive (sample → population).",
+        "Incorrect: While related, probability and statistics approach problems from opposite directions.",
+        "Incorrect: Sample size considerations apply to both fields depending on the specific problem.",
+        "Incorrect: Neither is inherently more accurate; they serve different purposes in data analysis."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "probability",
+        "statistics",
+        "deductive-inductive"
+      ]
+    },
+    {
+      "id": "SDS_052",
+      "question": "What does 'degrees of freedom' represent in statistics?",
+      "options": [
+        "The number of independent pieces of information available for estimation",
+        "The total sample size",
+        "The number of variables in a dataset",
+        "The confidence level of a test"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Degrees of freedom represent the number of independent values that can vary in a statistical calculation, typically related to sample size minus the number of parameters estimated.",
+      "optionExplanations": [
+        "Correct: Degrees of freedom = independent observations available after accounting for estimated parameters.",
+        "Incorrect: Total sample size is related but degrees of freedom are usually sample size minus constraints.",
+        "Incorrect: The number of variables doesn't directly determine degrees of freedom.",
+        "Incorrect: Confidence level is set by the researcher and is separate from degrees of freedom."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "degrees-of-freedom",
+        "independent-information",
+        "statistical-estimation"
+      ]
+    },
+    {
+      "id": "SDS_053",
+      "question": "What is the purpose of a pilot study?",
+      "options": [
+        "To test feasibility and refine methods before the main study",
+        "To replace the main study",
+        "To increase the final sample size",
+        "To prove the hypothesis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A pilot study is a small-scale preliminary study conducted to evaluate feasibility, duration, cost, and adverse events, and to improve the study design before conducting a full-scale research project.",
+      "optionExplanations": [
+        "Correct: Pilot studies help identify problems and refine procedures before investing in the full study.",
+        "Incorrect: Pilot studies supplement rather than replace main studies.",
+        "Incorrect: Pilot study data is typically not included in the final sample size of the main study.",
+        "Incorrect: Pilot studies are for planning and feasibility, not for hypothesis testing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pilot-study",
+        "feasibility",
+        "study-design"
+      ]
+    },
+    {
+      "id": "SDS_054",
+      "question": "What is a Type III error in statistics?",
+      "options": [
+        "Correctly rejecting the null hypothesis but for the wrong reason",
+        "The same as Type I error",
+        "The same as Type II error",
+        "A calculation error"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Type III error occurs when you correctly reject the null hypothesis but answer the wrong question or misinterpret what the rejection means.",
+      "optionExplanations": [
+        "Correct: Type III error is getting the right statistical answer to the wrong question or misinterpreting results.",
+        "Incorrect: Type I error is rejecting a true null hypothesis (false positive).",
+        "Incorrect: Type II error is failing to reject a false null hypothesis (false negative).",
+        "Incorrect: Calculation errors are computational mistakes, not conceptual errors about what's being tested."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "type-III-error",
+        "interpretation-error",
+        "research-question"
+      ]
+    },
+    {
+      "id": "SDS_055",
+      "question": "What is the binomial distribution used for?",
+      "options": [
+        "Modeling the number of successes in a fixed number of independent trials",
+        "Modeling continuous variables",
+        "Modeling time between events",
+        "Modeling normally distributed data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The binomial distribution models the probability of obtaining exactly k successes in n independent Bernoulli trials, each with the same probability of success.",
+      "optionExplanations": [
+        "Correct: Binomial distribution applies to discrete outcomes with fixed trials, constant probability, and independence.",
+        "Incorrect: Continuous variables are modeled by continuous distributions like normal or exponential.",
+        "Incorrect: Time between events is typically modeled by exponential or Poisson distributions.",
+        "Incorrect: Normal distribution is separate from binomial, though binomial can approximate normal under certain conditions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binomial-distribution",
+        "discrete-probability",
+        "bernoulli-trials"
+      ]
+    },
+    {
+      "id": "SDS_056",
+      "question": "What is the Poisson distribution commonly used to model?",
+      "options": [
+        "The number of rare events occurring in a fixed interval",
+        "Normally distributed continuous data",
+        "Binary outcomes",
+        "Symmetric data distributions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Poisson distribution models the probability of a given number of rare events occurring in a fixed interval of time or space, assuming events occur independently.",
+      "optionExplanations": [
+        "Correct: Poisson models rare events like accidents per day, calls per hour, or defects per item.",
+        "Incorrect: Normal distribution models continuous data, not Poisson.",
+        "Incorrect: Binary outcomes are modeled by Bernoulli or binomial distributions.",
+        "Incorrect: Poisson distribution is typically right-skewed, not symmetric."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "poisson-distribution",
+        "rare-events",
+        "count-data"
+      ]
+    },
+    {
+      "id": "SDS_057",
+      "question": "What is the exponential distribution used to model?",
+      "options": [
+        "Time between events in a Poisson process",
+        "Number of events in a fixed time",
+        "Binary outcomes",
+        "Symmetric continuous data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The exponential distribution models the time between events in a Poisson process, representing the waiting time until the next event occurs.",
+      "optionExplanations": [
+        "Correct: Exponential distribution models inter-arrival times, lifetimes, and waiting times between random events.",
+        "Incorrect: The number of events in fixed time is modeled by Poisson distribution, not exponential.",
+        "Incorrect: Binary outcomes are modeled by Bernoulli distribution.",
+        "Incorrect: Exponential distribution is right-skewed, not symmetric."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "exponential-distribution",
+        "waiting-times",
+        "poisson-process"
+      ]
+    },
+    {
+      "id": "SDS_058",
+      "question": "What is the chi-square goodness of fit test used for?",
+      "options": [
+        "Testing if sample data follows a specified distribution",
+        "Testing independence between two variables",
+        "Comparing means of multiple groups",
+        "Testing for normality specifically"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The chi-square goodness of fit test determines whether sample data follows a hypothesized distribution by comparing observed frequencies with expected frequencies.",
+      "optionExplanations": [
+        "Correct: Goodness of fit tests whether observed data matches expected frequencies from a theoretical distribution.",
+        "Incorrect: Testing independence between variables uses the chi-square test of independence, not goodness of fit.",
+        "Incorrect: ANOVA is used to compare means of multiple groups.",
+        "Incorrect: While it can test normality, goodness of fit tests can examine any specified distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "chi-square",
+        "goodness-of-fit",
+        "distribution-testing"
+      ]
+    },
+    {
+      "id": "SDS_059",
+      "question": "What is statistical significance?",
+      "options": [
+        "Evidence that an observed effect is unlikely due to chance alone",
+        "Proof that an effect is practically important",
+        "The same as effect size",
+        "A guarantee that results will replicate"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Statistical significance indicates that the observed result is unlikely to have occurred by chance alone, given the null hypothesis is true, but doesn't guarantee practical importance.",
+      "optionExplanations": [
+        "Correct: Statistical significance suggests the result is unlikely under the null hypothesis, based on the chosen α level.",
+        "Incorrect: Statistical significance doesn't imply practical importance; effect size measures practical significance.",
+        "Incorrect: Effect size measures magnitude; statistical significance measures evidence against null hypothesis.",
+        "Incorrect: Statistical significance doesn't guarantee replication; reproducibility depends on many factors."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "statistical-significance",
+        "chance",
+        "null-hypothesis"
+      ]
+    },
+    {
+      "id": "SDS_060",
+      "question": "What is cluster sampling?",
+      "options": [
+        "Sampling groups or clusters, then including all members of selected clusters",
+        "Sampling every nth individual from a population",
+        "Sampling from different strata proportionally",
+        "Sampling based on convenience"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cluster sampling involves dividing the population into clusters (groups), randomly selecting some clusters, and then including all individuals from the selected clusters in the sample.",
+      "optionExplanations": [
+        "Correct: Cluster sampling selects entire groups rather than individuals, useful when natural groupings exist.",
+        "Incorrect: This describes systematic sampling, not cluster sampling.",
+        "Incorrect: This describes stratified sampling, not cluster sampling.",
+        "Incorrect: This describes convenience sampling, not cluster sampling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cluster-sampling",
+        "sampling-methods",
+        "groups"
+      ]
+    },
+    {
+      "id": "SDS_061",
+      "question": "What is the difference between a sample and a census?",
+      "options": [
+        "A sample includes part of the population, a census includes the entire population",
+        "A sample is more accurate than a census",
+        "A census uses random sampling",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A sample consists of a subset of the population, while a census attempts to collect data from every member of the entire population.",
+      "optionExplanations": [
+        "Correct: Samples study part of the population to make inferences; censuses attempt to study everyone.",
+        "Incorrect: Censuses can be more accurate when feasible, though samples can be more practical and still highly accurate.",
+        "Incorrect: Censuses aim to include everyone, not use random sampling methods.",
+        "Incorrect: These are fundamentally different approaches to data collection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sample",
+        "census",
+        "population",
+        "data-collection"
+      ]
+    },
+    {
+      "id": "SDS_062",
+      "question": "What is systematic sampling?",
+      "options": [
+        "Selecting every kth individual from a population list",
+        "Selecting individuals based on specific criteria",
+        "Selecting entire groups randomly",
+        "Selecting the most convenient individuals"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Systematic sampling involves selecting every kth individual from a population list, where k is determined by dividing the population size by the desired sample size.",
+      "optionExplanations": [
+        "Correct: Systematic sampling uses a regular interval (every kth item) to select sample members.",
+        "Incorrect: Selection based on specific criteria describes purposive or criterion-based sampling.",
+        "Incorrect: Selecting entire groups describes cluster sampling.",
+        "Incorrect: Selecting convenient individuals describes convenience sampling."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "systematic-sampling",
+        "sampling-interval",
+        "regular-selection"
+      ]
+    },
+    {
+      "id": "SDS_063",
+      "question": "What is the purpose of hypothesis testing?",
+      "options": [
+        "To make decisions about population parameters based on sample evidence",
+        "To prove that a hypothesis is true",
+        "To calculate descriptive statistics",
+        "To determine sample size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hypothesis testing provides a framework for making statistical decisions about population parameters using sample data and controlling the probability of errors.",
+      "optionExplanations": [
+        "Correct: Hypothesis testing helps make informed decisions about populations based on sample evidence within a controlled error framework.",
+        "Incorrect: Hypothesis testing doesn't prove hypotheses true; it provides evidence for or against them.",
+        "Incorrect: Descriptive statistics summarize data; hypothesis testing makes inferences.",
+        "Incorrect: Power analysis is used for sample size determination, not hypothesis testing per se."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hypothesis-testing",
+        "statistical-decision",
+        "population-inference"
+      ]
+    },
+    {
+      "id": "SDS_064",
+      "question": "What is a sampling error?",
+      "options": [
+        "The difference between a sample statistic and the corresponding population parameter",
+        "An error in data collection procedures",
+        "A computational mistake",
+        "Bias in sample selection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sampling error is the natural variation between sample statistics and population parameters due to the fact that we're studying only a portion of the population.",
+      "optionExplanations": [
+        "Correct: Sampling error is inherent variability due to sampling; it decreases with larger sample sizes.",
+        "Incorrect: Data collection errors are procedural mistakes, not sampling error.",
+        "Incorrect: Computational mistakes are different from the natural variability inherent in sampling.",
+        "Incorrect: Selection bias is a systematic error, while sampling error is random variation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sampling-error",
+        "sample-variability",
+        "population-parameter"
+      ]
+    },
+    {
+      "id": "SDS_065",
+      "question": "What is the difference between a statistic and a parameter?",
+      "options": [
+        "A statistic describes sample data, a parameter describes population data",
+        "A statistic is always larger than a parameter",
+        "A parameter describes sample data, a statistic describes population data",
+        "They are the same thing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Statistics (like x̄, s) are calculated from sample data to estimate parameters (like μ, σ) which are the true values for the entire population.",
+      "optionExplanations": [
+        "Correct: Statistics are sample-based estimates; parameters are true population values we try to estimate.",
+        "Incorrect: There's no general size relationship; it depends on the specific data and population.",
+        "Incorrect: This reverses the correct definitions.",
+        "Incorrect: Statistics and parameters are conceptually different, though statistics estimate parameters."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "statistic",
+        "parameter",
+        "sample-vs-population"
+      ]
+    },
+    {
+      "id": "SDS_066",
+      "question": "What is measurement bias?",
+      "options": [
+        "Systematic error in how data is collected or measured",
+        "Random error in measurements",
+        "The difference between sample and population",
+        "Natural variation in data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Measurement bias occurs when the measurement process systematically over- or under-estimates the true value, leading to inaccurate results.",
+      "optionExplanations": [
+        "Correct: Measurement bias is systematic error that consistently affects measurements in one direction.",
+        "Incorrect: Random error varies unpredictably and doesn't systematically bias results in one direction.",
+        "Incorrect: Sample-population differences can include sampling error, which is different from measurement bias.",
+        "Incorrect: Natural variation is inherent randomness, not systematic bias in measurement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "measurement-bias",
+        "systematic-error",
+        "data-quality"
+      ]
+    },
+    {
+      "id": "SDS_067",
+      "question": "What is selection bias?",
+      "options": [
+        "Systematic error in how sample units are chosen",
+        "Random variation in sample selection",
+        "Error in data measurement",
+        "Bias in statistical analysis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Selection bias occurs when the sample is not representative of the population due to systematic differences in how participants are selected or self-select into the study.",
+      "optionExplanations": [
+        "Correct: Selection bias makes the sample systematically different from the target population.",
+        "Incorrect: Random variation in selection is sampling error, not selection bias.",
+        "Incorrect: Data measurement errors are measurement bias, not selection bias.",
+        "Incorrect: Analysis bias occurs during statistical analysis, not during sample selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "selection-bias",
+        "sample-representativeness",
+        "systematic-sampling-error"
+      ]
+    },
+    {
+      "id": "SDS_068",
+      "question": "What is the purpose of blinding in experimental design?",
+      "options": [
+        "To prevent knowledge of treatment assignment from affecting results",
+        "To increase sample size",
+        "To ensure random sampling",
+        "To eliminate all sources of error"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Blinding prevents participants, researchers, or outcome assessors from knowing treatment assignments, reducing bias in behavior, reporting, or assessment.",
+      "optionExplanations": [
+        "Correct: Blinding reduces bias by preventing treatment knowledge from influencing participant behavior or researcher assessment.",
+        "Incorrect: Blinding doesn't affect sample size; it's about preventing knowledge bias.",
+        "Incorrect: Random sampling is a separate issue from blinding participants to treatment assignment.",
+        "Incorrect: Blinding addresses specific types of bias but doesn't eliminate all possible sources of error."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "blinding",
+        "experimental-design",
+        "bias-prevention"
+      ]
+    },
+    {
+      "id": "SDS_069",
+      "question": "What is the central tendency?",
+      "options": [
+        "A measure that describes the center or typical value of a distribution",
+        "The spread of data around the mean",
+        "The shape of a distribution",
+        "The relationship between variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Central tendency refers to measures like mean, median, and mode that describe the center or most typical value in a distribution of data.",
+      "optionExplanations": [
+        "Correct: Central tendency measures (mean, median, mode) identify the center or typical value of a dataset.",
+        "Incorrect: Spread around the mean describes variability or dispersion, not central tendency.",
+        "Incorrect: Distribution shape describes skewness, kurtosis, or symmetry, not central tendency.",
+        "Incorrect: Relationships between variables are measured by correlation or association, not central tendency."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "central-tendency",
+        "mean",
+        "median",
+        "mode"
+      ]
+    },
+    {
+      "id": "SDS_070",
+      "question": "What is variability in statistics?",
+      "options": [
+        "The extent to which data points differ from each other and from the center",
+        "The average value of the data",
+        "The most frequent value in the data",
+        "The relationship between two variables"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Variability (or dispersion) measures how spread out or scattered the data points are from each other and from measures of central tendency.",
+      "optionExplanations": [
+        "Correct: Variability measures like standard deviation, variance, and range describe how spread out data is.",
+        "Incorrect: The average value describes central tendency (mean), not variability.",
+        "Incorrect: The most frequent value is the mode, a measure of central tendency.",
+        "Incorrect: Relationships between variables are measured by correlation, not variability."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "variability",
+        "dispersion",
+        "spread"
+      ]
+    },
+    {
+      "id": "SDS_071",
+      "question": "What is the variance?",
+      "options": [
+        "The average of the squared deviations from the mean",
+        "The square root of the standard deviation",
+        "The difference between maximum and minimum values",
+        "The middle value in an ordered dataset"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Variance measures the average squared deviation of data points from the mean, providing a measure of how spread out the data is.",
+      "optionExplanations": [
+        "Correct: Variance = Σ(xi - μ)²/N for populations, or Σ(xi - x̄)²/(n-1) for samples.",
+        "Incorrect: Standard deviation is the square root of variance, not the other way around.",
+        "Incorrect: The difference between max and min is the range, not variance.",
+        "Incorrect: The middle value in ordered data is the median, not variance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "variance",
+        "squared-deviations",
+        "dispersion-measure"
+      ]
+    },
+    {
+      "id": "SDS_072",
+      "question": "What is skewness?",
+      "options": [
+        "A measure of the asymmetry of a distribution",
+        "A measure of central tendency",
+        "A measure of variability",
+        "A measure of correlation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Skewness measures the degree and direction of asymmetry in a distribution. Positive skewness indicates a tail extending toward higher values, negative skewness toward lower values.",
+      "optionExplanations": [
+        "Correct: Skewness quantifies whether a distribution is symmetric or leans toward one side.",
+        "Incorrect: Central tendency measures like mean and median describe the center, not asymmetry.",
+        "Incorrect: Variability measures spread, while skewness measures asymmetry.",
+        "Incorrect: Correlation measures relationships between variables, not distribution shape."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "skewness",
+        "asymmetry",
+        "distribution-shape"
+      ]
+    },
+    {
+      "id": "SDS_073",
+      "question": "What is kurtosis?",
+      "options": [
+        "A measure of the tail heaviness and peakedness of a distribution",
+        "A measure of central tendency",
+        "A measure of asymmetry",
+        "A measure of correlation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Kurtosis measures the relative tail heaviness and peakedness of a distribution compared to a normal distribution. High kurtosis indicates heavy tails and sharp peaks.",
+      "optionExplanations": [
+        "Correct: Kurtosis describes tail behavior and peak sharpness relative to the normal distribution.",
+        "Incorrect: Central tendency measures describe the center of distributions, not tail behavior.",
+        "Incorrect: Asymmetry is measured by skewness, not kurtosis.",
+        "Incorrect: Correlation measures relationships between variables, not distribution characteristics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kurtosis",
+        "tail-heaviness",
+        "distribution-shape"
+      ]
+    },
+    {
+      "id": "SDS_074",
+      "question": "What is a outlier?",
+      "options": [
+        "A data point that is significantly different from other observations",
+        "The most frequent value in a dataset",
+        "The middle value in a dataset",
+        "The average of all data points"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An outlier is an observation that lies an abnormal distance from other values in a dataset, potentially indicating measurement error, data entry error, or a genuinely extreme value.",
+      "optionExplanations": [
+        "Correct: Outliers are unusually extreme values that deviate significantly from the pattern of other observations.",
+        "Incorrect: The most frequent value is the mode, not an outlier.",
+        "Incorrect: The middle value is the median, not an outlier.",
+        "Incorrect: The average of all data points is the mean, not an outlier."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "outlier",
+        "extreme-values",
+        "data-anomaly"
+      ]
+    },
+    {
+      "id": "SDS_075",
+      "question": "What is the purpose of data transformation?",
+      "options": [
+        "To modify data to meet statistical assumptions or improve analysis",
+        "To increase sample size",
+        "To eliminate all outliers",
+        "To prove hypotheses"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data transformation involves applying mathematical functions to change the scale, distribution, or relationships in data to meet statistical assumptions or make analysis more appropriate.",
+      "optionExplanations": [
+        "Correct: Transformations like log, square root, or standardization help meet assumptions or improve interpretability.",
+        "Incorrect: Transformations don't change sample size; they modify existing data values.",
+        "Incorrect: While transformations might reduce outlier influence, elimination isn't their primary purpose.",
+        "Incorrect: Transformations prepare data for analysis; they don't prove hypotheses."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-transformation",
+        "statistical-assumptions",
+        "data-preparation"
+      ]
+    },
+    {
+      "id": "SDS_076",
+      "question": "What is standardization (z-score transformation)?",
+      "options": [
+        "Converting data to have mean 0 and standard deviation 1",
+        "Converting data to percentages",
+        "Removing outliers from data",
+        "Converting data to rankings"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Standardization creates z-scores by subtracting the mean and dividing by the standard deviation: z = (x - μ)/σ, resulting in data with mean 0 and standard deviation 1.",
+      "optionExplanations": [
+        "Correct: Standardization transforms any distribution to have μ = 0 and σ = 1, enabling comparison across different scales.",
+        "Incorrect: Converting to percentages is a different type of transformation.",
+        "Incorrect: Outlier removal is data cleaning, not standardization.",
+        "Incorrect: Converting to rankings creates ordinal data, which is different from standardization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "standardization",
+        "z-score",
+        "data-scaling"
+      ]
+    },
+    {
+      "id": "SDS_077",
+      "question": "What is the purpose of normalization in statistics?",
+      "options": [
+        "To scale data to a specific range, typically 0 to 1",
+        "To make data normally distributed",
+        "To remove outliers",
+        "To increase correlation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Normalization typically refers to scaling data to a fixed range (like 0 to 1) using methods like min-max scaling: (x - min)/(max - min).",
+      "optionExplanations": [
+        "Correct: Normalization scales values to a common range, often [0,1], preserving relative relationships.",
+        "Incorrect: Making data normally distributed is a different process involving distributional transformations.",
+        "Incorrect: Outlier removal is data cleaning, not normalization.",
+        "Incorrect: Normalization doesn't inherently increase correlation between variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "data-scaling",
+        "min-max-scaling"
+      ]
+    },
+    {
+      "id": "SDS_078",
+      "question": "What is Simpson's Paradox?",
+      "options": [
+        "When trends in subgroups reverse when groups are combined",
+        "When correlation equals causation",
+        "When sample size is too small",
+        "When data is normally distributed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Simpson's Paradox occurs when a trend appears in different groups of data but disappears or reverses when the groups are combined, often due to confounding variables.",
+      "optionExplanations": [
+        "Correct: Simpson's Paradox shows how aggregation can mask or reverse relationships observed in subgroups.",
+        "Incorrect: Correlation vs. causation is a different concept about inferring causal relationships.",
+        "Incorrect: Small sample size relates to statistical power, not Simpson's Paradox.",
+        "Incorrect: Normal distribution is unrelated to Simpson's Paradox."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "simpsons-paradox",
+        "aggregation-bias",
+        "confounding"
+      ]
+    },
+    {
+      "id": "SDS_079",
+      "question": "What is the ecological fallacy?",
+      "options": [
+        "Making inferences about individuals based on group-level data",
+        "Making inferences about groups based on individual data",
+        "Using too small a sample size",
+        "Confusing correlation with causation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The ecological fallacy occurs when inferences about individuals are incorrectly made from group-level or aggregate data, assuming group characteristics apply to individuals.",
+      "optionExplanations": [
+        "Correct: Ecological fallacy assumes relationships observed at group level also exist at individual level.",
+        "Incorrect: This describes the opposite direction of inference, which is generally more valid.",
+        "Incorrect: Sample size issues relate to statistical power, not ecological fallacy.",
+        "Incorrect: Correlation vs. causation is a different logical error."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ecological-fallacy",
+        "level-of-analysis",
+        "inference-error"
+      ]
+    },
+    {
+      "id": "SDS_080",
+      "question": "What is regression to the mean?",
+      "options": [
+        "The tendency for extreme observations to be closer to the mean on subsequent measurements",
+        "The slope of a regression line",
+        "The average of regression coefficients",
+        "The process of calculating means"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Regression to the mean is the statistical phenomenon where extreme measurements tend to be closer to the average on subsequent measurements due to natural variation.",
+      "optionExplanations": [
+        "Correct: Extreme values often become less extreme on remeasurement due to measurement error and natural variation.",
+        "Incorrect: The slope is the regression coefficient, not regression to the mean.",
+        "Incorrect: Averaging coefficients is unrelated to regression to the mean.",
+        "Incorrect: Calculating means is a basic operation, not the regression to the mean phenomenon."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "regression-to-mean",
+        "extreme-values",
+        "measurement-variation"
+      ]
+    },
+    {
+      "id": "SDS_081",
+      "question": "What is the difference between correlation and regression?",
+      "options": [
+        "Correlation measures association strength, regression models one variable in terms of another",
+        "Correlation and regression are the same thing",
+        "Correlation is more accurate than regression",
+        "Regression only works with categorical data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Correlation quantifies the strength and direction of linear association between variables, while regression models the relationship to predict one variable from another.",
+      "optionExplanations": [
+        "Correct: Correlation measures relationship strength (r); regression creates predictive models (y = a + bx).",
+        "Incorrect: Correlation and regression serve different but related purposes in analyzing relationships.",
+        "Incorrect: Neither is inherently more accurate; they answer different questions about relationships.",
+        "Incorrect: Regression typically works with continuous variables; categorical variables require special methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "correlation-vs-regression",
+        "association",
+        "prediction-modeling"
+      ]
+    },
+    {
+      "id": "SDS_082",
+      "question": "What is homoscedasticity?",
+      "options": [
+        "Equal variances across different levels of a variable",
+        "Unequal variances across different levels of a variable",
+        "Normal distribution of residuals",
+        "Independence of observations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Homoscedasticity refers to the assumption that the variance of the dependent variable is constant across all levels of the independent variable(s).",
+      "optionExplanations": [
+        "Correct: Homoscedasticity means constant variance, often seen as uniform spread in residual plots.",
+        "Incorrect: Unequal variances describe heteroscedasticity, the opposite of homoscedasticity.",
+        "Incorrect: Normal residuals relate to normality assumptions, not variance constancy.",
+        "Incorrect: Independence is a separate assumption from variance equality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "homoscedasticity",
+        "equal-variances",
+        "regression-assumptions"
+      ]
+    },
+    {
+      "id": "SDS_083",
+      "question": "What is the purpose of ANCOVA (Analysis of Covariance)?",
+      "options": [
+        "To compare group means while controlling for covariates",
+        "To test for independence between categorical variables",
+        "To compare variances between groups",
+        "To test for normality"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ANCOVA combines ANOVA and regression to compare group means while statistically controlling for the effects of continuous covariates.",
+      "optionExplanations": [
+        "Correct: ANCOVA removes the influence of covariates to get a clearer comparison of group means.",
+        "Incorrect: Chi-square tests examine independence between categorical variables.",
+        "Incorrect: F-tests or Levene's test compare variances, not ANCOVA.",
+        "Incorrect: Normality tests like Shapiro-Wilk test for normal distribution."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ANCOVA",
+        "covariate-control",
+        "group-comparison"
+      ]
+    },
+    {
+      "id": "SDS_084",
+      "question": "What is a factorial design in experiments?",
+      "options": [
+        "A design that studies multiple factors and their interactions simultaneously",
+        "A design that uses factor analysis",
+        "A design with only one independent variable",
+        "A design that calculates factorials"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Factorial design allows researchers to study the effects of two or more factors simultaneously and examine how they interact with each other.",
+      "optionExplanations": [
+        "Correct: Factorial designs examine main effects and interactions between multiple factors efficiently.",
+        "Incorrect: Factor analysis is a statistical technique, not an experimental design.",
+        "Incorrect: Single factor designs have one independent variable, not factorial designs.",
+        "Incorrect: Mathematical factorials are unrelated to factorial experimental design."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "factorial-design",
+        "multiple-factors",
+        "interaction-effects"
+      ]
+    },
+    {
+      "id": "SDS_085",
+      "question": "What is statistical power analysis used for?",
+      "options": [
+        "To determine appropriate sample size for detecting effects",
+        "To calculate means and standard deviations",
+        "To test for normality",
+        "To eliminate outliers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Power analysis helps researchers determine the sample size needed to detect an effect of a given size with specified probability, or evaluate the power of completed studies.",
+      "optionExplanations": [
+        "Correct: Power analysis balances Type I error, Type II error, effect size, and sample size for study planning.",
+        "Incorrect: Calculating descriptive statistics doesn't require power analysis.",
+        "Incorrect: Normality testing uses different statistical procedures.",
+        "Incorrect: Outlier detection uses different methods than power analysis."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "power-analysis",
+        "sample-size",
+        "effect-detection"
+      ]
+    },
+    {
+      "id": "SDS_086",
+      "question": "What is the Hawthorne effect?",
+      "options": [
+        "When participants change behavior because they know they're being observed",
+        "When researchers unconsciously bias results",
+        "When sample size is too small",
+        "When data is not normally distributed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Hawthorne effect occurs when study participants alter their behavior simply because they know they are being observed or studied, potentially affecting study validity.",
+      "optionExplanations": [
+        "Correct: Hawthorne effect is reactivity where awareness of being studied changes participant behavior.",
+        "Incorrect: Researcher bias is experimenter bias, not the Hawthorne effect.",
+        "Incorrect: Sample size issues relate to statistical power, not the Hawthorne effect.",
+        "Incorrect: Distribution shape is unrelated to the Hawthorne effect."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hawthorne-effect",
+        "observer-effect",
+        "participant-reactivity"
+      ]
+    },
+    {
+      "id": "SDS_087",
+      "question": "What is publication bias?",
+      "options": [
+        "The tendency for journals to publish studies with significant results over non-significant ones",
+        "The bias introduced by sample selection",
+        "The bias in data measurement",
+        "The bias in statistical analysis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Publication bias occurs when research with statistically significant or positive results is more likely to be published than studies with non-significant or negative results, skewing the available literature.",
+      "optionExplanations": [
+        "Correct: Publication bias favors significant findings, creating a distorted view of research evidence in published literature.",
+        "Incorrect: Sample selection bias is selection bias, not publication bias.",
+        "Incorrect: Data measurement bias is measurement bias, not publication bias.",
+        "Incorrect: Statistical analysis bias occurs during analysis, not in publication decisions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "publication-bias",
+        "research-bias",
+        "literature-distortion"
+      ]
+    },
+    {
+      "id": "SDS_088",
+      "question": "What is the file drawer problem?",
+      "options": [
+        "Unpublished studies with non-significant results being 'filed away' and not contributing to research knowledge",
+        "Problems with data storage and file management",
+        "Computational errors in statistical software",
+        "Missing data in datasets"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The file drawer problem refers to the phenomenon where studies with non-significant results remain unpublished and 'filed away,' leading to an incomplete and biased view of research evidence.",
+      "optionExplanations": [
+        "Correct: The file drawer problem contributes to publication bias by hiding non-significant results from the scientific literature.",
+        "Incorrect: This refers to practical data management issues, not the statistical concept.",
+        "Incorrect: Software errors are technical issues, not the file drawer problem.",
+        "Incorrect: Missing data is a data quality issue, not the file drawer problem."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "file-drawer-problem",
+        "unpublished-research",
+        "publication-bias"
+      ]
+    },
+    {
+      "id": "SDS_089",
+      "question": "What is meta-analysis?",
+      "options": [
+        "A statistical method for combining results from multiple studies",
+        "Analysis of metadata in databases",
+        "Analysis of very large datasets",
+        "Preliminary analysis before main analysis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Meta-analysis is a statistical technique that combines and analyzes results from multiple independent studies on the same research question to derive overall conclusions.",
+      "optionExplanations": [
+        "Correct: Meta-analysis synthesizes evidence across studies to provide more robust conclusions than individual studies.",
+        "Incorrect: Metadata analysis deals with data about data, not combining study results.",
+        "Incorrect: Big data analysis deals with large datasets, not combining multiple studies.",
+        "Incorrect: Preliminary analysis prepares for main analysis within a single study."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "meta-analysis",
+        "evidence-synthesis",
+        "multiple-studies"
+      ]
+    },
+    {
+      "id": "SDS_090",
+      "question": "What is effect heterogeneity in meta-analysis?",
+      "options": [
+        "Variation in effect sizes across different studies",
+        "Uniform effect sizes across all studies",
+        "Missing data in some studies",
+        "Publication bias in included studies"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Effect heterogeneity occurs when the true effect sizes vary substantially across studies included in a meta-analysis, requiring investigation of sources of variation.",
+      "optionExplanations": [
+        "Correct: Heterogeneity indicates that studies may be measuring different effects due to population, methodology, or other differences.",
+        "Incorrect: Uniform effects would indicate homogeneity, not heterogeneity.",
+        "Incorrect: Missing data is a data quality issue, not effect heterogeneity.",
+        "Incorrect: Publication bias is a separate issue from effect heterogeneity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "effect-heterogeneity",
+        "meta-analysis",
+        "study-variation"
+      ]
+    },
+    {
+      "id": "SDS_091",
+      "question": "What is survival analysis used for?",
+      "options": [
+        "Analyzing time until an event occurs",
+        "Analyzing categorical data",
+        "Comparing group means",
+        "Testing for correlations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Survival analysis examines the time until an event of interest occurs (like death, failure, or recovery), handling censored data where not all subjects experience the event.",
+      "optionExplanations": [
+        "Correct: Survival analysis models time-to-event data, accounting for censoring when events haven't occurred by study end.",
+        "Incorrect: Categorical data analysis uses chi-square tests or logistic regression, not survival analysis.",
+        "Incorrect: Group mean comparisons use t-tests or ANOVA, not survival analysis.",
+        "Incorrect: Correlation analysis examines relationships between continuous variables."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "survival-analysis",
+        "time-to-event",
+        "censored-data"
+      ]
+    },
+    {
+      "id": "SDS_092",
+      "question": "What is the Kaplan-Meier estimator?",
+      "options": [
+        "A non-parametric method for estimating survival probabilities over time",
+        "A method for calculating correlation coefficients",
+        "A test for comparing group means",
+        "A method for detecting outliers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Kaplan-Meier estimator provides a non-parametric estimate of the survival function, showing the probability of surviving beyond each time point.",
+      "optionExplanations": [
+        "Correct: Kaplan-Meier creates survival curves showing the probability of event-free survival over time.",
+        "Incorrect: Correlation coefficients measure association strength, not survival probabilities.",
+        "Incorrect: Group mean comparisons use different statistical methods.",
+        "Incorrect: Outlier detection uses methods like box plots or statistical tests, not Kaplan-Meier."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "kaplan-meier",
+        "survival-probability",
+        "non-parametric"
+      ]
+    },
+    {
+      "id": "SDS_093",
+      "question": "What is the log-rank test used for?",
+      "options": [
+        "Comparing survival curves between two or more groups",
+        "Testing for normality of log-transformed data",
+        "Ranking data from smallest to largest",
+        "Testing for equal variances"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The log-rank test compares survival distributions between groups, testing whether there are statistically significant differences in survival times.",
+      "optionExplanations": [
+        "Correct: The log-rank test determines if survival curves differ significantly between groups.",
+        "Incorrect: Normality tests like Shapiro-Wilk test distributional assumptions, not the log-rank test.",
+        "Incorrect: Data ranking is a descriptive procedure, not hypothesis testing.",
+        "Incorrect: Equal variance tests like Levene's test examine homoscedasticity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "log-rank-test",
+        "survival-comparison",
+        "group-differences"
+      ]
+    },
+    {
+      "id": "SDS_094",
+      "question": "What is Cox proportional hazards regression?",
+      "options": [
+        "A method for modeling the effect of variables on survival time",
+        "A method for linear regression with normal errors",
+        "A test for comparing proportions",
+        "A method for factor analysis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cox regression models the hazard rate (instantaneous risk of event) as a function of covariates, allowing analysis of multiple factors affecting survival time.",
+      "optionExplanations": [
+        "Correct: Cox regression examines how covariates influence the hazard rate while handling censored survival data.",
+        "Incorrect: Linear regression with normal errors is ordinary least squares regression, not Cox regression.",
+        "Incorrect: Proportion comparisons use chi-square tests or Fisher's exact test.",
+        "Incorrect: Factor analysis identifies underlying factors in multivariate data, not survival modeling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cox-regression",
+        "hazard-ratio",
+        "survival-modeling"
+      ]
+    },
+    {
+      "id": "SDS_095",
+      "question": "What is censoring in survival analysis?",
+      "options": [
+        "When the event of interest has not occurred by the end of the study period",
+        "When data is removed due to outliers",
+        "When participants drop out randomly",
+        "When data is missing completely at random"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Censoring occurs when we know that an individual's survival time is greater than their observed time, but we don't know the exact survival time because the event hasn't occurred yet.",
+      "optionExplanations": [
+        "Correct: Right censoring is when subjects are still alive or event-free at study end, so exact survival time is unknown.",
+        "Incorrect: Outlier removal is data cleaning, not censoring in survival analysis context.",
+        "Incorrect: Random dropout is a form of censoring, but censoring is broader than just dropout.",
+        "Incorrect: Missing completely at random (MCAR) is a missing data mechanism, not survival censoring."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "censoring",
+        "survival-analysis",
+        "incomplete-observation"
+      ]
+    },
+    {
+      "id": "SDS_096",
+      "question": "What is the hazard ratio in survival analysis?",
+      "options": [
+        "The ratio of hazard rates between two groups",
+        "The probability of surviving to a specific time",
+        "The median survival time",
+        "The total number of events"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The hazard ratio compares the instantaneous risk of the event occurring between two groups, indicating how many times more (or less) likely the event is in one group compared to another.",
+      "optionExplanations": [
+        "Correct: Hazard ratio = hazard in group 1 / hazard in group 2, showing relative risk at any given time.",
+        "Incorrect: Survival probability is the complement of the cumulative hazard, not the hazard ratio.",
+        "Incorrect: Median survival time is the time at which 50% of subjects have experienced the event.",
+        "Incorrect: Event count is a descriptive statistic, not the hazard ratio."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hazard-ratio",
+        "relative-risk",
+        "instantaneous-risk"
+      ]
+    },
+    {
+      "id": "SDS_097",
+      "question": "What is the difference between fixed effects and random effects models?",
+      "options": [
+        "Fixed effects assume effects are constant, random effects assume effects vary across groups",
+        "Fixed effects use larger sample sizes than random effects",
+        "Random effects are more accurate than fixed effects",
+        "They are the same type of model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Fixed effects models treat group effects as constants to be estimated, while random effects models treat group effects as random variables drawn from a distribution.",
+      "optionExplanations": [
+        "Correct: Fixed effects are treated as parameters; random effects are treated as random variables with their own distribution.",
+        "Incorrect: Sample size considerations apply to both models; the choice depends on the research question and data structure.",
+        "Incorrect: Neither is inherently more accurate; appropriateness depends on whether effects should be generalized beyond observed groups.",
+        "Incorrect: These are fundamentally different approaches to modeling group effects."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "fixed-effects",
+        "random-effects",
+        "mixed-models"
+      ]
+    },
+    {
+      "id": "SDS_098",
+      "question": "What is a mixed-effects model?",
+      "options": [
+        "A model that includes both fixed and random effects",
+        "A model that mixes different types of data",
+        "A model for categorical and continuous variables",
+        "A model that combines different statistical tests"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mixed-effects models (also called multilevel or hierarchical models) include both fixed effects (population-level effects) and random effects (group-level variations) in the same model.",
+      "optionExplanations": [
+        "Correct: Mixed models allow for both population-level fixed effects and group-specific random effects, handling clustered or hierarchical data.",
+        "Incorrect: Data type mixing refers to different variable types, not mixed-effects modeling.",
+        "Incorrect: Including different variable types doesn't define mixed-effects models.",
+        "Incorrect: Mixed-effects refers to the combination of fixed and random effects, not different statistical tests."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mixed-effects",
+        "hierarchical-models",
+        "clustered-data"
+      ]
+    },
+    {
+      "id": "SDS_099",
+      "question": "What is the intraclass correlation coefficient (ICC)?",
+      "options": [
+        "A measure of how similar observations are within the same group compared to between groups",
+        "The correlation between two continuous variables",
+        "The correlation within a single variable over time",
+        "A measure of internal consistency reliability"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ICC quantifies the proportion of total variance that is due to between-group differences, indicating how much observations within the same group resemble each other.",
+      "optionExplanations": [
+        "Correct: ICC = between-group variance / (between-group variance + within-group variance), measuring clustering strength.",
+        "Incorrect: Pearson correlation measures linear association between two different variables.",
+        "Incorrect: Temporal correlation within a variable is autocorrelation, not ICC.",
+        "Incorrect: While ICC can measure reliability, it's broader than just internal consistency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ICC",
+        "clustering",
+        "group-similarity"
+      ]
+    },
+    {
+      "id": "SDS_100",
+      "question": "What is Bayesian statistics?",
+      "options": [
+        "A statistical approach that updates beliefs about parameters using prior knowledge and observed data",
+        "A method for calculating sample sizes",
+        "A technique for data visualization",
+        "A test for comparing group means"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bayesian statistics uses Bayes' theorem to update prior beliefs about parameters with observed data to obtain posterior distributions, incorporating uncertainty in a probabilistic framework.",
+      "optionExplanations": [
+        "Correct: Bayesian methods combine prior knowledge with data to update beliefs, providing probability distributions for parameters.",
+        "Incorrect: Sample size calculation can use Bayesian methods but isn't what defines Bayesian statistics.",
+        "Incorrect: Data visualization is a separate field from Bayesian statistical inference.",
+        "Incorrect: Group mean comparisons can use Bayesian methods, but this doesn't define the entire Bayesian approach."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bayesian-statistics",
+        "prior-posterior",
+        "belief-updating"
+      ]
+    }
+  ]
+}

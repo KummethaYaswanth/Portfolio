@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_NLP",
+  "topicName": "Natural Language Processing",
+  "subtopicId": "STC_SAN",
+  "subtopicName": "Sentiment Analysis",
+  "str": 0.300,
+  "description": "Sentiment Analysis is a subfield of NLP that involves determining the emotional tone or opinion expressed in text data, typically classifying content as positive, negative, or neutral.",
+  "questions": [
+    {
+      "id": "SAN_001",
+      "question": "What is the primary goal of sentiment analysis?",
+      "options": [
+        "To determine the emotional tone or opinion in text",
+        "To translate text between languages",
+        "To summarize long documents",
+        "To identify named entities in text"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sentiment analysis aims to computationally identify and categorize opinions expressed in text, determining whether the sentiment is positive, negative, or neutral.",
+      "optionExplanations": [
+        "Correct. Sentiment analysis is specifically designed to determine the emotional tone, opinion, or attitude expressed in textual content.",
+        "This describes machine translation, not sentiment analysis. Translation focuses on converting text from one language to another.",
+        "This describes text summarization, which condenses long texts into shorter versions while preserving key information.",
+        "This describes named entity recognition (NER), which identifies and classifies entities like person names, locations, and organizations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "definition",
+        "basics",
+        "sentiment-analysis"
+      ]
+    },
+    {
+      "id": "SAN_002",
+      "question": "Which of the following represents the three main sentiment polarities?",
+      "options": [
+        "Happy, Sad, Angry",
+        "Positive, Negative, Neutral",
+        "Good, Bad, Average",
+        "High, Medium, Low"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The three fundamental sentiment polarities in sentiment analysis are positive, negative, and neutral, representing favorable, unfavorable, and neutral opinions respectively.",
+      "optionExplanations": [
+        "These are specific emotions but not the standard polarity categories used in sentiment analysis frameworks.",
+        "Correct. These are the three standard polarity categories used in most sentiment analysis systems to classify text sentiment.",
+        "These are qualitative descriptors but not the standardized polarity terms used in sentiment analysis literature and systems.",
+        "These represent intensity levels rather than sentiment polarities, though they could be used for sentiment strength measurement."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "polarity",
+        "classification",
+        "basics"
+      ]
+    },
+    {
+      "id": "SAN_003",
+      "question": "What does subjectivity measure in sentiment analysis?",
+      "options": [
+        "The intensity of emotion in text",
+        "The degree to which text expresses opinion versus facts",
+        "The accuracy of sentiment prediction",
+        "The length of the text being analyzed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Subjectivity measures whether text expresses personal opinions, emotions, and judgments (subjective) or states factual information (objective).",
+      "optionExplanations": [
+        "This describes sentiment intensity or strength, not subjectivity. Intensity measures how strong the emotion is.",
+        "Correct. Subjectivity distinguishes between subjective content (opinions, emotions) and objective content (facts, neutral information).",
+        "This describes evaluation metrics like accuracy, precision, or recall used to assess model performance, not subjectivity.",
+        "This describes text length, which is a basic text statistic unrelated to the subjective nature of content."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "subjectivity",
+        "objectivity",
+        "text-analysis"
+      ]
+    },
+    {
+      "id": "SAN_004",
+      "question": "Which approach uses predefined word lists with sentiment scores?",
+      "options": [
+        "Machine learning approach",
+        "Deep learning approach",
+        "Lexicon-based approach",
+        "Rule-based approach"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Lexicon-based approaches rely on predefined dictionaries or word lists where each word has an associated sentiment score or polarity label.",
+      "optionExplanations": [
+        "Machine learning approaches use algorithms trained on labeled data to learn patterns, not predefined word lists with scores.",
+        "Deep learning uses neural networks to automatically learn features and patterns, not predefined sentiment lexicons.",
+        "Correct. Lexicon-based methods use sentiment dictionaries where words are pre-assigned sentiment scores or polarities.",
+        "Rule-based approaches use linguistic rules and patterns, which may include lexicons but the term is broader than just word lists."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lexicon-based",
+        "approaches",
+        "methodology"
+      ]
+    },
+    {
+      "id": "SAN_005",
+      "question": "What is a major advantage of lexicon-based sentiment analysis?",
+      "options": [
+        "Requires large amounts of training data",
+        "Works well without training data",
+        "Always achieves 100% accuracy",
+        "Only works for English language"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lexicon-based methods don't require training data since they use predefined sentiment dictionaries, making them useful when labeled data is scarce.",
+      "optionExplanations": [
+        "This is actually a disadvantage of machine learning approaches, not an advantage of lexicon-based methods.",
+        "Correct. Lexicon-based methods can work immediately using predefined sentiment dictionaries without needing labeled training data.",
+        "No sentiment analysis approach achieves perfect accuracy due to the complexity and subjectivity of language.",
+        "Lexicon-based methods can work for any language as long as sentiment lexicons exist for that language."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "lexicon-based",
+        "advantages",
+        "training-data"
+      ]
+    },
+    {
+      "id": "SAN_006",
+      "question": "What is VADER primarily designed for?",
+      "options": [
+        "Social media text sentiment analysis",
+        "Academic paper classification",
+        "Machine translation",
+        "Image sentiment recognition"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "VADER (Valence Aware Dictionary and sEntiment Reasoner) is specifically designed for social media text, handling informal language, emoticons, and punctuation.",
+      "optionExplanations": [
+        "Correct. VADER is optimized for social media text, effectively handling slang, emoticons, punctuation, and informal language patterns.",
+        "VADER is not specifically designed for academic papers, which typically use formal language that other tools might handle better.",
+        "VADER is a sentiment analysis tool, not a machine translation system for converting text between languages.",
+        "VADER analyzes text sentiment, not image content. Image sentiment analysis requires computer vision techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "VADER",
+        "social-media",
+        "tools"
+      ]
+    },
+    {
+      "id": "SAN_007",
+      "question": "Which lexicon contains words rated by human annotators on Amazon Mechanical Turk?",
+      "options": [
+        "SentiWordNet",
+        "AFINN",
+        "VADER",
+        "LabMT"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AFINN lexicon was created by rating words using Amazon Mechanical Turk crowdsourcing platform, with workers providing sentiment scores from -5 to +5.",
+      "optionExplanations": [
+        "SentiWordNet is built from WordNet and uses automated methods rather than direct human annotation through Amazon Mechanical Turk.",
+        "Correct. AFINN lexicon was created using Amazon Mechanical Turk workers who rated words on a sentiment scale from -5 to +5.",
+        "VADER uses its own methodology combining multiple sources and rules, not specifically Amazon Mechanical Turk ratings.",
+        "LabMT (Laboratory for Social Machines Twitter) uses different annotation methods, not specifically Amazon Mechanical Turk."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AFINN",
+        "lexicon",
+        "crowdsourcing"
+      ]
+    },
+    {
+      "id": "SAN_008",
+      "question": "What does the compound score in VADER represent?",
+      "options": [
+        "The number of words analyzed",
+        "A normalized sentiment score between -1 and 1",
+        "The subjectivity level of text",
+        "The confidence level of prediction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "VADER's compound score is a normalized metric that ranges from -1 (most negative) to +1 (most positive), summarizing the overall sentiment.",
+      "optionExplanations": [
+        "The compound score represents sentiment intensity, not the count of words in the analyzed text.",
+        "Correct. VADER's compound score is normalized between -1 and +1, where -1 indicates extremely negative sentiment and +1 indicates extremely positive sentiment.",
+        "VADER doesn't directly measure subjectivity; it focuses on sentiment polarity and intensity.",
+        "The compound score represents sentiment strength, not the model's confidence in its prediction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "VADER",
+        "compound-score",
+        "normalization"
+      ]
+    },
+    {
+      "id": "SAN_009",
+      "question": "In machine learning sentiment analysis, what are features typically extracted from?",
+      "options": [
+        "Only individual words",
+        "Text properties like words, n-grams, and linguistic patterns",
+        "Only punctuation marks",
+        "Only sentence length"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature extraction in ML sentiment analysis involves extracting various text properties including words, n-grams, POS tags, and other linguistic features.",
+      "optionExplanations": [
+        "Individual words (unigrams) are important features, but ML approaches use much richer feature sets including n-grams and linguistic patterns.",
+        "Correct. ML sentiment analysis extracts diverse features including words, n-grams, part-of-speech tags, syntactic patterns, and other linguistic properties.",
+        "Punctuation can be a feature, but it's just one small component of the comprehensive feature set used in ML approaches.",
+        "Sentence length might be a feature, but alone it's insufficient for effective sentiment analysis."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-extraction",
+        "machine-learning",
+        "text-features"
+      ]
+    },
+    {
+      "id": "SAN_010",
+      "question": "What is the main challenge with negation in sentiment analysis?",
+      "options": [
+        "Negation words are rare in text",
+        "Negation can reverse the sentiment of words",
+        "Negation only affects neutral words",
+        "Negation makes text longer"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Negation is challenging because it can flip the sentiment polarity of words or phrases, turning positive sentiments negative and vice versa.",
+      "optionExplanations": [
+        "Negation words like 'not', 'never', 'no' are actually quite common in natural language text.",
+        "Correct. Negation fundamentally changes sentiment polarity - 'good' becomes negative in 'not good', requiring special handling in sentiment analysis.",
+        "Negation affects words of all polarities, not just neutral ones. It can flip positive to negative and vice versa.",
+        "Text length is not the primary concern with negation; the challenge is correctly interpreting the semantic impact of negation on sentiment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "negation",
+        "challenges",
+        "polarity"
+      ]
+    },
+    {
+      "id": "SAN_011",
+      "question": "Which preprocessing step is most important for sentiment analysis?",
+      "options": [
+        "Converting to uppercase",
+        "Removing all punctuation",
+        "Text normalization and cleaning",
+        "Increasing text length"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Text normalization and cleaning, including handling case, punctuation, and special characters appropriately, is crucial for consistent sentiment analysis.",
+      "optionExplanations": [
+        "Converting to uppercase can actually hurt sentiment analysis by removing important casing information that might indicate emphasis.",
+        "Removing all punctuation can be harmful since punctuation like exclamation marks and question marks carry sentiment information.",
+        "Correct. Proper text normalization and cleaning while preserving sentiment-relevant features is essential for accurate sentiment analysis.",
+        "Increasing text length is not a preprocessing step and doesn't improve sentiment analysis performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing",
+        "text-normalization",
+        "cleaning"
+      ]
+    },
+    {
+      "id": "SAN_012",
+      "question": "What does TF-IDF stand for in the context of sentiment analysis feature extraction?",
+      "options": [
+        "Text Frequency - Inverse Document Frequency",
+        "Term Frequency - Inverse Document Frequency",
+        "Total Features - Individual Document Features",
+        "Text Format - Information Data Format"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TF-IDF stands for Term Frequency - Inverse Document Frequency, a weighting scheme that reflects how important a word is to a document in a collection.",
+      "optionExplanations": [
+        "While 'Text' might seem logical, the correct term is 'Term' referring to individual words or tokens in the vocabulary.",
+        "Correct. TF-IDF (Term Frequency - Inverse Document Frequency) weights terms based on their frequency in a document relative to their frequency across all documents.",
+        "This is not the correct expansion of TF-IDF. The acronym specifically refers to term frequency and inverse document frequency calculations.",
+        "This is completely incorrect. TF-IDF is a numerical statistic, not related to text formatting or data formats."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TF-IDF",
+        "feature-extraction",
+        "text-representation"
+      ]
+    },
+    {
+      "id": "SAN_013",
+      "question": "Which classifier is commonly used for binary sentiment classification?",
+      "options": [
+        "K-means clustering",
+        "Support Vector Machine (SVM)",
+        "Principal Component Analysis (PCA)",
+        "Linear regression"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Support Vector Machine (SVM) is widely used for binary sentiment classification due to its effectiveness with high-dimensional text data and clear decision boundaries.",
+      "optionExplanations": [
+        "K-means is an unsupervised clustering algorithm, not suitable for supervised sentiment classification tasks.",
+        "Correct. SVM is highly effective for binary sentiment classification, handling high-dimensional text features well and providing clear decision boundaries.",
+        "PCA is a dimensionality reduction technique, not a classifier. It's used for feature reduction, not classification.",
+        "Linear regression is used for predicting continuous values, not for binary classification tasks like sentiment analysis."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SVM",
+        "classification",
+        "binary-classification"
+      ]
+    },
+    {
+      "id": "SAN_014",
+      "question": "What is aspect-based sentiment analysis?",
+      "options": [
+        "Analyzing sentiment of entire documents only",
+        "Analyzing sentiment toward specific aspects or features",
+        "Analyzing only positive sentiments",
+        "Analyzing sentiment in multiple languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Aspect-based sentiment analysis identifies and analyzes sentiment toward specific aspects, features, or entities mentioned in the text rather than overall sentiment.",
+      "optionExplanations": [
+        "This describes document-level sentiment analysis, not aspect-based analysis which focuses on specific aspects within documents.",
+        "Correct. Aspect-based sentiment analysis examines sentiment toward specific aspects, features, or entities mentioned in text, like 'food quality' or 'service' in restaurant reviews.",
+        "Aspect-based analysis examines all sentiment polarities (positive, negative, neutral) for specific aspects, not just positive sentiments.",
+        "This describes multilingual sentiment analysis, not aspect-based analysis which focuses on specific aspects regardless of language."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "aspect-based",
+        "fine-grained",
+        "sentiment-analysis"
+      ]
+    },
+    {
+      "id": "SAN_015",
+      "question": "Which evaluation metric measures the proportion of correctly identified positive sentiments?",
+      "options": [
+        "Recall",
+        "Precision",
+        "F1-score",
+        "Accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Precision measures the proportion of predicted positive cases that are actually positive, focusing on the correctness of positive predictions.",
+      "optionExplanations": [
+        "Recall measures the proportion of actual positive cases that were correctly identified, not the correctness of positive predictions.",
+        "Correct. Precision measures how many of the predicted positive sentiments are actually positive, calculated as True Positives / (True Positives + False Positives).",
+        "F1-score is the harmonic mean of precision and recall, combining both metrics rather than measuring just positive prediction correctness.",
+        "Accuracy measures overall correctness across all classes, not specifically the correctness of positive sentiment predictions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "precision",
+        "evaluation",
+        "metrics"
+      ]
+    },
+    {
+      "id": "SAN_016",
+      "question": "What is the main advantage of using n-grams over unigrams in sentiment analysis?",
+      "options": [
+        "N-grams are always shorter",
+        "N-grams capture context and word combinations",
+        "N-grams require less computational power",
+        "N-grams work only with positive sentiments"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "N-grams capture sequences of words, preserving local context and word combinations that can be crucial for understanding sentiment.",
+      "optionExplanations": [
+        "N-grams are actually longer than unigrams since they include multiple consecutive words (e.g., bigrams have 2 words).",
+        "Correct. N-grams preserve word order and context, capturing phrases like 'not good' or 'very happy' that have different sentiment than individual words.",
+        "N-grams typically require more computational resources since they create larger feature spaces than unigrams alone.",
+        "N-grams work with all sentiment polarities and are not limited to positive sentiments."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "n-grams",
+        "context",
+        "feature-extraction"
+      ]
+    },
+    {
+      "id": "SAN_017",
+      "question": "What does domain adaptation mean in sentiment analysis?",
+      "options": [
+        "Translating sentiment between languages",
+        "Adapting models trained on one domain to work on another",
+        "Converting text to speech",
+        "Increasing the size of training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Domain adaptation involves transferring knowledge from models trained on one domain (e.g., movie reviews) to perform well on different domains (e.g., product reviews).",
+      "optionExplanations": [
+        "This describes cross-lingual sentiment analysis or machine translation, not domain adaptation within the same language.",
+        "Correct. Domain adaptation addresses the challenge of applying sentiment models trained on one domain (like movie reviews) to different domains (like hotel reviews) where language patterns may differ.",
+        "This describes text-to-speech synthesis, which is unrelated to sentiment analysis domain adaptation.",
+        "Increasing training data size is data augmentation, not domain adaptation, though more data might help with adaptation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "domain-adaptation",
+        "transfer-learning",
+        "cross-domain"
+      ]
+    },
+    {
+      "id": "SAN_018",
+      "question": "Which of the following is a challenge specific to sentiment analysis in social media?",
+      "options": [
+        "Perfect grammar and spelling",
+        "Informal language, slang, and emoticons",
+        "Very long text documents",
+        "Lack of opinion content"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Social media text presents unique challenges including informal language, slang, abbreviations, emoticons, and non-standard grammar that traditional NLP tools struggle with.",
+      "optionExplanations": [
+        "Social media text typically contains informal grammar and spelling errors, making this the opposite of what's challenging about social media analysis.",
+        "Correct. Social media presents unique challenges with informal language, slang, emoticons, hashtags, mentions, and non-standard text that require specialized handling.",
+        "Social media posts are typically short (like tweets), not long documents, which actually presents different challenges related to context scarcity.",
+        "Social media is rich with opinions and sentiments, making it an abundant source of sentiment data rather than lacking opinion content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "social-media",
+        "challenges",
+        "informal-language"
+      ]
+    },
+    {
+      "id": "SAN_019",
+      "question": "What is sentiment intensity in sentiment analysis?",
+      "options": [
+        "The number of sentiment words in text",
+        "The strength or degree of sentiment expressed",
+        "The length of the text analyzed",
+        "The accuracy of sentiment prediction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sentiment intensity measures how strong or weak the expressed sentiment is, going beyond just polarity to quantify the degree of emotion.",
+      "optionExplanations": [
+        "The count of sentiment words is a simple metric but doesn't capture the actual intensity or strength of the sentiment expressed.",
+        "Correct. Sentiment intensity measures the strength of sentiment expression, distinguishing between 'good' (mild positive) and 'excellent' (strong positive).",
+        "Text length is a basic statistic unrelated to the emotional intensity of the content.",
+        "Prediction accuracy is an evaluation metric for model performance, not a measure of sentiment intensity in the text."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "intensity",
+        "sentiment-strength",
+        "degree"
+      ]
+    },
+    {
+      "id": "SAN_020",
+      "question": "Which technique helps handle the class imbalance problem in sentiment datasets?",
+      "options": [
+        "Using only positive examples",
+        "SMOTE (Synthetic Minority Oversampling Technique)",
+        "Removing all neutral examples",
+        "Converting all text to lowercase"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SMOTE generates synthetic examples for minority classes to balance the dataset, helping models learn from underrepresented sentiment classes.",
+      "optionExplanations": [
+        "Using only positive examples would create a completely imbalanced dataset and eliminate the classification problem entirely.",
+        "Correct. SMOTE creates synthetic examples for underrepresented classes, helping balance datasets where some sentiment classes have fewer examples than others.",
+        "Removing neutral examples would worsen class imbalance if neutral is not the majority class, and eliminates important data.",
+        "Converting to lowercase is a preprocessing step unrelated to handling class imbalance in datasets."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "class-imbalance",
+        "SMOTE",
+        "data-balancing"
+      ]
+    },
+    {
+      "id": "SAN_021",
+      "question": "What is the purpose of stemming in sentiment analysis preprocessing?",
+      "options": [
+        "To remove all vowels from words",
+        "To reduce words to their root form",
+        "To translate words to English",
+        "To count the number of syllables"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stemming reduces words to their root or base form, helping to group different forms of the same word for more consistent feature representation.",
+      "optionExplanations": [
+        "Stemming doesn't remove vowels; it removes prefixes and suffixes to find word roots, preserving the core meaning.",
+        "Correct. Stemming reduces words like 'running', 'runs', 'ran' to their root 'run', helping treat related word forms as the same feature.",
+        "Stemming operates within a single language to find root forms, not for translation between languages.",
+        "Syllable counting is a different linguistic analysis unrelated to stemming, which focuses on morphological word roots."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "stemming",
+        "preprocessing",
+        "root-form"
+      ]
+    },
+    {
+      "id": "SAN_022",
+      "question": "Which deep learning architecture is particularly effective for sequential text sentiment analysis?",
+      "options": [
+        "Convolutional Neural Networks (CNN)",
+        "Recurrent Neural Networks (RNN)",
+        "Decision Trees",
+        "K-Nearest Neighbors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RNNs are designed to process sequential data and can capture dependencies between words in text, making them effective for sentiment analysis of sequential text.",
+      "optionExplanations": [
+        "While CNNs can be used for text analysis, they're better for local pattern detection rather than sequential dependencies in text.",
+        "Correct. RNNs (including LSTM and GRU variants) are specifically designed for sequential data and can capture word order and dependencies crucial for sentiment analysis.",
+        "Decision trees are traditional machine learning algorithms, not deep learning architectures, and don't handle sequential patterns well.",
+        "K-NN is a traditional machine learning algorithm that doesn't capture sequential patterns and isn't a deep learning architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RNN",
+        "deep-learning",
+        "sequential-data"
+      ]
+    },
+    {
+      "id": "SAN_023",
+      "question": "What is the main difference between LSTM and standard RNN for sentiment analysis?",
+      "options": [
+        "LSTM is faster than RNN",
+        "LSTM can handle long-term dependencies better",
+        "LSTM only works with positive sentiments",
+        "LSTM requires less training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LSTM (Long Short-Term Memory) networks solve the vanishing gradient problem of standard RNNs, enabling them to capture long-term dependencies in text.",
+      "optionExplanations": [
+        "LSTM is typically slower than standard RNN due to its more complex gating mechanisms, but provides better performance.",
+        "Correct. LSTM's gating mechanisms allow it to selectively remember and forget information, effectively handling long-term dependencies that standard RNNs struggle with.",
+        "LSTM works with all sentiment polarities and is not limited to positive sentiments.",
+        "LSTM doesn't inherently require less training data; the data requirements depend on the task complexity and model size."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LSTM",
+        "RNN",
+        "long-term-dependencies"
+      ]
+    },
+    {
+      "id": "SAN_024",
+      "question": "What role do word embeddings play in modern sentiment analysis?",
+      "options": [
+        "They count word frequencies",
+        "They represent words as dense vectors capturing semantic meaning",
+        "They translate words between languages",
+        "They remove stop words from text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Word embeddings convert words into dense vector representations that capture semantic relationships, enabling models to understand word meanings and similarities.",
+      "optionExplanations": [
+        "Word frequency counting is done by simpler methods like bag-of-words or TF-IDF, not word embeddings.",
+        "Correct. Word embeddings like Word2Vec, GloVe, and FastText represent words as dense vectors where semantically similar words have similar vector representations.",
+        "Word embeddings work within a single language space and don't perform translation, though cross-lingual embeddings exist for multilingual tasks.",
+        "Stop word removal is a preprocessing step, not the function of word embeddings which focus on semantic representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word-embeddings",
+        "semantic-representation",
+        "vectors"
+      ]
+    },
+    {
+      "id": "SAN_025",
+      "question": "Which attention mechanism concept is important in transformer-based sentiment analysis?",
+      "options": [
+        "Focusing only on the first word",
+        "Weighing the importance of different words in context",
+        "Removing unimportant words",
+        "Translating words to numbers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention mechanisms allow models to focus on different parts of the input text with varying degrees of importance, crucial for understanding context in sentiment analysis.",
+      "optionExplanations": [
+        "Attention doesn't focus only on specific positions like the first word; it dynamically weighs all words based on their relevance to the task.",
+        "Correct. Attention mechanisms compute importance weights for different words or tokens, allowing the model to focus on the most relevant parts for sentiment determination.",
+        "Attention mechanisms assign weights rather than removing words, preserving all information while emphasizing important parts.",
+        "Converting words to numbers is tokenization or embedding, not the attention mechanism which operates on already-numerical representations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "attention",
+        "transformers",
+        "context-weighting"
+      ]
+    },
+    {
+      "id": "SAN_026",
+      "question": "What is zero-shot sentiment analysis?",
+      "options": [
+        "Analysis that always predicts neutral sentiment",
+        "Performing sentiment analysis without task-specific training data",
+        "Analysis that takes zero time to compute",
+        "Analysis that works only with empty text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Zero-shot sentiment analysis uses pre-trained language models to perform sentiment classification without being specifically trained on sentiment-labeled data.",
+      "optionExplanations": [
+        "Zero-shot doesn't mean predicting neutral; it refers to the training paradigm where no task-specific examples are used during training.",
+        "Correct. Zero-shot learning leverages pre-trained models' general language understanding to perform sentiment analysis without seeing sentiment-specific training examples.",
+        "Zero-shot refers to the training paradigm, not computational speed, though it can be efficient since no task-specific training is needed.",
+        "Zero-shot works with regular text content and doesn't require empty text; the 'zero' refers to zero task-specific training examples."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "zero-shot",
+        "pre-trained-models",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "SAN_027",
+      "question": "Which preprocessing step should be avoided when using modern transformer models for sentiment analysis?",
+      "options": [
+        "Tokenization",
+        "Aggressive stemming and stop word removal",
+        "Text encoding",
+        "Handling special characters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Modern transformers benefit from rich linguistic information, so aggressive preprocessing like stemming and stop word removal can hurt performance by removing useful context.",
+      "optionExplanations": [
+        "Tokenization is essential for all neural models including transformers, as it converts text into tokens the model can process.",
+        "Correct. Transformers can learn from rich linguistic patterns, so aggressive preprocessing that removes information like stemming and stop word removal often hurts performance.",
+        "Text encoding (converting to numerical format) is necessary for all neural models to process text input.",
+        "Handling special characters appropriately is important for robust text processing in any model architecture."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "transformers",
+        "preprocessing",
+        "modern-nlp"
+      ]
+    },
+    {
+      "id": "SAN_028",
+      "question": "What is the main challenge with sarcasm detection in sentiment analysis?",
+      "options": [
+        "Sarcastic text is always very long",
+        "The literal meaning opposes the intended sentiment",
+        "Sarcastic text contains no sentiment words",
+        "Sarcasm only appears in formal writing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sarcasm is challenging because the surface-level literal meaning of the text is often opposite to the intended sentiment or meaning.",
+      "optionExplanations": [
+        "Sarcastic expressions can be short or long; length is not the defining characteristic that makes sarcasm detection challenging.",
+        "Correct. Sarcasm presents a fundamental challenge because the literal text meaning contradicts the intended sentiment, requiring deeper contextual understanding.",
+        "Sarcastic text often contains sentiment words, but they're used ironically to convey the opposite meaning, which is precisely what makes detection difficult.",
+        "Sarcasm appears frequently in informal contexts like social media, not just formal writing, making it a common challenge in real-world applications."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "sarcasm",
+        "irony",
+        "challenges"
+      ]
+    },
+    {
+      "id": "SAN_029",
+      "question": "Which metric is most appropriate for evaluating multi-class sentiment analysis with imbalanced classes?",
+      "options": [
+        "Accuracy only",
+        "Macro-averaged F1 score",
+        "Word count",
+        "Processing time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Macro-averaged F1 score treats all classes equally regardless of their frequency, making it ideal for imbalanced datasets where accuracy can be misleading.",
+      "optionExplanations": [
+        "Accuracy can be misleading with imbalanced classes since a model could achieve high accuracy by simply predicting the majority class.",
+        "Correct. Macro-averaged F1 computes F1 for each class separately then averages them, giving equal weight to all classes regardless of their frequency.",
+        "Word count is a basic text statistic, not an evaluation metric for sentiment analysis model performance.",
+        "Processing time measures computational efficiency, not the quality of sentiment predictions, and isn't suitable for model evaluation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "evaluation",
+        "imbalanced-classes",
+        "F1-score"
+      ]
+    },
+    {
+      "id": "SAN_030",
+      "question": "What is cross-validation used for in sentiment analysis model development?",
+      "options": [
+        "To translate between languages",
+        "To assess model performance and reduce overfitting",
+        "To increase training data size",
+        "To remove noise from text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation evaluates model performance across multiple train-test splits to get robust performance estimates and detect overfitting.",
+      "optionExplanations": [
+        "Cross-validation is a model evaluation technique, not a language translation method.",
+        "Correct. Cross-validation tests model performance across multiple data splits, providing robust performance estimates and helping identify overfitting issues.",
+        "Cross-validation doesn't increase data size; it uses existing data more effectively for evaluation by testing on multiple train-test combinations.",
+        "Text denoising is a preprocessing step, not the purpose of cross-validation which focuses on model evaluation methodology."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "evaluation",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "SAN_031",
+      "question": "Which technique helps capture phrase-level sentiment better than individual words?",
+      "options": [
+        "Character-level analysis",
+        "N-gram features",
+        "Word length calculation",
+        "Alphabetical sorting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "N-grams capture sequences of consecutive words, preserving local context and phrase-level meaning that individual words alone cannot provide.",
+      "optionExplanations": [
+        "Character-level analysis operates below the word level and typically loses semantic meaning that's important for sentiment analysis.",
+        "Correct. N-grams capture multi-word phrases like 'not very good' or 'absolutely terrible', preserving context that affects sentiment interpretation.",
+        "Word length is a surface-level feature that doesn't capture semantic or sentiment information at the phrase level.",
+        "Alphabetical sorting destroys word order and context, which are crucial for understanding phrase-level sentiment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "n-grams",
+        "phrases",
+        "context"
+      ]
+    },
+    {
+      "id": "SAN_032",
+      "question": "What is the primary benefit of using ensemble methods in sentiment analysis?",
+      "options": [
+        "Faster computation",
+        "Combining multiple models for better performance",
+        "Reducing memory usage",
+        "Simplifying the model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble methods combine predictions from multiple models to achieve better performance than any individual model, leveraging diverse strengths and reducing errors.",
+      "optionExplanations": [
+        "Ensemble methods typically require more computation since they involve running multiple models, not less.",
+        "Correct. Ensemble methods combine multiple models (e.g., different algorithms or training approaches) to achieve better overall performance through diversity and error reduction.",
+        "Ensemble methods typically use more memory since they maintain multiple models simultaneously.",
+        "Ensemble methods actually increase complexity by combining multiple models, rather than simplifying architecture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble",
+        "model-combination",
+        "performance"
+      ]
+    },
+    {
+      "id": "SAN_033",
+      "question": "Which lexicon is specifically designed for social media and informal text?",
+      "options": [
+        "WordNet",
+        "VADER",
+        "Dictionary.com",
+        "Encyclopedia Britannica"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "VADER (Valence Aware Dictionary and sEntiment Reasoner) was specifically designed to handle social media text, slang, emoticons, and informal language patterns.",
+      "optionExplanations": [
+        "WordNet is a general lexical database, not specifically designed for social media or sentiment analysis of informal text.",
+        "Correct. VADER was specifically created for social media text, incorporating rules for handling emoticons, punctuation, capitalization, and informal language patterns.",
+        "Dictionary.com is a general dictionary, not a sentiment lexicon designed for social media analysis.",
+        "Encyclopedia Britannica is a general reference work, not a sentiment analysis tool or lexicon."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "VADER",
+        "social-media",
+        "informal-text"
+      ]
+    },
+    {
+      "id": "SAN_034",
+      "question": "What does the term 'polarity' refer to in sentiment analysis?",
+      "options": [
+        "The magnetic properties of text",
+        "The positive, negative, or neutral orientation of sentiment",
+        "The length of sentences",
+        "The number of words in text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Polarity in sentiment analysis refers to the orientation or direction of sentiment, typically classified as positive, negative, or neutral.",
+      "optionExplanations": [
+        "Polarity in sentiment analysis is a linguistic concept about emotional orientation, not related to magnetic or physical properties.",
+        "Correct. Sentiment polarity indicates the emotional orientation of text - whether it expresses positive, negative, or neutral sentiment toward a subject.",
+        "Sentence length is a structural text feature unrelated to sentiment polarity, which focuses on emotional orientation.",
+        "Word count is a basic text statistic that doesn't indicate the emotional polarity or sentiment orientation of the content."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "polarity",
+        "sentiment-orientation",
+        "classification"
+      ]
+    },
+    {
+      "id": "SAN_035",
+      "question": "Which challenge is unique to real-time sentiment analysis systems?",
+      "options": [
+        "Handling large vocabulary",
+        "Processing speed and latency requirements",
+        "Dealing with positive sentiments",
+        "Using machine learning algorithms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Real-time systems must process incoming data quickly with low latency, requiring optimization for speed while maintaining accuracy.",
+      "optionExplanations": [
+        "Large vocabulary handling is a challenge for all sentiment analysis systems, not unique to real-time applications.",
+        "Correct. Real-time sentiment analysis must balance processing speed with accuracy, requiring optimized models and infrastructure to meet latency requirements.",
+        "Handling positive sentiments is a basic requirement for all sentiment analysis systems, not specific to real-time processing.",
+        "Machine learning algorithms are used in both batch and real-time sentiment analysis systems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "real-time",
+        "latency",
+        "processing-speed"
+      ]
+    },
+    {
+      "id": "SAN_036",
+      "question": "What is the purpose of sentiment lexicon expansion?",
+      "options": [
+        "To make lexicons shorter",
+        "To add new words and improve coverage",
+        "To remove outdated words",
+        "To translate lexicons"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lexicon expansion adds new sentiment words and phrases to improve coverage, especially for domain-specific terms and emerging language patterns.",
+      "optionExplanations": [
+        "Lexicon expansion aims to increase coverage by adding words, not making lexicons shorter or smaller.",
+        "Correct. Lexicon expansion improves sentiment analysis by adding new sentiment-bearing words, domain-specific terms, and emerging language patterns to increase coverage.",
+        "While outdated words might be updated, the primary purpose is adding new words rather than removing existing ones.",
+        "Translation creates lexicons for different languages, but expansion focuses on improving coverage within a language."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lexicon-expansion",
+        "coverage",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "SAN_037",
+      "question": "Which approach combines rule-based and machine learning methods?",
+      "options": [
+        "Pure lexicon-based approach",
+        "Hybrid approach",
+        "Deep learning only",
+        "Statistical approach only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hybrid approaches combine the interpretability of rule-based methods with the learning capability of machine learning to leverage advantages of both.",
+      "optionExplanations": [
+        "Pure lexicon-based approaches use only predefined sentiment dictionaries without machine learning components.",
+        "Correct. Hybrid approaches combine rule-based methods (like lexicons and linguistic rules) with machine learning techniques to leverage the strengths of both approaches.",
+        "Deep learning only approaches rely solely on neural networks without incorporating rule-based or lexicon-based knowledge.",
+        "Statistical approaches focus on statistical learning methods without incorporating rule-based components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hybrid-approach",
+        "rule-based",
+        "machine-learning"
+      ]
+    },
+    {
+      "id": "SAN_038",
+      "question": "What is the main advantage of transformer models like BERT for sentiment analysis?",
+      "options": [
+        "They are always faster",
+        "They capture bidirectional context",
+        "They require no training data",
+        "They only work with short text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BERT and similar transformers use bidirectional attention to understand context from both directions, leading to better understanding of word meanings in context.",
+      "optionExplanations": [
+        "Transformer models like BERT are typically slower than simpler models due to their complexity, but offer better performance.",
+        "Correct. BERT's bidirectional encoder captures context from both left and right directions simultaneously, leading to better contextual understanding than unidirectional models.",
+        "BERT still requires fine-tuning on task-specific data, though it can be used in zero-shot settings with reduced performance.",
+        "BERT can handle various text lengths within its maximum sequence limit, not just short text."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "BERT",
+        "transformers",
+        "bidirectional-context"
+      ]
+    },
+    {
+      "id": "SAN_039",
+      "question": "Which technique helps handle out-of-vocabulary (OOV) words in sentiment analysis?",
+      "options": [
+        "Ignoring unknown words",
+        "Subword tokenization (like BPE)",
+        "Converting all words to uppercase",
+        "Removing all unknown words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Subword tokenization breaks words into smaller units, allowing models to handle unseen words by combining known subword pieces.",
+      "optionExplanations": [
+        "Ignoring unknown words loses potentially important sentiment information and doesn't solve the OOV problem.",
+        "Correct. Subword tokenization (like BPE, SentencePiece) breaks words into smaller units, enabling models to handle unseen words by combining known subword tokens.",
+        "Case conversion doesn't address the fundamental issue of unknown words that aren't in the model's vocabulary.",
+        "Removing unknown words loses information and doesn't provide a way to process OOV words when they appear."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "OOV",
+        "subword-tokenization",
+        "BPE"
+      ]
+    },
+    {
+      "id": "SAN_040",
+      "question": "What is fine-grained sentiment analysis?",
+      "options": [
+        "Analysis of very short texts only",
+        "Sentiment classification into more detailed categories",
+        "Analysis using only fine fonts",
+        "Sentiment analysis of financial texts only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fine-grained sentiment analysis goes beyond simple positive/negative/neutral classification to include more detailed emotional categories or intensity levels.",
+      "optionExplanations": [
+        "Fine-grained analysis refers to the granularity of sentiment categories, not the length of text being analyzed.",
+        "Correct. Fine-grained sentiment analysis uses more detailed classification schemes, such as 5-point scales, multiple emotional categories, or intensity levels beyond simple positive/negative/neutral.",
+        "Font size is unrelated to sentiment analysis granularity, which refers to the detail level of sentiment categories.",
+        "Fine-grained analysis can be applied to any domain, not just financial texts, and refers to classification detail rather than domain specificity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fine-grained",
+        "detailed-classification",
+        "granularity"
+      ]
+    },
+    {
+      "id": "SAN_041",
+      "question": "Which preprocessing step helps normalize different forms of the same word?",
+      "options": [
+        "Lemmatization",
+        "Text translation",
+        "Character removal",
+        "Sentence splitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Lemmatization reduces words to their canonical dictionary form, normalizing different inflected forms like 'running', 'ran', 'runs' to 'run'.",
+      "optionExplanations": [
+        "Correct. Lemmatization converts words to their base dictionary form, normalizing inflected variations like 'better' to 'good' or 'running' to 'run'.",
+        "Translation converts between languages but doesn't normalize different forms of words within the same language.",
+        "Character removal is a cleaning step but doesn't address morphological variations of the same word.",
+        "Sentence splitting divides text into sentences but doesn't normalize word forms within those sentences."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lemmatization",
+        "normalization",
+        "word-forms"
+      ]
+    },
+    {
+      "id": "SAN_042",
+      "question": "What is the main challenge with multilingual sentiment analysis?",
+      "options": [
+        "All languages express sentiment identically",
+        "Cultural and linguistic differences in sentiment expression",
+        "All languages use the same words",
+        "Sentiment doesn't exist in some languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different languages and cultures express sentiment differently through varying linguistic patterns, cultural contexts, and emotional expression norms.",
+      "optionExplanations": [
+        "Languages have vastly different ways of expressing sentiment through syntax, vocabulary, and cultural conventions.",
+        "Correct. Multilingual sentiment analysis faces challenges from varying linguistic structures, cultural norms for expressing emotion, and language-specific sentiment patterns.",
+        "Languages have distinct vocabularies, and even similar concepts may have different emotional connotations across languages.",
+        "All human languages have ways to express sentiment and emotion, though the specific mechanisms and patterns vary significantly."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multilingual",
+        "cross-cultural",
+        "language-differences"
+      ]
+    },
+    {
+      "id": "SAN_043",
+      "question": "Which evaluation approach is best for comparing different sentiment analysis models?",
+      "options": [
+        "Testing on the same dataset with same metrics",
+        "Using different datasets for each model",
+        "Only measuring training time",
+        "Only checking model size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Fair model comparison requires using the same evaluation dataset and metrics to ensure results are comparable and not biased by different testing conditions.",
+      "optionExplanations": [
+        "Correct. Fair comparison requires identical evaluation conditions - same test dataset, same metrics, and same evaluation protocols to ensure meaningful and unbiased comparisons.",
+        "Using different datasets makes it impossible to fairly compare models since performance differences could be due to dataset characteristics rather than model quality.",
+        "Training time is a computational efficiency metric but doesn't indicate the quality of sentiment predictions or model accuracy.",
+        "Model size indicates computational requirements but doesn't measure the quality of sentiment analysis performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "model-comparison",
+        "fair-testing"
+      ]
+    },
+    {
+      "id": "SAN_044",
+      "question": "What does inter-annotator agreement measure in sentiment analysis datasets?",
+      "options": [
+        "How fast annotators work",
+        "Consistency between different human annotators",
+        "The cost of annotation",
+        "The length of texts annotated"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Inter-annotator agreement measures how consistently different human annotators assign sentiment labels to the same text, indicating dataset quality and task difficulty.",
+      "optionExplanations": [
+        "Inter-annotator agreement measures quality and consistency of annotations, not the speed at which annotators complete their work.",
+        "Correct. High inter-annotator agreement indicates that different humans consistently assign the same sentiment labels, suggesting clear annotation guidelines and reliable dataset quality.",
+        "Agreement measures annotation quality and consistency, not the financial cost or resources required for the annotation process.",
+        "Agreement focuses on the consistency of sentiment labels assigned, not on text length or other surface characteristics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "inter-annotator",
+        "agreement",
+        "dataset-quality"
+      ]
+    },
+    {
+      "id": "SAN_045",
+      "question": "Which approach is most suitable for analyzing sentiment in low-resource languages?",
+      "options": [
+        "Training large models from scratch",
+        "Cross-lingual transfer learning",
+        "Using only English models",
+        "Ignoring low-resource languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-lingual transfer learning leverages models trained on high-resource languages to perform sentiment analysis in low-resource languages with limited training data.",
+      "optionExplanations": [
+        "Training large models from scratch requires substantial training data, which is precisely what low-resource languages lack.",
+        "Correct. Cross-lingual transfer learning uses multilingual models or translation approaches to apply knowledge from high-resource languages to low-resource languages.",
+        "Using only English models ignores the linguistic and cultural differences that affect sentiment expression in other languages.",
+        "Ignoring low-resource languages is not a solution and prevents these language communities from benefiting from sentiment analysis technology."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "low-resource",
+        "cross-lingual",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "SAN_046",
+      "question": "What is the purpose of data augmentation in sentiment analysis?",
+      "options": [
+        "To make datasets smaller",
+        "To increase training data size and diversity",
+        "To remove noisy examples",
+        "To translate data to other languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data augmentation artificially increases training data by creating modified versions of existing examples, helping models generalize better and handle data scarcity.",
+      "optionExplanations": [
+        "Data augmentation increases dataset size, not reduces it, by generating additional training examples from existing data.",
+        "Correct. Data augmentation creates additional training examples through techniques like paraphrasing, synonym replacement, or back-translation to improve model robustness.",
+        "Data cleaning removes noisy examples, but augmentation adds new examples to increase dataset size and diversity.",
+        "While translation can be used for augmentation, the primary purpose is increasing data quantity and diversity, not specifically translation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-augmentation",
+        "training-data",
+        "diversity"
+      ]
+    },
+    {
+      "id": "SAN_047",
+      "question": "Which metric best captures the trade-off between precision and recall?",
+      "options": [
+        "Accuracy",
+        "F1-score",
+        "Confusion matrix",
+        "Training time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "F1-score is the harmonic mean of precision and recall, providing a single metric that balances both measures and penalizes extreme values.",
+      "optionExplanations": [
+        "Accuracy measures overall correctness but doesn't specifically capture the precision-recall trade-off, especially in imbalanced datasets.",
+        "Correct. F1-score combines precision and recall into a single metric using harmonic mean, effectively capturing the trade-off between these two important measures.",
+        "Confusion matrix displays detailed classification results but is a table of values, not a single metric that captures precision-recall trade-off.",
+        "Training time measures computational efficiency, not the quality trade-off between precision and recall in predictions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "F1-score",
+        "precision-recall",
+        "trade-off"
+      ]
+    },
+    {
+      "id": "SAN_048",
+      "question": "What is active learning in the context of sentiment analysis?",
+      "options": [
+        "Learning only from positive examples",
+        "Selectively choosing the most informative examples for annotation",
+        "Learning while the system is running",
+        "Learning from multiple teachers simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Active learning iteratively selects the most informative unlabeled examples for human annotation, maximizing learning efficiency with minimal annotation effort.",
+      "optionExplanations": [
+        "Active learning works with all sentiment classes and doesn't focus exclusively on positive examples.",
+        "Correct. Active learning strategically selects the most uncertain or informative examples for human annotation, maximizing model improvement with minimal labeling effort.",
+        "Online learning refers to learning while the system runs, but active learning focuses on intelligent example selection for annotation.",
+        "Multi-teacher learning involves multiple sources of supervision, but active learning focuses on strategic example selection for annotation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "active-learning",
+        "annotation",
+        "informative-examples"
+      ]
+    },
+    {
+      "id": "SAN_049",
+      "question": "Which technique helps models understand context-dependent word meanings?",
+      "options": [
+        "Static word embeddings",
+        "Contextualized embeddings (like ELMo, BERT)",
+        "Bag of words",
+        "Character counting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Contextualized embeddings generate different representations for the same word based on its context, capturing polysemy and context-dependent meanings.",
+      "optionExplanations": [
+        "Static word embeddings like Word2Vec assign fixed representations to words regardless of context, missing context-dependent meanings.",
+        "Correct. Contextualized embeddings like ELMo and BERT generate different word representations based on surrounding context, capturing polysemy and contextual nuances.",
+        "Bag of words completely ignores word order and context, treating each word independently without contextual understanding.",
+        "Character counting provides surface-level statistics without any semantic or contextual understanding of word meanings."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "contextualized-embeddings",
+        "context-dependent",
+        "polysemy"
+      ]
+    },
+    {
+      "id": "SAN_050",
+      "question": "What is the main challenge with emoji and emoticon handling in sentiment analysis?",
+      "options": [
+        "They are always positive",
+        "They can have context-dependent meanings",
+        "They don't appear in text",
+        "They are too small to analyze"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Emojis and emoticons can have different meanings depending on context, cultural background, and usage patterns, making their sentiment interpretation challenging.",
+      "optionExplanations": [
+        "Emojis and emoticons can express various sentiments including negative, neutral, and positive emotions, not just positive ones.",
+        "Correct. Emojis and emoticons can have context-dependent, culturally-specific, or evolving meanings that make automatic sentiment interpretation challenging.",
+        "Emojis and emoticons are very common in social media and informal text, making their proper handling crucial for sentiment analysis.",
+        "Size is not the issue; the challenge lies in correctly interpreting their semantic meaning and sentiment in different contexts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "emoji",
+        "emoticons",
+        "context-dependent"
+      ]
+    },
+    {
+      "id": "SAN_051",
+      "question": "Which approach is most effective for handling sentiment analysis in specialized domains?",
+      "options": [
+        "Using general-purpose models only",
+        "Domain-specific training or adaptation",
+        "Ignoring domain differences",
+        "Using random classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Specialized domains often have unique vocabulary, expression patterns, and sentiment indicators that require domain-specific training or model adaptation.",
+      "optionExplanations": [
+        "General-purpose models may miss domain-specific sentiment patterns, terminology, and expression conventions that are crucial for accuracy.",
+        "Correct. Domain-specific training or adaptation helps models learn specialized vocabulary, sentiment patterns, and expression norms specific to particular domains.",
+        "Domain differences significantly impact sentiment expression and ignoring them leads to poor performance in specialized contexts.",
+        "Random classification provides no useful sentiment information and is not a viable approach for any domain."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "domain-specific",
+        "specialization",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "SAN_052",
+      "question": "What is the role of feature engineering in traditional machine learning sentiment analysis?",
+      "options": [
+        "It's not needed for sentiment analysis",
+        "Creating relevant input features from text",
+        "Only removing features",
+        "Adding random noise to data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature engineering involves creating meaningful input features from raw text that capture sentiment-relevant patterns for machine learning models.",
+      "optionExplanations": [
+        "Feature engineering is crucial for traditional ML approaches, as they require hand-crafted features to understand text patterns.",
+        "Correct. Feature engineering transforms raw text into numerical features like n-grams, POS tags, and sentiment scores that ML algorithms can process effectively.",
+        "Feature engineering involves both selecting relevant features and creating new ones, not just removing features.",
+        "Adding random noise would hurt model performance; feature engineering focuses on creating meaningful, informative features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-engineering",
+        "machine-learning",
+        "text-features"
+      ]
+    },
+    {
+      "id": "SAN_053",
+      "question": "Which challenge is specific to streaming sentiment analysis?",
+      "options": [
+        "Handling static datasets",
+        "Processing continuous data streams with concept drift",
+        "Working with small datasets",
+        "Using only batch processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Streaming sentiment analysis must handle continuously arriving data and adapt to concept drift where sentiment patterns change over time.",
+      "optionExplanations": [
+        "Streaming analysis deals with dynamic, continuously changing data, not static datasets that remain fixed.",
+        "Correct. Streaming sentiment analysis faces unique challenges of processing continuous data flows and adapting to concept drift as sentiment patterns evolve over time.",
+        "Streaming systems typically handle large volumes of data, not small datasets, and focus on real-time processing capabilities.",
+        "Streaming analysis specifically avoids batch processing, instead focusing on real-time or near-real-time continuous processing."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "streaming",
+        "concept-drift",
+        "real-time"
+      ]
+    },
+    {
+      "id": "SAN_054",
+      "question": "What is the primary advantage of using attention mechanisms in sentiment analysis?",
+      "options": [
+        "Faster processing speed",
+        "Focusing on relevant parts of the input",
+        "Reducing model size",
+        "Eliminating the need for training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention mechanisms allow models to dynamically focus on the most relevant words or phrases for sentiment determination, improving interpretability and performance.",
+      "optionExplanations": [
+        "Attention mechanisms typically add computational overhead, so they don't primarily improve processing speed.",
+        "Correct. Attention allows models to selectively focus on sentiment-bearing words and phrases, improving both performance and interpretability of predictions.",
+        "Attention mechanisms usually increase model complexity and size rather than reducing it.",
+        "Attention mechanisms still require training data to learn which parts of input to focus on for different tasks."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "attention",
+        "focus",
+        "relevance"
+      ]
+    },
+    {
+      "id": "SAN_055",
+      "question": "Which approach helps sentiment analysis models generalize to new domains?",
+      "options": [
+        "Overfitting to training data",
+        "Domain adaptation and transfer learning",
+        "Using smaller datasets",
+        "Ignoring cross-domain differences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Domain adaptation and transfer learning help models trained on one domain effectively work on new domains by transferring relevant knowledge.",
+      "optionExplanations": [
+        "Overfitting makes models perform poorly on new data, including new domains, by memorizing training-specific patterns.",
+        "Correct. Domain adaptation techniques help models transfer knowledge from source domains to target domains, improving generalization across different areas.",
+        "Smaller datasets typically hurt generalization by providing less diverse training examples for the model to learn from.",
+        "Ignoring cross-domain differences leads to poor performance when domain-specific patterns and vocabulary differ significantly."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "domain-adaptation",
+        "generalization",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "SAN_056",
+      "question": "What is opinion mining in relation to sentiment analysis?",
+      "options": [
+        "A completely different field",
+        "Another term for sentiment analysis",
+        "Only for mining industry texts",
+        "A data storage technique"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Opinion mining is essentially synonymous with sentiment analysis, both referring to the computational study of opinions, sentiments, and emotions in text.",
+      "optionExplanations": [
+        "Opinion mining and sentiment analysis are closely related fields that largely overlap, not completely different areas of study.",
+        "Correct. Opinion mining is another term for sentiment analysis, both focusing on extracting and analyzing opinions, sentiments, and emotions from textual data.",
+        "Opinion mining applies to any domain where opinions are expressed, not specifically to mining industry texts.",
+        "Opinion mining is an analysis technique for textual content, not a method for storing or managing data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "opinion-mining",
+        "terminology",
+        "sentiment-analysis"
+      ]
+    },
+    {
+      "id": "SAN_057",
+      "question": "Which type of text presents the most challenges for sentiment analysis?",
+      "options": [
+        "Formal academic papers",
+        "Social media posts with slang and sarcasm",
+        "Simple product descriptions",
+        "Weather reports"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Social media text combines multiple challenges: informal language, slang, sarcasm, emoticons, abbreviations, and context-dependent meanings.",
+      "optionExplanations": [
+        "Academic papers use formal language with clear structure, making them relatively easier for sentiment analysis compared to informal text.",
+        "Correct. Social media text combines multiple challenges including slang, sarcasm, emoticons, abbreviations, informal grammar, and context-dependent meanings.",
+        "Product descriptions are typically straightforward and factual, presenting fewer challenges than complex social media content.",
+        "Weather reports are factual and objective, containing minimal subjective sentiment that would challenge analysis systems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "social-media",
+        "challenges",
+        "informal-language"
+      ]
+    },
+    {
+      "id": "SAN_058",
+      "question": "What is the difference between document-level and sentence-level sentiment analysis?",
+      "options": [
+        "No difference at all",
+        "Document-level analyzes entire documents, sentence-level analyzes individual sentences",
+        "Document-level is always more accurate",
+        "Sentence-level only works with questions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Document-level sentiment analysis determines overall sentiment of entire documents, while sentence-level analysis examines sentiment of individual sentences.",
+      "optionExplanations": [
+        "There are significant differences in scope, granularity, and technical approaches between document-level and sentence-level analysis.",
+        "Correct. Document-level analysis determines the overall sentiment of complete documents, while sentence-level analysis examines sentiment at the individual sentence level.",
+        "Accuracy depends on the specific task and implementation; neither approach is universally more accurate than the other.",
+        "Sentence-level analysis works with all types of sentences, not just questions, examining sentiment in declarative, interrogative, and other sentence types."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "granularity",
+        "document-level",
+        "sentence-level"
+      ]
+    },
+    {
+      "id": "SAN_059",
+      "question": "Which technique helps handle class imbalance in sentiment datasets?",
+      "options": [
+        "Using only majority class examples",
+        "Weighted loss functions or oversampling techniques",
+        "Removing all minority class examples",
+        "Converting all labels to neutral"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weighted loss functions penalize misclassification of minority classes more heavily, while oversampling techniques increase minority class representation.",
+      "optionExplanations": [
+        "Using only majority class examples eliminates the classification problem and prevents the model from learning minority class patterns.",
+        "Correct. Weighted loss functions and oversampling (like SMOTE) help balance the impact of different classes during training, addressing imbalance issues.",
+        "Removing minority class examples worsens the imbalance problem and eliminates important data from the training process.",
+        "Converting all labels to neutral eliminates the classification task entirely and doesn't address the underlying imbalance issue."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "class-imbalance",
+        "weighted-loss",
+        "oversampling"
+      ]
+    },
+    {
+      "id": "SAN_060",
+      "question": "What is the main benefit of using pre-trained language models for sentiment analysis?",
+      "options": [
+        "They never need fine-tuning",
+        "They leverage general language understanding",
+        "They are always smaller",
+        "They only work with positive sentiments"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-trained language models have learned general language patterns from large corpora, providing a strong foundation that can be adapted for sentiment analysis.",
+      "optionExplanations": [
+        "Pre-trained models typically benefit from fine-tuning on task-specific data to adapt their general knowledge to sentiment analysis.",
+        "Correct. Pre-trained models like BERT have learned rich language representations from massive text corpora, providing strong foundations for sentiment tasks.",
+        "Pre-trained models are typically larger than models trained from scratch, as they contain comprehensive language knowledge.",
+        "Pre-trained models work with all sentiment polarities and can be fine-tuned for any sentiment classification task."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-trained-models",
+        "language-understanding",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "SAN_061",
+      "question": "Which regularization technique helps prevent overfitting in neural sentiment analysis models?",
+      "options": [
+        "Dropout",
+        "Adding more training data only",
+        "Increasing model complexity",
+        "Using only test data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dropout randomly sets some neurons to zero during training, preventing the model from relying too heavily on specific neurons and reducing overfitting.",
+      "optionExplanations": [
+        "Correct. Dropout randomly deactivates neurons during training, forcing the network to learn more robust representations and reducing overfitting.",
+        "While more data can help, dropout is a specific regularization technique that works even with limited data.",
+        "Increasing model complexity typically increases overfitting risk rather than preventing it.",
+        "Using only test data for training would lead to severe overfitting and invalid evaluation results."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dropout",
+        "regularization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "SAN_062",
+      "question": "What is sentiment shift detection in sentiment analysis?",
+      "options": [
+        "Converting positive to negative sentiment",
+        "Detecting changes in sentiment over time or across text",
+        "Moving text between documents",
+        "Changing the analysis algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sentiment shift detection identifies changes in sentiment polarity or intensity within a document, across time periods, or in response to events.",
+      "optionExplanations": [
+        "Sentiment shift detection identifies natural changes, not artificially converting sentiment from one polarity to another.",
+        "Correct. Sentiment shift detection identifies when sentiment changes within text, across time periods, or in response to specific events or topics.",
+        "Moving text between documents is a data management task, not sentiment shift detection which focuses on sentiment changes.",
+        "Changing algorithms is a technical decision, not sentiment shift detection which analyzes content for sentiment changes."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "sentiment-shift",
+        "temporal-analysis",
+        "change-detection"
+      ]
+    },
+    {
+      "id": "SAN_063",
+      "question": "Which challenge is unique to sentiment analysis of code-mixed text?",
+      "options": [
+        "All words are in English",
+        "Multiple languages mixed within the same text",
+        "Text is always very short",
+        "No sentiment words exist"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Code-mixed text contains multiple languages within the same document or sentence, requiring models that can handle multilingual content simultaneously.",
+      "optionExplanations": [
+        "Code-mixed text specifically involves mixing multiple languages, not using English exclusively.",
+        "Correct. Code-mixed text combines multiple languages within the same text, creating challenges for models that typically handle one language at a time.",
+        "Code-mixed text can be of any length; the challenge is the multilingual nature, not text length.",
+        "Code-mixed text contains sentiment-bearing words from multiple languages, requiring multilingual sentiment understanding."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "code-mixed",
+        "multilingual",
+        "language-mixing"
+      ]
+    },
+    {
+      "id": "SAN_064",
+      "question": "What is the purpose of sentiment intensity scaling?",
+      "options": [
+        "Making all sentiments neutral",
+        "Quantifying the strength of sentiment expression",
+        "Removing weak sentiments",
+        "Converting text to numbers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sentiment intensity scaling measures how strongly positive or negative a sentiment is expressed, going beyond binary classification to capture degree.",
+      "optionExplanations": [
+        "Intensity scaling measures strength variation, not neutralizing all sentiments to remove emotional content.",
+        "Correct. Sentiment intensity scaling quantifies how strong the sentiment is, distinguishing between mild and extreme expressions of the same polarity.",
+        "Intensity scaling measures all sentiment strengths rather than removing weaker expressions from analysis.",
+        "While intensity involves numerical scores, the purpose is measuring emotional strength, not general text-to-number conversion."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "intensity",
+        "scaling",
+        "sentiment-strength"
+      ]
+    },
+    {
+      "id": "SAN_065",
+      "question": "Which approach is most effective for handling negation in sentiment analysis?",
+      "options": [
+        "Ignoring negation words",
+        "Rule-based negation scope detection",
+        "Removing all negative words",
+        "Converting negations to positive"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule-based negation scope detection identifies negation words and determines which words fall within their scope, allowing proper sentiment reversal.",
+      "optionExplanations": [
+        "Ignoring negation words leads to incorrect sentiment analysis since negation fundamentally changes meaning.",
+        "Correct. Rule-based approaches identify negation words and determine their scope, properly handling sentiment polarity changes.",
+        "Removing negative words would eliminate important sentiment information rather than properly handling negation effects.",
+        "Converting negations to positive changes the meaning rather than properly interpreting the negated sentiment."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "negation",
+        "scope-detection",
+        "rule-based"
+      ]
+    },
+    {
+      "id": "SAN_066",
+      "question": "What is comparative sentiment analysis?",
+      "options": [
+        "Comparing different analysis algorithms",
+        "Analyzing sentiment that compares entities or options",
+        "Using only comparison operators",
+        "Comparing document lengths"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Comparative sentiment analysis focuses on text that expresses preferences or comparisons between entities, like 'X is better than Y'.",
+      "optionExplanations": [
+        "Algorithm comparison is model evaluation, not comparative sentiment analysis which focuses on comparative content.",
+        "Correct. Comparative sentiment analysis handles expressions that compare entities, identifying preferences and relative sentiments between options.",
+        "Comparison operators are programming constructs, not the focus of comparative sentiment analysis which handles natural language comparisons.",
+        "Document length comparison is a text statistic unrelated to analyzing comparative sentiment expressions in content."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "comparative",
+        "preferences",
+        "entity-comparison"
+      ]
+    },
+    {
+      "id": "SAN_067",
+      "question": "Which technique helps capture long-term dependencies in text for sentiment analysis?",
+      "options": [
+        "Bag of words",
+        "LSTM networks",
+        "Character counting",
+        "Random sampling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LSTM networks are specifically designed to capture long-term dependencies in sequential data through their gating mechanisms.",
+      "optionExplanations": [
+        "Bag of words completely ignores word order and sequence, making it unable to capture any dependencies between words.",
+        "Correct. LSTM networks use gating mechanisms to selectively remember and forget information, effectively capturing long-term dependencies in text sequences.",
+        "Character counting provides surface-level statistics without capturing semantic dependencies or relationships between words.",
+        "Random sampling doesn't capture dependencies and would actually destroy any sequential relationships in the text."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LSTM",
+        "long-term-dependencies",
+        "sequential"
+      ]
+    },
+    {
+      "id": "SAN_068",
+      "question": "What is the main challenge with implicit sentiment analysis?",
+      "options": [
+        "Sentiment is directly stated",
+        "Sentiment is expressed indirectly without explicit opinion words",
+        "Text is always very long",
+        "Only positive sentiments are implicit"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Implicit sentiment requires understanding context and inference since sentiment is not directly expressed through obvious sentiment words.",
+      "optionExplanations": [
+        "Implicit sentiment is challenging precisely because sentiment is not directly stated, requiring inference from context.",
+        "Correct. Implicit sentiment analysis must infer sentiment from context, implications, and indirect expressions rather than explicit sentiment words.",
+        "Text length is not the defining characteristic of implicit sentiment; the challenge is indirect expression regardless of length.",
+        "All sentiment polarities can be expressed implicitly, not just positive sentiments."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "implicit-sentiment",
+        "indirect-expression",
+        "inference"
+      ]
+    },
+    {
+      "id": "SAN_069",
+      "question": "Which evaluation metric is least affected by class imbalance?",
+      "options": [
+        "Accuracy",
+        "Matthews Correlation Coefficient (MCC)",
+        "Simple error rate",
+        "Majority class prediction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "MCC considers true and false positives and negatives for all classes, providing a balanced measure even with imbalanced datasets.",
+      "optionExplanations": [
+        "Accuracy can be misleading with imbalanced classes since predicting the majority class can yield high accuracy.",
+        "Correct. MCC considers all aspects of the confusion matrix and provides a balanced measure that's less affected by class imbalance.",
+        "Simple error rate suffers from the same issues as accuracy when dealing with imbalanced datasets.",
+        "Majority class prediction is a naive baseline that ignores minority classes entirely, not an evaluation metric."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "MCC",
+        "imbalanced-evaluation",
+        "robust-metrics"
+      ]
+    },
+    {
+      "id": "SAN_070",
+      "question": "What is few-shot learning in sentiment analysis?",
+      "options": [
+        "Learning from very large datasets",
+        "Learning to classify sentiment with few training examples",
+        "Learning only negative sentiments",
+        "Learning in a few seconds"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Few-shot learning enables models to perform sentiment classification effectively with only a small number of labeled training examples.",
+      "optionExplanations": [
+        "Few-shot learning specifically addresses scenarios with limited data, not large datasets.",
+        "Correct. Few-shot learning enables effective sentiment classification using only a few labeled examples, often leveraging pre-trained knowledge.",
+        "Few-shot learning applies to all sentiment classes and is not limited to negative sentiments only.",
+        "Few-shot refers to the number of training examples, not the time required for learning or processing."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "few-shot",
+        "limited-data",
+        "meta-learning"
+      ]
+    },
+    {
+      "id": "SAN_071",
+      "question": "Which preprocessing step is crucial for social media sentiment analysis?",
+      "options": [
+        "Removing all punctuation",
+        "Handling hashtags, mentions, and URLs appropriately",
+        "Converting everything to formal language",
+        "Removing all emojis"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Social media text contains special elements like hashtags, @mentions, and URLs that require specific preprocessing to preserve or properly handle their sentiment information.",
+      "optionExplanations": [
+        "Removing all punctuation can hurt social media analysis since punctuation patterns convey sentiment information.",
+        "Correct. Social media preprocessing must handle platform-specific elements like hashtags, mentions, and URLs which can carry sentiment information.",
+        "Converting to formal language would lose the informal expressions and slang that are crucial for social media sentiment analysis.",
+        "Removing emojis eliminates important sentiment indicators that are particularly common and meaningful in social media text."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "social-media",
+        "preprocessing",
+        "platform-specific"
+      ]
+    },
+    {
+      "id": "SAN_072",
+      "question": "What is the purpose of sentiment lexicon validation?",
+      "options": [
+        "Making lexicons larger",
+        "Ensuring lexicon accuracy and coverage for the target domain",
+        "Translating lexicons to other languages",
+        "Removing all words from lexicons"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lexicon validation ensures that sentiment scores are accurate and that the lexicon provides good coverage for the specific domain or application.",
+      "optionExplanations": [
+        "Lexicon validation focuses on quality and accuracy rather than simply increasing the size of the lexicon.",
+        "Correct. Validation ensures lexicon entries have accurate sentiment scores and adequate coverage for the target domain and application.",
+        "Translation creates multilingual lexicons, but validation focuses on ensuring quality and accuracy within a language.",
+        "Validation aims to improve lexicon quality, not to remove all entries which would eliminate the lexicon's utility."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "lexicon-validation",
+        "accuracy",
+        "coverage"
+      ]
+    },
+    {
+      "id": "SAN_073",
+      "question": "Which technique helps sentiment analysis models handle contradictory sentiments within the same text?",
+      "options": [
+        "Ignoring all sentiments",
+        "Aspect-based sentiment analysis",
+        "Using only the first sentiment found",
+        "Converting everything to neutral"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Aspect-based sentiment analysis can identify different sentiments toward different aspects within the same text, handling mixed or contradictory sentiments.",
+      "optionExplanations": [
+        "Ignoring sentiments eliminates the analysis entirely rather than handling contradictory sentiments appropriately.",
+        "Correct. Aspect-based analysis can identify positive sentiment toward some aspects and negative toward others within the same text.",
+        "Using only the first sentiment ignores important information and fails to capture the complexity of mixed sentiments.",
+        "Converting everything to neutral loses valuable sentiment information rather than properly handling contradictory sentiments."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "contradictory-sentiments",
+        "aspect-based",
+        "mixed-sentiments"
+      ]
+    },
+    {
+      "id": "SAN_074",
+      "question": "What is the main advantage of using gradient boosting for sentiment classification?",
+      "options": [
+        "It's always the fastest algorithm",
+        "It combines weak learners to create a strong classifier",
+        "It requires no feature engineering",
+        "It only works with positive examples"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient boosting iteratively combines multiple weak learners, with each new learner correcting errors from previous ones, creating a strong ensemble classifier.",
+      "optionExplanations": [
+        "Gradient boosting can be computationally intensive due to its iterative nature, prioritizing performance over speed.",
+        "Correct. Gradient boosting sequentially adds weak learners that focus on correcting previous errors, creating a powerful ensemble classifier.",
+        "Gradient boosting still benefits from good feature engineering, though it can handle raw features reasonably well.",
+        "Gradient boosting works with all classes in classification problems, not just positive examples."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-boosting",
+        "ensemble",
+        "weak-learners"
+      ]
+    },
+    {
+      "id": "SAN_075",
+      "question": "Which approach helps handle sentiment analysis when training and test data come from different time periods?",
+      "options": [
+        "Ignoring temporal differences",
+        "Temporal domain adaptation",
+        "Using only old data",
+        "Using only new data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Temporal domain adaptation addresses the challenge when sentiment patterns, vocabulary, or expressions change over time between training and test periods.",
+      "optionExplanations": [
+        "Ignoring temporal differences can lead to poor performance when language patterns and sentiment expressions evolve over time.",
+        "Correct. Temporal domain adaptation specifically addresses changes in sentiment patterns and language use across different time periods.",
+        "Using only old data may miss current sentiment patterns and expressions that have emerged in the test period.",
+        "Using only new data may lack sufficient training examples and miss stable sentiment patterns from the past."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "temporal-adaptation",
+        "time-periods",
+        "language-evolution"
+      ]
+    },
+    {
+      "id": "SAN_076",
+      "question": "What is emotion detection in relation to sentiment analysis?",
+      "options": [
+        "They are completely unrelated",
+        "Emotion detection identifies specific emotions beyond basic sentiment polarity",
+        "Emotion detection only works with positive sentiments",
+        "Emotion detection replaces sentiment analysis entirely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Emotion detection goes beyond basic positive/negative/neutral classification to identify specific emotions like joy, anger, fear, or sadness.",
+      "optionExplanations": [
+        "Emotion detection and sentiment analysis are related fields, with emotion detection being more fine-grained than basic sentiment analysis.",
+        "Correct. Emotion detection identifies specific emotional states like happiness, anger, or fear, providing more detailed analysis than basic sentiment polarity.",
+        "Emotion detection identifies all types of emotions, including negative emotions like anger, fear, and sadness.",
+        "Emotion detection complements rather than replaces sentiment analysis, providing more detailed emotional understanding."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "emotion-detection",
+        "fine-grained",
+        "emotional-states"
+      ]
+    },
+    {
+      "id": "SAN_077",
+      "question": "Which technique is most effective for handling sentiment analysis in noisy text?",
+      "options": [
+        "Ignoring all noisy text",
+        "Text normalization and robust preprocessing",
+        "Using only clean text",
+        "Converting noise to sentiment words"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Text normalization and robust preprocessing help clean and standardize noisy text while preserving important sentiment information.",
+      "optionExplanations": [
+        "Ignoring noisy text eliminates potentially valuable data and doesn't solve the problem of processing unavoidably noisy input.",
+        "Correct. Text normalization handles spelling errors, informal language, and other noise while preserving sentiment-relevant information.",
+        "Clean text may not always be available, and excluding noisy text can eliminate important real-world data sources.",
+        "Converting noise to sentiment words would change the meaning and create incorrect sentiment interpretations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noisy-text",
+        "text-normalization",
+        "robust-preprocessing"
+      ]
+    },
+    {
+      "id": "SAN_078",
+      "question": "What is the main challenge with sentiment analysis of conversational text?",
+      "options": [
+        "Conversations are always short",
+        "Context spans multiple turns and speakers",
+        "Conversations contain no sentiment",
+        "All speakers have the same opinion"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Conversational sentiment analysis must track context across multiple dialogue turns and handle different speakers with potentially different viewpoints.",
+      "optionExplanations": [
+        "Conversations can be of any length; the challenge is tracking context and speakers, not conversation length.",
+        "Correct. Conversational text requires understanding context that spans multiple turns and tracking different speakers' potentially different sentiments.",
+        "Conversations often contain rich sentiment expressions from multiple participants expressing various opinions.",
+        "Different speakers in conversations often have different opinions and sentiments, which is part of what makes analysis challenging."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "conversational",
+        "multi-turn",
+        "context-tracking"
+      ]
+    },
+    {
+      "id": "SAN_079",
+      "question": "Which approach is most suitable for real-time sentiment analysis of streaming data?",
+      "options": [
+        "Batch processing only",
+        "Online learning with incremental updates",
+        "Offline analysis only",
+        "Manual classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Online learning algorithms can process streaming data incrementally and adapt to new patterns without retraining on entire datasets.",
+      "optionExplanations": [
+        "Batch processing requires collecting data first, which introduces delays incompatible with real-time requirements.",
+        "Correct. Online learning processes data incrementally as it arrives, enabling real-time analysis and adaptation to changing patterns.",
+        "Offline analysis involves delays for data collection and processing, which contradicts real-time requirements.",
+        "Manual classification is too slow for real-time streaming data that may arrive at high volumes and velocity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "real-time",
+        "streaming",
+        "online-learning"
+      ]
+    },
+    {
+      "id": "SAN_080",
+      "question": "What is the purpose of sentiment aggregation in sentiment analysis?",
+      "options": [
+        "Making all sentiments the same",
+        "Combining multiple sentiment scores or opinions",
+        "Removing sentiment from text",
+        "Translating sentiments between languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sentiment aggregation combines multiple sentiment measurements or opinions to produce summary statistics or overall sentiment trends.",
+      "optionExplanations": [
+        "Aggregation combines diverse sentiments to find patterns, not to make all sentiments identical.",
+        "Correct. Sentiment aggregation combines multiple sentiment scores, opinions, or measurements to produce summary insights or overall trends.",
+        "Aggregation works with sentiment data to summarize it, not to remove sentiment information from analysis.",
+        "Translation between languages is a separate task from aggregating sentiment scores or opinions within or across texts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "aggregation",
+        "combining-scores",
+        "summary-statistics"
+      ]
+    },
+    {
+      "id": "SAN_081",
+      "question": "Which technique helps identify the most important features for sentiment classification?",
+      "options": [
+        "Random feature selection",
+        "Feature importance analysis (like chi-square, mutual information)",
+        "Using all possible features",
+        "Ignoring all features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Statistical measures like chi-square test and mutual information quantify the relationship between features and sentiment classes to identify the most discriminative features.",
+      "optionExplanations": [
+        "Random feature selection doesn't consider the relationship between features and sentiment, potentially selecting irrelevant features.",
+        "Correct. Statistical measures like chi-square and mutual information identify features that are most strongly associated with sentiment classes.",
+        "Using all features can include noise and irrelevant information that may hurt model performance and interpretability.",
+        "Ignoring all features eliminates the input information needed for sentiment classification entirely."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-importance",
+        "chi-square",
+        "mutual-information"
+      ]
+    },
+    {
+      "id": "SAN_082",
+      "question": "What is the main advantage of using CNN (Convolutional Neural Networks) for text sentiment analysis?",
+      "options": [
+        "They work only with images",
+        "They can capture local patterns and n-gram-like features",
+        "They require no training data",
+        "They are always faster than other methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CNNs can identify local patterns in text through their convolutional filters, effectively capturing n-gram-like features and local context patterns.",
+      "optionExplanations": [
+        "While CNNs originated for image processing, they have been successfully adapted for text analysis including sentiment analysis.",
+        "Correct. CNNs use convolutional filters to detect local patterns in text, effectively capturing n-gram-like features and local contextual patterns important for sentiment.",
+        "CNNs require training data to learn their convolutional filters and weights, like other supervised learning approaches.",
+        "CNN speed depends on implementation and architecture; they're not universally faster than all other methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CNN",
+        "local-patterns",
+        "n-gram-features"
+      ]
+    },
+    {
+      "id": "SAN_083",
+      "question": "Which challenge is specific to multilingual sentiment analysis?",
+      "options": [
+        "All languages express sentiment identically",
+        "Language-specific sentiment expressions and cultural differences",
+        "Sentiment doesn't vary across languages",
+        "All languages use the same vocabulary"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different languages have unique ways of expressing sentiment, cultural norms for emotional expression, and language-specific linguistic patterns.",
+      "optionExplanations": [
+        "Languages have vastly different grammatical structures, vocabulary, and cultural norms that affect sentiment expression.",
+        "Correct. Multilingual sentiment analysis must handle language-specific sentiment patterns, cultural differences in emotional expression, and varying linguistic structures.",
+        "Sentiment expression varies significantly across languages in terms of vocabulary, grammatical patterns, and cultural norms.",
+        "Each language has its own unique vocabulary, and even shared concepts may have different emotional connotations across languages."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multilingual",
+        "cultural-differences",
+        "language-specific"
+      ]
+    },
+    {
+      "id": "SAN_084",
+      "question": "What is the role of part-of-speech (POS) tags in sentiment analysis feature extraction?",
+      "options": [
+        "POS tags are irrelevant to sentiment",
+        "POS tags help identify sentiment-bearing word categories",
+        "POS tags only work with nouns",
+        "POS tags remove sentiment from text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "POS tags help identify which word categories (adjectives, adverbs, verbs) are more likely to carry sentiment information, improving feature selection.",
+      "optionExplanations": [
+        "POS tags provide valuable information about word categories, with some categories like adjectives being particularly important for sentiment.",
+        "Correct. POS tags help identify sentiment-bearing word categories like adjectives and adverbs, improving feature extraction and model performance.",
+        "POS tags work with all word categories (nouns, verbs, adjectives, etc.) and provide useful information for sentiment analysis.",
+        "POS tags help identify sentiment-bearing words rather than removing sentiment information from the analysis."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "POS-tags",
+        "word-categories",
+        "feature-extraction"
+      ]
+    },
+    {
+      "id": "SAN_085",
+      "question": "Which technique helps handle sentiment analysis when context is limited?",
+      "options": [
+        "Ignoring the limited context",
+        "External knowledge integration and context expansion",
+        "Using only the available context",
+        "Converting everything to neutral"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "External knowledge sources and context expansion techniques can provide additional information to supplement limited local context for better sentiment understanding.",
+      "optionExplanations": [
+        "Ignoring limited context doesn't solve the problem and may lead to incorrect sentiment interpretations.",
+        "Correct. External knowledge bases, topic models, and context expansion techniques can supplement limited context with relevant background information.",
+        "Using only limited context may result in ambiguous or incorrect sentiment analysis when insufficient information is available.",
+        "Converting to neutral loses potentially recoverable sentiment information rather than addressing the context limitation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "limited-context",
+        "knowledge-integration",
+        "context-expansion"
+      ]
+    },
+    {
+      "id": "SAN_086",
+      "question": "What is the main purpose of sentiment visualization in sentiment analysis applications?",
+      "options": [
+        "Making text colorful",
+        "Presenting sentiment insights in interpretable visual formats",
+        "Hiding sentiment information",
+        "Converting text to images"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sentiment visualization presents analytical results in charts, graphs, and other visual formats that make sentiment patterns and trends easily interpretable.",
+      "optionExplanations": [
+        "Visualization aims to communicate insights effectively, not simply to add visual appeal through colors.",
+        "Correct. Sentiment visualization presents analysis results through charts, graphs, and visual representations that make sentiment patterns easily understandable.",
+        "Visualization aims to reveal and communicate sentiment insights, not to hide or obscure information.",
+        "Text-to-image conversion is different from sentiment visualization, which focuses on presenting analytical results visually."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "visualization",
+        "insights",
+        "interpretability"
+      ]
+    },
+    {
+      "id": "SAN_087",
+      "question": "Which approach is most effective for handling sentiment analysis in short texts like tweets?",
+      "options": [
+        "Ignoring short texts",
+        "Context-aware models and external context integration",
+        "Using only document-level analysis",
+        "Converting short texts to long texts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Short texts lack context, so models that can leverage external context, user history, or contextual embeddings perform better than traditional approaches.",
+      "optionExplanations": [
+        "Short texts like tweets are valuable data sources that shouldn't be ignored, especially for social media sentiment analysis.",
+        "Correct. Short texts benefit from context-aware models that can leverage external context, user profiles, or contextual embeddings to supplement limited content.",
+        "Document-level analysis is designed for longer texts and may not be optimal for short text sentiment analysis.",
+        "Artificially lengthening short texts would change their nature and potentially introduce irrelevant or misleading information."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "short-texts",
+        "context-aware",
+        "external-context"
+      ]
+    },
+    {
+      "id": "SAN_088",
+      "question": "What is the difference between subjective and objective text in sentiment analysis?",
+      "options": [
+        "No difference exists",
+        "Subjective text expresses opinions, objective text states facts",
+        "Subjective text is always longer",
+        "Objective text contains more sentiment"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Subjective text contains opinions, emotions, and personal views, while objective text presents factual information without personal bias or opinion.",
+      "optionExplanations": [
+        "There are fundamental differences between subjective and objective text in terms of opinion content and factual presentation.",
+        "Correct. Subjective text expresses personal opinions, emotions, and judgments, while objective text presents factual information without personal bias.",
+        "Text length is not the distinguishing factor between subjective and objective content; both can be short or long.",
+        "Objective text typically contains less sentiment since it focuses on factual presentation rather than opinion expression."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "subjectivity",
+        "objectivity",
+        "opinions-vs-facts"
+      ]
+    },
+    {
+      "id": "SAN_089",
+      "question": "Which technique helps improve sentiment analysis performance on imbalanced datasets?",
+      "options": [
+        "Using only majority class data",
+        "Cost-sensitive learning and class weighting",
+        "Removing all minority class examples",
+        "Converting all labels to majority class"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cost-sensitive learning assigns higher misclassification costs to minority classes, while class weighting adjusts the importance of different classes during training.",
+      "optionExplanations": [
+        "Using only majority class data eliminates the classification problem and prevents learning minority class patterns.",
+        "Correct. Cost-sensitive learning and class weighting help balance the influence of different classes, improving performance on minority classes.",
+        "Removing minority class examples worsens the imbalance and eliminates important classification categories.",
+        "Converting all labels to majority class eliminates the classification task entirely rather than addressing the imbalance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "imbalanced-datasets",
+        "cost-sensitive",
+        "class-weighting"
+      ]
+    },
+    {
+      "id": "SAN_090",
+      "question": "What is the main challenge with sentiment analysis of formal vs. informal text?",
+      "options": [
+        "Both types are identical",
+        "Different vocabulary, grammar, and expression patterns",
+        "Formal text has no sentiment",
+        "Informal text is always shorter"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Formal and informal texts use different vocabularies, grammatical structures, and expression patterns for conveying sentiment, requiring different analysis approaches.",
+      "optionExplanations": [
+        "Formal and informal texts have significantly different characteristics in terms of vocabulary, grammar, and sentiment expression patterns.",
+        "Correct. Formal text uses standard grammar and vocabulary while informal text includes slang, abbreviations, and non-standard expressions, requiring different handling.",
+        "Formal text can contain sentiment, though it may be expressed more subtly or through different linguistic patterns than informal text.",
+        "Text length is not the primary distinguishing factor; the difference lies in language style, vocabulary, and expression patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "formal-vs-informal",
+        "vocabulary-differences",
+        "expression-patterns"
+      ]
+    },
+    {
+      "id": "SAN_091",
+      "question": "Which approach helps handle sentiment analysis when ground truth labels are noisy or uncertain?",
+      "options": [
+        "Ignoring all uncertain labels",
+        "Noise-robust learning and label smoothing",
+        "Using only certain labels",
+        "Converting all labels to neutral"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Noise-robust learning techniques and label smoothing help models handle uncertain or noisy annotations by reducing overconfidence in potentially incorrect labels.",
+      "optionExplanations": [
+        "Ignoring uncertain labels reduces training data and may eliminate examples that could still provide useful learning signals.",
+        "Correct. Noise-robust learning and label smoothing techniques help models handle uncertain annotations and reduce the impact of labeling errors.",
+        "Using only certain labels may significantly reduce training data size and eliminate potentially useful but uncertain examples.",
+        "Converting all labels to neutral eliminates the classification task rather than addressing the label noise issue."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "noisy-labels",
+        "label-smoothing",
+        "noise-robust"
+      ]
+    },
+    {
+      "id": "SAN_092",
+      "question": "What is the role of attention visualization in understanding sentiment analysis models?",
+      "options": [
+        "Making models more colorful",
+        "Showing which words the model focuses on for sentiment decisions",
+        "Hiding model decisions",
+        "Converting text to images"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attention visualization reveals which words or phrases the model considers most important for its sentiment predictions, providing interpretability.",
+      "optionExplanations": [
+        "Attention visualization serves an analytical purpose to understand model behavior, not to add visual appeal.",
+        "Correct. Attention visualization shows which parts of the input text the model focuses on when making sentiment predictions, improving interpretability.",
+        "Attention visualization reveals rather than hides model decision-making processes to improve understanding and trust.",
+        "Attention visualization displays attention weights over text, not converting text to unrelated image formats."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-visualization",
+        "interpretability",
+        "model-understanding"
+      ]
+    },
+    {
+      "id": "SAN_093",
+      "question": "Which technique is most effective for handling sentiment analysis across different domains simultaneously?",
+      "options": [
+        "Training separate models for each domain",
+        "Multi-task learning with domain adaptation",
+        "Using only one domain",
+        "Ignoring domain differences"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multi-task learning can jointly learn sentiment patterns across multiple domains while domain adaptation techniques help transfer knowledge between domains.",
+      "optionExplanations": [
+        "Separate models miss opportunities to share knowledge across domains and require more resources and data for training.",
+        "Correct. Multi-task learning enables knowledge sharing across domains while domain adaptation helps handle domain-specific patterns simultaneously.",
+        "Using only one domain limits the model's applicability and misses the benefits of cross-domain knowledge transfer.",
+        "Ignoring domain differences can lead to poor performance when domain-specific patterns are important for accurate sentiment analysis."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-domain",
+        "multi-task-learning",
+        "domain-adaptation"
+      ]
+    },
+    {
+      "id": "SAN_094",
+      "question": "What is the main advantage of using ensemble voting in sentiment analysis?",
+      "options": [
+        "Always faster than single models",
+        "Combining diverse model predictions for better accuracy",
+        "Requiring less training data",
+        "Working only with positive sentiments"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ensemble voting combines predictions from multiple diverse models, leveraging their different strengths and reducing the impact of individual model errors.",
+      "optionExplanations": [
+        "Ensemble methods are typically slower since they require running multiple models, but they often achieve better accuracy.",
+        "Correct. Ensemble voting combines diverse model predictions to achieve better overall performance by leveraging different models' strengths and reducing errors.",
+        "Ensemble methods typically require the same or more training data since multiple models need to be trained.",
+        "Ensemble methods work with all sentiment classes and are not limited to positive sentiments only."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-voting",
+        "model-diversity",
+        "error-reduction"
+      ]
+    },
+    {
+      "id": "SAN_095",
+      "question": "Which challenge is unique to real-world deployment of sentiment analysis systems?",
+      "options": [
+        "Perfect data quality",
+        "Handling data distribution shifts and model degradation",
+        "Unlimited computational resources",
+        "Static user requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Real-world deployment faces challenges like data drift, changing user behavior, and performance degradation over time that require monitoring and model updates.",
+      "optionExplanations": [
+        "Real-world data is often noisy and imperfect, requiring robust systems that can handle quality variations.",
+        "Correct. Deployed systems face data distribution shifts, concept drift, and performance degradation that require continuous monitoring and updates.",
+        "Real-world deployment typically involves resource constraints that require optimization for efficiency and cost-effectiveness.",
+        "User requirements and expectations often evolve over time, requiring systems that can adapt to changing needs."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "deployment",
+        "data-drift",
+        "model-degradation"
+      ]
+    },
+    {
+      "id": "SAN_096",
+      "question": "What is the purpose of confidence estimation in sentiment analysis predictions?",
+      "options": [
+        "Making all predictions confident",
+        "Quantifying the certainty of sentiment predictions",
+        "Removing uncertain predictions",
+        "Converting predictions to probabilities"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Confidence estimation provides a measure of how certain the model is about its predictions, helping identify reliable vs. uncertain classifications.",
+      "optionExplanations": [
+        "Confidence estimation measures actual certainty levels rather than artificially making all predictions appear confident.",
+        "Correct. Confidence estimation quantifies how certain the model is about each prediction, enabling better decision-making and quality control.",
+        "Confidence estimation identifies uncertain predictions for potential review rather than automatically removing them.",
+        "While related to probabilities, confidence estimation specifically focuses on measuring prediction certainty rather than general probability conversion."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "confidence-estimation",
+        "uncertainty",
+        "prediction-quality"
+      ]
+    },
+    {
+      "id": "SAN_097",
+      "question": "Which technique helps sentiment analysis models handle previously unseen topics or entities?",
+      "options": [
+        "Ignoring unknown topics",
+        "Zero-shot learning and transfer learning",
+        "Using only known topics",
+        "Converting unknown to known topics"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Zero-shot learning enables models to handle unseen topics by leveraging learned patterns, while transfer learning adapts knowledge from known topics.",
+      "optionExplanations": [
+        "Ignoring unknown topics limits the model's applicability and misses opportunities to analyze new content areas.",
+        "Correct. Zero-shot and transfer learning enable models to apply learned sentiment patterns to new topics and entities without specific training.",
+        "Restricting analysis to only known topics severely limits the model's practical utility in dynamic real-world scenarios.",
+        "Topic conversion doesn't address the underlying challenge of handling genuinely new and unseen content areas."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "zero-shot",
+        "transfer-learning",
+        "unseen-topics"
+      ]
+    },
+    {
+      "id": "SAN_098",
+      "question": "What is the main benefit of using hierarchical attention in sentiment analysis?",
+      "options": [
+        "Processing text faster",
+        "Capturing sentiment at multiple levels (word, sentence, document)",
+        "Using less memory",
+        "Working only with short texts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hierarchical attention operates at multiple text levels, allowing models to attend to important words within sentences and important sentences within documents.",
+      "optionExplanations": [
+        "Hierarchical attention typically adds computational complexity rather than improving processing speed.",
+        "Correct. Hierarchical attention captures importance at multiple levels - attending to key words within sentences and key sentences within documents.",
+        "Hierarchical models typically require more memory due to their multi-level structure and attention computations.",
+        "Hierarchical attention is particularly useful for longer texts where multiple levels of structure exist."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hierarchical-attention",
+        "multi-level",
+        "document-structure"
+      ]
+    },
+    {
+      "id": "SAN_099",
+      "question": "Which approach is most effective for handling sentiment analysis in privacy-sensitive applications?",
+      "options": [
+        "Storing all data permanently",
+        "Federated learning and differential privacy",
+        "Sharing all data publicly",
+        "Ignoring privacy concerns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Federated learning enables model training without centralizing sensitive data, while differential privacy adds noise to protect individual privacy.",
+      "optionExplanations": [
+        "Permanent data storage increases privacy risks rather than addressing privacy concerns in sensitive applications.",
+        "Correct. Federated learning trains models without centralizing data, while differential privacy protects individual privacy through controlled noise addition.",
+        "Public data sharing violates privacy requirements and is inappropriate for privacy-sensitive applications.",
+        "Ignoring privacy concerns is not acceptable in privacy-sensitive applications and may violate regulations and user trust."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "privacy",
+        "federated-learning",
+        "differential-privacy"
+      ]
+    },
+    {
+      "id": "SAN_100",
+      "question": "What is the ultimate goal of advancing sentiment analysis research and applications?",
+      "options": [
+        "Replacing human judgment entirely",
+        "Better understanding and processing of human emotions and opinions in text",
+        "Making all text analysis automated",
+        "Eliminating the need for human communication"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sentiment analysis aims to improve computational understanding of human emotions and opinions to enhance human-computer interaction and decision-making.",
+      "optionExplanations": [
+        "Sentiment analysis augments rather than replaces human judgment, providing tools to handle large-scale analysis while preserving human oversight.",
+        "Correct. The goal is to improve computational understanding of human emotions and opinions, enhancing applications that serve human needs and decision-making.",
+        "Automation serves to assist human analysis of large-scale data, not to replace human insight and contextual understanding entirely.",
+        "Sentiment analysis aims to better understand and support human communication rather than eliminate the need for human interaction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "research-goals",
+        "human-computer-interaction",
+        "computational-understanding"
+      ]
+    }
+  ]
+}

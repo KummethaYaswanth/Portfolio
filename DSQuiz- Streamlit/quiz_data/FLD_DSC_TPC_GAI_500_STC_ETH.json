@@ -1,0 +1,2505 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_GAI",
+  "topicName": "Generative AI",
+  "subtopicId": "STC_ETH",
+  "subtopicName": "AI Ethics & Safety",
+  "str": 0.500,
+  "description": "This subtopic covers fundamental principles of AI Ethics and Safety including bias mitigation, fairness, interpretability, robustness, privacy protection, security measures, responsible AI development, and AI governance frameworks.",
+  "questions": [
+    {
+      "id": "ETH_001",
+      "question": "What is algorithmic bias in AI systems?",
+      "options": [
+        "Systematic and unfair discrimination in AI outputs or decisions",
+        "The preference of AI systems for certain algorithms",
+        "Random errors in machine learning models",
+        "The tendency of AI to favor complex solutions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Algorithmic bias refers to systematic and unfair discrimination that occurs when AI systems produce prejudiced results due to biased training data, flawed algorithms, or inappropriate model assumptions.",
+      "optionExplanations": [
+        "Correct. Algorithmic bias is systematic unfairness in AI decisions that can disadvantage certain groups or individuals.",
+        "Incorrect. This describes computational preference, not bias related to fairness and discrimination.",
+        "Incorrect. Random errors are not bias; bias is systematic and predictable unfairness.",
+        "Incorrect. This describes complexity preference, not the ethical concern of discriminatory outcomes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bias",
+        "fairness",
+        "discrimination"
+      ]
+    },
+    {
+      "id": "ETH_002",
+      "question": "Which type of fairness ensures equal outcomes across different groups?",
+      "options": [
+        "Individual fairness",
+        "Demographic parity",
+        "Equalized odds",
+        "Counterfactual fairness"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Demographic parity (also called statistical parity) ensures that the positive prediction rates are equal across different demographic groups, focusing on equal outcomes.",
+      "optionExplanations": [
+        "Incorrect. Individual fairness focuses on treating similar individuals similarly, not equal group outcomes.",
+        "Correct. Demographic parity ensures equal positive prediction rates across different demographic groups.",
+        "Incorrect. Equalized odds focuses on equal true positive and false positive rates, not overall outcomes.",
+        "Incorrect. Counterfactual fairness considers what would happen in alternative scenarios, not current outcome equality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fairness",
+        "demographic-parity",
+        "equality"
+      ]
+    },
+    {
+      "id": "ETH_003",
+      "question": "What is the primary purpose of explainable AI (XAI)?",
+      "options": [
+        "To make AI systems run faster",
+        "To reduce computational costs",
+        "To make AI decision-making processes understandable to humans",
+        "To improve model accuracy"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Explainable AI aims to make AI systems' decision-making processes transparent and understandable to humans, enabling trust, accountability, and debugging.",
+      "optionExplanations": [
+        "Incorrect. XAI focuses on interpretability, not computational speed or performance optimization.",
+        "Incorrect. XAI is about transparency and understanding, not cost reduction or efficiency.",
+        "Correct. XAI's primary goal is to make AI decisions transparent and interpretable to human users.",
+        "Incorrect. While interpretability can help improve models, the primary purpose is understanding, not accuracy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "explainability",
+        "interpretability",
+        "transparency"
+      ]
+    },
+    {
+      "id": "ETH_004",
+      "question": "What is differential privacy?",
+      "options": [
+        "A method to completely anonymize data",
+        "A technique that adds controlled noise to protect individual privacy while preserving data utility",
+        "A way to encrypt sensitive information",
+        "A process to delete personal data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Differential privacy is a mathematical framework that adds carefully calibrated noise to data or query results to protect individual privacy while maintaining statistical usefulness of the dataset.",
+      "optionExplanations": [
+        "Incorrect. Differential privacy doesn't completely anonymize data; it provides mathematical privacy guarantees through noise addition.",
+        "Correct. Differential privacy adds controlled statistical noise to protect individuals while preserving data utility for analysis.",
+        "Incorrect. While related to privacy, differential privacy uses noise injection, not encryption techniques.",
+        "Incorrect. Differential privacy doesn't delete data; it mathematically protects privacy through noise mechanisms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "privacy",
+        "differential-privacy",
+        "data-protection"
+      ]
+    },
+    {
+      "id": "ETH_005",
+      "question": "Which of the following best describes adversarial attacks on AI systems?",
+      "options": [
+        "Attacks that crash computer systems",
+        "Deliberately crafted inputs designed to fool AI models into making incorrect predictions",
+        "Viral infections in AI software",
+        "Hardware failures in AI systems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adversarial attacks involve creating specially crafted inputs that are designed to deceive AI models into producing incorrect or undesired outputs while appearing normal to humans.",
+      "optionExplanations": [
+        "Incorrect. Adversarial attacks target AI model behavior, not system crashes or hardware damage.",
+        "Correct. Adversarial attacks use carefully crafted inputs to manipulate AI model predictions and decisions.",
+        "Incorrect. These are security exploits targeting model logic, not software viruses or malware infections.",
+        "Incorrect. Adversarial attacks are deliberate input manipulations, not accidental hardware malfunctions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adversarial-attacks",
+        "security",
+        "robustness"
+      ]
+    },
+    {
+      "id": "ETH_006",
+      "question": "What is the 'right to explanation' in AI ethics?",
+      "options": [
+        "The right of developers to explain their code",
+        "The right of individuals to receive explanations for automated decisions affecting them",
+        "The obligation to document AI development processes",
+        "The requirement to publish AI research openly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The right to explanation refers to individuals' entitlement to understand how automated systems make decisions that affect them, particularly in high-stakes scenarios like lending, hiring, or healthcare.",
+      "optionExplanations": [
+        "Incorrect. This refers to individual rights regarding AI decisions, not developer obligations to explain code.",
+        "Correct. The right to explanation ensures individuals can understand automated decisions that impact their lives.",
+        "Incorrect. While documentation is important, the right to explanation specifically concerns individual understanding of decisions.",
+        "Incorrect. This relates to personal decision transparency, not open research publication requirements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "explainability",
+        "rights",
+        "transparency",
+        "GDPR"
+      ]
+    },
+    {
+      "id": "ETH_007",
+      "question": "What is federated learning's primary privacy advantage?",
+      "options": [
+        "It encrypts all data permanently",
+        "It allows model training without centralizing raw data",
+        "It completely anonymizes user identities",
+        "It prevents all data breaches"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Federated learning enables machine learning model training across decentralized data sources without requiring raw data to leave its original location, thus enhancing privacy protection.",
+      "optionExplanations": [
+        "Incorrect. Federated learning doesn't primarily rely on encryption; it focuses on data locality and distributed training.",
+        "Correct. Federated learning trains models collaboratively without centralizing sensitive raw data from participants.",
+        "Incorrect. While privacy-preserving, federated learning doesn't guarantee complete anonymization of user identities.",
+        "Incorrect. Federated learning reduces certain privacy risks but doesn't eliminate all possible security vulnerabilities."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "federated-learning",
+        "privacy",
+        "distributed-training"
+      ]
+    },
+    {
+      "id": "ETH_008",
+      "question": "What does AI robustness refer to?",
+      "options": [
+        "The physical durability of AI hardware",
+        "The ability of AI systems to perform reliably under various conditions and inputs",
+        "The speed of AI computations",
+        "The size of AI models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI robustness refers to a system's ability to maintain reliable performance when faced with unexpected inputs, environmental changes, or adversarial conditions.",
+      "optionExplanations": [
+        "Incorrect. Robustness in AI context refers to algorithmic reliability, not physical hardware durability.",
+        "Correct. AI robustness measures how well systems maintain performance under diverse, unexpected, or challenging conditions.",
+        "Incorrect. Robustness relates to reliability and stability, not computational speed or processing efficiency.",
+        "Incorrect. Model size is related to capacity and complexity, not robustness or reliability under varied conditions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "robustness",
+        "reliability",
+        "performance"
+      ]
+    },
+    {
+      "id": "ETH_009",
+      "question": "Which principle is central to responsible AI development?",
+      "options": [
+        "Maximizing profit from AI applications",
+        "Considering societal impact and ethical implications throughout the AI lifecycle",
+        "Creating the most advanced AI possible",
+        "Keeping AI development secret"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Responsible AI development emphasizes considering ethical implications, societal impact, and human welfare throughout the entire AI development and deployment lifecycle.",
+      "optionExplanations": [
+        "Incorrect. Responsible AI prioritizes ethical considerations and social good over purely financial motivations.",
+        "Correct. Responsible AI requires ongoing consideration of ethics, fairness, and societal impact throughout development.",
+        "Incorrect. Technical advancement alone doesn't constitute responsible development without ethical consideration.",
+        "Incorrect. Responsible AI often involves transparency and stakeholder engagement, not secrecy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "responsible-ai",
+        "ethics",
+        "societal-impact"
+      ]
+    },
+    {
+      "id": "ETH_010",
+      "question": "What is the main concern with AI decision-making in high-stakes scenarios?",
+      "options": [
+        "Processing speed limitations",
+        "Lack of accountability and potential for biased or unfair outcomes",
+        "High computational costs",
+        "Complex user interfaces"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In high-stakes scenarios like healthcare, criminal justice, or hiring, the main concern is ensuring accountability, fairness, and avoiding biased decisions that could significantly impact people's lives.",
+      "optionExplanations": [
+        "Incorrect. While speed matters, the primary ethical concern in high-stakes scenarios is fairness and accountability.",
+        "Correct. High-stakes AI decisions require accountability, transparency, and protection against bias that could harm individuals.",
+        "Incorrect. Cost considerations are secondary to ethical concerns when significant human welfare is at stake.",
+        "Incorrect. User interface complexity is a usability issue, not the primary ethical concern in high-stakes decisions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high-stakes",
+        "accountability",
+        "bias",
+        "fairness"
+      ]
+    },
+    {
+      "id": "ETH_011",
+      "question": "What is model interpretability?",
+      "options": [
+        "The ability to translate AI outputs into different languages",
+        "The degree to which humans can understand AI model decisions and processes",
+        "The capability to run models on different hardware",
+        "The speed at which models process information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model interpretability refers to the extent to which humans can comprehend and trust AI model decisions, understanding how inputs lead to specific outputs.",
+      "optionExplanations": [
+        "Incorrect. Interpretability relates to understanding decision logic, not language translation capabilities.",
+        "Correct. Interpretability measures how well humans can understand and explain AI model behavior and decisions.",
+        "Incorrect. This describes model portability or compatibility, not interpretability or explainability.",
+        "Incorrect. Processing speed is a performance metric, not related to human understanding of model decisions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interpretability",
+        "explainability",
+        "understanding"
+      ]
+    },
+    {
+      "id": "ETH_012",
+      "question": "What is algorithmic auditing?",
+      "options": [
+        "Checking code for syntax errors",
+        "Systematic evaluation of AI systems for bias, fairness, and ethical compliance",
+        "Optimizing algorithm performance",
+        "Backing up algorithm code"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Algorithmic auditing involves systematically examining AI systems to identify bias, assess fairness, ensure ethical compliance, and evaluate societal impact.",
+      "optionExplanations": [
+        "Incorrect. Algorithmic auditing focuses on ethical and fairness evaluation, not technical code debugging.",
+        "Correct. Algorithmic auditing systematically evaluates AI systems for bias, fairness, and ethical compliance issues.",
+        "Incorrect. While performance matters, auditing primarily focuses on ethical evaluation rather than optimization.",
+        "Incorrect. This describes data backup procedures, not ethical evaluation and assessment processes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "auditing",
+        "bias-detection",
+        "fairness",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "ETH_013",
+      "question": "Which factor most commonly contributes to biased AI training data?",
+      "options": [
+        "Small dataset size",
+        "Historical and societal biases reflected in data collection",
+        "Fast data processing",
+        "High-quality sensors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Biased training data often results from historical and societal biases that are embedded in how data was collected, labeled, or represents past discriminatory practices.",
+      "optionExplanations": [
+        "Incorrect. While small datasets can cause issues, the primary bias source is systematic prejudice in data collection.",
+        "Correct. Historical discrimination and societal biases are often embedded in training data, perpetuating unfair outcomes.",
+        "Incorrect. Processing speed doesn't introduce bias; bias stems from the data content and collection methods.",
+        "Incorrect. Sensor quality affects data accuracy but doesn't directly address systematic bias in data representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias",
+        "training-data",
+        "historical-bias",
+        "data-collection"
+      ]
+    },
+    {
+      "id": "ETH_014",
+      "question": "What is the purpose of AI governance frameworks?",
+      "options": [
+        "To increase AI development speed",
+        "To provide guidelines and oversight for ethical AI development and deployment",
+        "To reduce AI development costs",
+        "To standardize programming languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI governance frameworks establish policies, guidelines, and oversight mechanisms to ensure AI systems are developed and deployed ethically, safely, and responsibly.",
+      "optionExplanations": [
+        "Incorrect. Governance frameworks focus on ethical oversight and responsibility, not development speed optimization.",
+        "Correct. AI governance provides structured guidelines and oversight to ensure ethical, responsible AI development and use.",
+        "Incorrect. Governance frameworks prioritize ethical compliance over cost reduction or economic efficiency.",
+        "Incorrect. Technical standardization is separate from governance, which focuses on ethical and policy considerations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "governance",
+        "oversight",
+        "policy",
+        "ethics"
+      ]
+    },
+    {
+      "id": "ETH_015",
+      "question": "What is fairness through unawareness in AI?",
+      "options": [
+        "Ignoring all demographic information during model training",
+        "Making AI systems completely anonymous",
+        "Removing bias by not collecting any data",
+        "Using only recent data for training"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Fairness through unawareness attempts to achieve fairness by excluding sensitive demographic attributes from model training, though this approach has limitations as bias can still occur through proxy variables.",
+      "optionExplanations": [
+        "Correct. Fairness through unawareness excludes protected demographic attributes from model training to prevent direct discrimination.",
+        "Incorrect. This approach focuses on excluding specific attributes, not making entire systems anonymous.",
+        "Incorrect. This method involves selective data exclusion, not complete elimination of all data collection.",
+        "Incorrect. Temporal data selection is unrelated to the fairness through unawareness approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fairness",
+        "unawareness",
+        "demographic-attributes",
+        "discrimination"
+      ]
+    },
+    {
+      "id": "ETH_016",
+      "question": "What is homomorphic encryption's role in privacy-preserving AI?",
+      "options": [
+        "It deletes sensitive data after processing",
+        "It allows computation on encrypted data without decrypting it",
+        "It anonymizes user identities completely",
+        "It compresses data to reduce storage needs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Homomorphic encryption enables computations to be performed directly on encrypted data without requiring decryption, allowing AI processing while maintaining data confidentiality.",
+      "optionExplanations": [
+        "Incorrect. Homomorphic encryption preserves data in encrypted form rather than deleting it after processing.",
+        "Correct. Homomorphic encryption allows mathematical operations on encrypted data without revealing the underlying information.",
+        "Incorrect. While privacy-preserving, homomorphic encryption focuses on data confidentiality, not identity anonymization.",
+        "Incorrect. This encryption technique is for privacy protection during computation, not data compression or storage optimization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "homomorphic-encryption",
+        "privacy",
+        "encrypted-computation"
+      ]
+    },
+    {
+      "id": "ETH_017",
+      "question": "What is the concept of AI alignment?",
+      "options": [
+        "Making sure AI hardware components fit together",
+        "Ensuring AI systems pursue goals that align with human values and intentions",
+        "Synchronizing multiple AI systems",
+        "Aligning AI development timelines"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI alignment refers to ensuring that AI systems understand and pursue goals that are consistent with human values, intentions, and well-being, particularly important for advanced AI systems.",
+      "optionExplanations": [
+        "Incorrect. AI alignment concerns goal and value compatibility, not physical hardware configuration.",
+        "Correct. AI alignment ensures AI systems pursue objectives that match human values and intentions.",
+        "Incorrect. This relates to value alignment with humans, not coordination between multiple AI systems.",
+        "Incorrect. Alignment refers to goal compatibility, not project management or development scheduling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "alignment",
+        "human-values",
+        "goals",
+        "safety"
+      ]
+    },
+    {
+      "id": "ETH_018",
+      "question": "What is the main challenge with proxy discrimination in AI?",
+      "options": [
+        "It requires expensive hardware",
+        "It's difficult to detect and occurs when non-protected attributes correlate with protected ones",
+        "It slows down model training",
+        "It requires large datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Proxy discrimination occurs when AI systems use seemingly neutral attributes that strongly correlate with protected characteristics, leading to indirect discrimination that can be difficult to detect and address.",
+      "optionExplanations": [
+        "Incorrect. Proxy discrimination is an ethical issue related to indirect bias, not a hardware or cost problem.",
+        "Correct. Proxy discrimination happens when neutral variables serve as proxies for protected attributes, creating indirect bias.",
+        "Incorrect. This form of discrimination relates to bias and fairness, not computational performance or training speed.",
+        "Incorrect. Proxy discrimination can occur regardless of dataset size; it's about variable relationships, not data volume."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "proxy-discrimination",
+        "indirect-bias",
+        "correlation",
+        "fairness"
+      ]
+    },
+    {
+      "id": "ETH_019",
+      "question": "What is model stealing in AI security?",
+      "options": [
+        "Physically taking AI hardware",
+        "Copying source code without permission",
+        "Extracting model functionality through query-based attacks",
+        "Using unlicensed AI software"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Model stealing involves attackers using carefully crafted queries to extract information about a target model's functionality, parameters, or training data without direct access to the model itself.",
+      "optionExplanations": [
+        "Incorrect. Model stealing is a cybersecurity attack on AI models, not physical theft of hardware equipment.",
+        "Incorrect. While related to intellectual property, model stealing specifically involves extracting model behavior through queries.",
+        "Correct. Model stealing uses strategic queries to reverse-engineer or replicate AI model functionality and knowledge.",
+        "Incorrect. This describes software piracy, not the specific attack vector of extracting model information through queries."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-stealing",
+        "security",
+        "query-attacks",
+        "intellectual-property"
+      ]
+    },
+    {
+      "id": "ETH_020",
+      "question": "What is the purpose of AI impact assessments?",
+      "options": [
+        "To measure AI system performance speed",
+        "To evaluate potential societal, ethical, and economic effects of AI deployment",
+        "To calculate development costs",
+        "To test hardware compatibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI impact assessments systematically evaluate the potential positive and negative consequences of AI system deployment on society, individuals, economy, and environment before implementation.",
+      "optionExplanations": [
+        "Incorrect. Impact assessments focus on broader societal effects, not technical performance metrics or processing speed.",
+        "Correct. AI impact assessments evaluate comprehensive effects including social, ethical, economic, and environmental consequences.",
+        "Incorrect. While cost may be considered, impact assessments primarily focus on broader societal and ethical implications.",
+        "Incorrect. Technical compatibility testing is separate from assessing societal and ethical impacts of AI deployment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "impact-assessment",
+        "societal-impact",
+        "evaluation",
+        "deployment"
+      ]
+    },
+    {
+      "id": "ETH_021",
+      "question": "What is the key principle behind fairness through equalized opportunity?",
+      "options": [
+        "All individuals receive identical treatment",
+        "Equal true positive rates across different demographic groups",
+        "Identical outcomes for all groups",
+        "Random selection regardless of qualifications"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Equalized opportunity ensures that qualified individuals from different demographic groups have equal chances of receiving positive predictions, focusing on equal true positive rates.",
+      "optionExplanations": [
+        "Incorrect. Equalized opportunity focuses on equal outcomes for qualified individuals, not identical treatment for all.",
+        "Correct. Equalized opportunity requires equal true positive rates across demographic groups for qualified individuals.",
+        "Incorrect. This describes demographic parity, not equalized opportunity which focuses on qualified individuals.",
+        "Incorrect. Equalized opportunity considers qualifications and merit, not random selection processes."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "equalized-opportunity",
+        "fairness",
+        "true-positive-rate",
+        "demographics"
+      ]
+    },
+    {
+      "id": "ETH_022",
+      "question": "What is membership inference attack in AI privacy?",
+      "options": [
+        "Attacking user accounts directly",
+        "Determining whether specific data was used in model training",
+        "Stealing user passwords",
+        "Corrupting training datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Membership inference attacks attempt to determine whether a particular data point was included in a model's training set, potentially revealing sensitive information about individuals.",
+      "optionExplanations": [
+        "Incorrect. Membership inference attacks target model privacy, not direct user account compromise or access.",
+        "Correct. These attacks determine if specific data points were used in training, potentially revealing private information.",
+        "Incorrect. This attack focuses on training data membership, not credential theft or password attacks.",
+        "Incorrect. The attack infers training data membership rather than actively corrupting or modifying datasets."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "membership-inference",
+        "privacy-attack",
+        "training-data",
+        "inference"
+      ]
+    },
+    {
+      "id": "ETH_023",
+      "question": "What does AI transparency require?",
+      "options": [
+        "Making all AI code open source",
+        "Clear communication about AI system capabilities, limitations, and decision processes",
+        "Publishing all training data publicly",
+        "Removing all privacy protections"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI transparency involves clear, honest communication about how AI systems work, their capabilities and limitations, and their decision-making processes to relevant stakeholders.",
+      "optionExplanations": [
+        "Incorrect. Transparency doesn't require open sourcing all code; it focuses on clear communication about system behavior.",
+        "Correct. AI transparency requires clear communication about system capabilities, limitations, and decision-making processes.",
+        "Incorrect. Transparency can be achieved without compromising data privacy or publishing sensitive training data.",
+        "Incorrect. Transparency and privacy can coexist; transparency doesn't require eliminating all privacy protections."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "transparency",
+        "communication",
+        "capabilities",
+        "limitations"
+      ]
+    },
+    {
+      "id": "ETH_024",
+      "question": "What is the primary goal of AI safety research?",
+      "options": [
+        "Making AI systems run faster",
+        "Ensuring AI systems behave safely and beneficially, especially as they become more capable",
+        "Reducing AI development costs",
+        "Improving user interfaces"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI safety research focuses on ensuring that AI systems, particularly advanced ones, behave safely, reliably, and beneficially for humanity as their capabilities increase.",
+      "optionExplanations": [
+        "Incorrect. AI safety prioritizes safe behavior and beneficial outcomes, not computational speed or performance optimization.",
+        "Correct. AI safety research ensures systems behave safely and beneficially, especially as AI capabilities advance.",
+        "Incorrect. Safety research focuses on preventing harm and ensuring beneficial outcomes, not economic considerations.",
+        "Incorrect. User interface design is separate from the fundamental safety and alignment challenges in AI systems."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "safety",
+        "beneficial-ai",
+        "risk-mitigation",
+        "research"
+      ]
+    },
+    {
+      "id": "ETH_025",
+      "question": "What is algorithmic accountability?",
+      "options": [
+        "Making algorithms run efficiently",
+        "The responsibility and answerability for AI system decisions and outcomes",
+        "Keeping detailed logs of all computations",
+        "Using only approved programming languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Algorithmic accountability refers to the responsibility of organizations and individuals to be answerable for AI system decisions, outcomes, and their impacts on society.",
+      "optionExplanations": [
+        "Incorrect. Accountability focuses on responsibility for decisions and outcomes, not computational efficiency or performance.",
+        "Correct. Algorithmic accountability involves responsibility and answerability for AI decisions, impacts, and consequences.",
+        "Incorrect. While logging may support accountability, accountability itself is about responsibility, not just record-keeping.",
+        "Incorrect. Programming language choice is a technical decision; accountability concerns responsibility for system impacts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "accountability",
+        "responsibility",
+        "decision-outcomes",
+        "governance"
+      ]
+    },
+    {
+      "id": "ETH_026",
+      "question": "What is the main limitation of fairness through unawareness?",
+      "options": [
+        "It makes models too complex",
+        "It can still result in discrimination through proxy variables",
+        "It requires too much computational power",
+        "It makes models less accurate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fairness through unawareness can fail because other variables in the dataset may serve as proxies for the excluded protected attributes, still allowing discrimination to occur indirectly.",
+      "optionExplanations": [
+        "Incorrect. Model complexity isn't the main limitation; the issue is that bias can persist through correlated variables.",
+        "Correct. Excluding protected attributes doesn't prevent discrimination if other variables serve as proxies for those attributes.",
+        "Incorrect. Computational power isn't the primary concern; the limitation is about indirect bias through proxy variables.",
+        "Incorrect. While accuracy may be affected, the main limitation is the persistence of bias through proxy variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fairness-unawareness",
+        "proxy-variables",
+        "indirect-discrimination",
+        "limitations"
+      ]
+    },
+    {
+      "id": "ETH_027",
+      "question": "What is data poisoning in AI security?",
+      "options": [
+        "Corrupting data storage systems",
+        "Deliberately introducing malicious data into training sets to compromise model behavior",
+        "Deleting important training data",
+        "Encrypting datasets unnecessarily"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data poisoning involves attackers deliberately introducing malicious or corrupted data into training datasets to manipulate model behavior, reduce performance, or create backdoors.",
+      "optionExplanations": [
+        "Incorrect. Data poisoning targets model training through malicious data injection, not storage system corruption.",
+        "Correct. Data poisoning involves deliberately injecting malicious data into training sets to compromise model behavior.",
+        "Incorrect. This attack involves adding harmful data rather than removing or deleting existing training data.",
+        "Incorrect. Data poisoning is about injecting malicious content, not unnecessary encryption or data protection measures."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-poisoning",
+        "security",
+        "malicious-data",
+        "training-attacks"
+      ]
+    },
+    {
+      "id": "ETH_028",
+      "question": "What is the purpose of diverse and inclusive AI teams?",
+      "options": [
+        "To reduce development costs",
+        "To bring different perspectives and reduce bias in AI system design",
+        "To speed up development processes",
+        "To meet legal requirements only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Diverse and inclusive AI teams bring varied perspectives, experiences, and viewpoints that help identify potential biases, improve system design, and ensure AI systems work fairly for different user groups.",
+      "optionExplanations": [
+        "Incorrect. While diversity may have economic benefits, the primary purpose is improving AI fairness and reducing bias.",
+        "Correct. Diverse teams provide varied perspectives that help identify bias, improve design, and ensure fair AI systems.",
+        "Incorrect. The focus is on improving AI quality and fairness, not necessarily accelerating development timelines.",
+        "Incorrect. While legal compliance may be relevant, the main benefit is improved AI design through diverse perspectives."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "diversity",
+        "inclusion",
+        "bias-reduction",
+        "perspectives"
+      ]
+    },
+    {
+      "id": "ETH_029",
+      "question": "What is model inversion attack?",
+      "options": [
+        "Reversing model training process",
+        "Reconstructing training data from model parameters or outputs",
+        "Inverting model predictions",
+        "Changing model architecture"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model inversion attacks attempt to reconstruct or infer information about training data by analyzing model parameters, gradients, or prediction outputs, potentially revealing sensitive information.",
+      "optionExplanations": [
+        "Incorrect. Model inversion doesn't reverse the training process; it attempts to extract information about training data.",
+        "Correct. Model inversion attacks reconstruct or infer training data information from model parameters or outputs.",
+        "Incorrect. This attack targets training data reconstruction, not simply inverting or negating model predictions.",
+        "Incorrect. The attack focuses on extracting training data information, not modifying or changing model architecture."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-inversion",
+        "privacy-attack",
+        "data-reconstruction",
+        "inference"
+      ]
+    },
+    {
+      "id": "ETH_030",
+      "question": "What is the concept of AI ethics by design?",
+      "options": [
+        "Adding ethical considerations only at the end of development",
+        "Integrating ethical principles throughout the entire AI development lifecycle",
+        "Using only ethical datasets",
+        "Hiring ethics consultants"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ethics by design involves incorporating ethical considerations, principles, and safeguards from the very beginning and throughout all stages of AI system development, not as an afterthought.",
+      "optionExplanations": [
+        "Incorrect. Ethics by design requires integration from the start, not addition of ethics only at the end of development.",
+        "Correct. Ethics by design integrates ethical principles throughout the entire AI development lifecycle from conception to deployment.",
+        "Incorrect. While ethical data is important, ethics by design encompasses much broader ethical integration across all aspects.",
+        "Incorrect. Ethics by design is about systematic integration of ethics, not just consulting external ethics experts."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ethics-by-design",
+        "lifecycle-integration",
+        "systematic-ethics",
+        "development-process"
+      ]
+    },
+    {
+      "id": "ETH_031",
+      "question": "What is intersectional fairness in AI?",
+      "options": [
+        "Fairness across different AI applications",
+        "Considering fairness for individuals who belong to multiple protected groups simultaneously",
+        "Fairness between different algorithms",
+        "Geographic fairness across regions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Intersectional fairness recognizes that individuals may belong to multiple protected or marginalized groups simultaneously and ensures AI systems are fair to these overlapping identities.",
+      "optionExplanations": [
+        "Incorrect. Intersectional fairness focuses on multiple group memberships within individuals, not across different applications.",
+        "Correct. Intersectional fairness considers individuals who belong to multiple protected groups and their compound experiences.",
+        "Incorrect. This concept relates to individual identity intersections, not comparisons between different algorithmic approaches.",
+        "Incorrect. Intersectional fairness addresses overlapping group memberships, not geographic or regional distribution issues."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "intersectional-fairness",
+        "multiple-groups",
+        "compound-discrimination",
+        "identity"
+      ]
+    },
+    {
+      "id": "ETH_032",
+      "question": "What is the purpose of red team exercises in AI safety?",
+      "options": [
+        "To test hardware performance",
+        "To deliberately attempt to find vulnerabilities and failure modes in AI systems",
+        "To improve user interface design",
+        "To reduce computational costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Red team exercises involve deliberately trying to break, exploit, or find vulnerabilities in AI systems to identify potential safety issues, security risks, and failure modes before deployment.",
+      "optionExplanations": [
+        "Incorrect. Red teaming focuses on finding vulnerabilities and failure modes, not testing hardware performance capabilities.",
+        "Correct. Red team exercises deliberately attempt to discover vulnerabilities, exploits, and failure modes in AI systems.",
+        "Incorrect. Red teaming addresses safety and security vulnerabilities, not user interface design or usability issues.",
+        "Incorrect. The purpose is identifying risks and vulnerabilities, not optimizing costs or improving computational efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "red-teaming",
+        "vulnerability-testing",
+        "failure-modes",
+        "safety-testing"
+      ]
+    },
+    {
+      "id": "ETH_033",
+      "question": "What is algorithmic recourse?",
+      "options": [
+        "The ability to appeal or change negative AI decisions through actionable steps",
+        "Reversing all AI decisions automatically",
+        "Legal action against AI companies",
+        "Replacing AI with human decisions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Algorithmic recourse provides individuals with actionable steps they can take to potentially change or appeal negative AI decisions that affect them, ensuring they have some control over automated outcomes.",
+      "optionExplanations": [
+        "Correct. Algorithmic recourse gives individuals actionable ways to potentially change or appeal negative AI decisions.",
+        "Incorrect. Recourse involves providing specific actionable steps, not automatic reversal of all AI decisions.",
+        "Incorrect. Recourse focuses on individual appeal mechanisms, not legal action or litigation against companies.",
+        "Incorrect. Recourse works within AI systems to provide appeal options, not replacing AI with human decision-making."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "algorithmic-recourse",
+        "appeal-mechanisms",
+        "individual-agency",
+        "actionable-steps"
+      ]
+    },
+    {
+      "id": "ETH_034",
+      "question": "What is the main challenge with AI system opacity?",
+      "options": [
+        "High computational costs",
+        "Inability to understand how decisions are made, reducing trust and accountability",
+        "Slow processing speeds",
+        "Large storage requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI system opacity refers to the 'black box' nature of many AI systems where decision-making processes are unclear, making it difficult to trust, verify, or hold systems accountable for their decisions.",
+      "optionExplanations": [
+        "Incorrect. Opacity relates to understanding and transparency, not computational cost or resource requirements.",
+        "Correct. Opacity prevents understanding of decision processes, reducing trust, verification ability, and accountability.",
+        "Incorrect. Processing speed is a performance issue; opacity concerns the interpretability and understanding of decisions.",
+        "Incorrect. Storage requirements are technical considerations; opacity is about the transparency of decision-making processes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "opacity",
+        "black-box",
+        "trust",
+        "accountability",
+        "interpretability"
+      ]
+    },
+    {
+      "id": "ETH_035",
+      "question": "What is secure multi-party computation in privacy-preserving AI?",
+      "options": [
+        "Encryption of all data transmissions",
+        "A method allowing multiple parties to compute functions over their inputs while keeping those inputs private",
+        "Using multiple passwords for access",
+        "Distributing data across multiple servers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Secure multi-party computation enables multiple parties to jointly compute a function over their private inputs without revealing those inputs to each other, enabling collaborative AI while preserving privacy.",
+      "optionExplanations": [
+        "Incorrect. While encryption may be involved, secure MPC specifically enables joint computation while keeping inputs private.",
+        "Correct. Secure MPC allows collaborative computation while keeping each party's input data private from others.",
+        "Incorrect. This relates to joint private computation, not authentication methods or password security schemes.",
+        "Incorrect. While distribution may be involved, secure MPC focuses on private joint computation, not just data distribution."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "secure-multiparty-computation",
+        "privacy-preserving",
+        "collaborative-computation",
+        "cryptography"
+      ]
+    },
+    {
+      "id": "ETH_036",
+      "question": "What is the purpose of AI governance committees in organizations?",
+      "options": [
+        "To manage IT infrastructure",
+        "To provide oversight and guidance on ethical AI development and deployment",
+        "To reduce operational costs",
+        "To handle customer complaints"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI governance committees provide organizational oversight, establish ethical guidelines, review AI projects for compliance, and ensure responsible AI development and deployment practices.",
+      "optionExplanations": [
+        "Incorrect. Governance committees focus on ethical oversight and policy guidance, not technical infrastructure management.",
+        "Correct. AI governance committees provide oversight, guidance, and ensure ethical AI development and deployment practices.",
+        "Incorrect. While efficiency may result, governance committees primarily focus on ethical compliance and responsible practices.",
+        "Incorrect. Customer service is separate from the strategic oversight and ethical guidance role of governance committees."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "governance-committees",
+        "oversight",
+        "ethical-guidance",
+        "organizational-responsibility"
+      ]
+    },
+    {
+      "id": "ETH_037",
+      "question": "What is backdoor attack in AI systems?",
+      "options": [
+        "Unauthorized system access through network vulnerabilities",
+        "Hidden triggers that cause AI models to misbehave when specific inputs are present",
+        "Stealing source code from developers",
+        "Physical tampering with AI hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Backdoor attacks involve embedding hidden triggers in AI models that cause malicious behavior when specific input patterns are present, while maintaining normal behavior otherwise.",
+      "optionExplanations": [
+        "Incorrect. AI backdoor attacks target model behavior through hidden triggers, not network security vulnerabilities.",
+        "Correct. Backdoor attacks embed hidden triggers that cause malicious behavior when specific input patterns are encountered.",
+        "Incorrect. This attack targets model behavior through embedded triggers, not source code theft or intellectual property.",
+        "Incorrect. Backdoor attacks are algorithmic manipulations, not physical tampering or hardware-level security breaches."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "backdoor-attacks",
+        "hidden-triggers",
+        "malicious-behavior",
+        "security"
+      ]
+    },
+    {
+      "id": "ETH_038",
+      "question": "What is the primary goal of fairness-aware machine learning?",
+      "options": [
+        "Maximizing model accuracy only",
+        "Balancing model performance with equitable outcomes across different groups",
+        "Minimizing computational requirements",
+        "Simplifying model architectures"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fairness-aware machine learning aims to develop models that achieve good performance while ensuring equitable treatment and outcomes across different demographic groups.",
+      "optionExplanations": [
+        "Incorrect. Fairness-aware ML balances accuracy with fairness, not maximizing accuracy at the expense of equitable outcomes.",
+        "Correct. Fairness-aware ML balances model performance with ensuring equitable outcomes across different demographic groups.",
+        "Incorrect. The focus is on fairness and equity, not computational efficiency or resource minimization.",
+        "Incorrect. Model complexity is not the primary concern; the goal is achieving fair outcomes across groups."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fairness-aware-ml",
+        "equitable-outcomes",
+        "balanced-performance",
+        "demographic-groups"
+      ]
+    },
+    {
+      "id": "ETH_039",
+      "question": "What is concept drift in AI ethics context?",
+      "options": [
+        "Changes in programming languages",
+        "When societal values and norms change, potentially making AI systems outdated or biased",
+        "Hardware becoming obsolete",
+        "Changes in user interface design"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In ethics context, concept drift refers to changes in societal values, norms, or contexts that can make previously acceptable AI systems outdated, biased, or ethically problematic over time.",
+      "optionExplanations": [
+        "Incorrect. Concept drift in ethics relates to changing societal values, not technical changes in programming languages.",
+        "Correct. Ethical concept drift occurs when changing societal values make AI systems outdated, biased, or ethically problematic.",
+        "Incorrect. This refers to changing social and ethical contexts, not hardware obsolescence or technical deprecation.",
+        "Incorrect. The concept relates to evolving ethical standards and social norms, not user interface design changes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "concept-drift",
+        "societal-values",
+        "ethical-evolution",
+        "contextual-changes"
+      ]
+    },
+    {
+      "id": "ETH_040",
+      "question": "What is the purpose of consent mechanisms in AI systems?",
+      "options": [
+        "To improve system performance",
+        "To ensure users understand and agree to how their data will be used by AI systems",
+        "To reduce computational costs",
+        "To speed up data processing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Consent mechanisms ensure that users are informed about and voluntarily agree to how their personal data will be collected, processed, and used by AI systems, respecting user autonomy and privacy rights.",
+      "optionExplanations": [
+        "Incorrect. Consent mechanisms focus on user rights and privacy protection, not system performance optimization.",
+        "Correct. Consent mechanisms ensure users understand and voluntarily agree to data usage by AI systems.",
+        "Incorrect. The purpose is protecting user privacy and autonomy, not reducing costs or improving computational efficiency.",
+        "Incorrect. Consent focuses on user rights and informed agreement, not processing speed or technical optimization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "consent-mechanisms",
+        "user-rights",
+        "data-usage",
+        "privacy-protection"
+      ]
+    },
+    {
+      "id": "ETH_041",
+      "question": "What is adversarial training in AI robustness?",
+      "options": [
+        "Training models on competitive datasets",
+        "Training models with adversarial examples to improve robustness against attacks",
+        "Using multiple training algorithms simultaneously",
+        "Training with incomplete data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adversarial training involves incorporating adversarial examples (deliberately crafted malicious inputs) into the training process to make models more robust against adversarial attacks.",
+      "optionExplanations": [
+        "Incorrect. Adversarial training uses malicious examples to improve robustness, not competitive or comparative datasets.",
+        "Correct. Adversarial training incorporates adversarial examples during training to improve model robustness against attacks.",
+        "Incorrect. This technique involves using adversarial examples, not multiple simultaneous training algorithms or approaches.",
+        "Incorrect. Adversarial training uses specifically crafted malicious examples, not incomplete or missing data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adversarial-training",
+        "robustness",
+        "attack-resistance",
+        "security"
+      ]
+    },
+    {
+      "id": "ETH_042",
+      "question": "What is the main ethical concern with deepfakes?",
+      "options": [
+        "High computational requirements",
+        "Potential for misinformation, fraud, and violation of consent",
+        "Complex technical implementation",
+        "Limited visual quality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deepfakes raise serious ethical concerns including spreading misinformation, enabling fraud, violating consent by using someone's likeness without permission, and potential for harassment or manipulation.",
+      "optionExplanations": [
+        "Incorrect. While resource-intensive, the primary ethical concerns relate to misuse and harm, not computational requirements.",
+        "Correct. Deepfakes enable misinformation, fraud, non-consensual use of likeness, and various forms of manipulation and harm.",
+        "Incorrect. Technical complexity is not the main ethical issue; the concern is potential for abuse and harm.",
+        "Incorrect. Visual quality is a technical consideration; ethical concerns focus on misuse and societal impact."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "deepfakes",
+        "misinformation",
+        "consent",
+        "fraud",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "ETH_043",
+      "question": "What is calibrated fairness in AI systems?",
+      "options": [
+        "Adjusting model parameters for better performance",
+        "Ensuring prediction confidence scores are equally reliable across different groups",
+        "Balancing computational resources",
+        "Synchronizing multiple AI models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Calibrated fairness ensures that prediction confidence scores or probabilities are equally reliable and well-calibrated across different demographic groups, preventing overconfidence for some groups.",
+      "optionExplanations": [
+        "Incorrect. Calibrated fairness focuses on confidence reliability across groups, not general parameter tuning for performance.",
+        "Correct. Calibrated fairness ensures prediction confidence scores are equally reliable and accurate across different groups.",
+        "Incorrect. This concept relates to confidence calibration across demographics, not computational resource management.",
+        "Incorrect. Calibrated fairness addresses confidence reliability within single systems, not multi-model synchronization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "calibrated-fairness",
+        "confidence-scores",
+        "reliability",
+        "demographic-groups"
+      ]
+    },
+    {
+      "id": "ETH_044",
+      "question": "What is the purpose of algorithmic auditing tools?",
+      "options": [
+        "To debug code syntax errors",
+        "To systematically detect bias, fairness issues, and ethical problems in AI systems",
+        "To optimize algorithm performance",
+        "To compress algorithm code"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Algorithmic auditing tools are designed to systematically analyze AI systems for bias, fairness violations, discrimination, and other ethical issues through automated testing and evaluation.",
+      "optionExplanations": [
+        "Incorrect. Auditing tools focus on ethical evaluation and bias detection, not syntax debugging or code errors.",
+        "Correct. Algorithmic auditing tools systematically detect bias, fairness issues, and ethical problems in AI systems.",
+        "Incorrect. While performance may be considered, auditing tools primarily focus on ethical compliance, not optimization.",
+        "Incorrect. These tools analyze ethical compliance and fairness, not code compression or technical optimization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "auditing-tools",
+        "bias-detection",
+        "fairness-evaluation",
+        "systematic-analysis"
+      ]
+    },
+    {
+      "id": "ETH_045",
+      "question": "What is the right to be forgotten in AI context?",
+      "options": [
+        "The ability to delete AI models",
+        "The right of individuals to have their personal data removed from AI systems",
+        "The right to ignore AI decisions",
+        "The ability to reset AI training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The right to be forgotten allows individuals to request removal of their personal data from AI systems, including training datasets and any learned patterns, ensuring privacy and control over personal information.",
+      "optionExplanations": [
+        "Incorrect. This right concerns individual data removal from systems, not the ability to delete entire AI models.",
+        "Correct. The right to be forgotten allows individuals to request removal of their personal data from AI systems.",
+        "Incorrect. This right is about data removal and privacy, not the ability to ignore or dismiss AI decisions.",
+        "Incorrect. The right focuses on personal data removal, not resetting or restarting AI training processes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "right-to-be-forgotten",
+        "data-removal",
+        "privacy-rights",
+        "personal-data"
+      ]
+    },
+    {
+      "id": "ETH_046",
+      "question": "What is model distillation's privacy implication?",
+      "options": [
+        "It always improves privacy",
+        "It can help create privacy-preserving models by transferring knowledge without raw data",
+        "It eliminates all privacy concerns",
+        "It has no privacy implications"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model distillation can enhance privacy by transferring knowledge from a teacher model to a student model without sharing raw training data, though it doesn't eliminate all privacy risks.",
+      "optionExplanations": [
+        "Incorrect. While distillation can help privacy, it doesn't always improve it and may still leak some information.",
+        "Correct. Model distillation can enhance privacy by transferring knowledge without sharing raw training data directly.",
+        "Incorrect. Distillation can improve privacy but doesn't eliminate all privacy concerns or information leakage risks.",
+        "Incorrect. Model distillation has significant privacy implications, both positive and potentially negative."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-distillation",
+        "privacy-preservation",
+        "knowledge-transfer",
+        "data-protection"
+      ]
+    },
+    {
+      "id": "ETH_047",
+      "question": "What is the main challenge with AI systems in healthcare ethics?",
+      "options": [
+        "High computational costs",
+        "Balancing accuracy with fairness while ensuring patient safety and privacy",
+        "Complex user interfaces",
+        "Limited data storage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Healthcare AI faces complex ethical challenges including ensuring diagnostic accuracy while maintaining fairness across patient populations, protecting sensitive health data, and ensuring patient safety and autonomy.",
+      "optionExplanations": [
+        "Incorrect. While costs matter, the primary ethical challenge is balancing accuracy, fairness, safety, and privacy.",
+        "Correct. Healthcare AI must balance diagnostic accuracy with fairness, patient safety, privacy, and ethical care standards.",
+        "Incorrect. Interface design is important but secondary to fundamental ethical challenges of fairness and patient safety.",
+        "Incorrect. Storage limitations are technical issues; ethical challenges focus on fairness, safety, and privacy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "healthcare-ethics",
+        "patient-safety",
+        "fairness",
+        "privacy",
+        "accuracy"
+      ]
+    },
+    {
+      "id": "ETH_048",
+      "question": "What is gradient leakage in federated learning?",
+      "options": [
+        "Loss of computational efficiency",
+        "Privacy attack where training data can be reconstructed from shared gradients",
+        "Hardware malfunction during training",
+        "Loss of model accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient leakage is a privacy attack in federated learning where attackers can reconstruct training data by analyzing the gradients that participants share during collaborative training.",
+      "optionExplanations": [
+        "Incorrect. Gradient leakage is a privacy attack, not a performance or computational efficiency issue.",
+        "Correct. Gradient leakage allows attackers to reconstruct private training data from shared gradient information.",
+        "Incorrect. This is a privacy vulnerability exploiting shared gradients, not a hardware or system malfunction.",
+        "Incorrect. While accuracy may be affected, gradient leakage is primarily a privacy attack, not an accuracy problem."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gradient-leakage",
+        "federated-learning",
+        "privacy-attack",
+        "data-reconstruction"
+      ]
+    },
+    {
+      "id": "ETH_049",
+      "question": "What is the purpose of AI ethics review boards?",
+      "options": [
+        "To approve all AI research funding",
+        "To evaluate AI projects for ethical compliance and potential risks",
+        "To manage AI development budgets",
+        "To train AI developers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI ethics review boards evaluate AI projects, research, and applications for ethical compliance, potential risks, societal impact, and adherence to ethical guidelines before approval or deployment.",
+      "optionExplanations": [
+        "Incorrect. Ethics boards focus on ethical evaluation, not financial funding approval or budget management.",
+        "Correct. AI ethics review boards evaluate projects for ethical compliance, risks, and adherence to ethical standards.",
+        "Incorrect. Budget management is separate from the ethical evaluation and compliance oversight role of review boards.",
+        "Incorrect. While education may occur, the primary purpose is project evaluation and ethical oversight, not training."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ethics-review-boards",
+        "ethical-compliance",
+        "risk-evaluation",
+        "oversight"
+      ]
+    },
+    {
+      "id": "ETH_050",
+      "question": "What is the concept of AI value alignment?",
+      "options": [
+        "Aligning AI development costs with budgets",
+        "Ensuring AI systems pursue goals consistent with human values and well-being",
+        "Synchronizing AI processing speeds",
+        "Matching AI capabilities with hardware"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI value alignment ensures that AI systems understand and pursue objectives that are consistent with human values, ethics, and overall well-being, particularly important for advanced AI systems.",
+      "optionExplanations": [
+        "Incorrect. Value alignment concerns ethical and goal compatibility, not financial budgeting or cost management.",
+        "Correct. AI value alignment ensures systems pursue goals consistent with human values and well-being.",
+        "Incorrect. This relates to ethical goal alignment, not technical synchronization or processing coordination.",
+        "Incorrect. Value alignment addresses goal compatibility with human values, not hardware-software matching."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value-alignment",
+        "human-values",
+        "goal-compatibility",
+        "ethics"
+      ]
+    },
+    {
+      "id": "ETH_051",
+      "question": "What is the main ethical concern with emotion recognition AI?",
+      "options": [
+        "High energy consumption",
+        "Privacy invasion and potential manipulation of individuals based on emotional state",
+        "Complex technical implementation",
+        "Limited accuracy in recognition"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Emotion recognition AI raises concerns about privacy invasion, consent, potential manipulation of individuals based on emotional states, and the reliability of emotional inference from external cues.",
+      "optionExplanations": [
+        "Incorrect. While energy use matters, the primary ethical concerns involve privacy, consent, and potential manipulation.",
+        "Correct. Emotion recognition AI raises privacy concerns and potential for manipulation based on inferred emotional states.",
+        "Incorrect. Technical complexity is not the main ethical issue; concerns focus on privacy and potential abuse.",
+        "Incorrect. While accuracy is important, the main ethical concerns are privacy invasion and manipulation potential."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "emotion-recognition",
+        "privacy-invasion",
+        "manipulation",
+        "consent"
+      ]
+    },
+    {
+      "id": "ETH_052",
+      "question": "What is individual fairness in AI systems?",
+      "options": [
+        "Each person gets identical treatment",
+        "Similar individuals should be treated similarly by the AI system",
+        "Everyone receives the same outcome",
+        "Random treatment for all individuals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Individual fairness requires that individuals who are similar with respect to relevant attributes should receive similar treatment or outcomes from the AI system, ensuring consistency in decision-making.",
+      "optionExplanations": [
+        "Incorrect. Individual fairness considers relevant similarities, not identical treatment regardless of differences.",
+        "Correct. Individual fairness ensures that similar individuals receive similar treatment based on relevant attributes.",
+        "Incorrect. This describes demographic parity or outcome equality, not individual fairness based on similarity.",
+        "Incorrect. Individual fairness is based on systematic similarity assessment, not random treatment assignment."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "individual-fairness",
+        "similarity-based-treatment",
+        "consistency",
+        "relevant-attributes"
+      ]
+    },
+    {
+      "id": "ETH_053",
+      "question": "What is the purpose of AI impact statements?",
+      "options": [
+        "To measure computational performance",
+        "To document potential societal, ethical, and environmental effects of AI systems",
+        "To calculate development costs",
+        "To test software compatibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI impact statements document and assess the potential positive and negative effects of AI systems on society, individuals, environment, and ethics before deployment.",
+      "optionExplanations": [
+        "Incorrect. Impact statements focus on societal and ethical effects, not technical performance or computational metrics.",
+        "Correct. AI impact statements document potential societal, ethical, environmental, and individual effects of AI systems.",
+        "Incorrect. While costs may be mentioned, impact statements primarily focus on broader societal and ethical implications.",
+        "Incorrect. Software compatibility testing is separate from assessing societal and ethical impacts of AI deployment."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "impact-statements",
+        "societal-effects",
+        "ethical-assessment",
+        "documentation"
+      ]
+    },
+    {
+      "id": "ETH_054",
+      "question": "What is model extraction attack?",
+      "options": [
+        "Physically removing AI hardware",
+        "Stealing model functionality by querying and reverse-engineering responses",
+        "Deleting model files",
+        "Copying installation software"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model extraction attacks involve systematically querying an AI system and analyzing responses to reverse-engineer or steal the model's functionality, parameters, or training data insights.",
+      "optionExplanations": [
+        "Incorrect. Model extraction is a cybersecurity attack on model functionality, not physical hardware theft.",
+        "Correct. Model extraction attacks steal model functionality by systematically querying and reverse-engineering responses.",
+        "Incorrect. This attack involves extracting functionality through queries, not simply deleting or removing files.",
+        "Incorrect. Model extraction targets intellectual property through query analysis, not software installation copying."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-extraction",
+        "reverse-engineering",
+        "query-attacks",
+        "intellectual-property"
+      ]
+    },
+    {
+      "id": "ETH_055",
+      "question": "What is the main privacy risk with large language models?",
+      "options": [
+        "High computational requirements",
+        "Potential memorization and regurgitation of training data including personal information",
+        "Complex architecture design",
+        "Large model size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Large language models may memorize and later reproduce personal information, copyrighted content, or sensitive data from their training sets, creating significant privacy and intellectual property risks.",
+      "optionExplanations": [
+        "Incorrect. While computationally intensive, the primary privacy risk is data memorization and potential exposure.",
+        "Correct. LLMs may memorize and reproduce personal information or sensitive data from training sets.",
+        "Incorrect. Architectural complexity is a technical consideration; privacy risks stem from data memorization capabilities.",
+        "Incorrect. Model size affects capabilities but the privacy risk specifically relates to memorization of training data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "large-language-models",
+        "data-memorization",
+        "privacy-risk",
+        "training-data"
+      ]
+    },
+    {
+      "id": "ETH_056",
+      "question": "What is fairness through awareness in AI?",
+      "options": [
+        "Completely ignoring demographic attributes",
+        "Explicitly using demographic information to ensure equitable outcomes",
+        "Making all users aware of AI decisions",
+        "Publicizing all training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Fairness through awareness explicitly incorporates demographic information into the model to actively ensure equitable treatment and outcomes across different groups, contrasting with fairness through unawareness.",
+      "optionExplanations": [
+        "Incorrect. Fairness through awareness explicitly uses demographic information, not ignoring it completely.",
+        "Correct. Fairness through awareness explicitly uses demographic information to actively ensure equitable outcomes.",
+        "Incorrect. This approach focuses on using demographic data in modeling, not user awareness of decisions.",
+        "Incorrect. The method involves using demographic attributes in modeling, not public data disclosure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fairness-through-awareness",
+        "demographic-information",
+        "equitable-outcomes",
+        "explicit-use"
+      ]
+    },
+    {
+      "id": "ETH_057",
+      "question": "What is the primary purpose of AI safety benchmarks?",
+      "options": [
+        "To measure processing speed",
+        "To systematically evaluate AI systems for safety, robustness, and alignment",
+        "To compare development costs",
+        "To test hardware compatibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI safety benchmarks provide standardized tests and metrics to systematically evaluate AI systems for safety properties, robustness to various conditions, and alignment with intended objectives.",
+      "optionExplanations": [
+        "Incorrect. Safety benchmarks focus on safety and reliability evaluation, not performance speed measurements.",
+        "Correct. AI safety benchmarks systematically evaluate systems for safety, robustness, and alignment properties.",
+        "Incorrect. While costs may be relevant, safety benchmarks primarily focus on safety and reliability evaluation.",
+        "Incorrect. Hardware compatibility testing is separate from safety, robustness, and alignment evaluation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "safety-benchmarks",
+        "systematic-evaluation",
+        "robustness",
+        "alignment"
+      ]
+    },
+    {
+      "id": "ETH_058",
+      "question": "What is algorithmic transparency?",
+      "options": [
+        "Making source code publicly available",
+        "Clear disclosure of how AI systems make decisions and their limitations",
+        "Using only open-source libraries",
+        "Publishing all training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Algorithmic transparency involves clear communication about how AI systems operate, make decisions, their capabilities and limitations, enabling understanding and appropriate trust without necessarily revealing all technical details.",
+      "optionExplanations": [
+        "Incorrect. Transparency involves clear communication about system behavior, not necessarily full source code disclosure.",
+        "Correct. Algorithmic transparency requires clear disclosure of decision processes, capabilities, and limitations.",
+        "Incorrect. Library choice is a technical decision; transparency focuses on clear communication about system behavior.",
+        "Incorrect. Transparency can be achieved without compromising privacy by publishing all training data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "algorithmic-transparency",
+        "decision-processes",
+        "clear-disclosure",
+        "limitations"
+      ]
+    },
+    {
+      "id": "ETH_059",
+      "question": "What is the main ethical challenge with predictive policing AI?",
+      "options": [
+        "High computational complexity",
+        "Risk of perpetuating and amplifying existing biases in law enforcement",
+        "Integration with existing systems",
+        "Officer training requirements"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Predictive policing AI risks perpetuating historical biases in policing data, potentially leading to discriminatory enforcement patterns and unfair targeting of certain communities.",
+      "optionExplanations": [
+        "Incorrect. While complex, the primary ethical concern is bias perpetuation and discriminatory enforcement patterns.",
+        "Correct. Predictive policing AI risks perpetuating existing biases and creating discriminatory law enforcement patterns.",
+        "Incorrect. System integration is a technical challenge; ethical concerns focus on bias and fair enforcement.",
+        "Incorrect. Training is important but secondary to the fundamental issue of bias perpetuation and discrimination."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "predictive-policing",
+        "bias-perpetuation",
+        "discriminatory-enforcement",
+        "community-impact"
+      ]
+    },
+    {
+      "id": "ETH_060",
+      "question": "What is differential privacy's epsilon parameter?",
+      "options": [
+        "Processing speed measurement",
+        "Privacy budget that controls the trade-off between privacy and utility",
+        "Model accuracy threshold",
+        "Memory usage limit"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The epsilon parameter in differential privacy represents the privacy budget - smaller epsilon values provide stronger privacy guarantees but may reduce data utility, while larger values allow more utility but provide weaker privacy protection.",
+      "optionExplanations": [
+        "Incorrect. Epsilon controls privacy-utility trade-off, not processing speed or computational performance measures.",
+        "Correct. Epsilon is the privacy budget controlling the balance between privacy protection and data utility.",
+        "Incorrect. While utility affects accuracy, epsilon specifically measures privacy protection strength, not accuracy thresholds.",
+        "Incorrect. Epsilon relates to privacy protection levels, not memory consumption or computational resource limits."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "differential-privacy",
+        "epsilon-parameter",
+        "privacy-budget",
+        "utility-trade-off"
+      ]
+    },
+    {
+      "id": "ETH_061",
+      "question": "What is the purpose of algorithmic impact assessments?",
+      "options": [
+        "To optimize algorithm performance",
+        "To evaluate potential harms and benefits before deploying AI systems",
+        "To reduce development costs",
+        "To test user interfaces"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Algorithmic impact assessments systematically evaluate potential positive and negative consequences of AI systems on individuals, communities, and society before deployment to inform decision-making and risk mitigation.",
+      "optionExplanations": [
+        "Incorrect. Impact assessments focus on harm and benefit evaluation, not performance optimization or efficiency improvements.",
+        "Correct. Algorithmic impact assessments evaluate potential harms and benefits before AI system deployment.",
+        "Incorrect. While costs may be considered, impact assessments primarily focus on social and ethical consequences.",
+        "Incorrect. User interface testing is separate from assessing broader societal and ethical impacts of AI systems."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "impact-assessments",
+        "harm-evaluation",
+        "benefit-analysis",
+        "pre-deployment"
+      ]
+    },
+    {
+      "id": "ETH_062",
+      "question": "What is model poisoning in AI security?",
+      "options": [
+        "Using corrupted hardware for training",
+        "Deliberately manipulating training data or process to compromise model behavior",
+        "Accidental data errors during training",
+        "Hardware failures during model development"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model poisoning involves attackers deliberately manipulating training data, training processes, or model updates to compromise the model's behavior, performance, or introduce backdoors.",
+      "optionExplanations": [
+        "Incorrect. Model poisoning targets data and training processes, not hardware corruption or physical equipment issues.",
+        "Correct. Model poisoning deliberately manipulates training data or processes to compromise model behavior and performance.",
+        "Incorrect. Model poisoning involves intentional malicious manipulation, not accidental errors or data corruption.",
+        "Incorrect. This attack targets algorithmic integrity through data manipulation, not hardware failures or malfunctions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-poisoning",
+        "training-manipulation",
+        "malicious-attacks",
+        "compromised-behavior"
+      ]
+    },
+    {
+      "id": "ETH_063",
+      "question": "What is the main goal of responsible AI governance?",
+      "options": [
+        "Maximizing AI development speed",
+        "Ensuring AI development and deployment align with ethical principles and societal values",
+        "Reducing regulatory compliance costs",
+        "Standardizing technical specifications"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Responsible AI governance aims to ensure that AI development, deployment, and use align with ethical principles, respect human rights, and serve societal well-being through appropriate oversight and guidelines.",
+      "optionExplanations": [
+        "Incorrect. Responsible governance prioritizes ethical alignment over development speed or rapid deployment.",
+        "Correct. Responsible AI governance ensures alignment with ethical principles and societal values in AI development.",
+        "Incorrect. While efficiency matters, responsible governance focuses on ethical compliance over cost reduction.",
+        "Incorrect. Technical standardization is separate from the ethical and value-based focus of responsible governance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "responsible-governance",
+        "ethical-alignment",
+        "societal-values",
+        "oversight"
+      ]
+    },
+    {
+      "id": "ETH_064",
+      "question": "What is counterfactual fairness in AI?",
+      "options": [
+        "Ensuring equal outcomes for all groups",
+        "Fair treatment based on what would have happened in a world without discrimination",
+        "Random assignment of outcomes",
+        "Historical fairness analysis"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Counterfactual fairness considers what decisions would be made if sensitive attributes were different, aiming to ensure that outcomes are not influenced by protected characteristics in alternative scenarios.",
+      "optionExplanations": [
+        "Incorrect. Counterfactual fairness considers alternative scenarios, not ensuring identical outcomes for all groups.",
+        "Correct. Counterfactual fairness bases decisions on what would happen without discrimination in alternative scenarios.",
+        "Incorrect. This fairness concept involves systematic counterfactual analysis, not random outcome assignment.",
+        "Incorrect. While considering alternatives, counterfactual fairness focuses on hypothetical scenarios, not historical analysis."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "counterfactual-fairness",
+        "alternative-scenarios",
+        "discrimination-free",
+        "hypothetical-analysis"
+      ]
+    },
+    {
+      "id": "ETH_065",
+      "question": "What is the primary concern with AI systems in hiring processes?",
+      "options": [
+        "Processing large numbers of applications",
+        "Potential discrimination against qualified candidates based on biased algorithms",
+        "Integration with existing HR systems",
+        "Cost of implementation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI in hiring raises concerns about algorithmic bias that could discriminate against qualified candidates based on gender, race, age, or other protected characteristics, potentially perpetuating or amplifying existing hiring biases.",
+      "optionExplanations": [
+        "Incorrect. While AI can handle volume, the primary ethical concern is discriminatory bias against qualified candidates.",
+        "Correct. The main concern is potential discrimination against qualified candidates due to biased algorithms.",
+        "Incorrect. Technical integration is important but secondary to the ethical concern of discriminatory hiring practices.",
+        "Incorrect. Implementation costs are practical considerations; ethical concerns focus on fairness and non-discrimination."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hiring-algorithms",
+        "discrimination",
+        "qualified-candidates",
+        "bias"
+      ]
+    },
+    {
+      "id": "ETH_066",
+      "question": "What is synthetic data's role in privacy-preserving AI?",
+      "options": [
+        "It always eliminates privacy concerns",
+        "It can provide training data while potentially protecting individual privacy",
+        "It has no privacy benefits",
+        "It only increases privacy risks"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Synthetic data can help protect privacy by generating artificial data that maintains statistical properties of real data without containing actual personal information, though privacy protection depends on generation methods.",
+      "optionExplanations": [
+        "Incorrect. Synthetic data can help privacy but doesn't eliminate all privacy concerns or guarantee complete protection.",
+        "Correct. Synthetic data can provide training data while potentially protecting individual privacy through artificial generation.",
+        "Incorrect. Synthetic data can offer significant privacy benefits when properly generated and implemented.",
+        "Incorrect. While risks exist, synthetic data can reduce privacy risks compared to using raw personal data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "synthetic-data",
+        "privacy-preservation",
+        "artificial-generation",
+        "statistical-properties"
+      ]
+    },
+    {
+      "id": "ETH_067",
+      "question": "What is the concept of AI explicability?",
+      "options": [
+        "Making AI systems run faster",
+        "The ability to provide clear explanations for AI decisions and reasoning processes",
+        "Reducing AI development costs",
+        "Improving AI accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI explicability refers to the system's ability to provide clear, understandable explanations for its decisions, reasoning processes, and behaviors to human users, enabling trust and accountability.",
+      "optionExplanations": [
+        "Incorrect. Explicability focuses on providing understandable explanations, not improving processing speed or performance.",
+        "Correct. AI explicability involves providing clear explanations for decisions and reasoning processes to human users.",
+        "Incorrect. Explicability concerns understanding and transparency, not cost reduction or economic efficiency.",
+        "Incorrect. While explanations may help improve systems, explicability primarily focuses on understanding, not accuracy."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "explicability",
+        "clear-explanations",
+        "reasoning-processes",
+        "understanding"
+      ]
+    },
+    {
+      "id": "ETH_068",
+      "question": "What is the main challenge with AI bias in criminal justice systems?",
+      "options": [
+        "Technical complexity of legal systems",
+        "Risk of perpetuating discriminatory practices and affecting fundamental rights",
+        "Integration with court systems",
+        "Training legal professionals"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI bias in criminal justice can perpetuate historical discrimination, leading to unfair sentencing, biased risk assessments, and violations of fundamental rights to fair treatment and due process.",
+      "optionExplanations": [
+        "Incorrect. While legal systems are complex, the primary ethical concern is discriminatory bias affecting rights.",
+        "Correct. AI bias in criminal justice risks perpetuating discrimination and affecting fundamental rights to fair treatment.",
+        "Incorrect. System integration is a technical challenge; ethical concerns focus on fairness and rights protection.",
+        "Incorrect. Training is important but secondary to the fundamental issue of bias affecting justice and rights."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "criminal-justice",
+        "discriminatory-practices",
+        "fundamental-rights",
+        "fair-treatment"
+      ]
+    },
+    {
+      "id": "ETH_069",
+      "question": "What is privacy-preserving machine learning?",
+      "options": [
+        "Machine learning with encrypted hardware only",
+        "Techniques that enable ML while protecting sensitive data and individual privacy",
+        "Using only public datasets for training",
+        "Removing all personal identifiers from data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Privacy-preserving machine learning encompasses various techniques like differential privacy, federated learning, and homomorphic encryption that enable ML model training and inference while protecting sensitive data and individual privacy.",
+      "optionExplanations": [
+        "Incorrect. Privacy-preserving ML involves algorithmic techniques, not just hardware encryption or security measures.",
+        "Correct. Privacy-preserving ML uses techniques to enable machine learning while protecting sensitive data and privacy.",
+        "Incorrect. These techniques can work with various data types, not limited to public datasets or open data.",
+        "Incorrect. Privacy preservation involves sophisticated techniques beyond simple identifier removal or basic anonymization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "privacy-preserving-ml",
+        "sensitive-data",
+        "protection-techniques",
+        "individual-privacy"
+      ]
+    },
+    {
+      "id": "ETH_070",
+      "question": "What is the purpose of AI ethics principles in organizations?",
+      "options": [
+        "To reduce development costs",
+        "To provide guidelines for responsible AI development and deployment",
+        "To speed up AI project approvals",
+        "To standardize programming practices"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI ethics principles provide organizational guidelines and frameworks for responsible AI development, deployment, and use, ensuring alignment with values, legal requirements, and societal expectations.",
+      "optionExplanations": [
+        "Incorrect. Ethics principles focus on responsible development, not cost reduction or economic optimization.",
+        "Correct. AI ethics principles provide guidelines for responsible AI development and deployment in organizations.",
+        "Incorrect. Ethics principles ensure thorough ethical consideration, which may actually slow approval processes for better outcomes.",
+        "Incorrect. While practices may be affected, ethics principles focus on responsible development, not technical standardization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ethics-principles",
+        "responsible-development",
+        "organizational-guidelines",
+        "deployment"
+      ]
+    },
+    {
+      "id": "ETH_071",
+      "question": "What is adversarial robustness in AI systems?",
+      "options": [
+        "The ability to compete with other AI systems",
+        "Resistance to deliberately crafted malicious inputs designed to fool the system",
+        "Fast processing of conflicting information",
+        "Handling multiple users simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Adversarial robustness refers to an AI system's ability to maintain correct performance when faced with adversarial examples - deliberately crafted inputs designed to cause misclassification or malfunction.",
+      "optionExplanations": [
+        "Incorrect. Adversarial robustness concerns resistance to malicious inputs, not competitive performance against other systems.",
+        "Correct. Adversarial robustness is resistance to deliberately crafted malicious inputs designed to fool AI systems.",
+        "Incorrect. This concept addresses malicious input resistance, not information processing speed or conflict resolution.",
+        "Incorrect. Adversarial robustness relates to input manipulation resistance, not multi-user handling or scalability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adversarial-robustness",
+        "malicious-inputs",
+        "resistance",
+        "system-reliability"
+      ]
+    },
+    {
+      "id": "ETH_072",
+      "question": "What is the main ethical concern with facial recognition technology?",
+      "options": [
+        "High computational requirements",
+        "Privacy invasion, surveillance concerns, and potential for discriminatory enforcement",
+        "Technical accuracy limitations",
+        "Integration complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Facial recognition technology raises significant concerns about privacy, mass surveillance, consent, accuracy disparities across demographic groups, and potential for discriminatory enforcement and social control.",
+      "optionExplanations": [
+        "Incorrect. While computationally intensive, the primary ethical concerns involve privacy, surveillance, and discrimination.",
+        "Correct. Facial recognition raises privacy, surveillance, and discriminatory enforcement concerns that affect civil liberties.",
+        "Incorrect. While accuracy matters, the primary ethical concerns are privacy invasion and potential discriminatory applications.",
+        "Incorrect. Technical integration is less concerning than fundamental privacy, surveillance, and discrimination issues."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "facial-recognition",
+        "privacy-invasion",
+        "surveillance",
+        "discriminatory-enforcement"
+      ]
+    },
+    {
+      "id": "ETH_073",
+      "question": "What is model interpretability vs explainability?",
+      "options": [
+        "They are identical concepts",
+        "Interpretability is understanding how models work; explainability is providing explanations for decisions",
+        "Interpretability is for experts; explainability is for users",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Interpretability refers to the degree to which humans can understand the model's internal workings, while explainability focuses on providing understandable explanations for specific decisions or predictions.",
+      "optionExplanations": [
+        "Incorrect. While related, interpretability and explainability have distinct focuses and applications.",
+        "Correct. Interpretability concerns understanding model workings; explainability provides explanations for specific decisions.",
+        "Incorrect. While audiences may differ, the distinction is based on scope - model understanding vs. decision explanation.",
+        "Incorrect. There are meaningful distinctions between understanding model mechanics and explaining individual decisions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interpretability",
+        "explainability",
+        "model-understanding",
+        "decision-explanations"
+      ]
+    },
+    {
+      "id": "ETH_074",
+      "question": "What is the purpose of AI whistleblower protections?",
+      "options": [
+        "To protect trade secrets",
+        "To protect individuals who report AI safety or ethical violations from retaliation",
+        "To prevent data leaks",
+        "To protect intellectual property"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI whistleblower protections safeguard individuals who report AI safety violations, ethical breaches, or harmful practices from retaliation, encouraging disclosure of important safety and ethical concerns.",
+      "optionExplanations": [
+        "Incorrect. Whistleblower protections encourage disclosure of problems, not protection of trade secrets or proprietary information.",
+        "Correct. AI whistleblower protections shield individuals reporting safety or ethical violations from retaliation.",
+        "Incorrect. These protections encourage rather than prevent disclosure, specifically of safety and ethical concerns.",
+        "Incorrect. Whistleblower protections facilitate disclosure of problems, not intellectual property protection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "whistleblower-protection",
+        "safety-violations",
+        "ethical-breaches",
+        "retaliation-prevention"
+      ]
+    },
+    {
+      "id": "ETH_075",
+      "question": "What is distributive fairness in AI systems?",
+      "options": [
+        "Fair distribution of computational resources",
+        "Fair allocation of benefits and burdens across different groups affected by AI",
+        "Distributing AI models across multiple servers",
+        "Fair sharing of development costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Distributive fairness concerns the fair allocation of benefits, opportunities, resources, and burdens that result from AI systems across different individuals and groups in society.",
+      "optionExplanations": [
+        "Incorrect. Distributive fairness concerns societal benefit allocation, not technical resource distribution or computing power.",
+        "Correct. Distributive fairness involves fair allocation of AI benefits and burdens across different affected groups.",
+        "Incorrect. This concept addresses societal benefit distribution, not technical system architecture or model deployment.",
+        "Incorrect. While costs matter, distributive fairness focuses on societal benefits and burdens, not development expenses."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "distributive-fairness",
+        "benefit-allocation",
+        "burden-distribution",
+        "affected-groups"
+      ]
+    },
+    {
+      "id": "ETH_076",
+      "question": "What is the main privacy challenge with IoT and AI integration?",
+      "options": [
+        "Device compatibility issues",
+        "Continuous data collection creating comprehensive surveillance and privacy invasion",
+        "Network bandwidth limitations",
+        "Power consumption concerns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "IoT-AI integration creates extensive data collection from multiple sources, enabling comprehensive surveillance, detailed profiling, and significant privacy invasion through continuous monitoring of personal activities.",
+      "optionExplanations": [
+        "Incorrect. While compatibility matters, the primary privacy concern is extensive surveillance through continuous data collection.",
+        "Correct. IoT-AI integration enables continuous data collection creating comprehensive surveillance and privacy invasion.",
+        "Incorrect. Bandwidth is a technical constraint; privacy concerns focus on extensive data collection and surveillance capabilities.",
+        "Incorrect. Power consumption is a technical issue; privacy challenges involve surveillance and data collection scope."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "IoT-AI-integration",
+        "continuous-surveillance",
+        "privacy-invasion",
+        "comprehensive-monitoring"
+      ]
+    },
+    {
+      "id": "ETH_077",
+      "question": "What is algorithmic decision-making accountability?",
+      "options": [
+        "Making algorithms run efficiently",
+        "Ensuring responsibility and answerability for automated decisions affecting individuals",
+        "Documenting all code changes",
+        "Testing algorithm accuracy regularly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Algorithmic decision-making accountability ensures that organizations and individuals are responsible and answerable for automated decisions that affect people's lives, rights, and opportunities.",
+      "optionExplanations": [
+        "Incorrect. Accountability concerns responsibility for decisions and their impacts, not computational efficiency or performance.",
+        "Correct. Algorithmic accountability ensures responsibility and answerability for automated decisions affecting individuals.",
+        "Incorrect. While documentation supports accountability, accountability itself is about responsibility for decision impacts.",
+        "Incorrect. Testing supports good practices, but accountability is fundamentally about responsibility for decision consequences."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "algorithmic-accountability",
+        "decision-responsibility",
+        "answerability",
+        "individual-impact"
+      ]
+    },
+    {
+      "id": "ETH_078",
+      "question": "What is the concept of AI safety alignment?",
+      "options": [
+        "Synchronizing multiple AI systems",
+        "Ensuring AI systems pursue intended objectives and avoid harmful behaviors",
+        "Aligning AI development schedules",
+        "Matching AI capabilities with hardware specifications"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI safety alignment ensures that AI systems understand and pursue their intended objectives while avoiding harmful or unintended behaviors, especially important as AI systems become more capable and autonomous.",
+      "optionExplanations": [
+        "Incorrect. Safety alignment concerns objective alignment and harm prevention, not multi-system coordination or synchronization.",
+        "Correct. AI safety alignment ensures systems pursue intended objectives while avoiding harmful behaviors.",
+        "Incorrect. This concept addresses goal alignment and safety, not project management or development timeline coordination.",
+        "Incorrect. Safety alignment concerns behavioral objectives and harm prevention, not hardware-software compatibility."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "safety-alignment",
+        "intended-objectives",
+        "harm-prevention",
+        "behavioral-control"
+      ]
+    },
+    {
+      "id": "ETH_079",
+      "question": "What is the primary goal of responsible AI development practices?",
+      "options": [
+        "Reducing time to market",
+        "Creating AI systems that benefit humanity while minimizing potential harms",
+        "Maximizing revenue generation",
+        "Achieving technical superiority"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Responsible AI development focuses on creating systems that provide benefits to humanity while actively identifying, assessing, and mitigating potential risks and harms throughout the development lifecycle.",
+      "optionExplanations": [
+        "Incorrect. Responsible development prioritizes ethical considerations and harm prevention over rapid market deployment.",
+        "Correct. Responsible AI development creates beneficial systems while minimizing potential harms to individuals and society.",
+        "Incorrect. Responsible development emphasizes societal benefit and harm prevention over profit maximization.",
+        "Incorrect. Technical excellence is important but secondary to ensuring beneficial outcomes and preventing harm."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "responsible-development",
+        "human-benefit",
+        "harm-minimization",
+        "lifecycle-ethics"
+      ]
+    },
+    {
+      "id": "ETH_080",
+      "question": "What is the concept of procedural fairness in AI?",
+      "options": [
+        "Fair computational procedures",
+        "Fair and transparent processes for making AI decisions regardless of outcomes",
+        "Fair distribution of processing time",
+        "Fair coding procedures"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Procedural fairness focuses on ensuring that the process of making AI decisions is fair, transparent, and follows appropriate procedures, regardless of whether the outcomes are equal across groups.",
+      "optionExplanations": [
+        "Incorrect. Procedural fairness concerns decision-making processes and transparency, not computational procedures or efficiency.",
+        "Correct. Procedural fairness ensures fair and transparent AI decision-making processes regardless of outcome equality.",
+        "Incorrect. This concept addresses decision process fairness, not computational resource allocation or processing time.",
+        "Incorrect. Procedural fairness relates to decision-making transparency, not software development or coding practices."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "procedural-fairness",
+        "transparent-processes",
+        "decision-making",
+        "process-equity"
+      ]
+    },
+    {
+      "id": "ETH_081",
+      "question": "What is the main ethical concern with autonomous weapons systems?",
+      "options": [
+        "High development costs",
+        "Removing human control from life-and-death decisions and potential for misuse",
+        "Technical complexity challenges",
+        "International coordination difficulties"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Autonomous weapons systems raise profound ethical concerns about removing human judgment from lethal decisions, accountability for deaths, potential for misuse, and fundamental questions about the value of human life.",
+      "optionExplanations": [
+        "Incorrect. While costly, the primary ethical concern is removing human control from lethal decisions and life-death choices.",
+        "Correct. Autonomous weapons remove human control from life-death decisions and create potential for misuse and accountability issues.",
+        "Incorrect. Technical challenges are secondary to fundamental ethical issues about human control over lethal decisions.",
+        "Incorrect. Coordination is important but secondary to core ethical concerns about autonomous lethal decision-making."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "autonomous-weapons",
+        "human-control",
+        "life-death-decisions",
+        "misuse-potential"
+      ]
+    },
+    {
+      "id": "ETH_082",
+      "question": "What is model cards' purpose in responsible AI?",
+      "options": [
+        "To advertise AI capabilities",
+        "To provide transparent documentation of model performance, limitations, and ethical considerations",
+        "To protect intellectual property",
+        "To reduce legal liability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Model cards provide standardized documentation that transparently communicates AI model performance, limitations, intended uses, ethical considerations, and potential biases to users and stakeholders.",
+      "optionExplanations": [
+        "Incorrect. Model cards focus on transparent documentation and limitations, not marketing or capability advertising.",
+        "Correct. Model cards provide transparent documentation of model performance, limitations, and ethical considerations.",
+        "Incorrect. Model cards increase transparency and disclosure, not intellectual property protection or trade secret preservation.",
+        "Incorrect. While transparency may affect liability, model cards primarily aim to inform users, not reduce legal exposure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "model-cards",
+        "transparent-documentation",
+        "performance-limitations",
+        "ethical-considerations"
+      ]
+    },
+    {
+      "id": "ETH_083",
+      "question": "What is the purpose of AI audit trails?",
+      "options": [
+        "To track development costs",
+        "To maintain records of AI system decisions and processes for accountability and review",
+        "To monitor employee productivity",
+        "To backup system data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI audit trails maintain comprehensive records of AI system decisions, inputs, processes, and changes to enable accountability, investigation, compliance verification, and system review when needed.",
+      "optionExplanations": [
+        "Incorrect. Audit trails focus on decision accountability and system review, not financial tracking or cost management.",
+        "Correct. AI audit trails maintain records of decisions and processes for accountability, investigation, and review purposes.",
+        "Incorrect. These trails track AI system behavior and decisions, not human employee activity or productivity monitoring.",
+        "Incorrect. While records are maintained, audit trails focus on accountability and review, not data backup or recovery."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "audit-trails",
+        "decision-records",
+        "accountability",
+        "system-review"
+      ]
+    },
+    {
+      "id": "ETH_084",
+      "question": "What is fairness through equalized odds?",
+      "options": [
+        "Equal outcomes for all individuals",
+        "Equal true positive and false positive rates across demographic groups",
+        "Random prediction assignment",
+        "Identical treatment for everyone"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Equalized odds requires that true positive rates and false positive rates are equal across different demographic groups, ensuring that accuracy is consistent regardless of group membership.",
+      "optionExplanations": [
+        "Incorrect. Equalized odds focuses on equal accuracy rates across groups, not identical outcomes for all individuals.",
+        "Correct. Equalized odds requires equal true positive and false positive rates across different demographic groups.",
+        "Incorrect. This fairness metric involves systematic accuracy requirements, not random assignment or chance-based predictions.",
+        "Incorrect. Equalized odds allows different treatment as long as accuracy rates are equal across demographic groups."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "equalized-odds",
+        "accuracy-parity",
+        "demographic-groups",
+        "error-rates"
+      ]
+    },
+    {
+      "id": "ETH_085",
+      "question": "What is the main challenge with AI systems in healthcare diagnosis?",
+      "options": [
+        "Data storage requirements",
+        "Balancing accuracy with fairness across patient populations while ensuring safety",
+        "Integration with hospital networks",
+        "Staff training costs"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Healthcare AI must maintain high diagnostic accuracy while ensuring fairness across diverse patient populations, avoiding bias that could lead to misdiagnosis or inadequate care for certain groups.",
+      "optionExplanations": [
+        "Incorrect. While data management is important, the primary challenge is balancing accuracy with fairness and safety.",
+        "Correct. Healthcare AI must balance diagnostic accuracy with fairness across populations while ensuring patient safety.",
+        "Incorrect. Technical integration is important but secondary to the ethical challenge of fair and safe diagnosis.",
+        "Incorrect. Training costs are practical considerations; ethical challenges focus on fairness, accuracy, and patient safety."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "healthcare-diagnosis",
+        "accuracy-fairness-balance",
+        "patient-populations",
+        "safety"
+      ]
+    },
+    {
+      "id": "ETH_086",
+      "question": "What is the concept of AI system contestability?",
+      "options": [
+        "The ability to challenge or dispute AI decisions through formal processes",
+        "Competing AI systems against each other",
+        "Testing AI system reliability",
+        "Comparing different AI approaches"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "AI system contestability ensures that individuals affected by AI decisions have formal mechanisms to challenge, dispute, or seek review of those decisions, providing recourse and protecting rights.",
+      "optionExplanations": [
+        "Correct. AI contestability provides formal processes for individuals to challenge or dispute AI decisions affecting them.",
+        "Incorrect. Contestability refers to dispute mechanisms for affected individuals, not competitive evaluation between systems.",
+        "Incorrect. While testing is important, contestability specifically refers to individual rights to challenge AI decisions.",
+        "Incorrect. This concept focuses on individual dispute rights, not comparative evaluation of different AI approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "contestability",
+        "decision-challenges",
+        "formal-processes",
+        "individual-rights"
+      ]
+    },
+    {
+      "id": "ETH_087",
+      "question": "What is the primary concern with AI-generated content detection?",
+      "options": [
+        "Detection accuracy limitations",
+        "Balancing content authenticity verification with privacy and freedom of expression",
+        "Computational complexity",
+        "Storage requirements for detection models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI-generated content detection must balance the need to identify synthetic content for authenticity and misinformation prevention with protecting privacy rights and freedom of expression.",
+      "optionExplanations": [
+        "Incorrect. While accuracy matters, the primary concern is balancing verification needs with privacy and expression rights.",
+        "Correct. AI content detection must balance authenticity verification with protecting privacy and freedom of expression.",
+        "Incorrect. Computational challenges are technical issues; ethical concerns focus on balancing verification with rights protection.",
+        "Incorrect. Storage is a technical consideration; ethical challenges involve balancing detection needs with individual rights."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "content-detection",
+        "authenticity-verification",
+        "privacy-rights",
+        "expression-freedom"
+      ]
+    },
+    {
+      "id": "ETH_088",
+      "question": "What is the purpose of ethical AI design guidelines?",
+      "options": [
+        "To standardize programming languages",
+        "To provide principles and practices for developing AI systems that respect human values",
+        "To reduce development costs",
+        "To speed up approval processes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ethical AI design guidelines provide principles, practices, and frameworks to help developers create AI systems that respect human values, rights, dignity, and well-being throughout the design process.",
+      "optionExplanations": [
+        "Incorrect. Ethical guidelines focus on values and principles, not technical standardization or programming language choices.",
+        "Correct. Ethical AI design guidelines provide principles for developing systems that respect human values and rights.",
+        "Incorrect. While efficiency may result, ethical guidelines prioritize value alignment and human welfare over cost reduction.",
+        "Incorrect. Ethical guidelines ensure thorough consideration of values, which may actually slow processes for better outcomes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ethical-design-guidelines",
+        "human-values",
+        "development-principles",
+        "rights-respect"
+      ]
+    },
+    {
+      "id": "ETH_089",
+      "question": "What is the main privacy risk with conversational AI systems?",
+      "options": [
+        "High computational demands",
+        "Collection and potential exposure of sensitive personal information shared in conversations",
+        "Complex natural language processing",
+        "Integration with multiple platforms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Conversational AI systems collect intimate personal information through natural dialogue, creating risks of data exposure, profiling, surveillance, and unauthorized use of sensitive personal details.",
+      "optionExplanations": [
+        "Incorrect. While computationally intensive, the primary privacy risk is collection and exposure of sensitive personal information.",
+        "Correct. Conversational AI risks collecting and potentially exposing sensitive personal information shared during conversations.",
+        "Incorrect. NLP complexity is a technical challenge; privacy risks focus on sensitive information collection and exposure.",
+        "Incorrect. Platform integration is a technical consideration; privacy concerns center on personal information handling."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "conversational-ai",
+        "personal-information",
+        "data-exposure",
+        "sensitive-conversations"
+      ]
+    },
+    {
+      "id": "ETH_090",
+      "question": "What is bias amplification in AI systems?",
+      "options": [
+        "Increasing AI processing power",
+        "When AI systems magnify existing biases present in training data or society",
+        "Improving AI accuracy over time",
+        "Adding more data to training sets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bias amplification occurs when AI systems not only reproduce existing biases from training data or society but actually magnify or intensify them, making discrimination worse than in the original data.",
+      "optionExplanations": [
+        "Incorrect. Bias amplification concerns magnifying discrimination, not increasing computational power or processing capabilities.",
+        "Correct. Bias amplification occurs when AI systems magnify existing biases from training data or societal prejudices.",
+        "Incorrect. While systems may learn, bias amplification specifically refers to magnifying discrimination, not general improvement.",
+        "Incorrect. Adding data might help or worsen bias; amplification specifically refers to magnifying existing discriminatory patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias-amplification",
+        "magnified-discrimination",
+        "societal-bias",
+        "intensified-prejudice"
+      ]
+    },
+    {
+      "id": "ETH_091",
+      "question": "What is the purpose of AI governance frameworks in government?",
+      "options": [
+        "To promote AI industry growth",
+        "To regulate AI development and deployment to protect citizens and promote beneficial use",
+        "To reduce government technology costs",
+        "To standardize government software"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Government AI governance frameworks establish regulations, policies, and oversight mechanisms to ensure AI development and deployment protect citizen rights, promote beneficial uses, and prevent harm.",
+      "optionExplanations": [
+        "Incorrect. While growth may occur, government frameworks primarily focus on protection and beneficial use regulation.",
+        "Correct. Government AI governance regulates development and deployment to protect citizens and ensure beneficial AI use.",
+        "Incorrect. Cost reduction is secondary to citizen protection and ensuring beneficial, safe AI development and deployment.",
+        "Incorrect. Software standardization is technical; governance frameworks focus on regulation, protection, and beneficial use."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "government-governance",
+        "citizen-protection",
+        "beneficial-use",
+        "regulatory-frameworks"
+      ]
+    },
+    {
+      "id": "ETH_092",
+      "question": "What is the concept of AI system transparency?",
+      "options": [
+        "Making all AI source code public",
+        "Clear communication about AI system capabilities, decision processes, and limitations",
+        "Using only open-source tools",
+        "Publishing all training datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI system transparency involves clear, honest communication about how systems work, their capabilities and limitations, decision-making processes, and potential impacts without necessarily revealing all technical details.",
+      "optionExplanations": [
+        "Incorrect. Transparency involves clear communication about system behavior, not necessarily full source code disclosure.",
+        "Correct. AI transparency requires clear communication about capabilities, decision processes, and limitations to stakeholders.",
+        "Incorrect. Tool choice is separate from transparency, which focuses on clear communication about system behavior and limits.",
+        "Incorrect. Transparency can be achieved while protecting privacy; it doesn't require publishing all training data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "system-transparency",
+        "clear-communication",
+        "capabilities-disclosure",
+        "limitation-awareness"
+      ]
+    },
+    {
+      "id": "ETH_093",
+      "question": "What is the main ethical challenge with AI in social media content moderation?",
+      "options": [
+        "Processing large volumes of content",
+        "Balancing free speech with harmful content removal while avoiding bias",
+        "Technical accuracy in content analysis",
+        "Integration with platform systems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI content moderation must balance protecting free speech and expression with removing genuinely harmful content, while avoiding biased enforcement that unfairly targets certain viewpoints or communities.",
+      "optionExplanations": [
+        "Incorrect. While volume is challenging, the primary ethical issue is balancing free speech with harm prevention fairly.",
+        "Correct. Content moderation AI must balance free speech protection with harmful content removal while avoiding biased enforcement.",
+        "Incorrect. Technical accuracy supports ethical goals, but the main challenge is balancing competing values fairly.",
+        "Incorrect. Integration is a technical consideration; ethical challenges focus on fair balance of speech and safety."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "content-moderation",
+        "free-speech-balance",
+        "harmful-content",
+        "bias-avoidance"
+      ]
+    },
+    {
+      "id": "ETH_094",
+      "question": "What is algorithmic sovereignty?",
+      "options": [
+        "AI systems controlling their own operations",
+        "The right of communities to control AI systems affecting them and their data",
+        "Independent AI decision-making",
+        "AI systems operating without human oversight"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Algorithmic sovereignty refers to the right of communities, particularly indigenous and marginalized groups, to have control over AI systems that affect them and how their data is used in those systems.",
+      "optionExplanations": [
+        "Incorrect. Algorithmic sovereignty concerns community control over AI affecting them, not AI systems controlling themselves.",
+        "Correct. Algorithmic sovereignty is the right of communities to control AI systems affecting them and their data use.",
+        "Incorrect. This concept involves community control and oversight, not independent AI decision-making without human input.",
+        "Incorrect. Sovereignty emphasizes community control and oversight, not AI systems operating without human guidance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "algorithmic-sovereignty",
+        "community-control",
+        "data-governance",
+        "indigenous-rights"
+      ]
+    },
+    {
+      "id": "ETH_095",
+      "question": "What is the primary goal of AI safety research initiatives?",
+      "options": [
+        "Improving AI performance metrics",
+        "Ensuring AI systems remain safe, beneficial, and aligned with human values as they advance",
+        "Reducing AI development costs",
+        "Accelerating AI capabilities"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI safety research focuses on ensuring that AI systems, especially as they become more capable, remain safe, beneficial to humanity, and aligned with human values and intentions rather than causing harm.",
+      "optionExplanations": [
+        "Incorrect. While performance matters, safety research prioritizes preventing harm and ensuring beneficial outcomes over metrics.",
+        "Correct. AI safety research ensures systems remain safe, beneficial, and aligned with human values as capabilities advance.",
+        "Incorrect. Safety research focuses on preventing harm and ensuring alignment, not cost reduction or economic efficiency.",
+        "Incorrect. Safety research may actually slow capability development to ensure safety and beneficial outcomes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "safety-research",
+        "beneficial-ai",
+        "value-alignment",
+        "harm-prevention"
+      ]
+    },
+    {
+      "id": "ETH_096",
+      "question": "What is the concept of AI system auditability?",
+      "options": [
+        "Regular performance testing",
+        "The ability to examine, verify, and assess AI system behavior and decisions",
+        "Financial auditing of AI projects",
+        "Code review processes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI system auditability refers to the ability to systematically examine, verify, and assess AI system behavior, decisions, and compliance with ethical standards and regulations through various evaluation methods.",
+      "optionExplanations": [
+        "Incorrect. While testing is part of auditing, auditability encompasses broader examination and assessment capabilities.",
+        "Correct. AI auditability is the ability to examine, verify, and assess system behavior and decisions systematically.",
+        "Incorrect. AI auditability concerns system behavior and ethical compliance, not financial or budget auditing.",
+        "Incorrect. Code review is one aspect, but auditability includes broader behavioral assessment and compliance verification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "auditability",
+        "system-examination",
+        "behavior-assessment",
+        "compliance-verification"
+      ]
+    },
+    {
+      "id": "ETH_097",
+      "question": "What is the main concern with AI systems in financial decision-making?",
+      "options": [
+        "Processing transaction volumes",
+        "Potential for discriminatory lending and unfair financial exclusion",
+        "Integration with banking systems",
+        "Regulatory compliance complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI in finance raises concerns about discriminatory practices in lending, insurance, and financial services that could unfairly exclude or disadvantage certain groups, perpetuating financial inequality.",
+      "optionExplanations": [
+        "Incorrect. While volume processing is important, the primary ethical concern is preventing discriminatory financial practices.",
+        "Correct. AI financial systems risk creating discriminatory lending practices and unfair exclusion from financial services.",
+        "Incorrect. Technical integration is important but secondary to preventing discrimination and ensuring fair access.",
+        "Incorrect. Compliance is important, but the main ethical concern is preventing discriminatory practices and exclusion."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "financial-ai",
+        "discriminatory-lending",
+        "financial-exclusion",
+        "inequality"
+      ]
+    },
+    {
+      "id": "ETH_098",
+      "question": "What is the purpose of human-in-the-loop AI systems?",
+      "options": [
+        "To reduce computational costs",
+        "To maintain human oversight and control in AI decision-making processes",
+        "To speed up AI processing",
+        "To simplify AI architectures"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Human-in-the-loop AI systems maintain human oversight, control, and intervention capabilities in AI decision-making, ensuring human judgment remains part of critical decisions and maintaining accountability.",
+      "optionExplanations": [
+        "Incorrect. Human-in-the-loop systems prioritize human oversight and control, not cost reduction or economic efficiency.",
+        "Correct. Human-in-the-loop systems maintain human oversight and control in AI decision-making processes.",
+        "Incorrect. Including humans in the loop may actually slow processing but ensures human oversight and control.",
+        "Incorrect. These systems may be more complex architecturally but ensure human involvement in critical decisions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "human-in-the-loop",
+        "human-oversight",
+        "decision-control",
+        "accountability"
+      ]
+    },
+    {
+      "id": "ETH_099",
+      "question": "What is the concept of AI fairness metrics?",
+      "options": [
+        "Measuring AI processing speed across different hardware",
+        "Quantitative measures used to assess and ensure equitable AI system behavior",
+        "Comparing AI accuracy across different algorithms",
+        "Measuring development time for AI projects"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AI fairness metrics are quantitative measures used to evaluate whether AI systems treat different groups equitably, including measures like demographic parity, equalized odds, and individual fairness.",
+      "optionExplanations": [
+        "Incorrect. Fairness metrics assess equitable treatment across groups, not hardware performance or processing speed.",
+        "Correct. AI fairness metrics are quantitative measures used to assess and ensure equitable system behavior across groups.",
+        "Incorrect. While accuracy matters, fairness metrics specifically measure equitable treatment, not general accuracy comparison.",
+        "Incorrect. Fairness metrics assess equitable outcomes and treatment, not development timelines or project management."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "fairness-metrics",
+        "quantitative-assessment",
+        "equitable-behavior",
+        "group-treatment"
+      ]
+    },
+    {
+      "id": "ETH_100",
+      "question": "What is the ultimate goal of ethical AI development?",
+      "options": [
+        "Maximizing AI system capabilities",
+        "Creating AI systems that augment human capabilities while respecting rights and promoting well-being",
+        "Reducing AI development costs",
+        "Achieving artificial general intelligence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The ultimate goal of ethical AI development is to create systems that enhance human capabilities and societal well-being while respecting human rights, dignity, and values, ensuring AI serves humanity beneficially.",
+      "optionExplanations": [
+        "Incorrect. While capabilities matter, ethical AI prioritizes beneficial outcomes and human welfare over raw capability maximization.",
+        "Correct. Ethical AI aims to augment human capabilities while respecting rights and promoting overall human well-being.",
+        "Incorrect. Cost considerations are secondary to ensuring AI systems are beneficial, safe, and respect human values.",
+        "Incorrect. AGI may be a technical goal, but ethical AI focuses on beneficial outcomes regardless of intelligence level."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ethical-ai-goals",
+        "human-augmentation",
+        "rights-respect",
+        "well-being-promotion"
+      ]
+    }
+  ]
+}

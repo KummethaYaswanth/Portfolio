@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_SVM",
+  "subtopicName": "Support Vector Machines",
+  "str": 0.500,
+  "description": "Support Vector Machines are powerful supervised learning algorithms used for classification and regression tasks. They work by finding the optimal hyperplane that separates different classes with maximum margin while handling non-linearly separable data through kernel functions.",
+  "questions": [
+    {
+      "id": "SVM_001",
+      "question": "What is the primary objective of Support Vector Machines?",
+      "options": [
+        "To find the hyperplane that maximizes the margin between classes",
+        "To minimize the number of features in the dataset",
+        "To maximize the number of training examples",
+        "To minimize the computational complexity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The primary objective of SVM is to find the optimal hyperplane that separates different classes with the maximum possible margin. This margin maximization helps in better generalization and reduces overfitting.",
+      "optionExplanations": [
+        "Correct. SVM aims to find the hyperplane that maximizes the margin between classes, which is the distance from the hyperplane to the nearest data points of each class.",
+        "Incorrect. Feature reduction is not the primary objective of SVM, though it can work with high-dimensional data effectively.",
+        "Incorrect. SVM doesn't aim to maximize training examples; it focuses on finding the optimal decision boundary.",
+        "Incorrect. While computational efficiency is desirable, it's not the primary objective. SVM focuses on margin maximization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hyperplane",
+        "margin",
+        "objective"
+      ]
+    },
+    {
+      "id": "SVM_002",
+      "question": "What are support vectors in SVM?",
+      "options": [
+        "All data points in the training set",
+        "Data points that lie exactly on the margin boundaries",
+        "Data points with the highest feature values",
+        "Data points that are incorrectly classified"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Support vectors are the critical data points that lie exactly on the margin boundaries. These points determine the position and orientation of the hyperplane and are the only points that matter for the SVM decision boundary.",
+      "optionExplanations": [
+        "Incorrect. Not all data points are support vectors; only those on the margin boundaries are considered support vectors.",
+        "Correct. Support vectors are the data points that lie exactly on the margin boundaries and are closest to the hyperplane.",
+        "Incorrect. Feature values don't determine support vectors; their position relative to the margin does.",
+        "Incorrect. Misclassified points are not necessarily support vectors, though they can be in soft margin SVM."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "support vectors",
+        "margin",
+        "definition"
+      ]
+    },
+    {
+      "id": "SVM_003",
+      "question": "What is the margin in SVM?",
+      "options": [
+        "The error rate of the classifier",
+        "The distance between the hyperplane and the closest data points",
+        "The number of support vectors",
+        "The width of the separating region between classes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The margin is the width of the separating region between classes, measured as twice the distance from the hyperplane to the closest data points (support vectors) on either side.",
+      "optionExplanations": [
+        "Incorrect. The error rate is not the margin; it's a performance metric.",
+        "Incorrect. This describes half the margin; the full margin is twice this distance.",
+        "Incorrect. The number of support vectors is not the margin; it's a count of critical data points.",
+        "Correct. The margin is the width of the separating region, encompassing the space between the two margin boundaries."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "margin",
+        "hyperplane",
+        "separation"
+      ]
+    },
+    {
+      "id": "SVM_004",
+      "question": "What is the kernel trick in SVM?",
+      "options": [
+        "A method to reduce the number of features",
+        "A technique to map data to higher dimensions without explicit computation",
+        "A way to speed up training",
+        "A method to handle missing data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The kernel trick allows SVM to implicitly map data to higher-dimensional spaces without explicitly computing the transformation. This enables linear separation in the transformed space while working with non-linearly separable data in the original space.",
+      "optionExplanations": [
+        "Incorrect. The kernel trick doesn't reduce features; it potentially maps to higher dimensions.",
+        "Correct. The kernel trick uses kernel functions to compute dot products in higher dimensions without explicit transformation.",
+        "Incorrect. While kernels can be computationally efficient, speeding up training is not their primary purpose.",
+        "Incorrect. The kernel trick doesn't handle missing data; it deals with non-linear separability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel trick",
+        "transformation",
+        "non-linear"
+      ]
+    },
+    {
+      "id": "SVM_005",
+      "question": "Which kernel function is most commonly used for non-linearly separable data?",
+      "options": [
+        "Linear kernel",
+        "Polynomial kernel",
+        "Radial Basis Function (RBF) kernel",
+        "Sigmoid kernel"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The RBF (Gaussian) kernel is the most commonly used kernel for non-linearly separable data because it can map data to infinite-dimensional space and is effective for most classification problems.",
+      "optionExplanations": [
+        "Incorrect. Linear kernel is used for linearly separable data and doesn't handle non-linear patterns.",
+        "Incorrect. While polynomial kernels can handle non-linearity, they're less commonly used than RBF due to parameter sensitivity.",
+        "Correct. RBF kernel is most popular for non-linear data due to its flexibility and good performance across various problems.",
+        "Incorrect. Sigmoid kernel is less commonly used and can behave like neural networks but isn't the most popular choice."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernels",
+        "RBF",
+        "non-linear"
+      ]
+    },
+    {
+      "id": "SVM_006",
+      "question": "What does the C parameter control in SVM?",
+      "options": [
+        "The number of support vectors",
+        "The trade-off between margin maximization and training error",
+        "The kernel function type",
+        "The number of iterations in training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The C parameter controls the trade-off between maximizing the margin and minimizing training errors. Higher C values prioritize correct classification of training data, while lower C values allow more misclassifications for a wider margin.",
+      "optionExplanations": [
+        "Incorrect. C doesn't directly control the number of support vectors, though it influences them indirectly.",
+        "Correct. C parameter balances the desire for a wide margin against the goal of classifying training points correctly.",
+        "Incorrect. C doesn't determine the kernel type; it's a regularization parameter.",
+        "Incorrect. C doesn't control iterations; it's a hyperparameter affecting the optimization objective."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "C parameter",
+        "regularization",
+        "trade-off"
+      ]
+    },
+    {
+      "id": "SVM_007",
+      "question": "What happens when C parameter is very large in SVM?",
+      "options": [
+        "The model becomes more regularized",
+        "The margin becomes wider",
+        "The model tries to classify all training points correctly",
+        "The number of support vectors increases significantly"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When C is very large, the penalty for misclassification becomes very high, so the SVM tries to classify all training points correctly, potentially leading to overfitting and a narrower margin.",
+      "optionExplanations": [
+        "Incorrect. Large C means less regularization, not more. The model becomes less regularized.",
+        "Incorrect. Large C typically leads to a narrower margin as the model focuses on correct classification.",
+        "Correct. Large C heavily penalizes misclassification, forcing the model to classify training data correctly.",
+        "Incorrect. Large C typically reduces the number of support vectors as the margin becomes narrower."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "C parameter",
+        "overfitting",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "SVM_008",
+      "question": "What is the gamma parameter in RBF kernel?",
+      "options": [
+        "The regularization strength",
+        "The degree of the polynomial",
+        "The width of the RBF kernel",
+        "The learning rate"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Gamma parameter controls the width of the RBF kernel. Higher gamma values create narrow Gaussians leading to more complex decision boundaries, while lower gamma values create wider Gaussians leading to smoother boundaries.",
+      "optionExplanations": [
+        "Incorrect. Regularization strength is controlled by the C parameter, not gamma.",
+        "Incorrect. Degree is a parameter for polynomial kernels, not RBF kernels.",
+        "Correct. Gamma controls the width of the RBF kernel, affecting how far the influence of each training example reaches.",
+        "Incorrect. SVM doesn't use learning rate; gamma is specific to RBF kernel width."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gamma",
+        "RBF kernel",
+        "kernel width"
+      ]
+    },
+    {
+      "id": "SVM_009",
+      "question": "What effect does a high gamma value have in RBF kernel?",
+      "options": [
+        "Creates smoother decision boundaries",
+        "Increases the influence of distant points",
+        "Creates more complex, tighter decision boundaries",
+        "Reduces overfitting"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High gamma values make the RBF kernel narrower, meaning each training point has influence only over a small area, leading to more complex and tighter decision boundaries that can cause overfitting.",
+      "optionExplanations": [
+        "Incorrect. High gamma creates more complex, not smoother boundaries.",
+        "Incorrect. High gamma reduces the influence of distant points by making the kernel narrower.",
+        "Correct. High gamma creates narrow kernels, leading to complex decision boundaries that closely follow training data.",
+        "Incorrect. High gamma typically increases overfitting by creating overly complex boundaries."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gamma",
+        "overfitting",
+        "decision boundary"
+      ]
+    },
+    {
+      "id": "SVM_010",
+      "question": "In linearly separable data, what is the optimal hyperplane?",
+      "options": [
+        "Any hyperplane that separates the classes",
+        "The hyperplane closest to all data points",
+        "The hyperplane that maximizes the margin between classes",
+        "The hyperplane that minimizes the number of support vectors"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For linearly separable data, the optimal hyperplane is the one that maximizes the margin between classes. This provides the best generalization capability and is unique.",
+      "optionExplanations": [
+        "Incorrect. While any separating hyperplane works for training data, only one is optimal.",
+        "Incorrect. Being close to all points would actually minimize the margin, which is not optimal.",
+        "Correct. The optimal hyperplane maximizes the margin, providing the best generalization performance.",
+        "Incorrect. The number of support vectors is not the optimization criterion; margin maximization is."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "optimal hyperplane",
+        "linear separation",
+        "margin maximization"
+      ]
+    },
+    {
+      "id": "SVM_011",
+      "question": "What is a soft margin SVM?",
+      "options": [
+        "SVM that uses only linear kernels",
+        "SVM that allows some misclassification of training data",
+        "SVM with reduced computational complexity",
+        "SVM that works only with small datasets"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Soft margin SVM allows some misclassification of training data by introducing slack variables. This is useful when data is not linearly separable or when we want to avoid overfitting to noisy data.",
+      "optionExplanations": [
+        "Incorrect. Soft margin refers to allowing misclassifications, not kernel type.",
+        "Correct. Soft margin SVM permits some training points to be misclassified or fall within the margin.",
+        "Incorrect. Soft margin doesn't necessarily reduce computational complexity.",
+        "Incorrect. Dataset size doesn't determine whether to use soft margin; data separability does."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "soft margin",
+        "slack variables",
+        "misclassification"
+      ]
+    },
+    {
+      "id": "SVM_012",
+      "question": "What are slack variables in SVM?",
+      "options": [
+        "Variables that store kernel parameters",
+        "Variables that measure the degree of misclassification",
+        "Variables that count support vectors",
+        "Variables that store training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Slack variables measure how much a data point violates the margin or is misclassified. They allow the soft margin SVM to handle non-separable data by penalizing violations.",
+      "optionExplanations": [
+        "Incorrect. Slack variables don't store kernel parameters; they measure constraint violations.",
+        "Correct. Slack variables quantify how much each point violates the margin or classification constraint.",
+        "Incorrect. Slack variables don't count support vectors; they measure constraint violations.",
+        "Incorrect. Slack variables don't store training data; they measure how much points violate constraints."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "slack variables",
+        "soft margin",
+        "constraint violation"
+      ]
+    },
+    {
+      "id": "SVM_013",
+      "question": "Which of the following is NOT a common kernel function in SVM?",
+      "options": [
+        "Linear kernel",
+        "Polynomial kernel",
+        "Exponential kernel",
+        "Sigmoid kernel"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Exponential kernel is not a standard kernel function in SVM. The common kernels are linear, polynomial, RBF (Gaussian), and sigmoid kernels.",
+      "optionExplanations": [
+        "Incorrect. Linear kernel is a standard kernel: K(x,y) = x·y.",
+        "Incorrect. Polynomial kernel is a standard kernel: K(x,y) = (x·y + c)^d.",
+        "Correct. Exponential kernel is not a commonly used kernel in standard SVM implementations.",
+        "Incorrect. Sigmoid kernel is a standard kernel: K(x,y) = tanh(αx·y + c)."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel functions",
+        "kernel types",
+        "standard kernels"
+      ]
+    },
+    {
+      "id": "SVM_014",
+      "question": "What is the decision function in SVM?",
+      "options": [
+        "A function that selects the best kernel",
+        "A function that outputs class predictions based on the hyperplane",
+        "A function that optimizes parameters",
+        "A function that counts support vectors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The decision function in SVM determines the class of a new point based on which side of the hyperplane it falls on. It's typically f(x) = w·x + b, where the sign determines the class.",
+      "optionExplanations": [
+        "Incorrect. The decision function doesn't select kernels; it makes predictions.",
+        "Correct. The decision function determines class membership based on the point's position relative to the hyperplane.",
+        "Incorrect. Parameter optimization is done during training, not by the decision function.",
+        "Incorrect. The decision function doesn't count support vectors; it makes predictions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "decision function",
+        "classification",
+        "hyperplane"
+      ]
+    },
+    {
+      "id": "SVM_015",
+      "question": "In SVM, what does it mean when a data point has a slack variable ξ = 0?",
+      "options": [
+        "The point is misclassified",
+        "The point is correctly classified and outside the margin",
+        "The point is a support vector",
+        "The point is on the wrong side of the hyperplane"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When ξ = 0, the data point satisfies all constraints perfectly - it's correctly classified and lies outside the margin boundaries, meaning it doesn't violate any constraint.",
+      "optionExplanations": [
+        "Incorrect. ξ = 0 means no constraint violation, so the point is correctly classified.",
+        "Correct. ξ = 0 indicates the point is correctly classified and doesn't violate margin constraints.",
+        "Incorrect. A point with ξ = 0 may or may not be a support vector depending on its exact position.",
+        "Incorrect. ξ = 0 means the point is on the correct side and doesn't violate constraints."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "slack variables",
+        "constraints",
+        "margin violation"
+      ]
+    },
+    {
+      "id": "SVM_016",
+      "question": "What is the difference between hard margin and soft margin SVM?",
+      "options": [
+        "Hard margin uses linear kernels, soft margin uses non-linear kernels",
+        "Hard margin allows no misclassification, soft margin allows some misclassification",
+        "Hard margin is faster, soft margin is more accurate",
+        "Hard margin works with small data, soft margin with large data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard margin SVM requires perfect separation with no misclassifications, while soft margin SVM allows some misclassifications through slack variables, making it more practical for real-world noisy data.",
+      "optionExplanations": [
+        "Incorrect. Both hard and soft margin can use any kernel type.",
+        "Correct. Hard margin enforces perfect separation, while soft margin allows violations through slack variables.",
+        "Incorrect. Speed and accuracy depend on various factors, not just margin type.",
+        "Incorrect. The choice between hard and soft margin depends on data separability, not size."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hard margin",
+        "soft margin",
+        "misclassification"
+      ]
+    },
+    {
+      "id": "SVM_017",
+      "question": "What is the mathematical formulation of the linear kernel?",
+      "options": [
+        "K(x,y) = exp(-γ||x-y||²)",
+        "K(x,y) = x·y",
+        "K(x,y) = (x·y + c)^d",
+        "K(x,y) = tanh(αx·y + c)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The linear kernel is simply the dot product between two vectors: K(x,y) = x·y. This is the simplest kernel and works well for linearly separable data.",
+      "optionExplanations": [
+        "Incorrect. This is the RBF (Gaussian) kernel formula.",
+        "Correct. The linear kernel is the dot product: K(x,y) = x·y.",
+        "Incorrect. This is the polynomial kernel formula.",
+        "Incorrect. This is the sigmoid kernel formula."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "linear kernel",
+        "kernel formula",
+        "dot product"
+      ]
+    },
+    {
+      "id": "SVM_018",
+      "question": "What is the mathematical formulation of the RBF kernel?",
+      "options": [
+        "K(x,y) = x·y",
+        "K(x,y) = (x·y + c)^d",
+        "K(x,y) = exp(-γ||x-y||²)",
+        "K(x,y) = tanh(αx·y + c)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The RBF (Radial Basis Function) kernel is K(x,y) = exp(-γ||x-y||²), where γ controls the width of the kernel and ||x-y||² is the squared Euclidean distance.",
+      "optionExplanations": [
+        "Incorrect. This is the linear kernel formula.",
+        "Incorrect. This is the polynomial kernel formula.",
+        "Correct. The RBF kernel uses the exponential of negative squared distance: K(x,y) = exp(-γ||x-y||²).",
+        "Incorrect. This is the sigmoid kernel formula."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RBF kernel",
+        "Gaussian kernel",
+        "kernel formula"
+      ]
+    },
+    {
+      "id": "SVM_019",
+      "question": "In the polynomial kernel K(x,y) = (x·y + c)^d, what does parameter 'd' represent?",
+      "options": [
+        "The regularization parameter",
+        "The degree of the polynomial",
+        "The kernel width",
+        "The bias term"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the polynomial kernel, parameter 'd' represents the degree of the polynomial. Higher degrees can capture more complex non-linear relationships but may lead to overfitting.",
+      "optionExplanations": [
+        "Incorrect. Regularization is controlled by the C parameter, not d.",
+        "Correct. Parameter d specifies the degree of the polynomial in the polynomial kernel.",
+        "Incorrect. Kernel width is controlled by gamma in RBF kernel, not d in polynomial kernel.",
+        "Incorrect. The bias term is 'c' in the polynomial kernel formula, not d."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial kernel",
+        "degree",
+        "kernel parameters"
+      ]
+    },
+    {
+      "id": "SVM_020",
+      "question": "What happens to SVM performance when the dataset has many irrelevant features?",
+      "options": [
+        "Performance always improves",
+        "Performance may degrade due to the curse of dimensionality",
+        "Performance remains unchanged",
+        "SVM cannot handle high-dimensional data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "While SVM generally handles high-dimensional data well, irrelevant features can still degrade performance by adding noise and making the optimization problem more difficult, especially with limited training data.",
+      "optionExplanations": [
+        "Incorrect. Irrelevant features typically hurt performance by adding noise.",
+        "Correct. Irrelevant features can degrade performance by introducing noise and increasing computational complexity.",
+        "Incorrect. Irrelevant features generally have a negative impact on model performance.",
+        "Incorrect. SVM actually handles high-dimensional data quite well compared to many other algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high dimensionality",
+        "feature selection",
+        "performance"
+      ]
+    },
+    {
+      "id": "SVM_021",
+      "question": "Which statement about support vectors is TRUE?",
+      "options": [
+        "All training points are support vectors",
+        "Support vectors are always misclassified points",
+        "Removing non-support vectors doesn't change the decision boundary",
+        "Support vectors must be at the center of each class"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Support vectors are the only points that determine the decision boundary. Removing non-support vectors from the training set would not change the hyperplane or decision boundary.",
+      "optionExplanations": [
+        "Incorrect. Only a subset of training points (those on or within the margin) are support vectors.",
+        "Incorrect. Support vectors can be correctly classified points on the margin boundary.",
+        "Correct. Only support vectors determine the decision boundary, so removing other points doesn't affect it.",
+        "Incorrect. Support vectors are on the margin boundaries, not necessarily at class centers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "support vectors",
+        "decision boundary",
+        "training data"
+      ]
+    },
+    {
+      "id": "SVM_022",
+      "question": "What is the primary advantage of using kernel functions in SVM?",
+      "options": [
+        "Faster training time",
+        "Reduced memory usage",
+        "Ability to handle non-linearly separable data",
+        "Automatic feature selection"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The primary advantage of kernel functions is enabling SVM to handle non-linearly separable data by implicitly mapping it to higher-dimensional spaces where it becomes linearly separable.",
+      "optionExplanations": [
+        "Incorrect. Kernels may actually increase training time, especially for complex kernels.",
+        "Incorrect. Kernels don't necessarily reduce memory usage; they may increase it.",
+        "Correct. Kernels allow SVM to separate non-linearly separable data by implicit transformation to higher dimensions.",
+        "Incorrect. Kernels don't perform automatic feature selection; they transform the feature space."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel functions",
+        "non-linear separation",
+        "transformation"
+      ]
+    },
+    {
+      "id": "SVM_023",
+      "question": "In SVM optimization, what is being maximized in the primal formulation?",
+      "options": [
+        "The number of support vectors",
+        "The margin width",
+        "The classification accuracy",
+        "The kernel function value"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the primal formulation, SVM maximizes the margin width (or equivalently, minimizes 1/2||w||²) subject to classification constraints, which leads to better generalization.",
+      "optionExplanations": [
+        "Incorrect. The number of support vectors is not directly optimized in the objective function.",
+        "Correct. SVM maximizes the margin width, which is equivalent to minimizing the norm of the weight vector.",
+        "Incorrect. While good margins often lead to good accuracy, accuracy itself is not directly maximized.",
+        "Incorrect. Kernel function values are computed during the process but are not the optimization target."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "optimization",
+        "primal formulation",
+        "margin maximization"
+      ]
+    },
+    {
+      "id": "SVM_024",
+      "question": "What is the dual formulation in SVM?",
+      "options": [
+        "An alternative optimization problem that's often easier to solve",
+        "A method for handling multiple classes",
+        "A technique for feature scaling",
+        "A way to reduce overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The dual formulation reformulates the SVM optimization problem in terms of Lagrange multipliers, which is often easier to solve and naturally incorporates kernel functions.",
+      "optionExplanations": [
+        "Correct. The dual formulation transforms the optimization problem and often makes it easier to solve with kernel functions.",
+        "Incorrect. Multi-class handling is separate from the dual formulation concept.",
+        "Incorrect. Feature scaling is a preprocessing step, not related to dual formulation.",
+        "Incorrect. While the dual may help with some numerical issues, overfitting reduction is not its primary purpose."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dual formulation",
+        "optimization",
+        "Lagrange multipliers"
+      ]
+    },
+    {
+      "id": "SVM_025",
+      "question": "What are Lagrange multipliers (α) in SVM?",
+      "options": [
+        "The weights of the hyperplane",
+        "The bias terms",
+        "Coefficients that determine the contribution of each training point",
+        "The kernel parameters"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Lagrange multipliers (α) determine how much each training point contributes to the final decision boundary. Non-zero α values correspond to support vectors.",
+      "optionExplanations": [
+        "Incorrect. Weights are derived from the α values and support vectors, but α are not the weights directly.",
+        "Incorrect. The bias term (b) is separate from the Lagrange multipliers.",
+        "Correct. α values determine each training point's contribution to the decision boundary; non-zero α indicate support vectors.",
+        "Incorrect. Kernel parameters (like γ, d, c) are hyperparameters, not Lagrange multipliers."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Lagrange multipliers",
+        "support vectors",
+        "dual formulation"
+      ]
+    },
+    {
+      "id": "SVM_026",
+      "question": "Which condition must be satisfied by Lagrange multipliers in SVM?",
+      "options": [
+        "All α must be negative",
+        "All α must be non-negative",
+        "All α must equal 1",
+        "All α must be greater than C"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lagrange multipliers in SVM must be non-negative (α ≥ 0) as per the KKT conditions. They can be zero (for non-support vectors) or positive (for support vectors).",
+      "optionExplanations": [
+        "Incorrect. Negative α values would violate the KKT conditions.",
+        "Correct. The constraint α ≥ 0 is required by the KKT conditions for the SVM optimization problem.",
+        "Incorrect. α values vary and are not all equal to 1; they depend on the specific problem.",
+        "Incorrect. α values are bounded by C (α ≤ C) in soft margin SVM, not greater than C."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Lagrange multipliers",
+        "KKT conditions",
+        "constraints"
+      ]
+    },
+    {
+      "id": "SVM_027",
+      "question": "What happens when α = C for a support vector in soft margin SVM?",
+      "options": [
+        "The point is correctly classified outside the margin",
+        "The point is on the margin boundary",
+        "The point violates the margin or is misclassified",
+        "The point is removed from training"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When α = C (the upper bound), the point either lies within the margin or is misclassified. These are the points that violate the margin constraints the most.",
+      "optionExplanations": [
+        "Incorrect. Points correctly classified outside the margin have α = 0.",
+        "Incorrect. Points on the margin boundary typically have 0 < α < C.",
+        "Correct. α = C indicates the point maximally violates constraints, lying within the margin or being misclassified.",
+        "Incorrect. Points are not removed; α = C indicates maximum constraint violation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Lagrange multipliers",
+        "soft margin",
+        "constraint violation"
+      ]
+    },
+    {
+      "id": "SVM_028",
+      "question": "What is the geometric interpretation of the SVM hyperplane equation w·x + b = 0?",
+      "options": [
+        "A line that passes through the origin",
+        "A hyperplane perpendicular to vector w with offset b",
+        "A circle with radius b",
+        "A polynomial curve of degree w"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The hyperplane w·x + b = 0 represents a hyperplane perpendicular to the weight vector w, with b determining the offset from the origin along the direction of w.",
+      "optionExplanations": [
+        "Incorrect. The hyperplane passes through the origin only when b = 0.",
+        "Correct. The hyperplane is perpendicular to w, and b controls the distance from the origin.",
+        "Incorrect. This equation represents a hyperplane, not a circle.",
+        "Incorrect. This is a linear hyperplane equation, not a polynomial curve."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperplane",
+        "geometric interpretation",
+        "weight vector"
+      ]
+    },
+    {
+      "id": "SVM_029",
+      "question": "How does SVM handle multi-class classification?",
+      "options": [
+        "Natively supports multiple classes",
+        "Uses one-vs-one or one-vs-all strategies",
+        "Cannot handle multi-class problems",
+        "Automatically creates multiple hyperplanes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM is inherently a binary classifier. For multi-class problems, strategies like one-vs-one (creating classifiers for each pair of classes) or one-vs-all (one classifier per class vs. rest) are used.",
+      "optionExplanations": [
+        "Incorrect. Standard SVM is a binary classifier and doesn't natively support multiple classes.",
+        "Correct. Multi-class SVM uses strategies like one-vs-one or one-vs-all to handle multiple classes.",
+        "Incorrect. SVM can handle multi-class problems through various strategies.",
+        "Incorrect. Multiple hyperplanes are created through specific strategies, not automatically by standard SVM."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-class",
+        "one-vs-one",
+        "one-vs-all"
+      ]
+    },
+    {
+      "id": "SVM_030",
+      "question": "What is the time complexity of training an SVM?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n²) to O(n³)",
+        "O(n!)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM training typically has time complexity between O(n²) and O(n³), where n is the number of training samples. This depends on the optimization algorithm used and can be a limitation for very large datasets.",
+      "optionExplanations": [
+        "Incorrect. O(n) would be too optimistic for SVM training complexity.",
+        "Incorrect. O(n log n) is not the typical complexity for SVM training.",
+        "Correct. SVM training complexity ranges from O(n²) to O(n³) depending on the algorithm and implementation.",
+        "Incorrect. O(n!) would be computationally prohibitive; SVM is not that complex."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "time complexity",
+        "computational cost",
+        "scalability"
+      ]
+    },
+    {
+      "id": "SVM_031",
+      "question": "What is the advantage of the dual formulation over the primal formulation in SVM?",
+      "options": [
+        "Always faster to compute",
+        "Enables the use of kernel functions naturally",
+        "Requires less memory",
+        "Guarantees global optimum"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The dual formulation naturally incorporates kernel functions through dot products, allowing SVM to work in high-dimensional or infinite-dimensional spaces without explicit feature mapping.",
+      "optionExplanations": [
+        "Incorrect. The dual isn't always faster; it depends on the problem dimensions and data size.",
+        "Correct. The dual formulation naturally accommodates kernels through dot products between data points.",
+        "Incorrect. The dual formulation doesn't necessarily require less memory.",
+        "Incorrect. Both formulations can achieve the global optimum; this isn't unique to the dual."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dual formulation",
+        "kernel functions",
+        "optimization"
+      ]
+    },
+    {
+      "id": "SVM_032",
+      "question": "What is the relationship between regularization parameter C and overfitting in SVM?",
+      "options": [
+        "Higher C always reduces overfitting",
+        "Lower C always reduces overfitting",
+        "C has no effect on overfitting",
+        "Lower C generally reduces overfitting by allowing more margin violations"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Lower C values allow more margin violations, creating a wider margin and more regularized model, which generally reduces overfitting. Higher C values create tighter fit to training data, potentially increasing overfitting.",
+      "optionExplanations": [
+        "Incorrect. Higher C typically increases overfitting by forcing tighter fit to training data.",
+        "Incorrect. This is too absolute; the relationship depends on the specific dataset and context.",
+        "Incorrect. C directly affects the bias-variance trade-off and thus overfitting.",
+        "Correct. Lower C values provide more regularization by allowing margin violations, reducing overfitting risk."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "C parameter"
+      ]
+    },
+    {
+      "id": "SVM_033",
+      "question": "In RBF kernel, what happens when gamma approaches infinity?",
+      "options": [
+        "The kernel becomes linear",
+        "Each training point becomes its own cluster",
+        "The margin becomes infinite",
+        "The model becomes more generalized"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When gamma approaches infinity, the RBF kernel becomes extremely narrow, causing each training point to have influence only over a tiny region, effectively making each training point its own cluster and leading to severe overfitting.",
+      "optionExplanations": [
+        "Incorrect. High gamma makes the kernel more non-linear, not linear.",
+        "Correct. Infinite gamma creates infinitely narrow kernels, making each training point a separate cluster.",
+        "Incorrect. High gamma typically creates complex boundaries, not infinite margins.",
+        "Incorrect. High gamma leads to overfitting, not better generalization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gamma parameter",
+        "overfitting",
+        "RBF kernel"
+      ]
+    },
+    {
+      "id": "SVM_034",
+      "question": "What is the purpose of feature scaling in SVM?",
+      "options": [
+        "To reduce the number of features",
+        "To ensure all features contribute equally to distance calculations",
+        "To speed up kernel computations",
+        "To reduce overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling ensures that all features contribute equally to distance calculations in the kernel functions. Without scaling, features with larger scales would dominate the distance metrics.",
+      "optionExplanations": [
+        "Incorrect. Feature scaling doesn't reduce the number of features; it normalizes their ranges.",
+        "Correct. Scaling ensures fair contribution of all features to distance-based computations in kernels.",
+        "Incorrect. While scaling may have some computational benefits, this isn't the primary purpose.",
+        "Incorrect. Scaling helps with fair feature representation but isn't primarily for overfitting reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature scaling",
+        "preprocessing",
+        "distance metrics"
+      ]
+    },
+    {
+      "id": "SVM_035",
+      "question": "Which kernel would be most appropriate for text classification with high-dimensional sparse features?",
+      "options": [
+        "RBF kernel",
+        "Polynomial kernel",
+        "Linear kernel",
+        "Sigmoid kernel"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Linear kernel is often most appropriate for high-dimensional sparse text data because: 1) text data is often linearly separable in high dimensions, 2) linear kernel is computationally efficient, and 3) it works well with sparse features.",
+      "optionExplanations": [
+        "Incorrect. RBF kernel may not be necessary for linearly separable high-dimensional text data and is computationally expensive.",
+        "Incorrect. Polynomial kernel can be computationally expensive and may not be needed for text data.",
+        "Correct. Linear kernel is efficient and often sufficient for high-dimensional sparse text data.",
+        "Incorrect. Sigmoid kernel is less commonly used and may not be optimal for text classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "text classification",
+        "linear kernel",
+        "high dimensionality"
+      ]
+    },
+    {
+      "id": "SVM_036",
+      "question": "What is the effect of adding more training data on SVM performance?",
+      "options": [
+        "Always improves performance",
+        "Always degrades performance",
+        "May improve performance up to a point, then levels off",
+        "Has no effect on performance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Adding more training data typically improves SVM performance initially by providing better representation of the data distribution, but improvements level off after sufficient data is available, and computational cost increases.",
+      "optionExplanations": [
+        "Incorrect. Performance improvements plateau after sufficient data, and more data increases computational cost.",
+        "Incorrect. More data generally helps, especially if the current dataset is small.",
+        "Correct. Performance improves with more data up to a saturation point, then levels off while computational cost continues increasing.",
+        "Incorrect. More training data generally affects performance, especially with limited initial data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "training data",
+        "performance",
+        "scalability"
+      ]
+    },
+    {
+      "id": "SVM_037",
+      "question": "What is the key difference between SVM and logistic regression?",
+      "options": [
+        "SVM uses probabilities, logistic regression uses distances",
+        "SVM maximizes margin, logistic regression maximizes likelihood",
+        "SVM is for regression, logistic regression is for classification",
+        "SVM requires feature scaling, logistic regression doesn't"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The key difference is in the objective function: SVM maximizes the margin between classes, while logistic regression maximizes the likelihood of the observed data by minimizing logistic loss.",
+      "optionExplanations": [
+        "Incorrect. SVM focuses on geometric margins, while logistic regression outputs probabilities.",
+        "Correct. SVM optimizes margin maximization, while logistic regression optimizes likelihood maximization.",
+        "Incorrect. Both are primarily classification algorithms (though SVM can do regression via SVR).",
+        "Incorrect. Both algorithms benefit from feature scaling, though it's more critical for SVM."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SVM vs logistic regression",
+        "optimization objectives",
+        "comparison"
+      ]
+    },
+    {
+      "id": "SVM_038",
+      "question": "What is Support Vector Regression (SVR)?",
+      "options": [
+        "SVM applied to regression problems",
+        "A method to select support vectors",
+        "A technique to reduce SVM complexity",
+        "A way to validate SVM models"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Support Vector Regression (SVR) extends SVM principles to regression problems by finding a function that deviates from actual targets by at most ε (epsilon) while being as flat as possible.",
+      "optionExplanations": [
+        "Correct. SVR applies SVM principles to regression by finding a function with maximum flatness and controlled deviation.",
+        "Incorrect. SVR is regression, not a method for selecting support vectors.",
+        "Incorrect. SVR extends SVM to regression; it doesn't reduce complexity.",
+        "Incorrect. SVR is a regression algorithm, not a validation technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SVR",
+        "regression",
+        "SVM extension"
+      ]
+    },
+    {
+      "id": "SVM_039",
+      "question": "In SVR, what does the epsilon (ε) parameter control?",
+      "options": [
+        "The regularization strength",
+        "The kernel width",
+        "The tolerance for prediction errors",
+        "The number of support vectors"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In SVR, epsilon (ε) defines the tolerance for prediction errors. Points within the ε-tube around the prediction line are not penalized, creating a margin of tolerance for small errors.",
+      "optionExplanations": [
+        "Incorrect. Regularization strength is controlled by the C parameter, not epsilon.",
+        "Incorrect. Kernel width is controlled by gamma (in RBF kernel), not epsilon.",
+        "Correct. Epsilon defines the width of the tolerance tube around the regression line within which errors are not penalized.",
+        "Incorrect. Epsilon affects which points become support vectors but doesn't directly control their number."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SVR",
+        "epsilon parameter",
+        "tolerance"
+      ]
+    },
+    {
+      "id": "SVM_040",
+      "question": "What is the VC dimension concept related to SVM?",
+      "options": [
+        "The number of support vectors",
+        "A measure of model complexity and generalization ability",
+        "The dimension of the feature space",
+        "The number of kernel parameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "VC (Vapnik-Chervonenkis) dimension measures the capacity or complexity of a learning algorithm. For SVM, it provides theoretical bounds on generalization error and helps understand the bias-variance trade-off.",
+      "optionExplanations": [
+        "Incorrect. VC dimension is a theoretical concept, not the count of support vectors.",
+        "Correct. VC dimension measures model complexity and provides bounds on generalization performance.",
+        "Incorrect. VC dimension is related to model capacity, not necessarily the input feature space dimension.",
+        "Incorrect. VC dimension is a complexity measure, not the number of parameters."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "VC dimension",
+        "generalization",
+        "model complexity"
+      ]
+    },
+    {
+      "id": "SVM_041",
+      "question": "What is the significance of the Representer Theorem in SVM?",
+      "options": [
+        "It proves SVM always finds the global optimum",
+        "It shows that the optimal solution can be expressed as a linear combination of training examples",
+        "It guarantees that SVM will converge",
+        "It determines the optimal kernel function"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Representer Theorem states that the optimal solution in reproducing kernel Hilbert spaces can be expressed as a linear combination of the training examples, which justifies the dual formulation of SVM.",
+      "optionExplanations": [
+        "Incorrect. The Representer Theorem doesn't prove global optimality; that comes from convexity.",
+        "Correct. The theorem shows optimal solutions can be written as linear combinations of training data, enabling kernel methods.",
+        "Incorrect. Convergence guarantees come from optimization theory, not the Representer Theorem.",
+        "Incorrect. The theorem doesn't determine optimal kernels; it justifies the form of solutions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Representer Theorem",
+        "kernel methods",
+        "theoretical foundation"
+      ]
+    },
+    {
+      "id": "SVM_042",
+      "question": "What is a Reproducing Kernel Hilbert Space (RKHS) in the context of SVM?",
+      "options": [
+        "The original feature space",
+        "A mathematical framework that justifies kernel methods",
+        "The space of support vectors",
+        "The optimization space"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RKHS provides the mathematical foundation for kernel methods in SVM. It's a Hilbert space of functions where point evaluation is a continuous linear functional, enabling the kernel trick to work properly.",
+      "optionExplanations": [
+        "Incorrect. RKHS is a transformed function space, not the original feature space.",
+        "Correct. RKHS provides the rigorous mathematical foundation that makes kernel methods theoretically sound.",
+        "Incorrect. RKHS is a function space, not specifically the space of support vectors.",
+        "Incorrect. RKHS is the function space where solutions live, not the optimization algorithm space."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "RKHS",
+        "mathematical foundation",
+        "kernel theory"
+      ]
+    },
+    {
+      "id": "SVM_043",
+      "question": "What is the SMO (Sequential Minimal Optimization) algorithm?",
+      "options": [
+        "A kernel function",
+        "An efficient algorithm for solving SVM optimization",
+        "A feature selection method",
+        "A cross-validation technique"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SMO is an efficient algorithm for solving the SVM optimization problem by breaking it into a series of smallest possible sub-problems, each involving only two Lagrange multipliers at a time.",
+      "optionExplanations": [
+        "Incorrect. SMO is an optimization algorithm, not a kernel function.",
+        "Correct. SMO efficiently solves SVM by optimizing two Lagrange multipliers at a time.",
+        "Incorrect. SMO is for SVM optimization, not feature selection.",
+        "Incorrect. SMO is an optimization algorithm, not a validation technique."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SMO algorithm",
+        "optimization",
+        "computational efficiency"
+      ]
+    },
+    {
+      "id": "SVM_044",
+      "question": "Why is SVM considered a maximum margin classifier?",
+      "options": [
+        "It uses the maximum number of features",
+        "It maximizes the distance between the hyperplane and the nearest data points",
+        "It maximizes the number of correctly classified points",
+        "It maximizes the size of the training dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM is called a maximum margin classifier because it finds the hyperplane that maximizes the margin - the distance between the decision boundary and the closest data points from either class.",
+      "optionExplanations": [
+        "Incorrect. The number of features is not what SVM maximizes.",
+        "Correct. SVM maximizes the margin, which is the distance from the hyperplane to the nearest data points.",
+        "Incorrect. While SVM aims for good classification, it specifically maximizes geometric margin, not just accuracy.",
+        "Incorrect. Dataset size is not what SVM maximizes; it focuses on margin width."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "maximum margin",
+        "margin maximization",
+        "hyperplane"
+      ]
+    },
+    {
+      "id": "SVM_045",
+      "question": "What is the difference between functional margin and geometric margin?",
+      "options": [
+        "Functional margin includes scaling, geometric margin is scale-invariant",
+        "Functional margin is always larger than geometric margin",
+        "There is no difference between them",
+        "Geometric margin includes kernel transformations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Functional margin depends on the scale of the weight vector w, while geometric margin is scale-invariant (normalized by ||w||). Geometric margin represents the actual distance from points to the hyperplane.",
+      "optionExplanations": [
+        "Correct. Functional margin = y(w·x + b), geometric margin = y(w·x + b)/||w|| is scale-invariant.",
+        "Incorrect. The relationship depends on ||w||; neither is always larger.",
+        "Incorrect. They differ by the normalization factor ||w||.",
+        "Incorrect. Kernel transformations affect both margins similarly; the difference is in normalization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "functional margin",
+        "geometric margin",
+        "normalization"
+      ]
+    },
+    {
+      "id": "SVM_046",
+      "question": "What happens to the SVM decision boundary when C approaches zero?",
+      "options": [
+        "The boundary becomes more complex",
+        "The boundary approaches the maximum margin hyperplane with more misclassifications allowed",
+        "The boundary disappears",
+        "The boundary becomes a straight line through the origin"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When C approaches zero, the penalty for misclassification becomes negligible, so SVM focuses purely on maximizing the margin, potentially allowing many misclassifications to achieve the widest possible margin.",
+      "optionExplanations": [
+        "Incorrect. Low C typically leads to simpler, wider margins, not more complex boundaries.",
+        "Correct. C → 0 emphasizes margin maximization over correct classification, allowing more misclassifications.",
+        "Incorrect. The boundary still exists; it just prioritizes margin width over classification accuracy.",
+        "Incorrect. The boundary position depends on the data distribution, not necessarily passing through the origin."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "C parameter",
+        "regularization",
+        "margin maximization"
+      ]
+    },
+    {
+      "id": "SVM_047",
+      "question": "Which statement about kernel selection is TRUE?",
+      "options": [
+        "RBF kernel always performs better than linear kernel",
+        "Polynomial kernel is always the best choice",
+        "Kernel selection depends on the data characteristics and problem domain",
+        "All kernels give identical results"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Kernel selection should be based on data characteristics, problem domain, and empirical evaluation. No single kernel is universally best; the choice depends on whether data is linearly separable, computational constraints, and data dimensionality.",
+      "optionExplanations": [
+        "Incorrect. RBF kernel may overfit or be unnecessary for linearly separable data.",
+        "Incorrect. Polynomial kernels can be computationally expensive and prone to overfitting.",
+        "Correct. Optimal kernel choice depends on data structure, separability, dimensionality, and computational requirements.",
+        "Incorrect. Different kernels can produce very different results depending on the data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel selection",
+        "data characteristics",
+        "model selection"
+      ]
+    },
+    {
+      "id": "SVM_048",
+      "question": "What is the relationship between SVM and the perceptron algorithm?",
+      "options": [
+        "They are identical algorithms",
+        "SVM is a generalization of perceptron with margin maximization",
+        "Perceptron is more advanced than SVM",
+        "They solve completely different problems"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM can be viewed as a generalization of the perceptron algorithm. While perceptron finds any separating hyperplane, SVM finds the specific hyperplane that maximizes the margin between classes.",
+      "optionExplanations": [
+        "Incorrect. While related, they have different objectives and optimization approaches.",
+        "Correct. SVM extends perceptron by adding margin maximization and can handle non-separable data.",
+        "Incorrect. SVM is generally considered more advanced due to margin maximization and kernel capabilities.",
+        "Incorrect. Both solve linear classification problems, but SVM adds margin optimization and non-linear capabilities."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "perceptron",
+        "historical context",
+        "linear classification"
+      ]
+    },
+    {
+      "id": "SVM_049",
+      "question": "What is the significance of convexity in SVM optimization?",
+      "options": [
+        "It makes the problem impossible to solve",
+        "It guarantees that any local optimum is also a global optimum",
+        "It increases computational complexity",
+        "It reduces the accuracy of the solution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The SVM optimization problem is convex, which guarantees that any local optimum found is also the global optimum. This ensures that optimization algorithms will find the best possible solution.",
+      "optionExplanations": [
+        "Incorrect. Convexity actually makes the problem easier to solve reliably.",
+        "Correct. Convexity ensures that local optima are global optima, guaranteeing the best solution.",
+        "Incorrect. Convexity generally makes optimization more tractable, not more complex.",
+        "Incorrect. Convexity ensures we find the optimal solution, maximizing accuracy potential."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "convex optimization",
+        "global optimum",
+        "optimization theory"
+      ]
+    },
+    {
+      "id": "SVM_050",
+      "question": "How does SVM handle imbalanced datasets?",
+      "options": [
+        "It automatically balances the classes",
+        "It performs poorly and requires preprocessing",
+        "It can use class weights to penalize misclassification differently",
+        "It cannot handle imbalanced data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM can handle imbalanced datasets by using class weights (different C values for different classes) to penalize misclassification of minority classes more heavily, helping to achieve better balance in the decision boundary.",
+      "optionExplanations": [
+        "Incorrect. SVM doesn't automatically balance classes; it requires explicit handling.",
+        "Incorrect. While imbalance can affect performance, SVM can be adapted to handle it well.",
+        "Correct. Class weights allow different penalty strengths for different classes, helping with imbalanced data.",
+        "Incorrect. SVM can handle imbalanced data with appropriate modifications like class weighting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "imbalanced data",
+        "class weights",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "SVM_051",
+      "question": "What is the purpose of cross-validation in SVM hyperparameter tuning?",
+      "options": [
+        "To increase the training data size",
+        "To estimate generalization performance and select optimal hyperparameters",
+        "To reduce computational complexity",
+        "To eliminate the need for test data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cross-validation helps estimate how well different hyperparameter combinations will generalize to unseen data, enabling selection of optimal parameters (C, gamma, etc.) that balance training performance with generalization.",
+      "optionExplanations": [
+        "Incorrect. Cross-validation doesn't increase training data; it uses existing data more effectively for validation.",
+        "Correct. Cross-validation estimates generalization performance to guide hyperparameter selection.",
+        "Incorrect. Cross-validation adds computational cost but provides better parameter selection.",
+        "Incorrect. Cross-validation helps with parameter selection but doesn't eliminate the need for independent test data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "hyperparameter tuning",
+        "model selection"
+      ]
+    },
+    {
+      "id": "SVM_052",
+      "question": "What is the curse of dimensionality's effect on SVM?",
+      "options": [
+        "SVM completely fails in high dimensions",
+        "SVM performance always improves with more dimensions",
+        "SVM generally handles high dimensions well but may need regularization",
+        "Dimensionality has no effect on SVM"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM generally handles high-dimensional data better than many other algorithms due to its focus on margin maximization and the kernel trick, but regularization becomes more important to prevent overfitting in very high dimensions.",
+      "optionExplanations": [
+        "Incorrect. SVM is actually one of the better algorithms for high-dimensional data.",
+        "Incorrect. Performance doesn't always improve; the relationship is more nuanced.",
+        "Correct. SVM handles high dimensions relatively well but benefits from proper regularization (C parameter tuning).",
+        "Incorrect. Dimensionality affects computational complexity and potential overfitting."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse of dimensionality",
+        "high dimensions",
+        "regularization"
+      ]
+    },
+    {
+      "id": "SVM_053",
+      "question": "What is the difference between hard-margin and soft-margin SVM in terms of data requirements?",
+      "options": [
+        "Hard-margin works with any data, soft-margin needs clean data",
+        "Hard-margin requires linearly separable data, soft-margin works with non-separable data",
+        "Both require the same type of data",
+        "Hard-margin needs more data than soft-margin"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard-margin SVM requires perfectly linearly separable data with no noise or overlap between classes. Soft-margin SVM can handle non-separable data, noise, and overlapping classes by allowing some misclassifications.",
+      "optionExplanations": [
+        "Incorrect. Hard-margin has stricter requirements, needing perfectly separable data.",
+        "Correct. Hard-margin needs perfect linear separability; soft-margin tolerates non-separable and noisy data.",
+        "Incorrect. They have different data requirements in terms of separability and noise tolerance.",
+        "Incorrect. The difference is in data quality and separability, not quantity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hard margin",
+        "soft margin",
+        "data requirements"
+      ]
+    },
+    {
+      "id": "SVM_054",
+      "question": "How does the choice of kernel affect computational complexity?",
+      "options": [
+        "All kernels have the same computational complexity",
+        "Linear kernel is fastest, polynomial and RBF kernels are more expensive",
+        "RBF kernel is always fastest",
+        "Kernel choice doesn't affect computational complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear kernel is computationally cheapest as it only requires dot products. Polynomial kernels require exponentiation, and RBF kernels require exponential calculations and distance computations, making them more expensive.",
+      "optionExplanations": [
+        "Incorrect. Different kernels have different computational requirements.",
+        "Correct. Linear kernel (dot product) is cheapest; polynomial and RBF kernels involve more complex calculations.",
+        "Incorrect. RBF kernel requires expensive exponential and distance calculations.",
+        "Incorrect. Kernel choice significantly affects the computational cost of training and prediction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational complexity",
+        "kernel comparison",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "SVM_055",
+      "question": "What is the geometric interpretation of support vectors?",
+      "options": [
+        "Points at the center of each class",
+        "Points that are farthest from the hyperplane",
+        "Points that lie on or closest to the decision boundary",
+        "Points that are misclassified"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Support vectors are the training points that lie on the margin boundaries or are closest to the decision boundary. These points determine the position and orientation of the optimal hyperplane.",
+      "optionExplanations": [
+        "Incorrect. Support vectors are not at class centers; they're at the boundaries between classes.",
+        "Incorrect. Support vectors are actually the closest points to the hyperplane, not the farthest.",
+        "Correct. Support vectors lie on the margin boundaries and are the points closest to the decision boundary.",
+        "Incorrect. While some support vectors in soft-margin SVM may be misclassified, this isn't their defining characteristic."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "support vectors",
+        "geometric interpretation",
+        "decision boundary"
+      ]
+    },
+    {
+      "id": "SVM_056",
+      "question": "What happens to SVM when the number of features exceeds the number of training samples?",
+      "options": [
+        "SVM cannot be trained",
+        "SVM may overfit and the linear kernel often works well",
+        "SVM always performs better",
+        "The kernel trick becomes unnecessary"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When features outnumber samples, SVM may overfit, and the linear kernel often performs well because the data is likely to be linearly separable in the high-dimensional space. Non-linear kernels may not be necessary and can cause overfitting.",
+      "optionExplanations": [
+        "Incorrect. SVM can still be trained, though overfitting is a concern.",
+        "Correct. High dimensions increase overfitting risk, and linear kernels often suffice in high-dimensional spaces.",
+        "Incorrect. More features don't guarantee better performance and can lead to overfitting.",
+        "Incorrect. The kernel trick may still be useful, but linear kernels are often preferred in high dimensions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high dimensions",
+        "overfitting",
+        "feature-sample ratio"
+      ]
+    },
+    {
+      "id": "SVM_057",
+      "question": "What is the role of the bias term (b) in the SVM hyperplane equation?",
+      "options": [
+        "It determines the slope of the hyperplane",
+        "It controls the distance of the hyperplane from the origin",
+        "It affects the kernel function",
+        "It determines the number of support vectors"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The bias term (b) in the hyperplane equation w·x + b = 0 controls how far the hyperplane is shifted from the origin. Without b, the hyperplane would be forced to pass through the origin.",
+      "optionExplanations": [
+        "Incorrect. The weight vector w determines the orientation/slope of the hyperplane, not b.",
+        "Correct. The bias term b shifts the hyperplane away from the origin along the direction perpendicular to it.",
+        "Incorrect. The bias term is part of the hyperplane equation, not the kernel function.",
+        "Incorrect. The bias term affects hyperplane position but doesn't directly determine support vector count."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias term",
+        "hyperplane",
+        "geometric interpretation"
+      ]
+    },
+    {
+      "id": "SVM_058",
+      "question": "How does SVM handle categorical features?",
+      "options": [
+        "SVM can directly use categorical features without preprocessing",
+        "Categorical features must be encoded (e.g., one-hot encoding) before using SVM",
+        "SVM automatically converts categorical to numerical features",
+        "SVM cannot work with categorical features at all"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM requires numerical features for mathematical operations (dot products, distance calculations). Categorical features must be encoded using techniques like one-hot encoding or label encoding before training SVM.",
+      "optionExplanations": [
+        "Incorrect. SVM requires numerical features for mathematical computations.",
+        "Correct. Categorical features need encoding (one-hot, label encoding, etc.) to convert them to numerical format.",
+        "Incorrect. SVM doesn't automatically convert categorical features; preprocessing is required.",
+        "Incorrect. SVM can work with categorical features after proper encoding."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical features",
+        "preprocessing",
+        "feature encoding"
+      ]
+    },
+    {
+      "id": "SVM_059",
+      "question": "What is the difference between SVM and neural networks in terms of optimization?",
+      "options": [
+        "Both use the same optimization algorithms",
+        "SVM has convex optimization, neural networks have non-convex optimization",
+        "Neural networks have convex optimization, SVM has non-convex optimization",
+        "Neither uses optimization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM optimization is convex, guaranteeing a global optimum, while neural network optimization is typically non-convex with multiple local optima. This makes SVM optimization more reliable but potentially less flexible.",
+      "optionExplanations": [
+        "Incorrect. They use different types of optimization with different properties.",
+        "Correct. SVM's convex optimization guarantees global optima; neural networks have non-convex landscapes with local optima.",
+        "Incorrect. This reverses the actual situation.",
+        "Incorrect. Both algorithms heavily rely on optimization techniques."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "optimization comparison",
+        "convex vs non-convex",
+        "global optimum"
+      ]
+    },
+    {
+      "id": "SVM_060",
+      "question": "What is the practical significance of the margin in SVM?",
+      "options": [
+        "Larger margins typically lead to better generalization",
+        "Smaller margins always perform better",
+        "Margin size doesn't affect performance",
+        "Margin only affects training speed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Larger margins typically lead to better generalization because they provide more robust decision boundaries that are less sensitive to small changes in the data, following the principle of structural risk minimization.",
+      "optionExplanations": [
+        "Correct. Larger margins provide more robust boundaries, leading to better generalization according to statistical learning theory.",
+        "Incorrect. Smaller margins can lead to overfitting and poor generalization.",
+        "Incorrect. Margin size is fundamental to SVM's generalization ability.",
+        "Incorrect. Margin affects generalization performance, not just training speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "margin",
+        "generalization",
+        "structural risk minimization"
+      ]
+    },
+    {
+      "id": "SVM_061",
+      "question": "How does noise in the training data affect SVM performance?",
+      "options": [
+        "Noise has no effect on SVM",
+        "Noise always improves SVM performance",
+        "Noise can reduce performance, but soft-margin SVM is more robust to noise",
+        "Noise makes SVM impossible to train"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Noise can degrade SVM performance by creating misleading patterns, but soft-margin SVM with appropriate C parameter tuning can be relatively robust to noise by allowing some misclassifications of noisy points.",
+      "optionExplanations": [
+        "Incorrect. Noise generally affects machine learning algorithms, including SVM.",
+        "Incorrect. Noise typically degrades performance by introducing misleading patterns.",
+        "Correct. Soft-margin SVM can tolerate noise through slack variables and proper regularization.",
+        "Incorrect. SVM can still be trained with noisy data, though performance may suffer."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "noise robustness",
+        "soft margin",
+        "data quality"
+      ]
+    },
+    {
+      "id": "SVM_062",
+      "question": "What is the relationship between the number of support vectors and model complexity?",
+      "options": [
+        "More support vectors always mean higher complexity",
+        "Fewer support vectors always mean higher complexity",
+        "More support vectors can indicate higher complexity, but it depends on the data and parameters",
+        "Number of support vectors has no relationship to complexity"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "More support vectors can indicate higher model complexity, especially if many points violate the margin. However, the relationship depends on data distribution, C parameter, and kernel choice. Sometimes more support vectors just reflect difficult data boundaries.",
+      "optionExplanations": [
+        "Incorrect. The relationship is more nuanced and depends on various factors.",
+        "Incorrect. This reverses the general trend between support vectors and complexity.",
+        "Correct. More support vectors often indicate complexity, but context matters (data difficulty, parameters).",
+        "Incorrect. There is a relationship, though it's not always straightforward."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "support vectors",
+        "model complexity",
+        "parameter effects"
+      ]
+    },
+    {
+      "id": "SVM_063",
+      "question": "What is the effect of outliers on SVM?",
+      "options": [
+        "Outliers have no effect on SVM",
+        "Outliers can significantly affect hard-margin SVM but less so soft-margin SVM",
+        "Outliers always improve SVM performance",
+        "SVM automatically removes outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Outliers can severely affect hard-margin SVM by making data non-separable or forcing suboptimal hyperplanes. Soft-margin SVM is more robust to outliers as it can treat them as margin violations with slack variables.",
+      "optionExplanations": [
+        "Incorrect. Outliers can significantly impact SVM, especially hard-margin versions.",
+        "Correct. Hard-margin SVM is very sensitive to outliers; soft-margin SVM with proper C can be more robust.",
+        "Incorrect. Outliers typically degrade performance by distorting decision boundaries.",
+        "Incorrect. SVM doesn't automatically remove outliers; this requires separate preprocessing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "outliers",
+        "robustness",
+        "hard vs soft margin"
+      ]
+    },
+    {
+      "id": "SVM_064",
+      "question": "What is the typical approach for handling missing values in SVM?",
+      "options": [
+        "SVM can directly handle missing values",
+        "Missing values must be imputed or removed before training SVM",
+        "SVM automatically ignores missing values",
+        "Missing values improve SVM performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM requires complete numerical data for mathematical operations. Missing values must be handled through preprocessing techniques like imputation (mean, median, mode) or by removing samples/features with missing values.",
+      "optionExplanations": [
+        "Incorrect. SVM cannot directly handle missing values in its mathematical formulations.",
+        "Correct. Preprocessing is required to handle missing values through imputation or removal.",
+        "Incorrect. SVM doesn't have built-in mechanisms to handle missing values.",
+        "Incorrect. Missing values typically degrade performance and must be addressed."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "missing values",
+        "preprocessing",
+        "data cleaning"
+      ]
+    },
+    {
+      "id": "SVM_065",
+      "question": "How does the polynomial kernel degree parameter affect the decision boundary?",
+      "options": [
+        "Higher degree always creates simpler boundaries",
+        "Higher degree can create more complex, non-linear boundaries",
+        "Degree has no effect on the boundary",
+        "Higher degree always reduces overfitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Higher polynomial degrees can create more complex, non-linear decision boundaries as they capture higher-order interactions between features. However, very high degrees may lead to overfitting.",
+      "optionExplanations": [
+        "Incorrect. Higher degrees typically create more complex, not simpler boundaries.",
+        "Correct. Higher polynomial degrees enable more complex non-linear boundaries through higher-order feature interactions.",
+        "Incorrect. The degree parameter significantly affects boundary complexity.",
+        "Incorrect. Higher degrees often increase overfitting risk, not reduce it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "polynomial kernel",
+        "degree parameter",
+        "complexity"
+      ]
+    },
+    {
+      "id": "SVM_066",
+      "question": "What is the difference between SVM and k-NN in terms of training and prediction time?",
+      "options": [
+        "Both have the same time complexity",
+        "SVM has longer training but faster prediction; k-NN has no training but slower prediction",
+        "SVM has faster training and prediction than k-NN",
+        "k-NN has longer training and prediction time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM requires significant training time (O(n²) to O(n³)) but fast prediction (depends only on support vectors). k-NN has no training phase but slow prediction time (O(n) for each prediction) as it must compute distances to all training points.",
+      "optionExplanations": [
+        "Incorrect. They have very different time complexity profiles.",
+        "Correct. SVM frontloads computation in training for fast prediction; k-NN defers computation to prediction time.",
+        "Incorrect. SVM training is typically slower than k-NN's lack of training.",
+        "Incorrect. k-NN has no training phase, though prediction can be slow."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "time complexity",
+        "training vs prediction",
+        "algorithm comparison"
+      ]
+    },
+    {
+      "id": "SVM_067",
+      "question": "What is the purpose of kernel normalization in SVM?",
+      "options": [
+        "To reduce computational complexity",
+        "To ensure kernel values are within a reasonable range for numerical stability",
+        "To increase the number of support vectors",
+        "To eliminate the need for feature scaling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Kernel normalization ensures that kernel values remain in reasonable ranges, preventing numerical instability and ensuring that the optimization algorithm converges properly. It also helps with comparing different kernels.",
+      "optionExplanations": [
+        "Incorrect. Normalization may add slight computational overhead rather than reducing complexity.",
+        "Correct. Normalization maintains numerical stability and prevents extreme kernel values that could cause optimization issues.",
+        "Incorrect. Normalization doesn't directly affect the number of support vectors.",
+        "Incorrect. Feature scaling is still important even with kernel normalization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "kernel normalization",
+        "numerical stability",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "SVM_068",
+      "question": "How does SVM perform with linearly separable data compared to non-linearly separable data?",
+      "options": [
+        "SVM performs equally well on both",
+        "SVM performs better on linearly separable data with simpler kernels",
+        "SVM only works with non-linearly separable data",
+        "SVM cannot handle linearly separable data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM typically performs very well on linearly separable data using linear kernels, which are computationally efficient and provide good generalization. For non-linearly separable data, more complex kernels are needed, which may increase computational cost and overfitting risk.",
+      "optionExplanations": [
+        "Incorrect. Performance varies based on data characteristics and appropriate kernel choice.",
+        "Correct. Linear kernels work excellently for linearly separable data and are computationally efficient.",
+        "Incorrect. SVM works well with both types of data using appropriate kernels.",
+        "Incorrect. SVM handles linearly separable data very effectively with linear kernels."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "linear separability",
+        "kernel choice",
+        "performance"
+      ]
+    },
+    {
+      "id": "SVM_069",
+      "question": "What is the role of regularization in preventing overfitting in SVM?",
+      "options": [
+        "Regularization has no effect on overfitting",
+        "The C parameter provides regularization by controlling the trade-off between margin and training error",
+        "Regularization only affects training speed",
+        "SVM doesn't use regularization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The C parameter acts as a regularization parameter in SVM. Lower C values provide stronger regularization by allowing more margin violations, creating wider margins and reducing overfitting, while higher C values reduce regularization.",
+      "optionExplanations": [
+        "Incorrect. Regularization is crucial for controlling overfitting in SVM.",
+        "Correct. The C parameter controls regularization strength through the margin-error trade-off.",
+        "Incorrect. Regularization primarily affects model generalization, not just training speed.",
+        "Incorrect. The C parameter provides regularization in SVM."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "C parameter"
+      ]
+    },
+    {
+      "id": "SVM_070",
+      "question": "What happens when both C and gamma are set to very high values in RBF SVM?",
+      "options": [
+        "The model becomes more generalized",
+        "The model is likely to overfit significantly",
+        "The model cannot be trained",
+        "The model becomes linear"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High C reduces regularization (forcing tight fit to training data), while high gamma creates very narrow RBF kernels (complex boundaries). Together, they create a model that memorizes training data and severely overfits.",
+      "optionExplanations": [
+        "Incorrect. High C and gamma reduce generalization by creating overly complex, overfitted models.",
+        "Correct. High C reduces regularization and high gamma creates complex boundaries, leading to severe overfitting.",
+        "Incorrect. The model can still be trained, though it may have numerical issues.",
+        "Incorrect. High gamma makes the kernel more non-linear, not linear."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "overfitting",
+        "hyperparameter interaction",
+        "C and gamma"
+      ]
+    },
+    {
+      "id": "SVM_071",
+      "question": "What is the computational advantage of the linear kernel over non-linear kernels?",
+      "options": [
+        "Linear kernel requires no computation",
+        "Linear kernel only needs dot products, while non-linear kernels require more complex calculations",
+        "Linear kernel is always more accurate",
+        "There is no computational difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear kernel K(x,y) = x·y requires only dot product calculations, which are computationally cheap. Non-linear kernels like RBF require exponential calculations and polynomial kernels require exponentiation, making them more expensive.",
+      "optionExplanations": [
+        "Incorrect. Linear kernel still requires dot product computations.",
+        "Correct. Linear kernel uses simple dot products; non-linear kernels involve exponentials, powers, or other complex functions.",
+        "Incorrect. Accuracy depends on data characteristics, not just computational complexity.",
+        "Incorrect. There are significant computational differences between kernel types."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "computational complexity",
+        "linear kernel",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "SVM_072",
+      "question": "How does SVM handle the bias-variance trade-off?",
+      "options": [
+        "SVM only reduces bias",
+        "SVM only reduces variance",
+        "SVM balances bias and variance through margin maximization and regularization",
+        "SVM doesn't address bias-variance trade-off"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM addresses the bias-variance trade-off through margin maximization (which reduces variance by creating stable boundaries) and regularization via the C parameter (which controls model complexity and the bias-variance balance).",
+      "optionExplanations": [
+        "Incorrect. SVM affects both bias and variance through its margin maximization and regularization mechanisms.",
+        "Incorrect. SVM addresses both components of the bias-variance trade-off.",
+        "Correct. Margin maximization reduces variance while C parameter controls the bias-variance trade-off.",
+        "Incorrect. The bias-variance trade-off is central to SVM's design philosophy."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias-variance trade-off",
+        "margin maximization",
+        "regularization"
+      ]
+    },
+    {
+      "id": "SVM_073",
+      "question": "What is the effect of feature scaling on different kernel types in SVM?",
+      "options": [
+        "Feature scaling affects all kernels equally",
+        "Feature scaling is more critical for distance-based kernels like RBF",
+        "Feature scaling only affects linear kernels",
+        "Feature scaling has no effect on any kernel"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling is particularly important for distance-based kernels like RBF because they compute distances between data points. Without scaling, features with larger scales dominate the distance calculations, while linear kernels are less sensitive but still benefit from scaling.",
+      "optionExplanations": [
+        "Incorrect. Different kernels have varying sensitivity to feature scaling.",
+        "Correct. Distance-based kernels like RBF are highly sensitive to feature scales since they compute Euclidean distances.",
+        "Incorrect. RBF and polynomial kernels are actually more sensitive to scaling than linear kernels.",
+        "Incorrect. Feature scaling significantly affects kernel computations, especially distance-based ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature scaling",
+        "kernel sensitivity",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "SVM_074",
+      "question": "What is the primary difference between SVM and decision trees in terms of decision boundaries?",
+      "options": [
+        "Both create the same type of boundaries",
+        "SVM creates smooth boundaries, decision trees create axis-parallel splits",
+        "Decision trees create smooth boundaries, SVM creates jagged boundaries",
+        "Neither algorithm creates decision boundaries"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM creates smooth, often curved decision boundaries (especially with non-linear kernels) that can be at any angle, while decision trees create boundaries that are always parallel to feature axes through recursive binary splits.",
+      "optionExplanations": [
+        "Incorrect. These algorithms create fundamentally different types of decision boundaries.",
+        "Correct. SVM boundaries are smooth and flexible; decision tree boundaries are axis-parallel and rectangular.",
+        "Incorrect. This reverses the actual characteristics of these algorithms.",
+        "Incorrect. Both algorithms explicitly create decision boundaries for classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decision boundaries",
+        "algorithm comparison",
+        "geometric properties"
+      ]
+    },
+    {
+      "id": "SVM_075",
+      "question": "How does the choice between one-vs-one and one-vs-all affect SVM multi-class performance?",
+      "options": [
+        "One-vs-one is always better",
+        "One-vs-all is always better",
+        "One-vs-one typically trains faster but may be less accurate; one-vs-all is more balanced",
+        "They always give identical results"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "One-vs-one creates more classifiers but each works with smaller, more balanced datasets, often leading to faster individual training. One-vs-all creates fewer classifiers but each must handle imbalanced data (one class vs. all others), which can affect accuracy.",
+      "optionExplanations": [
+        "Incorrect. The optimal choice depends on the specific dataset and computational constraints.",
+        "Incorrect. Neither approach is universally superior across all scenarios.",
+        "Correct. One-vs-one has computational advantages but potential accuracy trade-offs; one-vs-all provides different trade-offs.",
+        "Incorrect. These approaches can give different results due to their different training procedures."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-class strategies",
+        "one-vs-one",
+        "one-vs-all"
+      ]
+    },
+    {
+      "id": "SVM_076",
+      "question": "What is the relationship between the number of training samples and SVM generalization?",
+      "options": [
+        "More samples always improve generalization",
+        "Fewer samples always improve generalization",
+        "More samples generally improve generalization up to a point, especially with proper regularization",
+        "Sample size has no effect on generalization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "More training samples generally improve SVM generalization by providing better representation of the true data distribution, but improvements plateau after sufficient data. Proper regularization (C parameter) becomes more important with limited data.",
+      "optionExplanations": [
+        "Incorrect. While generally true, there are diminishing returns and computational costs increase.",
+        "Incorrect. More data typically helps generalization, especially when current data is limited.",
+        "Correct. Additional samples improve generalization with diminishing returns, and regularization helps optimize this relationship.",
+        "Incorrect. Sample size significantly affects generalization capability in machine learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "generalization",
+        "sample size",
+        "data efficiency"
+      ]
+    },
+    {
+      "id": "SVM_077",
+      "question": "What is the effect of data distribution on kernel selection in SVM?",
+      "options": [
+        "Data distribution doesn't affect kernel choice",
+        "Linearly separable data works best with linear kernels; complex distributions may need non-linear kernels",
+        "All data should use RBF kernels",
+        "Kernel selection is random"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data distribution significantly influences optimal kernel choice. Linearly separable data works well with linear kernels (efficient and effective), while data with complex non-linear patterns requires non-linear kernels like RBF or polynomial.",
+      "optionExplanations": [
+        "Incorrect. Data distribution is a primary factor in kernel selection.",
+        "Correct. Kernel choice should match data complexity - linear kernels for separable data, non-linear for complex patterns.",
+        "Incorrect. RBF kernels may be overkill for linearly separable data and computationally expensive.",
+        "Incorrect. Kernel selection should be systematic based on data characteristics and cross-validation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel selection",
+        "data distribution",
+        "model selection"
+      ]
+    },
+    {
+      "id": "SVM_078",
+      "question": "What happens to SVM performance when training data contains duplicate samples?",
+      "options": [
+        "Performance always improves",
+        "Performance always degrades",
+        "Duplicates may become support vectors and can affect the decision boundary",
+        "Duplicates have no effect"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Duplicate samples can potentially become support vectors if they lie on or near the margin, potentially affecting the decision boundary. While they don't add new information, they can influence the optimization through their multiplicity.",
+      "optionExplanations": [
+        "Incorrect. Duplicates don't add new information and may not improve performance.",
+        "Incorrect. The effect depends on where the duplicates are located relative to the margin.",
+        "Correct. Duplicates can influence the decision boundary if they become support vectors, especially near the margin.",
+        "Incorrect. Duplicates can affect optimization and potentially the final model."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "duplicate data",
+        "support vectors",
+        "data quality"
+      ]
+    },
+    {
+      "id": "SVM_079",
+      "question": "How does SVM handle streaming or online learning scenarios?",
+      "options": [
+        "SVM naturally supports online learning",
+        "Standard SVM doesn't support online learning; specialized variants are needed",
+        "SVM only works with streaming data",
+        "SVM cannot be adapted for online scenarios"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standard SVM is a batch learning algorithm that requires all training data at once. For online/streaming scenarios, specialized variants like online SVM or incremental SVM algorithms have been developed to handle new data incrementally.",
+      "optionExplanations": [
+        "Incorrect. Standard SVM requires batch training with all data available simultaneously.",
+        "Correct. Standard SVM is batch-based; online learning requires specialized SVM variants.",
+        "Incorrect. Standard SVM works with static batch data, not streaming data.",
+        "Incorrect. While standard SVM doesn't support online learning, specialized variants have been developed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "online learning",
+        "streaming data",
+        "algorithm variants"
+      ]
+    },
+    {
+      "id": "SVM_080",
+      "question": "What is the significance of the reproducing property in RKHS for SVM?",
+      "options": [
+        "It allows for faster computation",
+        "It enables point evaluation through inner products with kernel functions",
+        "It reduces memory requirements",
+        "It eliminates the need for optimization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The reproducing property in RKHS means that for any function f in the space, f(x) = ⟨f, K(x,·)⟩, where K is the kernel function. This property enables the kernel trick by allowing function evaluation through inner products.",
+      "optionExplanations": [
+        "Incorrect. The reproducing property is about mathematical foundations, not computational speed.",
+        "Correct. The reproducing property enables function evaluation through inner products, which is fundamental to the kernel trick.",
+        "Incorrect. Memory requirements are not directly affected by the reproducing property.",
+        "Incorrect. Optimization is still necessary; the reproducing property enables the kernel formulation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "RKHS",
+        "reproducing property",
+        "mathematical foundation"
+      ]
+    },
+    {
+      "id": "SVM_081",
+      "question": "How does the margin concept in SVM relate to statistical learning theory?",
+      "options": [
+        "Margin has no theoretical significance",
+        "Larger margins provide better generalization bounds according to PAC learning theory",
+        "Smaller margins always provide better theory",
+        "Margin only affects computational complexity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In statistical learning theory, particularly PAC (Probably Approximately Correct) learning, larger margins provide better generalization bounds. The margin-based bounds show that classifiers with larger margins have lower generalization error with high probability.",
+      "optionExplanations": [
+        "Incorrect. Margin is central to SVM's theoretical foundations and generalization guarantees.",
+        "Correct. Statistical learning theory shows that larger margins lead to better generalization bounds and lower VC dimension.",
+        "Incorrect. Theoretical results consistently favor larger margins for generalization.",
+        "Incorrect. Margin primarily affects generalization theory, not just computational aspects."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "statistical learning theory",
+        "PAC learning",
+        "generalization bounds"
+      ]
+    },
+    {
+      "id": "SVM_082",
+      "question": "What is the role of the covariance structure in kernel design for SVM?",
+      "options": [
+        "Covariance structure is irrelevant to kernels",
+        "Kernels should capture the covariance structure of the data for optimal performance",
+        "Kernels should avoid covariance information",
+        "Covariance only affects linear kernels"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Effective kernel design should capture the underlying covariance or similarity structure of the data. Kernels that align with the natural relationships and correlations in the data tend to perform better by encoding relevant similarity measures.",
+      "optionExplanations": [
+        "Incorrect. Covariance structure is crucial for designing effective kernels that capture data relationships.",
+        "Correct. Kernels that match the data's covariance structure can capture meaningful similarities for better classification.",
+        "Incorrect. Incorporating covariance information typically improves kernel effectiveness.",
+        "Incorrect. Both linear and non-linear kernels can benefit from considering covariance structure."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "kernel design",
+        "covariance structure",
+        "data relationships"
+      ]
+    },
+    {
+      "id": "SVM_083",
+      "question": "How does SVM performance compare to ensemble methods like Random Forest?",
+      "options": [
+        "SVM always outperforms ensemble methods",
+        "Ensemble methods always outperform SVM",
+        "Performance depends on data characteristics, with SVM often better for high-dimensional data",
+        "They always perform identically"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM often excels with high-dimensional, linearly separable data and when interpretable decision boundaries are needed. Ensemble methods like Random Forest may perform better with complex non-linear patterns, mixed data types, and when robustness to hyperparameter choices is important.",
+      "optionExplanations": [
+        "Incorrect. No single algorithm universally outperforms all others across all datasets.",
+        "Incorrect. While ensemble methods are powerful, SVM has advantages in specific scenarios.",
+        "Correct. SVM excels in high dimensions and with proper kernels; ensembles are often more robust to hyperparameter choices.",
+        "Incorrect. Different algorithms have different strengths and can produce different results."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "algorithm comparison",
+        "ensemble methods",
+        "performance analysis"
+      ]
+    },
+    {
+      "id": "SVM_084",
+      "question": "What is the effect of class imbalance on SVM support vector selection?",
+      "options": [
+        "Class imbalance doesn't affect support vector selection",
+        "Majority class points are more likely to become support vectors",
+        "Minority class points are more likely to become support vectors due to their rarity",
+        "All points become support vectors with class imbalance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In imbalanced datasets, the majority class often dominates the margin, making its points more likely to become support vectors. This can bias the decision boundary toward the minority class, which is why class weighting is often necessary.",
+      "optionExplanations": [
+        "Incorrect. Class imbalance significantly affects which points become support vectors.",
+        "Correct. The abundant majority class points often dominate margin selection, potentially biasing the boundary.",
+        "Incorrect. While minority points are important, the sheer number of majority points often makes them more likely to be support vectors.",
+        "Incorrect. Support vectors are still a subset of training points, even with imbalanced data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "class imbalance",
+        "support vector selection",
+        "bias"
+      ]
+    },
+    {
+      "id": "SVM_085",
+      "question": "How does the dimensionality reduction affect SVM performance?",
+      "options": [
+        "Dimensionality reduction always improves SVM performance",
+        "Dimensionality reduction always hurts SVM performance",
+        "The effect depends on whether relevant information is preserved during reduction",
+        "SVM cannot work with dimensionality-reduced data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Dimensionality reduction can help SVM by removing noise and irrelevant features, potentially improving generalization and reducing computational cost. However, if important discriminative information is lost during reduction, performance may degrade.",
+      "optionExplanations": [
+        "Incorrect. The effect depends on what information is retained or lost during reduction.",
+        "Incorrect. Reducing noise and irrelevant features can actually improve SVM performance.",
+        "Correct. The impact depends on whether the reduction preserves discriminative information while removing noise.",
+        "Incorrect. SVM works fine with reduced-dimension data as long as it's properly preprocessed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dimensionality reduction",
+        "feature selection",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "SVM_086",
+      "question": "What is the computational complexity of making predictions with a trained SVM?",
+      "options": [
+        "O(n) where n is the number of training samples",
+        "O(s) where s is the number of support vectors",
+        "O(d) where d is the number of features",
+        "O(s × d) where s is support vectors and d is features"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "SVM prediction complexity is O(s × d) because it requires computing the kernel function between the test point and each of the s support vectors, with each kernel computation involving d-dimensional vectors.",
+      "optionExplanations": [
+        "Incorrect. Prediction doesn't depend on all training samples, only support vectors.",
+        "Incorrect. This ignores the feature dimensionality in kernel computations.",
+        "Incorrect. This ignores the number of support vectors that must be processed.",
+        "Correct. Prediction requires kernel evaluation between test point and each support vector, involving both s and d."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "prediction complexity",
+        "computational analysis",
+        "support vectors"
+      ]
+    },
+    {
+      "id": "SVM_087",
+      "question": "How does SVM handle ordinal features differently from nominal categorical features?",
+      "options": [
+        "SVM treats both types identically",
+        "Ordinal features can use label encoding to preserve order; nominal features need one-hot encoding",
+        "Only nominal features can be used in SVM",
+        "SVM automatically detects feature types"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ordinal features have inherent ordering that can be preserved through label encoding (1, 2, 3, etc.), maintaining the natural distance relationships. Nominal features lack meaningful order and typically require one-hot encoding to avoid imposing artificial ordering.",
+      "optionExplanations": [
+        "Incorrect. The encoding strategy should differ based on whether the categorical variable has natural ordering.",
+        "Correct. Ordinal features benefit from label encoding that preserves order; nominal features need one-hot encoding.",
+        "Incorrect. Both ordinal and nominal features can be used in SVM with appropriate encoding.",
+        "Incorrect. SVM doesn't automatically detect feature types; proper preprocessing is required."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical features",
+        "ordinal encoding",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "SVM_088",
+      "question": "What is the relationship between SVM and maximum likelihood estimation?",
+      "options": [
+        "SVM directly maximizes likelihood",
+        "SVM minimizes likelihood",
+        "SVM doesn't use probabilistic principles; it focuses on geometric margin maximization",
+        "SVM and maximum likelihood are identical"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM is fundamentally different from maximum likelihood approaches. While MLE algorithms like logistic regression maximize the probability of observed data, SVM focuses on geometric margin maximization and doesn't directly involve probabilistic modeling.",
+      "optionExplanations": [
+        "Incorrect. SVM doesn't directly involve likelihood maximization in its objective function.",
+        "Incorrect. SVM doesn't optimize likelihood in either direction.",
+        "Correct. SVM uses geometric principles (margin maximization) rather than probabilistic principles (likelihood).",
+        "Incorrect. These are fundamentally different approaches to learning."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "maximum likelihood",
+        "geometric approach",
+        "learning principles"
+      ]
+    },
+    {
+      "id": "SVM_089",
+      "question": "How does the concept of structural risk minimization relate to SVM?",
+      "options": [
+        "SVM ignores structural risk minimization",
+        "SVM implements structural risk minimization through margin maximization",
+        "SVM only considers empirical risk",
+        "Structural risk minimization is unrelated to SVM"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM implements structural risk minimization by balancing empirical risk (training error) and model complexity (controlled by margin size). Larger margins correspond to lower complexity and better generalization, embodying the SRM principle.",
+      "optionExplanations": [
+        "Incorrect. Structural risk minimization is a fundamental principle underlying SVM design.",
+        "Correct. SVM balances training error and model complexity through margin maximization, implementing SRM.",
+        "Incorrect. SVM considers both empirical risk and structural risk through its margin-based approach.",
+        "Incorrect. SRM is a core theoretical foundation of SVM."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "structural risk minimization",
+        "model complexity",
+        "generalization theory"
+      ]
+    },
+    {
+      "id": "SVM_090",
+      "question": "What is the effect of feature correlation on SVM performance?",
+      "options": [
+        "Feature correlation always improves SVM performance",
+        "Feature correlation always hurts SVM performance",
+        "Moderate correlation may be beneficial, but high correlation can be problematic",
+        "SVM is completely unaffected by feature correlation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Moderate feature correlation can provide complementary information that helps SVM. However, highly correlated features may be redundant and can lead to numerical instability in optimization, especially with limited data relative to feature count.",
+      "optionExplanations": [
+        "Incorrect. High correlation can cause issues with redundancy and numerical stability.",
+        "Incorrect. Some correlation can provide useful complementary information.",
+        "Correct. Moderate correlation can be beneficial, but high correlation may cause redundancy and numerical issues.",
+        "Incorrect. Feature correlation can significantly affect SVM optimization and performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature correlation",
+        "numerical stability",
+        "redundancy"
+      ]
+    },
+    {
+      "id": "SVM_091",
+      "question": "How does SVM handle the problem of local optima compared to neural networks?",
+      "options": [
+        "Both SVM and neural networks have local optima problems",
+        "SVM has local optima, neural networks have global optima",
+        "SVM optimization is convex (global optimum guaranteed), neural networks have local optima",
+        "Neither has optimization issues"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM optimization is convex, guaranteeing that any local optimum found is also the global optimum. Neural networks have non-convex loss landscapes with multiple local optima, making optimization more challenging and dependent on initialization.",
+      "optionExplanations": [
+        "Incorrect. SVM's convex optimization guarantees global optima, unlike neural networks.",
+        "Incorrect. This reverses the actual situation between these algorithms.",
+        "Correct. SVM's convex optimization ensures global optima; neural networks struggle with local optima in non-convex landscapes.",
+        "Incorrect. Neural networks definitely face local optima challenges due to non-convex optimization."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "convex optimization",
+        "local optima",
+        "global optimum"
+      ]
+    },
+    {
+      "id": "SVM_092",
+      "question": "What is the role of cross-validation in SVM model selection beyond hyperparameter tuning?",
+      "options": [
+        "Cross-validation is only used for hyperparameter tuning",
+        "Cross-validation helps estimate generalization performance and detect overfitting",
+        "Cross-validation is unnecessary for SVM",
+        "Cross-validation only affects training speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Beyond hyperparameter tuning, cross-validation provides unbiased estimates of generalization performance, helps detect overfitting, enables comparison between different kernel types, and provides confidence intervals for model performance.",
+      "optionExplanations": [
+        "Incorrect. Cross-validation serves multiple purposes beyond hyperparameter selection.",
+        "Correct. Cross-validation estimates generalization performance, detects overfitting, and enables model comparison.",
+        "Incorrect. Cross-validation is crucial for reliable SVM model evaluation and selection.",
+        "Incorrect. Cross-validation primarily affects model evaluation quality, not training speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "model selection",
+        "generalization estimation"
+      ]
+    },
+    {
+      "id": "SVM_093",
+      "question": "How does SVM performance scale with increasing feature dimensionality?",
+      "options": [
+        "Performance always degrades with more features",
+        "Performance always improves with more features",
+        "SVM generally handles high dimensions well, but performance depends on feature relevance and sample size",
+        "Dimensionality has no effect on SVM"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVM generally handles high-dimensional data better than many algorithms due to its margin-based approach and kernel methods. However, performance still depends on feature relevance, sample-to-feature ratio, and appropriate regularization.",
+      "optionExplanations": [
+        "Incorrect. SVM can actually perform well in high dimensions if features are relevant.",
+        "Incorrect. More features don't automatically improve performance; relevance matters.",
+        "Correct. SVM handles high dimensions relatively well, but feature quality and sample size matter.",
+        "Incorrect. Dimensionality affects computational complexity and can influence overfitting risk."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high dimensionality",
+        "scalability",
+        "feature relevance"
+      ]
+    },
+    {
+      "id": "SVM_094",
+      "question": "What is the significance of the margin distribution (not just maximum margin) in SVM?",
+      "options": [
+        "Only maximum margin matters in SVM",
+        "Margin distribution affects generalization and robustness beyond just the maximum margin",
+        "Margin distribution is irrelevant to SVM performance",
+        "SVM doesn't consider margin distribution"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "While SVM optimizes for maximum margin, recent research shows that the distribution of margins across all training points also affects generalization. A good margin distribution with most points well-separated contributes to better robustness and generalization.",
+      "optionExplanations": [
+        "Incorrect. Research shows that margin distribution beyond just the maximum also influences performance.",
+        "Correct. The overall margin distribution affects generalization, robustness, and model stability.",
+        "Incorrect. Margin distribution has been shown to correlate with generalization performance.",
+        "Incorrect. While SVM optimizes maximum margin, the distribution of all margins is also relevant."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "margin distribution",
+        "generalization theory",
+        "robustness"
+      ]
+    },
+    {
+      "id": "SVM_095",
+      "question": "How does SVM handle mixed data types (numerical and categorical)?",
+      "options": [
+        "SVM automatically handles mixed data types",
+        "Mixed data types require preprocessing with appropriate encoding and scaling strategies",
+        "SVM cannot work with mixed data types",
+        "Only numerical features work with SVM"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM requires numerical input, so mixed data types need careful preprocessing: categorical features must be encoded (one-hot for nominal, label encoding for ordinal), and then all features should be appropriately scaled to ensure fair contribution to kernel computations.",
+      "optionExplanations": [
+        "Incorrect. SVM requires preprocessing to handle mixed data types appropriately.",
+        "Correct. Mixed data requires proper encoding of categorical features and scaling of all features.",
+        "Incorrect. SVM can work with mixed types after appropriate preprocessing.",
+        "Incorrect. Categorical features can be used after proper encoding to numerical format."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mixed data types",
+        "preprocessing",
+        "encoding strategies"
+      ]
+    },
+    {
+      "id": "SVM_096",
+      "question": "What is the relationship between SVM and boosting algorithms like AdaBoost?",
+      "options": [
+        "SVM and boosting are identical algorithms",
+        "SVM focuses on margin maximization while boosting focuses on iteratively correcting errors",
+        "Boosting cannot be combined with SVM",
+        "SVM is a type of boosting algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVM and boosting have different philosophies: SVM finds the optimal margin-maximizing hyperplane, while boosting iteratively combines weak learners by focusing on previously misclassified examples. However, SVM can be used as a base learner in boosting frameworks.",
+      "optionExplanations": [
+        "Incorrect. These are fundamentally different algorithmic approaches.",
+        "Correct. SVM optimizes geometric margins; boosting iteratively focuses on difficult examples through reweighting.",
+        "Incorrect. SVM can be used as a base classifier in boosting ensembles.",
+        "Incorrect. SVM is not a boosting algorithm, though it can be incorporated into boosting frameworks."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "boosting comparison",
+        "ensemble methods",
+        "algorithmic differences"
+      ]
+    },
+    {
+      "id": "SVM_097",
+      "question": "How does the interpretation of SVM models compare to linear regression?",
+      "options": [
+        "Both are equally interpretable",
+        "SVM is more interpretable than linear regression",
+        "Linear regression is more interpretable due to direct feature weights; SVM interpretation is more complex",
+        "Neither algorithm is interpretable"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Linear regression provides direct interpretation through coefficient values showing feature importance and effect direction. SVM interpretation is more complex, especially with non-linear kernels, as the model is defined by support vectors and their relationships rather than simple feature weights.",
+      "optionExplanations": [
+        "Incorrect. These algorithms have different levels of interpretability.",
+        "Incorrect. Linear regression generally provides clearer feature interpretability.",
+        "Correct. Linear regression coefficients are directly interpretable; SVM interpretation requires analyzing support vectors and margins.",
+        "Incorrect. Linear regression is quite interpretable, and SVM has some interpretable aspects."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interpretability",
+        "model comparison",
+        "feature analysis"
+      ]
+    },
+    {
+      "id": "SVM_098",
+      "question": "What is the effect of data preprocessing order on SVM performance?",
+      "options": [
+        "Preprocessing order doesn't matter for SVM",
+        "Feature scaling should be done after encoding categorical variables",
+        "Categorical encoding should be done after feature scaling",
+        "All preprocessing should be done simultaneously"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The correct preprocessing order matters: first encode categorical variables to numerical form, then apply feature scaling to all numerical features. Scaling before encoding doesn't make sense, and scaling after encoding ensures all features contribute equally to kernel computations.",
+      "optionExplanations": [
+        "Incorrect. Preprocessing order significantly affects the final feature representations.",
+        "Correct. Encode categorical features first, then scale all numerical features for consistent kernel computations.",
+        "Incorrect. You can't scale non-numerical categorical features before encoding them.",
+        "Incorrect. Sequential preprocessing is necessary due to dependencies between steps."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "preprocessing order",
+        "feature scaling",
+        "categorical encoding"
+      ]
+    },
+    {
+      "id": "SVM_099",
+      "question": "How does SVM handle temporal or sequential data?",
+      "options": [
+        "SVM naturally handles sequential data",
+        "Standard SVM treats samples independently; specialized approaches are needed for temporal data",
+        "SVM cannot work with any temporal data",
+        "SVM automatically detects temporal patterns"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standard SVM assumes i.i.d. (independent and identically distributed) data and doesn't consider temporal relationships between samples. For temporal data, approaches like sliding windows, feature engineering to capture temporal patterns, or specialized sequential SVM variants are needed.",
+      "optionExplanations": [
+        "Incorrect. Standard SVM doesn't consider temporal dependencies between samples.",
+        "Correct. Standard SVM assumes independence; temporal data requires special handling through preprocessing or specialized variants.",
+        "Incorrect. Temporal data can be used with appropriate preprocessing or specialized SVM approaches.",
+        "Incorrect. SVM doesn't automatically detect temporal patterns; this requires explicit modeling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temporal data",
+        "sequential patterns",
+        "data assumptions"
+      ]
+    },
+    {
+      "id": "SVM_100",
+      "question": "What are the key considerations when deploying SVM models in production environments?",
+      "options": [
+        "Only model accuracy matters in production",
+        "Consider prediction latency, memory usage, model size, and retraining frequency",
+        "SVM models cannot be deployed in production",
+        "Production deployment is identical to research environments"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Production SVM deployment requires considering: prediction latency (especially with many support vectors), memory usage for storing support vectors, model serialization size, retraining frequency as data changes, and computational resources for kernel evaluations.",
+      "optionExplanations": [
+        "Incorrect. Production environments require balancing accuracy with operational constraints.",
+        "Correct. Production deployment must consider latency, memory, scalability, and maintenance requirements beyond just accuracy.",
+        "Incorrect. SVM models are commonly deployed in production with proper engineering considerations.",
+        "Incorrect. Production has additional constraints like latency, scalability, and maintenance that research doesn't face."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "production deployment",
+        "scalability",
+        "operational considerations"
+      ]
+    }
+  ]
+}

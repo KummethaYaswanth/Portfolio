@@ -1,0 +1,2503 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_DTC",
+  "subtopicName": "Decision Trees",
+  "str": 0.350,
+  "description": "Decision trees are a fundamental supervised learning algorithm used for both classification and regression tasks. They create a model that predicts target values by learning simple decision rules inferred from data features, forming a tree-like structure of decisions.",
+  "questions": [
+    {
+      "id": "DTC_001",
+      "question": "What is the root node in a decision tree?",
+      "options": [
+        "The topmost node that contains the entire dataset",
+        "The bottom node with the final prediction",
+        "A node that splits the data randomly",
+        "A node that contains only pure classes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The root node is the topmost node in a decision tree that represents the entire dataset before any splits are made. It's the starting point of the tree structure.",
+      "optionExplanations": [
+        "Correct. The root node is positioned at the top of the tree and contains all training instances before any partitioning occurs.",
+        "This describes a leaf node, not a root node. Leaf nodes are terminal nodes that provide final predictions.",
+        "Decision tree splits are not random but based on optimal splitting criteria that maximize information gain or minimize impurity.",
+        "A node with pure classes would be a leaf node where all instances belong to the same class, not the root node."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "tree-structure",
+        "basic-concepts",
+        "nodes"
+      ]
+    },
+    {
+      "id": "DTC_002",
+      "question": "What are leaf nodes in a decision tree?",
+      "options": [
+        "Nodes that split the data into multiple branches",
+        "Terminal nodes that provide the final prediction or classification",
+        "Nodes that contain the original dataset",
+        "Nodes that calculate information gain"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Leaf nodes are terminal nodes in a decision tree that don't have any child nodes and provide the final prediction or class label for the data instances that reach them.",
+      "optionExplanations": [
+        "This describes internal nodes (decision nodes) that perform splits, not leaf nodes.",
+        "Correct. Leaf nodes are the endpoints of the tree where final decisions or predictions are made.",
+        "This describes the root node, which contains the original dataset before any splits.",
+        "Information gain calculation happens at internal nodes during the splitting process, not at leaf nodes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "tree-structure",
+        "basic-concepts",
+        "leaf-nodes"
+      ]
+    },
+    {
+      "id": "DTC_003",
+      "question": "What is information gain in decision trees?",
+      "options": [
+        "The amount of memory required to store the tree",
+        "The measure of how much information a feature gives about the class",
+        "The number of nodes in the tree",
+        "The accuracy of the tree on test data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Information gain measures the reduction in entropy (or uncertainty) achieved by splitting the dataset on a particular feature. It quantifies how much information a feature provides about the target class.",
+      "optionExplanations": [
+        "Information gain is not related to memory storage but to the quality of splits in terms of information theory.",
+        "Correct. Information gain quantifies the reduction in uncertainty (entropy) when splitting on a feature, indicating how informative that feature is.",
+        "The number of nodes is a structural property of the tree, not a measure of information content.",
+        "Accuracy is a performance metric, while information gain is used during tree construction to select optimal splits."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "information-gain",
+        "splitting-criteria",
+        "entropy"
+      ]
+    },
+    {
+      "id": "DTC_004",
+      "question": "What is entropy in the context of decision trees?",
+      "options": [
+        "The depth of the tree",
+        "A measure of impurity or randomness in the dataset",
+        "The number of features used in the tree",
+        "The computational complexity of the algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Entropy is a measure of impurity or disorder in a dataset. It quantifies the uncertainty in the data, with higher entropy indicating more mixed classes and lower entropy indicating more homogeneous groups.",
+      "optionExplanations": [
+        "Tree depth is a structural measure, not related to entropy which measures information content.",
+        "Correct. Entropy measures the impurity or randomness in a dataset, with 0 indicating perfect purity and maximum value indicating maximum disorder.",
+        "The number of features is a dimensionality aspect, not related to entropy which measures class distribution.",
+        "Computational complexity refers to algorithmic efficiency, while entropy is an information-theoretic measure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "entropy",
+        "impurity-measures",
+        "information-theory"
+      ]
+    },
+    {
+      "id": "DTC_005",
+      "question": "What is the formula for calculating entropy?",
+      "options": [
+        "H(S) = -∑(p_i * log2(p_i))",
+        "H(S) = ∑(p_i * log2(p_i))",
+        "H(S) = ∑(p_i^2)",
+        "H(S) = 1 - ∑(p_i^2)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The entropy formula is H(S) = -∑(p_i * log2(p_i)), where p_i is the proportion of instances belonging to class i. The negative sign ensures entropy is always non-negative.",
+      "optionExplanations": [
+        "Correct. This is the standard entropy formula used in information theory and decision trees, where the negative sign makes the result positive.",
+        "This formula is missing the negative sign, which would result in negative entropy values, which is incorrect.",
+        "This is the formula for calculating the sum of squared probabilities, not entropy.",
+        "This is the formula for Gini impurity (1 - ∑p_i^2), not entropy."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "entropy",
+        "mathematical-formulas",
+        "information-theory"
+      ]
+    },
+    {
+      "id": "DTC_006",
+      "question": "What is Gini impurity?",
+      "options": [
+        "A measure of how often a randomly chosen element would be incorrectly classified",
+        "The maximum depth of a decision tree",
+        "The number of features in the dataset",
+        "The accuracy of the tree model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gini impurity measures the probability of incorrectly classifying a randomly chosen element from the dataset if it were randomly labeled according to the class distribution in the subset.",
+      "optionExplanations": [
+        "Correct. Gini impurity represents the probability of misclassification when labels are assigned randomly based on the class distribution.",
+        "Tree depth is a structural constraint, not an impurity measure like Gini impurity.",
+        "The number of features is a dataset characteristic, unrelated to Gini impurity which measures class distribution.",
+        "Accuracy is a performance metric measured on predictions, while Gini impurity measures the purity of data subsets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gini-impurity",
+        "impurity-measures",
+        "splitting-criteria"
+      ]
+    },
+    {
+      "id": "DTC_007",
+      "question": "What is the formula for Gini impurity?",
+      "options": [
+        "Gini = ∑(p_i^2)",
+        "Gini = 1 - ∑(p_i^2)",
+        "Gini = -∑(p_i * log2(p_i))",
+        "Gini = ∑(p_i * log2(p_i))"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Gini impurity formula is Gini = 1 - ∑(p_i^2), where p_i is the probability of class i. It measures the probability of misclassification.",
+      "optionExplanations": [
+        "This is just the sum of squared probabilities, missing the '1 -' part that makes it an impurity measure.",
+        "Correct. This is the standard Gini impurity formula that measures the probability of incorrect classification.",
+        "This is the entropy formula, not the Gini impurity formula.",
+        "This is the negative of entropy without the negative sign, which is incorrect for both entropy and Gini impurity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gini-impurity",
+        "mathematical-formulas",
+        "impurity-measures"
+      ]
+    },
+    {
+      "id": "DTC_008",
+      "question": "When does a node have minimum Gini impurity?",
+      "options": [
+        "When it contains equal numbers of each class",
+        "When all instances belong to the same class",
+        "When it has the maximum number of instances",
+        "When it's at the root level"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gini impurity is minimum (0) when a node is pure, meaning all instances in that node belong to the same class. This represents perfect classification.",
+      "optionExplanations": [
+        "Equal distribution of classes actually maximizes Gini impurity, as it represents maximum uncertainty.",
+        "Correct. When all instances belong to the same class, Gini impurity equals 0, which is its minimum value.",
+        "The number of instances doesn't directly affect Gini impurity; it's the class distribution that matters.",
+        "Node position in the tree doesn't determine Gini impurity; only the class distribution within the node matters."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gini-impurity",
+        "node-purity",
+        "impurity-measures"
+      ]
+    },
+    {
+      "id": "DTC_009",
+      "question": "What is the main difference between entropy and Gini impurity?",
+      "options": [
+        "Entropy uses logarithms while Gini impurity uses squared terms",
+        "Entropy is faster to compute than Gini impurity",
+        "Gini impurity is only for binary classification",
+        "Entropy gives better accuracy than Gini impurity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The key mathematical difference is that entropy uses logarithmic calculations (-∑p_i*log(p_i)) while Gini impurity uses squared probability terms (1-∑p_i^2).",
+      "optionExplanations": [
+        "Correct. Entropy involves logarithmic computations while Gini impurity uses quadratic (squared) terms, making them mathematically different approaches.",
+        "Actually, Gini impurity is generally faster to compute since it avoids logarithmic calculations, making this statement incorrect.",
+        "Both entropy and Gini impurity can be used for multi-class classification, not just binary classification.",
+        "Both measures are effective splitting criteria and don't have a consistent accuracy advantage over each other across all datasets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "entropy",
+        "gini-impurity",
+        "comparison",
+        "impurity-measures"
+      ]
+    },
+    {
+      "id": "DTC_010",
+      "question": "What is pruning in decision trees?",
+      "options": [
+        "Adding more nodes to improve accuracy",
+        "Removing nodes to reduce overfitting",
+        "Selecting the best features for splitting",
+        "Calculating information gain"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pruning is the process of removing nodes from a decision tree to reduce its complexity and prevent overfitting, thereby improving generalization to unseen data.",
+      "optionExplanations": [
+        "Adding nodes would increase tree complexity, which is the opposite of pruning that aims to simplify the tree.",
+        "Correct. Pruning removes nodes to create a simpler tree that generalizes better and reduces overfitting to training data.",
+        "Feature selection is a separate process from pruning; pruning works with the tree structure after features have been selected.",
+        "Information gain calculation is part of the tree building process, not pruning which happens after tree construction."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pruning",
+        "overfitting",
+        "tree-optimization"
+      ]
+    },
+    {
+      "id": "DTC_011",
+      "question": "What are the two main types of pruning?",
+      "options": [
+        "Forward and backward pruning",
+        "Pre-pruning and post-pruning",
+        "Shallow and deep pruning",
+        "Random and systematic pruning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The two main pruning approaches are pre-pruning (stopping tree growth early) and post-pruning (building full tree then removing nodes).",
+      "optionExplanations": [
+        "These are not standard pruning terminology in decision trees; the correct terms are pre-pruning and post-pruning.",
+        "Correct. Pre-pruning stops tree growth during construction, while post-pruning removes nodes after the full tree is built.",
+        "These terms refer to the extent of pruning but are not the standard classification of pruning types.",
+        "Pruning is typically systematic based on criteria, not random, and these aren't the standard pruning categories."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pruning",
+        "pre-pruning",
+        "post-pruning",
+        "tree-optimization"
+      ]
+    },
+    {
+      "id": "DTC_012",
+      "question": "What is pre-pruning in decision trees?",
+      "options": [
+        "Removing nodes after the tree is fully constructed",
+        "Stopping the tree growth during construction based on certain criteria",
+        "Selecting the best features before building the tree",
+        "Calculating impurity measures before splitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Pre-pruning involves stopping the tree construction process early by setting stopping criteria such as minimum samples per leaf, maximum depth, or minimum impurity decrease.",
+      "optionExplanations": [
+        "This describes post-pruning, where nodes are removed after the complete tree is built.",
+        "Correct. Pre-pruning prevents overfitting by stopping tree growth during construction when certain criteria are met.",
+        "Feature selection is a preprocessing step, not part of the pruning process which deals with tree structure.",
+        "Impurity calculations are part of the normal splitting process, not specifically related to pre-pruning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-pruning",
+        "pruning",
+        "early-stopping",
+        "tree-construction"
+      ]
+    },
+    {
+      "id": "DTC_013",
+      "question": "What is post-pruning in decision trees?",
+      "options": [
+        "Stopping tree growth during construction",
+        "Building a complete tree first, then removing nodes",
+        "Adding nodes after initial construction",
+        "Selecting features after tree construction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Post-pruning allows the tree to grow fully first, then systematically removes nodes that don't contribute significantly to performance, often using validation data.",
+      "optionExplanations": [
+        "This describes pre-pruning, not post-pruning. Post-pruning works on already constructed trees.",
+        "Correct. Post-pruning builds the complete tree first, then removes unnecessary nodes to improve generalization.",
+        "Post-pruning removes nodes rather than adding them; adding nodes would increase complexity.",
+        "Feature selection is unrelated to post-pruning, which focuses on removing nodes from an existing tree structure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "post-pruning",
+        "pruning",
+        "tree-optimization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "DTC_014",
+      "question": "What is overfitting in decision trees?",
+      "options": [
+        "When the tree is too shallow to capture patterns",
+        "When the tree memorizes training data but fails on new data",
+        "When the tree uses too few features",
+        "When the tree has high bias"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Overfitting occurs when a decision tree becomes too complex and learns the specific details and noise in the training data, resulting in poor performance on unseen data.",
+      "optionExplanations": [
+        "A shallow tree would lead to underfitting, not overfitting. Overfitting is associated with overly complex trees.",
+        "Correct. Overfitting happens when the tree becomes too specialized to training data and loses the ability to generalize to new data.",
+        "Using too few features might cause underfitting; overfitting often involves using too many specific details.",
+        "Overfitting is characterized by low bias but high variance, not high bias."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "generalization",
+        "bias-variance",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "DTC_015",
+      "question": "Which of the following helps prevent overfitting in decision trees?",
+      "options": [
+        "Increasing tree depth",
+        "Setting a minimum number of samples per leaf",
+        "Using more features",
+        "Decreasing the training set size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Setting a minimum number of samples per leaf prevents the tree from creating very specific nodes with few samples, which helps avoid overfitting.",
+      "optionExplanations": [
+        "Increasing tree depth allows for more specific splits and typically increases overfitting rather than preventing it.",
+        "Correct. Requiring a minimum number of samples per leaf prevents the creation of overly specific nodes and helps with generalization.",
+        "Using more features can potentially lead to more overfitting if they're not relevant or if the tree becomes too complex.",
+        "Decreasing training set size generally makes overfitting worse by providing less data to learn robust patterns from."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "overfitting",
+        "regularization",
+        "hyperparameters",
+        "generalization"
+      ]
+    },
+    {
+      "id": "DTC_016",
+      "question": "What is the maximum depth parameter in decision trees?",
+      "options": [
+        "The maximum number of features to consider",
+        "The maximum number of samples in a leaf",
+        "The maximum number of levels in the tree",
+        "The maximum number of splits allowed"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Maximum depth limits the number of levels (or the longest path from root to leaf) in the decision tree, helping to control model complexity.",
+      "optionExplanations": [
+        "The number of features to consider is controlled by different parameters like max_features, not max_depth.",
+        "The number of samples in a leaf is controlled by min_samples_leaf parameter, not maximum depth.",
+        "Correct. Maximum depth specifies the longest possible path from the root node to any leaf node in the tree.",
+        "While depth indirectly affects the number of splits, max_depth specifically controls tree levels, not split count directly."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "hyperparameters",
+        "max-depth",
+        "tree-structure",
+        "regularization"
+      ]
+    },
+    {
+      "id": "DTC_017",
+      "question": "What happens when you set max_depth=1 in a decision tree?",
+      "options": [
+        "The tree will have infinite depth",
+        "The tree will have only the root node",
+        "The tree will be a decision stump with one split",
+        "The tree will use only one feature"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Setting max_depth=1 creates a decision stump, which is a tree with just one internal node (root) and two leaf nodes, making only one split.",
+      "optionExplanations": [
+        "Setting max_depth=1 strictly limits the depth to 1, not allowing infinite depth.",
+        "A tree with only the root node would have max_depth=0; max_depth=1 allows one level of children.",
+        "Correct. A decision tree with max_depth=1 is called a decision stump and makes exactly one split from the root.",
+        "Max_depth controls tree levels, not feature usage; a decision stump can still consider all features for its single split."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decision-stump",
+        "max-depth",
+        "hyperparameters",
+        "tree-structure"
+      ]
+    },
+    {
+      "id": "DTC_018",
+      "question": "What is min_samples_split parameter in decision trees?",
+      "options": [
+        "Minimum number of samples required to split an internal node",
+        "Minimum number of samples required in a leaf node",
+        "Maximum number of samples in the root node",
+        "Minimum number of features to consider for splitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Min_samples_split specifies the minimum number of samples required at a node before it can be split further, helping prevent overfitting by avoiding splits on very small sample sizes.",
+      "optionExplanations": [
+        "Correct. This parameter prevents splitting nodes that have fewer samples than the specified threshold, reducing overfitting.",
+        "This describes min_samples_leaf, which controls the minimum samples in terminal nodes, not splitting nodes.",
+        "The root node contains all training samples by definition; this parameter doesn't set a maximum for it.",
+        "The number of features for splitting is controlled by max_features parameter, not min_samples_split."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "min-samples-split",
+        "regularization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "DTC_019",
+      "question": "What is min_samples_leaf parameter in decision trees?",
+      "options": [
+        "Minimum number of samples required to split a node",
+        "Minimum number of samples that must be present in a leaf node",
+        "Maximum number of samples allowed in any node",
+        "Minimum number of leaf nodes in the tree"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Min_samples_leaf ensures that each leaf node contains at least the specified number of samples, preventing the creation of leaves with very few samples that might represent noise.",
+      "optionExplanations": [
+        "This describes min_samples_split, which controls when nodes can be split, not the leaf node requirement.",
+        "Correct. This parameter ensures each terminal node has sufficient samples, improving generalization and reducing overfitting.",
+        "There's typically no maximum limit on samples per node; nodes can have as many samples as naturally fall into them.",
+        "This parameter controls sample count in leaves, not the number of leaf nodes themselves."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hyperparameters",
+        "min-samples-leaf",
+        "regularization",
+        "leaf-nodes"
+      ]
+    },
+    {
+      "id": "DTC_020",
+      "question": "What is a decision stump?",
+      "options": [
+        "A tree with maximum depth",
+        "A tree with only one split (depth = 1)",
+        "A tree with no splits",
+        "A tree with random splits"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A decision stump is the simplest form of decision tree with depth 1, containing only one root node that makes a single split, resulting in two leaf nodes.",
+      "optionExplanations": [
+        "A tree with maximum depth would be very complex, which is the opposite of a simple decision stump.",
+        "Correct. A decision stump is a minimal decision tree with just one split, often used as a weak learner in ensemble methods.",
+        "A tree with no splits would just be a single node outputting the majority class, which isn't a decision stump.",
+        "Decision stumps make optimal splits based on splitting criteria, not random splits."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "decision-stump",
+        "tree-structure",
+        "weak-learner",
+        "ensemble-methods"
+      ]
+    },
+    {
+      "id": "DTC_021",
+      "question": "In which ensemble method are decision stumps commonly used?",
+      "options": [
+        "Random Forest",
+        "AdaBoost",
+        "Bagging",
+        "Stacking"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AdaBoost commonly uses decision stumps as weak learners. These simple trees are iteratively combined with different weights to create a strong classifier.",
+      "optionExplanations": [
+        "Random Forest typically uses deeper decision trees, not decision stumps, to create diversity among trees.",
+        "Correct. AdaBoost frequently employs decision stumps as weak learners, combining many of them to form a strong classifier.",
+        "Bagging usually works with fully grown trees rather than decision stumps to reduce variance.",
+        "Stacking can use various types of models but doesn't specifically rely on decision stumps like AdaBoost does."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-methods",
+        "adaboost",
+        "decision-stump",
+        "weak-learner"
+      ]
+    },
+    {
+      "id": "DTC_022",
+      "question": "What is Random Forest?",
+      "options": [
+        "A single decision tree with random splits",
+        "An ensemble of decision trees with random feature selection",
+        "A tree that uses random sampling without replacement",
+        "A pruning technique for decision trees"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random Forest is an ensemble method that combines multiple decision trees, using random subsets of features for each split and bootstrap sampling for training each tree.",
+      "optionExplanations": [
+        "Random Forest is an ensemble of multiple trees, not a single tree with random splits.",
+        "Correct. Random Forest builds multiple trees using random feature subsets and bootstrap samples, then averages their predictions.",
+        "Random Forest uses bootstrap sampling (with replacement), not sampling without replacement.",
+        "Random Forest is an ensemble method, not a pruning technique for individual trees."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "random-forest",
+        "ensemble-methods",
+        "bagging",
+        "feature-selection"
+      ]
+    },
+    {
+      "id": "DTC_023",
+      "question": "What is bootstrap sampling in Random Forest?",
+      "options": [
+        "Sampling without replacement from the original dataset",
+        "Sampling with replacement to create training sets for each tree",
+        "Using all samples for each tree",
+        "Sampling only the most important features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bootstrap sampling involves creating new training datasets by randomly sampling with replacement from the original dataset, allowing some samples to appear multiple times while others may not appear at all.",
+      "optionExplanations": [
+        "Bootstrap sampling uses replacement, not sampling without replacement, which ensures variability between trees.",
+        "Correct. Each tree in Random Forest is trained on a bootstrap sample created by sampling with replacement from the original data.",
+        "Using all samples for each tree would reduce diversity; Random Forest uses different subsets for each tree.",
+        "Bootstrap sampling refers to sampling instances (rows), not features, though Random Forest also uses random feature selection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bootstrap-sampling",
+        "random-forest",
+        "ensemble-methods",
+        "sampling-techniques"
+      ]
+    },
+    {
+      "id": "DTC_024",
+      "question": "What is feature bagging in Random Forest?",
+      "options": [
+        "Using all features for each split",
+        "Randomly selecting a subset of features at each split",
+        "Removing irrelevant features before training",
+        "Weighting features based on importance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature bagging (or random subspace method) in Random Forest involves randomly selecting a subset of features at each node when determining the best split, adding randomness and reducing correlation between trees.",
+      "optionExplanations": [
+        "Using all features would reduce randomness and increase correlation between trees, which is not the goal of Random Forest.",
+        "Correct. At each split, Random Forest randomly selects a subset of features to consider, increasing diversity among trees.",
+        "Feature selection is a preprocessing step, while feature bagging happens during tree construction at each node.",
+        "Random Forest doesn't weight features but randomly selects subsets; feature importance is calculated after training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-bagging",
+        "random-forest",
+        "feature-selection",
+        "ensemble-methods"
+      ]
+    },
+    {
+      "id": "DTC_025",
+      "question": "What is the main advantage of Random Forest over a single decision tree?",
+      "options": [
+        "Faster training time",
+        "Simpler model interpretation",
+        "Better generalization and reduced overfitting",
+        "Uses less memory"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Random Forest reduces overfitting and improves generalization by averaging predictions from multiple trees, each trained on different data subsets with random feature selection.",
+      "optionExplanations": [
+        "Random Forest takes longer to train since it builds multiple trees instead of just one.",
+        "Random Forest is harder to interpret than a single tree because it combines multiple trees' decisions.",
+        "Correct. The ensemble averaging reduces variance and overfitting while maintaining low bias, leading to better generalization.",
+        "Random Forest uses more memory as it stores multiple trees instead of just one."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "random-forest",
+        "ensemble-advantages",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "DTC_026",
+      "question": "What is AdaBoost?",
+      "options": [
+        "A pruning technique for decision trees",
+        "An adaptive boosting ensemble method that combines weak learners",
+        "A feature selection algorithm",
+        "A method for calculating information gain"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AdaBoost (Adaptive Boosting) is an ensemble method that sequentially trains weak learners (often decision stumps), with each subsequent learner focusing on previously misclassified examples.",
+      "optionExplanations": [
+        "AdaBoost is an ensemble method, not a pruning technique for individual trees.",
+        "Correct. AdaBoost adaptively combines weak learners by giving more weight to misclassified examples in subsequent iterations.",
+        "AdaBoost is an ensemble method for classification/regression, not specifically a feature selection algorithm.",
+        "Information gain calculation is part of individual tree construction, not related to the AdaBoost ensemble method."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adaboost",
+        "ensemble-methods",
+        "boosting",
+        "weak-learner"
+      ]
+    },
+    {
+      "id": "DTC_027",
+      "question": "How does AdaBoost handle misclassified examples?",
+      "options": [
+        "It removes them from the dataset",
+        "It increases their weights for the next iteration",
+        "It ignores them in subsequent iterations",
+        "It creates separate trees for them"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "AdaBoost increases the weights of misclassified examples after each iteration, making subsequent weak learners focus more on these difficult cases.",
+      "optionExplanations": [
+        "AdaBoost doesn't remove examples but adjusts their importance through weighting.",
+        "Correct. Misclassified examples get higher weights, forcing the next weak learner to pay more attention to these difficult cases.",
+        "AdaBoost specifically focuses on misclassified examples rather than ignoring them.",
+        "AdaBoost trains sequential weak learners on the same weighted dataset, not separate trees for different example types."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "adaboost",
+        "sample-weighting",
+        "boosting",
+        "misclassification"
+      ]
+    },
+    {
+      "id": "DTC_028",
+      "question": "What is the difference between bagging and boosting?",
+      "options": [
+        "Bagging trains models sequentially, boosting trains in parallel",
+        "Bagging trains models in parallel, boosting trains sequentially",
+        "Bagging uses weighted samples, boosting uses equal weights",
+        "Bagging is only for regression, boosting is only for classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bagging trains multiple models independently in parallel on different bootstrap samples, while boosting trains models sequentially, with each model learning from the mistakes of previous ones.",
+      "optionExplanations": [
+        "This reverses the correct relationship; bagging is parallel while boosting is sequential.",
+        "Correct. Bagging (like Random Forest) trains trees independently, while boosting (like AdaBoost) trains them sequentially.",
+        "Actually, boosting typically uses weighted samples (emphasizing misclassified examples), while bagging uses equal weights.",
+        "Both bagging and boosting can be used for both classification and regression tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bagging",
+        "boosting",
+        "ensemble-comparison",
+        "training-strategy"
+      ]
+    },
+    {
+      "id": "DTC_029",
+      "question": "What is Gradient Boosting?",
+      "options": [
+        "A method that uses gradient descent to optimize tree parameters",
+        "A boosting method that fits new models to residual errors",
+        "A feature selection technique using gradients",
+        "A pruning method based on gradient information"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gradient Boosting builds an additive model by sequentially fitting new models to the residual errors (gradients) of the previous models, gradually reducing the overall prediction error.",
+      "optionExplanations": [
+        "While gradient descent may be used in optimization, Gradient Boosting specifically refers to fitting models to residuals.",
+        "Correct. Each new model in Gradient Boosting is trained to predict the residual errors of the ensemble built so far.",
+        "Gradient Boosting is an ensemble method for prediction, not a feature selection technique.",
+        "Gradient Boosting is about combining multiple models, not pruning individual trees."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gradient-boosting",
+        "ensemble-methods",
+        "residual-fitting",
+        "boosting"
+      ]
+    },
+    {
+      "id": "DTC_030",
+      "question": "What is XGBoost?",
+      "options": [
+        "A type of decision tree algorithm",
+        "An optimized implementation of gradient boosting",
+        "A feature selection method",
+        "A tree pruning technique"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "XGBoost (eXtreme Gradient Boosting) is a highly optimized and scalable implementation of gradient boosting that includes regularization, parallel processing, and advanced optimization techniques.",
+      "optionExplanations": [
+        "XGBoost is an ensemble method that uses decision trees, but it's not a single tree algorithm itself.",
+        "Correct. XGBoost is an enhanced, efficient implementation of gradient boosting with many performance and regularization improvements.",
+        "XGBoost is a complete machine learning algorithm for prediction, not specifically a feature selection method.",
+        "While XGBoost includes regularization, it's primarily known as an advanced gradient boosting implementation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "xgboost",
+        "gradient-boosting",
+        "optimization",
+        "ensemble-methods"
+      ]
+    },
+    {
+      "id": "DTC_031",
+      "question": "What splitting criterion does the ID3 algorithm use?",
+      "options": [
+        "Gini impurity",
+        "Information gain",
+        "Mean squared error",
+        "Chi-square test"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ID3 (Iterative Dichotomiser 3) algorithm uses information gain as its splitting criterion, selecting the feature that provides the highest information gain at each node.",
+      "optionExplanations": [
+        "Gini impurity is used by algorithms like CART, not ID3 which specifically uses information gain.",
+        "Correct. ID3 was one of the first decision tree algorithms and uses information gain based on entropy reduction.",
+        "Mean squared error is used for regression trees, while ID3 is designed for classification tasks.",
+        "Chi-square test is used by some algorithms like CHAID, but ID3 specifically uses information gain."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ID3",
+        "splitting-criteria",
+        "information-gain",
+        "algorithms"
+      ]
+    },
+    {
+      "id": "DTC_032",
+      "question": "What is a limitation of the ID3 algorithm?",
+      "options": [
+        "It can only handle numerical features",
+        "It cannot handle categorical features",
+        "It cannot handle missing values",
+        "It only works for regression problems"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ID3 cannot handle missing values in the dataset and requires complete data. It also has limitations with continuous numerical features and doesn't include pruning.",
+      "optionExplanations": [
+        "ID3 actually works well with categorical features but struggles with continuous numerical features.",
+        "ID3 was designed to work with categorical features and handles them well.",
+        "Correct. ID3 requires complete data and cannot handle datasets with missing values, which is a significant limitation.",
+        "ID3 is designed for classification problems, not regression, but this isn't considered a limitation of the algorithm."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ID3",
+        "algorithm-limitations",
+        "missing-values",
+        "data-requirements"
+      ]
+    },
+    {
+      "id": "DTC_033",
+      "question": "What improvement does C4.5 make over ID3?",
+      "options": [
+        "Uses Gini impurity instead of information gain",
+        "Can handle continuous attributes and missing values",
+        "Only works with binary features",
+        "Uses mean squared error for splitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "C4.5 extends ID3 by handling continuous attributes through discretization, managing missing values, and including post-pruning to reduce overfitting.",
+      "optionExplanations": [
+        "C4.5 still uses information gain (with gain ratio) rather than switching to Gini impurity.",
+        "Correct. C4.5 can handle both continuous and categorical attributes, as well as datasets with missing values.",
+        "C4.5 can handle multi-valued features, not just binary ones, which is an improvement over some limitations.",
+        "C4.5 is for classification and uses information gain ratio, not mean squared error which is for regression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "C4.5",
+        "algorithm-improvements",
+        "continuous-attributes",
+        "missing-values"
+      ]
+    },
+    {
+      "id": "DTC_034",
+      "question": "What is gain ratio in C4.5?",
+      "options": [
+        "Information gain divided by split information",
+        "Gini impurity divided by entropy",
+        "Number of splits divided by tree depth",
+        "Accuracy divided by tree complexity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gain ratio is information gain normalized by split information, designed to reduce bias toward features with many possible values in the C4.5 algorithm.",
+      "optionExplanations": [
+        "Correct. Gain ratio = Information Gain / Split Information, which helps address the bias toward multi-valued attributes.",
+        "This combination doesn't represent gain ratio; both are different impurity measures used separately.",
+        "This ratio doesn't represent gain ratio, which is specifically about information-theoretic measures.",
+        "Gain ratio is calculated during tree construction for split selection, not as a performance measure."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "C4.5",
+        "gain-ratio",
+        "splitting-criteria",
+        "bias-reduction"
+      ]
+    },
+    {
+      "id": "DTC_035",
+      "question": "What is CART algorithm?",
+      "options": [
+        "Classification and Regression Trees",
+        "Categorical and Random Trees",
+        "Combined and Reduced Trees",
+        "Continuous Attribute Regression Trees"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "CART stands for Classification and Regression Trees, an algorithm that can build both classification and regression trees using various splitting criteria.",
+      "optionExplanations": [
+        "Correct. CART (Classification and Regression Trees) can handle both types of problems using appropriate splitting criteria.",
+        "This is not what CART stands for; it's specifically about classification and regression capabilities.",
+        "This is not the correct expansion of the CART acronym.",
+        "While CART can handle continuous attributes, this is not what the acronym stands for."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "CART",
+        "algorithm-names",
+        "classification",
+        "regression"
+      ]
+    },
+    {
+      "id": "DTC_036",
+      "question": "What splitting criterion does CART use for classification?",
+      "options": [
+        "Information gain",
+        "Gini impurity",
+        "Chi-square test",
+        "Variance reduction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CART uses Gini impurity as the default splitting criterion for classification tasks, though it can also use other measures like entropy.",
+      "optionExplanations": [
+        "Information gain is primarily used by ID3, while CART typically uses Gini impurity.",
+        "Correct. CART commonly uses Gini impurity to evaluate splits for classification problems.",
+        "Chi-square test is used by algorithms like CHAID, not typically by CART.",
+        "Variance reduction is used for regression trees, not classification in CART."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CART",
+        "gini-impurity",
+        "classification",
+        "splitting-criteria"
+      ]
+    },
+    {
+      "id": "DTC_037",
+      "question": "What splitting criterion does CART use for regression?",
+      "options": [
+        "Gini impurity",
+        "Information gain",
+        "Mean squared error (variance reduction)",
+        "Chi-square test"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For regression problems, CART uses variance reduction (minimizing mean squared error) as the splitting criterion to find splits that reduce the variance in target values.",
+      "optionExplanations": [
+        "Gini impurity is used for classification, not regression problems.",
+        "Information gain is used for classification based on entropy, not suitable for regression.",
+        "Correct. CART uses variance reduction (MSE minimization) to create splits that reduce prediction error in regression.",
+        "Chi-square test is not typically used by CART and is not suitable for regression problems."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CART",
+        "regression",
+        "variance-reduction",
+        "mean-squared-error"
+      ]
+    },
+    {
+      "id": "DTC_038",
+      "question": "What is a regression tree?",
+      "options": [
+        "A tree that predicts categorical outcomes",
+        "A tree that predicts continuous numerical values",
+        "A tree used only for feature selection",
+        "A tree that classifies data into categories"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A regression tree is used for predicting continuous numerical target variables, with leaf nodes containing predicted values (often averages) rather than class labels.",
+      "optionExplanations": [
+        "Predicting categorical outcomes is the purpose of classification trees, not regression trees.",
+        "Correct. Regression trees predict continuous numerical values, with leaves containing predicted numbers rather than class labels.",
+        "Trees can be used for feature selection, but regression trees are specifically for prediction tasks.",
+        "Classifying into categories is what classification trees do, not regression trees."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "regression-trees",
+        "continuous-prediction",
+        "tree-types",
+        "supervised-learning"
+      ]
+    },
+    {
+      "id": "DTC_039",
+      "question": "How are predictions made in a regression tree leaf node?",
+      "options": [
+        "Using the majority class",
+        "Using the average of target values in the leaf",
+        "Using the mode of target values",
+        "Using random selection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In regression trees, leaf nodes typically contain the average (mean) of the target values of all training samples that reach that leaf, providing a continuous prediction.",
+      "optionExplanations": [
+        "Majority class is used in classification trees for categorical predictions, not regression trees.",
+        "Correct. The average of target values in the leaf provides the continuous prediction for regression problems.",
+        "Mode is used for categorical variables; regression trees deal with continuous variables where mean is more appropriate.",
+        "Predictions are deterministic based on the data in the leaf, not random."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regression-trees",
+        "leaf-predictions",
+        "averaging",
+        "continuous-values"
+      ]
+    },
+    {
+      "id": "DTC_040",
+      "question": "What is feature importance in decision trees?",
+      "options": [
+        "The order in which features appear in the tree",
+        "A measure of how much each feature contributes to decreasing impurity",
+        "The number of times a feature is used for splitting",
+        "The correlation between features and target variable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature importance measures how much each feature contributes to reducing impurity across all nodes where it's used for splitting, weighted by the number of samples reaching those nodes.",
+      "optionExplanations": [
+        "The order of appearance doesn't directly measure importance; a feature used once effectively can be more important than one used multiple times.",
+        "Correct. Feature importance quantifies each feature's total contribution to impurity reduction across all splits in the tree.",
+        "Frequency of use is one factor, but importance also considers the quality and impact of each split.",
+        "Feature importance in trees is specifically about impurity reduction, not general correlation with the target."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-importance",
+        "impurity-reduction",
+        "model-interpretation",
+        "feature-analysis"
+      ]
+    },
+    {
+      "id": "DTC_041",
+      "question": "What is the curse of dimensionality in relation to decision trees?",
+      "options": [
+        "Trees become too deep with many features",
+        "Trees cannot handle high-dimensional data",
+        "Performance degrades as the number of irrelevant features increases",
+        "Training time increases exponentially with features"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In high-dimensional spaces with many irrelevant features, decision trees may focus on noise rather than true patterns, leading to poor generalization and overfitting.",
+      "optionExplanations": [
+        "While trees might become deep, the main issue is choosing between many irrelevant features rather than depth alone.",
+        "Trees can technically handle high-dimensional data, but performance suffers due to noise in irrelevant features.",
+        "Correct. Many irrelevant features increase the chance of splitting on noise, reducing the tree's ability to find true patterns.",
+        "Training time increases, but the main problem is performance degradation due to noise, not just computational complexity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "high-dimensional-data",
+        "feature-relevance",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "DTC_042",
+      "question": "What is cost complexity pruning?",
+      "options": [
+        "Pruning based on computational cost",
+        "A post-pruning method that balances tree complexity and error rate",
+        "Pruning expensive features from the tree",
+        "A pre-pruning method using cost functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cost complexity pruning (also called minimal cost-complexity pruning) is a post-pruning technique that finds the optimal subtree by balancing training error and tree complexity using a complexity parameter.",
+      "optionExplanations": [
+        "The 'cost' refers to a complexity penalty parameter, not computational cost.",
+        "Correct. This method trades off between tree complexity and training error to find the optimal pruned tree.",
+        "It prunes nodes/subtrees, not individual features, based on a complexity-error trade-off.",
+        "Cost complexity pruning is a post-pruning method applied after the tree is fully grown."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cost-complexity-pruning",
+        "post-pruning",
+        "model-selection",
+        "complexity-penalty"
+      ]
+    },
+    {
+      "id": "DTC_043",
+      "question": "What is the alpha parameter in cost complexity pruning?",
+      "options": [
+        "Learning rate for gradient descent",
+        "Complexity penalty parameter that controls pruning strength",
+        "Maximum depth of the tree",
+        "Minimum samples required in a leaf"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Alpha (α) is the complexity penalty parameter in cost complexity pruning that determines the trade-off between tree complexity and training error. Higher alpha leads to more aggressive pruning.",
+      "optionExplanations": [
+        "Alpha in cost complexity pruning is not a learning rate but a complexity penalty parameter.",
+        "Correct. Alpha controls how much complexity is penalized; larger values lead to smaller, simpler trees.",
+        "Maximum depth is a separate hyperparameter; alpha is specifically for the complexity penalty in pruning.",
+        "Minimum samples per leaf is a different hyperparameter; alpha is the complexity penalty coefficient."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "alpha-parameter",
+        "cost-complexity-pruning",
+        "complexity-penalty",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "DTC_044",
+      "question": "What happens to a decision tree when alpha increases in cost complexity pruning?",
+      "options": [
+        "The tree becomes deeper",
+        "The tree becomes simpler with more pruning",
+        "The tree accuracy always increases",
+        "The tree uses more features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As alpha increases, the complexity penalty becomes stronger, leading to more aggressive pruning and resulting in simpler trees with fewer nodes.",
+      "optionExplanations": [
+        "Increasing alpha leads to more pruning, which reduces tree depth rather than increasing it.",
+        "Correct. Higher alpha values increase the complexity penalty, resulting in more pruning and simpler trees.",
+        "Accuracy may initially improve with pruning but will eventually decrease if too much pruning occurs.",
+        "Pruning removes nodes and may reduce the effective number of features used, not increase them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "alpha-parameter",
+        "pruning-effects",
+        "tree-complexity",
+        "cost-complexity-pruning"
+      ]
+    },
+    {
+      "id": "DTC_045",
+      "question": "What is cross-validation used for in decision tree model selection?",
+      "options": [
+        "To split the tree nodes",
+        "To calculate information gain",
+        "To select optimal hyperparameters like max_depth or alpha",
+        "To determine feature importance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cross-validation is used to evaluate different hyperparameter values (like max_depth, min_samples_leaf, or alpha) and select the combination that gives the best generalization performance.",
+      "optionExplanations": [
+        "Node splitting is done using splitting criteria like information gain or Gini impurity, not cross-validation.",
+        "Information gain is calculated using mathematical formulas, not through cross-validation.",
+        "Correct. Cross-validation helps determine optimal hyperparameters by evaluating performance across multiple data splits.",
+        "Feature importance is calculated based on impurity reduction during tree construction, not cross-validation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "hyperparameter-tuning",
+        "model-selection",
+        "generalization"
+      ]
+    },
+    {
+      "id": "DTC_046",
+      "question": "What is the main advantage of using validation curves for decision trees?",
+      "options": [
+        "They show feature importance rankings",
+        "They help identify optimal hyperparameter values",
+        "They calculate information gain",
+        "They perform automatic pruning"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Validation curves plot training and validation scores against hyperparameter values, helping identify the optimal setting that balances bias and variance for best generalization.",
+      "optionExplanations": [
+        "Validation curves show performance vs. hyperparameters, not feature importance which is calculated differently.",
+        "Correct. Validation curves help visualize how performance changes with hyperparameters to find optimal values.",
+        "Information gain is calculated mathematically during tree construction, not through validation curves.",
+        "Validation curves are diagnostic tools; they don't perform pruning but help select parameters for pruning methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "validation-curves",
+        "hyperparameter-optimization",
+        "bias-variance",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "DTC_047",
+      "question": "What does it mean when a decision tree has high variance?",
+      "options": [
+        "It performs consistently across different datasets",
+        "Small changes in training data lead to very different trees",
+        "It has low bias and high accuracy",
+        "It generalizes well to new data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "High variance means the model is sensitive to changes in training data, resulting in significantly different tree structures when trained on slightly different datasets.",
+      "optionExplanations": [
+        "High variance means inconsistent performance, not consistent performance across datasets.",
+        "Correct. High variance indicates the model structure changes dramatically with small changes in training data.",
+        "While high variance models often have low bias, high variance itself is generally undesirable for generalization.",
+        "High variance typically indicates poor generalization due to overfitting to specific training data characteristics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias-variance",
+        "model-variance",
+        "overfitting",
+        "generalization"
+      ]
+    },
+    {
+      "id": "DTC_048",
+      "question": "What does it mean when a decision tree has high bias?",
+      "options": [
+        "It overfits to the training data",
+        "It's too complex and captures noise",
+        "It's too simple and underfits the data",
+        "It has perfect accuracy on training data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High bias indicates the model is too simple to capture the underlying patterns in the data, leading to underfitting and poor performance on both training and test data.",
+      "optionExplanations": [
+        "Overfitting is associated with high variance (low bias), not high bias which indicates underfitting.",
+        "Capturing noise is a sign of high variance (overfitting), while high bias indicates the model is too simple.",
+        "Correct. High bias means the model is too simple to capture the true relationship, resulting in underfitting.",
+        "Perfect training accuracy usually indicates overfitting (high variance), not high bias which shows poor training performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bias-variance",
+        "model-bias",
+        "underfitting",
+        "model-complexity"
+      ]
+    },
+    {
+      "id": "DTC_049",
+      "question": "How can you reduce overfitting in decision trees?",
+      "options": [
+        "Increase the maximum depth",
+        "Decrease the minimum samples per leaf",
+        "Apply pruning techniques",
+        "Use more complex splitting criteria"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Pruning techniques (both pre-pruning and post-pruning) help reduce overfitting by limiting tree complexity and removing nodes that don't contribute significantly to generalization.",
+      "optionExplanations": [
+        "Increasing maximum depth allows more complex trees, which typically increases overfitting rather than reducing it.",
+        "Decreasing minimum samples per leaf allows smaller, more specific nodes, which increases overfitting.",
+        "Correct. Pruning removes unnecessary complexity and helps the tree generalize better to unseen data.",
+        "More complex splitting criteria might increase overfitting; simpler, well-validated criteria are often better."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "overfitting",
+        "pruning",
+        "regularization",
+        "generalization"
+      ]
+    },
+    {
+      "id": "DTC_050",
+      "question": "What is early stopping in decision trees?",
+      "options": [
+        "Stopping training when accuracy reaches 100%",
+        "A pre-pruning technique that stops tree growth based on criteria",
+        "Stopping when information gain becomes negative",
+        "A post-pruning method applied after training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Early stopping is a pre-pruning technique that prevents overfitting by stopping tree growth when certain criteria are met, such as minimum information gain, maximum depth, or minimum samples per node.",
+      "optionExplanations": [
+        "Perfect accuracy on training data often indicates overfitting; early stopping aims to prevent this, not achieve it.",
+        "Correct. Early stopping is a pre-pruning approach that stops growth before overfitting occurs based on predefined criteria.",
+        "Information gain is always non-negative; early stopping uses thresholds like minimum information gain above zero.",
+        "Early stopping happens during training (pre-pruning), not after training like post-pruning methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "early-stopping",
+        "pre-pruning",
+        "overfitting-prevention",
+        "stopping-criteria"
+      ]
+    },
+    {
+      "id": "DTC_051",
+      "question": "What is the difference between classification and regression trees in terms of leaf node predictions?",
+      "options": [
+        "Both use majority class voting",
+        "Classification uses majority class, regression uses mean value",
+        "Both use mean value calculations",
+        "Classification uses mean, regression uses majority class"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Classification trees predict the majority class among samples in each leaf, while regression trees predict the mean (average) of the target values in each leaf.",
+      "optionExplanations": [
+        "Regression trees don't use majority class voting since they deal with continuous values, not categories.",
+        "Correct. Classification predicts the most common class, while regression predicts the average of continuous values.",
+        "Classification trees don't calculate mean values; they determine the most frequent class in the leaf.",
+        "This reverses the correct relationship between the two tree types and their prediction methods."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "classification-trees",
+        "regression-trees",
+        "leaf-predictions",
+        "prediction-methods"
+      ]
+    },
+    {
+      "id": "DTC_052",
+      "question": "What is a mixed tree or model tree?",
+      "options": [
+        "A tree that uses both Gini impurity and entropy",
+        "A tree that combines classification and regression in one model",
+        "A tree with both categorical and numerical features",
+        "A tree that uses ensemble methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A mixed tree or model tree can handle both classification and regression tasks simultaneously, often having different types of predictions in different branches or using regression models in leaf nodes for classification.",
+      "optionExplanations": [
+        "Using different splitting criteria doesn't make it a mixed tree; it's still either classification or regression focused.",
+        "Correct. Mixed trees can perform both classification and regression, sometimes with linear models in leaves.",
+        "Most trees handle both categorical and numerical features; this doesn't make them 'mixed' in the technical sense.",
+        "Ensemble methods combine multiple trees, but a mixed tree refers to handling multiple types of prediction tasks."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "model-trees",
+        "mixed-trees",
+        "multi-task-learning",
+        "advanced-concepts"
+      ]
+    },
+    {
+      "id": "DTC_053",
+      "question": "What is the computational complexity of training a decision tree?",
+      "options": [
+        "O(n log n)",
+        "O(n²)",
+        "O(n × m × log n) where n is samples and m is features",
+        "O(n³)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Training a decision tree typically has complexity O(n × m × log n), where we consider all features (m) for each of the n samples, and the log n factor comes from the tree depth.",
+      "optionExplanations": [
+        "This complexity is too low and doesn't account for the multiple features and decision-making process.",
+        "This doesn't account for the number of features or the logarithmic factor from tree structure.",
+        "Correct. We evaluate m features for n samples at each level, and typical tree depth is O(log n).",
+        "This complexity is too high; decision tree training is more efficient than cubic complexity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "computational-complexity",
+        "algorithm-analysis",
+        "time-complexity",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "DTC_054",
+      "question": "What is the space complexity of a decision tree?",
+      "options": [
+        "O(1) - constant space",
+        "O(n) - linear in number of samples",
+        "O(log n) - logarithmic in tree depth",
+        "O(number of nodes in the tree)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The space complexity depends on the number of nodes in the tree, as each node stores splitting criteria and other information. In the worst case, this could be O(n) for a completely unbalanced tree.",
+      "optionExplanations": [
+        "Trees require space to store node information, so it's not constant space.",
+        "While it can be linear in worst case, the space complexity is more accurately described in terms of tree nodes.",
+        "Tree depth affects space during traversal, but the model size depends on the total number of nodes.",
+        "Correct. Each node requires storage for split conditions, and the total space depends on tree structure and size."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "space-complexity",
+        "memory-usage",
+        "tree-storage",
+        "algorithm-analysis"
+      ]
+    },
+    {
+      "id": "DTC_055",
+      "question": "What is the prediction time complexity for a decision tree?",
+      "options": [
+        "O(n) - linear in training samples",
+        "O(log n) - logarithmic in training samples",
+        "O(depth of tree)",
+        "O(number of features)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Prediction time is O(depth of tree) because we traverse from root to leaf, making one decision per level. In balanced trees, this is typically O(log n).",
+      "optionExplanations": [
+        "Prediction time doesn't depend on the number of training samples, only on tree traversal.",
+        "While often logarithmic for balanced trees, it's more precisely stated as O(tree depth).",
+        "Correct. Prediction requires traversing from root to leaf, with time proportional to tree depth.",
+        "We don't evaluate all features during prediction, only those along the path from root to leaf."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prediction-complexity",
+        "time-complexity",
+        "tree-traversal",
+        "inference-time"
+      ]
+    },
+    {
+      "id": "DTC_056",
+      "question": "What is multiway splitting in decision trees?",
+      "options": [
+        "Using multiple features in one split",
+        "Creating more than two branches from a node",
+        "Splitting based on multiple criteria simultaneously",
+        "Using ensemble methods for splitting"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Multiway splitting creates more than two child nodes from a single parent node, often used with categorical features that have multiple values.",
+      "optionExplanations": [
+        "Multiway splitting still typically uses one feature per split but creates multiple branches for that feature.",
+        "Correct. Instead of binary splits, multiway splitting creates multiple branches, often one for each category.",
+        "Multiple criteria would be used in multiple splits; multiway splitting refers to multiple outcomes from one split.",
+        "Ensemble methods combine multiple models; multiway splitting is about individual node splitting strategies."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multiway-splitting",
+        "categorical-features",
+        "splitting-strategies",
+        "tree-structure"
+      ]
+    },
+    {
+      "id": "DTC_057",
+      "question": "Why might binary splitting be preferred over multiway splitting?",
+      "options": [
+        "Binary splitting is always more accurate",
+        "Binary splitting creates more balanced trees and avoids fragmentation",
+        "Binary splitting uses less memory",
+        "Binary splitting is faster to compute"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Binary splitting tends to create more balanced trees and avoids data fragmentation issues that can occur with multiway splits, especially when some categories have very few samples.",
+      "optionExplanations": [
+        "Accuracy depends on the data and problem; binary splitting isn't universally more accurate.",
+        "Correct. Binary splits help maintain balance and avoid creating nodes with very few samples from rare categories.",
+        "Memory usage difference is minimal between binary and multiway splitting approaches.",
+        "Computational speed difference is usually not the primary consideration for choosing splitting strategy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "binary-splitting",
+        "multiway-splitting",
+        "tree-balance",
+        "data-fragmentation"
+      ]
+    },
+    {
+      "id": "DTC_058",
+      "question": "What is oblique splitting in decision trees?",
+      "options": [
+        "Splitting based on a single feature threshold",
+        "Splitting based on linear combinations of multiple features",
+        "Splitting at an angle to the feature axes",
+        "Random splitting without criteria"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Oblique splitting uses linear combinations of multiple features (like a₁x₁ + a₂x₂ + ... ≤ threshold) rather than single feature thresholds, creating diagonal decision boundaries.",
+      "optionExplanations": [
+        "This describes axis-parallel splitting, which is the standard approach, not oblique splitting.",
+        "Correct. Oblique splits combine multiple features with weights to create more flexible decision boundaries.",
+        "While oblique splits create angled boundaries, the key aspect is the linear combination of features.",
+        "Oblique splitting still uses optimization criteria to find the best linear combination, not random selection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "oblique-splitting",
+        "linear-combinations",
+        "decision-boundaries",
+        "advanced-splitting"
+      ]
+    },
+    {
+      "id": "DTC_059",
+      "question": "What is the main advantage of oblique splitting?",
+      "options": [
+        "Faster training time",
+        "Simpler model interpretation",
+        "Better handling of correlated features and diagonal patterns",
+        "Lower memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Oblique splitting can better capture diagonal patterns and relationships between correlated features that axis-parallel splits might miss, potentially requiring fewer splits to represent complex boundaries.",
+      "optionExplanations": [
+        "Oblique splitting is typically slower because it needs to search for optimal linear combinations.",
+        "Oblique splits are harder to interpret since they involve multiple features in each decision.",
+        "Correct. Oblique splits can capture diagonal relationships that would require many axis-parallel splits to approximate.",
+        "Memory usage is typically higher due to storing multiple coefficients per split rather than single thresholds."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "oblique-splitting",
+        "correlated-features",
+        "decision-boundaries",
+        "pattern-recognition"
+      ]
+    },
+    {
+      "id": "DTC_060",
+      "question": "What is the main disadvantage of oblique splitting?",
+      "options": [
+        "Lower accuracy than axis-parallel splits",
+        "Cannot handle categorical features",
+        "Increased computational complexity and reduced interpretability",
+        "Only works with binary classification"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Oblique splitting requires solving optimization problems to find the best linear combinations, making it computationally more expensive and harder to interpret than simple threshold-based splits.",
+      "optionExplanations": [
+        "Oblique splitting can achieve higher accuracy in many cases, especially with correlated features.",
+        "Oblique splitting can be adapted for categorical features, though it's more naturally suited for numerical features.",
+        "Correct. Finding optimal linear combinations is computationally intensive, and the resulting splits are harder to understand.",
+        "Oblique splitting can be used for multi-class classification and regression, not just binary classification."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "oblique-splitting",
+        "computational-complexity",
+        "interpretability",
+        "trade-offs"
+      ]
+    },
+    {
+      "id": "DTC_061",
+      "question": "What are surrogate splits in decision trees?",
+      "options": [
+        "Alternative splits used when the primary feature has missing values",
+        "Backup trees used in ensemble methods",
+        "Secondary features used for pruning",
+        "Random splits for comparison purposes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Surrogate splits are alternative splitting rules that closely mimic the primary split, used when the primary feature has missing values for some samples.",
+      "optionExplanations": [
+        "Correct. Surrogate splits provide alternative ways to split data when the primary feature is unavailable due to missing values.",
+        "Surrogate splits are within individual trees, not backup trees in ensemble methods.",
+        "Surrogate splits are used during prediction with missing data, not specifically for pruning operations.",
+        "Surrogate splits are carefully chosen to mimic the primary split, not random alternatives."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "surrogate-splits",
+        "missing-values",
+        "alternative-splits",
+        "robust-prediction"
+      ]
+    },
+    {
+      "id": "DTC_062",
+      "question": "How are surrogate splits selected?",
+      "options": [
+        "Randomly from available features",
+        "Based on correlation with the target variable",
+        "By finding splits that best mimic the primary split's sample distribution",
+        "By using the feature with highest information gain"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Surrogate splits are chosen by finding alternative features and thresholds that send samples to the same child nodes as the primary split would, maximizing agreement with the primary split.",
+      "optionExplanations": [
+        "Surrogate splits are systematically selected, not randomly chosen from available features.",
+        "While correlation matters, the key criterion is how well the surrogate mimics the primary split's partitioning.",
+        "Correct. The best surrogate split is the one that most closely replicates the sample distribution of the primary split.",
+        "Information gain is used for primary splits; surrogate selection focuses on mimicking the primary split's behavior."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "surrogate-splits",
+        "split-selection",
+        "sample-distribution",
+        "missing-value-handling"
+      ]
+    },
+    {
+      "id": "DTC_063",
+      "question": "What is monotonic constraint in decision trees?",
+      "options": [
+        "Ensuring tree depth increases monotonically",
+        "Constraining the relationship between features and target to be monotonic",
+        "Requiring splits to be in ascending order",
+        "Maintaining constant node size throughout the tree"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Monotonic constraints ensure that the relationship between specified features and the target variable is monotonic (either always increasing or always decreasing) throughout the tree.",
+      "optionExplanations": [
+        "Tree depth naturally varies and doesn't need to be monotonically increasing across branches.",
+        "Correct. Monotonic constraints enforce that feature-target relationships maintain consistent direction (positive or negative).",
+        "Split order isn't required to be ascending; monotonic constraints are about feature-target relationships.",
+        "Node size naturally varies as data gets split; monotonic constraints are about feature relationships."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "monotonic-constraints",
+        "feature-relationships",
+        "domain-knowledge",
+        "constrained-learning"
+      ]
+    },
+    {
+      "id": "DTC_064",
+      "question": "When would you use monotonic constraints in decision trees?",
+      "options": [
+        "When you want faster training",
+        "When domain knowledge suggests a consistent directional relationship",
+        "When dealing with categorical features only",
+        "When the dataset is very small"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Monotonic constraints are useful when domain expertise indicates that a feature should have a consistent positive or negative relationship with the target across the entire feature space.",
+      "optionExplanations": [
+        "Monotonic constraints add complexity to training rather than speeding it up.",
+        "Correct. Use monotonic constraints when you know from domain knowledge that relationships should be consistently directional.",
+        "Monotonic constraints are typically applied to numerical features where order matters, not categorical features.",
+        "Dataset size isn't the determining factor; domain knowledge about relationships is what matters."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "monotonic-constraints",
+        "domain-knowledge",
+        "feature-engineering",
+        "business-logic"
+      ]
+    },
+    {
+      "id": "DTC_065",
+      "question": "What is the main challenge with categorical features in decision trees?",
+      "options": [
+        "They cannot be used in decision trees",
+        "Determining optimal subset splits for categories with many values",
+        "They always cause overfitting",
+        "They require special pruning techniques"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The main challenge is efficiently finding the optimal way to split categorical features with many categories, as the number of possible binary partitions grows exponentially with the number of categories.",
+      "optionExplanations": [
+        "Categorical features can definitely be used in decision trees; they're commonly handled.",
+        "Correct. With k categories, there are 2^(k-1) - 1 possible binary splits, making optimization challenging for high-cardinality features.",
+        "Categorical features don't inherently cause overfitting more than numerical features.",
+        "Categorical features use the same pruning techniques as numerical features; no special methods are needed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical-features",
+        "subset-splitting",
+        "combinatorial-optimization",
+        "high-cardinality"
+      ]
+    },
+    {
+      "id": "DTC_066",
+      "question": "How do decision trees typically handle missing values during training?",
+      "options": [
+        "Remove all samples with missing values",
+        "Replace missing values with the mean",
+        "Use surrogate splits or probabilistic approaches",
+        "Ignore features with missing values"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Advanced decision tree implementations handle missing values using surrogate splits (alternative splitting rules) or by probabilistically sending samples down multiple branches based on the training data distribution.",
+      "optionExplanations": [
+        "Removing samples would waste valuable data; modern trees have better approaches for missing values.",
+        "Simple imputation like mean replacement is one approach, but trees can handle missing values more sophisticatedly.",
+        "Correct. Surrogate splits and probabilistic branch assignment allow trees to work effectively with missing data.",
+        "Ignoring entire features due to some missing values would be wasteful; trees can work with partial information."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-values",
+        "surrogate-splits",
+        "probabilistic-methods",
+        "data-handling"
+      ]
+    },
+    {
+      "id": "DTC_067",
+      "question": "What is the difference between hard and soft decision trees?",
+      "options": [
+        "Hard trees use integer splits, soft trees use real-valued splits",
+        "Hard trees make definitive splits, soft trees use probabilistic splits",
+        "Hard trees are fully grown, soft trees are pruned",
+        "Hard trees use Gini, soft trees use entropy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard decision trees make definitive routing decisions (sample goes to exactly one child), while soft decision trees allow probabilistic routing where samples can go to multiple children with different probabilities.",
+      "optionExplanations": [
+        "Both hard and soft trees can use real-valued splits; the difference is in how samples are routed.",
+        "Correct. Hard trees route each sample to exactly one child, while soft trees allow probabilistic distribution across children.",
+        "The hard/soft distinction isn't about tree growth or pruning but about the splitting mechanism.",
+        "Both hard and soft trees can use either Gini impurity or entropy as splitting criteria."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hard-trees",
+        "soft-trees",
+        "probabilistic-routing",
+        "advanced-concepts"
+      ]
+    },
+    {
+      "id": "DTC_068",
+      "question": "What is neural decision trees?",
+      "options": [
+        "Decision trees implemented using neural networks",
+        "Trees that use neural networks in leaf nodes",
+        "A combination of tree structure with differentiable operations",
+        "Trees trained using backpropagation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Neural decision trees combine the interpretable tree structure with differentiable operations, allowing end-to-end training with gradient descent while maintaining some interpretability of tree-based decisions.",
+      "optionExplanations": [
+        "While neural networks can implement tree logic, neural decision trees specifically refer to differentiable tree structures.",
+        "Some approaches do use neural networks in leaves, but neural decision trees more broadly refer to differentiable tree structures.",
+        "Correct. They maintain tree-like decision structure but use differentiable operations that can be trained with gradient-based methods.",
+        "While they can be trained with backpropagation, the key aspect is the differentiable tree structure, not just the training method."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "neural-trees",
+        "differentiable-trees",
+        "gradient-training",
+        "hybrid-models"
+      ]
+    },
+    {
+      "id": "DTC_069",
+      "question": "What is the main advantage of neural decision trees over traditional trees?",
+      "options": [
+        "Better interpretability",
+        "Faster inference time",
+        "End-to-end differentiable training with other neural components",
+        "Lower memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Neural decision trees can be integrated into larger differentiable systems and trained end-to-end with other neural network components using gradient descent, while maintaining some tree-like interpretability.",
+      "optionExplanations": [
+        "Traditional decision trees are generally more interpretable than neural decision trees.",
+        "Traditional decision trees typically have faster inference due to simple conditional logic.",
+        "Correct. The main advantage is the ability to integrate with neural architectures and train everything jointly with backpropagation.",
+        "Neural decision trees typically use more memory due to storing gradients and differentiable parameters."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "neural-trees",
+        "end-to-end-training",
+        "differentiable-programming",
+        "integration"
+      ]
+    },
+    {
+      "id": "DTC_070",
+      "question": "What is the bootstrap aggregating (bagging) principle behind Random Forest?",
+      "options": [
+        "Training one tree on the entire dataset",
+        "Training multiple trees on different bootstrap samples",
+        "Training trees sequentially with error correction",
+        "Using the same data for all trees but different algorithms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Bagging involves training multiple trees on different bootstrap samples (sampling with replacement) of the original dataset, then combining their predictions to reduce variance.",
+      "optionExplanations": [
+        "Using the entire dataset for one tree would not provide the variance reduction benefits of bagging.",
+        "Correct. Each tree trains on a different bootstrap sample, creating diversity that reduces overall variance when combined.",
+        "Sequential training with error correction describes boosting (like AdaBoost), not bagging used in Random Forest.",
+        "Bagging uses the same algorithm (decision trees) but different data samples, not different algorithms on same data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bagging",
+        "bootstrap-samples",
+        "variance-reduction",
+        "ensemble-principles"
+      ]
+    },
+    {
+      "id": "DTC_071",
+      "question": "What is out-of-bag (OOB) error in Random Forest?",
+      "options": [
+        "Error on samples that were never used in any tree",
+        "Error estimated using samples not included in each tree's bootstrap sample",
+        "Error on the validation set",
+        "Error calculated after removing outliers"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "OOB error uses samples that were not selected in a tree's bootstrap sample as a test set for that tree. Since each sample is out-of-bag for about 37% of trees, this provides an unbiased error estimate.",
+      "optionExplanations": [
+        "In Random Forest, every sample is used in some trees and left out of others; none are completely unused.",
+        "Correct. For each tree, the samples not in its bootstrap sample serve as a natural test set for OOB error calculation.",
+        "OOB error is different from validation error; it uses the natural left-out samples from bootstrap sampling.",
+        "OOB error is not related to outlier removal but to the sampling process in bootstrap aggregating."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OOB-error",
+        "bootstrap-sampling",
+        "error-estimation",
+        "random-forest"
+      ]
+    },
+    {
+      "id": "DTC_072",
+      "question": "What percentage of samples are typically out-of-bag in each bootstrap sample?",
+      "options": [
+        "About 37%",
+        "About 50%",
+        "About 63%",
+        "About 25%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In bootstrap sampling with replacement, approximately 37% of samples are left out of each bootstrap sample. This comes from the probability (1-1/n)^n which approaches 1/e ≈ 0.368 as n increases.",
+      "optionExplanations": [
+        "Correct. About 37% of samples are out-of-bag due to the mathematics of sampling with replacement.",
+        "50% would be the case for sampling without replacement of half the data, not bootstrap sampling.",
+        "63% is approximately the percentage of samples that ARE included in each bootstrap sample.",
+        "25% is too low and doesn't match the mathematical expectation of bootstrap sampling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "OOB-sampling",
+        "bootstrap-mathematics",
+        "probability",
+        "random-forest"
+      ]
+    },
+    {
+      "id": "DTC_073",
+      "question": "What is the purpose of using different random seeds in Random Forest?",
+      "options": [
+        "To ensure reproducible results",
+        "To create diversity among trees",
+        "To speed up training",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different random seeds ensure that each tree uses different bootstrap samples and different random feature subsets, creating the diversity necessary for effective ensemble learning.",
+      "optionExplanations": [
+        "Different seeds actually make results less reproducible unless the overall random state is controlled.",
+        "Correct. Different seeds create the randomness in sampling and feature selection that makes each tree different.",
+        "Random seeds don't directly affect training speed; they affect the randomness in the process.",
+        "Random seeds don't impact memory usage; they control the randomness in data sampling and feature selection."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "random-seeds",
+        "ensemble-diversity",
+        "randomness",
+        "random-forest"
+      ]
+    },
+    {
+      "id": "DTC_074",
+      "question": "What is extremely randomized trees (Extra Trees)?",
+      "options": [
+        "Random Forest with more trees",
+        "Trees with completely random splits",
+        "Trees that use random thresholds for splits instead of optimal ones",
+        "Trees trained on random subsets of features only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Extra Trees introduce additional randomness by selecting random thresholds for splits instead of searching for optimal thresholds, while still choosing the best feature and threshold combination.",
+      "optionExplanations": [
+        "Extra Trees is not just about having more trees but about the randomness in threshold selection.",
+        "The splits aren't completely random; the best feature-threshold combination is still chosen from random thresholds.",
+        "Correct. Extra Trees randomly select candidate thresholds for each feature, then choose the best combination.",
+        "Both Random Forest and Extra Trees can use random feature subsets; the difference is in threshold selection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "extra-trees",
+        "random-thresholds",
+        "ensemble-methods",
+        "additional-randomness"
+      ]
+    },
+    {
+      "id": "DTC_075",
+      "question": "How does Extra Trees differ from Random Forest in terms of bias and variance?",
+      "options": [
+        "Extra Trees has higher bias and lower variance than Random Forest",
+        "Extra Trees has lower bias and higher variance than Random Forest",
+        "Both have identical bias and variance",
+        "Extra Trees has lower bias and lower variance than Random Forest"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Extra Trees introduces more randomness through random threshold selection, which increases bias but further reduces variance compared to Random Forest.",
+      "optionExplanations": [
+        "Correct. The additional randomness in Extra Trees increases bias but provides even more variance reduction.",
+        "More randomness typically increases bias and decreases variance, not the reverse.",
+        "The different levels of randomness in threshold selection make their bias-variance profiles different.",
+        "Higher randomness generally cannot simultaneously reduce both bias and variance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "extra-trees",
+        "bias-variance",
+        "randomness-effects",
+        "ensemble-comparison"
+      ]
+    },
+    {
+      "id": "DTC_076",
+      "question": "What is feature importance permutation in Random Forest?",
+      "options": [
+        "Randomly permuting features during training",
+        "Measuring importance by permuting feature values and observing performance decrease",
+        "Selecting features randomly for each tree",
+        "Permuting the order of trees in the forest"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Permutation feature importance measures how much the model performance decreases when the values of a feature are randomly shuffled, breaking the relationship between that feature and the target.",
+      "optionExplanations": [
+        "Permutation during training is not what permutation feature importance measures.",
+        "Correct. By shuffling a feature's values and measuring performance drop, we assess that feature's importance.",
+        "This describes the random feature selection process, not permutation importance measurement.",
+        "The order of trees doesn't affect Random Forest predictions since they're averaged."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "permutation-importance",
+        "feature-importance",
+        "model-interpretation",
+        "performance-measurement"
+      ]
+    },
+    {
+      "id": "DTC_077",
+      "question": "What is partial dependence plot (PDP) in the context of decision trees?",
+      "options": [
+        "A plot showing tree structure",
+        "A plot showing the marginal effect of features on predictions",
+        "A plot of training vs validation error",
+        "A plot of feature correlations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Partial dependence plots show how predictions change as we vary one or two features while marginalizing over all other features, helping understand the model's behavior.",
+      "optionExplanations": [
+        "Tree structure visualization is different from partial dependence plots which show feature effects.",
+        "Correct. PDPs show the marginal relationship between features and predictions, averaging over other variables.",
+        "Training vs validation curves are learning curves, not partial dependence plots.",
+        "Feature correlation plots show relationships between features, not their effect on predictions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "partial-dependence",
+        "model-interpretation",
+        "feature-effects",
+        "visualization"
+      ]
+    },
+    {
+      "id": "DTC_078",
+      "question": "What is SHAP (SHapley Additive exPlanations) values for decision trees?",
+      "options": [
+        "A new splitting criterion",
+        "A method to explain individual predictions by attributing contributions to features",
+        "A pruning technique",
+        "A way to select optimal hyperparameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SHAP values provide a unified framework for explaining individual predictions by fairly attributing the contribution of each feature to the difference between the prediction and the average prediction.",
+      "optionExplanations": [
+        "SHAP is an explanation method, not a splitting criterion for building trees.",
+        "Correct. SHAP values decompose predictions into additive feature contributions based on game theory principles.",
+        "SHAP is for explanation, not for pruning or modifying tree structure.",
+        "SHAP explains model behavior but doesn't directly help with hyperparameter selection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SHAP",
+        "explainable-AI",
+        "feature-attribution",
+        "individual-predictions"
+      ]
+    },
+    {
+      "id": "DTC_079",
+      "question": "What is the TreeSHAP algorithm?",
+      "options": [
+        "A new tree-building algorithm",
+        "An efficient algorithm for computing SHAP values for tree-based models",
+        "A tree pruning method",
+        "A feature selection algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TreeSHAP is an efficient algorithm specifically designed to compute SHAP values for tree-based models, running in polynomial time rather than the exponential time of the general SHAP computation.",
+      "optionExplanations": [
+        "TreeSHAP is for explaining existing trees, not building new ones.",
+        "Correct. TreeSHAP efficiently computes exact SHAP values for tree ensembles in polynomial time.",
+        "TreeSHAP is for explanation, not for modifying tree structure through pruning.",
+        "TreeSHAP explains feature contributions but isn't primarily a feature selection method."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "TreeSHAP",
+        "SHAP-computation",
+        "tree-explanation",
+        "algorithmic-efficiency"
+      ]
+    },
+    {
+      "id": "DTC_080",
+      "question": "What is the main advantage of decision trees for interpretability?",
+      "options": [
+        "They always have high accuracy",
+        "They provide clear if-then rules that humans can follow",
+        "They work well with any type of data",
+        "They train very quickly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Decision trees are highly interpretable because they create explicit if-then-else rules that mirror human decision-making processes, making it easy to understand why a particular prediction was made.",
+      "optionExplanations": [
+        "High accuracy is not guaranteed; interpretability is the key advantage, sometimes at the cost of accuracy.",
+        "Correct. The tree structure provides clear, logical rules that are easy for humans to understand and verify.",
+        "While trees handle various data types, this isn't their main interpretability advantage over other methods.",
+        "Fast training is an operational benefit, but the main interpretability advantage is the clear rule structure."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interpretability",
+        "if-then-rules",
+        "explainability",
+        "human-understanding"
+      ]
+    },
+    {
+      "id": "DTC_081",
+      "question": "What is the curse of interpretability trade-off in decision trees?",
+      "options": [
+        "More interpretable trees are always less accurate",
+        "As trees become more complex for better accuracy, they become less interpretable",
+        "Interpretable trees cannot handle large datasets",
+        "Interpretability requires more computational resources"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "There's often a trade-off where making trees more complex (deeper, more nodes) to improve accuracy makes them harder to interpret and understand, especially for non-experts.",
+      "optionExplanations": [
+        "The relationship isn't absolute; sometimes simpler, more interpretable trees can be quite accurate.",
+        "Correct. Complex trees with many nodes and deep structures become difficult to follow and understand.",
+        "Tree size handling is more about computational resources than interpretability per se.",
+        "Interpretability itself doesn't require more computation; it's about the complexity-accuracy trade-off."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interpretability-tradeoff",
+        "model-complexity",
+        "accuracy-interpretability",
+        "trade-offs"
+      ]
+    },
+    {
+      "id": "DTC_082",
+      "question": "What is a decision tree ensemble?",
+      "options": [
+        "A single very large decision tree",
+        "Multiple decision trees combined to make predictions",
+        "A tree with multiple root nodes",
+        "A tree that makes multiple types of predictions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A decision tree ensemble combines predictions from multiple individual decision trees, typically improving performance over single trees through variance reduction and better generalization.",
+      "optionExplanations": [
+        "An ensemble involves multiple separate trees, not one large tree.",
+        "Correct. Ensembles combine multiple trees' predictions, often through voting or averaging.",
+        "Each tree has one root node; multiple roots would not form a valid tree structure.",
+        "Multi-output prediction can be done by single trees; ensembles are about combining multiple models."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "ensemble-methods",
+        "multiple-trees",
+        "prediction-combination",
+        "variance-reduction"
+      ]
+    },
+    {
+      "id": "DTC_083",
+      "question": "What is the difference between hard voting and soft voting in tree ensembles?",
+      "options": [
+        "Hard voting uses majority class, soft voting uses predicted probabilities",
+        "Hard voting is for regression, soft voting is for classification",
+        "Hard voting uses all trees, soft voting uses selected trees",
+        "Hard voting requires pruning, soft voting doesn't"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hard voting takes the majority class prediction among trees, while soft voting averages the predicted probabilities from all trees before making the final prediction.",
+      "optionExplanations": [
+        "Correct. Hard voting counts class predictions, while soft voting averages probability estimates.",
+        "Both can be used for classification; regression typically uses averaging rather than voting.",
+        "Both methods typically use all trees in the ensemble, not a subset.",
+        "The voting method is independent of whether individual trees are pruned."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "voting-methods",
+        "hard-voting",
+        "soft-voting",
+        "ensemble-prediction"
+      ]
+    },
+    {
+      "id": "DTC_084",
+      "question": "What is stacking in the context of decision tree ensembles?",
+      "options": [
+        "Building trees on top of each other",
+        "Using a meta-learner to combine predictions from multiple trees",
+        "Stacking multiple splitting criteria",
+        "Combining multiple pruning methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Stacking uses a meta-learner (often another machine learning model) to learn how to best combine the predictions from multiple base models, including decision trees.",
+      "optionExplanations": [
+        "Stacking doesn't involve physical arrangement of trees but rather combining their predictions.",
+        "Correct. A meta-model learns the optimal way to combine base model predictions for final output.",
+        "Stacking combines model predictions, not splitting criteria within individual trees.",
+        "Stacking is about combining models, not combining different pruning approaches."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "stacking",
+        "meta-learning",
+        "ensemble-methods",
+        "prediction-combination"
+      ]
+    },
+    {
+      "id": "DTC_085",
+      "question": "What is the main challenge in parallelizing decision tree training?",
+      "options": [
+        "Trees cannot be trained in parallel",
+        "The sequential nature of tree growth from root to leaves",
+        "Memory limitations",
+        "Feature selection conflicts"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Decision tree training is inherently sequential because each level depends on the splits made in previous levels, making it challenging to parallelize the tree growth process effectively.",
+      "optionExplanations": [
+        "While challenging, there are methods to parallelize aspects of tree training.",
+        "Correct. Each node's split depends on its parent's split, creating sequential dependencies.",
+        "Memory can be managed; the main issue is the sequential decision-making process.",
+        "Feature selection can be parallelized; the bottleneck is the sequential tree structure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parallelization",
+        "sequential-dependencies",
+        "tree-growth",
+        "computational-challenges"
+      ]
+    },
+    {
+      "id": "DTC_086",
+      "question": "How can decision tree training be parallelized?",
+      "options": [
+        "Training multiple trees simultaneously (ensemble parallelism)",
+        "Parallelizing feature evaluation at each node",
+        "Both ensemble parallelism and node-level parallelism",
+        "It cannot be parallelized at all"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Parallelization can occur at multiple levels: training different trees in an ensemble simultaneously, and within each tree by evaluating different features or split points in parallel at each node.",
+      "optionExplanations": [
+        "Ensemble parallelism is one approach, but not the only way to parallelize tree training.",
+        "Node-level parallelism is possible, but ensemble parallelism is also used.",
+        "Correct. Both levels of parallelism can be combined for maximum efficiency in tree-based algorithms.",
+        "Several parallelization strategies exist for decision tree training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parallelization",
+        "ensemble-parallelism",
+        "node-parallelism",
+        "computational-optimization"
+      ]
+    },
+    {
+      "id": "DTC_087",
+      "question": "What is incremental learning in decision trees?",
+      "options": [
+        "Building trees one node at a time",
+        "Updating trees with new data without retraining from scratch",
+        "Gradually increasing tree depth",
+        "Adding features incrementally"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Incremental learning allows decision trees to incorporate new data by updating the existing tree structure rather than rebuilding the entire tree from scratch with all data.",
+      "optionExplanations": [
+        "Standard tree building already adds nodes incrementally during construction.",
+        "Correct. Incremental learning updates existing trees with new data without complete retraining.",
+        "Gradual depth increase is part of normal tree construction, not incremental learning.",
+        "Incremental learning is about new data samples, not necessarily new features."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "incremental-learning",
+        "online-learning",
+        "tree-updates",
+        "streaming-data"
+      ]
+    },
+    {
+      "id": "DTC_088",
+      "question": "What are streaming decision trees?",
+      "options": [
+        "Trees that process data streams in real-time",
+        "Trees with streaming media data",
+        "Trees that stream predictions continuously",
+        "Trees with parallel processing streams"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Streaming decision trees are designed to handle continuous data streams, updating their structure incrementally as new data arrives rather than requiring batch retraining.",
+      "optionExplanations": [
+        "Correct. These trees are designed for real-time processing of continuous data streams.",
+        "The term refers to data streaming (continuous flow), not multimedia streaming.",
+        "While they can make continuous predictions, the key aspect is processing streaming input data.",
+        "This refers to data streams, not parallel computational streams."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "streaming-trees",
+        "real-time-processing",
+        "data-streams",
+        "online-algorithms"
+      ]
+    },
+    {
+      "id": "DTC_089",
+      "question": "What is concept drift in the context of streaming decision trees?",
+      "options": [
+        "The tree structure drifting during training",
+        "Changes in the underlying data distribution over time",
+        "Gradual movement of decision boundaries",
+        "Drift in computational performance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Concept drift occurs when the statistical properties of the target variable or the relationship between features and target change over time, requiring model adaptation.",
+      "optionExplanations": [
+        "Tree structure changes are a response to concept drift, not the drift itself.",
+        "Correct. Concept drift refers to changes in the underlying data patterns that the model must adapt to.",
+        "Boundary movement is a symptom of concept drift, but the drift itself is the distributional change.",
+        "Performance drift is a consequence of concept drift, not the concept drift itself."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "concept-drift",
+        "distributional-changes",
+        "streaming-data",
+        "model-adaptation"
+      ]
+    },
+    {
+      "id": "DTC_090",
+      "question": "What is the Hoeffding tree (VFDT)?",
+      "options": [
+        "A tree that uses Hoeffding's inequality for pruning",
+        "A streaming decision tree that uses statistical bounds to decide when to split",
+        "A tree optimization algorithm",
+        "A method for calculating information gain"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Very Fast Decision Tree (VFDT) or Hoeffding tree uses Hoeffding's inequality to determine when there's enough statistical evidence to make a split decision in streaming data scenarios.",
+      "optionExplanations": [
+        "Hoeffding's inequality is used for split decisions, not pruning in this context.",
+        "Correct. VFDT uses statistical bounds to decide when sufficient data has been seen to confidently choose the best split.",
+        "While it's an algorithmic approach, it's specifically a streaming decision tree method.",
+        "It's a complete tree algorithm, not just a method for calculating splitting criteria."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hoeffding-tree",
+        "VFDT",
+        "statistical-bounds",
+        "streaming-algorithms"
+      ]
+    },
+    {
+      "id": "DTC_091",
+      "question": "What is the main advantage of using Hoeffding's inequality in streaming trees?",
+      "options": [
+        "Faster computation",
+        "Better accuracy",
+        "Ability to make confident split decisions with limited data",
+        "Lower memory usage"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hoeffding's inequality provides statistical guarantees about when enough data has been observed to confidently determine that one split is better than another, enabling decisions without seeing all possible data.",
+      "optionExplanations": [
+        "While efficient, the main advantage is statistical confidence, not just speed.",
+        "Accuracy is a result, but the primary advantage is the ability to make confident decisions.",
+        "Correct. The inequality provides bounds on how much data is needed to make statistically confident split decisions.",
+        "Memory efficiency is a benefit, but the key advantage is the statistical decision-making framework."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hoeffding-inequality",
+        "statistical-confidence",
+        "decision-bounds",
+        "streaming-decisions"
+      ]
+    },
+    {
+      "id": "DTC_092",
+      "question": "What is federated learning with decision trees?",
+      "options": [
+        "Training multiple trees on the same machine",
+        "Training trees across multiple distributed devices without sharing raw data",
+        "Using federal regulations to constrain tree building",
+        "Combining trees from different algorithms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Federated learning enables training decision trees across distributed devices or organizations while keeping raw data local, sharing only model updates or aggregated statistics.",
+      "optionExplanations": [
+        "This would be standard ensemble training, not federated learning which involves distributed data.",
+        "Correct. Federated learning allows collaborative training while preserving data privacy and locality.",
+        "This is not related to governmental regulations but to distributed machine learning.",
+        "Algorithm combination is different from federated learning which focuses on distributed data scenarios."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "federated-learning",
+        "distributed-learning",
+        "privacy-preserving",
+        "collaborative-training"
+      ]
+    },
+    {
+      "id": "DTC_093",
+      "question": "What are the main challenges in federated decision tree learning?",
+      "options": [
+        "High computational cost",
+        "Maintaining tree structure consistency and handling non-IID data",
+        "Limited interpretability",
+        "Slow convergence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Federated learning faces challenges in maintaining consistent tree structures across distributed nodes and handling non-identically distributed data across different participants.",
+      "optionExplanations": [
+        "Computational cost is manageable; the main issues are structural and data distribution challenges.",
+        "Correct. Ensuring consistent splits and handling diverse data distributions across nodes are key challenges.",
+        "Decision trees maintain interpretability in federated settings; this isn't the main challenge.",
+        "Convergence speed is less critical than structural consistency and data heterogeneity issues."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "federated-challenges",
+        "non-IID-data",
+        "tree-consistency",
+        "distributed-challenges"
+      ]
+    },
+    {
+      "id": "DTC_094",
+      "question": "What is differential privacy in decision trees?",
+      "options": [
+        "Using different splitting criteria for privacy",
+        "Adding noise to protect individual data points while maintaining utility",
+        "Encrypting the tree structure",
+        "Removing sensitive features from trees"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Differential privacy adds carefully calibrated noise to tree construction or outputs to ensure that individual data points cannot be identified while preserving the overall utility of the model.",
+      "optionExplanations": [
+        "Different splitting criteria don't inherently provide privacy protection.",
+        "Correct. Controlled noise addition provides mathematical privacy guarantees while maintaining model usefulness.",
+        "Encryption protects data in transit/storage but doesn't provide the statistical privacy guarantees of differential privacy.",
+        "Feature removal is one privacy approach, but differential privacy specifically uses noise addition."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "differential-privacy",
+        "privacy-preserving",
+        "noise-addition",
+        "statistical-privacy"
+      ]
+    },
+    {
+      "id": "DTC_095",
+      "question": "What is multi-output decision trees?",
+      "options": [
+        "Trees that predict multiple target variables simultaneously",
+        "Trees with multiple root nodes",
+        "Trees that output confidence scores",
+        "Trees with multiple splitting criteria"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multi-output decision trees can predict multiple target variables simultaneously, with leaf nodes containing predictions for all target variables rather than just one.",
+      "optionExplanations": [
+        "Correct. These trees handle multiple target variables in a single model, with leaves predicting all targets.",
+        "Trees have single root nodes by definition; multiple outputs refer to target variables, not tree structure.",
+        "Confidence scores are additional outputs, but multi-output specifically refers to multiple target variables.",
+        "Multiple splitting criteria can be used in any tree; multi-output refers to predicting multiple targets."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-output",
+        "multiple-targets",
+        "simultaneous-prediction",
+        "multi-task-learning"
+      ]
+    },
+    {
+      "id": "DTC_096",
+      "question": "What are the advantages of multi-output decision trees over separate single-output trees?",
+      "options": [
+        "Always higher accuracy",
+        "Faster training time",
+        "Can capture correlations between output variables and require less memory",
+        "Simpler interpretation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Multi-output trees can capture and exploit correlations between target variables and are more memory-efficient than training separate trees for each target variable.",
+      "optionExplanations": [
+        "Accuracy depends on the specific problem and data; it's not guaranteed to be higher.",
+        "Training time may actually be longer due to the complexity of handling multiple outputs.",
+        "Correct. Shared tree structure captures output correlations and uses less memory than separate trees.",
+        "Multiple outputs generally make interpretation more complex, not simpler."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-output-advantages",
+        "output-correlations",
+        "memory-efficiency",
+        "shared-structure"
+      ]
+    },
+    {
+      "id": "DTC_097",
+      "question": "What is cost-sensitive learning in decision trees?",
+      "options": [
+        "Minimizing computational costs during training",
+        "Incorporating different misclassification costs into the learning process",
+        "Reducing memory usage costs",
+        "Using cheaper hardware for training"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cost-sensitive learning modifies the tree construction process to account for different costs of misclassifying different classes, optimizing for cost minimization rather than just accuracy.",
+      "optionExplanations": [
+        "This refers to economic costs of different types of errors, not computational costs.",
+        "Correct. Different types of misclassification errors have different real-world costs that the model should consider.",
+        "Memory usage is a computational concern, not the type of cost addressed in cost-sensitive learning.",
+        "Hardware costs are operational concerns, not the misclassification costs in cost-sensitive learning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cost-sensitive",
+        "misclassification-costs",
+        "economic-considerations",
+        "cost-minimization"
+      ]
+    },
+    {
+      "id": "DTC_098",
+      "question": "How can decision trees handle imbalanced datasets?",
+      "options": [
+        "By using cost-sensitive learning and class weighting",
+        "By always predicting the majority class",
+        "By removing minority class samples",
+        "By using only Gini impurity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Decision trees can handle imbalanced data through cost-sensitive learning, class weighting, balanced sampling strategies, and modified splitting criteria that account for class imbalance.",
+      "optionExplanations": [
+        "Correct. Cost-sensitive approaches and class weighting help trees better handle imbalanced datasets.",
+        "Always predicting majority class would result in poor performance on minority classes.",
+        "Removing minority samples would worsen the imbalance problem rather than solving it.",
+        "The choice of impurity measure alone doesn't solve imbalance; weighting and cost-sensitive approaches are needed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "imbalanced-data",
+        "class-weighting",
+        "cost-sensitive",
+        "sampling-strategies"
+      ]
+    },
+    {
+      "id": "DTC_099",
+      "question": "What is the relationship between decision trees and rule-based systems?",
+      "options": [
+        "They are completely unrelated",
+        "Decision trees can be converted to if-then rules and vice versa",
+        "Rule-based systems are always more accurate",
+        "Decision trees cannot represent logical rules"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Decision trees naturally represent if-then-else rules, with each path from root to leaf forming a rule. They can be converted to rule sets, and rule sets can sometimes be converted back to tree form.",
+      "optionExplanations": [
+        "Decision trees and rule-based systems are closely related through their logical structure.",
+        "Correct. Each path in a tree represents a rule, and collections of rules can sometimes form tree structures.",
+        "Accuracy depends on the specific problem and implementation; neither approach is universally superior.",
+        "Decision trees are essentially structured collections of logical if-then rules."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "rule-extraction",
+        "if-then-rules",
+        "knowledge-representation",
+        "logical-systems"
+      ]
+    },
+    {
+      "id": "DTC_100",
+      "question": "What are the key considerations when deploying decision trees in production?",
+      "options": [
+        "Only model accuracy",
+        "Model interpretability, inference speed, memory usage, and maintainability",
+        "Only computational speed",
+        "Only the training dataset size"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Production deployment requires considering multiple factors: model interpretability for stakeholder understanding, inference speed for real-time requirements, memory usage for resource constraints, and maintainability for long-term operations.",
+      "optionExplanations": [
+        "Accuracy is important but not the only consideration for production deployment.",
+        "Correct. Production systems must balance multiple requirements including performance, resources, and operational concerns.",
+        "Speed is important but must be balanced with accuracy, interpretability, and other operational requirements.",
+        "Training dataset size affects model development but isn't a primary deployment consideration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "production-deployment",
+        "operational-considerations",
+        "system-requirements",
+        "deployment-factors"
+      ]
+    }
+  ]
+}

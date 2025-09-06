@@ -1,0 +1,2414 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_DIM",
+  "subtopicName": "Dimensionality Reduction",
+  "str": 0.650,
+  "description": "Techniques and methods for reducing the number of features in high-dimensional datasets while preserving important information, including PCA, LDA, t-SNE, UMAP, and addressing the curse of dimensionality.",
+  "questions": [
+    {
+      "id": "DIM_001",
+      "question": "What is the primary goal of Principal Component Analysis (PCA)?",
+      "options": [
+        "To find the directions of maximum variance in the data",
+        "To classify data points into categories",
+        "To increase the number of features",
+        "To normalize the data distribution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "PCA aims to find the principal components, which are the directions in which the data varies the most. These components capture the maximum variance in the dataset.",
+      "optionExplanations": [
+        "Correct. PCA identifies orthogonal directions (principal components) that capture the maximum variance in the data, allowing for effective dimensionality reduction.",
+        "Incorrect. PCA is an unsupervised technique used for dimensionality reduction, not classification. Classification requires labeled data and supervised learning algorithms.",
+        "Incorrect. PCA reduces the number of features by projecting data onto lower-dimensional subspaces, not increasing them.",
+        "Incorrect. While PCA often involves data standardization as preprocessing, its primary goal is variance maximization, not normalization."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PCA",
+        "variance",
+        "principal-components"
+      ]
+    },
+    {
+      "id": "DIM_002",
+      "question": "Which statement best describes the curse of dimensionality?",
+      "options": [
+        "Higher dimensions always improve model performance",
+        "As dimensions increase, data points become sparse and distances become less meaningful",
+        "More features always lead to better predictions",
+        "Computational complexity decreases with more dimensions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The curse of dimensionality refers to various phenomena that arise when analyzing data in high-dimensional spaces, particularly the sparsity of data and the loss of meaningful distance metrics.",
+      "optionExplanations": [
+        "Incorrect. Higher dimensions often lead to overfitting and decreased performance due to the curse of dimensionality.",
+        "Correct. In high-dimensional spaces, data points become increasingly sparse, and distance measures lose their discriminative power as all points appear equidistant.",
+        "Incorrect. Adding irrelevant or noisy features can hurt model performance and lead to overfitting.",
+        "Incorrect. Computational complexity typically increases exponentially with the number of dimensions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse-of-dimensionality",
+        "sparsity",
+        "distance-metrics"
+      ]
+    },
+    {
+      "id": "DIM_003",
+      "question": "What is the key difference between feature selection and feature extraction?",
+      "options": [
+        "Feature selection creates new features, while extraction selects existing ones",
+        "Feature selection chooses existing features, while extraction creates new transformed features",
+        "Both methods are identical in their approach",
+        "Feature extraction only works with categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature selection involves choosing a subset of existing features, while feature extraction creates new features through transformations of the original features.",
+      "optionExplanations": [
+        "Incorrect. This reverses the actual definitions. Feature selection chooses from existing features, while extraction creates new ones.",
+        "Correct. Feature selection picks the most relevant subset of original features, while feature extraction transforms original features into new ones (like PCA components).",
+        "Incorrect. These are fundamentally different approaches to dimensionality reduction with distinct methodologies and outcomes.",
+        "Incorrect. Feature extraction methods like PCA work primarily with numerical data, though some methods can handle categorical data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-selection",
+        "feature-extraction",
+        "dimensionality-reduction"
+      ]
+    },
+    {
+      "id": "DIM_004",
+      "question": "In PCA, what does the first principal component represent?",
+      "options": [
+        "The component with the least variance",
+        "The component with the maximum variance",
+        "The component perpendicular to all other components",
+        "The component that minimizes reconstruction error"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The first principal component is the direction in the feature space along which the data varies the most, capturing the maximum variance in the dataset.",
+      "optionExplanations": [
+        "Incorrect. The first principal component captures the maximum variance, not the least. Components are ordered by decreasing variance.",
+        "Correct. The first principal component is defined as the direction that captures the maximum variance in the data.",
+        "Incorrect. While principal components are orthogonal to each other, this doesn't define what the first component represents.",
+        "Incorrect. While PCA does minimize reconstruction error when using all components, the first component specifically maximizes variance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PCA",
+        "principal-components",
+        "variance"
+      ]
+    },
+    {
+      "id": "DIM_005",
+      "question": "What is Linear Discriminant Analysis (LDA) primarily used for?",
+      "options": [
+        "Unsupervised dimensionality reduction",
+        "Supervised dimensionality reduction for classification",
+        "Data clustering",
+        "Regression analysis"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LDA is a supervised dimensionality reduction technique that finds linear combinations of features that best separate different classes.",
+      "optionExplanations": [
+        "Incorrect. LDA is a supervised method that requires class labels, unlike unsupervised methods such as PCA.",
+        "Correct. LDA uses class information to find directions that maximize class separation, making it a supervised dimensionality reduction technique.",
+        "Incorrect. While LDA can aid in classification, it's not primarily a clustering algorithm. Clustering is typically unsupervised.",
+        "Incorrect. LDA is designed for classification problems, not regression. It works with categorical target variables."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LDA",
+        "supervised-learning",
+        "classification"
+      ]
+    },
+    {
+      "id": "DIM_006",
+      "question": "How many principal components does PCA generate for a dataset with n features?",
+      "options": [
+        "n+1 components",
+        "n-1 components",
+        "At most n components",
+        "Always n components"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "PCA can generate at most n principal components for a dataset with n features, but the actual number may be less if some features are linearly dependent.",
+      "optionExplanations": [
+        "Incorrect. PCA cannot generate more components than the number of original features in the dataset.",
+        "Incorrect. The number of components isn't necessarily n-1; it depends on the rank of the data matrix.",
+        "Correct. PCA generates at most n components for n features, with the exact number depending on the rank of the data matrix.",
+        "Incorrect. If features are linearly dependent or if there are fewer samples than features, PCA may generate fewer than n components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "principal-components",
+        "linear-algebra"
+      ]
+    },
+    {
+      "id": "DIM_007",
+      "question": "What does cumulative explained variance tell us in PCA?",
+      "options": [
+        "The error rate of the model",
+        "The proportion of total variance captured by the first k components",
+        "The correlation between features",
+        "The number of outliers in the dataset"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cumulative explained variance shows how much of the total variance in the original data is preserved when using the first k principal components.",
+      "optionExplanations": [
+        "Incorrect. Cumulative explained variance measures information retention, not error rate, though they are related concepts.",
+        "Correct. It represents the proportion of the dataset's total variance that is captured by the first k principal components combined.",
+        "Incorrect. Correlation between features is measured by correlation matrices, not explained variance.",
+        "Incorrect. Explained variance doesn't directly indicate outliers, though outliers can affect the principal components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "explained-variance",
+        "variance-ratio"
+      ]
+    },
+    {
+      "id": "DIM_008",
+      "question": "Which preprocessing step is typically recommended before applying PCA?",
+      "options": [
+        "One-hot encoding",
+        "Feature scaling/standardization",
+        "Adding polynomial features",
+        "Removing all missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Feature scaling or standardization is crucial before PCA because PCA is sensitive to the scale of features, and features with larger scales will dominate the principal components.",
+      "optionExplanations": [
+        "Incorrect. One-hot encoding is for categorical variables, but PCA typically works with numerical features.",
+        "Correct. Standardization ensures all features contribute equally to the principal components, preventing features with larger scales from dominating.",
+        "Incorrect. Adding polynomial features increases dimensionality, which is opposite to the goal of PCA.",
+        "Incorrect. While handling missing values is important, it's not the most critical preprocessing step specific to PCA."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PCA",
+        "preprocessing",
+        "standardization"
+      ]
+    },
+    {
+      "id": "DIM_009",
+      "question": "What is t-SNE primarily designed for?",
+      "options": [
+        "Linear dimensionality reduction",
+        "Supervised classification",
+        "Non-linear dimensionality reduction for visualization",
+        "Feature selection"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "t-SNE (t-Distributed Stochastic Neighbor Embedding) is specifically designed for non-linear dimensionality reduction, particularly for visualization in 2D or 3D.",
+      "optionExplanations": [
+        "Incorrect. t-SNE is a non-linear method that can capture complex, non-linear relationships in data.",
+        "Incorrect. t-SNE is an unsupervised method used for dimensionality reduction, not classification.",
+        "Correct. t-SNE excels at preserving local structure and is widely used for visualizing high-dimensional data in 2D or 3D.",
+        "Incorrect. t-SNE creates new transformed features rather than selecting from existing ones."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "t-SNE",
+        "non-linear",
+        "visualization"
+      ]
+    },
+    {
+      "id": "DIM_010",
+      "question": "What does the perplexity parameter control in t-SNE?",
+      "options": [
+        "The number of output dimensions",
+        "The number of nearest neighbors considered",
+        "The learning rate",
+        "The number of iterations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Perplexity in t-SNE is related to the number of nearest neighbors that each point considers when creating the probability distribution in the high-dimensional space.",
+      "optionExplanations": [
+        "Incorrect. The number of output dimensions is typically set to 2 or 3 for visualization and is a separate parameter.",
+        "Correct. Perplexity roughly corresponds to the number of nearest neighbors and affects the balance between local and global structure preservation.",
+        "Incorrect. Learning rate is a separate parameter that controls the step size during optimization.",
+        "Incorrect. The number of iterations is controlled by a different parameter, not perplexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-SNE",
+        "perplexity",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "DIM_011",
+      "question": "What is a major limitation of t-SNE?",
+      "options": [
+        "It only works with labeled data",
+        "It cannot handle non-linear relationships",
+        "It is computationally expensive and doesn't preserve global structure well",
+        "It requires exactly 2 output dimensions"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "t-SNE has high computational complexity (O(n²)) and tends to focus on preserving local structure at the expense of global structure.",
+      "optionExplanations": [
+        "Incorrect. t-SNE is an unsupervised method that doesn't require labeled data.",
+        "Incorrect. t-SNE is specifically designed to handle non-linear relationships in data.",
+        "Correct. t-SNE is computationally expensive for large datasets and can distort global structure while preserving local neighborhoods.",
+        "Incorrect. While t-SNE is commonly used for 2D visualization, it can be applied to other dimensions as well."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-SNE",
+        "limitations",
+        "computational-complexity"
+      ]
+    },
+    {
+      "id": "DIM_012",
+      "question": "What does UMAP stand for?",
+      "options": [
+        "Unified Manifold Approximation and Projection",
+        "Universal Mapping and Projection",
+        "Uniform Manifold Approximation and Projection",
+        "Unsupervised Manifold Analysis and Projection"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "UMAP stands for Uniform Manifold Approximation and Projection, a relatively new dimensionality reduction technique.",
+      "optionExplanations": [
+        "Incorrect. While close, the correct term is 'Uniform' not 'Unified'.",
+        "Incorrect. This is not the correct expansion of the UMAP acronym.",
+        "Correct. UMAP stands for Uniform Manifold Approximation and Projection.",
+        "Incorrect. While it is unsupervised, the 'U' in UMAP stands for 'Uniform'."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "UMAP",
+        "acronym",
+        "manifold-learning"
+      ]
+    },
+    {
+      "id": "DIM_013",
+      "question": "How does UMAP compare to t-SNE in terms of computational efficiency?",
+      "options": [
+        "UMAP is slower than t-SNE",
+        "UMAP and t-SNE have the same computational complexity",
+        "UMAP is generally faster than t-SNE",
+        "UMAP only works on small datasets"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "UMAP is generally more computationally efficient than t-SNE, making it more suitable for larger datasets.",
+      "optionExplanations": [
+        "Incorrect. UMAP is typically faster than t-SNE due to its more efficient algorithmic approach.",
+        "Incorrect. UMAP has better computational complexity than t-SNE, especially for large datasets.",
+        "Correct. UMAP is generally faster and more scalable than t-SNE while often producing better preservation of global structure.",
+        "Incorrect. UMAP is actually better suited for large datasets compared to t-SNE due to its computational efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "UMAP",
+        "t-SNE",
+        "computational-efficiency"
+      ]
+    },
+    {
+      "id": "DIM_014",
+      "question": "In the context of LDA, what does 'maximizing class separability' mean?",
+      "options": [
+        "Increasing the distance between all data points",
+        "Maximizing within-class variance",
+        "Maximizing between-class variance while minimizing within-class variance",
+        "Minimizing the number of classes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LDA seeks to find linear combinations of features that maximize the ratio of between-class variance to within-class variance, thereby achieving better class separation.",
+      "optionExplanations": [
+        "Incorrect. LDA specifically focuses on separating different classes, not increasing distances between all points.",
+        "Incorrect. LDA aims to minimize within-class variance, not maximize it.",
+        "Correct. LDA maximizes the Fisher criterion, which is the ratio of between-class to within-class variance.",
+        "Incorrect. LDA works with the existing number of classes and doesn't aim to reduce them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LDA",
+        "class-separability",
+        "fisher-criterion"
+      ]
+    },
+    {
+      "id": "DIM_015",
+      "question": "What is the maximum number of discriminant functions (components) that LDA can generate for a k-class problem?",
+      "options": [
+        "k functions",
+        "k-1 functions",
+        "k+1 functions",
+        "2k functions"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LDA can generate at most k-1 discriminant functions for a k-class problem, where k is the number of classes.",
+      "optionExplanations": [
+        "Incorrect. The number of discriminant functions is limited by the degrees of freedom, which is k-1.",
+        "Correct. For k classes, LDA can generate at most k-1 discriminant functions due to the constraint that class means must sum to zero.",
+        "Incorrect. This would exceed the theoretical maximum based on the number of classes.",
+        "Incorrect. This significantly overestimates the number of possible discriminant functions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LDA",
+        "discriminant-functions",
+        "degrees-of-freedom"
+      ]
+    },
+    {
+      "id": "DIM_016",
+      "question": "Which assumption is crucial for Linear Discriminant Analysis to work effectively?",
+      "options": [
+        "All classes have equal covariance matrices",
+        "Features are categorical",
+        "Data is non-linear",
+        "Classes are overlapping"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "LDA assumes that all classes have the same covariance matrix (homoscedasticity), which allows for optimal linear separation.",
+      "optionExplanations": [
+        "Correct. LDA assumes equal covariance matrices across classes, enabling the derivation of linear decision boundaries.",
+        "Incorrect. LDA typically works with continuous numerical features, not categorical ones.",
+        "Incorrect. LDA is specifically designed for linear relationships and linear decision boundaries.",
+        "Incorrect. While LDA can handle some overlap, it works best when classes are reasonably separable."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "LDA",
+        "assumptions",
+        "homoscedasticity"
+      ]
+    },
+    {
+      "id": "DIM_017",
+      "question": "What happens to the explained variance in PCA as you include more principal components?",
+      "options": [
+        "It decreases monotonically",
+        "It increases monotonically",
+        "It remains constant",
+        "It fluctuates randomly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "As you include more principal components, the cumulative explained variance always increases monotonically, approaching 100% when all components are included.",
+      "optionExplanations": [
+        "Incorrect. Each additional component adds more explained variance, so the cumulative variance increases.",
+        "Correct. Each principal component contributes additional variance, so cumulative explained variance always increases.",
+        "Incorrect. Adding components changes the amount of variance explained.",
+        "Incorrect. Principal components are ordered by variance contribution, so the pattern is predictable, not random."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PCA",
+        "explained-variance",
+        "cumulative-variance"
+      ]
+    },
+    {
+      "id": "DIM_018",
+      "question": "Which technique would be most appropriate for reducing dimensions while preserving class information?",
+      "options": [
+        "PCA",
+        "LDA",
+        "Random projection",
+        "Feature selection by variance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LDA is specifically designed to preserve class information by maximizing class separability during dimensionality reduction.",
+      "optionExplanations": [
+        "Incorrect. PCA is unsupervised and doesn't consider class information when finding principal components.",
+        "Correct. LDA uses class labels to find dimensions that best separate different classes.",
+        "Incorrect. Random projection doesn't consider class information and may not preserve class separability.",
+        "Incorrect. Variance-based feature selection doesn't necessarily preserve class-relevant information."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "LDA",
+        "supervised-learning",
+        "class-preservation"
+      ]
+    },
+    {
+      "id": "DIM_019",
+      "question": "What is the primary mathematical operation underlying PCA?",
+      "options": [
+        "Matrix multiplication",
+        "Eigenvalue decomposition",
+        "Gradient descent",
+        "Cross-correlation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PCA is fundamentally based on eigenvalue decomposition of the covariance matrix to find principal components.",
+      "optionExplanations": [
+        "Incorrect. While matrix operations are involved, eigenvalue decomposition is the core mathematical operation.",
+        "Correct. PCA performs eigenvalue decomposition of the covariance matrix to find eigenvectors (principal components) and eigenvalues (variance explained).",
+        "Incorrect. PCA has a closed-form solution through eigenvalue decomposition, unlike iterative methods like gradient descent.",
+        "Incorrect. Cross-correlation measures relationships between variables but isn't the primary operation in PCA."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "eigenvalue-decomposition",
+        "linear-algebra"
+      ]
+    },
+    {
+      "id": "DIM_020",
+      "question": "Why might t-SNE produce different results on multiple runs with the same data?",
+      "options": [
+        "It uses deterministic algorithms",
+        "It involves random initialization and stochastic optimization",
+        "The data changes between runs",
+        "It always produces identical results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "t-SNE uses random initialization and stochastic gradient descent, which can lead to different local optima and thus different results across runs.",
+      "optionExplanations": [
+        "Incorrect. t-SNE uses stochastic algorithms, not deterministic ones.",
+        "Correct. t-SNE's random initialization and stochastic optimization process can lead to different local optima, producing varying results.",
+        "Incorrect. The input data remains the same; the variability comes from the algorithm itself.",
+        "Incorrect. Due to its stochastic nature, t-SNE typically produces different results on multiple runs."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-SNE",
+        "stochastic-optimization",
+        "random-initialization"
+      ]
+    },
+    {
+      "id": "DIM_021",
+      "question": "What is the 'elbow method' used for in PCA?",
+      "options": [
+        "Determining the optimal number of principal components to retain",
+        "Calculating eigenvalues",
+        "Normalizing the data",
+        "Removing outliers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The elbow method helps determine the optimal number of principal components by looking for the point where additional components provide diminishing returns in explained variance.",
+      "optionExplanations": [
+        "Correct. The elbow method plots explained variance vs. number of components and looks for the 'elbow' point where the rate of variance increase slows down.",
+        "Incorrect. Eigenvalues are calculated through eigenvalue decomposition, not the elbow method.",
+        "Incorrect. Data normalization is a preprocessing step, not related to the elbow method.",
+        "Incorrect. Outlier removal is a data cleaning step, not part of the elbow method."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "elbow-method",
+        "component-selection"
+      ]
+    },
+    {
+      "id": "DIM_022",
+      "question": "In which scenario would you prefer UMAP over t-SNE?",
+      "options": [
+        "When you need deterministic results",
+        "When working with large datasets and need better global structure preservation",
+        "When you only have categorical features",
+        "When you need exactly linear relationships"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "UMAP is generally preferred for large datasets due to its computational efficiency and better preservation of global structure compared to t-SNE.",
+      "optionExplanations": [
+        "Incorrect. Both UMAP and t-SNE involve stochastic elements and don't guarantee deterministic results.",
+        "Correct. UMAP is more computationally efficient and better at preserving both local and global structure.",
+        "Incorrect. Both methods typically work with continuous features; categorical features usually need encoding first.",
+        "Incorrect. Both UMAP and t-SNE are non-linear methods designed to capture non-linear relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "UMAP",
+        "t-SNE",
+        "global-structure"
+      ]
+    },
+    {
+      "id": "DIM_023",
+      "question": "What does it mean when we say PCA components are orthogonal?",
+      "options": [
+        "They are parallel to each other",
+        "They are perpendicular to each other",
+        "They have the same variance",
+        "They are linearly dependent"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Orthogonal components are perpendicular to each other, meaning they are uncorrelated and capture independent sources of variation.",
+      "optionExplanations": [
+        "Incorrect. Parallel vectors would not be orthogonal; they would point in the same direction.",
+        "Correct. Orthogonal vectors are perpendicular, ensuring that principal components are uncorrelated with each other.",
+        "Incorrect. Orthogonality relates to direction, not variance. Components typically have different variances.",
+        "Incorrect. Orthogonal vectors are linearly independent, not dependent."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PCA",
+        "orthogonality",
+        "linear-algebra"
+      ]
+    },
+    {
+      "id": "DIM_024",
+      "question": "Which of the following best describes manifold learning?",
+      "options": [
+        "Learning only linear relationships in data",
+        "Assuming data lies on a lower-dimensional manifold embedded in high-dimensional space",
+        "Increasing the dimensionality of data",
+        "Working only with labeled data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Manifold learning assumes that high-dimensional data actually lies on or near a lower-dimensional manifold, and aims to discover this underlying structure.",
+      "optionExplanations": [
+        "Incorrect. Manifold learning specifically deals with non-linear relationships and structures.",
+        "Correct. The manifold hypothesis suggests that real-world high-dimensional data often lies on lower-dimensional manifolds.",
+        "Incorrect. Manifold learning aims to reduce dimensionality by finding the underlying lower-dimensional structure.",
+        "Incorrect. Many manifold learning techniques, including t-SNE and UMAP, are unsupervised methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "manifold-learning",
+        "manifold-hypothesis",
+        "non-linear"
+      ]
+    },
+    {
+      "id": "DIM_025",
+      "question": "What is reconstruction error in the context of PCA?",
+      "options": [
+        "The error in the original data collection",
+        "The difference between original data and data reconstructed from selected components",
+        "The error in eigenvalue calculation",
+        "The difference between training and test accuracy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reconstruction error measures how much information is lost when data is projected onto lower-dimensional space and then reconstructed back to the original space.",
+      "optionExplanations": [
+        "Incorrect. Reconstruction error is not about data collection errors but about information loss in dimensionality reduction.",
+        "Correct. It measures the information lost when reconstructing the original data from a reduced set of principal components.",
+        "Incorrect. Eigenvalue calculation has its own numerical precision considerations, but this isn't reconstruction error.",
+        "Incorrect. This describes generalization error in supervised learning, not reconstruction error in PCA."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "reconstruction-error",
+        "information-loss"
+      ]
+    },
+    {
+      "id": "DIM_026",
+      "question": "Which dimensionality reduction technique is most suitable for data visualization?",
+      "options": [
+        "PCA only",
+        "LDA only",
+        "t-SNE or UMAP",
+        "Random projection only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "t-SNE and UMAP are specifically designed for visualization and excel at preserving local neighborhood structure in 2D or 3D representations.",
+      "optionExplanations": [
+        "Incorrect. While PCA can be used for visualization, it may not capture complex non-linear structures as well as t-SNE or UMAP.",
+        "Incorrect. LDA is primarily for classification and may not be optimal for general data visualization.",
+        "Correct. t-SNE and UMAP are specifically designed for visualization and excel at preserving local structure in low dimensions.",
+        "Incorrect. Random projection is mainly used for computational efficiency, not specifically for visualization quality."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "visualization",
+        "t-SNE",
+        "UMAP"
+      ]
+    },
+    {
+      "id": "DIM_027",
+      "question": "What is the main advantage of using SVD (Singular Value Decomposition) over eigenvalue decomposition for PCA?",
+      "options": [
+        "SVD is always faster",
+        "SVD is more numerically stable and doesn't require computing the covariance matrix",
+        "SVD produces different principal components",
+        "SVD works only with normalized data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SVD is more numerically stable than eigenvalue decomposition and can work directly on the data matrix without explicitly computing the covariance matrix.",
+      "optionExplanations": [
+        "Incorrect. Speed depends on the specific implementation and data characteristics; SVD isn't always faster.",
+        "Correct. SVD avoids numerical issues that can arise when computing and decomposing the covariance matrix.",
+        "Incorrect. Both methods produce the same principal components when applied correctly.",
+        "Incorrect. Both SVD and eigenvalue decomposition typically benefit from data normalization, but it's not a requirement specific to SVD."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SVD",
+        "PCA",
+        "numerical-stability"
+      ]
+    },
+    {
+      "id": "DIM_028",
+      "question": "What does the term 'loadings' refer to in PCA?",
+      "options": [
+        "The eigenvalues of principal components",
+        "The weights of original features in each principal component",
+        "The number of components to retain",
+        "The explained variance ratio"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Loadings represent the coefficients or weights that show how much each original feature contributes to each principal component.",
+      "optionExplanations": [
+        "Incorrect. Eigenvalues represent the variance explained by each component, not the loadings.",
+        "Correct. Loadings show the linear combination of original features that form each principal component.",
+        "Incorrect. The number of components to retain is a hyperparameter choice, not loadings.",
+        "Incorrect. Explained variance ratio is derived from eigenvalues, not loadings."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "loadings",
+        "feature-weights"
+      ]
+    },
+    {
+      "id": "DIM_029",
+      "question": "Why is centering data important before applying PCA?",
+      "options": [
+        "To make all features positive",
+        "To ensure the first principal component passes through the mean of the data",
+        "To increase the number of components",
+        "To make the data normally distributed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Centering ensures that the principal components represent directions of maximum variance around the data's center, not around the origin.",
+      "optionExplanations": [
+        "Incorrect. Centering subtracts the mean, which can make some features negative.",
+        "Correct. Centering ensures principal components represent variance around the data center rather than the origin.",
+        "Incorrect. Centering doesn't change the number of possible components.",
+        "Incorrect. Centering doesn't change the distribution shape, only the location."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "centering",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "DIM_030",
+      "question": "In t-SNE, what does the early exaggeration phase accomplish?",
+      "options": [
+        "It speeds up convergence",
+        "It helps form tight clusters by exaggerating attractive forces",
+        "It reduces computational complexity",
+        "It normalizes the data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Early exaggeration increases the attractive forces between similar points in the early iterations, helping to form tight, well-separated clusters.",
+      "optionExplanations": [
+        "Incorrect. While it may affect convergence, the primary purpose is cluster formation, not speed.",
+        "Correct. Early exaggeration helps similar points cluster together by temporarily increasing attractive forces.",
+        "Incorrect. Early exaggeration doesn't reduce computational complexity.",
+        "Incorrect. Data normalization is a preprocessing step, not part of the early exaggeration phase."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "t-SNE",
+        "early-exaggeration",
+        "clustering"
+      ]
+    },
+    {
+      "id": "DIM_031",
+      "question": "Which of the following is NOT a common application of dimensionality reduction?",
+      "options": [
+        "Data visualization",
+        "Noise reduction",
+        "Increasing data storage requirements",
+        "Speeding up machine learning algorithms"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Dimensionality reduction typically reduces storage requirements rather than increasing them.",
+      "optionExplanations": [
+        "Incorrect. Data visualization is one of the most common applications of dimensionality reduction.",
+        "Incorrect. Dimensionality reduction often helps remove noise by focusing on the most important patterns.",
+        "Correct. Dimensionality reduction reduces the number of features, which typically decreases storage requirements.",
+        "Incorrect. Reducing dimensions often speeds up algorithms by reducing computational complexity."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "applications",
+        "dimensionality-reduction",
+        "storage"
+      ]
+    },
+    {
+      "id": "DIM_032",
+      "question": "What is kernel PCA?",
+      "options": [
+        "PCA applied to categorical data",
+        "PCA with a different scaling method",
+        "PCA applied in a higher-dimensional feature space using kernel functions",
+        "PCA with faster computation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Kernel PCA uses kernel functions to implicitly map data to a higher-dimensional space where linear PCA can capture non-linear relationships in the original space.",
+      "optionExplanations": [
+        "Incorrect. Kernel PCA still works with numerical data; the kernel trick doesn't specifically address categorical data.",
+        "Incorrect. Kernel PCA uses the kernel trick, not different scaling methods.",
+        "Correct. Kernel PCA applies the kernel trick to perform PCA in a higher-dimensional feature space, capturing non-linear relationships.",
+        "Incorrect. Kernel PCA is typically more computationally expensive than standard PCA."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "kernel-PCA",
+        "kernel-trick",
+        "non-linear"
+      ]
+    },
+    {
+      "id": "DIM_033",
+      "question": "What is the relationship between PCA and autoencoders?",
+      "options": [
+        "They are completely unrelated",
+        "PCA is a linear version of autoencoders",
+        "Autoencoders can only reproduce PCA results",
+        "PCA is always better than autoencoders"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear autoencoders with a single hidden layer are mathematically equivalent to PCA, while non-linear autoencoders can capture more complex relationships.",
+      "optionExplanations": [
+        "Incorrect. There's a clear mathematical relationship between linear autoencoders and PCA.",
+        "Correct. A linear autoencoder learns the same subspace as PCA, making PCA the linear special case of autoencoders.",
+        "Incorrect. Non-linear autoencoders can learn representations that go beyond what PCA can capture.",
+        "Incorrect. The choice depends on the data structure; non-linear autoencoders may be better for complex non-linear data."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PCA",
+        "autoencoders",
+        "linear-relationship"
+      ]
+    },
+    {
+      "id": "DIM_034",
+      "question": "What is the Johnson-Lindenstrauss lemma related to?",
+      "options": [
+        "PCA eigenvalue computation",
+        "Random projection and dimensionality reduction",
+        "t-SNE convergence",
+        "LDA class separation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Johnson-Lindenstrauss lemma provides theoretical foundation for random projection, showing that points can be projected to lower dimensions while approximately preserving distances.",
+      "optionExplanations": [
+        "Incorrect. The lemma doesn't specifically address PCA eigenvalue computation.",
+        "Correct. The lemma guarantees that random projections can preserve pairwise distances with high probability.",
+        "Incorrect. The lemma is not related to t-SNE's convergence properties.",
+        "Incorrect. The lemma doesn't specifically address LDA's class separation capabilities."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Johnson-Lindenstrauss",
+        "random-projection",
+        "distance-preservation"
+      ]
+    },
+    {
+      "id": "DIM_035",
+      "question": "What is the primary difference between global and local dimensionality reduction methods?",
+      "options": [
+        "Global methods work with larger datasets",
+        "Global methods preserve overall structure while local methods focus on neighborhood relationships",
+        "Local methods are always faster",
+        "Global methods require more memory"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Global methods like PCA preserve overall data structure, while local methods like t-SNE focus on preserving relationships within local neighborhoods.",
+      "optionExplanations": [
+        "Incorrect. The global/local distinction isn't about dataset size but about which aspects of data structure are preserved.",
+        "Correct. Global methods preserve overall geometry while local methods prioritize preserving local neighborhood structure.",
+        "Incorrect. Speed depends on the specific algorithm and implementation, not whether it's global or local.",
+        "Incorrect. Memory requirements depend on the specific algorithm and data size, not the global/local distinction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "global-methods",
+        "local-methods",
+        "structure-preservation"
+      ]
+    },
+    {
+      "id": "DIM_036",
+      "question": "What does it mean for a dimensionality reduction technique to be 'topology preserving'?",
+      "options": [
+        "It maintains the exact distances between all points",
+        "It preserves the neighborhood structure and local relationships",
+        "It keeps the same number of dimensions",
+        "It maintains the original feature names"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Topology preservation means maintaining the local neighborhood structure, so points that were close in high-dimensional space remain close in low-dimensional space.",
+      "optionExplanations": [
+        "Incorrect. Exact distance preservation is usually impossible in dimensionality reduction; topology preservation is about relative relationships.",
+        "Correct. Topology preservation maintains the local neighborhood structure and relative proximity relationships.",
+        "Incorrect. Topology preservation is about maintaining relationships while reducing dimensions.",
+        "Incorrect. Feature names are lost in most dimensionality reduction techniques as new features are created."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "topology-preservation",
+        "neighborhood-structure",
+        "local-relationships"
+      ]
+    },
+    {
+      "id": "DIM_037",
+      "question": "In the context of the curse of dimensionality, what happens to the volume of a unit hypersphere as dimensions increase?",
+      "options": [
+        "It increases exponentially",
+        "It remains constant",
+        "It approaches zero",
+        "It increases linearly"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "As dimensions increase, the volume of a unit hypersphere approaches zero, which is one manifestation of the curse of dimensionality.",
+      "optionExplanations": [
+        "Incorrect. The volume decreases, not increases, as dimensions grow.",
+        "Incorrect. The volume changes dramatically with increasing dimensions.",
+        "Correct. The volume of a unit hypersphere approaches zero as the number of dimensions increases, concentrating near the surface.",
+        "Incorrect. The change is exponential, not linear, and in the decreasing direction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "hypersphere",
+        "high-dimensional-geometry"
+      ]
+    },
+    {
+      "id": "DIM_038",
+      "question": "What is the intrinsic dimensionality of data?",
+      "options": [
+        "The number of features in the original dataset",
+        "The minimum number of dimensions needed to represent the data without significant information loss",
+        "Always equal to 2 or 3 for visualization",
+        "The number of principal components with positive eigenvalues"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Intrinsic dimensionality refers to the minimum number of parameters or dimensions needed to accurately represent the data's essential structure.",
+      "optionExplanations": [
+        "Incorrect. Original features may include redundant or irrelevant dimensions.",
+        "Correct. Intrinsic dimensionality is the true underlying dimensionality needed to represent the data's essential structure.",
+        "Incorrect. Intrinsic dimensionality depends on the data structure, not visualization requirements.",
+        "Incorrect. While related, the number of positive eigenvalues is just one way to estimate intrinsic dimensionality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "intrinsic-dimensionality",
+        "data-structure",
+        "information-theory"
+      ]
+    },
+    {
+      "id": "DIM_039",
+      "question": "Which method would be most appropriate for reducing dimensionality of text data represented as word vectors?",
+      "options": [
+        "Always use PCA",
+        "Always use LDA",
+        "Use PCA or t-SNE/UMAP depending on the goal",
+        "Dimensionality reduction is not applicable to text data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For text data, PCA can help with computational efficiency and noise reduction, while t-SNE/UMAP are better for visualization and exploring semantic relationships.",
+      "optionExplanations": [
+        "Incorrect. While PCA is useful, other methods might be better depending on the specific application.",
+        "Incorrect. LDA (Linear Discriminant Analysis) would only be appropriate if you have labeled text categories.",
+        "Correct. PCA is good for computational efficiency, while t-SNE/UMAP excel at visualizing semantic relationships in text.",
+        "Incorrect. Dimensionality reduction is very commonly applied to high-dimensional text representations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "text-data",
+        "word-vectors",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "DIM_040",
+      "question": "What is the main limitation of using only the first two principal components for visualization?",
+      "options": [
+        "It always distorts the data",
+        "It may miss important patterns captured by higher-order components",
+        "It requires too much computation",
+        "It only works with labeled data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Using only the first two principal components may miss important patterns and relationships that are captured by higher-order components.",
+      "optionExplanations": [
+        "Incorrect. While some information is lost, it doesn't always distort the main patterns.",
+        "Correct. Important relationships might be captured in the 3rd, 4th, or higher components that won't be visible in a 2D projection.",
+        "Incorrect. Using fewer components actually reduces computational requirements.",
+        "Incorrect. PCA is an unsupervised method that doesn't require labeled data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "visualization",
+        "information-loss"
+      ]
+    },
+    {
+      "id": "DIM_041",
+      "question": "In which scenario would Quadratic Discriminant Analysis (QDA) be preferred over Linear Discriminant Analysis (LDA)?",
+      "options": [
+        "When classes have different covariance matrices",
+        "When you need dimensionality reduction",
+        "When you have unlabeled data",
+        "When you want linear decision boundaries"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "QDA is preferred when the assumption of equal covariance matrices is violated, as it allows each class to have its own covariance matrix.",
+      "optionExplanations": [
+        "Correct. QDA relaxes the equal covariance assumption of LDA, allowing for different covariance matrices per class.",
+        "Incorrect. QDA is primarily a classification method, not specifically designed for dimensionality reduction.",
+        "Incorrect. Both LDA and QDA are supervised methods requiring labeled data.",
+        "Incorrect. QDA produces quadratic decision boundaries, not linear ones."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "QDA",
+        "LDA",
+        "covariance-matrices"
+      ]
+    },
+    {
+      "id": "DIM_042",
+      "question": "What is the computational complexity of standard PCA for a dataset with n samples and d features?",
+      "options": [
+        "O(n)",
+        "O(d³)",
+        "O(n²d + d³)",
+        "O(nd)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "PCA complexity includes computing the covariance matrix O(n²d) and its eigenvalue decomposition O(d³), giving O(n²d + d³) overall.",
+      "optionExplanations": [
+        "Incorrect. This would be too simple given the matrix operations involved in PCA.",
+        "Incorrect. This only accounts for eigenvalue decomposition but ignores covariance matrix computation.",
+        "Correct. The complexity includes covariance matrix computation O(n²d) and eigenvalue decomposition O(d³).",
+        "Incorrect. This underestimates the complexity of the required matrix operations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PCA",
+        "computational-complexity",
+        "big-O"
+      ]
+    },
+    {
+      "id": "DIM_043",
+      "question": "What is batch PCA and when is it useful?",
+      "options": [
+        "PCA applied to categorical data",
+        "PCA that processes data in smaller chunks, useful for large datasets",
+        "PCA with different scaling",
+        "PCA applied only to training data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Batch PCA processes data in smaller chunks to handle datasets that don't fit in memory, using incremental algorithms to update the principal components.",
+      "optionExplanations": [
+        "Incorrect. Batch PCA still works with numerical data; it's about processing methodology, not data type.",
+        "Correct. Batch PCA processes large datasets incrementally to overcome memory limitations.",
+        "Incorrect. Batch PCA relates to data processing strategy, not scaling methods.",
+        "Incorrect. The term 'batch' here refers to processing chunks of data, not train/test splits."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "batch-PCA",
+        "incremental-PCA",
+        "large-datasets"
+      ]
+    },
+    {
+      "id": "DIM_044",
+      "question": "What is the difference between hard and soft dimensionality reduction?",
+      "options": [
+        "Hard is faster than soft",
+        "Hard selects features while soft transforms them",
+        "Hard works with continuous data while soft works with discrete data",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hard dimensionality reduction selects a subset of original features, while soft dimensionality reduction creates new features through transformations.",
+      "optionExplanations": [
+        "Incorrect. Speed depends on the specific algorithm, not whether it's hard or soft.",
+        "Correct. Hard reduction selects existing features (like feature selection), while soft reduction creates new transformed features (like PCA).",
+        "Incorrect. Both approaches can work with continuous data; the distinction is about methodology, not data type.",
+        "Incorrect. These are distinct approaches to dimensionality reduction with different characteristics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "hard-reduction",
+        "soft-reduction",
+        "feature-selection"
+      ]
+    },
+    {
+      "id": "DIM_045",
+      "question": "Why might you apply both PCA and t-SNE sequentially?",
+      "options": [
+        "To make the results identical",
+        "To reduce computational cost of t-SNE while preserving its visualization quality",
+        "To increase the dimensionality",
+        "They should never be used together"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Applying PCA first can reduce dimensionality to a manageable level (e.g., 50 dimensions) before applying t-SNE, reducing computational cost while maintaining visualization quality.",
+      "optionExplanations": [
+        "Incorrect. The methods serve different purposes and won't produce identical results.",
+        "Correct. PCA preprocessing can make t-SNE computationally feasible for high-dimensional data while preserving most information.",
+        "Incorrect. Both methods reduce dimensionality; applying them sequentially further reduces dimensions.",
+        "Incorrect. This is actually a common and effective approach for high-dimensional data visualization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PCA",
+        "t-SNE",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "DIM_046",
+      "question": "What is the main assumption behind using Euclidean distance in high-dimensional spaces?",
+      "options": [
+        "All features are equally important",
+        "Data is normally distributed",
+        "Features are uncorrelated",
+        "The assumption often fails due to the curse of dimensionality"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In high-dimensional spaces, Euclidean distance often becomes less meaningful due to the curse of dimensionality, where all points appear equidistant.",
+      "optionExplanations": [
+        "Incorrect. While equal feature importance is one assumption, the main issue is that distance becomes less meaningful in high dimensions.",
+        "Incorrect. Euclidean distance doesn't require normal distribution, though it affects interpretation.",
+        "Incorrect. Euclidean distance can handle correlated features, though correlation affects interpretation.",
+        "Correct. In high dimensions, the curse of dimensionality makes distance measures less discriminative."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "euclidean-distance",
+        "curse-of-dimensionality",
+        "high-dimensions"
+      ]
+    },
+    {
+      "id": "DIM_047",
+      "question": "What is the significance of negative eigenvalues in PCA?",
+      "options": [
+        "They represent noise in the data",
+        "They indicate an error in computation",
+        "Eigenvalues in PCA are always non-negative for covariance matrices",
+        "They represent negative correlations"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Covariance matrices are positive semi-definite, which guarantees that all eigenvalues are non-negative. Negative eigenvalues would indicate a computational error.",
+      "optionExplanations": [
+        "Incorrect. Noise would still produce non-negative eigenvalues, though possibly small ones.",
+        "Incorrect. While negative eigenvalues could indicate errors, the key point is that they shouldn't occur theoretically.",
+        "Correct. Covariance matrices are positive semi-definite, ensuring all eigenvalues are ≥ 0.",
+        "Incorrect. Negative correlations don't produce negative eigenvalues in the covariance matrix."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "eigenvalues",
+        "covariance-matrix",
+        "positive-semidefinite"
+      ]
+    },
+    {
+      "id": "DIM_048",
+      "question": "What does it mean when t-SNE 'perplexity' is set too high?",
+      "options": [
+        "The algorithm runs faster",
+        "Local structure is preserved better",
+        "Global structure dominates and local neighborhoods may be merged",
+        "The visualization becomes more accurate"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High perplexity causes t-SNE to consider too many neighbors, potentially merging distinct local clusters and losing local structure details.",
+      "optionExplanations": [
+        "Incorrect. Higher perplexity typically increases computational cost, not speed.",
+        "Incorrect. High perplexity can actually hurt local structure preservation by considering too many neighbors.",
+        "Correct. High perplexity makes the algorithm consider more distant points as neighbors, potentially merging distinct clusters.",
+        "Incorrect. The optimal perplexity depends on the data structure; too high can reduce visualization quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-SNE",
+        "perplexity",
+        "local-structure"
+      ]
+    },
+    {
+      "id": "DIM_049",
+      "question": "What is the difference between PCA and Factor Analysis?",
+      "options": [
+        "They are identical methods",
+        "PCA explains total variance while Factor Analysis explains shared variance",
+        "PCA is supervised while Factor Analysis is unsupervised",
+        "Factor Analysis always produces more components"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PCA aims to explain the total variance in data, while Factor Analysis specifically models the shared variance among variables, separating it from unique variance.",
+      "optionExplanations": [
+        "Incorrect. While related, they have different objectives and mathematical formulations.",
+        "Correct. PCA explains total variance, while Factor Analysis separates shared variance from unique variance and noise.",
+        "Incorrect. Both are unsupervised methods that don't require labeled data.",
+        "Incorrect. The number of components depends on the data and chosen criteria, not the method itself."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PCA",
+        "factor-analysis",
+        "variance-decomposition"
+      ]
+    },
+    {
+      "id": "DIM_050",
+      "question": "In UMAP, what does the 'n_neighbors' parameter control?",
+      "options": [
+        "The final number of dimensions",
+        "The size of local neighborhood used to construct the manifold",
+        "The number of iterations",
+        "The learning rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The n_neighbors parameter in UMAP determines how many nearest neighbors are used to construct the local manifold structure around each point.",
+      "optionExplanations": [
+        "Incorrect. The number of output dimensions is controlled by the 'n_components' parameter.",
+        "Correct. n_neighbors determines the local neighborhood size for manifold construction, similar to perplexity in t-SNE.",
+        "Incorrect. The number of iterations is controlled by a separate parameter.",
+        "Incorrect. Learning rate is controlled by a different parameter in UMAP."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "UMAP",
+        "n_neighbors",
+        "local-neighborhood"
+      ]
+    },
+    {
+      "id": "DIM_051",
+      "question": "What is the main advantage of Sparse PCA over standard PCA?",
+      "options": [
+        "It's always faster",
+        "It produces components with many zero loadings, improving interpretability",
+        "It works with categorical data",
+        "It eliminates the need for scaling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sparse PCA adds a sparsity constraint that forces many loadings to be exactly zero, making the components more interpretable by involving fewer features.",
+      "optionExplanations": [
+        "Incorrect. Sparse PCA is typically slower due to the additional sparsity constraints.",
+        "Correct. Sparsity constraints create components with many zero loadings, making them more interpretable.",
+        "Incorrect. Like regular PCA, Sparse PCA typically works with numerical data.",
+        "Incorrect. Scaling considerations remain the same as in standard PCA."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sparse-PCA",
+        "sparsity",
+        "interpretability"
+      ]
+    },
+    {
+      "id": "DIM_052",
+      "question": "Why might you use probabilistic PCA instead of standard PCA?",
+      "options": [
+        "It's computationally faster",
+        "It provides a probabilistic framework and can handle missing data",
+        "It always produces better visualizations",
+        "It works only with discrete data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Probabilistic PCA provides a generative model framework and can naturally handle missing data through the expectation-maximization algorithm.",
+      "optionExplanations": [
+        "Incorrect. Probabilistic PCA is typically more computationally expensive than standard PCA.",
+        "Correct. It provides uncertainty estimates and can handle missing data through iterative algorithms.",
+        "Incorrect. Visualization quality depends on the data structure, not the probabilistic framework.",
+        "Incorrect. Probabilistic PCA works with continuous data, similar to standard PCA."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "probabilistic-PCA",
+        "missing-data",
+        "generative-model"
+      ]
+    },
+    {
+      "id": "DIM_053",
+      "question": "What is the relationship between PCA and whitening?",
+      "options": [
+        "They are unrelated",
+        "Whitening is PCA followed by scaling to unit variance",
+        "PCA is whitening followed by rotation",
+        "Whitening eliminates the need for PCA"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Whitening transformation involves PCA followed by scaling each component by the inverse square root of its eigenvalue, resulting in uncorrelated unit-variance features.",
+      "optionExplanations": [
+        "Incorrect. Whitening directly uses PCA as a key component.",
+        "Correct. Whitening applies PCA then scales components to have unit variance and zero correlation.",
+        "Incorrect. This reverses the actual relationship between the methods.",
+        "Incorrect. Whitening requires PCA as a preprocessing step."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "whitening",
+        "PCA",
+        "decorrelation"
+      ]
+    },
+    {
+      "id": "DIM_054",
+      "question": "What happens to the condition number of a matrix after applying PCA?",
+      "options": [
+        "It always increases",
+        "It always decreases",
+        "It can be controlled by choosing the number of components",
+        "It remains unchanged"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "By selecting only the components with larger eigenvalues and discarding those with very small eigenvalues, PCA can improve the condition number.",
+      "optionExplanations": [
+        "Incorrect. PCA can actually improve (decrease) the condition number by removing small eigenvalues.",
+        "Incorrect. The effect depends on which components are retained.",
+        "Correct. Retaining components with larger eigenvalues and discarding small ones can improve the condition number.",
+        "Incorrect. PCA transformation changes the condition number based on component selection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "condition-number",
+        "PCA",
+        "numerical-stability"
+      ]
+    },
+    {
+      "id": "DIM_055",
+      "question": "In the context of image compression using PCA, what do the principal components represent?",
+      "options": [
+        "Individual pixels",
+        "Color channels",
+        "Basis images that can be linearly combined to reconstruct the original image",
+        "Noise patterns"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In image compression, principal components represent basis images (eigenfaces for faces) that capture the main patterns of variation across the image dataset.",
+      "optionExplanations": [
+        "Incorrect. Principal components are linear combinations of all pixels, not individual pixels.",
+        "Incorrect. Color channels are handled separately; principal components work across spatial dimensions.",
+        "Correct. Each component is a basis image, and original images can be reconstructed as weighted combinations of these basis images.",
+        "Incorrect. While some components might capture noise, the main components represent meaningful image patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "image-compression",
+        "PCA",
+        "basis-images"
+      ]
+    },
+    {
+      "id": "DIM_056",
+      "question": "What is the 'crowding problem' in t-SNE?",
+      "options": [
+        "Too many data points in the visualization",
+        "Difficulty in placing moderate-distance points when mapping from high to low dimensions",
+        "Too many clusters forming",
+        "Computational memory issues"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The crowding problem occurs because there isn't enough space in low dimensions to accommodate all the moderate-distance relationships from high dimensions.",
+      "optionExplanations": [
+        "Incorrect. The crowding problem is about spatial relationships, not the number of points.",
+        "Correct. There's insufficient space in 2D/3D to preserve all distance relationships from high dimensions.",
+        "Incorrect. This refers to spatial arrangement difficulties, not cluster formation.",
+        "Incorrect. While t-SNE is memory-intensive, crowding refers to a spatial mapping issue."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "t-SNE",
+        "crowding-problem",
+        "dimensionality-mapping"
+      ]
+    },
+    {
+      "id": "DIM_057",
+      "question": "Which distance metric is commonly used in UMAP's high-dimensional space?",
+      "options": [
+        "Only Euclidean distance",
+        "Various metrics including Euclidean, cosine, and Manhattan",
+        "Only Manhattan distance",
+        "Only cosine similarity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "UMAP supports various distance metrics in the high-dimensional space, including Euclidean, cosine, Manhattan, and many others, making it flexible for different data types.",
+      "optionExplanations": [
+        "Incorrect. UMAP supports multiple distance metrics beyond Euclidean.",
+        "Correct. UMAP's flexibility includes support for many distance metrics appropriate for different data types.",
+        "Incorrect. While Manhattan distance is supported, it's not the only option.",
+        "Incorrect. Cosine similarity is one option, but UMAP supports many metrics."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "UMAP",
+        "distance-metrics",
+        "flexibility"
+      ]
+    },
+    {
+      "id": "DIM_058",
+      "question": "What is the main difference between linear and non-linear dimensionality reduction?",
+      "options": [
+        "Linear is always faster",
+        "Linear methods assume data lies on a linear subspace while non-linear methods can capture curved manifolds",
+        "Non-linear methods always produce better results",
+        "Linear methods require more data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Linear methods like PCA assume data lies on a linear subspace, while non-linear methods like t-SNE can capture curved manifold structures.",
+      "optionExplanations": [
+        "Incorrect. Speed depends on the specific algorithm and implementation, not linearity.",
+        "Correct. This is the fundamental distinction between linear methods (PCA, LDA) and non-linear methods (t-SNE, UMAP).",
+        "Incorrect. The best method depends on the actual structure of the data.",
+        "Incorrect. Data requirements depend on the specific algorithm, not whether it's linear or non-linear."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "linear-methods",
+        "non-linear-methods",
+        "manifold-structure"
+      ]
+    },
+    {
+      "id": "DIM_059",
+      "question": "In feature selection, what is the difference between filter, wrapper, and embedded methods?",
+      "options": [
+        "They all work identically",
+        "Filter uses statistical measures, wrapper uses model performance, embedded integrates selection with model training",
+        "Filter is supervised, others are unsupervised",
+        "Only wrapper methods work with categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Filter methods use statistical measures independent of models, wrapper methods use model performance to select features, and embedded methods integrate feature selection into model training.",
+      "optionExplanations": [
+        "Incorrect. These are distinct approaches with different methodologies and computational trade-offs.",
+        "Correct. Each approach uses different criteria: statistical independence, model performance, and integrated optimization respectively.",
+        "Incorrect. All three methods can be applied in both supervised and unsupervised contexts.",
+        "Incorrect. All methods can potentially work with categorical data with appropriate preprocessing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-selection",
+        "filter-methods",
+        "wrapper-methods",
+        "embedded-methods"
+      ]
+    },
+    {
+      "id": "DIM_060",
+      "question": "What is the purpose of the 'min_dist' parameter in UMAP?",
+      "options": [
+        "Controls the minimum number of dimensions",
+        "Sets the minimum distance between points in the low-dimensional embedding",
+        "Determines the minimum number of neighbors",
+        "Controls the learning rate"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The min_dist parameter controls how tightly UMAP packs points together in the low-dimensional representation, affecting the granularity of clustering.",
+      "optionExplanations": [
+        "Incorrect. The number of dimensions is controlled by n_components, not min_dist.",
+        "Correct. min_dist determines how closely points can be placed in the embedding, affecting cluster tightness.",
+        "Incorrect. The number of neighbors is controlled by n_neighbors parameter.",
+        "Incorrect. Learning rate is controlled by a separate parameter in UMAP."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "UMAP",
+        "min_dist",
+        "clustering-granularity"
+      ]
+    },
+    {
+      "id": "DIM_061",
+      "question": "Why is the choice of similarity metric important in dimensionality reduction?",
+      "options": [
+        "It only affects computational speed",
+        "Different metrics capture different notions of similarity, affecting which structures are preserved",
+        "All metrics produce identical results",
+        "Similarity metrics are only important for visualization"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different similarity metrics (Euclidean, cosine, etc.) capture different aspects of data relationships, leading to different preserved structures in the reduced space.",
+      "optionExplanations": [
+        "Incorrect. While metrics affect computation, the main impact is on the quality and type of preserved structure.",
+        "Correct. Different metrics emphasize different relationships (distance, angle, etc.), affecting which patterns are preserved.",
+        "Incorrect. Different metrics can produce significantly different results based on data characteristics.",
+        "Incorrect. Similarity metrics are important for all applications of dimensionality reduction, not just visualization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "similarity-metrics",
+        "structure-preservation",
+        "data-relationships"
+      ]
+    },
+    {
+      "id": "DIM_062",
+      "question": "What is the main challenge when applying dimensionality reduction to streaming data?",
+      "options": [
+        "Streaming data cannot be reduced",
+        "Need for incremental algorithms that can update the representation as new data arrives",
+        "Streaming data is always high-dimensional",
+        "Visualization is impossible with streaming data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Streaming data requires incremental or online algorithms that can update the dimensionality reduction as new data points arrive without recomputing from scratch.",
+      "optionExplanations": [
+        "Incorrect. Dimensionality reduction can be applied to streaming data with appropriate algorithms.",
+        "Correct. Streaming data requires algorithms that can incrementally update the reduced representation.",
+        "Incorrect. Streaming data can have any dimensionality; the challenge is the incremental nature.",
+        "Incorrect. Visualization is possible but requires dynamic updating techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "streaming-data",
+        "incremental-algorithms",
+        "online-learning"
+      ]
+    },
+    {
+      "id": "DIM_063",
+      "question": "What does the term 'manifold hypothesis' suggest about high-dimensional data?",
+      "options": [
+        "High-dimensional data is always random",
+        "Real-world high-dimensional data often lies on or near a lower-dimensional manifold",
+        "Manifolds only exist in 3D space",
+        "High-dimensional data cannot be compressed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The manifold hypothesis suggests that although data lives in high-dimensional space, it often has intrinsic structure that lies on or near a lower-dimensional manifold.",
+      "optionExplanations": [
+        "Incorrect. The hypothesis suggests structure, not randomness, in high-dimensional data.",
+        "Correct. This hypothesis motivates many dimensionality reduction techniques that try to discover this underlying manifold.",
+        "Incorrect. Manifolds can exist in any dimensional space, not just 3D.",
+        "Incorrect. The manifold hypothesis actually suggests that compression is possible by finding the underlying structure."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "manifold-hypothesis",
+        "intrinsic-structure",
+        "high-dimensional-data"
+      ]
+    },
+    {
+      "id": "DIM_064",
+      "question": "In PCA, what information is lost when using fewer than all principal components?",
+      "options": [
+        "Information corresponding to the smallest eigenvalues",
+        "Information corresponding to the largest eigenvalues",
+        "Random information",
+        "No information is lost"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When using fewer components, PCA discards the components with smallest eigenvalues, which represent the directions of least variance in the data.",
+      "optionExplanations": [
+        "Correct. The discarded components have the smallest eigenvalues and represent the least important variation.",
+        "Incorrect. PCA retains components with the largest eigenvalues, which contain the most important information.",
+        "Incorrect. PCA systematically discards information based on variance, not randomly.",
+        "Incorrect. Using fewer components always results in some information loss."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PCA",
+        "information-loss",
+        "eigenvalues"
+      ]
+    },
+    {
+      "id": "DIM_065",
+      "question": "What is the difference between global and local optimization in dimensionality reduction?",
+      "options": [
+        "Global works with more data points",
+        "Global optimization considers all pairwise relationships while local focuses on neighborhood relationships",
+        "Local optimization is always better",
+        "They produce identical results"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Global optimization methods try to preserve all pairwise relationships, while local methods focus on preserving relationships within local neighborhoods.",
+      "optionExplanations": [
+        "Incorrect. The distinction is about which relationships are preserved, not dataset size.",
+        "Correct. Global methods consider all point relationships while local methods prioritize nearby point relationships.",
+        "Incorrect. The best approach depends on the data structure and application goals.",
+        "Incorrect. These approaches typically produce different results due to their different objectives."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "global-optimization",
+        "local-optimization",
+        "pairwise-relationships"
+      ]
+    },
+    {
+      "id": "DIM_066",
+      "question": "Why might you apply dimensionality reduction before clustering?",
+      "options": [
+        "To increase the number of clusters",
+        "To reduce computational cost and mitigate the curse of dimensionality",
+        "To make clustering impossible",
+        "Dimensionality reduction is never used before clustering"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dimensionality reduction before clustering can improve efficiency and effectiveness by reducing noise and the curse of dimensionality effects.",
+      "optionExplanations": [
+        "Incorrect. Dimensionality reduction doesn't directly control the number of clusters.",
+        "Correct. It reduces computational cost and can improve clustering by removing noise and irrelevant dimensions.",
+        "Incorrect. Proper dimensionality reduction often improves clustering performance.",
+        "Incorrect. This is actually a common and effective preprocessing step for clustering."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "clustering",
+        "preprocessing",
+        "curse-of-dimensionality"
+      ]
+    },
+    {
+      "id": "DIM_067",
+      "question": "What is the main advantage of using SVD-based PCA implementation?",
+      "options": [
+        "It's always faster",
+        "It doesn't require centering the data",
+        "It's more numerically stable and memory efficient",
+        "It produces different results than eigendecomposition"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SVD-based PCA is more numerically stable and memory efficient as it avoids explicitly computing the covariance matrix, which can be problematic for numerical precision.",
+      "optionExplanations": [
+        "Incorrect. Speed depends on implementation and data characteristics; SVD isn't always faster.",
+        "Incorrect. Data centering is still typically required for proper PCA regardless of implementation.",
+        "Correct. SVD avoids numerical issues that can arise when computing and decomposing the covariance matrix.",
+        "Incorrect. Both methods should produce the same results when implemented correctly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SVD",
+        "numerical-stability",
+        "memory-efficiency"
+      ]
+    },
+    {
+      "id": "DIM_068",
+      "question": "What role does regularization play in some dimensionality reduction techniques?",
+      "options": [
+        "It increases overfitting",
+        "It helps prevent overfitting and can encourage sparsity or smoothness",
+        "It's only used in supervised learning",
+        "It has no effect on dimensionality reduction"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regularization in dimensionality reduction helps prevent overfitting and can encourage desirable properties like sparsity (Sparse PCA) or smoothness.",
+      "optionExplanations": [
+        "Incorrect. Regularization is specifically designed to reduce overfitting.",
+        "Correct. Regularization prevents overfitting and can encourage properties like sparsity in loadings or smoothness in embeddings.",
+        "Incorrect. Regularization is used in both supervised and unsupervised dimensionality reduction methods.",
+        "Incorrect. Regularization significantly affects the behavior and results of dimensionality reduction algorithms."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "regularization",
+        "overfitting",
+        "sparsity"
+      ]
+    },
+    {
+      "id": "DIM_069",
+      "question": "How does the curse of dimensionality affect nearest neighbor search?",
+      "options": [
+        "It makes search faster",
+        "It has no effect",
+        "All points become approximately equidistant, making nearest neighbors less meaningful",
+        "It only affects categorical data"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In high dimensions, the difference between nearest and farthest neighbors becomes negligible, making distance-based methods less effective.",
+      "optionExplanations": [
+        "Incorrect. The curse of dimensionality typically makes nearest neighbor search less effective, not faster.",
+        "Incorrect. The curse of dimensionality significantly impacts the meaningfulness of distance measures.",
+        "Correct. In high dimensions, all points appear roughly equidistant, reducing the discriminative power of nearest neighbor methods.",
+        "Incorrect. The curse of dimensionality affects distance measures regardless of data type."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse-of-dimensionality",
+        "nearest-neighbors",
+        "distance-measures"
+      ]
+    },
+    {
+      "id": "DIM_070",
+      "question": "What is the primary goal of multidimensional scaling (MDS)?",
+      "options": [
+        "To increase dimensionality",
+        "To preserve pairwise distances between data points in lower dimensions",
+        "To cluster data points",
+        "To perform classification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "MDS aims to find a lower-dimensional representation that best preserves the pairwise distances from the original high-dimensional space.",
+      "optionExplanations": [
+        "Incorrect. MDS is a dimensionality reduction technique that decreases, not increases, dimensions.",
+        "Correct. MDS tries to maintain the pairwise distance relationships in the reduced dimensional space.",
+        "Incorrect. While MDS can reveal clusters, its primary goal is distance preservation, not clustering.",
+        "Incorrect. MDS is an unsupervised method for dimensionality reduction, not classification."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MDS",
+        "distance-preservation",
+        "pairwise-distances"
+      ]
+    },
+    {
+      "id": "DIM_071",
+      "question": "When would you choose LDA over PCA for dimensionality reduction?",
+      "options": [
+        "When you have unlabeled data",
+        "When you want to maximize total variance",
+        "When you have labeled data and want to preserve class separability",
+        "When you need exactly linear transformations"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "LDA is preferred when you have labeled data and specifically want to find dimensions that best separate different classes.",
+      "optionExplanations": [
+        "Incorrect. LDA is a supervised method that requires labeled data, unlike PCA which works with unlabeled data.",
+        "Incorrect. PCA maximizes total variance; LDA maximizes class separability.",
+        "Correct. LDA uses class information to find dimensions that maximize the separation between different classes.",
+        "Incorrect. Both PCA and LDA produce linear transformations; this doesn't distinguish them."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "LDA",
+        "PCA",
+        "class-separability"
+      ]
+    },
+    {
+      "id": "DIM_072",
+      "question": "What is the main computational bottleneck in t-SNE?",
+      "options": [
+        "Computing the initial embedding",
+        "The O(n²) complexity of computing pairwise similarities",
+        "Data preprocessing",
+        "Choosing hyperparameters"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "t-SNE's main computational bottleneck is its O(n²) complexity due to the need to compute similarities between all pairs of points.",
+      "optionExplanations": [
+        "Incorrect. Initial embedding is typically done with PCA and is relatively fast.",
+        "Correct. Computing and maintaining pairwise similarities scales quadratically with the number of data points.",
+        "Incorrect. Data preprocessing is typically a small fraction of the total computational cost.",
+        "Incorrect. Hyperparameter selection can be time-consuming but isn't the main algorithmic bottleneck."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-SNE",
+        "computational-complexity",
+        "pairwise-similarities"
+      ]
+    },
+    {
+      "id": "DIM_073",
+      "question": "What is the difference between metric and non-metric MDS?",
+      "options": [
+        "Metric MDS preserves exact distances while non-metric MDS preserves rank order",
+        "They are identical methods",
+        "Metric MDS is always better",
+        "Non-metric MDS works only with categorical data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Metric MDS tries to preserve actual distance values, while non-metric MDS only tries to preserve the rank ordering of distances.",
+      "optionExplanations": [
+        "Correct. Metric MDS preserves distance values while non-metric MDS focuses on preserving the ordering of distances.",
+        "Incorrect. These are different variants of MDS with different objectives and constraints.",
+        "Incorrect. The choice depends on the data and whether exact distances or just orderings are meaningful.",
+        "Incorrect. Both methods typically work with distance matrices derived from any type of data."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "metric-MDS",
+        "non-metric-MDS",
+        "distance-preservation"
+      ]
+    },
+    {
+      "id": "DIM_074",
+      "question": "Why might you use kernel methods in dimensionality reduction?",
+      "options": [
+        "To make algorithms faster",
+        "To capture non-linear relationships by implicitly mapping to higher dimensions",
+        "To work with categorical data only",
+        "To reduce memory usage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Kernel methods allow linear techniques like PCA to capture non-linear relationships by implicitly working in a higher-dimensional feature space.",
+      "optionExplanations": [
+        "Incorrect. Kernel methods typically increase computational cost rather than reducing it.",
+        "Correct. The kernel trick allows linear methods to capture non-linear patterns by working in transformed feature spaces.",
+        "Incorrect. Kernel methods can work with various data types, not just categorical data.",
+        "Incorrect. Kernel methods often require more memory to store kernel matrices."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel-methods",
+        "non-linear",
+        "kernel-trick"
+      ]
+    },
+    {
+      "id": "DIM_075",
+      "question": "What is the relationship between dimensionality reduction and feature engineering?",
+      "options": [
+        "They are completely unrelated",
+        "Dimensionality reduction can be seen as automated feature engineering",
+        "Feature engineering always increases dimensions",
+        "Dimensionality reduction eliminates the need for feature engineering"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dimensionality reduction automatically creates new features (transformed variables) that capture important patterns, making it a form of automated feature engineering.",
+      "optionExplanations": [
+        "Incorrect. Both involve creating or selecting features that better represent the data for analysis.",
+        "Correct. Dimensionality reduction automatically creates new features that capture important data patterns.",
+        "Incorrect. Feature engineering can either increase or decrease dimensions depending on the techniques used.",
+        "Incorrect. Dimensionality reduction and manual feature engineering can be complementary approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-engineering",
+        "automated-features",
+        "data-transformation"
+      ]
+    },
+    {
+      "id": "DIM_076",
+      "question": "What is the main difference between parametric and non-parametric dimensionality reduction?",
+      "options": [
+        "Parametric methods are always faster",
+        "Parametric methods learn explicit mapping functions while non-parametric methods don't",
+        "Non-parametric methods work only with categorical data",
+        "There is no difference"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Parametric methods like autoencoders learn explicit functions to map between high and low dimensions, while non-parametric methods like t-SNE directly optimize embeddings.",
+      "optionExplanations": [
+        "Incorrect. Speed depends on the specific algorithm and data characteristics, not the parametric nature.",
+        "Correct. Parametric methods learn functions that can map new data points, while non-parametric methods optimize positions directly.",
+        "Incorrect. Both types can work with various data types depending on the specific algorithm.",
+        "Incorrect. This is a fundamental distinction in how the methods approach dimensionality reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parametric-methods",
+        "non-parametric-methods",
+        "mapping-functions"
+      ]
+    },
+    {
+      "id": "DIM_077",
+      "question": "In PCA, what does it mean when a dataset has rank deficiency?",
+      "options": [
+        "The data contains outliers",
+        "Some features are linear combinations of others, reducing the effective dimensionality",
+        "The data is corrupted",
+        "PCA cannot be applied"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rank deficiency occurs when some features are linear combinations of others, meaning the data actually lives in a lower-dimensional subspace than the number of features suggests.",
+      "optionExplanations": [
+        "Incorrect. Outliers don't necessarily create rank deficiency, though they can affect PCA results.",
+        "Correct. Rank deficiency means the data matrix has linearly dependent columns, reducing the number of meaningful principal components.",
+        "Incorrect. Rank deficiency is a structural property of the data, not necessarily corruption.",
+        "Incorrect. PCA can still be applied; it will just produce fewer meaningful components."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "rank-deficiency",
+        "linear-dependence",
+        "effective-dimensionality"
+      ]
+    },
+    {
+      "id": "DIM_078",
+      "question": "What is the main advantage of using UMAP over PCA for visualization?",
+      "options": [
+        "UMAP is always faster",
+        "UMAP can capture non-linear structure and preserve both local and global relationships better",
+        "UMAP works only with labeled data",
+        "UMAP produces identical results every time"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "UMAP can capture complex non-linear manifold structures and generally preserves both local neighborhoods and global structure better than linear PCA.",
+      "optionExplanations": [
+        "Incorrect. Speed comparison depends on data size and implementation; UMAP isn't always faster than PCA.",
+        "Correct. UMAP's non-linear nature and theoretical foundation allow it to preserve complex structures better than linear PCA.",
+        "Incorrect. UMAP is an unsupervised method that doesn't require labeled data.",
+        "Incorrect. UMAP has stochastic components and can produce different results across runs."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "UMAP",
+        "PCA",
+        "non-linear-structure"
+      ]
+    },
+    {
+      "id": "DIM_079",
+      "question": "What is the purpose of cross-validation in dimensionality reduction?",
+      "options": [
+        "To select the optimal number of dimensions or hyperparameters",
+        "To increase the number of features",
+        "To remove outliers",
+        "Cross-validation is not applicable to unsupervised methods"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-validation in dimensionality reduction helps select the optimal number of components or hyperparameters by evaluating performance on downstream tasks or reconstruction error.",
+      "optionExplanations": [
+        "Correct. Cross-validation helps choose optimal parameters like number of components, regularization strength, or other hyperparameters.",
+        "Incorrect. Cross-validation is used for parameter selection, not feature creation.",
+        "Incorrect. Outlier removal is a preprocessing step, not the primary purpose of cross-validation.",
+        "Incorrect. Cross-validation can be used with unsupervised methods by evaluating reconstruction error or downstream task performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "hyperparameter-selection",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "DIM_080",
+      "question": "What happens to explained variance when you rotate principal components?",
+      "options": [
+        "It increases for all components",
+        "It decreases for all components",
+        "Individual component variances change but total variance remains the same",
+        "Rotation is not possible with principal components"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rotation (like Varimax rotation) redistributes variance among components but preserves the total explained variance across all components.",
+      "optionExplanations": [
+        "Incorrect. Rotation redistributes variance; some components may increase while others decrease.",
+        "Incorrect. Not all components will decrease; variance is redistributed among them.",
+        "Correct. Rotation changes individual component variances but preserves the total variance explained by the rotated components.",
+        "Incorrect. Principal components can be rotated, though this changes their interpretation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "principal-component-rotation",
+        "variance-redistribution",
+        "varimax"
+      ]
+    },
+    {
+      "id": "DIM_081",
+      "question": "Which preprocessing step is most critical when comparing features with different units in PCA?",
+      "options": [
+        "Removing missing values",
+        "Standardization or normalization",
+        "Log transformation",
+        "Outlier removal"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When features have different units or scales, standardization is crucial to prevent features with larger scales from dominating the principal components.",
+      "optionExplanations": [
+        "Incorrect. While important, handling missing values doesn't address the scale differences that affect PCA.",
+        "Correct. Standardization ensures all features contribute equally to the principal components regardless of their original scales.",
+        "Incorrect. Log transformation addresses skewness but not the scale difference issue.",
+        "Incorrect. While outliers can affect PCA, standardization is more critical for handling different units."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "standardization",
+        "feature-scaling",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "DIM_082",
+      "question": "What is the main limitation of using correlation-based feature selection?",
+      "options": [
+        "It's computationally expensive",
+        "It only captures linear relationships between features",
+        "It requires labeled data",
+        "It cannot handle missing values"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Correlation-based feature selection only captures linear relationships and may miss important non-linear dependencies between features.",
+      "optionExplanations": [
+        "Incorrect. Computing correlations is relatively computationally efficient.",
+        "Correct. Correlation measures only capture linear relationships, potentially missing important non-linear feature interactions.",
+        "Incorrect. Correlation can be computed between features without requiring target labels.",
+        "Incorrect. Correlation can be computed with appropriate handling of missing values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "correlation-based-selection",
+        "linear-relationships",
+        "feature-dependencies"
+      ]
+    },
+    {
+      "id": "DIM_083",
+      "question": "In t-SNE, what does the learning rate parameter control?",
+      "options": [
+        "The number of iterations",
+        "The step size in the gradient descent optimization",
+        "The perplexity value",
+        "The final dimensionality"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The learning rate controls the step size in the gradient descent optimization process used to minimize the t-SNE cost function.",
+      "optionExplanations": [
+        "Incorrect. The number of iterations is controlled by a separate parameter.",
+        "Correct. Learning rate determines how large steps the optimization takes when updating point positions.",
+        "Incorrect. Perplexity is a separate hyperparameter that controls neighborhood size.",
+        "Incorrect. The final dimensionality is typically set to 2 or 3 for visualization and is a separate parameter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-SNE",
+        "learning-rate",
+        "gradient-descent"
+      ]
+    },
+    {
+      "id": "DIM_084",
+      "question": "What is the relationship between eigenfaces and PCA?",
+      "options": [
+        "They are unrelated concepts",
+        "Eigenfaces are the principal components when PCA is applied to face images",
+        "Eigenfaces can only be computed without PCA",
+        "Eigenfaces are a preprocessing step for PCA"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Eigenfaces are the principal components obtained when applying PCA to a dataset of face images, representing the main modes of variation across faces.",
+      "optionExplanations": [
+        "Incorrect. Eigenfaces are directly derived from PCA applied to face image data.",
+        "Correct. Each eigenface is a principal component that captures a mode of variation across the face dataset.",
+        "Incorrect. Eigenfaces are specifically the result of applying PCA to face images.",
+        "Incorrect. Eigenfaces are the output of PCA, not a preprocessing step."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "eigenfaces",
+        "PCA",
+        "face-recognition"
+      ]
+    },
+    {
+      "id": "DIM_085",
+      "question": "Why might reconstruction error not be the best metric for evaluating dimensionality reduction quality?",
+      "options": [
+        "It's too easy to compute",
+        "It may not reflect the quality for downstream tasks or human interpretability",
+        "It always gives perfect scores",
+        "It only works with labeled data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Reconstruction error measures information preservation but may not reflect how well the reduced representation serves specific purposes like classification or visualization.",
+      "optionExplanations": [
+        "Incorrect. Computational ease doesn't make a metric inappropriate; the issue is about relevance to the intended use.",
+        "Correct. Low reconstruction error doesn't guarantee that the reduced representation is useful for specific tasks or interpretable.",
+        "Incorrect. Reconstruction error varies based on the number of components and data characteristics.",
+        "Incorrect. Reconstruction error can be computed for any dimensionality reduction method regardless of labels."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "reconstruction-error",
+        "evaluation-metrics",
+        "downstream-tasks"
+      ]
+    },
+    {
+      "id": "DIM_086",
+      "question": "What is the main challenge in applying dimensionality reduction to categorical data?",
+      "options": [
+        "Categorical data cannot be reduced",
+        "Standard distance metrics may not be appropriate for categorical variables",
+        "Categorical data is always high-dimensional",
+        "It requires supervised methods only"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standard distance metrics like Euclidean distance may not be meaningful for categorical variables, requiring specialized approaches or preprocessing.",
+      "optionExplanations": [
+        "Incorrect. Dimensionality reduction can be applied to categorical data with appropriate methods.",
+        "Correct. Categorical variables require different distance metrics or encoding methods before applying standard dimensionality reduction.",
+        "Incorrect. Categorical data can be any dimensionality; the challenge is about data type, not size.",
+        "Incorrect. Both supervised and unsupervised methods can be adapted for categorical data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "categorical-data",
+        "distance-metrics",
+        "data-preprocessing"
+      ]
+    },
+    {
+      "id": "DIM_087",
+      "question": "In UMAP, what does the 'spread' parameter control?",
+      "options": [
+        "The number of neighbors",
+        "The effective scale of embedded points in combination with min_dist",
+        "The number of iterations",
+        "The random seed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The spread parameter in UMAP works together with min_dist to control the effective scale and distribution of points in the embedding.",
+      "optionExplanations": [
+        "Incorrect. The number of neighbors is controlled by the n_neighbors parameter.",
+        "Correct. Spread determines the scale of the embedding in conjunction with min_dist, affecting how spread out the points are.",
+        "Incorrect. The number of iterations is controlled by n_epochs parameter.",
+        "Incorrect. Random seed is controlled by the random_state parameter."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "UMAP",
+        "spread-parameter",
+        "embedding-scale"
+      ]
+    },
+    {
+      "id": "DIM_088",
+      "question": "What is the main advantage of using incremental PCA over standard PCA?",
+      "options": [
+        "Better accuracy",
+        "Ability to process data that doesn't fit in memory",
+        "Faster computation for small datasets",
+        "Better handling of categorical features"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Incremental PCA can process large datasets by working with small batches of data, making it suitable when the full dataset cannot fit in memory.",
+      "optionExplanations": [
+        "Incorrect. Incremental PCA provides similar accuracy to standard PCA when converged properly.",
+        "Correct. Incremental PCA processes data in batches, allowing it to handle datasets larger than available memory.",
+        "Incorrect. For small datasets that fit in memory, standard PCA is typically faster.",
+        "Incorrect. Neither incremental nor standard PCA has special advantages for categorical features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "incremental-PCA",
+        "memory-efficiency",
+        "large-datasets"
+      ]
+    },
+    {
+      "id": "DIM_089",
+      "question": "What does it mean when we say a dimensionality reduction method is 'out-of-sample' capable?",
+      "options": [
+        "It works with any sample size",
+        "It can transform new data points not seen during training",
+        "It only works with large samples",
+        "It can extrapolate to any dimension"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Out-of-sample capability means the method can transform new, previously unseen data points using the learned transformation without retraining.",
+      "optionExplanations": [
+        "Incorrect. This relates to the ability to handle new data, not the training sample size requirements.",
+        "Correct. Methods like PCA can easily transform new data points, while methods like t-SNE require rerunning the entire algorithm.",
+        "Incorrect. Out-of-sample capability is about handling new data, not minimum sample size requirements.",
+        "Incorrect. This refers to handling new data points, not changing the dimensionality of the output."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "out-of-sample",
+        "new-data-transformation",
+        "generalization"
+      ]
+    },
+    {
+      "id": "DIM_090",
+      "question": "Why is the choice of initial embedding important in t-SNE?",
+      "options": [
+        "It determines the final number of dimensions",
+        "It can affect the convergence and final embedding quality",
+        "It's not important at all",
+        "It only affects computational speed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The initial embedding in t-SNE can affect the optimization process and final result quality, as the algorithm may converge to different local optima.",
+      "optionExplanations": [
+        "Incorrect. The number of output dimensions is a separate parameter, typically set to 2 or 3.",
+        "Correct. Different initial embeddings can lead to different local optima in t-SNE's non-convex optimization.",
+        "Incorrect. Initial embedding choice can significantly impact the final visualization quality.",
+        "Incorrect. While initialization affects computation, the main concern is the quality of the final embedding."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "t-SNE",
+        "initialization",
+        "local-optima"
+      ]
+    },
+    {
+      "id": "DIM_091",
+      "question": "What is the main difference between PCA and Independent Component Analysis (ICA)?",
+      "options": [
+        "PCA finds uncorrelated components while ICA finds statistically independent components",
+        "ICA is supervised while PCA is unsupervised",
+        "PCA works with continuous data while ICA works with discrete data",
+        "They are identical methods"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "PCA finds components that are uncorrelated (orthogonal), while ICA finds components that are statistically independent, which is a stronger condition.",
+      "optionExplanations": [
+        "Correct. PCA ensures uncorrelatedness while ICA aims for statistical independence, which implies uncorrelatedness but is stronger.",
+        "Incorrect. Both PCA and ICA are unsupervised dimensionality reduction techniques.",
+        "Incorrect. Both methods typically work with continuous data, though adaptations exist for other data types.",
+        "Incorrect. While related, they have different objectives and mathematical formulations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "PCA",
+        "ICA",
+        "statistical-independence",
+        "uncorrelatedness"
+      ]
+    },
+    {
+      "id": "DIM_092",
+      "question": "In the context of text analysis, why might you use dimensionality reduction on word embeddings?",
+      "options": [
+        "To increase vocabulary size",
+        "To reduce computational complexity and remove noise while preserving semantic relationships",
+        "To convert text to numbers",
+        "To perform spell checking"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dimensionality reduction on word embeddings can improve efficiency, remove noise, and help focus on the most important semantic dimensions.",
+      "optionExplanations": [
+        "Incorrect. Dimensionality reduction typically reduces, not increases, the vocabulary representation size.",
+        "Correct. Reducing embedding dimensions can speed up computations and remove noisy dimensions while keeping semantic meaning.",
+        "Incorrect. Word embeddings are already numerical; dimensionality reduction works on these existing numbers.",
+        "Incorrect. Spell checking is a different text processing task unrelated to dimensionality reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "word-embeddings",
+        "text-analysis",
+        "semantic-relationships"
+      ]
+    },
+    {
+      "id": "DIM_093",
+      "question": "What is the main challenge when using dimensionality reduction for anomaly detection?",
+      "options": [
+        "Anomalies cannot be detected after reduction",
+        "Important anomalous patterns might be lost if they occur in discarded dimensions",
+        "It always improves anomaly detection",
+        "It only works with supervised anomaly detection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dimensionality reduction might remove dimensions where anomalous behavior occurs, potentially making anomalies harder to detect in the reduced space.",
+      "optionExplanations": [
+        "Incorrect. Anomaly detection is still possible after dimensionality reduction, but care must be taken.",
+        "Correct. If anomalies manifest in dimensions that are discarded during reduction, they may become undetectable.",
+        "Incorrect. The effect on anomaly detection depends on whether anomalous patterns are preserved in the retained dimensions.",
+        "Incorrect. Both supervised and unsupervised anomaly detection methods can be affected by dimensionality reduction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "anomaly-detection",
+        "information-loss",
+        "pattern-preservation"
+      ]
+    },
+    {
+      "id": "DIM_094",
+      "question": "What does the term 'spectral dimensionality reduction' refer to?",
+      "options": [
+        "Methods that use color spectra",
+        "Methods based on eigenvalue decomposition of matrices derived from data",
+        "Methods that only work with image data",
+        "Fast approximation methods"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Spectral methods use eigenvalue decomposition (spectral decomposition) of matrices like similarity matrices, Laplacian matrices, or covariance matrices.",
+      "optionExplanations": [
+        "Incorrect. 'Spectral' in this context refers to the spectrum of eigenvalues, not color spectra.",
+        "Correct. Spectral methods rely on eigenvalue decomposition of various matrices constructed from the data.",
+        "Incorrect. Spectral methods can be applied to various types of data, not just images.",
+        "Incorrect. While some spectral methods have efficient implementations, 'spectral' refers to eigenvalue decomposition, not speed."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "spectral-methods",
+        "eigenvalue-decomposition",
+        "matrix-analysis"
+      ]
+    },
+    {
+      "id": "DIM_095",
+      "question": "Why might you use different distance metrics in UMAP for different types of data?",
+      "options": [
+        "To make the algorithm faster",
+        "Different metrics capture different notions of similarity appropriate for different data types",
+        "To increase the number of dimensions",
+        "Distance metrics don't matter in UMAP"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Different distance metrics are suited for different data characteristics - cosine for high-dimensional sparse data, Hamming for binary data, etc.",
+      "optionExplanations": [
+        "Incorrect. While some metrics may be faster to compute, the main reason is appropriateness for the data type.",
+        "Correct. Euclidean distance for continuous data, cosine for text data, Hamming for binary data, etc., each capture relevant similarities.",
+        "Incorrect. Distance metrics don't change the dimensionality of the output space.",
+        "Incorrect. Distance metric choice significantly affects UMAP's ability to capture meaningful relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "UMAP",
+        "distance-metrics",
+        "data-types"
+      ]
+    },
+    {
+      "id": "DIM_096",
+      "question": "What is the main computational advantage of random projection over PCA?",
+      "options": [
+        "Better accuracy",
+        "No need for eigenvalue decomposition, making it much faster for high-dimensional data",
+        "Better visualization quality",
+        "Works with categorical data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Random projection avoids the computationally expensive eigenvalue decomposition required by PCA, making it much faster for high-dimensional data.",
+      "optionExplanations": [
+        "Incorrect. Random projection is generally less accurate than PCA in terms of variance preservation.",
+        "Correct. Random projection simply multiplies by a random matrix, avoiding the O(d³) eigenvalue decomposition.",
+        "Incorrect. PCA typically produces better visualizations by focusing on directions of maximum variance.",
+        "Incorrect. Both methods have similar limitations regarding categorical data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "random-projection",
+        "computational-efficiency",
+        "eigenvalue-decomposition"
+      ]
+    },
+    {
+      "id": "DIM_097",
+      "question": "In what scenario would you prefer non-negative matrix factorization (NMF) over PCA?",
+      "options": [
+        "When you need negative components",
+        "When you want parts-based representations with non-negative components",
+        "When working with normally distributed data",
+        "When you need orthogonal components"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NMF is preferred when you want interpretable, parts-based decompositions where both the basis vectors and coefficients are non-negative.",
+      "optionExplanations": [
+        "Incorrect. NMF specifically constrains components to be non-negative, unlike PCA which allows negative values.",
+        "Correct. NMF's non-negativity constraint often leads to more interpretable, additive parts-based representations.",
+        "Incorrect. Data distribution assumptions don't strongly favor one method over the other.",
+        "Incorrect. NMF components are not necessarily orthogonal, unlike PCA components."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "NMF",
+        "non-negative",
+        "parts-based-representation"
+      ]
+    },
+    {
+      "id": "DIM_098",
+      "question": "What is the main limitation of using variance explained as the sole criterion for selecting the number of principal components?",
+      "options": [
+        "It's too computationally expensive",
+        "High variance doesn't necessarily mean high relevance for the specific task",
+        "It always selects too few components",
+        "It only works with normalized data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Components with high variance may not be the most relevant for specific tasks - sometimes lower-variance components contain task-relevant information.",
+      "optionExplanations": [
+        "Incorrect. Computing explained variance is relatively inexpensive once PCA is performed.",
+        "Correct. Task-relevant information might be contained in lower-variance components that would be discarded based solely on variance.",
+        "Incorrect. Variance-based selection doesn't have a systematic bias toward selecting too few components.",
+        "Incorrect. Explained variance can be computed regardless of data normalization, though normalization affects the results."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "explained-variance",
+        "component-selection",
+        "task-relevance"
+      ]
+    },
+    {
+      "id": "DIM_099",
+      "question": "How does the curse of dimensionality affect the performance of clustering algorithms?",
+      "options": [
+        "It improves clustering performance",
+        "It makes all distance measures approximately equal, reducing clustering effectiveness",
+        "It has no effect on clustering",
+        "It only affects supervised clustering"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In high dimensions, points become approximately equidistant, making it difficult for clustering algorithms to distinguish between different clusters.",
+      "optionExplanations": [
+        "Incorrect. The curse of dimensionality typically hurts clustering performance by making distances less meaningful.",
+        "Correct. When all points appear roughly equidistant, clustering algorithms struggle to identify meaningful groupings.",
+        "Incorrect. The curse of dimensionality significantly affects the ability to identify clusters in high-dimensional data.",
+        "Incorrect. The curse of dimensionality affects both supervised and unsupervised clustering methods."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "curse-of-dimensionality",
+        "clustering",
+        "distance-concentration"
+      ]
+    },
+    {
+      "id": "DIM_100",
+      "question": "What is the key insight behind using neural networks for dimensionality reduction?",
+      "options": [
+        "Neural networks are always faster",
+        "They can learn complex non-linear mappings between high and low-dimensional spaces",
+        "They only work with image data",
+        "They eliminate the need for preprocessing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Neural networks, particularly autoencoders, can learn complex non-linear transformations that capture intricate patterns in high-dimensional data.",
+      "optionExplanations": [
+        "Incorrect. Neural networks are often computationally more expensive than traditional methods like PCA.",
+        "Correct. Neural networks can model complex non-linear relationships that linear methods like PCA cannot capture.",
+        "Incorrect. Neural network-based dimensionality reduction can be applied to various data types beyond images.",
+        "Incorrect. Neural networks still benefit from appropriate preprocessing like normalization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "neural-networks",
+        "autoencoders",
+        "non-linear-mapping"
+      ]
+    }
+  ]
+}

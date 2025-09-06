@@ -1,0 +1,2421 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_DLG",
+  "topicName": "Deep Learning",
+  "subtopicId": "STC_TRF",
+  "subtopicName": "Transformers",
+  "str": 0.400,
+  "description": "Comprehensive questions covering Transformer architecture, attention mechanisms, self-attention, encoder-decoder structure, positional encoding, BERT, GPT, and related deep learning concepts.",
+  "questions": [
+    {
+      "id": "TRF_001",
+      "question": "What is the primary innovation introduced by the Transformer architecture?",
+      "options": [
+        "Attention mechanism",
+        "Convolutional layers",
+        "Recurrent connections",
+        "Pooling operations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Transformer architecture's primary innovation is the attention mechanism, specifically self-attention, which allows the model to weigh the importance of different parts of the input sequence when processing each element.",
+      "optionExplanations": [
+        "Correct. The attention mechanism, particularly self-attention, is the core innovation that allows Transformers to process sequences in parallel and capture long-range dependencies effectively.",
+        "Incorrect. Convolutional layers are used in CNNs, not the primary innovation of Transformers.",
+        "Incorrect. Transformers actually eliminate recurrent connections in favor of attention mechanisms.",
+        "Incorrect. Pooling operations are common in CNNs but not the defining feature of Transformers."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "attention",
+        "architecture",
+        "innovation"
+      ]
+    },
+    {
+      "id": "TRF_002",
+      "question": "In the self-attention mechanism, what are the three key components?",
+      "options": [
+        "Query, Key, Value",
+        "Input, Hidden, Output",
+        "Encoder, Decoder, Attention",
+        "Forward, Backward, Update"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Self-attention uses three matrices: Query (Q), Key (K), and Value (V). These are derived from the input and used to compute attention weights and the final output.",
+      "optionExplanations": [
+        "Correct. Query, Key, and Value are the three fundamental components of self-attention that enable the mechanism to determine what to attend to and how much.",
+        "Incorrect. These are general neural network components but not specific to self-attention.",
+        "Incorrect. These are architectural components of Transformers but not the internal components of self-attention.",
+        "Incorrect. These relate to training procedures, not the self-attention mechanism."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "self-attention",
+        "query",
+        "key",
+        "value"
+      ]
+    },
+    {
+      "id": "TRF_003",
+      "question": "What is the purpose of positional encoding in Transformers?",
+      "options": [
+        "To add sequence order information",
+        "To reduce computational complexity",
+        "To normalize input values",
+        "To prevent overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Positional encoding adds information about the position of tokens in the sequence since Transformers don't have inherent sequence order awareness like RNNs.",
+      "optionExplanations": [
+        "Correct. Since Transformers process all positions simultaneously without recurrence, positional encoding is essential to provide sequence order information.",
+        "Incorrect. Positional encoding doesn't reduce complexity; it adds positional information.",
+        "Incorrect. Normalization is handled by layer normalization, not positional encoding.",
+        "Incorrect. Dropout and other techniques prevent overfitting, not positional encoding."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "positional-encoding",
+        "sequence",
+        "order"
+      ]
+    },
+    {
+      "id": "TRF_004",
+      "question": "How many layers does the original Transformer model have in both encoder and decoder?",
+      "options": [
+        "6 layers each",
+        "8 layers each",
+        "12 layers each",
+        "4 layers each"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The original Transformer model introduced in 'Attention Is All You Need' has 6 encoder layers and 6 decoder layers.",
+      "optionExplanations": [
+        "Correct. The original Transformer architecture uses 6 layers in both the encoder and decoder stacks.",
+        "Incorrect. 8 layers is not the configuration used in the original Transformer.",
+        "Incorrect. 12 layers is used in models like BERT-Base, but not the original Transformer.",
+        "Incorrect. 4 layers is fewer than the original configuration."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "architecture",
+        "layers",
+        "original-transformer"
+      ]
+    },
+    {
+      "id": "TRF_005",
+      "question": "What type of attention is used in the decoder's first attention layer?",
+      "options": [
+        "Masked self-attention",
+        "Cross-attention",
+        "Standard self-attention",
+        "Multi-head attention"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The decoder uses masked self-attention in its first layer to prevent positions from attending to subsequent positions during training.",
+      "optionExplanations": [
+        "Correct. Masked self-attention prevents the decoder from looking at future tokens during training, maintaining the autoregressive property.",
+        "Incorrect. Cross-attention is used in the second attention layer of the decoder.",
+        "Incorrect. Standard self-attention would allow seeing future positions, which is not desired in the decoder.",
+        "Incorrect. Multi-head attention is an implementation detail, not a type of attention regarding masking."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decoder",
+        "masked-attention",
+        "autoregressive"
+      ]
+    },
+    {
+      "id": "TRF_006",
+      "question": "What is the main advantage of multi-head attention?",
+      "options": [
+        "Captures different types of relationships",
+        "Reduces computational cost",
+        "Simplifies the model",
+        "Eliminates the need for positional encoding"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multi-head attention allows the model to attend to information from different representation subspaces, capturing various types of relationships simultaneously.",
+      "optionExplanations": [
+        "Correct. Multiple attention heads can focus on different aspects like syntactic, semantic, or positional relationships in parallel.",
+        "Incorrect. Multi-head attention actually increases computational cost compared to single-head attention.",
+        "Incorrect. Multi-head attention adds complexity rather than simplifying the model.",
+        "Incorrect. Positional encoding is still necessary regardless of the number of attention heads."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-head",
+        "attention",
+        "relationships"
+      ]
+    },
+    {
+      "id": "TRF_007",
+      "question": "In BERT, what does the [CLS] token represent?",
+      "options": [
+        "Classification representation",
+        "Clear start token",
+        "Contextual language symbol",
+        "Complete sequence"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The [CLS] token in BERT serves as a classification token whose final hidden state is used as the aggregate sequence representation for classification tasks.",
+      "optionExplanations": [
+        "Correct. [CLS] stands for classification and its final representation captures information about the entire sequence for classification tasks.",
+        "Incorrect. CLS doesn't stand for 'Clear start' - it's specifically for classification.",
+        "Incorrect. While related to language, CLS specifically refers to classification functionality.",
+        "Incorrect. [CLS] represents classification capability, not just sequence completion."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "BERT",
+        "classification",
+        "CLS-token"
+      ]
+    },
+    {
+      "id": "TRF_008",
+      "question": "What is the key difference between BERT and GPT in terms of attention masking?",
+      "options": [
+        "BERT uses bidirectional, GPT uses unidirectional",
+        "BERT uses unidirectional, GPT uses bidirectional",
+        "Both use bidirectional attention",
+        "Both use unidirectional attention"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BERT uses bidirectional attention to see context from both directions, while GPT uses unidirectional (left-to-right) attention for autoregressive generation.",
+      "optionExplanations": [
+        "Correct. BERT's bidirectional nature allows it to see full context, while GPT's unidirectional design enables autoregressive text generation.",
+        "Incorrect. This reverses the actual attention patterns of BERT and GPT.",
+        "Incorrect. GPT specifically uses unidirectional attention for its generative capabilities.",
+        "Incorrect. BERT specifically uses bidirectional attention for better context understanding."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "GPT",
+        "attention-masking",
+        "bidirectional"
+      ]
+    },
+    {
+      "id": "TRF_009",
+      "question": "What is the purpose of the feed-forward network in each Transformer layer?",
+      "options": [
+        "Process attended information",
+        "Calculate attention weights",
+        "Generate positional embeddings",
+        "Normalize layer inputs"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The feed-forward network processes the attended information from the attention mechanism, applying non-linear transformations to each position independently.",
+      "optionExplanations": [
+        "Correct. The FFN takes the output from attention and applies position-wise transformations to process the attended information.",
+        "Incorrect. Attention weights are calculated within the attention mechanism itself.",
+        "Incorrect. Positional embeddings are added at the input layer, not generated by the FFN.",
+        "Incorrect. Layer normalization is a separate component, not the FFN's primary purpose."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feed-forward",
+        "processing",
+        "transformation"
+      ]
+    },
+    {
+      "id": "TRF_010",
+      "question": "In the scaled dot-product attention, why is the scaling factor used?",
+      "options": [
+        "To prevent gradient vanishing",
+        "To reduce computational complexity",
+        "To improve convergence speed",
+        "To normalize attention weights"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The scaling factor (1/√d_k) prevents the dot products from becoming too large, which would push the softmax into regions with small gradients.",
+      "optionExplanations": [
+        "Correct. Scaling by √d_k prevents large dot products that would cause softmax to saturate and lead to very small gradients.",
+        "Incorrect. Scaling doesn't reduce computational complexity significantly.",
+        "Incorrect. While it may help convergence, the primary purpose is preventing gradient issues.",
+        "Incorrect. Softmax normalizes attention weights; scaling prevents saturation before softmax."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "scaling",
+        "dot-product",
+        "gradients",
+        "softmax"
+      ]
+    },
+    {
+      "id": "TRF_011",
+      "question": "What is the main training objective for BERT?",
+      "options": [
+        "Masked Language Modeling and Next Sentence Prediction",
+        "Autoregressive Language Modeling",
+        "Translation tasks",
+        "Sentiment Classification"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BERT is pre-trained using two main objectives: Masked Language Modeling (MLM) and Next Sentence Prediction (NSP) to learn bidirectional representations.",
+      "optionExplanations": [
+        "Correct. BERT uses MLM to predict masked tokens and NSP to understand sentence relationships, enabling bidirectional understanding.",
+        "Incorrect. Autoregressive modeling is used by GPT, not BERT.",
+        "Incorrect. Translation is a downstream task, not BERT's pre-training objective.",
+        "Incorrect. Sentiment classification is a fine-tuning task, not the pre-training objective."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "training",
+        "MLM",
+        "NSP"
+      ]
+    },
+    {
+      "id": "TRF_012",
+      "question": "What does GPT stand for?",
+      "options": [
+        "Generative Pre-trained Transformer",
+        "General Purpose Transformer",
+        "Gradient Propagation Technique",
+        "Graph Processing Tool"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GPT stands for Generative Pre-trained Transformer, emphasizing its generative capabilities and pre-training approach.",
+      "optionExplanations": [
+        "Correct. GPT is a Generative Pre-trained Transformer designed for text generation tasks.",
+        "Incorrect. While GPT is versatile, it specifically stands for Generative Pre-trained Transformer.",
+        "Incorrect. This relates to training techniques but is not what GPT stands for.",
+        "Incorrect. GPT is not related to graph processing."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "GPT",
+        "generative",
+        "terminology"
+      ]
+    },
+    {
+      "id": "TRF_013",
+      "question": "How is positional encoding typically implemented in the original Transformer?",
+      "options": [
+        "Sinusoidal functions",
+        "Learned embeddings",
+        "Random vectors",
+        "One-hot encoding"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The original Transformer uses sinusoidal positional encoding with sine and cosine functions of different frequencies to encode position information.",
+      "optionExplanations": [
+        "Correct. Sinusoidal encoding uses sine and cosine functions to create position-dependent patterns that the model can learn to use.",
+        "Incorrect. While learned embeddings are an alternative, the original Transformer uses sinusoidal encoding.",
+        "Incorrect. Random vectors would not provide consistent positional information.",
+        "Incorrect. One-hot encoding would be inefficient and doesn't capture relative positions well."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "positional-encoding",
+        "sinusoidal",
+        "implementation"
+      ]
+    },
+    {
+      "id": "TRF_014",
+      "question": "What is the typical dimension of the model in the original Transformer (d_model)?",
+      "options": [
+        "512",
+        "256",
+        "768",
+        "1024"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The original Transformer model uses d_model = 512 as the dimension of the model's hidden states and embeddings.",
+      "optionExplanations": [
+        "Correct. The original Transformer paper specifies d_model = 512 for the base model configuration.",
+        "Incorrect. 256 is smaller than the original configuration.",
+        "Incorrect. 768 is used in BERT-Base, not the original Transformer.",
+        "Incorrect. 1024 is used in larger variants, not the original model."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dimensions",
+        "model-size",
+        "original-transformer"
+      ]
+    },
+    {
+      "id": "TRF_015",
+      "question": "In multi-head attention, if d_model = 512 and there are 8 heads, what is d_k (dimension of each head)?",
+      "options": [
+        "64",
+        "128",
+        "32",
+        "256"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "With d_model = 512 and 8 heads, each head has dimension d_k = d_model / num_heads = 512 / 8 = 64.",
+      "optionExplanations": [
+        "Correct. The dimension per head is calculated as d_model divided by the number of heads: 512/8 = 64.",
+        "Incorrect. 128 would be the result if there were 4 heads, not 8.",
+        "Incorrect. 32 would be the result if there were 16 heads, not 8.",
+        "Incorrect. 256 would be the result if there were 2 heads, not 8."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-head",
+        "dimensions",
+        "calculation"
+      ]
+    },
+    {
+      "id": "TRF_016",
+      "question": "What is the purpose of residual connections in Transformers?",
+      "options": [
+        "Help with gradient flow and training stability",
+        "Reduce model parameters",
+        "Increase computational efficiency",
+        "Generate attention weights"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Residual connections help gradients flow through deep networks and provide training stability by allowing direct paths for gradient propagation.",
+      "optionExplanations": [
+        "Correct. Residual connections create skip connections that help gradients flow backward through the network, improving training of deep models.",
+        "Incorrect. Residual connections don't reduce parameters; they add connections.",
+        "Incorrect. While they may help training efficiency, they don't reduce computational complexity.",
+        "Incorrect. Attention weights are generated by the attention mechanism, not residual connections."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "residual",
+        "gradient-flow",
+        "training"
+      ]
+    },
+    {
+      "id": "TRF_017",
+      "question": "What is layer normalization applied to in Transformer layers?",
+      "options": [
+        "Output of each sub-layer before residual connection",
+        "Input embeddings only",
+        "Attention weights only",
+        "Final output only"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Layer normalization is applied to the output of each sub-layer (attention and feed-forward) before adding the residual connection.",
+      "optionExplanations": [
+        "Correct. Layer normalization is applied after each sub-layer (attention and FFN) but before the residual connection is added.",
+        "Incorrect. Layer normalization is applied throughout the network, not just to input embeddings.",
+        "Incorrect. Layer normalization is applied to layer outputs, not specifically to attention weights.",
+        "Incorrect. Layer normalization is applied multiple times throughout each layer, not just at the final output."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "layer-normalization",
+        "sub-layers",
+        "residual"
+      ]
+    },
+    {
+      "id": "TRF_018",
+      "question": "In BERT's masked language modeling, what percentage of tokens are typically masked?",
+      "options": [
+        "15%",
+        "10%",
+        "20%",
+        "25%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BERT typically masks 15% of tokens during pre-training for the masked language modeling objective.",
+      "optionExplanations": [
+        "Correct. BERT masks approximately 15% of input tokens during MLM pre-training.",
+        "Incorrect. 10% is lower than BERT's standard masking rate.",
+        "Incorrect. 20% is higher than BERT's standard masking rate.",
+        "Incorrect. 25% is significantly higher than BERT's standard masking rate."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "MLM",
+        "masking-rate"
+      ]
+    },
+    {
+      "id": "TRF_019",
+      "question": "What is the key innovation that allows Transformers to process sequences in parallel?",
+      "options": [
+        "Self-attention mechanism",
+        "Convolutional layers",
+        "Recurrent connections",
+        "Pooling operations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Self-attention allows Transformers to process all positions in a sequence simultaneously, unlike RNNs which process sequentially.",
+      "optionExplanations": [
+        "Correct. Self-attention enables parallel processing by allowing each position to attend to all other positions simultaneously.",
+        "Incorrect. Convolutional layers can be parallel but are not the key innovation in Transformers.",
+        "Incorrect. Recurrent connections would require sequential processing, not parallel.",
+        "Incorrect. Pooling operations are not the key innovation enabling parallelization in Transformers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "parallel-processing",
+        "self-attention",
+        "innovation"
+      ]
+    },
+    {
+      "id": "TRF_020",
+      "question": "What is the purpose of the [SEP] token in BERT?",
+      "options": [
+        "Separate different segments or sentences",
+        "Mark the end of sequence",
+        "Indicate special tokens",
+        "Represent padding"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The [SEP] token in BERT is used to separate different segments or sentences when processing multiple text sequences.",
+      "optionExplanations": [
+        "Correct. [SEP] tokens separate different text segments, enabling BERT to process pairs of sentences or multiple segments.",
+        "Incorrect. [SEP] separates segments within a sequence, not necessarily marking the absolute end.",
+        "Incorrect. [SEP] is itself a special token but its purpose is segment separation.",
+        "Incorrect. Padding is typically handled by [PAD] tokens, not [SEP]."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "BERT",
+        "SEP-token",
+        "segmentation"
+      ]
+    },
+    {
+      "id": "TRF_021",
+      "question": "In GPT, what type of mask is used during training?",
+      "options": [
+        "Causal mask (lower triangular)",
+        "Random mask",
+        "Full mask",
+        "No mask"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GPT uses a causal mask (lower triangular) to ensure that each position can only attend to previous positions, maintaining the autoregressive property.",
+      "optionExplanations": [
+        "Correct. A causal mask ensures autoregressive generation by preventing attention to future tokens.",
+        "Incorrect. Random masking is used in BERT's MLM, not GPT's training.",
+        "Incorrect. A full mask would prevent the model from seeing any context.",
+        "Incorrect. GPT requires masking to maintain its autoregressive nature."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "GPT",
+        "causal-mask",
+        "autoregressive"
+      ]
+    },
+    {
+      "id": "TRF_022",
+      "question": "What is the typical activation function used in the feed-forward network of Transformers?",
+      "options": [
+        "ReLU or GELU",
+        "Sigmoid",
+        "Tanh",
+        "Softmax"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transformers typically use ReLU in the original paper, while later variants like BERT use GELU (Gaussian Error Linear Unit) activation.",
+      "optionExplanations": [
+        "Correct. ReLU was used in the original Transformer, while GELU became popular in later models like BERT for smoother gradients.",
+        "Incorrect. Sigmoid can cause vanishing gradient problems and is not typically used in transformer FFNs.",
+        "Incorrect. Tanh also has vanishing gradient issues and is not the standard choice.",
+        "Incorrect. Softmax is used for attention weights and output probabilities, not in FFN activations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "activation",
+        "ReLU",
+        "GELU",
+        "feed-forward"
+      ]
+    },
+    {
+      "id": "TRF_023",
+      "question": "How does the attention mechanism compute the final output?",
+      "options": [
+        "Weighted sum of values",
+        "Average of all inputs",
+        "Maximum value selection",
+        "Concatenation of keys"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Attention computes a weighted sum of the value vectors, where weights are determined by the compatibility between queries and keys.",
+      "optionExplanations": [
+        "Correct. The attention output is a weighted sum of value vectors, where attention weights determine the contribution of each value.",
+        "Incorrect. Simple averaging doesn't capture the selective attention mechanism.",
+        "Incorrect. Maximum selection would lose information from other relevant positions.",
+        "Incorrect. Keys are used to compute attention weights, not concatenated for the final output."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention",
+        "weighted-sum",
+        "values"
+      ]
+    },
+    {
+      "id": "TRF_024",
+      "question": "What is the main advantage of the Transformer architecture over RNNs?",
+      "options": [
+        "Parallelization and better long-range dependencies",
+        "Fewer parameters",
+        "Lower memory usage",
+        "Simpler architecture"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transformers can process sequences in parallel and capture long-range dependencies more effectively than RNNs through self-attention.",
+      "optionExplanations": [
+        "Correct. Parallelization enables faster training, and self-attention captures long-range dependencies better than RNN's sequential processing.",
+        "Incorrect. Transformers typically have more parameters than comparable RNNs.",
+        "Incorrect. Transformers often use more memory due to attention computations.",
+        "Incorrect. Transformers are generally more complex in terms of components and computations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "advantages",
+        "parallelization",
+        "long-range"
+      ]
+    },
+    {
+      "id": "TRF_025",
+      "question": "In BERT, what does bidirectional mean?",
+      "options": [
+        "Can attend to both left and right context",
+        "Processes text forwards and backwards",
+        "Has two separate encoders",
+        "Uses two attention mechanisms"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bidirectional in BERT means the model can attend to context from both directions (left and right) when processing each token.",
+      "optionExplanations": [
+        "Correct. BERT's bidirectional nature allows each token to see context from both directions simultaneously through self-attention.",
+        "Incorrect. BERT doesn't process text in two passes; it sees all context simultaneously.",
+        "Incorrect. BERT has a single encoder stack, not two separate encoders.",
+        "Incorrect. BERT uses self-attention that naturally sees all directions, not two separate mechanisms."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "BERT",
+        "bidirectional",
+        "context"
+      ]
+    },
+    {
+      "id": "TRF_026",
+      "question": "What is cross-attention in the Transformer decoder?",
+      "options": [
+        "Attention between decoder queries and encoder keys/values",
+        "Attention within decoder layers only",
+        "Attention between multiple heads",
+        "Attention across different time steps"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-attention allows the decoder to attend to the encoder's output using decoder queries and encoder keys/values.",
+      "optionExplanations": [
+        "Correct. Cross-attention enables the decoder to access encoder information by using decoder queries with encoder keys and values.",
+        "Incorrect. This describes self-attention within the decoder, not cross-attention.",
+        "Incorrect. This describes multi-head attention structure, not cross-attention functionality.",
+        "Incorrect. This is too general and doesn't capture the encoder-decoder interaction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-attention",
+        "decoder",
+        "encoder"
+      ]
+    },
+    {
+      "id": "TRF_027",
+      "question": "What is the purpose of the linear projection layers in multi-head attention?",
+      "options": [
+        "Transform inputs to Q, K, V matrices",
+        "Reduce dimensionality",
+        "Apply normalization",
+        "Add nonlinearity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Linear projection layers transform the input into Query, Key, and Value matrices for each attention head.",
+      "optionExplanations": [
+        "Correct. Linear projections create the Q, K, V matrices from input representations for each attention head.",
+        "Incorrect. While projections may change dimensions, their primary purpose is creating Q, K, V matrices.",
+        "Incorrect. Normalization is handled by layer normalization, not the projection layers.",
+        "Incorrect. Linear projections are linear transformations without nonlinearity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "projection",
+        "QKV",
+        "multi-head"
+      ]
+    },
+    {
+      "id": "TRF_028",
+      "question": "How does BERT handle the [MASK] token during fine-tuning?",
+      "options": [
+        "It doesn't use [MASK] tokens during fine-tuning",
+        "Continues to predict masked tokens",
+        "Replaces [MASK] with random tokens",
+        "Uses [MASK] for attention masking"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "During fine-tuning, BERT doesn't use [MASK] tokens as they were only used during pre-training for the MLM objective.",
+      "optionExplanations": [
+        "Correct. [MASK] tokens are specific to pre-training MLM and are not used during fine-tuning on downstream tasks.",
+        "Incorrect. The MLM objective is only used during pre-training, not fine-tuning.",
+        "Incorrect. Token replacement is part of the pre-training strategy, not fine-tuning.",
+        "Incorrect. [MASK] tokens are not used for attention masking in BERT."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "fine-tuning",
+        "MASK-token"
+      ]
+    },
+    {
+      "id": "TRF_029",
+      "question": "What is the key difference between encoder and decoder in the original Transformer?",
+      "options": [
+        "Decoder has masked self-attention and cross-attention",
+        "Encoder has more layers",
+        "Decoder uses different activation functions",
+        "Encoder processes input, decoder generates output"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The decoder has masked self-attention (to prevent seeing future tokens) and cross-attention (to attend to encoder output), while encoder has only standard self-attention.",
+      "optionExplanations": [
+        "Correct. The decoder's unique components are masked self-attention and cross-attention layers, distinguishing it from the encoder.",
+        "Incorrect. Both encoder and decoder have the same number of layers in the original Transformer.",
+        "Incorrect. Both use the same activation functions in their feed-forward networks.",
+        "Incorrect. While this describes their roles, it doesn't explain the architectural differences."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoder",
+        "decoder",
+        "architecture",
+        "differences"
+      ]
+    },
+    {
+      "id": "TRF_030",
+      "question": "In the attention formula Attention(Q,K,V) = softmax(QK^T/√d_k)V, what does QK^T represent?",
+      "options": [
+        "Similarity scores between queries and keys",
+        "Final attention output",
+        "Normalized attention weights",
+        "Value transformations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "QK^T computes the dot product between queries and keys, representing similarity scores that determine attention weights.",
+      "optionExplanations": [
+        "Correct. The matrix multiplication QK^T computes similarity scores between each query and all keys.",
+        "Incorrect. The final output comes after applying softmax and multiplying with V.",
+        "Incorrect. Normalized weights come after applying softmax to QK^T/√d_k.",
+        "Incorrect. Value transformations would involve operations on V, not QK^T."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-formula",
+        "similarity",
+        "queries",
+        "keys"
+      ]
+    },
+    {
+      "id": "TRF_031",
+      "question": "What is the purpose of dropout in Transformer models?",
+      "options": [
+        "Prevent overfitting and improve generalization",
+        "Reduce computational cost",
+        "Speed up training",
+        "Improve attention weights"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dropout randomly sets some activations to zero during training to prevent overfitting and improve model generalization.",
+      "optionExplanations": [
+        "Correct. Dropout is a regularization technique that prevents overfitting by randomly zeroing some activations during training.",
+        "Incorrect. Dropout doesn't reduce computational cost; it's applied during both forward and backward passes.",
+        "Incorrect. Dropout doesn't inherently speed up training; it's for regularization.",
+        "Incorrect. Dropout is applied to activations for regularization, not specifically to improve attention weights."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "dropout",
+        "regularization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "TRF_032",
+      "question": "How many parameters does the original GPT-1 model have approximately?",
+      "options": [
+        "117 million",
+        "340 million",
+        "1.5 billion",
+        "175 billion"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The original GPT-1 model has approximately 117 million parameters.",
+      "optionExplanations": [
+        "Correct. GPT-1 has about 117 million parameters, making it much smaller than its successors.",
+        "Incorrect. 340 million is closer to GPT-2's parameter count.",
+        "Incorrect. 1.5 billion is closer to GPT-2 XL's parameter count.",
+        "Incorrect. 175 billion is GPT-3's parameter count."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "GPT-1",
+        "parameters",
+        "model-size"
+      ]
+    },
+    {
+      "id": "TRF_033",
+      "question": "What is the difference between absolute and relative positional encoding?",
+      "options": [
+        "Absolute uses fixed positions, relative uses position differences",
+        "Absolute is learned, relative is fixed",
+        "Absolute is for encoders, relative is for decoders",
+        "No significant difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Absolute positional encoding assigns fixed position values, while relative encoding focuses on the distance between positions.",
+      "optionExplanations": [
+        "Correct. Absolute encoding assigns position-specific values, while relative encoding considers the relative distances between positions.",
+        "Incorrect. Both absolute and relative encodings can be either learned or fixed.",
+        "Incorrect. Both types can be used in encoders and decoders.",
+        "Incorrect. There are significant differences in how they represent positional information."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "positional-encoding",
+        "absolute",
+        "relative"
+      ]
+    },
+    {
+      "id": "TRF_034",
+      "question": "What is the typical vocabulary size for BERT models?",
+      "options": [
+        "Around 30,000 tokens",
+        "Around 10,000 tokens",
+        "Around 50,000 tokens",
+        "Around 100,000 tokens"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BERT typically uses a vocabulary of around 30,000 subword tokens created using WordPiece tokenization.",
+      "optionExplanations": [
+        "Correct. BERT commonly uses vocabularies of approximately 30,000 subword tokens.",
+        "Incorrect. 10,000 is smaller than typical BERT vocabularies.",
+        "Incorrect. 50,000 is larger than typical BERT vocabularies.",
+        "Incorrect. 100,000 is much larger than typical BERT vocabularies."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "vocabulary",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "TRF_035",
+      "question": "In Transformer training, what is teacher forcing?",
+      "options": [
+        "Using ground truth tokens as decoder input during training",
+        "Forcing attention to specific positions",
+        "Using a pre-trained model to guide training",
+        "Applying strong regularization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Teacher forcing uses the actual target tokens as input to the decoder during training, rather than the model's own predictions.",
+      "optionExplanations": [
+        "Correct. Teacher forcing feeds the correct target sequence as input during training, which speeds up training and provides stable gradients.",
+        "Incorrect. Teacher forcing doesn't control attention directly, but rather the input sequence.",
+        "Incorrect. This describes knowledge distillation or transfer learning, not teacher forcing.",
+        "Incorrect. Teacher forcing is an input strategy, not a regularization technique."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "teacher-forcing",
+        "training",
+        "decoder"
+      ]
+    },
+    {
+      "id": "TRF_036",
+      "question": "What is the purpose of the embedding layer in Transformers?",
+      "options": [
+        "Convert tokens to dense vector representations",
+        "Apply positional encoding",
+        "Normalize input values",
+        "Generate attention weights"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The embedding layer converts discrete tokens (words/subwords) into dense, learnable vector representations that the model can process.",
+      "optionExplanations": [
+        "Correct. Embeddings map discrete tokens to continuous vector space where the model can learn meaningful representations.",
+        "Incorrect. Positional encoding is added after embeddings, not part of the embedding layer itself.",
+        "Incorrect. Normalization is handled by layer normalization components.",
+        "Incorrect. Attention weights are generated by the attention mechanism, not embeddings."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "embeddings",
+        "tokens",
+        "vectors"
+      ]
+    },
+    {
+      "id": "TRF_037",
+      "question": "How does BERT's Next Sentence Prediction (NSP) task work?",
+      "options": [
+        "Predicts if sentence B follows sentence A",
+        "Generates the next sentence",
+        "Predicts the next word",
+        "Counts sentences in a document"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "NSP is a binary classification task where BERT predicts whether sentence B is the actual next sentence following sentence A in the original text.",
+      "optionExplanations": [
+        "Correct. NSP trains BERT to understand sentence relationships by predicting if two sentences are consecutive in the original text.",
+        "Incorrect. NSP is classification, not generation of new sentences.",
+        "Incorrect. Predicting the next word is the objective of language modeling, not NSP.",
+        "Incorrect. NSP doesn't count sentences; it determines sentence relationships."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "NSP",
+        "sentence-prediction"
+      ]
+    },
+    {
+      "id": "TRF_038",
+      "question": "What is the attention pattern in a typical encoder layer?",
+      "options": [
+        "Each position attends to all positions",
+        "Each position attends only to previous positions",
+        "Each position attends only to next positions",
+        "Each position attends only to itself"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In encoder layers, self-attention allows each position to attend to all positions in the sequence, enabling bidirectional context.",
+      "optionExplanations": [
+        "Correct. Encoder self-attention is bidirectional, allowing each position to attend to all other positions including itself.",
+        "Incorrect. This describes decoder masked self-attention, not encoder attention.",
+        "Incorrect. Attention to only future positions would be unusual and not useful for most tasks.",
+        "Incorrect. Self-attention involves attending to other positions, not just the current one."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoder",
+        "attention-pattern",
+        "bidirectional"
+      ]
+    },
+    {
+      "id": "TRF_039",
+      "question": "What is the main computational bottleneck in Transformer attention?",
+      "options": [
+        "Quadratic complexity with sequence length",
+        "Linear complexity with model dimension",
+        "Exponential complexity with number of heads",
+        "Logarithmic complexity with vocabulary size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Attention has O(n²) complexity where n is sequence length, as each position must compute attention with every other position.",
+      "optionExplanations": [
+        "Correct. The attention mechanism requires computing pairwise interactions between all positions, resulting in quadratic complexity.",
+        "Incorrect. Linear complexity with model dimension is manageable and not the main bottleneck.",
+        "Incorrect. The number of heads typically doesn't grow exponentially.",
+        "Incorrect. Vocabulary size affects embeddings but not attention computation complexity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "complexity",
+        "attention",
+        "bottleneck"
+      ]
+    },
+    {
+      "id": "TRF_040",
+      "question": "What is the purpose of the output projection in multi-head attention?",
+      "options": [
+        "Combine information from all attention heads",
+        "Apply final normalization",
+        "Generate final predictions",
+        "Add positional information"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The output projection combines the outputs from all attention heads into a single representation of the original dimension.",
+      "optionExplanations": [
+        "Correct. After concatenating outputs from all heads, a linear projection combines them into the final output representation.",
+        "Incorrect. Normalization is handled by layer normalization, not the output projection.",
+        "Incorrect. Final predictions are generated by task-specific heads, not the attention output projection.",
+        "Incorrect. Positional information is added at the input, not in the attention output projection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multi-head",
+        "output-projection",
+        "combination"
+      ]
+    },
+    {
+      "id": "TRF_041",
+      "question": "How does GPT generate text during inference?",
+      "options": [
+        "Autoregressively, one token at a time",
+        "Generates entire sequence simultaneously",
+        "Uses beam search with multiple sequences",
+        "Randomly samples from vocabulary"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GPT generates text autoregressively, predicting one token at a time and using previous tokens as context for the next prediction.",
+      "optionExplanations": [
+        "Correct. GPT's autoregressive nature means it generates one token at a time, using previous tokens as context.",
+        "Incorrect. GPT cannot generate entire sequences simultaneously due to its causal structure.",
+        "Incorrect. While beam search can be used with GPT, the fundamental generation is still autoregressive.",
+        "Incorrect. Random sampling is a decoding strategy but doesn't describe GPT's fundamental generation process."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "GPT",
+        "autoregressive",
+        "generation"
+      ]
+    },
+    {
+      "id": "TRF_042",
+      "question": "What is the difference between pre-training and fine-tuning in Transformer models?",
+      "options": [
+        "Pre-training learns general representations, fine-tuning adapts to specific tasks",
+        "Pre-training is supervised, fine-tuning is unsupervised",
+        "Pre-training uses small data, fine-tuning uses large data",
+        "No significant difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Pre-training learns general language representations on large unlabeled data, while fine-tuning adapts these representations to specific downstream tasks.",
+      "optionExplanations": [
+        "Correct. Pre-training creates general-purpose representations, while fine-tuning specializes them for specific tasks with task-specific data.",
+        "Incorrect. Pre-training is often unsupervised (like MLM), while fine-tuning can be supervised on labeled task data.",
+        "Incorrect. Pre-training typically uses much larger datasets than fine-tuning.",
+        "Incorrect. There are significant differences in objectives, data, and learned representations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pre-training",
+        "fine-tuning",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "TRF_043",
+      "question": "What is the typical learning rate schedule used for training Transformers?",
+      "options": [
+        "Warmup followed by decay",
+        "Constant learning rate",
+        "Exponential increase",
+        "Linear increase throughout training"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transformer training typically uses a warmup phase with increasing learning rate followed by decay, as described in the original paper.",
+      "optionExplanations": [
+        "Correct. The standard schedule includes warmup (gradual increase) followed by decay, which helps with training stability and convergence.",
+        "Incorrect. Constant learning rates are less effective for Transformer training.",
+        "Incorrect. Exponential increase would likely cause training instability.",
+        "Incorrect. Continuous linear increase would eventually become too large for stable training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "learning-rate",
+        "warmup",
+        "training"
+      ]
+    },
+    {
+      "id": "TRF_044",
+      "question": "In BERT, what happens to tokens that are selected for masking but not actually masked?",
+      "options": [
+        "10% remain unchanged, 10% are replaced with random tokens",
+        "All are replaced with [MASK]",
+        "All remain unchanged",
+        "All are replaced with random tokens"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Of the 15% of tokens selected for masking in BERT: 80% become [MASK], 10% remain unchanged, and 10% are replaced with random tokens.",
+      "optionExplanations": [
+        "Correct. BERT's masking strategy uses 80% [MASK], 10% unchanged, and 10% random to prevent over-reliance on [MASK] tokens.",
+        "Incorrect. Only 80% of selected tokens actually become [MASK].",
+        "Incorrect. Only 10% of selected tokens remain unchanged.",
+        "Incorrect. Only 10% of selected tokens are replaced with random tokens."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "BERT",
+        "masking-strategy",
+        "MLM"
+      ]
+    },
+    {
+      "id": "TRF_045",
+      "question": "What is the purpose of key-value caching in Transformer inference?",
+      "options": [
+        "Speed up autoregressive generation",
+        "Reduce memory usage",
+        "Improve attention accuracy",
+        "Enable parallel processing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Key-value caching stores computed keys and values from previous tokens to avoid recomputation during autoregressive generation.",
+      "optionExplanations": [
+        "Correct. Caching keys and values from previous steps avoids redundant computation in autoregressive generation, significantly speeding up inference.",
+        "Incorrect. Caching actually increases memory usage but improves speed.",
+        "Incorrect. Caching doesn't change attention accuracy; it's an optimization technique.",
+        "Incorrect. Caching is specifically for sequential generation optimization, not enabling parallelism."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "caching",
+        "inference",
+        "optimization"
+      ]
+    },
+    {
+      "id": "TRF_046",
+      "question": "What is the difference between BERT-Base and BERT-Large?",
+      "options": [
+        "BERT-Large has more layers and larger hidden size",
+        "BERT-Large uses different attention mechanism",
+        "BERT-Large has different training objectives",
+        "BERT-Large uses different tokenization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BERT-Large has 24 layers vs 12 in BERT-Base, and hidden size of 1024 vs 768, making it a larger model with more parameters.",
+      "optionExplanations": [
+        "Correct. BERT-Large has 24 layers (vs 12), hidden size 1024 (vs 768), and more attention heads than BERT-Base.",
+        "Incorrect. Both use the same attention mechanism; they differ in size.",
+        "Incorrect. Both use the same pre-training objectives (MLM and NSP).",
+        "Incorrect. Both use the same WordPiece tokenization approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "model-variants",
+        "architecture"
+      ]
+    },
+    {
+      "id": "TRF_047",
+      "question": "What is the purpose of segment embeddings in BERT?",
+      "options": [
+        "Distinguish between different input segments",
+        "Encode positional information",
+        "Represent token meanings",
+        "Control attention patterns"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Segment embeddings help BERT distinguish between different input segments (like sentence A and sentence B) when processing multiple sentences.",
+      "optionExplanations": [
+        "Correct. Segment embeddings allow BERT to differentiate between different input segments in multi-sentence tasks.",
+        "Incorrect. Positional information is handled by positional embeddings, not segment embeddings.",
+        "Incorrect. Token meanings are represented by word embeddings, not segment embeddings.",
+        "Incorrect. Attention patterns are controlled by attention mechanisms, not segment embeddings directly."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "BERT",
+        "segment-embeddings",
+        "multi-sentence"
+      ]
+    },
+    {
+      "id": "TRF_048",
+      "question": "How does the Transformer handle variable-length input sequences?",
+      "options": [
+        "Padding and attention masking",
+        "Truncation only",
+        "Dynamic reshaping",
+        "Sequence bucketing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transformers use padding to make sequences uniform length and attention masking to ignore padded positions during computation.",
+      "optionExplanations": [
+        "Correct. Padding creates uniform sequence lengths, while attention masking ensures padded positions don't affect computations.",
+        "Incorrect. Truncation alone would lose information from longer sequences.",
+        "Incorrect. Transformers don't dynamically reshape; they use fixed-size operations.",
+        "Incorrect. While bucketing can be used in training, the fundamental approach is padding with masking."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "variable-length",
+        "padding",
+        "masking"
+      ]
+    },
+    {
+      "id": "TRF_049",
+      "question": "What is the computational complexity of self-attention with respect to sequence length n?",
+      "options": [
+        "O(n²)",
+        "O(n)",
+        "O(n log n)",
+        "O(n³)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Self-attention requires computing attention between all pairs of positions, resulting in O(n²) complexity where n is the sequence length.",
+      "optionExplanations": [
+        "Correct. Computing attention between all n positions requires O(n²) operations for the attention matrix.",
+        "Incorrect. O(n) would be linear complexity, which attention doesn't achieve due to pairwise interactions.",
+        "Incorrect. O(n log n) is not the complexity of standard self-attention.",
+        "Incorrect. O(n³) would be even worse than the actual quadratic complexity."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "complexity",
+        "self-attention",
+        "quadratic"
+      ]
+    },
+    {
+      "id": "TRF_050",
+      "question": "What is the main limitation of the original Transformer's positional encoding?",
+      "options": [
+        "Fixed maximum sequence length",
+        "Cannot handle long sequences",
+        "Computationally expensive",
+        "Requires pre-training"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sinusoidal positional encoding has a practical limitation on the maximum sequence length it can handle effectively.",
+      "optionExplanations": [
+        "Correct. While theoretically extensible, sinusoidal encoding has practical limits on sequence length and may not generalize well beyond training lengths.",
+        "Incorrect. This is essentially the same as the correct answer but less specific.",
+        "Incorrect. Positional encoding computation is relatively inexpensive.",
+        "Incorrect. Positional encoding doesn't require pre-training; it's computed directly."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "positional-encoding",
+        "limitations",
+        "sequence-length"
+      ]
+    },
+    {
+      "id": "TRF_051",
+      "question": "In multi-head attention, why are the queries, keys, and values projected to lower dimensions?",
+      "options": [
+        "To maintain total computational cost similar to single-head attention",
+        "To reduce memory usage only",
+        "To improve attention quality",
+        "To enable parallel processing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "By projecting to d_model/h dimensions (where h is number of heads), the total computational cost remains similar to single-head attention with d_model dimensions.",
+      "optionExplanations": [
+        "Correct. Dividing dimensions by the number of heads keeps total parameters and computation roughly constant while enabling multiple attention patterns.",
+        "Incorrect. While this helps memory, the primary reason is computational efficiency.",
+        "Incorrect. The main purpose is computational efficiency, though multiple heads may capture different patterns.",
+        "Incorrect. Parallel processing is enabled by the multi-head structure, not specifically by dimension reduction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-head",
+        "dimensions",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "TRF_052",
+      "question": "What happens during the 'warmup' phase in Transformer training?",
+      "options": [
+        "Learning rate gradually increases",
+        "Model parameters are frozen",
+        "Only attention layers are trained",
+        "Batch size is gradually increased"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "During warmup, the learning rate starts small and gradually increases to the target value over a specified number of steps.",
+      "optionExplanations": [
+        "Correct. Warmup gradually increases the learning rate to help with training stability in the early stages.",
+        "Incorrect. Parameters are not frozen during warmup; they're updated with increasing learning rate.",
+        "Incorrect. All layers are trained during warmup, not just attention layers.",
+        "Incorrect. Warmup refers to learning rate scheduling, not batch size changes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "warmup",
+        "learning-rate",
+        "training"
+      ]
+    },
+    {
+      "id": "TRF_053",
+      "question": "How does BERT's WordPiece tokenization handle out-of-vocabulary words?",
+      "options": [
+        "Breaks them into subword pieces",
+        "Replaces them with [UNK] token",
+        "Ignores them completely",
+        "Uses character-level encoding"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "WordPiece tokenization breaks unknown words into smaller subword units that are in the vocabulary, reducing the out-of-vocabulary problem.",
+      "optionExplanations": [
+        "Correct. WordPiece decomposes unknown words into known subword pieces, enabling handling of rare or new words.",
+        "Incorrect. WordPiece aims to avoid [UNK] tokens by using subword decomposition.",
+        "Incorrect. WordPiece doesn't ignore words; it processes them through subword tokenization.",
+        "Incorrect. While it may use characters as subwords, it's not purely character-level encoding."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tokenization",
+        "WordPiece",
+        "subwords"
+      ]
+    },
+    {
+      "id": "TRF_054",
+      "question": "What is the primary difference between GPT-1 and GPT-2?",
+      "options": [
+        "GPT-2 is larger and trained on more data",
+        "GPT-2 uses different architecture",
+        "GPT-2 uses bidirectional attention",
+        "GPT-2 has different training objectives"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GPT-2 maintains the same architecture as GPT-1 but is significantly larger (1.5B parameters vs 117M) and trained on much more data.",
+      "optionExplanations": [
+        "Correct. GPT-2's main improvements are scale (more parameters) and training data size, not architectural changes.",
+        "Incorrect. GPT-2 uses essentially the same Transformer decoder architecture as GPT-1.",
+        "Incorrect. GPT-2 maintains the unidirectional (causal) attention pattern of GPT-1.",
+        "Incorrect. Both GPT-1 and GPT-2 use autoregressive language modeling as their training objective."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "GPT-1",
+        "GPT-2",
+        "scaling",
+        "differences"
+      ]
+    },
+    {
+      "id": "TRF_055",
+      "question": "In Transformer attention, what determines the attention weights?",
+      "options": [
+        "Similarity between queries and keys",
+        "Values in the sequence",
+        "Position in the sequence",
+        "Random initialization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Attention weights are determined by the similarity (dot product) between query and key vectors, representing how much each position should attend to others.",
+      "optionExplanations": [
+        "Correct. The dot product between queries and keys measures similarity, which after softmax becomes the attention weights.",
+        "Incorrect. Values are used after attention weights are computed, not for determining the weights.",
+        "Incorrect. While position can influence attention through positional encoding, weights are determined by query-key similarity.",
+        "Incorrect. Attention weights are computed dynamically based on inputs, not from random values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-weights",
+        "similarity",
+        "queries",
+        "keys"
+      ]
+    },
+    {
+      "id": "TRF_056",
+      "question": "What is the purpose of layer normalization in Transformers?",
+      "options": [
+        "Stabilize training and normalize activations",
+        "Prevent overfitting",
+        "Reduce computational cost",
+        "Generate attention patterns"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Layer normalization normalizes activations across the feature dimension, helping to stabilize training and reduce internal covariate shift.",
+      "optionExplanations": [
+        "Correct. Layer normalization helps stabilize training by normalizing activations and reducing internal covariate shift.",
+        "Incorrect. While layer norm may help with generalization, its primary purpose is training stabilization.",
+        "Incorrect. Layer normalization adds computation rather than reducing it.",
+        "Incorrect. Layer normalization normalizes activations but doesn't generate attention patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "layer-normalization",
+        "training-stability",
+        "normalization"
+      ]
+    },
+    {
+      "id": "TRF_057",
+      "question": "How does beam search work with Transformer language models?",
+      "options": [
+        "Maintains multiple candidate sequences and selects best paths",
+        "Generates random sequences",
+        "Uses greedy selection only",
+        "Searches backwards through the sequence"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Beam search keeps track of multiple candidate sequences (beam width) and expands the most promising ones at each step.",
+      "optionExplanations": [
+        "Correct. Beam search maintains a set of candidate sequences and explores the most promising ones based on their cumulative probabilities.",
+        "Incorrect. Beam search is deterministic and probability-based, not random.",
+        "Incorrect. Beam search considers multiple options, unlike greedy search which takes only the best option.",
+        "Incorrect. Beam search works forward through the sequence, not backward."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "beam-search",
+        "generation",
+        "decoding"
+      ]
+    },
+    {
+      "id": "TRF_058",
+      "question": "What is the main advantage of using learned positional embeddings over sinusoidal encoding?",
+      "options": [
+        "Can adapt to specific tasks and data",
+        "Computationally more efficient",
+        "Works with longer sequences",
+        "Requires less memory"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Learned positional embeddings can be optimized for specific tasks and datasets, potentially capturing task-specific positional patterns.",
+      "optionExplanations": [
+        "Correct. Learned embeddings can adapt to task-specific positional patterns during training, unlike fixed sinusoidal encoding.",
+        "Incorrect. Both approaches have similar computational efficiency for position encoding.",
+        "Incorrect. Learned embeddings are typically limited to the maximum length seen during training.",
+        "Incorrect. Both approaches have similar memory requirements for storing position information."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "positional-embeddings",
+        "learned",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "TRF_059",
+      "question": "In BERT fine-tuning, what is typically added on top of the base model?",
+      "options": [
+        "Task-specific classification head",
+        "Additional encoder layers",
+        "Different attention mechanism",
+        "New embedding layer"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For fine-tuning, a task-specific head (like a linear classifier) is typically added on top of BERT's representations.",
+      "optionExplanations": [
+        "Correct. Fine-tuning typically adds a simple task-specific layer (like linear classification) on top of pre-trained BERT.",
+        "Incorrect. Additional encoder layers are not typically added during fine-tuning.",
+        "Incorrect. The attention mechanism remains the same during fine-tuning.",
+        "Incorrect. The embedding layer is usually kept the same during fine-tuning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "fine-tuning",
+        "classification-head",
+        "BERT"
+      ]
+    },
+    {
+      "id": "TRF_060",
+      "question": "What is the purpose of the softmax function in attention?",
+      "options": [
+        "Convert similarity scores to probability distribution",
+        "Add non-linearity to the model",
+        "Normalize input embeddings",
+        "Generate final output"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Softmax converts the raw attention scores into a probability distribution, ensuring attention weights sum to 1.",
+      "optionExplanations": [
+        "Correct. Softmax transforms similarity scores into a valid probability distribution where all weights sum to 1.",
+        "Incorrect. While softmax adds non-linearity, its primary purpose in attention is probability normalization.",
+        "Incorrect. Input embeddings are normalized separately; softmax normalizes attention scores.",
+        "Incorrect. Softmax normalizes attention weights; the final output comes from weighted value summation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "softmax",
+        "attention",
+        "probability"
+      ]
+    },
+    {
+      "id": "TRF_061",
+      "question": "How does gradient clipping help in Transformer training?",
+      "options": [
+        "Prevents gradient explosion",
+        "Speeds up convergence",
+        "Reduces overfitting",
+        "Improves attention quality"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gradient clipping caps the magnitude of gradients to prevent gradient explosion, which can destabilize training in deep networks.",
+      "optionExplanations": [
+        "Correct. Gradient clipping prevents gradients from becoming too large, which can cause training instability or divergence.",
+        "Incorrect. Gradient clipping is for stability, not necessarily faster convergence.",
+        "Incorrect. Gradient clipping addresses training stability, not overfitting directly.",
+        "Incorrect. Gradient clipping affects training dynamics but not attention quality specifically."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-clipping",
+        "training-stability",
+        "gradients"
+      ]
+    },
+    {
+      "id": "TRF_062",
+      "question": "What is the difference between encoder-only, decoder-only, and encoder-decoder Transformers?",
+      "options": [
+        "They use different combinations of bidirectional and unidirectional attention",
+        "They have different numbers of layers",
+        "They use different activation functions",
+        "They have different embedding sizes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Encoder-only models use bidirectional attention, decoder-only use unidirectional attention, and encoder-decoder combine both types.",
+      "optionExplanations": [
+        "Correct. The key difference is attention patterns: encoders use bidirectional, decoders use unidirectional (causal), affecting their capabilities.",
+        "Incorrect. Layer count is a configuration choice independent of the encoder/decoder type.",
+        "Incorrect. Activation functions are typically the same across these architectures.",
+        "Incorrect. Embedding sizes are configuration choices not determined by encoder/decoder type."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "encoder-decoder",
+        "attention-patterns",
+        "architecture"
+      ]
+    },
+    {
+      "id": "TRF_063",
+      "question": "What is the purpose of attention dropout in Transformers?",
+      "options": [
+        "Regularize attention weights to prevent overfitting",
+        "Speed up attention computation",
+        "Reduce memory usage",
+        "Improve attention accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Attention dropout randomly sets some attention weights to zero during training, providing regularization to prevent overfitting.",
+      "optionExplanations": [
+        "Correct. Attention dropout regularizes the model by randomly zeroing some attention weights, preventing over-reliance on specific connections.",
+        "Incorrect. Dropout adds computation during training, not speed up.",
+        "Incorrect. Dropout doesn't significantly reduce memory usage.",
+        "Incorrect. Dropout is for regularization, not improving attention accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-dropout",
+        "regularization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "TRF_064",
+      "question": "How does the Transformer handle the vanishing gradient problem?",
+      "options": [
+        "Residual connections and layer normalization",
+        "Using ReLU activations only",
+        "Reducing model depth",
+        "Increasing learning rate"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transformers use residual connections to provide gradient flow shortcuts and layer normalization to stabilize training.",
+      "optionExplanations": [
+        "Correct. Residual connections create direct gradient paths, while layer normalization helps maintain gradient magnitudes.",
+        "Incorrect. While ReLU helps, it's not the primary solution; Transformers often use GELU.",
+        "Incorrect. Transformers can be deep precisely because they address vanishing gradients effectively.",
+        "Incorrect. Increasing learning rate doesn't solve vanishing gradients and could cause instability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vanishing-gradients",
+        "residual",
+        "layer-norm"
+      ]
+    },
+    {
+      "id": "TRF_065",
+      "question": "What is the typical training time for large Transformer models?",
+      "options": [
+        "Days to weeks",
+        "Minutes to hours",
+        "Months to years",
+        "Seconds to minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Large Transformer models typically require days to weeks of training on powerful hardware, depending on model size and data.",
+      "optionExplanations": [
+        "Correct. Large models like GPT-3 or BERT-Large require substantial computational resources and time, typically days to weeks.",
+        "Incorrect. This timeframe is too short for large Transformer models.",
+        "Incorrect. While very large models take longer, months to years is excessive for most models.",
+        "Incorrect. This timeframe is far too short for any meaningful Transformer training."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "training-time",
+        "computational-cost",
+        "large-models"
+      ]
+    },
+    {
+      "id": "TRF_066",
+      "question": "What is the main purpose of the [PAD] token in Transformer models?",
+      "options": [
+        "Handle variable-length sequences in batches",
+        "Indicate sentence boundaries",
+        "Represent unknown words",
+        "Mark special positions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "[PAD] tokens are used to make all sequences in a batch the same length, enabling efficient batch processing.",
+      "optionExplanations": [
+        "Correct. [PAD] tokens fill shorter sequences to match the longest sequence in a batch, enabling efficient matrix operations.",
+        "Incorrect. Sentence boundaries are marked by [SEP] tokens, not [PAD].",
+        "Incorrect. Unknown words are typically handled by [UNK] tokens or subword tokenization.",
+        "Incorrect. Special positions are marked by other special tokens like [CLS], not [PAD]."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "PAD-token",
+        "batch-processing",
+        "variable-length"
+      ]
+    },
+    {
+      "id": "TRF_067",
+      "question": "How does temperature affect text generation in Transformer language models?",
+      "options": [
+        "Controls randomness in token selection",
+        "Changes model architecture",
+        "Affects training speed",
+        "Modifies attention patterns"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Temperature scaling controls the randomness of token selection during generation: lower temperature makes output more deterministic, higher temperature more random.",
+      "optionExplanations": [
+        "Correct. Temperature scaling adjusts the sharpness of the probability distribution, controlling the randomness of generated text.",
+        "Incorrect. Temperature is a generation parameter, not an architectural change.",
+        "Incorrect. Temperature affects inference/generation, not training speed.",
+        "Incorrect. Temperature affects output probability distribution, not attention computation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temperature",
+        "generation",
+        "sampling"
+      ]
+    },
+    {
+      "id": "TRF_068",
+      "question": "What is the main difference between BERT and RoBERTa?",
+      "options": [
+        "RoBERTa removes NSP and uses different training strategies",
+        "RoBERTa uses different architecture",
+        "RoBERTa has more layers",
+        "RoBERTa uses different tokenization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "RoBERTa removes the Next Sentence Prediction task and uses improved training strategies like dynamic masking and larger batches.",
+      "optionExplanations": [
+        "Correct. RoBERTa's main improvements include removing NSP, dynamic masking, larger batch sizes, and longer training.",
+        "Incorrect. RoBERTa uses the same Transformer architecture as BERT.",
+        "Incorrect. RoBERTa can have the same number of layers as BERT variants.",
+        "Incorrect. RoBERTa uses similar tokenization approaches to BERT."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RoBERTa",
+        "BERT",
+        "training-strategies"
+      ]
+    },
+    {
+      "id": "TRF_069",
+      "question": "What is the purpose of the final linear layer in Transformer language models?",
+      "options": [
+        "Project hidden states to vocabulary space for token prediction",
+        "Apply final normalization",
+        "Combine attention heads",
+        "Add positional information"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The final linear layer projects the model's hidden representations to vocabulary size, enabling token probability prediction.",
+      "optionExplanations": [
+        "Correct. The output linear layer maps hidden states to vocabulary dimensions, followed by softmax for token probability prediction.",
+        "Incorrect. Final normalization, if used, is separate from the projection to vocabulary space.",
+        "Incorrect. Attention heads are combined within attention layers, not by the final linear layer.",
+        "Incorrect. Positional information is added at the input, not by the final output layer."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "output-layer",
+        "vocabulary",
+        "prediction"
+      ]
+    },
+    {
+      "id": "TRF_070",
+      "question": "How does BERT handle sentence pair tasks like natural language inference?",
+      "options": [
+        "Concatenates sentences with [SEP] token and uses [CLS] for classification",
+        "Processes sentences separately",
+        "Uses different encoders for each sentence",
+        "Averages representations from both sentences"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BERT concatenates sentence pairs with [SEP] separation and uses the [CLS] token's representation for sentence pair classification.",
+      "optionExplanations": [
+        "Correct. BERT processes sentence pairs as a single sequence separated by [SEP], using [CLS] for the final classification decision.",
+        "Incorrect. BERT processes sentence pairs jointly, not separately.",
+        "Incorrect. BERT uses a single encoder for the concatenated sentence pair.",
+        "Incorrect. BERT uses the [CLS] token representation, not averaging sentence representations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sentence-pairs",
+        "BERT",
+        "classification"
+      ]
+    },
+    {
+      "id": "TRF_071",
+      "question": "What is the main limitation of autoregressive generation in models like GPT?",
+      "options": [
+        "Slow inference due to sequential generation",
+        "Cannot handle long sequences",
+        "Poor text quality",
+        "High memory requirements"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Autoregressive generation requires sequential token prediction, making inference slower compared to parallel processing.",
+      "optionExplanations": [
+        "Correct. Each token must be generated sequentially, preventing parallelization during inference and making generation slower.",
+        "Incorrect. GPT models can handle reasonably long sequences.",
+        "Incorrect. Autoregressive models often produce high-quality text.",
+        "Incorrect. While memory usage can be high, the main limitation is sequential processing speed."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "autoregressive",
+        "inference-speed",
+        "limitations"
+      ]
+    },
+    {
+      "id": "TRF_072",
+      "question": "What is the purpose of weight sharing in Transformer embeddings?",
+      "options": [
+        "Reduce parameters and improve efficiency",
+        "Improve attention quality",
+        "Enable transfer learning",
+        "Prevent overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Weight sharing between input and output embeddings reduces the number of parameters while maintaining model performance.",
+      "optionExplanations": [
+        "Correct. Sharing weights between input embeddings and output projection reduces parameters while often maintaining or improving performance.",
+        "Incorrect. Weight sharing affects parameter efficiency, not directly attention quality.",
+        "Incorrect. Weight sharing is a parameter efficiency technique, not specifically for transfer learning.",
+        "Incorrect. While fewer parameters might help with overfitting, the primary purpose is efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "weight-sharing",
+        "efficiency",
+        "parameters"
+      ]
+    },
+    {
+      "id": "TRF_073",
+      "question": "How does the attention mechanism handle the concept of 'long-range dependencies'?",
+      "options": [
+        "Direct connections between all positions regardless of distance",
+        "Gradual information propagation through layers",
+        "Special tokens for long distances",
+        "Increased attention for distant positions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Self-attention creates direct connections between all positions, allowing information to flow directly between distant positions in a single step.",
+      "optionExplanations": [
+        "Correct. Unlike RNNs that require multiple steps, attention creates direct paths between any two positions, enabling efficient long-range dependency modeling.",
+        "Incorrect. While layers help, the key advantage is direct position-to-position connections within each layer.",
+        "Incorrect. There are no special tokens specifically for handling long distances.",
+        "Incorrect. Attention weights are based on content similarity, not distance-based bias."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "long-range",
+        "dependencies",
+        "attention"
+      ]
+    },
+    {
+      "id": "TRF_074",
+      "question": "What is the difference between 'pre-training' and 'training from scratch' for Transformers?",
+      "options": [
+        "Pre-training uses general objectives, training from scratch uses task-specific objectives",
+        "Pre-training is faster than training from scratch",
+        "Pre-training uses smaller models",
+        "No significant difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Pre-training uses general language modeling objectives on large corpora, while training from scratch uses task-specific objectives on target data.",
+      "optionExplanations": [
+        "Correct. Pre-training learns general representations with objectives like MLM, while training from scratch directly optimizes for the target task.",
+        "Incorrect. Pre-training often takes longer due to larger datasets and general objectives.",
+        "Incorrect. Pre-trained models are often larger than task-specific models trained from scratch.",
+        "Incorrect. There are significant differences in objectives, data, and resulting representations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-training",
+        "training-from-scratch",
+        "objectives"
+      ]
+    },
+    {
+      "id": "TRF_075",
+      "question": "What is the role of the decoder's second attention layer in the original Transformer?",
+      "options": [
+        "Cross-attention to encoder outputs",
+        "Self-attention within decoder",
+        "Attention to positional encodings",
+        "Attention to embeddings"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The decoder's second attention layer performs cross-attention, attending to the encoder's outputs using decoder queries and encoder keys/values.",
+      "optionExplanations": [
+        "Correct. The second attention layer in the decoder performs cross-attention, allowing the decoder to attend to encoder representations.",
+        "Incorrect. Self-attention within the decoder is performed by the first attention layer.",
+        "Incorrect. Attention to positional encodings is not a separate attention layer.",
+        "Incorrect. Attention to embeddings is not the specific role of the second decoder attention layer."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decoder",
+        "cross-attention",
+        "encoder-decoder"
+      ]
+    },
+    {
+      "id": "TRF_076",
+      "question": "How does the learning rate warmup help in Transformer training?",
+      "options": [
+        "Prevents early training instability from large gradients",
+        "Speeds up convergence",
+        "Reduces memory usage",
+        "Improves final model quality"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Warmup prevents training instability by starting with small learning rates when gradients can be large and unpredictable in early training.",
+      "optionExplanations": [
+        "Correct. Warmup helps stabilize early training when the model parameters are randomly initialized and gradients can be large.",
+        "Incorrect. While warmup may help overall training, its primary purpose is stability, not speed.",
+        "Incorrect. Warmup affects learning rate scheduling, not memory usage.",
+        "Incorrect. While warmup may contribute to better training, its primary purpose is preventing early instability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "warmup",
+        "training-stability",
+        "learning-rate"
+      ]
+    },
+    {
+      "id": "TRF_077",
+      "question": "What is the purpose of the value matrix (V) in attention?",
+      "options": [
+        "Contains the actual information to be aggregated",
+        "Determines attention weights",
+        "Computes similarity scores",
+        "Provides positional information"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The value matrix contains the actual content/information that gets aggregated based on the attention weights computed from queries and keys.",
+      "optionExplanations": [
+        "Correct. Values contain the information that gets mixed together according to the attention weights determined by query-key similarity.",
+        "Incorrect. Attention weights are determined by query-key similarity, not the value matrix.",
+        "Incorrect. Similarity scores are computed from queries and keys, not values.",
+        "Incorrect. Positional information is added through positional encoding, not the value matrix."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "value-matrix",
+        "attention",
+        "information"
+      ]
+    },
+    {
+      "id": "TRF_078",
+      "question": "How do Transformer models typically handle out-of-vocabulary words during inference?",
+      "options": [
+        "Break them into subword tokens",
+        "Replace with [UNK] token",
+        "Skip them entirely",
+        "Use character-level processing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Modern Transformers use subword tokenization (like BPE or WordPiece) to break unknown words into known subword pieces.",
+      "optionExplanations": [
+        "Correct. Subword tokenization breaks unknown words into smaller, known pieces, virtually eliminating the out-of-vocabulary problem.",
+        "Incorrect. While [UNK] tokens exist, subword tokenization aims to avoid them.",
+        "Incorrect. Words are not skipped; they are processed through subword tokenization.",
+        "Incorrect. While characters might be subword units, it's not purely character-level processing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "out-of-vocabulary",
+        "subword",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "TRF_079",
+      "question": "What is the computational advantage of pre-training large language models?",
+      "options": [
+        "Amortizes training cost across multiple downstream tasks",
+        "Reduces inference time",
+        "Requires less memory",
+        "Simplifies model architecture"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Pre-training spreads the high computational cost across many downstream applications, making it economically efficient.",
+      "optionExplanations": [
+        "Correct. The high cost of pre-training is justified because the resulting model can be fine-tuned for many different tasks efficiently.",
+        "Incorrect. Pre-training doesn't directly reduce inference time compared to training from scratch.",
+        "Incorrect. Pre-trained models often require more memory due to their size.",
+        "Incorrect. Pre-training doesn't simplify architecture; it's about efficient use of computation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pre-training",
+        "computational-efficiency",
+        "transfer-learning"
+      ]
+    },
+    {
+      "id": "TRF_080",
+      "question": "What is the main challenge with scaling Transformer models to longer sequences?",
+      "options": [
+        "Quadratic memory and compute scaling with sequence length",
+        "Linear scaling issues",
+        "Model accuracy degradation",
+        "Training instability"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The self-attention mechanism has O(n²) complexity in memory and computation, making very long sequences computationally expensive and memory-intensive.",
+      "optionExplanations": [
+        "Correct. Self-attention requires computing pairwise interactions between all positions, leading to quadratic scaling that becomes prohibitive for very long sequences.",
+        "Incorrect. Linear scaling would be manageable; the problem is quadratic scaling.",
+        "Incorrect. While accuracy can be affected, the primary challenge is computational complexity.",
+        "Incorrect. Training instability is not the main scaling challenge with sequence length."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "scaling",
+        "sequence-length",
+        "complexity"
+      ]
+    },
+    {
+      "id": "TRF_081",
+      "question": "What is the purpose of knowledge distillation in Transformer models?",
+      "options": [
+        "Transfer knowledge from large teacher to smaller student model",
+        "Extract factual knowledge from models",
+        "Improve training data quality",
+        "Reduce overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Knowledge distillation trains a smaller student model to mimic the behavior of a larger teacher model, creating more efficient models.",
+      "optionExplanations": [
+        "Correct. Knowledge distillation transfers the learned representations and behaviors from a large teacher model to a more efficient student model.",
+        "Incorrect. This describes knowledge extraction, not knowledge distillation.",
+        "Incorrect. Knowledge distillation is about model compression, not data quality improvement.",
+        "Incorrect. While distillation may help with generalization, its primary purpose is model compression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "knowledge-distillation",
+        "model-compression",
+        "teacher-student"
+      ]
+    },
+    {
+      "id": "TRF_082",
+      "question": "In BERT's training, what is dynamic masking?",
+      "options": [
+        "Different tokens are masked in each epoch",
+        "Masking probability changes during training",
+        "Only certain token types are masked",
+        "Masking based on attention patterns"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dynamic masking changes which tokens are masked across different epochs, providing more training variety than static masking.",
+      "optionExplanations": [
+        "Correct. Dynamic masking generates different masked versions of the same text across epochs, increasing training diversity.",
+        "Incorrect. The masking probability (15%) typically remains constant.",
+        "Incorrect. Dynamic masking refers to changing which tokens are masked, not restricting token types.",
+        "Incorrect. Dynamic masking is random, not based on attention patterns."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dynamic-masking",
+        "BERT",
+        "training-variety"
+      ]
+    },
+    {
+      "id": "TRF_083",
+      "question": "What is the main advantage of the Transformer-XL architecture?",
+      "options": [
+        "Handles longer sequences through segment-level recurrence",
+        "Faster training speed",
+        "Better attention mechanism",
+        "Smaller model size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transformer-XL uses segment-level recurrence and relative positional encoding to handle much longer sequences than standard Transformers.",
+      "optionExplanations": [
+        "Correct. Transformer-XL enables processing of longer sequences by reusing hidden states from previous segments and using relative positioning.",
+        "Incorrect. Transformer-XL focuses on sequence length capability, not training speed.",
+        "Incorrect. It uses similar attention mechanisms with relative positioning modifications.",
+        "Incorrect. Transformer-XL is not primarily focused on reducing model size."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "Transformer-XL",
+        "long-sequences",
+        "recurrence"
+      ]
+    },
+    {
+      "id": "TRF_084",
+      "question": "What is the purpose of nucleus sampling (top-p) in text generation?",
+      "options": [
+        "Sample from the smallest set of tokens with cumulative probability p",
+        "Sample only the top p tokens",
+        "Use probability p for random selection",
+        "Apply p as temperature scaling"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Nucleus sampling selects from the smallest set of most probable tokens whose cumulative probability exceeds threshold p.",
+      "optionExplanations": [
+        "Correct. Nucleus sampling dynamically determines the candidate set by taking the most probable tokens until their cumulative probability reaches p.",
+        "Incorrect. This describes top-k sampling, not nucleus (top-p) sampling.",
+        "Incorrect. p is not a random selection probability but a cumulative probability threshold.",
+        "Incorrect. Temperature scaling is a different technique from nucleus sampling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "nucleus-sampling",
+        "text-generation",
+        "probability"
+      ]
+    },
+    {
+      "id": "TRF_085",
+      "question": "How does ALBERT differ from BERT in terms of parameter sharing?",
+      "options": [
+        "ALBERT shares parameters across all layers",
+        "ALBERT uses different embeddings",
+        "ALBERT has more parameters",
+        "ALBERT doesn't use parameter sharing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ALBERT (A Lite BERT) shares parameters across all Transformer layers, significantly reducing the total parameter count.",
+      "optionExplanations": [
+        "Correct. ALBERT's key innovation is sharing all parameters across layers, dramatically reducing model size while maintaining performance.",
+        "Incorrect. ALBERT's main difference is layer parameter sharing, not embedding differences.",
+        "Incorrect. ALBERT has fewer parameters due to parameter sharing.",
+        "Incorrect. Parameter sharing is ALBERT's main feature."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "ALBERT",
+        "parameter-sharing",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "TRF_086",
+      "question": "What is the purpose of the feed-forward expansion factor in Transformers?",
+      "options": [
+        "Increase model capacity in the feed-forward layer",
+        "Reduce computational cost",
+        "Improve attention computation",
+        "Handle longer sequences"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The feed-forward layer typically expands to 4x the model dimension to increase the model's capacity for non-linear transformations.",
+      "optionExplanations": [
+        "Correct. The FFN typically expands to 4 * d_model dimensions, providing more capacity for complex transformations before projecting back.",
+        "Incorrect. The expansion increases rather than reduces computational cost.",
+        "Incorrect. The expansion is in the feed-forward network, not attention computation.",
+        "Incorrect. The expansion factor doesn't directly affect sequence length handling."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "feed-forward",
+        "expansion",
+        "capacity"
+      ]
+    },
+    {
+      "id": "TRF_087",
+      "question": "What is gradient accumulation in Transformer training?",
+      "options": [
+        "Accumulating gradients over multiple mini-batches before updating",
+        "Storing gradients from previous epochs",
+        "Computing gradients for all layers simultaneously",
+        "Using momentum in gradient updates"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gradient accumulation allows simulation of larger batch sizes by accumulating gradients over multiple forward passes before updating parameters.",
+      "optionExplanations": [
+        "Correct. Gradient accumulation enables effective larger batch sizes when memory constraints prevent using large batches directly.",
+        "Incorrect. Gradient accumulation happens within an optimization step, not across epochs.",
+        "Incorrect. Computing gradients for all layers is standard backpropagation, not gradient accumulation.",
+        "Incorrect. Momentum is a separate optimization technique, not gradient accumulation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gradient-accumulation",
+        "batch-size",
+        "training"
+      ]
+    },
+    {
+      "id": "TRF_088",
+      "question": "What is the main difference between masked language modeling and causal language modeling?",
+      "options": [
+        "MLM predicts masked tokens with full context, CLM predicts next tokens",
+        "MLM is supervised, CLM is unsupervised",
+        "MLM uses encoders, CLM uses decoders",
+        "MLM is for classification, CLM is for generation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "MLM predicts randomly masked tokens using bidirectional context, while CLM predicts the next token using only previous context.",
+      "optionExplanations": [
+        "Correct. MLM can see full context to predict masked tokens, while CLM only sees previous tokens to predict the next one.",
+        "Incorrect. Both are typically self-supervised pre-training objectives.",
+        "Incorrect. The encoder/decoder usage depends on the model architecture, not the training objective.",
+        "Incorrect. Both are pre-training objectives; the downstream applications can vary."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MLM",
+        "CLM",
+        "language-modeling"
+      ]
+    },
+    {
+      "id": "TRF_089",
+      "question": "What is the purpose of the start-of-sequence token in language models?",
+      "options": [
+        "Provide initial context for text generation",
+        "Mark the beginning of training",
+        "Indicate sentence boundaries",
+        "Store model parameters"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The start-of-sequence token provides initial context for autoregressive generation when no previous tokens are available.",
+      "optionExplanations": [
+        "Correct. The start token gives the model an initial context to begin generation, especially important for the first token prediction.",
+        "Incorrect. Start tokens are used during inference/generation, not to mark training phases.",
+        "Incorrect. Sentence boundaries are typically marked by different tokens like [SEP].",
+        "Incorrect. Tokens don't store model parameters; they're input symbols."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "start-token",
+        "generation",
+        "context"
+      ]
+    },
+    {
+      "id": "TRF_090",
+      "question": "How does mixed precision training help in Transformer models?",
+      "options": [
+        "Reduces memory usage and speeds up training",
+        "Improves model accuracy",
+        "Enables longer sequences",
+        "Simplifies model architecture"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mixed precision uses both 16-bit and 32-bit floating point numbers to reduce memory usage and accelerate training while maintaining numerical stability.",
+      "optionExplanations": [
+        "Correct. Mixed precision training uses FP16 for most operations to save memory and speed up computation, while using FP32 for operations requiring higher precision.",
+        "Incorrect. Mixed precision is primarily for efficiency, not accuracy improvement.",
+        "Incorrect. While memory savings might allow longer sequences, that's not the primary purpose.",
+        "Incorrect. Mixed precision is a training technique, not an architectural change."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mixed-precision",
+        "training-efficiency",
+        "memory"
+      ]
+    },
+    {
+      "id": "TRF_091",
+      "question": "What is the role of the query matrix (Q) in attention?",
+      "options": [
+        "Represents what information each position is looking for",
+        "Contains the information to be retrieved",
+        "Stores attention weights",
+        "Provides positional information"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The query matrix represents what each position is 'asking for' or seeking from other positions in the sequence.",
+      "optionExplanations": [
+        "Correct. Queries represent the 'question' each position asks to determine what information it should attend to from other positions.",
+        "Incorrect. The information to be retrieved is stored in the value matrix, not queries.",
+        "Incorrect. Attention weights are computed from query-key interactions, not stored in queries.",
+        "Incorrect. Positional information comes from positional encoding, not the query matrix."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "query-matrix",
+        "attention",
+        "information-seeking"
+      ]
+    },
+    {
+      "id": "TRF_092",
+      "question": "What is the main advantage of using subword tokenization in Transformers?",
+      "options": [
+        "Handles rare words and reduces vocabulary size",
+        "Improves attention computation",
+        "Speeds up training",
+        "Reduces model complexity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Subword tokenization breaks words into smaller units, effectively handling rare words while keeping vocabulary manageable.",
+      "optionExplanations": [
+        "Correct. Subword tokenization allows models to handle rare and out-of-vocabulary words by breaking them into known subword pieces.",
+        "Incorrect. Subword tokenization affects input processing, not attention computation directly.",
+        "Incorrect. While it may have training benefits, speed improvement is not the main advantage.",
+        "Incorrect. Subword tokenization doesn't directly reduce model architectural complexity."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "subword-tokenization",
+        "vocabulary",
+        "rare-words"
+      ]
+    },
+    {
+      "id": "TRF_093",
+      "question": "How does the Transformer model handle translation tasks?",
+      "options": [
+        "Uses encoder-decoder architecture with cross-attention",
+        "Uses only encoder with classification head",
+        "Uses only decoder with language modeling head",
+        "Uses separate models for source and target languages"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For translation, Transformers use the full encoder-decoder architecture where the encoder processes the source language and decoder generates the target language.",
+      "optionExplanations": [
+        "Correct. Translation uses encoder-decoder architecture where the encoder processes source text and decoder generates target text using cross-attention.",
+        "Incorrect. Translation is a generation task requiring decoder capability, not just classification.",
+        "Incorrect. The decoder alone cannot process the source language input.",
+        "Incorrect. A single encoder-decoder model handles both languages through cross-attention."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "translation",
+        "encoder-decoder",
+        "cross-attention"
+      ]
+    },
+    {
+      "id": "TRF_094",
+      "question": "What is the purpose of attention head pruning in Transformers?",
+      "options": [
+        "Remove less important attention heads to reduce model size",
+        "Focus attention on specific positions",
+        "Improve attention accuracy",
+        "Speed up attention computation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Attention head pruning identifies and removes less important attention heads to create smaller, more efficient models while maintaining performance.",
+      "optionExplanations": [
+        "Correct. Head pruning removes attention heads that contribute least to model performance, reducing parameters and computation.",
+        "Incorrect. Pruning removes entire heads, not focusing attention on specific positions.",
+        "Incorrect. Pruning aims for efficiency while maintaining accuracy, not improving it.",
+        "Incorrect. While pruning may speed up computation, the primary goal is model compression."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "attention-pruning",
+        "model-compression",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "TRF_095",
+      "question": "What is the difference between absolute and relative attention in Transformers?",
+      "options": [
+        "Absolute uses fixed positions, relative uses position differences",
+        "Absolute is learned, relative is computed",
+        "Absolute is for short sequences, relative for long sequences",
+        "No significant difference in practice"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Absolute attention uses fixed position embeddings, while relative attention considers the relative distance between positions.",
+      "optionExplanations": [
+        "Correct. Absolute attention uses fixed position encodings, while relative attention focuses on the relative distances between positions.",
+        "Incorrect. Both can be either learned or computed depending on implementation.",
+        "Incorrect. The choice isn't primarily based on sequence length, though relative may help with longer sequences.",
+        "Incorrect. There can be significant differences, especially for tasks sensitive to positional relationships."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "absolute-attention",
+        "relative-attention",
+        "positional-encoding"
+      ]
+    },
+    {
+      "id": "TRF_096",
+      "question": "What is the main purpose of the attention mask in Transformers?",
+      "options": [
+        "Control which positions can attend to which other positions",
+        "Reduce computational complexity",
+        "Improve attention accuracy",
+        "Store attention weights"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Attention masks control the attention pattern by preventing certain positions from attending to others, such as padding tokens or future positions.",
+      "optionExplanations": [
+        "Correct. Attention masks selectively allow or prevent attention between specific positions, enabling different attention patterns for different tasks.",
+        "Incorrect. While masking may affect computation, its primary purpose is controlling attention patterns.",
+        "Incorrect. Masking is about controlling information flow, not improving accuracy per se.",
+        "Incorrect. Masks control attention computation; they don't store the resulting weights."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "attention-mask",
+        "attention-control",
+        "masking"
+      ]
+    },
+    {
+      "id": "TRF_097",
+      "question": "How does DistilBERT achieve efficiency compared to BERT?",
+      "options": [
+        "Uses knowledge distillation and reduces layers",
+        "Uses different attention mechanism",
+        "Reduces vocabulary size",
+        "Uses smaller embedding dimensions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DistilBERT uses knowledge distillation from BERT and reduces the number of layers (6 instead of 12) to create a smaller, faster model.",
+      "optionExplanations": [
+        "Correct. DistilBERT combines knowledge distillation with architectural changes (fewer layers) to achieve efficiency while retaining performance.",
+        "Incorrect. DistilBERT uses the same attention mechanism as BERT.",
+        "Incorrect. DistilBERT typically uses the same vocabulary as BERT.",
+        "Incorrect. The embedding dimensions are typically the same as BERT."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "DistilBERT",
+        "knowledge-distillation",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "TRF_098",
+      "question": "What is the purpose of the key matrix (K) in attention?",
+      "options": [
+        "Provides searchable representations for matching with queries",
+        "Contains the final output information",
+        "Stores attention weights",
+        "Generates positional encodings"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The key matrix provides representations that can be matched against queries to determine attention weights through similarity computation.",
+      "optionExplanations": [
+        "Correct. Keys serve as 'labels' or 'addresses' that queries can search through to determine what information to attend to.",
+        "Incorrect. Final output information comes from the value matrix, not keys.",
+        "Incorrect. Attention weights are computed from query-key interactions, not stored in keys.",
+        "Incorrect. Positional encodings are separate from the key matrix."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "key-matrix",
+        "attention",
+        "similarity"
+      ]
+    },
+    {
+      "id": "TRF_099",
+      "question": "What is the main computational bottleneck during Transformer inference?",
+      "options": [
+        "Sequential token generation in autoregressive models",
+        "Attention computation complexity",
+        "Feed-forward network operations",
+        "Embedding lookups"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For autoregressive models, the sequential nature of token generation prevents parallelization, making it the main inference bottleneck.",
+      "optionExplanations": [
+        "Correct. Autoregressive generation requires sequential token prediction, preventing the parallelization that makes training efficient.",
+        "Incorrect. While attention is computationally intensive, the sequential nature of generation is typically the bigger bottleneck.",
+        "Incorrect. Feed-forward operations are generally not the primary bottleneck.",
+        "Incorrect. Embedding lookups are typically fast compared to other operations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "inference-bottleneck",
+        "autoregressive",
+        "sequential-generation"
+      ]
+    },
+    {
+      "id": "TRF_100",
+      "question": "What is the significance of the 'Attention Is All You Need' paper?",
+      "options": [
+        "Introduced the Transformer architecture without recurrent or convolutional layers",
+        "Proved attention is the only mechanism needed for AI",
+        "Eliminated the need for neural networks",
+        "Solved all natural language processing tasks"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The paper introduced the Transformer architecture, showing that attention mechanisms alone could achieve state-of-the-art results without recurrent or convolutional components.",
+      "optionExplanations": [
+        "Correct. The paper demonstrated that a model based solely on attention mechanisms could outperform previous architectures that relied on RNNs or CNNs.",
+        "Incorrect. The title is about the Transformer architecture, not claiming attention is the only mechanism needed for all AI.",
+        "Incorrect. Transformers are still neural networks; they just use different components.",
+        "Incorrect. While influential, the paper didn't solve all NLP tasks; it introduced a powerful new architecture."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "attention-is-all-you-need",
+        "transformer-introduction",
+        "architecture"
+      ]
+    }
+  ]
+}

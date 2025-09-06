@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_IMG",
+  "topicName": "Image Processing",
+  "subtopicId": "STC_IMF",
+  "subtopicName": "Image Fundamentals",
+  "str": 0.100,
+  "description": "Fundamental concepts of image processing in machine learning and data science, covering basic image representation, manipulation, and analysis techniques",
+  "questions": [
+    {
+      "id": "IMF_001",
+      "question": "What is a pixel in digital image processing?",
+      "options": [
+        "The smallest addressable element in a digital image",
+        "A type of image compression algorithm",
+        "A color space conversion method",
+        "A noise reduction technique"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A pixel (picture element) is the smallest addressable element in a digital image. It represents a single point in a raster image and contains color and intensity information.",
+      "optionExplanations": [
+        "Correct. A pixel is indeed the fundamental unit of a digital image, representing the smallest controllable element.",
+        "Incorrect. This describes compression algorithms like JPEG or PNG, not pixels themselves.",
+        "Incorrect. Color space conversion refers to transforming between different color models like RGB to HSV.",
+        "Incorrect. Noise reduction techniques are methods to remove unwanted variations in image data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "pixels",
+        "digital-image",
+        "basics"
+      ]
+    },
+    {
+      "id": "IMF_002",
+      "question": "What does RGB stand for in image processing?",
+      "options": [
+        "Red, Green, Blue",
+        "Rapid Graphics Builder",
+        "Random Gaussian Blur",
+        "Recursive Gradient Boosting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "RGB stands for Red, Green, Blue - the three primary colors used in the additive color model for digital displays and image representation.",
+      "optionExplanations": [
+        "Correct. RGB represents the three primary colors that are combined to create all other colors in digital images.",
+        "Incorrect. This is not a standard term in image processing or computer graphics.",
+        "Incorrect. This would be a type of image filtering technique, not a color model.",
+        "Incorrect. This refers to a machine learning ensemble method, not color representation."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "color-space",
+        "RGB",
+        "color-model"
+      ]
+    },
+    {
+      "id": "IMF_003",
+      "question": "What is the typical range of pixel values in an 8-bit grayscale image?",
+      "options": [
+        "0 to 255",
+        "0 to 1",
+        "0 to 100",
+        "-128 to 127"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In an 8-bit grayscale image, each pixel can have 2^8 = 256 different intensity levels, ranging from 0 (black) to 255 (white).",
+      "optionExplanations": [
+        "Correct. 8 bits can represent 256 different values, from 0 to 255.",
+        "Incorrect. This range (0 to 1) is used for normalized pixel values, not standard 8-bit representation.",
+        "Incorrect. This would be a percentage representation, not the standard 8-bit range.",
+        "Incorrect. This is the range for signed 8-bit integers, not unsigned pixel values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "grayscale",
+        "8-bit",
+        "pixel-values"
+      ]
+    },
+    {
+      "id": "IMF_004",
+      "question": "What is image resolution?",
+      "options": [
+        "The number of pixels per unit length",
+        "The brightness of an image",
+        "The color depth of an image",
+        "The file size of an image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image resolution refers to the number of pixels per unit length, typically measured in pixels per inch (PPI) or dots per inch (DPI), determining the image's detail and sharpness.",
+      "optionExplanations": [
+        "Correct. Resolution measures pixel density, determining how much detail an image can contain.",
+        "Incorrect. Brightness refers to the overall luminance or lightness of an image.",
+        "Incorrect. Color depth refers to the number of bits used to represent each color channel.",
+        "Incorrect. File size is the amount of storage space an image occupies, influenced by resolution but not the same thing."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "resolution",
+        "image-quality",
+        "pixels"
+      ]
+    },
+    {
+      "id": "IMF_005",
+      "question": "What is the primary difference between raster and vector images?",
+      "options": [
+        "Raster images are made of pixels, vector images are made of mathematical formulas",
+        "Raster images are colored, vector images are black and white",
+        "Raster images are larger, vector images are smaller",
+        "Raster images are 2D, vector images are 3D"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Raster images are composed of a grid of pixels, while vector images are defined by mathematical formulas describing shapes, lines, and curves.",
+      "optionExplanations": [
+        "Correct. This is the fundamental difference between pixel-based raster and formula-based vector graphics.",
+        "Incorrect. Both raster and vector images can be colored or monochrome.",
+        "Incorrect. File size depends on complexity and format, not the image type itself.",
+        "Incorrect. Both can represent 2D graphics; the distinction isn't about dimensionality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "raster",
+        "vector",
+        "image-types"
+      ]
+    },
+    {
+      "id": "IMF_006",
+      "question": "What does bit depth determine in digital images?",
+      "options": [
+        "The number of colors that can be represented",
+        "The physical size of the image",
+        "The compression ratio",
+        "The image orientation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bit depth determines how many different colors or intensity levels can be represented in each pixel. Higher bit depth allows for more colors and smoother gradients.",
+      "optionExplanations": [
+        "Correct. Bit depth directly controls the number of possible color values per channel.",
+        "Incorrect. Physical size is determined by dimensions and resolution, not bit depth.",
+        "Incorrect. Compression ratio is determined by the compression algorithm and settings.",
+        "Incorrect. Image orientation is about the spatial arrangement, not color representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bit-depth",
+        "color-depth",
+        "digital-images"
+      ]
+    },
+    {
+      "id": "IMF_007",
+      "question": "What is histogram equalization used for in image processing?",
+      "options": [
+        "Enhancing image contrast",
+        "Reducing image noise",
+        "Changing image colors",
+        "Rotating images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Histogram equalization redistributes pixel intensities to improve contrast by spreading out the intensity distribution across the available range.",
+      "optionExplanations": [
+        "Correct. Histogram equalization specifically targets contrast enhancement by redistributing intensity levels.",
+        "Incorrect. Noise reduction requires different techniques like filtering or denoising algorithms.",
+        "Incorrect. Color changing involves color space transformations or color mapping, not histogram equalization.",
+        "Incorrect. Image rotation is a geometric transformation, not related to histogram manipulation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "histogram",
+        "contrast",
+        "enhancement"
+      ]
+    },
+    {
+      "id": "IMF_008",
+      "question": "What is the main purpose of image normalization?",
+      "options": [
+        "To scale pixel values to a consistent range",
+        "To rotate the image",
+        "To add noise to the image",
+        "To compress the image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image normalization scales pixel values to a consistent range (often 0-1) to standardize input data for machine learning algorithms and improve processing consistency.",
+      "optionExplanations": [
+        "Correct. Normalization ensures pixel values fall within a standard range for consistent processing.",
+        "Incorrect. Rotation is a geometric transformation, not related to value scaling.",
+        "Incorrect. Adding noise is typically for data augmentation or testing, not normalization.",
+        "Incorrect. Compression reduces file size by removing redundant information, not scaling values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "normalization",
+        "preprocessing",
+        "scaling"
+      ]
+    },
+    {
+      "id": "IMF_009",
+      "question": "What is a grayscale image?",
+      "options": [
+        "An image with only intensity information, no color",
+        "An image that is blurred",
+        "An image with reduced resolution",
+        "An image with added noise"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A grayscale image contains only intensity (brightness) information without color information, typically represented as shades from black to white.",
+      "optionExplanations": [
+        "Correct. Grayscale images contain only luminance information, representing different shades of gray.",
+        "Incorrect. Blurring is an image filtering operation that can be applied to any type of image.",
+        "Incorrect. Resolution refers to pixel density, which is independent of color information.",
+        "Incorrect. Noise is unwanted variation that can affect any type of image."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "grayscale",
+        "intensity",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "IMF_010",
+      "question": "What does JPEG stand for?",
+      "options": [
+        "Joint Photographic Experts Group",
+        "Java Picture Enhancement Graphics",
+        "Just Pretty Electronic Graphics",
+        "Joint Program for Electronic Graphics"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "JPEG stands for Joint Photographic Experts Group, the organization that created this widely-used lossy compression standard for digital images.",
+      "optionExplanations": [
+        "Correct. JPEG is named after the Joint Photographic Experts Group that developed the standard.",
+        "Incorrect. This is not the correct expansion and doesn't relate to the actual organization.",
+        "Incorrect. This is a made-up expansion that doesn't reflect the standard's origin.",
+        "Incorrect. This is not the correct expansion of the JPEG acronym."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "JPEG",
+        "compression",
+        "file-format"
+      ]
+    },
+    {
+      "id": "IMF_011",
+      "question": "What is the difference between lossy and lossless compression?",
+      "options": [
+        "Lossy compression removes some data, lossless preserves all original data",
+        "Lossy compression is faster, lossless is slower",
+        "Lossy compression works on color images, lossless on grayscale",
+        "Lossy compression creates larger files, lossless creates smaller files"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Lossy compression reduces file size by permanently removing some image data, while lossless compression preserves all original information and allows perfect reconstruction.",
+      "optionExplanations": [
+        "Correct. This accurately describes the fundamental difference between lossy and lossless compression methods.",
+        "Incorrect. Speed depends on the algorithm implementation, not the compression type.",
+        "Incorrect. Both types can work on color and grayscale images.",
+        "Incorrect. Generally, lossy compression creates smaller files than lossless compression."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "compression",
+        "lossy",
+        "lossless"
+      ]
+    },
+    {
+      "id": "IMF_012",
+      "question": "What is image interpolation?",
+      "options": [
+        "A method to estimate pixel values when resizing images",
+        "A technique to remove noise from images",
+        "A process to convert color images to grayscale",
+        "A way to compress images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image interpolation estimates new pixel values when resizing, rotating, or transforming images, filling in gaps between existing pixels using various mathematical methods.",
+      "optionExplanations": [
+        "Correct. Interpolation estimates intermediate values when transforming images to new dimensions or orientations.",
+        "Incorrect. Noise removal uses filtering techniques, not interpolation.",
+        "Incorrect. Grayscale conversion uses weighted averaging of color channels, not interpolation.",
+        "Incorrect. Compression reduces file size through data encoding, not pixel value estimation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "interpolation",
+        "resizing",
+        "transformation"
+      ]
+    },
+    {
+      "id": "IMF_013",
+      "question": "What is the purpose of image thresholding?",
+      "options": [
+        "To convert grayscale images to binary images",
+        "To enhance image colors",
+        "To rotate images",
+        "To blur images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image thresholding converts grayscale images to binary images by setting pixels above a threshold to white and below to black, useful for segmentation and object detection.",
+      "optionExplanations": [
+        "Correct. Thresholding creates binary images by applying a cutoff value to separate foreground from background.",
+        "Incorrect. Color enhancement involves adjusting saturation, brightness, or contrast, not binary conversion.",
+        "Incorrect. Rotation is a geometric transformation, not related to pixel value thresholding.",
+        "Incorrect. Blurring smooths images by averaging neighboring pixels, not applying threshold values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "thresholding",
+        "binary",
+        "segmentation"
+      ]
+    },
+    {
+      "id": "IMF_014",
+      "question": "What is a kernel in image processing?",
+      "options": [
+        "A small matrix used for convolution operations",
+        "The center pixel of an image",
+        "A type of image file format",
+        "A compression algorithm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A kernel (or filter) is a small matrix used in convolution operations to apply various effects like blurring, sharpening, edge detection, or other transformations to images.",
+      "optionExplanations": [
+        "Correct. Kernels are small matrices that define how neighboring pixels contribute to transforming each pixel.",
+        "Incorrect. The center pixel is just a position reference, not a processing tool.",
+        "Incorrect. Kernels are processing tools, not file storage formats.",
+        "Incorrect. Compression algorithms reduce file size, while kernels perform image transformations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "kernel",
+        "convolution",
+        "filter"
+      ]
+    },
+    {
+      "id": "IMF_015",
+      "question": "What is convolution in image processing?",
+      "options": [
+        "A mathematical operation that applies a kernel to an image",
+        "A method to save images in different formats",
+        "A technique to change image colors",
+        "A way to crop images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Convolution is a mathematical operation where a kernel (filter) is systematically applied across an image, computing new pixel values based on weighted sums of neighboring pixels.",
+      "optionExplanations": [
+        "Correct. Convolution applies a kernel matrix to transform images through systematic mathematical operations.",
+        "Incorrect. File format conversion involves encoding/decoding, not mathematical transformations.",
+        "Incorrect. Color changes involve color space transformations or adjustments, not convolution operations.",
+        "Incorrect. Cropping extracts image regions through coordinate selection, not convolution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "convolution",
+        "kernel",
+        "transformation"
+      ]
+    },
+    {
+      "id": "IMF_016",
+      "question": "What is the primary purpose of Gaussian blur?",
+      "options": [
+        "To reduce noise and smooth images",
+        "To sharpen image details",
+        "To increase image contrast",
+        "To detect edges in images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian blur applies a Gaussian function to smooth images and reduce noise by averaging pixels with their neighbors, creating a soft, blurred effect.",
+      "optionExplanations": [
+        "Correct. Gaussian blur smooths images and reduces noise through weighted averaging based on Gaussian distribution.",
+        "Incorrect. Sharpening enhances edges and details, which is opposite to the smoothing effect of Gaussian blur.",
+        "Incorrect. Contrast enhancement involves adjusting intensity differences, not smoothing operations.",
+        "Incorrect. Edge detection identifies boundaries and transitions, while Gaussian blur softens them."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gaussian-blur",
+        "smoothing",
+        "noise-reduction"
+      ]
+    },
+    {
+      "id": "IMF_017",
+      "question": "What is edge detection in image processing?",
+      "options": [
+        "Identifying boundaries between different regions in an image",
+        "Removing unwanted parts of an image",
+        "Converting images to different file formats",
+        "Adjusting image brightness"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Edge detection identifies boundaries and transitions between different regions or objects in an image by detecting rapid changes in intensity or color.",
+      "optionExplanations": [
+        "Correct. Edge detection finds boundaries where pixel intensity changes significantly, indicating object borders or region transitions.",
+        "Incorrect. Removing image parts is cropping or masking, not edge detection.",
+        "Incorrect. Format conversion changes file encoding, not image content analysis.",
+        "Incorrect. Brightness adjustment modifies overall intensity levels, not boundary detection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "edge-detection",
+        "boundaries",
+        "feature-extraction"
+      ]
+    },
+    {
+      "id": "IMF_018",
+      "question": "What is the Sobel operator used for?",
+      "options": [
+        "Edge detection",
+        "Color correction",
+        "Image compression",
+        "Noise removal"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Sobel operator is a gradient-based edge detection technique that uses convolution kernels to find edges by detecting intensity gradients in horizontal and vertical directions.",
+      "optionExplanations": [
+        "Correct. The Sobel operator specifically detects edges by computing intensity gradients using specialized kernels.",
+        "Incorrect. Color correction involves adjusting color balance, saturation, or temperature, not gradient computation.",
+        "Incorrect. Compression reduces file size through encoding techniques, not gradient analysis.",
+        "Incorrect. Noise removal typically uses smoothing filters, not edge detection operators."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "sobel",
+        "edge-detection",
+        "gradient"
+      ]
+    },
+    {
+      "id": "IMF_019",
+      "question": "What is morphological operation in image processing?",
+      "options": [
+        "Operations that process images based on shape and structure",
+        "Operations that change image colors",
+        "Operations that compress images",
+        "Operations that rotate images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Morphological operations process images based on shape and structural elements, commonly used for noise removal, shape analysis, and feature extraction in binary images.",
+      "optionExplanations": [
+        "Correct. Morphological operations analyze and modify image structures using shape-based elements like erosion and dilation.",
+        "Incorrect. Color operations involve color space transformations or adjustments, not structural analysis.",
+        "Incorrect. Compression focuses on data size reduction, not shape-based processing.",
+        "Incorrect. Rotation is a geometric transformation, not a morphological operation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "morphology",
+        "structure",
+        "binary-processing"
+      ]
+    },
+    {
+      "id": "IMF_020",
+      "question": "What is erosion in morphological image processing?",
+      "options": [
+        "An operation that shrinks white regions in binary images",
+        "An operation that expands white regions in binary images",
+        "An operation that rotates image regions",
+        "An operation that changes image colors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Erosion is a morphological operation that shrinks or reduces the size of white (foreground) regions in binary images by removing pixels at object boundaries.",
+      "optionExplanations": [
+        "Correct. Erosion systematically removes pixels from object boundaries, making white regions smaller.",
+        "Incorrect. This describes dilation, which is the opposite operation that expands white regions.",
+        "Incorrect. Rotation is a geometric transformation, not a morphological operation.",
+        "Incorrect. Color changes involve different types of operations, not morphological processing."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "erosion",
+        "morphology",
+        "binary-images"
+      ]
+    },
+    {
+      "id": "IMF_021",
+      "question": "What is dilation in morphological image processing?",
+      "options": [
+        "An operation that expands white regions in binary images",
+        "An operation that shrinks white regions in binary images",
+        "An operation that blurs image regions",
+        "An operation that sharpens image edges"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dilation is a morphological operation that expands or grows white (foreground) regions in binary images by adding pixels around object boundaries.",
+      "optionExplanations": [
+        "Correct. Dilation systematically adds pixels to object boundaries, making white regions larger.",
+        "Incorrect. This describes erosion, which shrinks rather than expands regions.",
+        "Incorrect. Blurring involves smoothing operations, not morphological boundary modification.",
+        "Incorrect. Sharpening enhances edges, which is different from morphological expansion."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "dilation",
+        "morphology",
+        "binary-images"
+      ]
+    },
+    {
+      "id": "IMF_022",
+      "question": "What is the HSV color space?",
+      "options": [
+        "Hue, Saturation, Value color representation",
+        "High, Standard, Variable resolution",
+        "Horizontal, Spatial, Vertical coordinates",
+        "Hard, Soft, Variable image types"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "HSV stands for Hue (color type), Saturation (color intensity), and Value (brightness), providing an intuitive way to represent colors that closely matches human perception.",
+      "optionExplanations": [
+        "Correct. HSV represents colors using Hue, Saturation, and Value components, making it intuitive for color manipulation.",
+        "Incorrect. This relates to resolution categories, not color representation.",
+        "Incorrect. These are spatial coordinates, not color space components.",
+        "Incorrect. These are not standard terms in color space representation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HSV",
+        "color-space",
+        "color-model"
+      ]
+    },
+    {
+      "id": "IMF_023",
+      "question": "What is the main advantage of the HSV color space over RGB?",
+      "options": [
+        "More intuitive for human color perception and manipulation",
+        "Uses less memory storage",
+        "Provides better compression ratios",
+        "Enables faster processing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "HSV separates color information (hue and saturation) from brightness (value), making it more intuitive for humans to understand and manipulate colors compared to RGB.",
+      "optionExplanations": [
+        "Correct. HSV aligns better with human color perception by separating chromatic information from brightness.",
+        "Incorrect. Both RGB and HSV typically use the same amount of memory per pixel.",
+        "Incorrect. Compression ratios depend on the algorithm, not the color space itself.",
+        "Incorrect. Processing speed depends on implementation, not the inherent properties of the color space."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HSV",
+        "RGB",
+        "color-perception"
+      ]
+    },
+    {
+      "id": "IMF_024",
+      "question": "What is image segmentation?",
+      "options": [
+        "Dividing an image into meaningful regions or objects",
+        "Compressing an image into smaller files",
+        "Converting color images to grayscale",
+        "Rotating images to different orientations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image segmentation partitions an image into multiple regions or segments, typically to identify and isolate objects or areas of interest for further analysis.",
+      "optionExplanations": [
+        "Correct. Segmentation divides images into meaningful regions based on characteristics like color, intensity, or texture.",
+        "Incorrect. Compression reduces file size through data encoding, not region division.",
+        "Incorrect. Grayscale conversion removes color information but doesn't create separate regions.",
+        "Incorrect. Rotation changes spatial orientation, not image partitioning."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "segmentation",
+        "regions",
+        "object-detection"
+      ]
+    },
+    {
+      "id": "IMF_025",
+      "question": "What is histogram in image processing?",
+      "options": [
+        "A graph showing the distribution of pixel intensities",
+        "A method to compress images",
+        "A technique to rotate images",
+        "A way to change image colors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An image histogram is a graphical representation showing the frequency distribution of pixel intensity values, providing insights into image characteristics like brightness and contrast.",
+      "optionExplanations": [
+        "Correct. Histograms display how many pixels have each intensity value, revealing image characteristics.",
+        "Incorrect. Compression algorithms reduce file size, while histograms analyze pixel distributions.",
+        "Incorrect. Rotation is a geometric transformation, not a statistical analysis tool.",
+        "Incorrect. Color changes modify pixel values, while histograms analyze their distribution."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "histogram",
+        "intensity",
+        "distribution"
+      ]
+    },
+    {
+      "id": "IMF_026",
+      "question": "What is noise in digital images?",
+      "options": [
+        "Unwanted random variations in pixel values",
+        "The main subject of the image",
+        "The background of the image",
+        "The edges in the image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image noise consists of unwanted random variations in pixel values that can result from sensor limitations, transmission errors, or environmental factors during image capture.",
+      "optionExplanations": [
+        "Correct. Noise represents unwanted random variations that degrade image quality and can interfere with analysis.",
+        "Incorrect. The main subject is the intended focus of the image, not unwanted variations.",
+        "Incorrect. Background refers to the scene behind the main subject, not random pixel variations.",
+        "Incorrect. Edges are important features that define object boundaries, not unwanted variations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "noise",
+        "image-quality",
+        "artifacts"
+      ]
+    },
+    {
+      "id": "IMF_027",
+      "question": "What is the purpose of image enhancement?",
+      "options": [
+        "To improve visual quality and make features more visible",
+        "To reduce image file size",
+        "To convert image formats",
+        "To crop unwanted parts"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image enhancement improves visual quality by adjusting characteristics like contrast, brightness, sharpness, and color to make important features more visible and the image more appealing.",
+      "optionExplanations": [
+        "Correct. Enhancement specifically aims to improve visual quality and feature visibility for better human perception or analysis.",
+        "Incorrect. File size reduction is compression, not enhancement.",
+        "Incorrect. Format conversion changes file encoding, not visual quality.",
+        "Incorrect. Cropping removes parts of the image, which is editing rather than enhancement."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "enhancement",
+        "visual-quality",
+        "improvement"
+      ]
+    },
+    {
+      "id": "IMF_028",
+      "question": "What is spatial resolution in digital images?",
+      "options": [
+        "The number of pixels in width and height dimensions",
+        "The number of colors in the image",
+        "The file size of the image",
+        "The compression ratio of the image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Spatial resolution refers to the number of pixels in the width and height dimensions of an image, determining the level of spatial detail that can be represented.",
+      "optionExplanations": [
+        "Correct. Spatial resolution measures the pixel dimensions, determining how much spatial detail the image contains.",
+        "Incorrect. The number of colors relates to color depth or bit depth, not spatial resolution.",
+        "Incorrect. File size depends on resolution, compression, and color depth, but isn't the resolution itself.",
+        "Incorrect. Compression ratio describes how much the file has been compressed, not spatial detail."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "spatial-resolution",
+        "dimensions",
+        "detail"
+      ]
+    },
+    {
+      "id": "IMF_029",
+      "question": "What is temporal resolution in video processing?",
+      "options": [
+        "The number of frames per second",
+        "The number of pixels per frame",
+        "The color depth of each frame",
+        "The compression method used"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Temporal resolution in video refers to the frame rate, or how many individual frames are displayed per second, affecting the smoothness of motion representation.",
+      "optionExplanations": [
+        "Correct. Temporal resolution measures how many frames occur per unit time, affecting motion smoothness.",
+        "Incorrect. This describes spatial resolution within each frame, not temporal characteristics.",
+        "Incorrect. Color depth relates to the number of bits per pixel, not temporal aspects.",
+        "Incorrect. Compression methods affect file size and quality, not temporal resolution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temporal-resolution",
+        "video",
+        "frame-rate"
+      ]
+    },
+    {
+      "id": "IMF_030",
+      "question": "What is bilinear interpolation?",
+      "options": [
+        "A method that uses four nearest neighbors to estimate pixel values",
+        "A technique to remove noise from images",
+        "A way to convert color images to grayscale",
+        "A method to compress image files"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bilinear interpolation estimates new pixel values by taking a weighted average of the four nearest neighboring pixels, commonly used in image resizing and transformation.",
+      "optionExplanations": [
+        "Correct. Bilinear interpolation uses the four closest pixels with distance-based weighting to estimate intermediate values.",
+        "Incorrect. Noise removal typically uses filtering techniques, not interpolation methods.",
+        "Incorrect. Grayscale conversion uses weighted averaging of color channels, not spatial interpolation.",
+        "Incorrect. Compression reduces file size through encoding algorithms, not pixel interpolation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bilinear",
+        "interpolation",
+        "resizing"
+      ]
+    },
+    {
+      "id": "IMF_031",
+      "question": "What is the difference between nearest neighbor and bilinear interpolation?",
+      "options": [
+        "Nearest neighbor uses one pixel, bilinear uses four pixels",
+        "Nearest neighbor is slower, bilinear is faster",
+        "Nearest neighbor works on color images, bilinear on grayscale",
+        "Nearest neighbor compresses better, bilinear preserves quality"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Nearest neighbor interpolation simply uses the closest pixel value, while bilinear interpolation calculates a weighted average of the four nearest pixels for smoother results.",
+      "optionExplanations": [
+        "Correct. This accurately describes the fundamental difference in how many neighboring pixels each method considers.",
+        "Incorrect. Nearest neighbor is typically faster due to simpler calculations, not slower.",
+        "Incorrect. Both methods work on any type of image, regardless of color or grayscale.",
+        "Incorrect. These are interpolation methods for resizing, not compression techniques."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "nearest-neighbor",
+        "bilinear",
+        "interpolation"
+      ]
+    },
+    {
+      "id": "IMF_032",
+      "question": "What is image filtering?",
+      "options": [
+        "Applying mathematical operations to modify image characteristics",
+        "Saving images in different file formats",
+        "Selecting specific parts of an image",
+        "Arranging images in a particular order"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image filtering applies mathematical operations (typically convolution) to modify image characteristics such as noise reduction, sharpening, blurring, or edge enhancement.",
+      "optionExplanations": [
+        "Correct. Filtering uses mathematical operations to transform images and achieve desired visual effects or prepare them for analysis.",
+        "Incorrect. File format conversion involves encoding changes, not mathematical image transformations.",
+        "Incorrect. Selecting image parts is cropping or masking, not filtering.",
+        "Incorrect. Arranging images is organization or layout, not mathematical filtering operations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "filtering",
+        "convolution",
+        "transformation"
+      ]
+    },
+    {
+      "id": "IMF_033",
+      "question": "What is a low-pass filter in image processing?",
+      "options": [
+        "A filter that removes high-frequency details and noise",
+        "A filter that enhances edges and fine details",
+        "A filter that increases image contrast",
+        "A filter that changes image colors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A low-pass filter allows low-frequency components to pass through while removing high-frequency details, effectively smoothing the image and reducing noise.",
+      "optionExplanations": [
+        "Correct. Low-pass filters remove high-frequency components like noise and fine details, creating smoother images.",
+        "Incorrect. This describes a high-pass filter, which enhances edges and fine details.",
+        "Incorrect. Contrast enhancement involves different operations that adjust intensity differences.",
+        "Incorrect. Color changes involve color space transformations, not frequency domain filtering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "low-pass",
+        "filter",
+        "frequency"
+      ]
+    },
+    {
+      "id": "IMF_034",
+      "question": "What is a high-pass filter in image processing?",
+      "options": [
+        "A filter that enhances edges and fine details",
+        "A filter that removes noise and smooths images",
+        "A filter that reduces image brightness",
+        "A filter that converts colors to grayscale"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A high-pass filter allows high-frequency components to pass through while removing low-frequency components, effectively enhancing edges and fine details in images.",
+      "optionExplanations": [
+        "Correct. High-pass filters preserve high-frequency components like edges and fine details while removing smooth variations.",
+        "Incorrect. This describes a low-pass filter, which smooths images by removing high frequencies.",
+        "Incorrect. Brightness reduction involves intensity adjustments, not frequency domain filtering.",
+        "Incorrect. Grayscale conversion removes color information, not frequency components."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "high-pass",
+        "filter",
+        "edge-enhancement"
+      ]
+    },
+    {
+      "id": "IMF_035",
+      "question": "What is the Canny edge detector?",
+      "options": [
+        "A multi-stage algorithm for optimal edge detection",
+        "A method for image compression",
+        "A technique for color correction",
+        "A tool for image rotation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Canny edge detector is a sophisticated multi-stage algorithm that provides optimal edge detection through noise reduction, gradient calculation, non-maximum suppression, and hysteresis thresholding.",
+      "optionExplanations": [
+        "Correct. Canny is a comprehensive edge detection algorithm known for its optimal performance and multi-stage approach.",
+        "Incorrect. Compression algorithms reduce file size, while Canny detects edges in images.",
+        "Incorrect. Color correction adjusts color balance and appearance, not edge detection.",
+        "Incorrect. Image rotation is a geometric transformation, not an edge detection method."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "canny",
+        "edge-detection",
+        "algorithm"
+      ]
+    },
+    {
+      "id": "IMF_036",
+      "question": "What is non-maximum suppression in edge detection?",
+      "options": [
+        "A technique to thin edges by keeping only local maxima",
+        "A method to enhance edge contrast",
+        "A way to remove noise from edges",
+        "A process to detect curved edges"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Non-maximum suppression thins detected edges by keeping only pixels that are local maxima in the gradient direction, producing single-pixel-wide edge lines.",
+      "optionExplanations": [
+        "Correct. Non-maximum suppression ensures edges are thin by preserving only the strongest gradient responses along edge directions.",
+        "Incorrect. Contrast enhancement increases intensity differences, not edge thinning.",
+        "Incorrect. Noise removal typically occurs before edge detection, not during non-maximum suppression.",
+        "Incorrect. Curved edge detection involves different techniques, not thinning of existing edges."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "non-maximum-suppression",
+        "edge-thinning",
+        "canny"
+      ]
+    },
+    {
+      "id": "IMF_037",
+      "question": "What is hysteresis thresholding?",
+      "options": [
+        "Using two thresholds to connect strong and weak edges",
+        "A single threshold to separate foreground and background",
+        "A method to adjust image brightness",
+        "A technique to remove image noise"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hysteresis thresholding uses two thresholds (high and low) to connect strong edges with weaker adjacent edges, reducing false edge detection while maintaining edge continuity.",
+      "optionExplanations": [
+        "Correct. Hysteresis uses dual thresholds to maintain edge connectivity while reducing noise in edge detection.",
+        "Incorrect. Single threshold methods don't provide the edge connectivity benefits of hysteresis.",
+        "Incorrect. Brightness adjustment involves intensity modifications, not threshold-based edge processing.",
+        "Incorrect. While hysteresis can reduce noise in edge detection, it's specifically for edge connectivity, not general denoising."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hysteresis",
+        "thresholding",
+        "edge-detection"
+      ]
+    },
+    {
+      "id": "IMF_038",
+      "question": "What is the purpose of gamma correction?",
+      "options": [
+        "To adjust image brightness for proper display on different devices",
+        "To compress image file sizes",
+        "To convert between color spaces",
+        "To remove noise from images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gamma correction adjusts pixel intensities to compensate for the nonlinear response of display devices, ensuring images appear with correct brightness and contrast.",
+      "optionExplanations": [
+        "Correct. Gamma correction compensates for display device characteristics to maintain proper image appearance across different screens.",
+        "Incorrect. Compression reduces file size through encoding, not brightness adjustment.",
+        "Incorrect. Color space conversion changes color representation, not gamma characteristics.",
+        "Incorrect. Noise removal eliminates unwanted variations, not brightness correction."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gamma-correction",
+        "brightness",
+        "display"
+      ]
+    },
+    {
+      "id": "IMF_039",
+      "question": "What is image pyramid?",
+      "options": [
+        "A multi-resolution representation of an image",
+        "A 3D visualization of image data",
+        "A compression technique for images",
+        "A method to stack multiple images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An image pyramid is a multi-resolution representation where the same image is stored at different scales, useful for efficient processing and analysis at various detail levels.",
+      "optionExplanations": [
+        "Correct. Image pyramids provide multiple resolution levels of the same image for efficient multi-scale processing.",
+        "Incorrect. While pyramids involve multiple levels, they're not 3D visualizations but multi-resolution representations.",
+        "Incorrect. Pyramids are processing structures, not compression techniques for storage.",
+        "Incorrect. Stacking refers to combining different images, not creating multiple resolutions of one image."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "pyramid",
+        "multi-resolution",
+        "scale-space"
+      ]
+    },
+    {
+      "id": "IMF_040",
+      "question": "What is the Laplacian of Gaussian (LoG)?",
+      "options": [
+        "A second-derivative operator for edge detection",
+        "A noise reduction filter",
+        "A color space conversion method",
+        "An image compression algorithm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Laplacian of Gaussian combines Gaussian smoothing with the Laplacian second-derivative operator to detect edges while reducing noise sensitivity.",
+      "optionExplanations": [
+        "Correct. LoG applies Gaussian smoothing before taking the second derivative to detect edges with reduced noise.",
+        "Incorrect. While LoG includes Gaussian smoothing, its primary purpose is edge detection, not noise reduction.",
+        "Incorrect. Color space conversion changes color representation, not edge detection operations.",
+        "Incorrect. Compression algorithms reduce file size, while LoG is an image analysis operator."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "laplacian",
+        "gaussian",
+        "edge-detection"
+      ]
+    },
+    {
+      "id": "IMF_041",
+      "question": "What is the difference between opening and closing in morphological operations?",
+      "options": [
+        "Opening uses erosion then dilation, closing uses dilation then erosion",
+        "Opening expands objects, closing shrinks objects",
+        "Opening works on color images, closing on grayscale",
+        "Opening removes noise, closing adds noise"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Opening applies erosion followed by dilation to remove small objects and separate connected objects, while closing applies dilation followed by erosion to fill gaps and connect nearby objects.",
+      "optionExplanations": [
+        "Correct. This accurately describes the sequence of operations for opening and closing morphological operations.",
+        "Incorrect. Both operations can affect object size, but their primary purposes are different structural modifications.",
+        "Incorrect. Both operations typically work on binary images, regardless of the original color format.",
+        "Incorrect. Both operations modify structure; neither specifically adds noise."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "opening",
+        "closing",
+        "morphology"
+      ]
+    },
+    {
+      "id": "IMF_042",
+      "question": "What is optical flow in image processing?",
+      "options": [
+        "The pattern of motion between consecutive frames in video",
+        "The amount of light entering a camera",
+        "The speed of image processing algorithms",
+        "The compression ratio of video files"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Optical flow describes the apparent motion of objects, surfaces, and edges between consecutive frames in a video sequence, useful for motion analysis and tracking.",
+      "optionExplanations": [
+        "Correct. Optical flow tracks how pixels or features move between frames, representing apparent motion patterns.",
+        "Incorrect. Light amount relates to exposure and camera settings, not motion between frames.",
+        "Incorrect. Algorithm speed is processing performance, not image content analysis.",
+        "Incorrect. Compression ratios describe file size reduction, not motion patterns in video."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "optical-flow",
+        "motion",
+        "video-processing"
+      ]
+    },
+    {
+      "id": "IMF_043",
+      "question": "What is template matching?",
+      "options": [
+        "Finding locations of a template image within a larger image",
+        "Converting images to match a specific format",
+        "Adjusting image colors to match a reference",
+        "Resizing images to match specific dimensions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Template matching searches for occurrences of a small template image within a larger image by comparing similarity measures at different locations.",
+      "optionExplanations": [
+        "Correct. Template matching locates instances of a known pattern or object within larger images through correlation or similarity measures.",
+        "Incorrect. Format conversion changes file encoding, not pattern searching within images.",
+        "Incorrect. Color matching adjusts color properties, not spatial pattern detection.",
+        "Incorrect. Resizing changes image dimensions, not pattern or object detection."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "template-matching",
+        "pattern-recognition",
+        "correlation"
+      ]
+    },
+    {
+      "id": "IMF_044",
+      "question": "What is cross-correlation in template matching?",
+      "options": [
+        "A similarity measure between template and image regions",
+        "A method to rotate templates",
+        "A technique to resize templates",
+        "A way to enhance template contrast"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-correlation measures the similarity between a template and different regions of an image by computing the correlation coefficient at each possible position.",
+      "optionExplanations": [
+        "Correct. Cross-correlation quantifies how well a template matches different regions of an image through mathematical correlation.",
+        "Incorrect. Template rotation involves geometric transformations, not similarity measurement.",
+        "Incorrect. Template resizing changes dimensions, not similarity calculation.",
+        "Incorrect. Contrast enhancement modifies intensity differences, not correlation computation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "cross-correlation",
+        "similarity",
+        "template-matching"
+      ]
+    },
+    {
+      "id": "IMF_045",
+      "question": "What is the purpose of image registration?",
+      "options": [
+        "Aligning multiple images of the same scene",
+        "Converting images to different file formats",
+        "Compressing images for storage",
+        "Enhancing image quality"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image registration aligns multiple images of the same scene taken at different times, viewpoints, or conditions to enable comparison and analysis.",
+      "optionExplanations": [
+        "Correct. Registration finds spatial transformations to align corresponding features between multiple images of the same scene.",
+        "Incorrect. Format conversion changes file encoding, not spatial alignment between images.",
+        "Incorrect. Compression reduces file size, not spatial alignment of multiple images.",
+        "Incorrect. Enhancement improves visual quality of individual images, not alignment between multiple images."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "registration",
+        "alignment",
+        "multi-image"
+      ]
+    },
+    {
+      "id": "IMF_046",
+      "question": "What is image warping?",
+      "options": [
+        "Geometric transformation that changes image shape",
+        "Adjusting image brightness and contrast",
+        "Converting between color spaces",
+        "Removing noise from images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image warping applies geometric transformations to change the shape or perspective of an image, such as rotation, scaling, perspective correction, or non-linear deformations.",
+      "optionExplanations": [
+        "Correct. Warping involves geometric transformations that reshape images through coordinate mapping functions.",
+        "Incorrect. Brightness and contrast adjustments modify intensity values, not geometric shape.",
+        "Incorrect. Color space conversion changes color representation, not geometric transformation.",
+        "Incorrect. Noise removal eliminates unwanted variations, not geometric reshaping."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "warping",
+        "geometric-transformation",
+        "deformation"
+      ]
+    },
+    {
+      "id": "IMF_047",
+      "question": "What is homography in computer vision?",
+      "options": [
+        "A transformation between two planar surfaces",
+        "A method for edge detection",
+        "A technique for noise removal",
+        "A color space conversion"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Homography describes the transformation between two planar surfaces or views of the same plane, commonly used in image stitching, perspective correction, and camera calibration.",
+      "optionExplanations": [
+        "Correct. Homography represents the mathematical relationship between corresponding points on two planar surfaces.",
+        "Incorrect. Edge detection identifies boundaries, not geometric transformations between planes.",
+        "Incorrect. Noise removal eliminates unwanted variations, not planar transformations.",
+        "Incorrect. Color space conversion changes color representation, not geometric relationships."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "homography",
+        "transformation",
+        "planar"
+      ]
+    },
+    {
+      "id": "IMF_048",
+      "question": "What is image stitching?",
+      "options": [
+        "Combining multiple overlapping images into a panorama",
+        "Removing unwanted parts from images",
+        "Enhancing image colors",
+        "Compressing multiple images together"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image stitching combines multiple overlapping images to create a larger panoramic image by finding correspondences and applying appropriate transformations.",
+      "optionExplanations": [
+        "Correct. Stitching aligns and blends overlapping images to create seamless panoramic views.",
+        "Incorrect. Removing image parts is cropping or masking, not combining multiple images.",
+        "Incorrect. Color enhancement improves individual image appearance, not combining multiple images.",
+        "Incorrect. Compression reduces file size, while stitching creates larger combined images."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stitching",
+        "panorama",
+        "image-fusion"
+      ]
+    },
+    {
+      "id": "IMF_049",
+      "question": "What are feature points in computer vision?",
+      "options": [
+        "Distinctive locations in images that can be reliably detected",
+        "The brightest pixels in an image",
+        "The center points of objects",
+        "The corners of the image boundary"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature points are distinctive, repeatable locations in images that can be reliably detected and matched across different views, useful for tracking, recognition, and registration.",
+      "optionExplanations": [
+        "Correct. Feature points are stable, distinctive locations that can be consistently identified and matched between images.",
+        "Incorrect. Brightness alone doesn't make points distinctive or reliably detectable across different conditions.",
+        "Incorrect. Object centers may not be distinctive or easily detectable compared to corners or edges.",
+        "Incorrect. Image boundary corners are fixed locations, not the distinctive features used in computer vision."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-points",
+        "keypoints",
+        "detection"
+      ]
+    },
+    {
+      "id": "IMF_050",
+      "question": "What is the Harris corner detector?",
+      "options": [
+        "An algorithm to detect corner features in images",
+        "A method for edge detection",
+        "A technique for image compression",
+        "A tool for color correction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Harris corner detector identifies corner points in images by analyzing the gradient structure and finding locations where gradients change significantly in multiple directions.",
+      "optionExplanations": [
+        "Correct. Harris detector specifically identifies corner features by analyzing gradient variations in different directions.",
+        "Incorrect. While corners involve edges, Harris specifically detects corner points, not general edge detection.",
+        "Incorrect. Compression reduces file size, while Harris detects image features.",
+        "Incorrect. Color correction adjusts color properties, not feature detection."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "harris",
+        "corner-detection",
+        "features"
+      ]
+    },
+    {
+      "id": "IMF_051",
+      "question": "What is SIFT in computer vision?",
+      "options": [
+        "Scale-Invariant Feature Transform for keypoint detection",
+        "Simple Image Filtering Technique",
+        "Spatial Information Feature Tracking",
+        "Standard Image Format Template"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SIFT (Scale-Invariant Feature Transform) detects and describes distinctive keypoints that are invariant to scale, rotation, and partially invariant to illumination changes.",
+      "optionExplanations": [
+        "Correct. SIFT is a robust feature detection and description method that handles scale and rotation variations.",
+        "Incorrect. This is not the correct expansion of SIFT and doesn't describe its functionality.",
+        "Incorrect. This is not the standard meaning of SIFT in computer vision.",
+        "Incorrect. SIFT is an algorithm, not a file format or template."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "SIFT",
+        "keypoints",
+        "scale-invariant"
+      ]
+    },
+    {
+      "id": "IMF_052",
+      "question": "What is blob detection?",
+      "options": [
+        "Finding regions that differ in properties like brightness from surrounding areas",
+        "Detecting the edges of objects",
+        "Identifying the largest object in an image",
+        "Locating the center of an image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Blob detection identifies regions in images that differ significantly from their surroundings in properties like brightness, color, or texture, useful for object detection and analysis.",
+      "optionExplanations": [
+        "Correct. Blob detection finds regions that stand out from their surroundings based on various image properties.",
+        "Incorrect. Edge detection finds boundaries, while blob detection identifies entire regions.",
+        "Incorrect. Blob detection can find multiple blobs of various sizes, not just the largest object.",
+        "Incorrect. Image center is a fixed geometric location, not a detected feature based on image content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "blob-detection",
+        "regions",
+        "feature-extraction"
+      ]
+    },
+    {
+      "id": "IMF_053",
+      "question": "What is the difference between local and global image processing operations?",
+      "options": [
+        "Local operations use neighborhood pixels, global operations use the entire image",
+        "Local operations are faster, global operations are slower",
+        "Local operations work on color images, global on grayscale",
+        "Local operations compress images, global operations enhance them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Local operations compute new pixel values based on a small neighborhood around each pixel, while global operations consider the entire image information.",
+      "optionExplanations": [
+        "Correct. This fundamental distinction determines how much image information is used to compute each output pixel.",
+        "Incorrect. Speed depends on algorithm complexity and implementation, not just the local/global classification.",
+        "Incorrect. Both types of operations can work on color or grayscale images.",
+        "Incorrect. Both local and global operations can be used for various purposes including compression and enhancement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "local-operations",
+        "global-operations",
+        "neighborhood"
+      ]
+    },
+    {
+      "id": "IMF_054",
+      "question": "What is anisotropic diffusion?",
+      "options": [
+        "A noise reduction technique that preserves edges",
+        "A method for edge enhancement",
+        "A technique for image compression",
+        "A color space conversion method"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Anisotropic diffusion reduces noise while preserving important image features like edges by applying direction-dependent smoothing that adapts to local image structure.",
+      "optionExplanations": [
+        "Correct. Anisotropic diffusion selectively smooths images to reduce noise while maintaining edge information.",
+        "Incorrect. While it preserves edges, its primary purpose is noise reduction, not edge enhancement.",
+        "Incorrect. Compression reduces file size through encoding, not selective smoothing.",
+        "Incorrect. Color space conversion changes color representation, not noise reduction."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "anisotropic-diffusion",
+        "noise-reduction",
+        "edge-preservation"
+      ]
+    },
+    {
+      "id": "IMF_055",
+      "question": "What is bilateral filtering?",
+      "options": [
+        "A noise reduction filter that preserves edges by considering spatial and intensity differences",
+        "A filter that enhances image contrast",
+        "A method for detecting edges in images",
+        "A technique for image compression"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bilateral filtering reduces noise while preserving edges by weighting neighboring pixels based on both spatial distance and intensity similarity to the center pixel.",
+      "optionExplanations": [
+        "Correct. Bilateral filtering uses dual criteria (spatial and intensity) to achieve edge-preserving smoothing.",
+        "Incorrect. While it may affect contrast, its primary purpose is noise reduction with edge preservation.",
+        "Incorrect. Edge detection identifies boundaries, while bilateral filtering smooths while preserving them.",
+        "Incorrect. Compression reduces file size, while bilateral filtering is an image enhancement technique."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bilateral-filter",
+        "edge-preserving",
+        "noise-reduction"
+      ]
+    },
+    {
+      "id": "IMF_056",
+      "question": "What is the Fourier transform used for in image processing?",
+      "options": [
+        "Converting images from spatial domain to frequency domain",
+        "Converting between color spaces",
+        "Compressing image files",
+        "Rotating images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Fourier transform converts images from the spatial domain (pixel locations) to the frequency domain (frequency components), enabling frequency-based analysis and filtering.",
+      "optionExplanations": [
+        "Correct. Fourier transform reveals the frequency content of images, enabling frequency-domain processing.",
+        "Incorrect. Color space conversion changes color representation, not domain transformation.",
+        "Incorrect. While frequency domain can be used in compression, the transform itself is an analysis tool.",
+        "Incorrect. Rotation is a geometric transformation in the spatial domain, not frequency domain conversion."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "fourier-transform",
+        "frequency-domain",
+        "spatial-domain"
+      ]
+    },
+    {
+      "id": "IMF_057",
+      "question": "What information does the magnitude spectrum of an image Fourier transform represent?",
+      "options": [
+        "The strength of different frequency components",
+        "The color information of the image",
+        "The spatial location of objects",
+        "The noise level in the image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The magnitude spectrum shows the strength or amplitude of different frequency components in the image, indicating how much each frequency contributes to the overall image.",
+      "optionExplanations": [
+        "Correct. Magnitude spectrum displays the amplitude of each frequency component, showing frequency content strength.",
+        "Incorrect. Color information is preserved in the spatial domain representation, not frequency magnitude.",
+        "Incorrect. Spatial location information is lost in the frequency domain; phase spectrum contains spatial relationships.",
+        "Incorrect. While noise affects frequency content, magnitude spectrum shows all frequency strengths, not just noise."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "magnitude-spectrum",
+        "fourier",
+        "frequency"
+      ]
+    },
+    {
+      "id": "IMF_058",
+      "question": "What is the phase spectrum in Fourier transform?",
+      "options": [
+        "Information about the spatial relationships and positions of frequency components",
+        "The brightness levels of different frequencies",
+        "The color distribution across frequencies",
+        "The noise characteristics of the image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The phase spectrum contains information about the spatial relationships and positions of frequency components, crucial for maintaining image structure when reconstructing from frequency domain.",
+      "optionExplanations": [
+        "Correct. Phase spectrum preserves spatial relationships and is essential for accurate image reconstruction.",
+        "Incorrect. Brightness levels are represented in the magnitude spectrum, not phase spectrum.",
+        "Incorrect. Color distribution involves multiple channels, while phase deals with spatial relationships.",
+        "Incorrect. Noise characteristics are reflected in both magnitude and phase, but phase specifically encodes spatial information."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "phase-spectrum",
+        "fourier",
+        "spatial-relationships"
+      ]
+    },
+    {
+      "id": "IMF_059",
+      "question": "What is frequency domain filtering?",
+      "options": [
+        "Filtering operations performed in the frequency domain after Fourier transform",
+        "Filtering based on pixel frequency of occurrence",
+        "Filtering images captured at different frequencies",
+        "Filtering to remove specific color frequencies"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Frequency domain filtering applies filters to the Fourier transform of an image, allowing selective enhancement or suppression of specific frequency components before inverse transformation.",
+      "optionExplanations": [
+        "Correct. Frequency domain filtering modifies frequency components directly before converting back to spatial domain.",
+        "Incorrect. This describes histogram-based operations, not frequency domain processing.",
+        "Incorrect. This refers to temporal sampling rates, not spatial frequency filtering.",
+        "Incorrect. Color filtering involves color space operations, not spatial frequency filtering."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "frequency-filtering",
+        "fourier",
+        "filter-design"
+      ]
+    },
+    {
+      "id": "IMF_060",
+      "question": "What is wavelet transform in image processing?",
+      "options": [
+        "A multi-resolution analysis tool that decomposes images into different frequency and spatial scales",
+        "A method for rotating images",
+        "A technique for changing image colors",
+        "A compression algorithm for images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Wavelet transform provides multi-resolution analysis by decomposing images into different frequency bands at various spatial scales, offering both frequency and spatial localization.",
+      "optionExplanations": [
+        "Correct. Wavelet transform provides superior time-frequency localization compared to Fourier transform, analyzing images at multiple scales.",
+        "Incorrect. Image rotation is a geometric transformation, not a multi-resolution analysis technique.",
+        "Incorrect. Color changes involve color space operations, not wavelet decomposition.",
+        "Incorrect. While wavelets are used in compression, the transform itself is an analysis tool, not a compression algorithm."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "wavelet",
+        "multi-resolution",
+        "transform"
+      ]
+    },
+    {
+      "id": "IMF_061",
+      "question": "What is image inpainting?",
+      "options": [
+        "Filling in missing or damaged parts of an image",
+        "Adding artistic effects to images",
+        "Enhancing image colors",
+        "Compressing image data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image inpainting reconstructs missing, damaged, or unwanted parts of an image by filling them with plausible content based on surrounding image information.",
+      "optionExplanations": [
+        "Correct. Inpainting uses surrounding image context to intelligently fill missing or damaged regions.",
+        "Incorrect. Artistic effects involve stylistic transformations, not reconstruction of missing parts.",
+        "Incorrect. Color enhancement improves existing colors, not filling missing image regions.",
+        "Incorrect. Compression reduces file size, while inpainting reconstructs image content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "inpainting",
+        "reconstruction",
+        "restoration"
+      ]
+    },
+    {
+      "id": "IMF_062",
+      "question": "What is super-resolution in image processing?",
+      "options": [
+        "Increasing image resolution beyond the original capture resolution",
+        "Reducing image file size",
+        "Converting between different image formats",
+        "Adjusting image brightness"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Super-resolution techniques increase image resolution by inferring high-frequency details that weren't captured in the original low-resolution image, creating sharper, more detailed images.",
+      "optionExplanations": [
+        "Correct. Super-resolution reconstructs high-resolution images from low-resolution inputs by inferring missing detail.",
+        "Incorrect. File size reduction is compression, which typically reduces rather than increases resolution.",
+        "Incorrect. Format conversion changes file encoding, not image resolution enhancement.",
+        "Incorrect. Brightness adjustment modifies intensity levels, not spatial resolution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "super-resolution",
+        "upsampling",
+        "enhancement"
+      ]
+    },
+    {
+      "id": "IMF_063",
+      "question": "What is the difference between interpolation and super-resolution?",
+      "options": [
+        "Interpolation estimates values between known points, super-resolution infers new details",
+        "Interpolation works on color images, super-resolution on grayscale",
+        "Interpolation is faster, super-resolution is slower",
+        "Interpolation preserves quality, super-resolution reduces quality"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Interpolation simply estimates intermediate values from existing data, while super-resolution uses advanced algorithms to infer and reconstruct fine details that weren't in the original image.",
+      "optionExplanations": [
+        "Correct. Interpolation fills gaps between known values, while super-resolution intelligently reconstructs high-frequency information.",
+        "Incorrect. Both techniques can work on any type of image regardless of color format.",
+        "Incorrect. Speed depends on algorithm complexity, not the fundamental approach difference.",
+        "Incorrect. Super-resolution typically aims to improve quality, while simple interpolation may blur details."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "interpolation",
+        "super-resolution",
+        "upscaling"
+      ]
+    },
+    {
+      "id": "IMF_064",
+      "question": "What is image denoising?",
+      "options": [
+        "Removing unwanted noise while preserving important image features",
+        "Adding artistic effects to images",
+        "Converting images to different formats",
+        "Adjusting image contrast"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image denoising removes unwanted random variations (noise) from images while preserving important features like edges, textures, and structural details.",
+      "optionExplanations": [
+        "Correct. Denoising specifically targets noise removal while maintaining image quality and important features.",
+        "Incorrect. Artistic effects involve stylistic transformations, not noise removal.",
+        "Incorrect. Format conversion changes file encoding, not noise characteristics.",
+        "Incorrect. Contrast adjustment modifies intensity relationships, not noise removal."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "denoising",
+        "noise-removal",
+        "image-restoration"
+      ]
+    },
+    {
+      "id": "IMF_065",
+      "question": "What is the median filter used for?",
+      "options": [
+        "Removing salt-and-pepper noise while preserving edges",
+        "Enhancing image contrast",
+        "Detecting edges in images",
+        "Converting color spaces"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The median filter replaces each pixel with the median value of its neighborhood, effectively removing salt-and-pepper noise while preserving sharp edges better than linear filters.",
+      "optionExplanations": [
+        "Correct. Median filtering is particularly effective for impulse noise removal while maintaining edge integrity.",
+        "Incorrect. Contrast enhancement involves different operations that adjust intensity distributions.",
+        "Incorrect. Edge detection identifies boundaries, while median filtering smooths noise.",
+        "Incorrect. Color space conversion changes color representation, not noise filtering."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "median-filter",
+        "salt-pepper-noise",
+        "edge-preservation"
+      ]
+    },
+    {
+      "id": "IMF_066",
+      "question": "What is salt-and-pepper noise?",
+      "options": [
+        "Random black and white pixels scattered throughout an image",
+        "Gaussian distributed noise across the image",
+        "Periodic patterns in the image",
+        "Color distortions in the image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Salt-and-pepper noise consists of randomly occurring black (pepper) and white (salt) pixels scattered throughout the image, often caused by transmission errors or sensor defects.",
+      "optionExplanations": [
+        "Correct. Salt-and-pepper noise appears as randomly distributed extreme values (black and white pixels) in the image.",
+        "Incorrect. Gaussian noise has a different distribution and affects all pixels gradually, not just extreme values.",
+        "Incorrect. Periodic patterns are structured interference, not random impulse noise.",
+        "Incorrect. Color distortions affect color accuracy, while salt-and-pepper noise affects intensity values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "salt-pepper-noise",
+        "impulse-noise",
+        "image-artifacts"
+      ]
+    },
+    {
+      "id": "IMF_067",
+      "question": "What is Gaussian noise?",
+      "options": [
+        "Random noise with a normal probability distribution",
+        "Noise that appears in geometric patterns",
+        "Noise that affects only the edges of images",
+        "Noise that changes image colors randomly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian noise follows a normal (Gaussian) probability distribution and affects all pixels by adding random values drawn from this distribution, commonly caused by electronic sensor thermal noise.",
+      "optionExplanations": [
+        "Correct. Gaussian noise has a bell-curve probability distribution and affects pixel values according to this statistical model.",
+        "Incorrect. Geometric patterns suggest structured interference, not random Gaussian noise.",
+        "Incorrect. Gaussian noise affects all image regions uniformly, not just edges.",
+        "Incorrect. While Gaussian noise can affect color channels, it's characterized by its probability distribution, not color randomness."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gaussian-noise",
+        "normal-distribution",
+        "thermal-noise"
+      ]
+    },
+    {
+      "id": "IMF_068",
+      "question": "What is image sharpening?",
+      "options": [
+        "Enhancing edges and fine details to make images appear clearer",
+        "Reducing image noise",
+        "Converting images to grayscale",
+        "Compressing image files"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image sharpening enhances edges and fine details by increasing local contrast around edges, making images appear clearer and more defined.",
+      "optionExplanations": [
+        "Correct. Sharpening specifically targets edge enhancement to improve image clarity and detail visibility.",
+        "Incorrect. Noise reduction removes unwanted variations, which is often opposite to sharpening effects.",
+        "Incorrect. Grayscale conversion removes color information, not detail enhancement.",
+        "Incorrect. Compression reduces file size, while sharpening enhances visual quality."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sharpening",
+        "edge-enhancement",
+        "detail-enhancement"
+      ]
+    },
+    {
+      "id": "IMF_069",
+      "question": "What is unsharp masking?",
+      "options": [
+        "A sharpening technique that subtracts a blurred version from the original image",
+        "A method for removing unwanted objects from images",
+        "A technique for creating image masks",
+        "A process for reducing image contrast"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unsharp masking sharpens images by creating a mask from the difference between the original and a blurred version, then adding this mask back to enhance edges and details.",
+      "optionExplanations": [
+        "Correct. Unsharp masking uses the difference between original and blurred images to create an edge-enhancing mask.",
+        "Incorrect. Object removal involves inpainting or cloning techniques, not unsharp masking.",
+        "Incorrect. While it creates a mask, the purpose is sharpening, not general mask creation.",
+        "Incorrect. Unsharp masking increases local contrast around edges, not reduces overall contrast."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "unsharp-masking",
+        "sharpening",
+        "edge-enhancement"
+      ]
+    },
+    {
+      "id": "IMF_070",
+      "question": "What is the purpose of image normalization in machine learning?",
+      "options": [
+        "To standardize pixel values for consistent neural network training",
+        "To remove noise from training images",
+        "To increase image resolution for better features",
+        "To convert all images to the same file format"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image normalization standardizes pixel values to a consistent range (typically 0-1 or -1 to 1) to ensure stable and efficient neural network training by preventing gradient problems.",
+      "optionExplanations": [
+        "Correct. Normalization ensures consistent input scales for neural networks, improving training stability and convergence.",
+        "Incorrect. Noise removal is a separate preprocessing step, not the purpose of normalization.",
+        "Incorrect. Resolution enhancement involves super-resolution techniques, not value normalization.",
+        "Incorrect. File format conversion is about encoding, not pixel value standardization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "machine-learning",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "IMF_071",
+      "question": "What is data augmentation in image processing for machine learning?",
+      "options": [
+        "Creating variations of training images to increase dataset size and diversity",
+        "Removing corrupted images from the dataset",
+        "Converting images to higher resolution",
+        "Organizing images into different folders"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data augmentation artificially increases training dataset size and diversity by applying transformations like rotation, scaling, flipping, and color changes to existing images.",
+      "optionExplanations": [
+        "Correct. Augmentation generates new training examples through transformations, improving model generalization and reducing overfitting.",
+        "Incorrect. Removing corrupted images is data cleaning, not augmentation.",
+        "Incorrect. Resolution enhancement is super-resolution, not data augmentation.",
+        "Incorrect. Organization involves file management, not creating new training variations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "data-augmentation",
+        "machine-learning",
+        "training-data"
+      ]
+    },
+    {
+      "id": "IMF_072",
+      "question": "What is transfer learning in image classification?",
+      "options": [
+        "Using pre-trained models and adapting them for new image classification tasks",
+        "Transferring images between different file formats",
+        "Moving images from one computer to another",
+        "Converting images between color spaces"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transfer learning leverages pre-trained neural networks (usually trained on large datasets like ImageNet) and fine-tunes them for specific image classification tasks, reducing training time and data requirements.",
+      "optionExplanations": [
+        "Correct. Transfer learning reuses knowledge from pre-trained models, adapting them for new classification tasks with less data and computation.",
+        "Incorrect. File format conversion is a technical process, not a machine learning technique.",
+        "Incorrect. Moving files between computers is data transfer, not transfer learning.",
+        "Incorrect. Color space conversion changes color representation, not machine learning model adaptation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "transfer-learning",
+        "pre-trained-models",
+        "classification"
+      ]
+    },
+    {
+      "id": "IMF_073",
+      "question": "What is a convolutional neural network (CNN) primarily used for in image processing?",
+      "options": [
+        "Learning hierarchical features for image classification and recognition",
+        "Compressing images to reduce file size",
+        "Converting between different image formats",
+        "Removing noise from images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "CNNs are designed to automatically learn hierarchical features from images, making them highly effective for image classification, object detection, and recognition tasks.",
+      "optionExplanations": [
+        "Correct. CNNs excel at learning spatial hierarchies of features, from low-level edges to high-level object representations.",
+        "Incorrect. Image compression uses specialized algorithms, not typically CNNs.",
+        "Incorrect. Format conversion involves encoding/decoding, not neural network feature learning.",
+        "Incorrect. While CNNs can be used for denoising, their primary strength is feature learning for recognition tasks."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CNN",
+        "feature-learning",
+        "image-classification"
+      ]
+    },
+    {
+      "id": "IMF_074",
+      "question": "What is the purpose of pooling layers in CNNs?",
+      "options": [
+        "To reduce spatial dimensions and computational complexity while retaining important features",
+        "To increase the number of feature maps",
+        "To add non-linearity to the network",
+        "To normalize the input data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Pooling layers downsample feature maps by reducing spatial dimensions, decreasing computational requirements while preserving the most important information through operations like max or average pooling.",
+      "optionExplanations": [
+        "Correct. Pooling reduces spatial size while maintaining essential features, improving computational efficiency and translation invariance.",
+        "Incorrect. Pooling reduces dimensions rather than increasing feature maps; convolution layers create more feature maps.",
+        "Incorrect. Activation functions add non-linearity, not pooling layers.",
+        "Incorrect. Normalization layers (like batch normalization) handle input normalization, not pooling layers."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "pooling",
+        "CNN",
+        "dimensionality-reduction"
+      ]
+    },
+    {
+      "id": "IMF_075",
+      "question": "What is max pooling?",
+      "options": [
+        "Taking the maximum value from each pooling window",
+        "Taking the average value from each pooling window",
+        "Taking the minimum value from each pooling window",
+        "Taking the median value from each pooling window"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Max pooling selects the maximum value from each pooling window (typically 2x2), effectively downsampling while preserving the strongest activations and maintaining translation invariance.",
+      "optionExplanations": [
+        "Correct. Max pooling preserves the strongest signal in each region, maintaining important features while reducing spatial dimensions.",
+        "Incorrect. This describes average pooling, which takes the mean rather than maximum value.",
+        "Incorrect. Min pooling would take minimum values, which is rarely used as it preserves weak rather than strong signals.",
+        "Incorrect. Median pooling is uncommon; max pooling specifically uses maximum values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "max-pooling",
+        "CNN",
+        "downsampling"
+      ]
+    },
+    {
+      "id": "IMF_076",
+      "question": "What is the difference between object detection and image classification?",
+      "options": [
+        "Object detection locates and identifies objects, classification only identifies the main subject",
+        "Object detection works on color images, classification on grayscale",
+        "Object detection is faster, classification is slower",
+        "Object detection uses CNNs, classification uses traditional methods"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Object detection not only identifies what objects are present but also localizes them with bounding boxes, while image classification only determines the main category of the entire image.",
+      "optionExplanations": [
+        "Correct. Object detection provides both classification and localization information, while image classification only provides category labels.",
+        "Incorrect. Both tasks can work with color or grayscale images depending on the application.",
+        "Incorrect. Object detection is typically more computationally expensive due to localization requirements.",
+        "Incorrect. Both tasks commonly use CNNs and modern deep learning approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "object-detection",
+        "image-classification",
+        "localization"
+      ]
+    },
+    {
+      "id": "IMF_077",
+      "question": "What is semantic segmentation?",
+      "options": [
+        "Assigning a class label to every pixel in an image",
+        "Detecting objects and drawing bounding boxes around them",
+        "Classifying the main subject of an image",
+        "Grouping similar pixels based on color"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Semantic segmentation assigns a class label to every pixel in an image, creating a pixel-level understanding of scene content and object boundaries.",
+      "optionExplanations": [
+        "Correct. Semantic segmentation provides dense pixel-wise classification, understanding what each pixel represents.",
+        "Incorrect. This describes object detection, which uses bounding boxes rather than pixel-level labeling.",
+        "Incorrect. This describes image classification, which labels the entire image, not individual pixels.",
+        "Incorrect. This describes color-based clustering, not semantic understanding of pixel content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "semantic-segmentation",
+        "pixel-classification",
+        "scene-understanding"
+      ]
+    },
+    {
+      "id": "IMF_078",
+      "question": "What is instance segmentation?",
+      "options": [
+        "Identifying and segmenting individual instances of objects, even of the same class",
+        "Segmenting images based on color similarity",
+        "Classifying different regions of an image",
+        "Detecting edges between different objects"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Instance segmentation combines object detection and semantic segmentation to identify and precisely delineate individual object instances, distinguishing between separate objects of the same class.",
+      "optionExplanations": [
+        "Correct. Instance segmentation provides pixel-level masks for individual object instances, separating multiple objects of the same class.",
+        "Incorrect. Color-based segmentation doesn't provide semantic understanding or instance separation.",
+        "Incorrect. This describes general segmentation, not the instance-specific identification required.",
+        "Incorrect. Edge detection finds boundaries but doesn't provide instance-level object identification."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "instance-segmentation",
+        "object-instances",
+        "pixel-masks"
+      ]
+    },
+    {
+      "id": "IMF_079",
+      "question": "What is the purpose of batch normalization in CNNs?",
+      "options": [
+        "To normalize inputs to each layer for stable and faster training",
+        "To reduce the number of parameters in the network",
+        "To increase the spatial resolution of feature maps",
+        "To add non-linearity to the network"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Batch normalization normalizes the inputs to each layer by adjusting and scaling activations, which stabilizes training, enables higher learning rates, and often improves performance.",
+      "optionExplanations": [
+        "Correct. Batch normalization addresses internal covariate shift, leading to more stable and efficient training.",
+        "Incorrect. Batch normalization adds parameters (gamma and beta), it doesn't reduce them.",
+        "Incorrect. Batch normalization affects activation distributions, not spatial resolution.",
+        "Incorrect. Activation functions provide non-linearity; batch normalization is for training stability."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "batch-normalization",
+        "CNN",
+        "training-stability"
+      ]
+    },
+    {
+      "id": "IMF_080",
+      "question": "What is dropout in neural networks?",
+      "options": [
+        "Randomly setting some neurons to zero during training to prevent overfitting",
+        "Removing entire layers from the network",
+        "Reducing the learning rate during training",
+        "Stopping training when validation error increases"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dropout randomly sets a fraction of neurons to zero during training, forcing the network to learn robust features and preventing over-reliance on specific neurons, thus reducing overfitting.",
+      "optionExplanations": [
+        "Correct. Dropout is a regularization technique that randomly disables neurons during training to improve generalization.",
+        "Incorrect. Dropout affects individual neurons, not entire layers, and only during training.",
+        "Incorrect. Learning rate reduction is a different technique for training optimization.",
+        "Incorrect. This describes early stopping, not dropout regularization."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "dropout",
+        "regularization",
+        "overfitting"
+      ]
+    },
+    {
+      "id": "IMF_081",
+      "question": "What is the receptive field in CNNs?",
+      "options": [
+        "The region of the input image that influences a particular feature map element",
+        "The size of the convolutional kernel",
+        "The number of channels in a feature map",
+        "The output size of a convolutional layer"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The receptive field is the region in the input image that affects the computation of a specific element in a feature map. It grows larger in deeper layers as information from wider areas gets aggregated.",
+      "optionExplanations": [
+        "Correct. Receptive field defines how much of the input image contributes to computing each feature map element through the network layers.",
+        "Incorrect. Kernel size is the filter dimensions, not the input region that influences output elements.",
+        "Incorrect. Channel number refers to feature map depth, not spatial input influence.",
+        "Incorrect. Output size is the spatial dimensions of the result, not input influence area."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "receptive-field",
+        "CNN",
+        "feature-maps"
+      ]
+    },
+    {
+      "id": "IMF_082",
+      "question": "What is stride in convolutional layers?",
+      "options": [
+        "The step size by which the filter moves across the input",
+        "The number of filters in the layer",
+        "The size of the padding around the input",
+        "The depth of the feature map"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Stride determines how many pixels the convolutional filter moves at each step. A stride of 1 moves one pixel at a time, while larger strides skip pixels and reduce output size.",
+      "optionExplanations": [
+        "Correct. Stride controls the step size of filter movement, affecting output dimensions and computational efficiency.",
+        "Incorrect. The number of filters determines output channels, not movement step size.",
+        "Incorrect. Padding adds border pixels, while stride controls filter movement.",
+        "Incorrect. Feature map depth is determined by the number of filters, not stride."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "stride",
+        "convolution",
+        "CNN"
+      ]
+    },
+    {
+      "id": "IMF_083",
+      "question": "What is padding in convolutional layers?",
+      "options": [
+        "Adding extra pixels around the input to control output size",
+        "Removing pixels from the input image",
+        "Increasing the number of channels",
+        "Reducing the filter size"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Padding adds extra pixels (usually zeros) around the input borders to control the output size and ensure edge pixels are processed adequately by the convolution operation.",
+      "optionExplanations": [
+        "Correct. Padding maintains or controls output dimensions and ensures proper processing of border pixels.",
+        "Incorrect. Padding adds pixels, it doesn't remove them from the input.",
+        "Incorrect. Channel number is determined by filter count, not padding operations.",
+        "Incorrect. Padding affects input size, not filter dimensions."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "padding",
+        "convolution",
+        "CNN"
+      ]
+    },
+    {
+      "id": "IMF_084",
+      "question": "What is 'same' padding in CNNs?",
+      "options": [
+        "Padding that keeps the output size the same as input size",
+        "Using the same padding value throughout the network",
+        "Applying identical padding to all images",
+        "Padding with the same pixel values as the border"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Same' padding adds enough border pixels so that the output feature map has the same spatial dimensions as the input when using stride 1.",
+      "optionExplanations": [
+        "Correct. 'Same' padding preserves spatial dimensions by adding appropriate border pixels.",
+        "Incorrect. This refers to consistent padding amounts, not the 'same' padding concept.",
+        "Incorrect. 'Same' padding refers to dimension preservation, not identical treatment across images.",
+        "Incorrect. Padding values are typically zeros, not copies of border pixels."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "same-padding",
+        "convolution",
+        "dimension-preservation"
+      ]
+    },
+    {
+      "id": "IMF_085",
+      "question": "What is 'valid' padding in CNNs?",
+      "options": [
+        "No padding, allowing output size to shrink naturally",
+        "Padding that validates input correctness",
+        "Using only positive padding values",
+        "Padding that maintains data validity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Valid' padding means no padding is applied, so the convolution operation only uses valid input positions, resulting in smaller output dimensions.",
+      "optionExplanations": [
+        "Correct. 'Valid' padding applies no border padding, letting output dimensions shrink based on filter size and stride.",
+        "Incorrect. 'Valid' refers to no padding, not input validation procedures.",
+        "Incorrect. 'Valid' padding means no padding at all, not positive value restrictions.",
+        "Incorrect. 'Valid' is about padding strategy, not data integrity validation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "valid-padding",
+        "convolution",
+        "no-padding"
+      ]
+    },
+    {
+      "id": "IMF_086",
+      "question": "What is feature extraction in image processing?",
+      "options": [
+        "Identifying and extracting meaningful characteristics from images",
+        "Removing unwanted parts of images",
+        "Converting images to different formats",
+        "Compressing image data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature extraction identifies and extracts meaningful characteristics or patterns from images that can be used for analysis, recognition, or machine learning tasks.",
+      "optionExplanations": [
+        "Correct. Feature extraction finds discriminative patterns and characteristics that represent important image content.",
+        "Incorrect. Removing image parts is cropping or editing, not feature extraction.",
+        "Incorrect. Format conversion changes file encoding, not extracting meaningful characteristics.",
+        "Incorrect. Compression reduces file size, while feature extraction identifies important patterns."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "feature-extraction",
+        "characteristics",
+        "patterns"
+      ]
+    },
+    {
+      "id": "IMF_087",
+      "question": "What are texture features in image analysis?",
+      "options": [
+        "Characteristics that describe the spatial arrangement of intensity variations",
+        "The color distribution in an image",
+        "The geometric shapes present in an image",
+        "The brightness levels across an image"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Texture features capture information about the spatial arrangement and patterns of intensity variations, describing surface properties like roughness, smoothness, or regularity.",
+      "optionExplanations": [
+        "Correct. Texture features quantify spatial patterns and intensity arrangements that characterize surface properties.",
+        "Incorrect. Color distribution relates to color features, not texture characteristics.",
+        "Incorrect. Geometric shapes are structural features, not texture patterns.",
+        "Incorrect. Brightness levels are intensity features, not spatial texture arrangements."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "texture-features",
+        "spatial-patterns",
+        "intensity-variations"
+      ]
+    },
+    {
+      "id": "IMF_088",
+      "question": "What is the Gray Level Co-occurrence Matrix (GLCM)?",
+      "options": [
+        "A method to analyze texture by examining spatial relationships between pixel intensities",
+        "A technique for color space conversion",
+        "A filter for noise reduction",
+        "A method for edge detection"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GLCM analyzes texture by computing how often pairs of pixels with specific intensities occur at specific spatial relationships, providing statistical texture measures.",
+      "optionExplanations": [
+        "Correct. GLCM creates a matrix showing spatial relationships between pixel intensities for texture analysis.",
+        "Incorrect. Color space conversion changes color representation, not texture analysis.",
+        "Incorrect. GLCM is for texture analysis, not noise filtering.",
+        "Incorrect. Edge detection finds boundaries, while GLCM analyzes texture patterns."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "GLCM",
+        "texture-analysis",
+        "spatial-relationships"
+      ]
+    },
+    {
+      "id": "IMF_089",
+      "question": "What is Local Binary Pattern (LBP)?",
+      "options": [
+        "A texture descriptor that encodes local intensity differences",
+        "A global image enhancement technique",
+        "A color quantization method",
+        "An edge detection algorithm"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "LBP creates texture descriptors by comparing each pixel with its neighbors, creating binary patterns that capture local texture information in a rotation-invariant manner.",
+      "optionExplanations": [
+        "Correct. LBP encodes local neighborhood relationships as binary patterns for effective texture description.",
+        "Incorrect. LBP is a local texture descriptor, not a global enhancement technique.",
+        "Incorrect. Color quantization reduces color levels, while LBP analyzes texture patterns.",
+        "Incorrect. LBP describes texture, not edge detection like Sobel or Canny."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "LBP",
+        "texture-descriptor",
+        "local-patterns"
+      ]
+    },
+    {
+      "id": "IMF_090",
+      "question": "What is histogram of oriented gradients (HOG)?",
+      "options": [
+        "A feature descriptor that captures local gradient directions and magnitudes",
+        "A method for color histogram analysis",
+        "A technique for image rotation",
+        "A filter for edge enhancement"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "HOG creates feature descriptors by computing histograms of gradient orientations in local regions, effectively capturing shape and appearance information for object detection.",
+      "optionExplanations": [
+        "Correct. HOG analyzes gradient directions in local regions to create robust shape descriptors for object recognition.",
+        "Incorrect. HOG uses gradient orientations, not color information for feature description.",
+        "Incorrect. Image rotation is a geometric transformation, not a feature descriptor.",
+        "Incorrect. HOG is a feature extraction method, not an edge enhancement filter."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "HOG",
+        "gradient-orientations",
+        "feature-descriptor"
+      ]
+    },
+    {
+      "id": "IMF_091",
+      "question": "What is the purpose of image registration in medical imaging?",
+      "options": [
+        "Aligning images from different time points or imaging modalities",
+        "Enhancing image contrast for better visibility",
+        "Removing noise from medical scans",
+        "Converting between different file formats"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Medical image registration aligns images taken at different times, from different viewpoints, or using different imaging modalities to enable comparison and analysis.",
+      "optionExplanations": [
+        "Correct. Registration ensures corresponding anatomical structures align across different medical images for accurate comparison.",
+        "Incorrect. Contrast enhancement improves visibility but doesn't align multiple images.",
+        "Incorrect. Noise removal improves image quality but doesn't provide spatial alignment.",
+        "Incorrect. Format conversion changes file encoding, not spatial alignment of image content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "medical-imaging",
+        "registration",
+        "alignment"
+      ]
+    },
+    {
+      "id": "IMF_092",
+      "question": "What is DICOM in medical imaging?",
+      "options": [
+        "Digital Imaging and Communications in Medicine standard",
+        "Dynamic Image Contrast Optimization Method",
+        "Digital Image Compression and Organization Module",
+        "Diagnostic Imaging and Clinical Operations Manual"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DICOM is the international standard for medical imaging data, defining formats for storing, transmitting, and managing medical images and related information.",
+      "optionExplanations": [
+        "Correct. DICOM standardizes medical image formats and communication protocols for healthcare systems.",
+        "Incorrect. This is not the correct expansion and doesn't reflect DICOM's standardization purpose.",
+        "Incorrect. This misrepresents DICOM as primarily a compression tool rather than a comprehensive standard.",
+        "Incorrect. DICOM is a technical standard, not an operations manual."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "DICOM",
+        "medical-imaging",
+        "standard"
+      ]
+    },
+    {
+      "id": "IMF_093",
+      "question": "What is image fusion?",
+      "options": [
+        "Combining information from multiple images to create a single enhanced image",
+        "Splitting a single image into multiple parts",
+        "Converting images between different color spaces",
+        "Compressing multiple images into one file"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Image fusion combines complementary information from multiple images of the same scene to create a single image with enhanced information content or visual quality.",
+      "optionExplanations": [
+        "Correct. Image fusion merges multiple source images to produce a composite image with enhanced information.",
+        "Incorrect. Splitting images is segmentation or decomposition, not fusion.",
+        "Incorrect. Color space conversion changes representation, not combining multiple images.",
+        "Incorrect. Compression reduces file size, while fusion combines image content."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "image-fusion",
+        "multi-image",
+        "enhancement"
+      ]
+    },
+    {
+      "id": "IMF_094",
+      "question": "What is multispectral imaging?",
+      "options": [
+        "Capturing images at multiple wavelengths beyond visible light",
+        "Taking multiple images of the same scene",
+        "Using multiple cameras simultaneously",
+        "Processing images at different resolutions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multispectral imaging captures image data at specific wavelengths across the electromagnetic spectrum, including infrared and ultraviolet, providing information not visible to human eyes.",
+      "optionExplanations": [
+        "Correct. Multispectral imaging extends beyond visible light to capture wavelength-specific information for enhanced analysis.",
+        "Incorrect. Multiple images of the same scene could be temporal, not necessarily multispectral.",
+        "Incorrect. Multiple cameras are a capture method, not the defining characteristic of multispectral imaging.",
+        "Incorrect. Different resolutions relate to spatial detail, not spectral wavelength capture."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multispectral",
+        "wavelengths",
+        "spectrum"
+      ]
+    },
+    {
+      "id": "IMF_095",
+      "question": "What is hyperspectral imaging?",
+      "options": [
+        "Capturing hundreds of narrow spectral bands for detailed material analysis",
+        "Taking images at very high resolution",
+        "Using extremely fast shutter speeds",
+        "Processing images with high computational power"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hyperspectral imaging captures hundreds of contiguous narrow spectral bands, enabling detailed material identification and analysis based on spectral signatures.",
+      "optionExplanations": [
+        "Correct. Hyperspectral imaging provides detailed spectral information with hundreds of bands for precise material characterization.",
+        "Incorrect. High resolution refers to spatial detail, not spectral band density.",
+        "Incorrect. Fast shutter speeds relate to temporal capture, not spectral band collection.",
+        "Incorrect. High computational power is needed for processing, but doesn't define hyperspectral imaging."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "hyperspectral",
+        "spectral-bands",
+        "material-analysis"
+      ]
+    },
+    {
+      "id": "IMF_096",
+      "question": "What is the difference between photogrammetry and computer vision?",
+      "options": [
+        "Photogrammetry measures physical properties from photos, computer vision interprets image content",
+        "Photogrammetry uses film cameras, computer vision uses digital cameras",
+        "Photogrammetry is for outdoor scenes, computer vision for indoor scenes",
+        "Photogrammetry is manual, computer vision is automated"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Photogrammetry focuses on extracting precise geometric measurements and 3D information from photographs, while computer vision emphasizes understanding and interpreting image content.",
+      "optionExplanations": [
+        "Correct. Photogrammetry emphasizes geometric measurement and mapping, while computer vision focuses on image understanding and interpretation.",
+        "Incorrect. Both fields can use any type of camera; the distinction is in purpose and methodology.",
+        "Incorrect. Both can be applied to indoor and outdoor environments depending on the application.",
+        "Incorrect. Both fields use automated methods; the distinction is in objectives, not automation level."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "photogrammetry",
+        "computer-vision",
+        "applications"
+      ]
+    },
+    {
+      "id": "IMF_097",
+      "question": "What is stereo vision?",
+      "options": [
+        "Using two cameras to estimate depth and 3D structure",
+        "Viewing images with enhanced color contrast",
+        "Processing images with stereo sound",
+        "Creating 3D visualizations from 2D images"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Stereo vision uses two cameras positioned like human eyes to capture slightly different viewpoints, enabling depth estimation through triangulation and disparity analysis.",
+      "optionExplanations": [
+        "Correct. Stereo vision mimics human binocular vision to compute depth information from two synchronized camera views.",
+        "Incorrect. Enhanced color contrast is image enhancement, not depth perception through dual cameras.",
+        "Incorrect. Stereo sound is audio processing, unrelated to visual depth estimation.",
+        "Incorrect. This describes 3D visualization techniques, not the dual-camera depth estimation of stereo vision."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "stereo-vision",
+        "depth-estimation",
+        "3D"
+      ]
+    },
+    {
+      "id": "IMF_098",
+      "question": "What is disparity in stereo vision?",
+      "options": [
+        "The pixel difference between corresponding points in left and right images",
+        "The color difference between two images",
+        "The brightness variation across an image",
+        "The resolution difference between cameras"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Disparity measures the horizontal pixel difference between corresponding points in stereo image pairs, which is inversely proportional to the depth of objects in the scene.",
+      "optionExplanations": [
+        "Correct. Disparity quantifies the horizontal shift between corresponding features in stereo pairs, enabling depth computation.",
+        "Incorrect. Color differences are chromatic variations, not the spatial shifts used for depth calculation.",
+        "Incorrect. Brightness variation is intensity change, not the spatial correspondence used in stereo vision.",
+        "Incorrect. Resolution differences affect image quality, not the depth-related disparity measurements."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "disparity",
+        "stereo-vision",
+        "depth"
+      ]
+    },
+    {
+      "id": "IMF_099",
+      "question": "What is calibration in camera systems?",
+      "options": [
+        "Determining intrinsic and extrinsic camera parameters for accurate measurements",
+        "Adjusting camera brightness and contrast settings",
+        "Synchronizing multiple cameras for simultaneous capture",
+        "Converting camera images to different file formats"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Camera calibration determines intrinsic parameters (focal length, principal point, distortion) and extrinsic parameters (position, orientation) for geometric accuracy in computer vision applications.",
+      "optionExplanations": [
+        "Correct. Calibration establishes mathematical relationships between 3D world coordinates and 2D image coordinates for accurate geometric processing.",
+        "Incorrect. Brightness and contrast adjustments are image enhancement, not geometric calibration.",
+        "Incorrect. Camera synchronization coordinates timing, not geometric parameter determination.",
+        "Incorrect. Format conversion changes file encoding, not camera parameter estimation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "calibration",
+        "camera-parameters",
+        "geometry"
+      ]
+    },
+    {
+      "id": "IMF_100",
+      "question": "What is the fundamental matrix in computer vision?",
+      "options": [
+        "A matrix that encodes the geometric relationship between two camera views",
+        "The basic transformation matrix for image rotation",
+        "A matrix used for color space conversion",
+        "The core matrix for image compression algorithms"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The fundamental matrix encapsulates the intrinsic geometric relationship between two camera views, constraining where corresponding points can appear across stereo images through epipolar geometry.",
+      "optionExplanations": [
+        "Correct. The fundamental matrix mathematically describes the geometric constraints between corresponding points in two camera views.",
+        "Incorrect. Image rotation uses specific geometric transformation matrices, not the fundamental matrix.",
+        "Incorrect. Color space conversion uses different transformation matrices specific to color models.",
+        "Incorrect. Compression algorithms use various mathematical techniques, but the fundamental matrix is specific to multi-view geometry."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "fundamental-matrix",
+        "epipolar-geometry",
+        "stereo"
+      ]
+    }
+  ]
+}

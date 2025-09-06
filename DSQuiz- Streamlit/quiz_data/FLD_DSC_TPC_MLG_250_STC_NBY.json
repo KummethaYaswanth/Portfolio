@@ -1,0 +1,2412 @@
+{
+  "fieldId": "FLD_DSC",
+  "fieldName": "Data Science",
+  "topicId": "TPC_MLG",
+  "topicName": "Machine Learning",
+  "subtopicId": "STC_NBY",
+  "subtopicName": "Naive Bayes",
+  "str": 0.250,
+  "description": "Naive Bayes is a probabilistic classification algorithm based on Bayes' theorem with the assumption of conditional independence between features. It includes variants like Gaussian, Multinomial, and Bernoulli Naive Bayes.",
+  "questions": [
+    {
+      "id": "NBY_001",
+      "question": "What is the fundamental theorem that Naive Bayes algorithm is based on?",
+      "options": [
+        "Bayes' theorem",
+        "Central Limit theorem",
+        "Law of Large Numbers",
+        "Bernoulli's theorem"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes algorithm is fundamentally based on Bayes' theorem, which describes the probability of an event based on prior knowledge of conditions related to the event.",
+      "optionExplanations": [
+        "Correct. Bayes' theorem is the mathematical foundation of Naive Bayes, providing the formula P(A|B) = P(B|A)P(A)/P(B).",
+        "Incorrect. Central Limit theorem deals with the distribution of sample means, not conditional probabilities.",
+        "Incorrect. Law of Large Numbers describes convergence of sample averages to expected values.",
+        "Incorrect. Bernoulli's theorem is related to probability distributions, but not the foundation of Naive Bayes."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bayes-theorem",
+        "fundamentals",
+        "probability"
+      ]
+    },
+    {
+      "id": "NBY_002",
+      "question": "What does the 'naive' assumption in Naive Bayes refer to?",
+      "options": [
+        "Features are conditionally independent given the class",
+        "All features have equal importance",
+        "The algorithm is simple to implement",
+        "Data follows a normal distribution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The 'naive' assumption refers to the conditional independence assumption - that all features are independent of each other given the class label.",
+      "optionExplanations": [
+        "Correct. This assumption allows the algorithm to treat each feature independently when calculating probabilities.",
+        "Incorrect. Features can have different importance weights in the probability calculations.",
+        "Incorrect. 'Naive' refers to the independence assumption, not implementation simplicity.",
+        "Incorrect. Normal distribution is specific to Gaussian Naive Bayes, not all variants."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "conditional-independence",
+        "assumptions",
+        "fundamentals"
+      ]
+    },
+    {
+      "id": "NBY_003",
+      "question": "In Bayes' theorem P(A|B) = P(B|A)P(A)/P(B), what does P(A) represent?",
+      "options": [
+        "Prior probability",
+        "Likelihood",
+        "Posterior probability",
+        "Evidence"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(A) represents the prior probability - the initial belief about the probability of event A before observing any evidence.",
+      "optionExplanations": [
+        "Correct. P(A) is the prior probability, representing our initial belief about A before seeing evidence B.",
+        "Incorrect. P(B|A) represents the likelihood - probability of observing B given A is true.",
+        "Incorrect. P(A|B) represents the posterior probability - probability of A after observing B.",
+        "Incorrect. P(B) represents the evidence - total probability of observing B."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bayes-theorem",
+        "prior-probability",
+        "probability"
+      ]
+    },
+    {
+      "id": "NBY_004",
+      "question": "Which variant of Naive Bayes is most suitable for continuous numerical features?",
+      "options": [
+        "Gaussian Naive Bayes",
+        "Multinomial Naive Bayes",
+        "Bernoulli Naive Bayes",
+        "Categorical Naive Bayes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian Naive Bayes assumes that continuous features follow a normal (Gaussian) distribution, making it most suitable for numerical data.",
+      "optionExplanations": [
+        "Correct. Gaussian NB models continuous features using normal distribution with mean and variance parameters.",
+        "Incorrect. Multinomial NB is designed for discrete count data like word frequencies in text.",
+        "Incorrect. Bernoulli NB is for binary features that are either present (1) or absent (0).",
+        "Incorrect. Categorical NB is for discrete categorical features with multiple possible values."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gaussian-nb",
+        "continuous-features",
+        "variants"
+      ]
+    },
+    {
+      "id": "NBY_005",
+      "question": "What type of data is Multinomial Naive Bayes primarily designed for?",
+      "options": [
+        "Count data with multiple categories",
+        "Binary categorical data",
+        "Continuous numerical data",
+        "Ordinal categorical data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multinomial Naive Bayes is designed for discrete count data where features represent frequencies or counts of occurrences.",
+      "optionExplanations": [
+        "Correct. Multinomial NB handles count data like word frequencies in documents or feature occurrence counts.",
+        "Incorrect. Binary categorical data is better suited for Bernoulli Naive Bayes.",
+        "Incorrect. Continuous numerical data is handled by Gaussian Naive Bayes.",
+        "Incorrect. While it can handle ordinal data, it's primarily designed for count-based discrete data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multinomial-nb",
+        "count-data",
+        "variants"
+      ]
+    },
+    {
+      "id": "NBY_006",
+      "question": "When should you use Bernoulli Naive Bayes?",
+      "options": [
+        "When features are binary (0 or 1)",
+        "When features follow normal distribution",
+        "When features represent counts",
+        "When features are ordinal"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bernoulli Naive Bayes is specifically designed for binary features that indicate presence (1) or absence (0) of a characteristic.",
+      "optionExplanations": [
+        "Correct. Bernoulli NB models each feature as a Bernoulli distribution with binary outcomes.",
+        "Incorrect. Normal distribution features are handled by Gaussian Naive Bayes.",
+        "Incorrect. Count features are better suited for Multinomial Naive Bayes.",
+        "Incorrect. Ordinal features may need different treatment or encoding before using Bernoulli NB."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bernoulli-nb",
+        "binary-features",
+        "variants"
+      ]
+    },
+    {
+      "id": "NBY_007",
+      "question": "What is Laplace smoothing used for in Naive Bayes?",
+      "options": [
+        "To handle zero probabilities in training data",
+        "To improve model accuracy",
+        "To reduce overfitting",
+        "To normalize feature values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Laplace smoothing adds a small constant (usually 1) to all feature counts to prevent zero probabilities when a feature-class combination doesn't appear in training data.",
+      "optionExplanations": [
+        "Correct. Laplace smoothing prevents zero probabilities by adding a smoothing parameter to all counts.",
+        "Incorrect. While it may help accuracy indirectly, its primary purpose is handling zero probabilities.",
+        "Incorrect. It's not primarily an overfitting reduction technique, though it may have that effect.",
+        "Incorrect. Feature normalization is a different preprocessing step, not the purpose of Laplace smoothing."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "laplace-smoothing",
+        "zero-probability",
+        "preprocessing"
+      ]
+    },
+    {
+      "id": "NBY_008",
+      "question": "In the context of text classification, what does P(word|class) represent?",
+      "options": [
+        "Probability of a word given a specific class",
+        "Probability of a class given a specific word",
+        "Frequency of a word in all documents",
+        "Total number of words in a class"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(word|class) represents the likelihood - the probability of observing a particular word given that the document belongs to a specific class.",
+      "optionExplanations": [
+        "Correct. This is the likelihood term in Bayes' theorem, showing how likely a word is in documents of a specific class.",
+        "Incorrect. P(class|word) would be the posterior probability of a class given a word.",
+        "Incorrect. This would be the marginal probability P(word), not conditional on class.",
+        "Incorrect. This represents a count, not a probability value."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "text-classification",
+        "likelihood",
+        "conditional-probability"
+      ]
+    },
+    {
+      "id": "NBY_009",
+      "question": "What is the main advantage of Naive Bayes algorithm?",
+      "options": [
+        "Fast training and prediction with good performance on small datasets",
+        "Can handle complex non-linear relationships",
+        "Requires no assumptions about data distribution",
+        "Always produces the most accurate results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes is computationally efficient, requires minimal training data, and often performs surprisingly well despite its simplistic assumptions.",
+      "optionExplanations": [
+        "Correct. Naive Bayes trains quickly, makes fast predictions, and works well even with limited training data.",
+        "Incorrect. Naive Bayes assumes linear decision boundaries and cannot capture complex non-linear relationships.",
+        "Incorrect. Naive Bayes makes strong assumptions including conditional independence and specific distributions.",
+        "Incorrect. No algorithm always produces the most accurate results; performance depends on the problem and data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "advantages",
+        "efficiency",
+        "small-datasets"
+      ]
+    },
+    {
+      "id": "NBY_010",
+      "question": "What is the mathematical formula for Bayes' theorem?",
+      "options": [
+        "P(A|B) = P(B|A) × P(A) / P(B)",
+        "P(A|B) = P(A) × P(B) / P(A∩B)",
+        "P(A|B) = P(A∩B) / P(A)",
+        "P(A|B) = P(B|A) + P(A) - P(B)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bayes' theorem states that the posterior probability equals the likelihood times the prior divided by the evidence.",
+      "optionExplanations": [
+        "Correct. This is the standard form of Bayes' theorem relating posterior, likelihood, prior, and evidence.",
+        "Incorrect. This formula doesn't represent the correct relationship between conditional probabilities.",
+        "Incorrect. This represents P(B|A), not P(A|B), and is missing the prior probability term.",
+        "Incorrect. This looks like an addition rule, not Bayes' theorem which involves multiplication and division."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bayes-theorem",
+        "formula",
+        "mathematics"
+      ]
+    },
+    {
+      "id": "NBY_011",
+      "question": "In Gaussian Naive Bayes, what parameters are estimated for each feature?",
+      "options": [
+        "Mean and variance",
+        "Mode and range",
+        "Median and interquartile range",
+        "Minimum and maximum values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian Naive Bayes assumes features follow a normal distribution, which is completely characterized by its mean (μ) and variance (σ²) parameters.",
+      "optionExplanations": [
+        "Correct. For each class-feature combination, Gaussian NB estimates the mean and variance of the normal distribution.",
+        "Incorrect. Mode and range are not the defining parameters of a normal distribution.",
+        "Incorrect. Median and IQR are robust statistics but not the parameters needed for Gaussian distribution.",
+        "Incorrect. Min and max values define the range but not the shape of a normal distribution."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gaussian-nb",
+        "parameters",
+        "normal-distribution"
+      ]
+    },
+    {
+      "id": "NBY_012",
+      "question": "What happens if a feature value in the test set was never seen in the training set for Multinomial Naive Bayes?",
+      "options": [
+        "The probability becomes zero without smoothing",
+        "The algorithm automatically ignores the feature",
+        "An error is thrown",
+        "The feature is assigned average probability"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Without smoothing, unseen feature values result in zero probability, which can cause the entire prediction probability to become zero due to multiplication.",
+      "optionExplanations": [
+        "Correct. Zero probability for unseen features can make the entire class probability zero, which is why smoothing is important.",
+        "Incorrect. The algorithm doesn't automatically ignore features; it assigns them zero probability.",
+        "Incorrect. Most implementations handle this gracefully by assigning zero probability rather than throwing errors.",
+        "Incorrect. Without smoothing, there's no mechanism to assign average probabilities to unseen values."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multinomial-nb",
+        "unseen-features",
+        "zero-probability"
+      ]
+    },
+    {
+      "id": "NBY_013",
+      "question": "Which assumption is NOT made by Naive Bayes?",
+      "options": [
+        "Features are correlated with each other",
+        "Features are conditionally independent given the class",
+        "Each feature contributes to the classification decision",
+        "Class probabilities can be estimated from training data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes explicitly assumes that features are conditionally independent, meaning they are NOT correlated given the class label.",
+      "optionExplanations": [
+        "Correct. Naive Bayes assumes features are independent given the class, which means no correlation between features.",
+        "Incorrect. This is the fundamental 'naive' assumption that gives the algorithm its name.",
+        "Incorrect. Naive Bayes does assume each feature provides information for classification.",
+        "Incorrect. The algorithm does estimate class probabilities from the frequency of classes in training data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "assumptions",
+        "conditional-independence",
+        "correlation"
+      ]
+    },
+    {
+      "id": "NBY_014",
+      "question": "In the formula for Laplace smoothing, if α = 1, what is added to each count?",
+      "options": [
+        "1",
+        "0.5",
+        "The class frequency",
+        "The total number of features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Laplace smoothing with α = 1 (also called add-one smoothing) adds exactly 1 to each count to prevent zero probabilities.",
+      "optionExplanations": [
+        "Correct. With α = 1, Laplace smoothing adds 1 to each count, ensuring no probability is exactly zero.",
+        "Incorrect. α = 0.5 would add 0.5, but the question specifies α = 1.",
+        "Incorrect. Class frequency is not added; only the smoothing parameter α is added to counts.",
+        "Incorrect. The number of features affects the denominator in smoothing calculations but isn't added to each count."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "laplace-smoothing",
+        "add-one",
+        "parameters"
+      ]
+    },
+    {
+      "id": "NBY_015",
+      "question": "What is the decision rule for Naive Bayes classification?",
+      "options": [
+        "Choose the class with maximum posterior probability",
+        "Choose the class with maximum likelihood",
+        "Choose the class with maximum prior probability",
+        "Choose the class with minimum error rate"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes classifies by selecting the class that has the highest posterior probability P(class|features) for the given input.",
+      "optionExplanations": [
+        "Correct. The classification decision is made by choosing the class with the maximum P(class|features).",
+        "Incorrect. Likelihood P(features|class) is part of the calculation but not the final decision criterion.",
+        "Incorrect. Prior probability alone doesn't account for the observed features.",
+        "Incorrect. While this might be the goal, the explicit rule is maximizing posterior probability."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "classification",
+        "decision-rule",
+        "posterior-probability"
+      ]
+    },
+    {
+      "id": "NBY_016",
+      "question": "What type of problems is Naive Bayes particularly well-suited for?",
+      "options": [
+        "Text classification and spam filtering",
+        "Image recognition and computer vision",
+        "Time series forecasting",
+        "Clustering and dimensionality reduction"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes excels in text classification tasks like spam detection, sentiment analysis, and document categorization due to its effectiveness with high-dimensional sparse data.",
+      "optionExplanations": [
+        "Correct. Text data naturally fits Naive Bayes assumptions and the algorithm handles high-dimensional sparse features well.",
+        "Incorrect. Image data has strong spatial correlations that violate the independence assumption.",
+        "Incorrect. Time series data has temporal dependencies that contradict the independence assumption.",
+        "Incorrect. Naive Bayes is a supervised classification algorithm, not designed for unsupervised tasks like clustering."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "applications",
+        "text-classification",
+        "use-cases"
+      ]
+    },
+    {
+      "id": "NBY_017",
+      "question": "How does the conditional independence assumption affect Naive Bayes performance?",
+      "options": [
+        "It simplifies computation but may reduce accuracy when features are correlated",
+        "It always improves accuracy regardless of data characteristics",
+        "It has no effect on performance",
+        "It only affects training time, not prediction accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The independence assumption makes computation efficient but can hurt performance when features are actually correlated in the real data.",
+      "optionExplanations": [
+        "Correct. The assumption enables fast computation but can be limiting when features have important correlations.",
+        "Incorrect. Strong feature correlations can violate the assumption and hurt accuracy.",
+        "Incorrect. The assumption significantly impacts both computational efficiency and prediction quality.",
+        "Incorrect. The assumption affects both training efficiency and the quality of probability estimates."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "conditional-independence",
+        "performance",
+        "trade-offs"
+      ]
+    },
+    {
+      "id": "NBY_018",
+      "question": "What is the probability density function used in Gaussian Naive Bayes?",
+      "options": [
+        "Normal (Gaussian) distribution",
+        "Poisson distribution",
+        "Exponential distribution",
+        "Uniform distribution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian Naive Bayes assumes that continuous features follow a normal (Gaussian) distribution for each class.",
+      "optionExplanations": [
+        "Correct. The algorithm uses the normal distribution PDF: f(x) = (1/√(2πσ²))e^(-(x-μ)²/2σ²).",
+        "Incorrect. Poisson distribution is used for count data, not continuous features in Gaussian NB.",
+        "Incorrect. Exponential distribution models time between events, not typical continuous features.",
+        "Incorrect. Uniform distribution assumes equal probability across a range, not the bell curve of Gaussian NB."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gaussian-nb",
+        "probability-distribution",
+        "pdf"
+      ]
+    },
+    {
+      "id": "NBY_019",
+      "question": "In Multinomial Naive Bayes, what does the smoothing parameter α control?",
+      "options": [
+        "The amount of smoothing applied to handle unseen features",
+        "The learning rate of the algorithm",
+        "The number of iterations during training",
+        "The threshold for classification decisions"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The smoothing parameter α determines how much probability mass is added to unseen feature-class combinations to prevent zero probabilities.",
+      "optionExplanations": [
+        "Correct. Higher α values provide more smoothing, giving more probability to unseen features.",
+        "Incorrect. Naive Bayes doesn't have a learning rate as it's not an iterative optimization algorithm.",
+        "Incorrect. Naive Bayes training is direct calculation, not iterative, so no iterations are involved.",
+        "Incorrect. Classification threshold is a separate hyperparameter, not controlled by the smoothing parameter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multinomial-nb",
+        "smoothing-parameter",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "NBY_020",
+      "question": "What is the computational complexity of Naive Bayes training?",
+      "options": [
+        "O(n × d) where n is samples and d is features",
+        "O(n²) where n is the number of samples",
+        "O(d²) where d is the number of features",
+        "O(n × d²) where n is samples and d is features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes training requires one pass through the data to compute statistics, resulting in linear time complexity in both samples and features.",
+      "optionExplanations": [
+        "Correct. Training involves counting occurrences and computing means/variances, which is linear in data size.",
+        "Incorrect. There's no quadratic dependency on the number of samples in Naive Bayes training.",
+        "Incorrect. The independence assumption means no need to compute pairwise feature interactions.",
+        "Incorrect. This would suggest computing all pairwise feature relationships, which Naive Bayes doesn't do."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "complexity",
+        "efficiency",
+        "big-o"
+      ]
+    },
+    {
+      "id": "NBY_021",
+      "question": "Which of the following best describes the likelihood in Naive Bayes?",
+      "options": [
+        "P(features|class) - probability of observing features given a class",
+        "P(class|features) - probability of a class given observed features",
+        "P(class) - prior probability of a class",
+        "P(features) - marginal probability of features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Likelihood represents how probable it is to observe the given feature values assuming the instance belongs to a specific class.",
+      "optionExplanations": [
+        "Correct. Likelihood P(features|class) measures how well the class explains the observed feature values.",
+        "Incorrect. This is the posterior probability, which is what we're trying to calculate.",
+        "Incorrect. This is the prior probability, representing our initial belief about class frequencies.",
+        "Incorrect. This is the evidence or marginal likelihood, used for normalization in Bayes' theorem."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "likelihood",
+        "bayes-theorem",
+        "probability"
+      ]
+    },
+    {
+      "id": "NBY_022",
+      "question": "What happens to Naive Bayes performance when the conditional independence assumption is violated?",
+      "options": [
+        "Performance may degrade but the algorithm can still work reasonably well",
+        "The algorithm completely fails",
+        "Performance always improves",
+        "There is no effect on performance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Despite violating its core assumption, Naive Bayes often remains surprisingly effective in practice, though optimal performance may be reduced.",
+      "optionExplanations": [
+        "Correct. Naive Bayes is robust to assumption violations and often performs well despite feature correlations.",
+        "Incorrect. The algorithm continues to function and can still provide useful classifications.",
+        "Incorrect. Violating assumptions typically doesn't improve performance, though impact varies by dataset.",
+        "Incorrect. Assumption violations do affect the quality of probability estimates and decision boundaries."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "robustness",
+        "assumptions",
+        "performance"
+      ]
+    },
+    {
+      "id": "NBY_023",
+      "question": "In text classification using Multinomial Naive Bayes, what does each feature typically represent?",
+      "options": [
+        "Word frequency or count in a document",
+        "Binary presence or absence of a word",
+        "Position of words in the document",
+        "Length of the document"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multinomial Naive Bayes for text typically uses bag-of-words representation where each feature represents how many times a word appears in the document.",
+      "optionExplanations": [
+        "Correct. Features represent word counts, making the multinomial distribution appropriate for this count data.",
+        "Incorrect. Binary word presence would be better suited for Bernoulli Naive Bayes.",
+        "Incorrect. Word position information is not captured in standard bag-of-words Multinomial NB.",
+        "Incorrect. Document length might be a single additional feature but not what each feature typically represents."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "text-classification",
+        "multinomial-nb",
+        "bag-of-words"
+      ]
+    },
+    {
+      "id": "NBY_024",
+      "question": "What is the main disadvantage of the conditional independence assumption?",
+      "options": [
+        "It ignores potentially important feature interactions",
+        "It makes the algorithm too slow",
+        "It requires too much training data",
+        "It only works with numerical features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "By assuming features are independent, Naive Bayes cannot capture correlations or interactions between features that might be important for accurate classification.",
+      "optionExplanations": [
+        "Correct. Important relationships between features are ignored, which can limit the model's ability to capture complex patterns.",
+        "Incorrect. The independence assumption actually makes the algorithm faster by simplifying calculations.",
+        "Incorrect. Naive Bayes actually works well with small amounts of training data.",
+        "Incorrect. Naive Bayes works with both numerical and categorical features through different variants."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "limitations",
+        "feature-interactions",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "NBY_025",
+      "question": "How is the prior probability P(class) typically estimated in Naive Bayes?",
+      "options": [
+        "Frequency of each class in the training data",
+        "Uniform distribution across all classes",
+        "Expert knowledge or domain expertise",
+        "Cross-validation results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prior probabilities are usually estimated by calculating the relative frequency of each class in the training dataset.",
+      "optionExplanations": [
+        "Correct. P(class) = count of class examples / total training examples is the standard approach.",
+        "Incorrect. While uniform priors can be used, frequency-based estimation from data is more common and effective.",
+        "Incorrect. While expert knowledge could inform priors, data-driven estimation is the typical approach.",
+        "Incorrect. Cross-validation is used for model evaluation, not for estimating prior probabilities."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "prior-probability",
+        "estimation",
+        "training"
+      ]
+    },
+    {
+      "id": "NBY_026",
+      "question": "What is the key difference between Multinomial and Bernoulli Naive Bayes in text classification?",
+      "options": [
+        "Multinomial uses word counts, Bernoulli uses binary word presence",
+        "Multinomial is for continuous data, Bernoulli for discrete",
+        "Multinomial is faster than Bernoulli",
+        "They use different probability distributions for classes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The key difference lies in feature representation: Multinomial counts word frequencies while Bernoulli only considers whether words are present or absent.",
+      "optionExplanations": [
+        "Correct. Multinomial NB considers how many times words appear, while Bernoulli NB only cares if they appear at all.",
+        "Incorrect. Both are for discrete data; the difference is in how they handle word occurrences.",
+        "Incorrect. Speed differences are minimal and depend on implementation and data characteristics.",
+        "Incorrect. Both use the same underlying Bayes' theorem; they differ in feature modeling."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "multinomial-nb",
+        "bernoulli-nb",
+        "text-classification"
+      ]
+    },
+    {
+      "id": "NBY_027",
+      "question": "When would you choose Bernoulli Naive Bayes over Multinomial for text classification?",
+      "options": [
+        "When word frequency is less important than word presence",
+        "When documents are very long",
+        "When vocabulary size is large",
+        "When you have many classes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bernoulli Naive Bayes is preferred when the mere presence or absence of words matters more than how frequently they appear in documents.",
+      "optionExplanations": [
+        "Correct. Bernoulli NB is ideal when you want to focus on which words appear rather than how often they appear.",
+        "Incorrect. Document length doesn't determine the choice between Bernoulli and Multinomial variants.",
+        "Incorrect. Large vocabulary affects both variants similarly in terms of dimensionality.",
+        "Incorrect. Number of classes doesn't influence the choice between these feature representation approaches."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bernoulli-nb",
+        "feature-selection",
+        "text-classification"
+      ]
+    },
+    {
+      "id": "NBY_028",
+      "question": "What does the evidence P(B) represent in Bayes' theorem P(A|B) = P(B|A)P(A)/P(B)?",
+      "options": [
+        "Marginal probability of observing the evidence",
+        "Conditional probability of B given A",
+        "Prior probability of event B",
+        "Joint probability of A and B"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "P(B) is the marginal probability of observing the evidence B, calculated by summing over all possible causes of B.",
+      "optionExplanations": [
+        "Correct. P(B) = Σ P(B|Ai)P(Ai) for all possible values of A, representing total probability of observing B.",
+        "Incorrect. P(B|A) is the likelihood, not the evidence term P(B).",
+        "Incorrect. P(B) is marginal probability, which accounts for all ways B can occur, not just prior belief.",
+        "Incorrect. P(A∩B) would be the joint probability, different from the marginal P(B)."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bayes-theorem",
+        "evidence",
+        "marginal-probability"
+      ]
+    },
+    {
+      "id": "NBY_029",
+      "question": "In Gaussian Naive Bayes, how are the mean and variance parameters estimated?",
+      "options": [
+        "Using maximum likelihood estimation from training data",
+        "Set to fixed values based on domain knowledge",
+        "Learned through gradient descent optimization",
+        "Randomly initialized and kept constant"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For each class-feature combination, the mean and variance are estimated using maximum likelihood estimation from the training samples of that class.",
+      "optionExplanations": [
+        "Correct. Sample mean and sample variance provide MLE estimates: μ = Σx/n and σ² = Σ(x-μ)²/n.",
+        "Incorrect. Parameters are learned from data, not set based on prior knowledge in standard implementations.",
+        "Incorrect. Naive Bayes uses direct analytical computation, not iterative optimization like gradient descent.",
+        "Incorrect. Random initialization would lead to poor performance; parameters must reflect the training data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gaussian-nb",
+        "parameter-estimation",
+        "maximum-likelihood"
+      ]
+    },
+    {
+      "id": "NBY_030",
+      "question": "What is the effect of increasing the smoothing parameter α in Laplace smoothing?",
+      "options": [
+        "More uniform probability distribution across features",
+        "Sharper, more peaked probability distributions",
+        "Faster training time",
+        "Better handling of continuous features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Higher α values add more pseudo-counts to all features, making the probability distribution more uniform and reducing the impact of observed counts.",
+      "optionExplanations": [
+        "Correct. Larger α makes probabilities more uniform by adding more weight to unseen feature combinations.",
+        "Incorrect. Higher smoothing actually flattens distributions rather than making them more peaked.",
+        "Incorrect. Smoothing parameter doesn't significantly affect training time complexity.",
+        "Incorrect. Laplace smoothing is for discrete count data, not continuous features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "laplace-smoothing",
+        "hyperparameter-tuning",
+        "regularization"
+      ]
+    },
+    {
+      "id": "NBY_031",
+      "question": "Which evaluation metric is most appropriate for imbalanced datasets when using Naive Bayes?",
+      "options": [
+        "F1-score or AUC-ROC",
+        "Accuracy",
+        "Training time",
+        "Number of features used"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For imbalanced datasets, F1-score balances precision and recall, while AUC-ROC evaluates performance across all classification thresholds.",
+      "optionExplanations": [
+        "Correct. These metrics provide better insight into performance when class distributions are skewed.",
+        "Incorrect. Accuracy can be misleading with imbalanced data, as high accuracy might come from predicting only the majority class.",
+        "Incorrect. Training time is a computational metric, not a performance evaluation metric for classification quality.",
+        "Incorrect. Feature count is about model complexity, not classification performance on imbalanced data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "evaluation",
+        "imbalanced-data",
+        "metrics"
+      ]
+    },
+    {
+      "id": "NBY_032",
+      "question": "What is the relationship between Naive Bayes and linear classifiers?",
+      "options": [
+        "Naive Bayes creates linear decision boundaries in log-probability space",
+        "Naive Bayes always creates non-linear decision boundaries",
+        "There is no relationship between them",
+        "Naive Bayes is identical to logistic regression"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When taking logarithms of the Naive Bayes decision rule, the result is a linear function of the features, creating linear decision boundaries.",
+      "optionExplanations": [
+        "Correct. log P(class|features) becomes linear in features due to the independence assumption and logarithm properties.",
+        "Incorrect. Naive Bayes decision boundaries are linear, not non-linear, in the feature space.",
+        "Incorrect. There's a strong mathematical relationship through the linear nature of log-probabilities.",
+        "Incorrect. While both are linear classifiers, they have different assumptions and probability models."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "decision-boundaries",
+        "linear-classifiers",
+        "theory"
+      ]
+    },
+    {
+      "id": "NBY_033",
+      "question": "How does Naive Bayes handle categorical features?",
+      "options": [
+        "Uses frequency counts for each category value",
+        "Converts categories to numerical values",
+        "Applies one-hot encoding automatically",
+        "Ignores categorical features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes naturally handles categorical features by counting the frequency of each category value within each class.",
+      "optionExplanations": [
+        "Correct. For categorical features, NB counts occurrences of each category value per class to estimate probabilities.",
+        "Incorrect. While numerical conversion is possible, it's not the natural way NB handles categorical data.",
+        "Incorrect. One-hot encoding may be used in preprocessing, but NB can work directly with categorical data.",
+        "Incorrect. Naive Bayes can effectively use categorical features as part of its probability calculations."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "categorical-features",
+        "feature-handling",
+        "data-types"
+      ]
+    },
+    {
+      "id": "NBY_034",
+      "question": "What is the curse of dimensionality's effect on Naive Bayes?",
+      "options": [
+        "Less affected due to independence assumption reducing parameter space",
+        "Severely affected like all machine learning algorithms",
+        "Performance always improves with more dimensions",
+        "Only affects training time, not accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The independence assumption means Naive Bayes needs to estimate fewer parameters (linear in features) compared to methods that model feature interactions.",
+      "optionExplanations": [
+        "Correct. NB scales linearly with dimensions rather than exponentially, making it more robust to high-dimensional data.",
+        "Incorrect. While high dimensionality can cause issues, NB is more resilient than algorithms that model feature interactions.",
+        "Incorrect. Very high dimensions can still cause problems like sparsity and overfitting.",
+        "Incorrect. Dimensionality affects both computational complexity and the quality of probability estimates."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "scalability",
+        "high-dimensional"
+      ]
+    },
+    {
+      "id": "NBY_035",
+      "question": "In spam classification, what would be a good prior probability if 60% of emails are spam?",
+      "options": [
+        "P(spam) = 0.6, P(not spam) = 0.4",
+        "P(spam) = 0.5, P(not spam) = 0.5",
+        "P(spam) = 0.4, P(not spam) = 0.6",
+        "P(spam) = 1.0, P(not spam) = 0.0"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prior probabilities should reflect the actual class distribution in the training data, which is 60% spam and 40% not spam.",
+      "optionExplanations": [
+        "Correct. Prior probabilities should match the observed frequencies: 60% spam means P(spam) = 0.6.",
+        "Incorrect. Equal priors (0.5, 0.5) would ignore the actual class imbalance in the data.",
+        "Incorrect. This reverses the probabilities, contradicting the given information about 60% spam rate.",
+        "Incorrect. Extreme priors (1.0, 0.0) would mean all emails are spam, ignoring the 40% that aren't."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "prior-probability",
+        "spam-classification",
+        "class-distribution"
+      ]
+    },
+    {
+      "id": "NBY_036",
+      "question": "What is the computational complexity of Naive Bayes prediction for a single instance?",
+      "options": [
+        "O(d × k) where d is features and k is classes",
+        "O(d) where d is the number of features",
+        "O(k) where k is the number of classes",
+        "O(1) constant time"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Prediction requires calculating the probability for each class, and for each class, processing all features, resulting in O(d × k) complexity.",
+      "optionExplanations": [
+        "Correct. For each of k classes, we must process d features to compute P(class|features).",
+        "Incorrect. We need to consider all features for each class, not just process features once.",
+        "Incorrect. For each class, we must process all features, so it's not just dependent on the number of classes.",
+        "Incorrect. The computation must scale with both the number of features and classes."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "complexity",
+        "prediction",
+        "big-o"
+      ]
+    },
+    {
+      "id": "NBY_037",
+      "question": "Why might Naive Bayes perform poorly on datasets with strong feature correlations?",
+      "options": [
+        "It assumes features are independent, leading to incorrect probability estimates",
+        "It cannot handle correlated features at all",
+        "Correlated features slow down the algorithm significantly",
+        "It requires additional preprocessing for correlated features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When features are correlated, the independence assumption leads to over-confident probability estimates because the algorithm double-counts correlated evidence.",
+      "optionExplanations": [
+        "Correct. Correlated features violate the independence assumption, causing the model to overestimate confidence in predictions.",
+        "Incorrect. The algorithm can process correlated features, but the probability estimates may be suboptimal.",
+        "Incorrect. Feature correlation doesn't significantly impact the computational efficiency of Naive Bayes.",
+        "Incorrect. No special preprocessing is required, though feature selection might help performance."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-correlation",
+        "independence-assumption",
+        "limitations"
+      ]
+    },
+    {
+      "id": "NBY_038",
+      "question": "What is the role of the log transformation in Naive Bayes calculations?",
+      "options": [
+        "Prevents numerical underflow when multiplying small probabilities",
+        "Makes the algorithm run faster",
+        "Converts the problem to regression",
+        "Normalizes the feature values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Taking logarithms converts multiplication of small probabilities into addition of log-probabilities, preventing floating-point underflow issues.",
+      "optionExplanations": [
+        "Correct. Log transformation turns products into sums, avoiding numerical precision problems with very small probability values.",
+        "Incorrect. While log calculations might be slightly more efficient, the main benefit is numerical stability.",
+        "Incorrect. The problem remains classification; log transformation just changes the computational approach.",
+        "Incorrect. Log transformation is applied to probabilities, not to normalize input features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "numerical-stability",
+        "log-probabilities",
+        "implementation"
+      ]
+    },
+    {
+      "id": "NBY_039",
+      "question": "In document classification, what does tf-idf weighting accomplish that raw word counts don't?",
+      "options": [
+        "Reduces impact of common words and emphasizes distinctive terms",
+        "Makes the algorithm faster",
+        "Converts text to numerical format",
+        "Handles spelling errors better"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "TF-IDF (Term Frequency-Inverse Document Frequency) down-weights common words that appear in many documents while emphasizing rare, potentially more informative terms.",
+      "optionExplanations": [
+        "Correct. TF-IDF gives more weight to words that are frequent in a document but rare across the corpus.",
+        "Incorrect. TF-IDF transformation doesn't significantly change computational complexity.",
+        "Incorrect. Raw word counts already provide numerical format; TF-IDF refines the weighting scheme.",
+        "Incorrect. TF-IDF doesn't address spelling errors; that would require different preprocessing techniques."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "tf-idf",
+        "text-preprocessing",
+        "feature-weighting"
+      ]
+    },
+    {
+      "id": "NBY_040",
+      "question": "What happens in Naive Bayes when a continuous feature has zero variance for a class?",
+      "options": [
+        "Can cause division by zero errors in probability calculations",
+        "The feature is automatically ignored",
+        "The algorithm switches to a different distribution",
+        "Performance always improves"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Zero variance means all training samples of that class have the same feature value, making the Gaussian probability density function undefined due to division by zero.",
+      "optionExplanations": [
+        "Correct. With σ² = 0, the Gaussian PDF involves division by zero, requiring special handling.",
+        "Incorrect. The algorithm doesn't automatically ignore features; the zero variance must be handled explicitly.",
+        "Incorrect. Standard implementations don't automatically switch distributions; they need explicit handling of zero variance.",
+        "Incorrect. Zero variance usually indicates a lack of discriminative information and can cause numerical issues."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gaussian-nb",
+        "zero-variance",
+        "numerical-issues"
+      ]
+    },
+    {
+      "id": "NBY_041",
+      "question": "How does class imbalance affect Naive Bayes performance?",
+      "options": [
+        "May bias predictions toward majority class due to prior probabilities",
+        "Has no effect on performance",
+        "Always improves accuracy",
+        "Only affects training speed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Class imbalance affects prior probabilities P(class), which can bias the classifier toward predicting the more frequent classes.",
+      "optionExplanations": [
+        "Correct. Imbalanced priors can overwhelm the likelihood evidence, leading to bias toward majority classes.",
+        "Incorrect. Class imbalance significantly affects both prior probabilities and overall classification behavior.",
+        "Incorrect. Imbalance typically creates challenges for minority class prediction, not improvements.",
+        "Incorrect. Class imbalance affects prediction quality, not just computational aspects."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "class-imbalance",
+        "bias",
+        "prior-probability"
+      ]
+    },
+    {
+      "id": "NBY_042",
+      "question": "What is the maximum likelihood estimate for the mean of a Gaussian distribution?",
+      "options": [
+        "Sample mean: (x₁ + x₂ + ... + xₙ) / n",
+        "Sample median",
+        "Sample mode",
+        "Weighted average of all possible values"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The maximum likelihood estimator for the mean parameter μ of a normal distribution is the sample mean of the observed data points.",
+      "optionExplanations": [
+        "Correct. MLE for Gaussian mean is the arithmetic average of the training samples: μ̂ = (Σxᵢ)/n.",
+        "Incorrect. Median is a robust estimator but not the maximum likelihood estimate for Gaussian mean.",
+        "Incorrect. Mode is the most frequent value, not relevant for continuous Gaussian distributions.",
+        "Incorrect. This describes a more complex estimation approach, not the simple MLE for Gaussian mean."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "maximum-likelihood",
+        "gaussian-distribution",
+        "parameter-estimation"
+      ]
+    },
+    {
+      "id": "NBY_043",
+      "question": "In Bernoulli Naive Bayes, what probability is estimated for each feature?",
+      "options": [
+        "P(feature = 1 | class)",
+        "P(feature = count | class)",
+        "P(feature = continuous_value | class)",
+        "P(feature = category | class)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bernoulli Naive Bayes models each feature as having a probability of being 1 (present) given each class, with probability 1-p of being 0.",
+      "optionExplanations": [
+        "Correct. Bernoulli NB estimates the probability that each binary feature takes value 1 for each class.",
+        "Incorrect. Count-based probabilities are handled by Multinomial Naive Bayes.",
+        "Incorrect. Continuous values are handled by Gaussian Naive Bayes with probability density functions.",
+        "Incorrect. Categorical features with multiple values require different probability modeling."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bernoulli-nb",
+        "binary-features",
+        "probability-estimation"
+      ]
+    },
+    {
+      "id": "NBY_044",
+      "question": "What is the main assumption about feature values in Multinomial Naive Bayes?",
+      "options": [
+        "Features represent non-negative integer counts",
+        "Features are continuous and normally distributed",
+        "Features are binary (0 or 1)",
+        "Features can be any real numbers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multinomial Naive Bayes assumes features represent counts or frequencies, which are non-negative integers representing how often something occurs.",
+      "optionExplanations": [
+        "Correct. The multinomial distribution models count data where each feature represents frequency of occurrence.",
+        "Incorrect. Continuous normal distributions are the assumption for Gaussian Naive Bayes.",
+        "Incorrect. Binary features are the assumption for Bernoulli Naive Bayes.",
+        "Incorrect. Real numbers include negative values, which don't make sense for count data."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multinomial-nb",
+        "count-data",
+        "feature-assumptions"
+      ]
+    },
+    {
+      "id": "NBY_045",
+      "question": "How does feature scaling affect Naive Bayes performance?",
+      "options": [
+        "Affects Gaussian NB but not Multinomial or Bernoulli variants",
+        "Always improves performance significantly",
+        "Never affects performance",
+        "Only affects computational speed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feature scaling can impact Gaussian Naive Bayes since it uses actual feature values in probability calculations, but count-based variants are less affected.",
+      "optionExplanations": [
+        "Correct. Gaussian NB uses feature magnitudes in PDF calculations, while others use relative frequencies or binary presence.",
+        "Incorrect. The impact of scaling varies by variant and dataset; it's not universally beneficial.",
+        "Incorrect. Scaling can affect probability calculations, especially in Gaussian Naive Bayes.",
+        "Incorrect. Scaling affects the quality of probability estimates, not just computational efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "preprocessing",
+        "gaussian-nb"
+      ]
+    },
+    {
+      "id": "NBY_046",
+      "question": "What is the decision boundary shape for Naive Bayes with two features?",
+      "options": [
+        "Linear (straight line)",
+        "Circular",
+        "Parabolic",
+        "Irregular curved line"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Due to the log-linear nature of Naive Bayes classification rule, decision boundaries are always linear (hyperplanes in higher dimensions).",
+      "optionExplanations": [
+        "Correct. The log-probability difference between classes is linear in features, creating linear decision boundaries.",
+        "Incorrect. Circular boundaries would require modeling feature interactions or distance-based methods.",
+        "Incorrect. Parabolic boundaries would require quadratic terms, which Naive Bayes doesn't model.",
+        "Incorrect. Irregular curves would require complex non-linear relationships that violate NB assumptions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decision-boundary",
+        "linear-classifier",
+        "geometry"
+      ]
+    },
+    {
+      "id": "NBY_047",
+      "question": "Why is Naive Bayes called a 'generative' classifier?",
+      "options": [
+        "It models the joint probability P(features, class)",
+        "It generates new training examples",
+        "It only predicts class probabilities",
+        "It creates feature combinations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Generative classifiers model the full joint distribution P(X,Y), allowing them to generate new data points by sampling from this distribution.",
+      "optionExplanations": [
+        "Correct. NB models P(class) and P(features|class), which together define the joint distribution P(features, class).",
+        "Incorrect. While generative models can generate data, this capability doesn't define why they're called generative.",
+        "Incorrect. Discriminative classifiers also predict class probabilities; this isn't unique to generative models.",
+        "Incorrect. Feature combination generation is not what makes a classifier generative."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "generative-model",
+        "joint-distribution",
+        "model-types"
+      ]
+    },
+    {
+      "id": "NBY_048",
+      "question": "What is the relationship between Naive Bayes and the maximum a posteriori (MAP) decision rule?",
+      "options": [
+        "Naive Bayes implements MAP by choosing the class with highest posterior probability",
+        "They are unrelated concepts",
+        "MAP is more advanced than Naive Bayes",
+        "Naive Bayes approximates MAP"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes classification directly implements the MAP decision rule by selecting the class that maximizes P(class|features).",
+      "optionExplanations": [
+        "Correct. NB classification chooses argmax P(class|features), which is exactly the MAP decision rule.",
+        "Incorrect. There's a direct relationship: NB implements MAP estimation for classification.",
+        "Incorrect. MAP is a decision-making principle, while NB is an algorithm that implements this principle.",
+        "Incorrect. NB doesn't approximate MAP; it directly computes the MAP estimate given its assumptions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "MAP",
+        "decision-theory",
+        "optimization"
+      ]
+    },
+    {
+      "id": "NBY_049",
+      "question": "How does the amount of training data affect Naive Bayes performance?",
+      "options": [
+        "Generally improves with more data, but can work well with small datasets",
+        "Always requires large amounts of training data",
+        "Performance decreases with more data",
+        "Amount of data has no effect"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes can work effectively with small datasets due to its simple assumptions, but like most ML algorithms, it generally benefits from more training data.",
+      "optionExplanations": [
+        "Correct. NB's simplicity allows good performance with limited data, while more data improves parameter estimates.",
+        "Incorrect. One of NB's advantages is working well even with relatively small training sets.",
+        "Incorrect. More data typically leads to better parameter estimates and improved generalization.",
+        "Incorrect. Training data size affects the quality of probability estimates and overall performance."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "sample-size",
+        "data-requirements",
+        "performance"
+      ]
+    },
+    {
+      "id": "NBY_050",
+      "question": "What is the effect of feature redundancy on Naive Bayes?",
+      "options": [
+        "Can lead to overconfident predictions due to repeated evidence",
+        "Always improves classification accuracy",
+        "Has no effect due to independence assumption",
+        "Automatically removes redundant features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Redundant features that provide similar information violate the independence assumption and can cause the model to overweight certain evidence.",
+      "optionExplanations": [
+        "Correct. Correlated/redundant features are treated as independent evidence, leading to overconfident probability estimates.",
+        "Incorrect. Redundant features typically hurt performance by violating the independence assumption.",
+        "Incorrect. The independence assumption doesn't eliminate the negative effects of redundancy.",
+        "Incorrect. Naive Bayes doesn't perform automatic feature selection or redundancy removal."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-redundancy",
+        "overconfidence",
+        "independence-violation"
+      ]
+    },
+    {
+      "id": "NBY_051",
+      "question": "In text classification, what preprocessing step is most important for Multinomial Naive Bayes?",
+      "options": [
+        "Tokenization and creating word count vectors",
+        "Converting text to lowercase only",
+        "Removing all punctuation",
+        "Limiting document length"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multinomial NB requires count-based features, so converting text into word count vectors (bag-of-words) is the most crucial preprocessing step.",
+      "optionExplanations": [
+        "Correct. Tokenization breaks text into words, and count vectors provide the discrete count features that Multinomial NB expects.",
+        "Incorrect. While lowercasing helps, it's not sufficient without creating the count-based feature representation.",
+        "Incorrect. Punctuation removal is helpful preprocessing but not the most fundamental step for the algorithm.",
+        "Incorrect. Document length limiting is an optional preprocessing step, not essential for the algorithm to function."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "text-preprocessing",
+        "tokenization",
+        "bag-of-words"
+      ]
+    },
+    {
+      "id": "NBY_052",
+      "question": "What is the maximum likelihood estimate for variance in Gaussian Naive Bayes?",
+      "options": [
+        "σ² = Σ(xᵢ - μ)² / n",
+        "σ² = Σ(xᵢ - μ)² / (n-1)",
+        "σ² = Σ(xᵢ)² / n",
+        "σ² = (max - min)² / 4"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The maximum likelihood estimator for variance uses the sample mean as μ and divides by n (not n-1), giving the biased but maximum likelihood estimate.",
+      "optionExplanations": [
+        "Correct. MLE for variance is the average squared deviation from the sample mean, using n as the divisor.",
+        "Incorrect. This is the unbiased estimator (sample variance), but not the maximum likelihood estimate.",
+        "Incorrect. This formula doesn't account for the mean, making it incorrect for variance estimation.",
+        "Incorrect. This relates to uniform distribution variance, not the MLE for Gaussian variance."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "maximum-likelihood",
+        "variance-estimation",
+        "gaussian-nb"
+      ]
+    },
+    {
+      "id": "NBY_053",
+      "question": "How does Naive Bayes handle missing values in features?",
+      "options": [
+        "Typically ignores missing features in probability calculations",
+        "Automatically imputes missing values with mean",
+        "Treats missing values as zero",
+        "Cannot handle missing values at all"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Most Naive Bayes implementations handle missing values by simply excluding them from the probability calculation for that instance.",
+      "optionExplanations": [
+        "Correct. Missing features are typically not included in the likelihood calculation P(features|class).",
+        "Incorrect. Automatic imputation is not a standard feature of basic Naive Bayes implementations.",
+        "Incorrect. Treating missing as zero would be incorrect for most feature types and could bias results.",
+        "Incorrect. Naive Bayes can handle missing values, though the approach varies by implementation."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "missing-values",
+        "data-handling",
+        "implementation"
+      ]
+    },
+    {
+      "id": "NBY_054",
+      "question": "What is the key advantage of using log-probabilities in Naive Bayes implementation?",
+      "options": [
+        "Prevents numerical underflow from multiplying many small probabilities",
+        "Makes the algorithm learn faster",
+        "Reduces memory requirements",
+        "Improves classification accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Converting to log-space transforms products of small probabilities into sums of log-probabilities, avoiding floating-point precision issues.",
+      "optionExplanations": [
+        "Correct. Very small probability values can cause underflow; log transformation converts multiplication to addition.",
+        "Incorrect. Learning speed refers to training time, which isn't significantly affected by log transformation.",
+        "Incorrect. Log transformation doesn't substantially change memory requirements.",
+        "Incorrect. Log transformation is for numerical stability, not accuracy improvement."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "numerical-stability",
+        "log-space",
+        "implementation"
+      ]
+    },
+    {
+      "id": "NBY_055",
+      "question": "In Naive Bayes, what does 'conditional independence' mean?",
+      "options": [
+        "Features are independent of each other given the class label",
+        "Classes are independent of each other",
+        "Features are completely independent of classes",
+        "All probabilities are independent"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Conditional independence means that once we know the class, the features provide no information about each other - they are independent given the class.",
+      "optionExplanations": [
+        "Correct. This assumption allows factoring P(features|class) = ∏P(feature_i|class).",
+        "Incorrect. Classes are mutually exclusive categories, not independent random variables.",
+        "Incorrect. Features are definitely dependent on classes; that's what enables classification.",
+        "Incorrect. The independence is specifically between features conditional on the class."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "conditional-independence",
+        "assumptions",
+        "probability"
+      ]
+    },
+    {
+      "id": "NBY_056",
+      "question": "Why might Gaussian Naive Bayes perform poorly on categorical features?",
+      "options": [
+        "Gaussian distribution is inappropriate for discrete categorical data",
+        "Categorical features require too much memory",
+        "The algorithm cannot process categorical features",
+        "Categorical features always cause overfitting"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian NB assumes continuous features following normal distribution, which doesn't make sense for discrete categorical values.",
+      "optionExplanations": [
+        "Correct. Normal distribution is continuous while categorical features are discrete, making the Gaussian assumption inappropriate.",
+        "Incorrect. Memory usage is not the primary issue with categorical features in Gaussian NB.",
+        "Incorrect. The algorithm can process categorical features, but the distributional assumption is wrong.",
+        "Incorrect. Categorical features don't inherently cause overfitting; the issue is the inappropriate distributional model."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "gaussian-nb",
+        "categorical-features",
+        "distribution-mismatch"
+      ]
+    },
+    {
+      "id": "NBY_057",
+      "question": "What is the computational advantage of the conditional independence assumption?",
+      "options": [
+        "Reduces complexity from exponential to linear in number of features",
+        "Makes training faster but prediction slower",
+        "Eliminates the need for training data",
+        "Allows perfect accuracy on all datasets"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Without independence, modeling all feature interactions would require exponential space, but independence reduces this to linear complexity.",
+      "optionExplanations": [
+        "Correct. Independence allows separate parameter estimation for each feature, avoiding exponential parameter space.",
+        "Incorrect. Both training and prediction benefit from the reduced complexity.",
+        "Incorrect. Training data is still required to estimate the individual feature probabilities.",
+        "Incorrect. The assumption is a simplification that may reduce accuracy but improves computational efficiency."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-complexity",
+        "scalability",
+        "independence-assumption"
+      ]
+    },
+    {
+      "id": "NBY_058",
+      "question": "How does document length affect Multinomial Naive Bayes in text classification?",
+      "options": [
+        "Longer documents may have higher probabilities due to more word occurrences",
+        "Document length has no effect",
+        "Shorter documents always perform better",
+        "The algorithm automatically normalizes for length"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Since Multinomial NB multiplies probabilities for each word occurrence, longer documents with more words tend to have higher total probabilities.",
+      "optionExplanations": [
+        "Correct. More words mean more probability terms are multiplied, potentially creating length bias.",
+        "Incorrect. Document length significantly affects the total probability calculation in Multinomial NB.",
+        "Incorrect. The relationship isn't simply that shorter is better; it depends on the specific content and words.",
+        "Incorrect. Standard Multinomial NB doesn't automatically normalize for document length."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "document-length",
+        "multinomial-nb",
+        "text-classification"
+      ]
+    },
+    {
+      "id": "NBY_059",
+      "question": "What is the main difference between maximum likelihood and maximum a posteriori estimation?",
+      "options": [
+        "MAP incorporates prior beliefs, MLE uses only data likelihood",
+        "MAP is always more accurate than MLE",
+        "MLE is computationally faster than MAP",
+        "There is no difference between them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Maximum likelihood estimation finds parameters that maximize P(data|parameters), while MAP also considers prior probabilities P(parameters).",
+      "optionExplanations": [
+        "Correct. MAP = argmax P(parameters|data) ∝ P(data|parameters) × P(parameters), while MLE only maximizes P(data|parameters).",
+        "Incorrect. Accuracy depends on whether the prior beliefs are correct; MLE can be better when priors are poor.",
+        "Incorrect. Computational complexity depends on the specific implementation, not the estimation principle.",
+        "Incorrect. The key difference is whether prior information about parameters is incorporated."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "parameter-estimation",
+        "MAP",
+        "maximum-likelihood"
+      ]
+    },
+    {
+      "id": "NBY_060",
+      "question": "In spam filtering, why might 'free' be a strong indicator word?",
+      "options": [
+        "High P(free|spam) and low P(free|not_spam) creates strong discriminative power",
+        "It appears in all spam emails",
+        "It never appears in legitimate emails",
+        "It has the highest frequency among all words"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Strong indicator words have very different probabilities across classes, making them highly informative for classification decisions.",
+      "optionExplanations": [
+        "Correct. Words with high likelihood ratios P(word|spam)/P(word|not_spam) provide strong classification evidence.",
+        "Incorrect. No word appears in ALL emails of any category; strong indicators have high but not perfect frequency.",
+        "Incorrect. Absolute absence is rare; the key is relative frequency differences between classes.",
+        "Incorrect. Overall frequency doesn't matter as much as the difference in frequency between spam and legitimate emails."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-importance",
+        "likelihood-ratio",
+        "spam-filtering"
+      ]
+    },
+    {
+      "id": "NBY_061",
+      "question": "What happens when Laplace smoothing parameter α approaches infinity?",
+      "options": [
+        "All features get equal probability regardless of training data",
+        "The model becomes identical to maximum likelihood estimation",
+        "Training becomes infinitely slow",
+        "Classification accuracy approaches 100%"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Very large α values dominate the observed counts, making all features have approximately uniform probability distributions.",
+      "optionExplanations": [
+        "Correct. As α → ∞, the smoothing overwhelms actual data counts, leading to uniform distributions.",
+        "Incorrect. MLE corresponds to α = 0 (no smoothing), which is the opposite extreme.",
+        "Incorrect. Smoothing parameter doesn't affect training speed complexity.",
+        "Incorrect. Extreme smoothing typically hurts accuracy by ignoring the training data patterns."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "laplace-smoothing",
+        "regularization",
+        "hyperparameters"
+      ]
+    },
+    {
+      "id": "NBY_062",
+      "question": "How does Naive Bayes compare to logistic regression in terms of assumptions?",
+      "options": [
+        "Both assume linear decision boundaries but make different distributional assumptions",
+        "Naive Bayes assumes non-linear boundaries, logistic regression assumes linear",
+        "They make identical assumptions about data",
+        "Logistic regression makes no assumptions about data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Both create linear decision boundaries, but NB assumes specific feature distributions and independence, while logistic regression is more flexible about distributions.",
+      "optionExplanations": [
+        "Correct. Both are linear classifiers but differ in their assumptions about feature distributions and relationships.",
+        "Incorrect. Both algorithms create linear decision boundaries in feature space.",
+        "Incorrect. They have different assumptions about feature independence and distributions.",
+        "Incorrect. Logistic regression assumes the log-odds are linear in features, among other assumptions."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "comparison",
+        "linear-classifiers",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "NBY_063",
+      "question": "What is the relationship between feature frequency and classification confidence in Naive Bayes?",
+      "options": [
+        "Higher frequency features generally contribute more to classification decisions",
+        "Feature frequency is irrelevant to classification",
+        "Lower frequency features are always more important",
+        "All features contribute equally regardless of frequency"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In count-based variants like Multinomial NB, features that appear more frequently have more influence on the final probability calculation.",
+      "optionExplanations": [
+        "Correct. More frequent features appear more times in the probability calculation, increasing their total impact.",
+        "Incorrect. Frequency affects how much each feature contributes to the final probability score.",
+        "Incorrect. While rare features can be informative, frequency does affect the magnitude of contribution.",
+        "Incorrect. The independence assumption doesn't mean features contribute equally - frequency and probability values matter."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-frequency",
+        "classification-confidence",
+        "multinomial-nb"
+      ]
+    },
+    {
+      "id": "NBY_064",
+      "question": "Why might cross-validation be particularly important when tuning Naive Bayes hyperparameters?",
+      "options": [
+        "Prevents overfitting to specific train-test splits when choosing smoothing parameters",
+        "Naive Bayes always overfits without cross-validation",
+        "Cross-validation is not needed for Naive Bayes",
+        "It reduces training time significantly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Cross-validation helps ensure that hyperparameter choices (like smoothing α) generalize well rather than just working well on a particular train-test split.",
+      "optionExplanations": [
+        "Correct. CV provides more robust estimates of hyperparameter performance across different data splits.",
+        "Incorrect. Naive Bayes is generally less prone to overfitting, but hyperparameter tuning still benefits from CV.",
+        "Incorrect. While NB is simple, hyperparameter tuning still benefits from proper validation procedures.",
+        "Incorrect. Cross-validation typically increases computation time for hyperparameter tuning, not reduces it."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "cross-validation",
+        "hyperparameter-tuning",
+        "model-selection"
+      ]
+    },
+    {
+      "id": "NBY_065",
+      "question": "What is the effect of feature selection on Naive Bayes performance?",
+      "options": [
+        "Can improve performance by removing irrelevant or redundant features",
+        "Always hurts performance since all features are useful",
+        "Has no effect due to the independence assumption",
+        "Only affects computational speed, not accuracy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Removing irrelevant features reduces noise, and removing redundant features helps address independence assumption violations.",
+      "optionExplanations": [
+        "Correct. Feature selection can remove noise and correlation that violate NB assumptions.",
+        "Incorrect. Irrelevant features add noise, and redundant features can cause overconfident predictions.",
+        "Incorrect. The independence assumption doesn't protect against irrelevant or highly correlated features.",
+        "Incorrect. Feature selection affects both computational efficiency and classification quality."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-selection",
+        "preprocessing",
+        "performance-improvement"
+      ]
+    },
+    {
+      "id": "NBY_066",
+      "question": "How does the curse of dimensionality specifically affect parameter estimation in Naive Bayes?",
+      "options": [
+        "Each feature needs separate parameters per class, but independence keeps this manageable",
+        "Parameter estimation becomes exponentially difficult",
+        "High dimensions always improve parameter quality",
+        "Dimensionality has no effect on parameter estimation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "While high dimensionality increases the total number of parameters, the independence assumption means we only need O(d×k) parameters instead of exponential complexity.",
+      "optionExplanations": [
+        "Correct. NB needs parameters for each feature-class combination, but avoids exponential feature interaction terms.",
+        "Incorrect. The independence assumption prevents exponential parameter growth seen in full joint models.",
+        "Incorrect. High dimensions can lead to sparsity issues and overfitting, not automatic improvement.",
+        "Incorrect. More dimensions means more parameters to estimate, affecting both complexity and data requirements."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "parameter-estimation",
+        "scalability"
+      ]
+    },
+    {
+      "id": "NBY_067",
+      "question": "What is the theoretical justification for using Laplace smoothing in Naive Bayes?",
+      "options": [
+        "It corresponds to using a uniform Dirichlet prior in Bayesian inference",
+        "It always improves classification accuracy",
+        "It makes the algorithm run faster",
+        "It eliminates the need for training data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Laplace smoothing (add-one smoothing) is equivalent to placing a uniform Dirichlet prior over the multinomial parameters, providing a Bayesian justification.",
+      "optionExplanations": [
+        "Correct. Adding α to each count corresponds to Dir(α,...,α) prior, making it a principled Bayesian approach.",
+        "Incorrect. While smoothing often helps, the theoretical justification is the Bayesian interpretation, not accuracy.",
+        "Incorrect. Smoothing doesn't significantly affect computational speed.",
+        "Incorrect. Smoothing still requires training data; it just adds pseudo-counts to handle unseen combinations."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bayesian-inference",
+        "dirichlet-prior",
+        "theoretical-foundation"
+      ]
+    },
+    {
+      "id": "NBY_068",
+      "question": "In multi-class classification, how does Naive Bayes handle the decision among multiple classes?",
+      "options": [
+        "Computes probability for each class and selects the maximum",
+        "Uses one-vs-one comparisons between all class pairs",
+        "Requires separate binary classifiers for each class",
+        "Cannot handle more than two classes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes naturally handles multiple classes by computing P(class|features) for each class and choosing the class with highest probability.",
+      "optionExplanations": [
+        "Correct. NB computes posterior probability for each class simultaneously and chooses argmax P(class|features).",
+        "Incorrect. This describes a pairwise classification approach, not how NB naturally works.",
+        "Incorrect. NB doesn't need separate binary classifiers; it handles multi-class problems directly.",
+        "Incorrect. NB naturally extends to any number of classes without modification."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "multi-class",
+        "classification-strategy",
+        "decision-making"
+      ]
+    },
+    {
+      "id": "NBY_069",
+      "question": "What is the significance of the 'bag of words' assumption in text classification with Naive Bayes?",
+      "options": [
+        "Treats word order as irrelevant, focusing only on word occurrence",
+        "Considers the sequential order of words",
+        "Only uses the most frequent words",
+        "Requires all documents to have the same length"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bag of words representation ignores word order and sentence structure, treating documents as unordered collections of words.",
+      "optionExplanations": [
+        "Correct. BoW assumption treats documents as sets of word counts, ignoring grammatical structure and word order.",
+        "Incorrect. BoW explicitly ignores word order, which is both a limitation and a simplification.",
+        "Incorrect. BoW can use all words in the vocabulary, not just the most frequent ones.",
+        "Incorrect. Documents can have different lengths in BoW representation; length affects word counts but isn't normalized."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "bag-of-words",
+        "text-representation",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "NBY_070",
+      "question": "How does class prior probability affect Naive Bayes predictions when likelihood evidence is weak?",
+      "options": [
+        "Strong priors can dominate weak evidence, biasing toward frequent classes",
+        "Priors are ignored when evidence is weak",
+        "Weak evidence always overrides strong priors",
+        "Prior and likelihood contributions are always equal"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When feature evidence is uninformative, the prior probabilities P(class) have more relative influence on the final classification decision.",
+      "optionExplanations": [
+        "Correct. With weak likelihood evidence, priors dominate the posterior probability, potentially causing bias toward majority classes.",
+        "Incorrect. Priors are always part of the Bayes' theorem calculation, regardless of evidence strength.",
+        "Incorrect. The relative influence depends on the strength of evidence; weak evidence cannot override strong priors.",
+        "Incorrect. The balance between prior and likelihood depends on the informativeness of the observed features."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "prior-probability",
+        "evidence-strength",
+        "classification-bias"
+      ]
+    },
+    {
+      "id": "NBY_071",
+      "question": "What is the main limitation of using uniform priors in Naive Bayes?",
+      "options": [
+        "Ignores actual class distribution information from training data",
+        "Makes computation more expensive",
+        "Always leads to overfitting",
+        "Cannot handle multiple classes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Uniform priors assume all classes are equally likely, ignoring valuable information about actual class frequencies in the training data.",
+      "optionExplanations": [
+        "Correct. Uniform priors waste the information about true class distributions that could improve classification accuracy.",
+        "Incorrect. Prior computation is not computationally expensive regardless of whether priors are uniform or data-based.",
+        "Incorrect. Uniform priors might actually reduce overfitting by being less specific than data-driven priors.",
+        "Incorrect. Uniform priors work fine with multiple classes; they just assign equal probability to each class."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "uniform-priors",
+        "prior-information",
+        "limitations"
+      ]
+    },
+    {
+      "id": "NBY_072",
+      "question": "Why is Naive Bayes particularly effective for high-dimensional sparse data?",
+      "options": [
+        "Independence assumption prevents overfitting and handles sparsity well",
+        "It automatically reduces dimensionality",
+        "Sparse data always improves classification",
+        "High dimensions guarantee better performance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The independence assumption means fewer parameters to estimate, and NB naturally handles zero feature values (sparsity) without special treatment.",
+      "optionExplanations": [
+        "Correct. Few parameters per feature and natural handling of absent features make NB suitable for sparse, high-dimensional data.",
+        "Incorrect. NB doesn't reduce dimensionality; it handles high dimensions through its architectural assumptions.",
+        "Incorrect. Sparsity can help or hurt depending on whether the sparse features are informative.",
+        "Incorrect. High dimensions can cause problems like overfitting; NB's effectiveness comes from its specific assumptions."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "high-dimensional",
+        "sparse-data",
+        "effectiveness"
+      ]
+    },
+    {
+      "id": "NBY_073",
+      "question": "What role does the normalization constant P(features) play in Naive Bayes classification?",
+      "options": [
+        "Can be ignored for classification since it's the same for all classes",
+        "Must be computed exactly for correct probabilities",
+        "Only affects training, not prediction",
+        "Determines the decision boundary shape"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Since P(features) is the same regardless of which class we're considering, it cancels out when comparing class probabilities for classification.",
+      "optionExplanations": [
+        "Correct. For classification, we only need relative probabilities, so the common denominator P(features) can be ignored.",
+        "Incorrect. While exact probabilities need P(features), classification decisions don't require this normalization.",
+        "Incorrect. P(features) is part of prediction calculations but can be omitted for classification purposes.",
+        "Incorrect. Decision boundaries are determined by the relative magnitudes of numerator terms, not the normalization constant."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "normalization",
+        "bayes-theorem",
+        "classification"
+      ]
+    },
+    {
+      "id": "NBY_074",
+      "question": "How does Naive Bayes handle the problem of zero probabilities in Bernoulli variant?",
+      "options": [
+        "Uses Laplace smoothing by adding α to success and failure counts",
+        "Automatically switches to Gaussian distribution",
+        "Ignores features with zero probability",
+        "Sets zero probabilities to a small constant value"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Bernoulli NB applies smoothing by adding α to both the count of feature=1 and feature=0 cases for each class.",
+      "optionExplanations": [
+        "Correct. Smoothing adds α to both presence and absence counts: P(feature=1|class) = (count_1 + α)/(total + 2α).",
+        "Incorrect. The algorithm doesn't change distribution types; it applies smoothing within the Bernoulli framework.",
+        "Incorrect. Features with zero probability are handled through smoothing, not ignored.",
+        "Incorrect. Setting arbitrary constants is not principled; Laplace smoothing provides a theoretically justified approach."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "bernoulli-nb",
+        "zero-probability",
+        "laplace-smoothing"
+      ]
+    },
+    {
+      "id": "NBY_075",
+      "question": "What is the relationship between Naive Bayes and feature independence in real-world data?",
+      "options": [
+        "Real features are often correlated, but NB can still perform surprisingly well",
+        "Real features are always independent, validating NB assumptions",
+        "NB fails completely when features are correlated",
+        "Feature correlation has no impact on NB performance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Despite widespread feature correlations in real data, Naive Bayes often performs competitively due to its robustness and the fact that perfect independence isn't required for good classification.",
+      "optionExplanations": [
+        "Correct. NB's robustness to assumption violations makes it effective even when features are correlated.",
+        "Incorrect. Real-world features are typically correlated; perfect independence is rare in practice.",
+        "Incorrect. While correlation can hurt performance, NB often remains functional and competitive.",
+        "Incorrect. Feature correlation does affect performance, but NB is relatively robust to these violations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "real-world-data",
+        "robustness",
+        "feature-correlation"
+      ]
+    },
+    {
+      "id": "NBY_076",
+      "question": "In Gaussian Naive Bayes, what happens when a feature has the same value for all training instances of a class?",
+      "options": [
+        "Variance becomes zero, causing numerical issues in probability calculations",
+        "The feature is automatically removed from the model",
+        "The feature gets maximum importance weight",
+        "No special handling is needed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When all instances have the same feature value, the sample variance is zero, making the Gaussian PDF undefined due to division by zero in the denominator.",
+      "optionExplanations": [
+        "Correct. Zero variance leads to division by zero in the Gaussian PDF formula, requiring special handling.",
+        "Incorrect. The algorithm doesn't automatically remove features; zero variance must be handled explicitly.",
+        "Incorrect. Constant features actually provide no discriminative information within that class.",
+        "Incorrect. Zero variance creates mathematical problems that need to be addressed in implementation."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "gaussian-nb",
+        "zero-variance",
+        "constant-features"
+      ]
+    },
+    {
+      "id": "NBY_077",
+      "question": "How does the choice of smoothing parameter α affect bias-variance tradeoff in Naive Bayes?",
+      "options": [
+        "Higher α increases bias but reduces variance",
+        "Higher α reduces both bias and variance",
+        "α only affects computational speed",
+        "Higher α increases both bias and variance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Larger smoothing parameters introduce more bias by pulling probability estimates toward uniform, but reduce variance by making estimates less sensitive to training data fluctuations.",
+      "optionExplanations": [
+        "Correct. More smoothing biases estimates toward uniform distributions but makes them more stable across different training sets.",
+        "Incorrect. Smoothing involves a tradeoff; reducing variance typically comes at the cost of increased bias.",
+        "Incorrect. Smoothing parameter affects the quality of probability estimates, not just computational aspects.",
+        "Incorrect. Smoothing reduces variance in probability estimates, even though it may increase bias."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bias-variance-tradeoff",
+        "smoothing-parameter",
+        "regularization"
+      ]
+    },
+    {
+      "id": "NBY_078",
+      "question": "What is the difference between discriminative and generative approaches in classification?",
+      "options": [
+        "Generative models P(X,Y), discriminative models P(Y|X) directly",
+        "Generative models are always more accurate",
+        "Discriminative models can generate new data",
+        "There is no fundamental difference"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Generative models like Naive Bayes learn the joint distribution and can generate data, while discriminative models directly learn the decision boundary.",
+      "optionExplanations": [
+        "Correct. Generative models learn P(X,Y) = P(X|Y)P(Y), while discriminative models directly model P(Y|X).",
+        "Incorrect. Accuracy depends on the problem and data; neither approach is universally superior.",
+        "Incorrect. Generative models can generate data by sampling from P(X,Y), not discriminative models.",
+        "Incorrect. The approaches differ fundamentally in what probability distributions they model."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "generative-vs-discriminative",
+        "model-types",
+        "probability-modeling"
+      ]
+    },
+    {
+      "id": "NBY_079",
+      "question": "How does Naive Bayes perform on datasets with many irrelevant features?",
+      "options": [
+        "Performance degrades as irrelevant features add noise to probability calculations",
+        "Performance improves with more features regardless of relevance",
+        "Irrelevant features have no effect due to independence assumption",
+        "Automatically identifies and removes irrelevant features"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Irrelevant features contribute noise to the probability calculations, potentially overwhelming the signal from relevant features and hurting classification performance.",
+      "optionExplanations": [
+        "Correct. Irrelevant features add noise without providing useful classification information, degrading overall performance.",
+        "Incorrect. Adding irrelevant features typically hurts performance by introducing noise.",
+        "Incorrect. The independence assumption doesn't protect against irrelevant features; they still affect probability calculations.",
+        "Incorrect. Basic Naive Bayes doesn't perform automatic feature selection; irrelevant features remain in the model."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "irrelevant-features",
+        "noise",
+        "feature-selection"
+      ]
+    },
+    {
+      "id": "NBY_080",
+      "question": "What is the effect of outliers on different variants of Naive Bayes?",
+      "options": [
+        "Gaussian NB is most affected due to mean and variance calculations",
+        "All variants are equally affected by outliers",
+        "Multinomial NB is most affected by outliers",
+        "Naive Bayes is completely robust to outliers"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian NB uses mean and variance estimates that can be significantly influenced by outliers, while count-based variants are more robust.",
+      "optionExplanations": [
+        "Correct. Outliers can skew mean and variance estimates in Gaussian NB, while count-based variants are less sensitive.",
+        "Incorrect. Different variants have different sensitivities to outliers based on their underlying mathematics.",
+        "Incorrect. Count-based features in Multinomial NB are generally more robust to extreme values than Gaussian parameters.",
+        "Incorrect. No algorithm is completely robust to outliers; Gaussian NB is particularly sensitive due to its parametric nature."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "outliers",
+        "robustness",
+        "gaussian-nb"
+      ]
+    },
+    {
+      "id": "NBY_081",
+      "question": "How does Naive Bayes handle imbalanced classes in the context of prior probabilities?",
+      "options": [
+        "Prior probabilities reflect class imbalance and can bias predictions",
+        "Automatically balances classes by adjusting priors",
+        "Class imbalance has no effect on Naive Bayes",
+        "Always uses uniform priors regardless of class distribution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Standard Naive Bayes estimates priors from training data frequencies, so imbalanced classes lead to imbalanced priors that can bias predictions toward majority classes.",
+      "optionExplanations": [
+        "Correct. Imbalanced training data leads to imbalanced priors P(class), which can overwhelm likelihood evidence for minority classes.",
+        "Incorrect. Standard NB doesn't automatically balance classes; priors reflect actual training distribution.",
+        "Incorrect. Class imbalance significantly affects both prior probabilities and overall classification behavior.",
+        "Incorrect. Standard NB estimates priors from data, not uniform distributions, unless explicitly configured otherwise."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "class-imbalance",
+        "prior-probability",
+        "bias"
+      ]
+    },
+    {
+      "id": "NBY_082",
+      "question": "What is the computational complexity of Naive Bayes feature probability estimation during training?",
+      "options": [
+        "O(n × d) where n is samples and d is features",
+        "O(n²) for pairwise feature comparisons",
+        "O(d²) for feature interaction modeling",
+        "O(n × d²) for full joint distribution"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Training requires one pass through the data to count features and compute statistics, with linear complexity in both samples and features due to independence assumption.",
+      "optionExplanations": [
+        "Correct. Each sample contributes to counts for each feature independently, resulting in O(n × d) complexity.",
+        "Incorrect. NB doesn't compute pairwise feature relationships, avoiding quadratic complexity in samples.",
+        "Incorrect. The independence assumption eliminates the need to model feature interactions.",
+        "Incorrect. This would be the complexity for full joint modeling, which NB avoids through independence assumption."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "computational-complexity",
+        "training",
+        "scalability"
+      ]
+    },
+    {
+      "id": "NBY_083",
+      "question": "How does the assumption of conditional independence affect feature engineering for Naive Bayes?",
+      "options": [
+        "Should avoid creating highly correlated features to minimize assumption violations",
+        "Can create as many correlated features as desired",
+        "Feature engineering has no impact on NB performance",
+        "Should maximize feature correlations for better performance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Creating highly correlated features violates the independence assumption and can lead to overconfident predictions as the model treats correlated evidence as independent.",
+      "optionExplanations": [
+        "Correct. Correlated features violate independence assumptions and can cause the model to overweight certain types of evidence.",
+        "Incorrect. Highly correlated features can harm performance by violating the core assumption of the algorithm.",
+        "Incorrect. Feature engineering significantly impacts NB performance, especially regarding feature independence.",
+        "Incorrect. Maximizing correlations directly contradicts the independence assumption that makes NB work."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-engineering",
+        "correlation",
+        "independence-assumption"
+      ]
+    },
+    {
+      "id": "NBY_084",
+      "question": "What is the relationship between Naive Bayes and the curse of dimensionality?",
+      "options": [
+        "Less affected than other algorithms due to parameter independence",
+        "Equally affected as all machine learning algorithms",
+        "More affected due to probability multiplication",
+        "Completely immune to dimensionality issues"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The independence assumption means NB only needs to estimate parameters for each feature separately, avoiding the exponential parameter growth that affects other methods.",
+      "optionExplanations": [
+        "Correct. NB scales linearly with dimensions rather than exponentially, making it more robust to high-dimensional data.",
+        "Incorrect. The independence assumption provides NB with better scaling properties than methods that model feature interactions.",
+        "Incorrect. While probability multiplication can create numerical issues, the main advantage is in parameter efficiency.",
+        "Incorrect. Very high dimensions can still cause problems like sparsity, but NB is more resilient than most algorithms."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "curse-of-dimensionality",
+        "scalability",
+        "parameter-efficiency"
+      ]
+    },
+    {
+      "id": "NBY_085",
+      "question": "In text classification, how does vocabulary size affect Multinomial Naive Bayes performance?",
+      "options": [
+        "Larger vocabulary increases dimensionality but may include more noise",
+        "Larger vocabulary always improves performance",
+        "Vocabulary size has no effect on performance",
+        "Smaller vocabulary always leads to better results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Larger vocabularies provide more features but also include more rare words that may not be informative and can introduce noise into the model.",
+      "optionExplanations": [
+        "Correct. More vocabulary provides richer representation but includes rare, potentially uninformative words that add noise.",
+        "Incorrect. Very large vocabularies can include too many irrelevant or noisy features that hurt performance.",
+        "Incorrect. Vocabulary size directly affects the feature space and thus model performance.",
+        "Incorrect. Very small vocabularies may miss important discriminative words, reducing classification accuracy."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "vocabulary-size",
+        "text-classification",
+        "feature-space"
+      ]
+    },
+    {
+      "id": "NBY_086",
+      "question": "What is the main advantage of Naive Bayes over more complex models like neural networks?",
+      "options": [
+        "Faster training, interpretable results, and good performance with limited data",
+        "Always achieves higher accuracy",
+        "Can model complex non-linear relationships",
+        "Requires no hyperparameter tuning"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes offers computational efficiency, interpretability through probability estimates, and effectiveness with small datasets, though it may sacrifice some accuracy for these benefits.",
+      "optionExplanations": [
+        "Correct. NB provides speed, interpretability, and robustness to small sample sizes that complex models lack.",
+        "Incorrect. Complex models often achieve higher accuracy by modeling intricate patterns that NB cannot capture.",
+        "Incorrect. NB is limited to linear decision boundaries and cannot model complex non-linear relationships.",
+        "Incorrect. NB still has hyperparameters like smoothing parameters that may need tuning."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "advantages",
+        "model-comparison",
+        "simplicity"
+      ]
+    },
+    {
+      "id": "NBY_087",
+      "question": "How does Naive Bayes handle continuous features that don't follow a normal distribution?",
+      "options": [
+        "May perform poorly since Gaussian assumption is violated",
+        "Automatically detects and adjusts to the correct distribution",
+        "Performance is unaffected by distributional assumptions",
+        "Converts all features to categorical automatically"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gaussian Naive Bayes assumes normal distribution for continuous features, so non-normal data can lead to poor probability estimates and reduced performance.",
+      "optionExplanations": [
+        "Correct. When the Gaussian assumption is violated, probability estimates become inaccurate, potentially hurting classification performance.",
+        "Incorrect. Standard Gaussian NB doesn't automatically adapt to different distributions; it assumes normality.",
+        "Incorrect. Distributional assumptions are central to how Gaussian NB estimates probabilities for continuous features.",
+        "Incorrect. The algorithm doesn't automatically convert feature types; it applies the assumed distribution to the given data."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "gaussian-assumption",
+        "distribution-mismatch",
+        "continuous-features"
+      ]
+    },
+    {
+      "id": "NBY_088",
+      "question": "What is the effect of feature scaling on Multinomial Naive Bayes?",
+      "options": [
+        "Generally not recommended as it can distort count-based interpretations",
+        "Always improves performance significantly",
+        "Required for the algorithm to function properly",
+        "Has no effect whatsoever"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multinomial NB is designed for count data, and scaling can distort the natural interpretation of counts and frequencies that the algorithm expects.",
+      "optionExplanations": [
+        "Correct. Scaling count features can destroy the discrete count interpretation that Multinomial NB relies on.",
+        "Incorrect. Scaling count data often hurts Multinomial NB performance by violating its distributional assumptions.",
+        "Incorrect. Multinomial NB works directly with count data and doesn't require feature scaling.",
+        "Incorrect. Scaling can significantly affect the probability calculations in count-based variants."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "feature-scaling",
+        "multinomial-nb",
+        "count-data"
+      ]
+    },
+    {
+      "id": "NBY_089",
+      "question": "How does Naive Bayes compare to k-NN in terms of decision boundaries?",
+      "options": [
+        "NB creates linear boundaries, k-NN creates complex non-linear boundaries",
+        "Both create identical linear decision boundaries",
+        "NB creates non-linear boundaries, k-NN creates linear boundaries",
+        "Both algorithms create circular decision boundaries"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes creates linear decision boundaries due to its log-linear nature, while k-NN can create arbitrarily complex boundaries based on local neighborhoods.",
+      "optionExplanations": [
+        "Correct. NB's probabilistic model leads to linear boundaries, while k-NN adapts to local data structure creating complex shapes.",
+        "Incorrect. These algorithms have fundamentally different approaches to creating decision boundaries.",
+        "Incorrect. This reverses the actual boundary characteristics of these algorithms.",
+        "Incorrect. Neither algorithm inherently creates circular boundaries; boundary shapes depend on their specific mathematical formulations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "decision-boundaries",
+        "algorithm-comparison",
+        "k-nn"
+      ]
+    },
+    {
+      "id": "NBY_090",
+      "question": "What is the role of feature independence in the derivation of Naive Bayes formula?",
+      "options": [
+        "Allows factorization of P(features|class) into individual feature probabilities",
+        "Eliminates the need for prior probabilities",
+        "Makes all features equally important",
+        "Converts the problem from classification to regression"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The independence assumption enables the decomposition P(x₁,x₂,...,xₙ|class) = P(x₁|class)×P(x₂|class)×...×P(xₙ|class), which is crucial for computational tractability.",
+      "optionExplanations": [
+        "Correct. Independence assumption allows breaking down the joint likelihood into a product of individual feature likelihoods.",
+        "Incorrect. Prior probabilities P(class) are still needed in Bayes' theorem regardless of feature independence.",
+        "Incorrect. Independence doesn't imply equal importance; features can have different probability values and impacts.",
+        "Incorrect. The problem remains classification; independence just simplifies the probability calculations."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "mathematical-derivation",
+        "independence-assumption",
+        "factorization"
+      ]
+    },
+    {
+      "id": "NBY_091",
+      "question": "How does online learning apply to Naive Bayes?",
+      "options": [
+        "Easy to implement by updating counts incrementally as new data arrives",
+        "Requires complete retraining with each new example",
+        "Not possible due to independence assumptions",
+        "Only works with batch learning approaches"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes naturally supports online learning because parameter updates only require updating counts and statistics, which can be done incrementally.",
+      "optionExplanations": [
+        "Correct. NB parameters are based on counts and means that can be updated incrementally without storing all previous data.",
+        "Incorrect. The simplicity of NB parameters makes incremental updates straightforward without full retraining.",
+        "Incorrect. Independence assumptions actually facilitate online learning by allowing separate parameter updates for each feature.",
+        "Incorrect. NB is well-suited for online learning due to its incremental parameter update capabilities."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "online-learning",
+        "incremental-updates",
+        "streaming-data"
+      ]
+    },
+    {
+      "id": "NBY_092",
+      "question": "What is the effect of label noise on Naive Bayes performance?",
+      "options": [
+        "Can significantly degrade performance by corrupting probability estimates",
+        "Has no effect due to probabilistic nature",
+        "Always improves robustness",
+        "Only affects training speed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Label noise corrupts the training data used to estimate P(features|class), leading to biased probability estimates and reduced classification accuracy.",
+      "optionExplanations": [
+        "Correct. Incorrect labels lead to wrong feature-class associations, corrupting the probability estimates that NB relies on.",
+        "Incorrect. Probabilistic models are not immune to label noise; corrupted labels directly affect parameter estimation.",
+        "Incorrect. Label noise generally hurts performance rather than improving robustness.",
+        "Incorrect. Label noise affects the quality of learned parameters and thus prediction accuracy, not just training time."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "label-noise",
+        "robustness",
+        "data-quality"
+      ]
+    },
+    {
+      "id": "NBY_093",
+      "question": "How does the choice between different Naive Bayes variants affect interpretability?",
+      "options": [
+        "All variants provide similar interpretability through probability estimates",
+        "Gaussian NB is least interpretable",
+        "Multinomial NB cannot be interpreted",
+        "Only Bernoulli NB provides interpretable results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "All Naive Bayes variants provide interpretable results through probability estimates and feature contributions, though the specific interpretation may vary by variant.",
+      "optionExplanations": [
+        "Correct. All NB variants provide probability estimates and allow examination of feature contributions to classification decisions.",
+        "Incorrect. Gaussian NB provides probability densities and can show which features contribute most to class decisions.",
+        "Incorrect. Multinomial NB clearly shows how word counts contribute to text classification decisions.",
+        "Incorrect. All variants offer interpretability; Bernoulli NB is not uniquely interpretable among the variants."
+      ],
+      "difficulty": "EASY",
+      "tags": [
+        "interpretability",
+        "model-transparency",
+        "variant-comparison"
+      ]
+    },
+    {
+      "id": "NBY_094",
+      "question": "What is the relationship between Naive Bayes and ensemble methods?",
+      "options": [
+        "NB can be used as a base learner in ensemble methods",
+        "NB cannot be combined with other algorithms",
+        "Ensembles always perform worse than individual NB",
+        "NB is only effective when used alone"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes can serve as a base classifier in ensemble methods like bagging, boosting, or voting, potentially improving overall performance through combination with other models.",
+      "optionExplanations": [
+        "Correct. NB's speed and reasonable performance make it suitable as a component in ensemble approaches.",
+        "Incorrect. NB can be effectively combined with other algorithms in ensemble frameworks.",
+        "Incorrect. Ensembles often improve upon individual classifier performance, including NB-based ensembles.",
+        "Incorrect. NB can benefit from ensemble combination, especially when its assumptions are violated."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "ensemble-methods",
+        "base-learner",
+        "model-combination"
+      ]
+    },
+    {
+      "id": "NBY_095",
+      "question": "How does Naive Bayes handle temporal or sequential data?",
+      "options": [
+        "Treats each time point independently, ignoring temporal dependencies",
+        "Automatically models temporal correlations",
+        "Requires special temporal preprocessing",
+        "Cannot process sequential data at all"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Standard Naive Bayes treats each instance independently and doesn't model temporal dependencies, requiring special handling for time-series data.",
+      "optionExplanations": [
+        "Correct. NB's independence assumption extends to temporal independence, treating each observation as unrelated to previous ones.",
+        "Incorrect. Standard NB doesn't model temporal correlations; this would require extensions like Hidden Markov Models.",
+        "Incorrect. While preprocessing might help, standard NB doesn't inherently require special temporal handling.",
+        "Incorrect. NB can process sequential data as independent instances, though it won't capture temporal patterns."
+      ],
+      "difficulty": "MEDIUM",
+      "tags": [
+        "temporal-data",
+        "sequential-data",
+        "independence-assumption"
+      ]
+    },
+    {
+      "id": "NBY_096",
+      "question": "What is the impact of class prior estimation methods on Naive Bayes performance?",
+      "options": [
+        "Different prior estimation methods can significantly affect classification bias",
+        "Prior estimation method has no impact on performance",
+        "Only maximum likelihood estimation should be used",
+        "All estimation methods produce identical results"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "How priors are estimated (from data frequencies, uniform distribution, or expert knowledge) can significantly impact classification decisions, especially with imbalanced data.",
+      "optionExplanations": [
+        "Correct. Prior estimation affects the balance between classes and can introduce or remove bias in classification decisions.",
+        "Incorrect. Prior probabilities are a key component of Bayes' theorem and directly affect classification outcomes.",
+        "Incorrect. While MLE is common, other methods like smoothed estimates or domain-informed priors can be beneficial.",
+        "Incorrect. Different prior estimation methods can lead to substantially different classification behaviors."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "prior-estimation",
+        "classification-bias",
+        "parameter-estimation"
+      ]
+    },
+    {
+      "id": "NBY_097",
+      "question": "How does Naive Bayes perform in multi-label classification scenarios?",
+      "options": [
+        "Requires adaptation since standard NB assumes single-label classification",
+        "Works directly without any modifications",
+        "Cannot handle multi-label problems",
+        "Automatically detects multi-label scenarios"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Standard Naive Bayes is designed for single-label classification and needs adaptation (like binary relevance or label powerset) for multi-label problems.",
+      "optionExplanations": [
+        "Correct. Multi-label classification requires special adaptations of NB, such as training separate binary classifiers for each label.",
+        "Incorrect. Standard NB assumes mutually exclusive classes and needs modification for multi-label scenarios.",
+        "Incorrect. While standard NB doesn't handle multi-label directly, adaptations exist for multi-label classification.",
+        "Incorrect. NB doesn't automatically detect or handle multi-label scenarios; this requires explicit design choices."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "multi-label",
+        "classification-adaptation",
+        "label-independence"
+      ]
+    },
+    {
+      "id": "NBY_098",
+      "question": "What is the theoretical foundation for the effectiveness of Naive Bayes despite violated assumptions?",
+      "options": [
+        "Classification only requires correct ranking of class probabilities, not exact values",
+        "Violated assumptions always improve performance",
+        "The algorithm adapts automatically to assumption violations",
+        "Theoretical analysis shows assumptions are never violated in practice"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "For classification, we only need the relative ordering of class probabilities to be correct, not the absolute probability values, making NB robust to assumption violations.",
+      "optionExplanations": [
+        "Correct. Classification accuracy depends on correct ranking of P(class|features), not calibrated probability estimates.",
+        "Incorrect. Assumption violations typically hurt performance, though NB is often robust to these violations.",
+        "Incorrect. NB doesn't adapt its assumptions; its effectiveness comes from the robustness of relative probability rankings.",
+        "Incorrect. Assumptions are frequently violated in real data; NB's effectiveness despite this is what makes it remarkable."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "theoretical-foundation",
+        "assumption-violations",
+        "probability-ranking"
+      ]
+    },
+    {
+      "id": "NBY_099",
+      "question": "How does the concept of mutual information relate to feature selection for Naive Bayes?",
+      "options": [
+        "High mutual information between features and classes indicates good features for NB",
+        "Mutual information is irrelevant for Naive Bayes",
+        "Only features with zero mutual information should be used",
+        "Mutual information only affects computational speed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Mutual information measures the dependency between features and class labels, making it a useful criterion for selecting informative features for Naive Bayes.",
+      "optionExplanations": [
+        "Correct. Features with high mutual information with class labels provide more discriminative power for classification.",
+        "Incorrect. Mutual information is highly relevant for measuring feature informativeness in classification tasks.",
+        "Incorrect. Features with zero mutual information provide no classification value and should be avoided.",
+        "Incorrect. Mutual information affects classification quality by measuring feature relevance, not just computational efficiency."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "mutual-information",
+        "feature-selection",
+        "information-theory"
+      ]
+    },
+    {
+      "id": "NBY_100",
+      "question": "What is the relationship between Naive Bayes and Bayesian networks?",
+      "options": [
+        "Naive Bayes is a special case of Bayesian networks with specific independence assumptions",
+        "They are completely unrelated methodologies",
+        "Bayesian networks are always more complex than Naive Bayes",
+        "Naive Bayes is more general than Bayesian networks"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Naive Bayes can be viewed as a simple Bayesian network where all features are conditionally independent given the class variable, making it a special case with restrictive structure.",
+      "optionExplanations": [
+        "Correct. NB represents a Bayesian network with a star structure where the class node connects to all feature nodes with no inter-feature connections.",
+        "Incorrect. NB is fundamentally based on Bayesian principles and can be represented as a specific type of Bayesian network.",
+        "Incorrect. While Bayesian networks can be more complex, the relationship is about structural assumptions, not inherent complexity.",
+        "Incorrect. Bayesian networks are more general frameworks that can represent various dependency structures, including the NB structure."
+      ],
+      "difficulty": "HARD",
+      "tags": [
+        "bayesian-networks",
+        "graphical-models",
+        "model-relationships"
+      ]
+    }
+  ]
+}
